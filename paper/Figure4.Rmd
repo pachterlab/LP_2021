@@ -1,0 +1,99 @@
+---
+title: "Figure 4"
+author: "Lambda Moses"
+date: "11/19/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+devtools::load_all("~/museumst/")
+library(tidyverse)
+library(patchwork)
+library(lubridate)
+theme_set(theme_bw())
+```
+
+```{r}
+analysis <- read_metadata("Analysis")
+analysis$sheet <- "Analysis"
+```
+
+```{r}
+nms <- c("Microdissection", "smFISH", "Array", "ISS", "No imaging")
+data_sheets <- read_metadata(nms, update = TRUE)
+```
+
+```{r}
+data_sheets <- data_sheets %>% 
+  mutate(Era = case_when(sheet == "Prequel" ~ "prequel",
+                         TRUE ~ "current"))
+```
+
+```{r}
+current <- data_sheets %>% 
+  filter(Era == "current") %>% 
+  select(date_published:journal, country:year, sheet) %>% 
+  distinct()
+```
+
+```{r}
+all_current <- rbind(current, analysis[,names(current)])
+```
+
+```{r}
+all_current <- all_current %>% 
+  mutate(Type = case_when(sheet == "Analysis" ~ "analysis",
+                          TRUE ~ "data")) %>% 
+  distinct()
+```
+
+```{r}
+(p4a <- era_freqpoly(all_current, Type, preprints = TRUE, binwidth = 120) +
+   scale_y_continuous(expand = expansion(c(0, 0.05))) +
+   scale_x_date(breaks = seq(ymd("2001-01-01"), ymd("2022-01-01"), by = "2 years"), 
+                limits = c(ymd("2001-01-01"), ymd("2022-01-01")),
+                expand = expansion(0),
+                date_labels = "%Y"))
+```
+
+```{r}
+pubs <- get_pubs_df(data_sheets, other_cols = "sheet")
+```
+
+```{r}
+data("sheet_fill")
+```
+
+```{r}
+(p4b <- pubs %>% 
+   mutate(sheet = fct_infreq(sheet)) %>% 
+   ggplot() +
+   geom_area(aes(x = date_published, y = ..count.., fill = sheet), 
+             stat = "bin", color = "gray", size = 0.5, binwidth = 120, 
+             position = "stack") +
+   scale_fill_manual(values = sheet_fill, name = "Category") +
+   scale_y_continuous(expand = expansion(c(0, 0.05))) +
+   scale_x_date(breaks = seq(ymd("2001-01-01"), ymd("2022-01-01"), by = "2 years"), 
+                limits = c(ymd("2001-01-01"), ymd("2022-01-01")),
+                expand = expansion(0),
+                date_labels = "%Y") +
+   labs(x = "Date published", y = "Number of publications"))
+```
+
+```{r, fig.width=6, fig.height=8}
+(fig4 <- p4a / p4b +
+  plot_annotation(tag_levels = "A"))
+```
+
+```{r}
+ggsave("fig4.png", fig4, width = 8, height = 8)
+```
+
+```{r}
+sessionInfo()
+```
+

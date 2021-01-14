@@ -1,0 +1,1447 @@
+---
+title: "Figures"
+author: "Lambda Moses"
+date: "8/26/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#library(museumst)
+devtools::load_all("~/museumst/")
+library(tidyverse)
+library(sf)
+library(patchwork)
+library(png)
+library(grid)
+library(scales)
+library(gganatogram)
+library(lubridate)
+library(VennDiagram)
+library(colorblindr)
+library(ggrepel)
+library(ggforce)
+library(xtable)
+library(quanteda)
+library(stm)
+library(stminsights)
+library(broom)
+library(tidytext)
+library(text2vec)
+library(lexvarsdatr)
+library(cowplot)
+theme_set(theme_bw())
+```
+
+# Figure 1
+```{r}
+fig1a <- readPNG("fig1A.png")
+```
+
+```{r}
+(p1a <- ggplot() +
+  annotation_custom(rasterGrob(fig1a, 
+                               width = unit(1,"npc"), 
+                               height = unit(1,"npc")), 
+                    -Inf, Inf, -Inf, Inf) +
+  theme_void())
+```
+
+Then a time line of prequel era techniques
+```{r}
+events <- read_major_events(update = TRUE)
+```
+
+```{r, fig.width=8, fig.height=3}
+(p1b <- events %>% 
+  filter(category == "technique") %>% 
+  plot_timeline(c(1.5, -1.5, 1, -1.5, 1, -1.5, 2, -2.5, 1.2), 
+                expand_x = c(0.1, 0.1), expand_y = c(0,0)))
+```
+
+Then a time line for ISH atlases and model organism databases
+```{r, fig.width=8, fig.height=4}
+(p1c <- events %>% 
+  filter(category == "ISH atlas") %>% 
+  plot_timeline(c(0.5, -0.5, -0.85, 0.7, -0.25, 1, -0.5, 0.3, -0.8, 0.5, -1, 0.7, -0.25, 0.5, 
+                  -1, 1, -0.6, 0.8, -0.8, 1), 
+                expand_x = c(0.1, 0.1), expand_y = c(0,0)))
+```
+
+```{r}
+p1a2 <- plot_spacer() + p1a + plot_spacer() +
+  plot_layout(widths = c(1.5, 5, 1.5))
+```
+
+```{r, fig.width=8, fig.height=10.5}
+(fig1 <- p1a2 / p1b / p1c +
+  plot_annotation(tag_levels = "A") +
+  plot_layout(heights = c(3.5, 3, 4)))
+```
+
+```{r}
+ggsave("fig1.png", plot = fig1, width = 8*1.3, height = 10.5*1.3)
+```
+
+# Figure 2
+```{r}
+prequel <- read_metadata(sheet_use = "Prequel", update = TRUE)
+method <- unnest_cat(prequel, method, other_cols = "species")
+```
+
+```{r, fig.width=6, fig.height=6}
+(p2 <- pubs_per_year(method, facet_by = "method", fill_by = "species", n_top_fill = 7) +
+   labs(title = "Number of publications over time", y = "") +
+   theme(legend.position = "top"))
+```
+
+```{r}
+ggsave("fig2.png", p2, width = 8, height = 8)
+```
+
+# Figure 3
+```{r}
+pubs_per_cat(prequel, species)
+```
+
+```{r}
+ish <- prequel %>% 
+  filter(str_detect(method, "ISH")) %>% 
+  unnest_cat(species, other_cols = c("tissue", "n_items", "still_available"))
+```
+
+```{r}
+(p3a <- pubs_per_cat(ish, species) +
+  labs(y = "Number of (WM)ISH publications", x = "Species") +
+  theme(axis.text.y = element_text(face = "italic")))
+```
+
+How about databases? I mean the atlases with names and the number of unique names
+```{r}
+dbs <- prequel %>% 
+  filter(!is.na(name), still_available) %>% 
+  unnest_cat(species, other_cols = "name") %>% 
+  select(species, name) %>% 
+  distinct()
+```
+
+```{r}
+(p3b <- dbs %>% 
+  mutate(species = fct_infreq(species) %>% fct_rev()) %>% 
+  ggplot(aes(y = species)) +
+  geom_bar() +
+  scale_x_continuous(breaks = breaks_pretty(5), 
+                     expand = expansion(mult = c(0, 0.05))) +
+  theme(panel.grid.minor = element_blank(), panel.grid.major.y = element_blank(),
+        axis.text.y = element_text(face = "italic")) +
+  labs(x = "Number of extant databases", y = "Species"))
+```
+
+```{r}
+data("mmMale_key")
+```
+
+```{r}
+mm_ish_tissues <- ish %>% 
+  filter(str_detect(species, "Mus musculus"), !is.na(tissue))
+```
+
+```{r}
+mm_ish_tissues <- mm_ish_tissues %>% 
+  mutate(tissue = map(tissue, ~ str_split(.x, "(, )|( and )")[[1]]))
+mm_ish_tissues <- mm_ish_tissues %>% 
+  unnest(cols = "tissue")
+```
+
+```{r}
+mm_ish_tissues <- mm_ish_tissues %>% 
+  mutate(organ = case_when(
+    tissue %in% mmMale_key$organ ~ tissue,
+    str_detect(tissue, "(brain)|(hippo)|(cereb)|(nerv)") ~ "brain",
+    str_detect(tissue, "retina") ~ "eye",
+    str_detect(tissue, "(genit)|(Ure)") ~ "penis",
+    tissue == "gut" ~ "ileum",
+    tissue == "limbs" ~ "hindlimb",
+    TRUE ~ NA_character_
+  )) %>% 
+  filter(!is.na(organ))
+mm_ish_tissues <- mm_ish_tissues %>% 
+  left_join(mmMale_key[, c("organ", "type")], by = "organ")
+```
+
+```{r}
+(p3c <- mm_ish_tissues %>% 
+   count(organ, type, name = "value") %>% 
+   gganatogram(organism = "mouse", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Blues", direction = 1, name = "# publications"))
+```
+
+```{r}
+(p3d <- mm_ish_tissues %>% 
+   group_by(organ, type) %>% 
+   summarise(value = max(n_items, na.rm = TRUE)) %>% 
+   gganatogram(organism = "mouse", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Blues", direction = 1, trans = "log10",
+                        name = "# genes\n(log scale)"))
+```
+
+```{r}
+(p3e <- pubs_per_cat(method, method) +
+   labs(x = "Method"))
+```
+
+```{r}
+p3f_annot <- prequel %>% 
+  select(facets = item_type) %>% 
+  mutate(facets = fct_lump_n(facets, 5)) %>% 
+  distinct() %>% 
+  mutate(label = case_when(facets == "line" ~ "Draft mouse\ngenome",
+                           TRUE ~ ""))
+```
+
+```{r, fig.width=6, fig.height=6}
+(p3f <- pubs_per_year(prequel, facet_by = "item_type", n_top = 5, 
+                      fill_by = "species") +
+   geom_vline(xintercept = ymd("2002-12-05")) +
+   geom_text(data = p3f_annot, aes(label = label), x = ymd("2001-08-01"), y = 12) +
+   labs(title = "Number of publications over time", y = "") +
+   theme(legend.position = "bottom"))
+```
+
+```{r}
+bars <- p3e | p3a | p3b
+anato <- p3c / p3d
+top3 <- p3f + anato +
+  plot_layout(widths = c(2, 1))
+```
+
+```{r, fig.width=8, fig.height=8}
+(fig3 <- top3 / bars +
+   plot_annotation(tag_levels = "A") +
+   plot_layout(heights = c(2, 1)))
+```
+
+```{r}
+ggsave("fig3.png", plot = fig3, width = 12, height = 12)
+```
+
+# Figure 4
+```{r}
+all_prequel <- read_metadata(sheet_use = c("Prequel", "Prequel analysis"), update = TRUE)
+all_prequel <- all_prequel %>% 
+  mutate(type = case_when(sheet == "Prequel analysis" ~ "analysis",
+                          TRUE ~ "data"))
+```
+
+```{r}
+(p4a <- era_freqpoly(all_prequel, type, preprints = TRUE, binwidth = 365) +
+  scale_x_date(date_breaks = "2 years", date_labels = "%Y",
+               expand = expansion(0)))
+```
+
+```{r}
+prequel_analysis <- read_metadata("Prequel analysis", update = TRUE)
+```
+
+Broken down by species
+```{r}
+p4b_annot <- tibble(facets = c("Drosophila melanogaster", "Mus musculus"),
+                    xint = ymd(c("2002-12-23", "2006-12-06")),
+                    x =  xint + period(18, "month"),
+                    label = c("BDGP", "ABA"))
+```
+
+```{r}
+(p4b <- pubs_per_year(prequel_analysis, facet_by = "species", fill_by = "species",
+                      n_top = 2, preprints = TRUE) +
+  geom_vline(data = p4b_annot, aes(xintercept = xint)) +
+  geom_text(data = p4b_annot, aes(label = label, x = x, y = 4)))
+```
+
+```{r}
+categories <- unnest_cat(prequel_analysis, category, other_cols = "species")
+```
+
+```{r}
+(p4c <- pubs_per_year(categories, facet_by = "category", n_top = 5, 
+              fill_by = "species", sort_by = "count", preprints = TRUE))
+```
+
+```{r, fig.width=8, fig.height=6}
+(fig4 <- p4a / (p4b | p4c) +
+   plot_annotation(tag_levels = "A") +
+   plot_layout(heights = c(1, 2), guides = "collect") &
+   theme(legend.position = "top"))
+```
+
+```{r}
+ggsave("fig4.png", fig4, height = 8, width = 8)
+```
+
+# Figure 5
+```{r}
+nms <- c("Prequel", "Microdissection", "smFISH", "Array", "ISS", "No imaging")
+data_sheets <- read_metadata(nms, update = TRUE)
+```
+
+```{r}
+data_sheets <- data_sheets %>% 
+  mutate(era = case_when(sheet == "Prequel" ~ "prequel",
+                         TRUE ~ "current"))
+```
+
+```{r}
+publications <- get_pubs_df(data_sheets, "era")
+```
+
+```{r}
+# For maps later in this notebook
+city_gc <- geocode_inst_city(publications)
+pubs_on_map2 <- partial(pubs_on_map, city_gc = city_gc)
+```
+
+```{r}
+(p5c <- era_freqpoly(publications, era, preprints = TRUE) +
+   scale_x_date(date_breaks = "2 years", date_labels = "%Y",
+                expand = expansion(0)) +
+   theme(legend.position = "none") +
+   geom_text(data = tibble(era = c("current", "prequel"),
+                           x = ymd(c("2017-01-01", "2000-01-01")),
+                           y = c(30, 15)),
+             aes(x = x, y = y, label = era, color = era), show.legend = FALSE))
+```
+
+```{r}
+current <- data_sheets %>% 
+  filter(era == "current") %>% 
+  select(date_published:journal, country:year, sheet) %>% 
+  distinct()
+```
+
+```{r}
+current2 <- publications %>% filter(era == "current")
+```
+
+How many per sheet? Again, I definitely don't think the LCM collection (within Microdissection) is anywhere close to complete, so microdissection is definitely the most popular one so far. LCM abstracts from PubMed search are analyzed separately.
+```{r}
+(p5b <- pubs_per_cat(current, sheet) +
+   labs(x = "Category"))
+```
+
+```{r}
+(p5a <- pubs_per_year(current, facet_by = "sheet") +
+   scale_x_date(date_breaks = "2 years", date_labels = "%Y",
+                expand = expansion(c(0.05, 0))))
+```
+
+```{r}
+(p5d <- events %>% 
+  filter(category == "technique2") %>% 
+  plot_timeline(c(-0.5, 1, -1, 0.5, -0.7, -0.5, 1, -0.5, 0.5, 1, -0.6, 0.3, -1), 
+                expand_y = c(0,0), expand_x = c(0.1,0.1)))
+```
+
+```{r}
+species <- data_sheets %>%
+  filter(era == "current", !is.na(species)) %>% 
+  unnest_cat(species)
+```
+
+```{r}
+data("species_cols")
+```
+
+```{r}
+species_pie <- species %>% 
+  mutate(species = fct_lump(species, 3)) %>% 
+  count(species) %>% 
+  mutate(species = fct_reorder(species, n, .desc = TRUE) %>% 
+           fct_relevel("Other", after = Inf)) %>% 
+  arrange(desc(species)) %>% 
+  mutate(label = paste("italic('", species, "')", "~(", n, ")"))
+```
+
+```{r}
+(p5e <- ggplot(species_pie, aes(x = "", y = n, fill = species)) +
+   geom_col(position = "stack", color = "gray50", size = 0.3, show.legend = FALSE,
+            width = 1) +
+   geom_text_repel(aes(x = 1.5, label = label), parse = TRUE, segment.size = 0,
+                   position = position_stack(vjust = 0.5)) +
+   coord_polar(theta = "y") +
+   scale_fill_manual(values = species_cols) +
+   scale_y_continuous(breaks = species_pie$y_label, labels = species_pie$label) +
+   scale_x_discrete(expand = expansion(0.1)) +
+   theme_void()
+   )
+```
+
+I'll plot the anatogram on females and plot an inset to the male specific organns
+```{r}
+data("hgFemale_key")
+data("mmFemale_key")
+data("hgMale_key")
+```
+
+```{r}
+organs <- data_sheets %>% 
+  filter(era == "current") %>% 
+  select(date_published:journal, country:year, species, sheet, organ, pathological) %>% 
+  distinct()
+organs <- organs %>% 
+  filter(species %in% c("Mus musculus", "Homo sapiens")) %>% 
+  unnest_cat(organ, other_cols = c("species", "pathological")) %>% 
+  filter(!is.na(organ))
+```
+
+```{r}
+organs_hg_f <- organs %>% 
+  filter(species == "Homo sapiens") %>% 
+  inner_join(hgFemale_key[, c("organ", "type")], by = "organ") %>% 
+  count(organ, type, pathological, name = "value")
+```
+
+```{r}
+organs_mm_f <- organs %>% 
+  filter(species == "Mus musculus") %>% 
+  inner_join(mmFemale_key[, c("organ", "type")], by = "organ") %>% 
+  count(organ, type, pathological, name = "value")
+```
+
+```{r}
+organs_hg_m <- organs %>% 
+  filter(species == "Homo sapiens") %>% 
+  inner_join(hgMale_key[, c("organ", "type")], by = "organ") %>% 
+  count(organ, type, pathological, name = "value")
+```
+
+Use the same color scale across humans and mice
+```{r}
+limits_use <- range(c(organs_hg_f$value[!organs_hg_f$pathological], 
+                      organs_mm_f$value[!organs_mm_f$pathological]))
+```
+
+```{r}
+(p6a <- organs_hg_m %>% 
+   filter(!pathological) %>% 
+   gganatogram(organism = "human", sex = "male", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Blues", direction = 1, name = "# publications\n(healthy)",
+                        limits = limits_use))
+```
+
+```{r}
+limits_use2 <- range(c(organs_hg_f$value[organs_hg_f$pathological],
+                       organs_mm_f$value[organs_mm_f$pathological]))
+```
+
+```{r}
+(p6b <- organs_hg_f %>% 
+   filter(pathological) %>% 
+   gganatogram(organism = "human", sex = "female", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Reds", direction = 1, name = "# publications\n(pathological)",
+                        limits = limits_use2, breaks = breaks_width(2)))
+```
+
+For males, there's one study on the testis and one for prostate cancer. 
+```{r}
+pal_hg_m <- c(brewer_pal(palette = "Blues")(1), brewer_pal(palette = "Reds")(1))
+```
+
+```{r}
+organs_hg_m %>% 
+  rename(value = pathological) %>% 
+  gganatogram(organism = "human", sex = "male", fill = "value") +
+  coord_equal() +
+  #theme_void() +
+  scale_fill_manual(values = pal_hg_m, name = "Pathological")
+```
+
+Never mind. I didn't know that there's so little details here. I'll just note this in the text.
+
+```{r}
+(p6c <- organs_mm_f %>% 
+   filter(!pathological) %>% 
+   gganatogram(organism = "mouse", sex = "female", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Blues", direction = 1, name = "# publications\n(healthy)",
+                        limits = limits_use))
+```
+
+```{r}
+(p6d <- organs_mm_f %>% 
+   filter(pathological) %>% 
+   gganatogram(organism = "mouse", sex = "female", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Reds", direction = 1, name = "# publications\n(pathological)",
+                        limits = limits_use2, breaks = breaks_width(2)))
+```
+
+```{r, fig.width=8, fig.height=8}
+top_right <- p5b / p5e +
+  plot_layout(heights = c(1, 2))
+mm <- p6c / p6d
+top5 <- p5a + top_right + mm +
+  plot_layout(widths = c(1, 0.5, 0.5))
+mid <- p5c + p6a + p6b +
+  plot_layout(nrow = 1, widths = c(1, 0.5, 0.5))
+(fig5 <- top5 / mid / p5d +
+    plot_annotation(tag_levels = "A") +
+    plot_layout(heights = c(1.5, 1, 0.8), guides = "collect")
+)
+```
+
+```{r}
+ggsave("fig5.png", fig5, height = 12, width = 12)
+```
+
+# Figure 6
+What can I do to show that the current era is more like an elite club than the prequel era?
+```{r}
+(p6c <- pubs_on_map2(data_sheets, zoom = "usa", 
+                     facet_by = "era", ncol = 2, label_insts = TRUE,
+                     label_cities = FALSE))
+```
+
+```{r}
+pubs_on_map2(data_sheets, zoom = "europe", facet_by = "era", ncol = 2)
+```
+
+```{r}
+methods_current <- data_sheets %>% 
+  select(title, date_published, method, sheet, era, institution) %>% 
+  filter(era == "current", !is.na(method)) %>% 
+  distinct()
+```
+
+```{r}
+(p6b <- methods_current %>% 
+   select(institution, method) %>% 
+   distinct() %>% 
+   mutate(method = fct_lump_min(method, 3)) %>% 
+   filter(!method %in% c("LCM", "Other")) %>% 
+   pubs_per_cat(method) +
+   labs(y = "Number of institutions using the method"))
+```
+
+```{r}
+n_insts <- methods_current %>% 
+  select(institution, method) %>% 
+  distinct() %>% 
+  count(method)
+```
+
+How many new methods per year
+```{r}
+new_methods <- methods_current %>% 
+  group_by(method) %>% 
+  top_n(1, desc(date_published))
+new_methods <- new_methods %>% 
+  left_join(n_insts, by = "method")
+```
+
+```{r}
+(p6a <- new_methods %>% 
+   filter(method != "LCM") %>% 
+   pubs_per_year(preprints = TRUE, fill_by = "n") +
+   labs(y = "Number of new methods", x = "Date first published",
+        fill = "Number of\ninstitutions"))
+```
+
+```{r, fig.width=8, fig.height=6}
+(fig6 <- (p6b + p6a) / p6c +
+   plot_annotation(tag_levels = "A") +
+   plot_layout(heights = c(1, 1)))
+```
+
+```{r}
+ggsave("fig6.png", plot = fig6, width = 10, height = 7.5)
+```
+
+# Table 1
+Method names, sheet (i.e. category), date first published, resolution, max number of genes, max number of cells/bins per study. I'll add references manually in Overleaf. 
+```{r}
+nms2 <- c("Microdissection", "smFISH", "Array", "ISS")
+df_ncells <- read_metadata(nms2, update = TRUE)
+```
+
+```{r}
+table1 <- methods_current %>% 
+  group_by(method) %>% 
+  summarize(
+    first_published = min(date_published),
+    category = unique(sheet)
+  )
+```
+
+```{r}
+n_cells <- df_ncells %>% 
+  group_by(title, method) %>% 
+  summarize(tot_cells = sum(`n_cells/bins/spots`, na.rm = TRUE)) %>% 
+  group_by(method) %>% 
+  summarize(max_tot_cells = max(tot_cells, na.rm = TRUE)) %>% 
+  mutate(max_tot_cells = case_when(max_tot_cells < 1 ~ NA_real_,
+                                   TRUE ~ max_tot_cells))
+```
+
+```{r}
+nms2 <- c("smFISH", "ISS")
+df_ngenes <- read_metadata(nms2, update = TRUE)
+```
+
+```{r}
+n_genes <- df_ngenes %>% 
+  group_by(method) %>% 
+  summarize(max_n_genes = max(n_genes, na.rm = TRUE)) %>% 
+  mutate(max_n_genes = case_when(max_n_genes < 1 ~ NA_real_,
+                                 TRUE ~ max_n_genes))
+```
+
+```{r}
+df_spots <- read_metadata("Array", update = TRUE)
+```
+
+```{r}
+spot_diams <- df_spots %>% 
+  group_by(method) %>% 
+  summarize(min_spot_diam = min(spot_diameter_um, na.rm = TRUE))
+```
+
+```{r}
+table1 <- table1 %>% 
+  left_join(n_cells, by = "method") %>% 
+  left_join(n_genes, by = "method")
+table1 <- table1 %>% 
+  left_join(spot_diams, by = "method")
+table1 <- table1 %>% 
+  filter(!method %in% c("LCM", "manual dissection", "aspiration", "smFISH"))
+table1 <- table1 %>% 
+  mutate(min_spot_diam = as.character(min_spot_diam),
+         min_spot_diam = case_when(
+           !is.na(min_spot_diam) ~ min_spot_diam,
+           category %in% c("smFISH", "ISS") ~ "single cell",
+           TRUE ~ NA_character_
+         ))
+table1 <- table1 %>% 
+  mutate(max_n_genes = as.character(max_n_genes),
+         max_n_genes = case_when(
+           !is.na(max_n_genes) ~ max_n_genes,
+           category %in% c("Microdissection", "Array") ~ "transcriptome wide",
+           TRUE ~ NA_character_
+         ))
+```
+
+```{r}
+table1 <- table1 %>% 
+  arrange(first_published) %>% 
+  mutate(first_published = as.character(first_published))
+```
+
+```{r}
+references <- tribble(~ method, ~ reference,
+                      "voxelation", "\\cite{Brown2002High-throughputExpression}",
+                      "SRM seqFISH", "\\cite{Lubeck2012Single-cellLabeling}",
+                      "Tomo-array", "\\cite{Okamura-Oho2012TranscriptomeSpace}",
+                      "iceFISH", "\\cite{Levesque2013Single-chromosomeRegulation}",
+                      "ISS", "\\cite{Ke2013InCells}", 
+                      "Tomo-seq", "\\cite{Junker2014Genome-wideEmbryo}",
+                      "bDNA-smFISH", "\\cite{Battich2013Image-basedResolution}",
+                      "TIVA", "\\cite{Lovatt2014TranscriptomeTissue}",
+                      "FISSEQ", "\\cite{Lee2014HighlySitu}",
+                      "seqFISH", "\\cite{Lubeck2014Single-cellHybridization}",
+                      "MERFISH", "\\cite{Chen2015SpatiallyCells}",
+                      "Puzzle Imaging", "\\cite{Glaser2015PuzzleLocalization}",
+                      "Geo-seq", "\\cite{Peng2016SpatialEmbryo}",
+                      "corrFISH", "\\cite{Coskun2016DenseDecoding}",
+                      "ST", "\\cite{Stahl2016VisualizationTranscriptomics}",
+                      "HCR-seqFISH", "\\cite{Shah2016InHippocampus}",
+                      "punch", "\\cite{Yoda2017Site-specificSystem}",
+                      "SGA", "\\cite{Lignell2017IdentificationAnalysis}",
+                      "APEX-RIP", "\\cite{Kaewsapsak2017Live-cellCrosslinking}",
+                      "Niche-seq", "\\cite{Medaglia2017SpatialScRNA-seq}",
+                      "ExM-MERFISH", "\\cite{Wang2018MultiplexedMicroscopy}",
+                      "seqFISH+", "\\cite{Shah2018DynamicsSeqFISH, Eng2019Transcriptome-scaleSeqFISH+}",
+                      "STARmap", "\\cite{Wang2018Three-dimensionalStates}",
+                      "Paired-cell sequencing", "\\cite{Halpern2018Paired-cellCells}",
+                      "osmFISH", "\\cite{Codeluppi2018SpatialOsmFISH}",
+                      "GeoMx DSP", "\\cite{Merritt2019HighMethods}",
+                      "slide-seq", "\\cite{Rodriques2019Slide-seq:Resolution}",
+                      "bDNA-MERFISH", "\\cite{Xia2019MultiplexedAmplification}",
+                      "DNA microscopy", "\\cite{Weinstein2019DNAReaction}",
+                      "APEX-seq", "\\cite{Fazal2019AtlasAPEX-Seq}", 
+                      "INSTA-seq", "\\cite{Furth2019InINSTA-seq}", 
+                      "PARSIFT", "\\cite{Hoffecker2019AMicroscopy}",
+                      "HDST", "\\cite{Vickovic2019High-definitionProfiling}",
+                      "DBiT-seq", "\\cite{Liu2019High-Spatial-ResolutionTissue}",
+                      "GaST-seq", "\\cite{Giolai2019SpatiallyPathogens}",
+                      "SCRINSHOT", "\\cite{Sountoulidis2020SCRINSHOTSections}", 
+                      "Visium", "\\cite{Maynard2019Transcriptome-scaleCortex} (First preprint using Visium)",
+                      "slide-seq2", "\\cite{Stickels2020SensitiveResolution}", 
+                      "PIC", "\\cite{Honda2020HighChemistry}", 
+                      "miRNA nanowell", "\\cite{Nagarajan2020SpatiallyArrays}",
+                      "ExSeq", "\\cite{Alon2020ExpansionSystems}", 
+                      "split-FISH", "\\cite{Goh2020HighlySplit-FISH}",
+                      "HybISS", "\\cite{Gyllborg2020Hybridization-basedTissue}", 
+                      "ZipSeq", "\\cite{Hu2020ZipSeq:Transcriptomes}",
+                      "STRP-seq", "\\cite{Schede2020SpatialTomography}", 
+                      "ClumpSeq", "\\cite{Manco2020ClumpCells}")
+```
+
+```{r}
+table1 <- table1 %>% 
+  left_join(references, by = "method")
+```
+
+```{r}
+names(table1) <- c("Method", "First published", "Category", "Max # cells per study",
+                   "Max # genes", "Min spot diameter (\\textmu m)", "Reference")
+```
+
+```{r}
+print(xtable(table1, 
+             caption = "Summary of spatial transcriptomics techniques in the current era",
+             digits = 0), 
+      include.rownames = FALSE,
+      type = "latex", file = "table1.tex", caption.placement = "top",
+      sanitize.text.function = function(x) x)
+```
+
+# Figure 8
+Figure 7 is made on BioRender.
+```{r}
+data("lcm_abstracts")
+data("lcm_city_gc")
+data("stm_res")
+data("lcm_dfm2")
+```
+
+```{r}
+(p8a <- pubs_per_year(lcm_abstracts, binwidth = 365))
+```
+
+```{r}
+(p8b <- pubs_on_map(lcm_abstracts, lcm_city_gc, plot = "hexbin", label_cities = TRUE))
+```
+
+For the quest for the purrfect ggplot
+```{r}
+# For top words for each topic
+td_beta <- tidy(stm_res, matrix = "beta")
+td_gamma <- tidy(stm_res, matrix = "gamma")
+```
+
+I'm using Julia Silge's code again.
+```{r}
+top_terms <- td_beta %>%
+  arrange(beta) %>%
+  group_by(topic) %>%
+  top_n(5, beta) %>%
+  arrange(-beta) %>%
+  select(topic, term) %>%
+  summarise(terms = list(term)) %>%
+  mutate(terms = map(terms, paste, collapse = ", ")) %>% 
+  unnest(cols = "terms")
+```
+
+```{r}
+gamma_terms <- td_gamma %>%
+  group_by(topic) %>%
+  summarise(gamma = mean(gamma)) %>%
+  arrange(desc(gamma)) %>%
+  left_join(top_terms, by = "topic") %>%
+  mutate(topic = reorder(topic, gamma))
+```
+
+```{r, fig.height=6, fig.width=6}
+(p8c <- ggplot(gamma_terms, aes(gamma, topic, label = terms)) +
+  geom_segment(aes(yend = topic), xend = 0, show.legend = FALSE) +
+  geom_point(show.legend = FALSE, color = "blue") +
+  geom_text(hjust = 0, nudge_x = 0.001) +
+  scale_x_continuous(expand = expansion(c(0, 0.05)),
+                     limits = c(0, 0.14),
+                     breaks = breaks_width(0.02),
+                     labels = label_percent(drop0trailing = TRUE)) +
+  labs(y = "Topic", x = "Expected topic prevalence") +
+   theme(panel.grid.major.y = element_blank()))
+```
+
+```{r}
+set.seed(129)
+effs <- estimateEffect( ~ date_num, stm_res, 
+                       metadata = docvars(lcm_dfm2), nsims = 250)
+```
+
+```{r}
+effs_df <- get_effects(effs, "date_num", type = "continuous")
+effs_df <- effs_df %>% 
+  mutate(topic = fct_relevel(topic, as.character(1:35)),
+         date_published = as_date(value))
+```
+
+```{r}
+effs_summ <- tidy(effs)
+effs_summ <- effs_summ %>% 
+  filter(!str_detect(term, "Intercept")) %>% 
+  mutate(p_val_adj = p.adjust(p.value, method = "BH"))
+```
+
+```{r}
+effs_summ %>% arrange(p.value)
+```
+
+```{r}
+min_ps <- effs_summ %>% 
+  filter(p_val_adj < 0.05)
+```
+
+```{r}
+min_ps <- min_ps %>% 
+  mutate(code = case_when(
+    p_val_adj < 0.001 ~ "***",
+    p_val_adj < 0.01 ~ "**",
+    p_val_adj < 0.05 ~ "*",
+    p_val_adj < 0.1 ~ ".",
+    TRUE ~ ""
+  ),
+  topic = factor(topic, levels = as.character(1:35)))
+facet_labels <- setNames(paste(min_ps$topic, min_ps$code), min_ps$topic)
+```
+
+```{r}
+lcm_abstracts <- cbind(lcm_abstracts, as.data.frame(stm_res$theta))
+```
+
+```{r}
+year_theta_long <- lcm_abstracts %>% 
+  mutate(date_bin = floor_date(date_published, unit = "year")) %>% 
+  select(date_bin, V1:V35) %>% 
+  pivot_longer(cols = V1:V35, names_to = "topic", values_to = "theta") %>% 
+  mutate(topic = str_remove(topic, "^V"),
+         topic = fct_relevel(topic, as.character(1:35)))
+year_means <- year_theta_long %>% 
+  group_by(date_bin, topic) %>% 
+  summarize(means = mean(theta)) 
+year_means <- year_means %>% 
+  semi_join(min_ps, by = "topic") %>% 
+  filter(date_bin > ymd("2000-01-01"))
+```
+
+```{r}
+topic_annot <- tribble(
+  ~ topic, ~ annot,
+  "1", "Microarray",
+  "2", "miRNA",
+  "9", "Growth plate",
+  "10", "Prostate cancer",
+  "11", "Plant\nreproduction",
+  "15", "Gastric\ncancer",
+  "24", "Stem cell",
+  "30", "Seed\ndevelopment",
+  "34", "Pathway\nanalysis"
+)
+```
+
+```{r}
+(p8d <- effs_df %>% 
+   semi_join(min_ps, by = "topic") %>% 
+   ggplot(aes(date_published, proportion)) +
+   geom_vline(xintercept = ymd("2008-06-06"), color = "gray70") +
+   geom_line(data = year_means, aes(date_bin, means)) +
+   geom_ribbon(aes(ymin = lower, ymax = upper), alpha = 0.5, fill = "gray") +
+   geom_line(color = "blue") +
+   geom_text(data = topic_annot, aes(label = annot), x = ymd("2011-01-01"), y = 0.25) +
+   facet_wrap(~ topic, ncol = 5, labeller = as_labeller(facet_labels)) +
+   coord_cartesian(ylim = c(0, max(year_means$means))) +
+   scale_x_date(date_labels = "%y") +
+   labs(x = "Date published", y = "Topic proportion"))
+```
+
+```{r}
+ac_dfm2_tidy <- tidy(lcm_dfm2)
+# Add the metadata
+ac_dfm2_tidy <- ac_dfm2_tidy %>% 
+  left_join(lcm_abstracts[, c("date_published", "pmid")], by = c("document" = "pmid"))
+```
+
+```{r}
+words_by_time <- ac_dfm2_tidy %>%
+  mutate(time_floor = floor_date(date_published, unit = "year")) %>%
+  filter(time_floor > ymd("2000-01-01")) %>% 
+  count(time_floor, term) %>%
+  group_by(time_floor) %>%
+  mutate(time_total = sum(n)) %>%
+  group_by(term) %>%
+  mutate(word_total = sum(n)) %>%
+  ungroup() %>%
+  rename(count = n) %>%
+  filter(word_total > 30)
+```
+
+```{r}
+words_by_time <- words_by_time %>% 
+  rename(word = term)
+```
+
+```{r}
+words_by_time <- words_by_time %>% 
+  mutate(prop = count/time_total)
+```
+
+Julia's logistic regression method
+```{r}
+nested_data <- words_by_time %>%
+  nest(data = c(time_floor, count, time_total, word_total, prop))
+```
+
+```{r}
+nested_models <- nested_data %>%
+  mutate(models = map(data, ~ glm(cbind(count, time_total) ~ time_floor, ., 
+                                  family = "binomial")))
+```
+
+```{r}
+slopes <- nested_models %>%
+  mutate(models = map(models, tidy)) %>%
+  unnest(cols = "models") %>%
+  filter(term == "time_floor") %>%
+  mutate(p_val_adj = p.adjust(p.value))
+```
+
+```{r}
+slopes <- slopes %>% 
+  select(-data)
+```
+
+```{r}
+top_slopes <- slopes %>% 
+  filter(p_val_adj < 0.05) %>% 
+  arrange(p_val_adj)
+```
+
+```{r}
+top_slopes_lab <- top_slopes %>% 
+  select(word) %>% 
+  distinct() %>% 
+  mutate(label = case_when(word == "amplif" ~ "RNA-seq",
+                           TRUE ~ ""))
+```
+
+Nothing surprising. 
+```{r}
+(p8e <- words_by_time %>%
+   inner_join(top_slopes, by = "word") %>%
+   ggplot(aes(time_floor, prop)) +
+   geom_vline(xintercept = ymd("2008-06-06"), color = "gray70") +
+   geom_line() +
+   geom_text(data = top_slopes_lab, aes(label = label, x = ymd("2008-01-01"), y = 0.007)) +
+   scale_x_date(date_labels = "%y") +
+   coord_cartesian(xlim = range(effs_df$date_published)) +
+   labs(x = "Year", y = "Word frequency") +
+   facet_wrap(~ word, ncol = 5))
+```
+
+```{r}
+data("lcm_tokens")
+```
+
+```{r}
+ac_fcm <- fcm(lcm_tokens, context = "window", count = "weighted", weights = 1/(1:5))
+```
+
+```{r}
+glove <- GlobalVectors$new(rank = 125, x_max = 10)
+```
+
+```{r}
+ac_gv <- glove$fit_transform(ac_fcm, n_iter = 50)
+```
+
+```{r}
+ac_context <- glove$components
+ac_vectors <- ac_gv + t(ac_context)
+```
+
+```{r}
+wf <- textstat_frequency(lcm_dfm2)
+words_plot <- wf$feature[wf$frequency > 30]
+```
+
+```{r}
+sim_mat <- sim2(ac_vectors[rownames(ac_vectors) %in% words_plot,])
+```
+
+```{r}
+mds_res <- cmdscale(1-sim_mat, k = 5, eig = TRUE) 
+mds_mat <- mds_res$points %>% 
+  data.frame() %>% 
+  mutate(label = rownames(sim_mat))
+```
+
+```{r}
+mds_mat <- mds_mat %>% 
+  left_join(wf, by = c("label" = "feature"))
+```
+
+```{r}
+mds_plt <- mds_mat %>% 
+  filter(rank <= 100)
+```
+
+color words by biological vs. technical
+
+```{r}
+(p8f <- mds_plt %>% 
+  ggplot(aes(X1, X2)) +
+  geom_point() +
+  geom_text_repel(aes(label = label), segment.alpha = 0.3) +
+  labs(x = "MDS 1", y = "MDS 2"))
+```
+
+```{r}
+(p8g <- mds_plt %>% 
+  ggplot(aes(X3, X4)) +
+  geom_point() +
+  geom_text_repel(aes(label = label), segment.alpha = 0.3) +
+  labs(x = "MDS 3", y = "MDS 4"))
+```
+
+```{r, fig.width=8, fig.height=8}
+(fig8 <- p8a + p8b +
+  p8c + (p8e/p8d) +
+  p8f + p8g +
+  plot_layout(ncol = 2, heights = c(1, 2, 1)) +
+  plot_annotation(tag_levels = "A"))
+```
+
+```{r}
+ggsave("fig8.png", width = 12, height = 12)
+```
+
+```{r}
+plot(stm_res, type = "perspectives", topics = c(15, 34))
+```
+
+```{r}
+findThoughts(stm_res, texts = lcm_abstracts$abstract, topics = 24, n = 10)
+```
+
+# Figure 11
+```{r}
+smfish <- read_metadata("smFISH", update = TRUE)
+```
+
+```{r}
+max_genes_time <- smfish %>% 
+  filter(!is.na(n_genes)) %>% 
+  arrange(date_published) %>% 
+  mutate(record_gene = cummax(n_genes)) %>% 
+  select(date_published, record_gene) %>% 
+  distinct()
+```
+
+```{r}
+(p11a <- ggplot(max_genes_time, aes(date_published, record_gene)) +
+  geom_step() +
+  scale_y_log10() +
+  annotation_logticks(sides = "l") +
+  labs(x = "Date", title = "Record number of genes per dataset", y = NULL))
+```
+
+```{r}
+max_cell_time <- smfish %>% 
+  filter(!is.na(`n_cells/bins/spots`)) %>% 
+  arrange(date_published) %>% 
+  mutate(record_cell = cummax(`n_cells/bins/spots`)) %>% 
+  select(date_published, record_cell) %>% 
+  distinct()
+```
+
+```{r}
+(p11b <- ggplot(max_cell_time, aes(date_published, record_cell)) +
+  geom_step() +
+  scale_y_log10() +
+  annotation_logticks(sides = "l") +
+  labs(x = "Date", title = "Record number of cells per study", y = NULL))
+```
+
+```{r}
+mean_genes <- smfish %>% 
+  group_by(date_published, title, method) %>% 
+  summarize(n_genes = mean(n_genes, na.rm = TRUE))
+```
+
+```{r}
+ggplot(mean_genes, aes(date_published, n_genes, color = method)) +
+  geom_point() +
+  geom_text_repel(aes(label = method), segment.alpha = 0.5) +
+  labs(x = "Date published", title = "Mean number of genes per study per method",
+       y = NULL) +
+  theme(legend.position = "none")
+```
+
+```{r}
+(p11c <- mean_genes %>% 
+  filter(n_genes < 1500) %>% 
+  ggplot(aes(date_published, n_genes)) +
+  geom_point(aes(color = method)) +
+  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
+  geom_smooth(method = "lm") +
+  labs(x = "Date published", title = "Mean number of genes per study per method",
+       y = NULL) +
+  theme(legend.position = "none"))
+```
+
+```{r}
+sum_cells <- smfish %>% 
+  group_by(date_published, title, method) %>% 
+  summarize(n_cells = sum(`n_cells/bins/spots`, na.rm = TRUE)) %>% 
+  filter(n_cells > 0)
+```
+
+```{r}
+ggplot(sum_cells, aes(date_published, n_cells, color = method)) +
+  geom_point() +
+  geom_text_repel(aes(label = method), segment.alpha = 0.5) +
+  labs(x = "Date published", title = "Total number of cells per study", y = NULL) +
+  theme(legend.position = "none")
+```
+
+```{r}
+sum_cells2 <- sum_cells %>% 
+  filter(n_cells < 1e5)
+(p11d <- ggplot(sum_cells2, aes(date_published, n_cells)) +
+  geom_point(aes(color = method)) +
+  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
+  geom_smooth(method = "lm") +
+  labs(x = "Date published", title = "Total number of cells per study", y = NULL) +
+  theme(legend.position = "none") +
+  coord_cartesian(ylim = c(0, max(sum_cells2$n_cells))))
+```
+
+```{r}
+summary(lm(n_cells ~ date_published, data = sum_cells2))
+```
+
+```{r}
+smfish <- smfish %>% 
+  mutate(method2 = case_when(
+    str_detect(method, "seqFISH") | method == "SGA" ~ "seqFISH and variants",
+    str_detect(method, "MERFISH") ~ "MERFISH and variants",
+    str_detect(method, "smFISH") ~ "smFISH and bDNA-smFISH",
+    TRUE ~ "Other"
+  ))
+smfish_pubs <- get_pubs_df(smfish, other_cols = "method2")
+```
+
+```{r}
+(p11e <- pubs_per_year(smfish_pubs, facet_by = "method2", sort_by = "count", 
+                       preprints = TRUE) +
+   labs(y = NULL, title = "Number of publications over time"))
+```
+
+```{r}
+city_gc2 <- geocode_inst_city(smfish_pubs)
+```
+
+```{r}
+smfish_methods <- unnest_cat(smfish, method, other_cols = "short_name")
+```
+
+```{r}
+smfish_methods_cnt <- smfish_methods %>% 
+  select(method, institution) %>% 
+  distinct() %>% 
+  count(method)
+```
+
+```{r}
+(p11f <- ggplot(smfish_methods_cnt, aes(factor(n, levels = as.character(4:1)))) +
+   geom_bar() +
+   scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
+   labs(title = "Number of institutions using a technique", y = "Number of techniques",
+        x = NULL) +
+   scale_x_discrete(drop = FALSE) +
+   coord_flip())
+```
+
+```{r}
+languages <- unnest_cat(smfish, language)
+```
+
+```{r}
+(p11g <- pubs_per_cat(languages, category = language, isotype = TRUE, n_top = 5) +
+   labs(x = NULL, title = "Programming language"))
+```
+
+```{r}
+smfish_methods2 <- smfish_methods %>% 
+  mutate(method2 = case_when(
+    str_detect(method, "seqFISH") | method == "SGA" ~ "seqFISH and variants",
+    str_detect(method, "MERFISH") ~ "MERFISH and variants",
+    str_detect(method, "bDNA") ~ "bDNA-smFISH",
+    method == "HybISS" ~ "HybISS",
+    TRUE ~ "Other"
+  )) %>% 
+  filter(method2 != "Other")
+```
+
+```{r}
+(p11h <- pubs_on_map(smfish_methods2, city_gc = city_gc2, facet_by = "method2", ncol = 4))
+```
+
+```{r, fig.width=8, fig.height=10}
+fg11 <- p11f / p11g +
+  plot_layout(heights = c(1, 2))
+(fig11 <- (p11a + p11b) /
+    (p11c + p11d) /
+    (p11e + fg11) /
+    p11h +
+    plot_layout(heights = c(1,1,2,1)) +
+    plot_annotation(tag_levels = "A"))
+```
+
+```{r}
+ggsave("fig11.png", plot = fig11, width = 12, height = 14)
+```
+
+```{r}
+iss <- read_metadata("ISS", update = TRUE)
+```
+
+```{r}
+iss_methods <- unnest_cat(iss, method)
+```
+
+```{r}
+pubs_per_cat(iss_methods, method)
+```
+
+# Figure 13
+```{r}
+array <- read_metadata("Array", update = TRUE)
+```
+
+```{r}
+array_methods <- unnest_cat(array, method, other_cols = "short_name")
+```
+
+```{r}
+fig13a <- readPNG("fig13a.png")
+fig13b <- readPNG("fig13b.png")
+```
+
+```{r}
+(p13a <- ggplot() +
+   annotation_custom(rasterGrob(fig13a, 
+                                width = unit(1,"npc"), 
+                                height = unit(1,"npc")), 
+                     -Inf, Inf, -Inf, Inf) +
+   theme_void())
+```
+
+```{r}
+(p13b <- ggplot() +
+   annotation_custom(rasterGrob(fig13b, 
+                                width = unit(1,"npc"), 
+                                height = unit(1,"npc")), 
+                     -Inf, Inf, -Inf, Inf) +
+   theme_void())
+```
+
+```{r}
+(p13c <- pubs_per_year(array_methods, facet_by = "method", n_top = 2, sort_by = "recent", 
+                      preprints = TRUE, binwidth = 90))
+```
+
+```{r}
+st_city_gc <- geocode_inst_city(array)
+```
+
+```{r}
+array_pubs <- get_pubs_df(array, other_cols = "short_name")
+```
+
+```{r}
+(p13d <- pubs_on_map(array_methods, city_gc = st_city_gc, facet_by = "method", n_top = 2, 
+                       n_label = 5, ncol = 1))
+```
+
+```{r, fig.width=6, fig.height=6}
+(fig13 <- p13c + p13d +
+    p13a + p13b +
+    plot_layout(heights = c(4, 5)) +
+    plot_annotation(tag_levels = "A"))
+```
+
+```{r}
+ggsave("fig13.png", plot = fig13, width = 12, height = 12)
+```
+
+# Figure 14
+```{r}
+nms <- c("Analysis", "Prequel analysis")
+analysis_sheets <- read_metadata(nms, update = TRUE)
+```
+
+```{r}
+nms <- c("Prequel", "Microdissection", "smFISH", "Array", "ISS", "No imaging")
+data_sheets <- read_metadata(nms, update = TRUE)
+```
+
+```{r}
+data_sheets <- data_sheets %>% 
+  mutate(era = case_when(sheet == "Prequel" ~ "prequel",
+                         TRUE ~ "current"))
+analysis_sheets <- analysis_sheets %>% 
+  mutate(era = case_when(sheet == "Prequel analysis" ~ "prequel",
+                         TRUE ~ "current"))
+```
+
+```{r}
+current <- data_sheets %>% 
+  filter(era == "current") %>% 
+  select(date_published:journal, country:year, sheet) %>% 
+  distinct()
+```
+
+```{r}
+(p14a <- era_freqpoly(analysis_sheets, era, preprints = TRUE))
+```
+
+```{r}
+all_current <- rbind(current, 
+                     analysis_sheets[analysis_sheets$sheet == "Analysis",
+                                     names(current)])
+```
+
+```{r}
+all_current <- all_current %>% 
+  mutate(type = case_when(sheet == "Analysis" ~ "analysis",
+                          TRUE ~ "data")) %>% 
+  select(-sheet) %>% 
+  distinct()
+```
+
+```{r}
+(p14b <- era_freqpoly(all_current, type, preprints = TRUE, binwidth = 120) +
+  scale_x_date(breaks = scales::breaks_pretty(10)) +
+   labs(title = "Current era"))
+```
+
+```{r}
+all_prequel <- rbind(data_sheets[data_sheets$sheet == "Prequel", names(current)],
+                     analysis_sheets[analysis_sheets$sheet == "Prequel analysis", names(current)])
+```
+
+```{r}
+all_prequel <- all_prequel %>% 
+  mutate(type = case_when(sheet == "Prequel analysis" ~ "analysis",
+                          TRUE ~ "data"))
+```
+
+```{r}
+(p14c <- era_freqpoly(all_prequel, type, preprints = TRUE, binwidth = 365) +
+  scale_x_date(breaks = scales::breaks_pretty(10)) +
+   labs(title = "Prequel era"))
+```
+
+```{r}
+analysis <- read_metadata("Analysis", update = TRUE)
+```
+
+```{r}
+category <- unnest_cat(analysis, category)
+```
+
+```{r}
+(p14d <- pubs_per_cat(category, category))
+```
+
+```{r, fig.width=4, fig.height=4}
+(p14e <- pubs_per_year(category, facet_by = "category", n_top = 4, 
+              sort_by = "recent_count", preprints = TRUE))
+```
+
+
+```{r}
+city_gc <- geocode_inst_city(analysis_sheets)
+```
+
+```{r}
+(p14f <- pubs_on_map(analysis_sheets, city_gc, facet_by = "era", ncol = 2, n_label = 5))
+```
+
+```{r, fig.width=8, fig.height=8}
+p14l <- p14a / p14b / p14c
+p14r <- wrap_elements(full = p14d) / wrap_elements(full = p14e)
+p14top <- (p14l | p14r) +
+  plot_layout(widths = c(1.2, 1))
+(fig14 <- (p14top / p14f) +
+    plot_layout(heights = c(3, 1)) +
+    plot_annotation(tag_levels = "A"))
+```
+
+```{r}
+ggsave("fig14.png", fig14, width = 13, height = 13)
+```
+
+# Figure 15
+```{r}
+# prequel sheet doesn't have programming language information anyway though it has that column
+langs <- unnest_cat(data_sheets, language)
+```
+
+```{r}
+(p15a <- pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 5) +
+  labs(title = "Users (downstream analysis)"))
+```
+
+```{r}
+analysis_langs <- unnest_cat(analysis, language, 
+                             other_cols = c("documented", "CRAN/Bioc/pip/conda"))
+```
+
+```{r}
+(p15b <- pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE) +
+  scale_y_continuous(limits = c(0, 80), expand = expansion(mult = c(0,0.01))) +
+  labs(title = "Package developers"))
+```
+
+```{r}
+(p15c <- hist_bool_line(analysis_langs, documented, facet_by = "language", 
+                        preprints = TRUE, n_top = 5) +
+  scale_x_date(date_labels = "%Y", breaks = breaks_pretty(5)) +
+   scale_color_brewer(palette = "Set1", na.value = "gray50", name = "") +
+   labs(title = "Documented"))
+```
+
+```{r}
+(p15d <- hist_bool_line(analysis_langs, `CRAN/Bioc/pip/conda`, "language", 
+                       preprints = TRUE, n_top = 5) +
+  scale_x_date(date_labels = "%Y", breaks = breaks_pretty(5)) +
+   scale_color_brewer(palette = "Set1", na.value = "gray50", name = "") +
+   labs(title = "CRAN/Bioc/pip/conda"))
+```
+
+```{r, fig.width=6, fig.height=4}
+(fig15 <- p15a + p15b + p15c + p15d +
+  plot_layout(ncol = 2, guides = "collect", byrow = FALSE) +
+  plot_annotation(tag_levels = "A") & 
+  theme(legend.position = "right"))
+```
+
+```{r}
+ggsave("fig15.png", fig15, width = 12, height = 8)
+```
+
