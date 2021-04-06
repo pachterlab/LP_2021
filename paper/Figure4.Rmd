@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-devtools::load_all("~/museumst/")
+library(museumst)
 library(tidyverse)
 library(patchwork)
 library(lubridate)

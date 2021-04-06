@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Code to make Figure 1
 ```{r}
-devtools::load_all("~/museumst/")
+library(museumst)
 library(patchwork)
 library(ggplot2)
 ```

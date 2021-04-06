@@ -10,10 +10,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-devtools::load_all("~/museumst/")
+library(museumst)
 library(tidyverse)
 library(patchwork)
 library(gganatogram)
+library(ggrepel)
+library(scales)
 theme_set(theme_bw())
 ```
 
@@ -61,7 +63,7 @@ mean_genes <- smfish %>%
 
 ```{r}
 (p3c <- mean_genes %>% 
-  filter(n_genes < 1500) %>% 
+  filter(n_genes < 2000) %>% 
   ggplot(aes(date_published, n_genes)) +
   geom_point(aes(color = method)) +
   geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
@@ -79,15 +81,13 @@ sum_cells <- smfish %>%
 ```
 
 ```{r}
-sum_cells2 <- sum_cells %>% 
-  filter(n_cells < 1e5)
-(p3d <- ggplot(sum_cells2, aes(date_published, n_cells)) +
+(p3d <- ggplot(sum_cells, aes(date_published, n_cells)) +
   geom_point(aes(color = method)) +
   geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
   geom_smooth(method = "lm") +
   labs(x = "Date published", title = "Total number of cells per study", y = NULL) +
   theme(legend.position = "none") +
-  coord_cartesian(ylim = c(0, max(sum_cells2$n_cells))))
+  coord_cartesian(ylim = c(0, max(sum_cells$n_cells))))
 ```
 
 ```{r}
@@ -227,7 +227,7 @@ analysis <- read_metadata("Analysis", update = TRUE)
 ```
 
 ```{r}
-langs %>% 
+lang_counts <- langs %>% 
   count(language) %>% 
   arrange(desc(n))
 ```
@@ -235,12 +235,13 @@ langs %>%
 ```{r}
 analysis_langs <- unnest_cat(analysis, language, 
                              other_cols = c("documented", "CRAN/Bioc/pip/conda"))
+max_x <- max(lang_counts$n)
 ```
 
 ```{r}
 (p3k <- pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE, img_unit = 10) +
-  scale_y_continuous(limits = c(0, 99), 
-                     breaks = seq(0, 100, by = 20),
+  scale_y_continuous(limits = c(0, max_x), 
+                     breaks = seq(0, max_x, by = 20),
                      expand = expansion(mult = c(0, 0.05))) +
   labs(title = "Package developers"))
 ```
