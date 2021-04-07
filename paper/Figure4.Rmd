@@ -1,7 +1,7 @@
 ---
 title: "Figure 4"
 author: "Lambda Moses"
-date: "11/19/2020"
+date: "04/06/2021"
 output: html_document
 ---
 
@@ -55,8 +55,7 @@ all_current <- all_current %>%
 (p4a <- era_freqpoly(all_current, Type, preprints = TRUE, binwidth = 120) +
    scale_y_continuous(expand = expansion(c(0, 0.05))) +
    scale_x_date(breaks = seq(ymd("2001-01-01"), ymd("2022-01-01"), by = "2 years"), 
-                limits = c(ymd("2001-01-01"), ymd("2022-01-01")),
-                expand = expansion(0),
+                expand = expansion(c(0,0.05)),
                 date_labels = "%Y"))
 ```
 
@@ -72,14 +71,13 @@ data("sheet_fill")
 (p4b <- pubs %>% 
    mutate(sheet = fct_infreq(sheet)) %>% 
    ggplot() +
-   geom_area(aes(x = date_published, y = ..count.., fill = sheet), 
+   geom_area(aes(x = date_published, y = after_stat(count), fill = sheet), 
              stat = "bin", color = "gray", size = 0.5, binwidth = 120, 
              position = "stack") +
    scale_fill_manual(values = sheet_fill, name = "Category") +
    scale_y_continuous(expand = expansion(c(0, 0.05))) +
    scale_x_date(breaks = seq(ymd("2001-01-01"), ymd("2022-01-01"), by = "2 years"), 
-                limits = c(ymd("2001-01-01"), ymd("2022-01-01")),
-                expand = expansion(0),
+                expand = expansion(c(0,0.05)),
                 date_labels = "%Y") +
    labs(x = "Date published", y = "Number of publications"))
 ```
