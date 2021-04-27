@@ -305,7 +305,7 @@ The first principal component (PC) explains over 5% of the variance, and then th
 
 Words more positive in PC1 are often gene names, parts of gene names, or acronyms, and names of specific biological entities or processes. In contrast, words more negative in PC1 tend to be more general and more widely used. PC2 separates the technical (clusters 2 and 7, top) from the biological (clusters 1, 4 to 6) (Figure \@ref(fig:pc12)). As expected, "cancer", "tumor", and "disease" are not far from each other (bottom left), and "malignant" and "invasive" are close (bottom center). PC1 explains more variance than all other PCs; though it's only 5.5%, it picked up a very important dimension in word meanings in this corpus. PCs are arranged in decreasing order of variance explained.
 
-
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that when this plot is made on different computers, the signs of PCs might flip, because the sign does not affect the magnitude of the eigenvalue (i.e. variance explained). PCs are eigenvectors of the covariance matrix of the GloVe dimensions; an eigenvector multiplied by a scalar is still an eigenvector with the same eigenvalue. </div>\EndKnitrBlock{rmdnote}
 
 
 

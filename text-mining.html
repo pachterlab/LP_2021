@@ -426,6 +426,11 @@ Figure 6.14: Projection of word embeddings into the first 2 PCs. Each point is a
 </p>
 </div>
 <p>Words more positive in PC1 are often gene names, parts of gene names, or acronyms, and names of specific biological entities or processes. In contrast, words more negative in PC1 tend to be more general and more widely used. PC2 separates the technical (clusters 2 and 7, top) from the biological (clusters 1, 4 to 6) (Figure <a href="text-mining.html#fig:pc12">6.14</a>). As expected, “cancer”, “tumor”, and “disease” are not far from each other (bottom left), and “malignant” and “invasive” are close (bottom center). PC1 explains more variance than all other PCs; though it’s only 5.5%, it picked up a very important dimension in word meanings in this corpus. PCs are arranged in decreasing order of variance explained.</p>
+
+<div class="rmdnote">
+Note that when this plot is made on different computers, the signs of PCs might flip, because the sign does not affect the magnitude of the eigenvalue (i.e. variance explained). PCs are eigenvectors of the covariance matrix of the GloVe dimensions; an eigenvector multiplied by a scalar is still an eigenvector with the same eigenvalue.
+</div>
+
 <div class="figure" style="text-align: center"><span id="fig:pc34"></span>
 <img src="06-text-mining_files/figure-html/pc34-1.png" alt="Projection of word embeddings into the 3rd and 4th PCs." width="864" />
 <p class="caption">
