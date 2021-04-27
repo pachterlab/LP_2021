@@ -15,8 +15,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports:
     BiocManager,
-    bluster,
     bookdown,
+    bluster,
+    gganatogram,
     ggraph,
     ggrepel,
     grid,
@@ -27,6 +28,7 @@ Imports:
     kableExtra,
     lubridate,
     Matrix.utils,
+    museumst,
     patchwork,
     quanteda,
     scales,
@@ -40,6 +42,7 @@ Imports:
     uwot,
     xfun
 Remotes:
-    pachterlab/museumst,
-    jespermaag/gganatogram
+    github::pachterlab/museumst,
+    github::jespermaag/gganatogram,
+    bioc::release/bluster
     

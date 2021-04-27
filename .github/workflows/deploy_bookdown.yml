@@ -18,7 +18,7 @@ jobs:
       - name: Install rmarkdown
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
       - name: Install dependencies
-        run: Rscript -e 'install.packages("devtools"); devtools::install_deps(dependencies = TRUE, pkg = "supplement/"); BiocManager::install("bluster")'
+        run: Rscript -e 'install.packages("remotes"); remotes::install_deps(pkg = "supplement/", dependencies = TRUE)'
       - name: Render Book
         run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd"))'
       - uses: actions/upload-artifact@v1
