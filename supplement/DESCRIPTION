@@ -48,7 +48,8 @@ Imports:
     tidyverse,
     urbnmapr,
     uwot,
-    xfun
+    xfun,
+    XML
 Remotes:
     github::pachterlab/museumst,
     github::jespermaag/gganatogram,
