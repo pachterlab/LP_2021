@@ -23,7 +23,7 @@ jobs:
         run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd"))'
       - uses: actions/upload-artifact@v1
         with:
-          name: _book
+          name: _site
           path: supplement/_book/
 
 # Need to first create an empty gh-pages branch
@@ -40,7 +40,7 @@ jobs:
        uses: actions/download-artifact@v1.0.0
        with:
          # Artifact name
-         name: _book # optional
+         name: _site # optional
          # Destination path
          path: supplement/_book # optional
      - name: Deploy to GitHub Pages
@@ -48,6 +48,6 @@ jobs:
        env:
           EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
           GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
-          BUILD_DIR: _book/                     # "_site/" by default
+          BUILD_DIR: _site/                     # "_site/" by default
 
 
