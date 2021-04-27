@@ -14,23 +14,30 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports:
-    BiocManager,
     bookdown,
+    broom,
     bluster,
     gganatogram,
     ggraph,
     ggrepel,
+    ggtextures,
     grid,
     gridExtra,
+    gridtext,
     gtable,
     here,
+    hexbin,
     igraph,
     kableExtra,
     lubridate,
+    magick,
     Matrix.utils,
     museumst,
     patchwork,
     quanteda,
+    rgeos,
+    rnaturalearthdata,
+    rnaturalearth,
     scales,
     sf,
     stm,
@@ -39,10 +46,13 @@ Imports:
     tidygraph,
     tidytext,
     tidyverse,
+    urbnmapr,
     uwot,
     xfun
 Remotes:
     github::pachterlab/museumst,
     github::jespermaag/gganatogram,
+    github::clauswilke/ggtextures,
+    github::UrbanInstitute/urbnmapr,
     bioc::release/bluster
     
