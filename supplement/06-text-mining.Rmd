@@ -624,7 +624,7 @@ ac_vectors <- ac_gv + t(ac_context)
 ```
 
 ```{r}
-wf <- textstat_frequency(lcm_dfm2)
+wf <- quanteda::textstat_frequency(lcm_dfm2)
 words_plot <- wf$feature[wf$frequency > 30]
 ```
 
