@@ -13,7 +13,7 @@ Code to make Figure 1
 ```{r}
 library(museumst)
 library(patchwork)
-library(ggplot2)
+library(tidyverse)
 ```
 
 ```{r}
