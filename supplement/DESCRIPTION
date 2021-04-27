@@ -1,13 +1,13 @@
 Package: museumst_catalogue
 Title: museumst book
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Lambda",
            family = "Moses",
            role = c("aut", "cre"),
            email = "dlu2@caltech.edu",
            comment = c(ORCID = "0000-0002-7092-9427"))
-Description: museumst book
+Description: Not a package, just packages used to render the book.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -38,7 +38,8 @@ Imports:
     tidygraph,
     tidytext,
     tidyverse,
-    uwot
+    uwot,
+    xfun
 Remotes:
     pachterlab/museumst
     
