@@ -1,0 +1,365 @@
+# (PART) Current era {.unnumbered}
+
+# From the past to the present {#current}
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.keep = "all",
+                      message = FALSE, warning = FALSE,
+                      fig.align = "center")
+if (knitr::is_html_output() || interactive()) {
+  out_format <- "html"
+} else {
+  out_format <- "latex"
+}
+library(museumst)
+library(tidyverse)
+library(lubridate)
+library(sf)
+library(scales)
+library(patchwork)
+library(ggrepel)
+library(gganatogram)
+library(kableExtra)
+library(here)
+theme_set(theme_bw())
+```
+
+The current era continues many of the quests of the prequel era, such as to profile the transcriptome in space, to identify genes with restricted expression, to classify gene expression patterns, to build reference gene expression atlases for model systems, and to infer anatomical regions based on gene expression. While the prequel era also sought to identify cell type markers, this has been taken over by non-spatial transcriptomics, which has been used to identify marker genes to stain for with spatial transcriptomics methods not easily scalable to the whole transcriptome. As already mentioned, (WM)ISH atlases can be understood as an improved alternative to microarray and *in situ* reporter screens, and the latter can be in turn understood as an improved alternative to enhancer and gene traps. To some extent, current era spatial transcriptomics started as an improved alternative to (WM)ISH atlases, to profile the whole transcriptome in the same cells [@Junker2014; @Lee2014]. On the other hand, part of current era of spatial transcriptomics can be seen as an improvement to bulk microarray or RNA-seq [@Brown2002; @Junker2014; @Stahl2016a; @Luo1999], and lower throughput single cell biology [@Lubeck2012; @Chen2015].
+
+```{r}
+nms <- c("Prequel", "Microdissection", "smFISH", "Array", "ISS", "No imaging")
+data_sheets <- read_metadata(nms, update = TRUE)
+```
+
+```{r}
+data_sheets <- data_sheets %>% 
+  mutate(era = case_when(sheet == "Prequel" ~ "prequel",
+                         TRUE ~ "current"))
+```
+
+```{r}
+methods_current <- data_sheets %>% 
+  select(title, date_published, method, sheet, era, institution) %>% 
+  filter(!is.na(method), era == "current") %>% 
+  distinct()
+```
+
+```{r}
+nms2 <- c("Microdissection", "smFISH", "Array", "ISS")
+df_ncells <- read_metadata(nms2, update = TRUE)
+```
+
+```{r}
+table1 <- methods_current %>% 
+  group_by(method) %>% 
+  summarize(
+    first_published = min(date_published),
+    category = unique(sheet)
+  )
+```
+
+```{r}
+n_genes <- df_ncells %>% 
+  group_by(method) %>% 
+  summarize(max_n_genes = max(n_genes, na.rm = TRUE)) %>% 
+  mutate(max_n_genes = case_when(max_n_genes < 1 ~ NA_real_,
+                                 TRUE ~ max_n_genes))
+```
+
+```{r}
+df_spots <- read_metadata("Array", update = TRUE)
+```
+
+```{r}
+spot_diams <- df_spots %>% 
+  group_by(method) %>% 
+  summarize(min_spot_diam = min(spot_diameter_um, na.rm = TRUE))
+```
+
+```{r}
+table1 <- table1 %>% 
+  left_join(n_genes, by = "method")
+table1 <- table1 %>% 
+  left_join(spot_diams, by = "method")
+table1 <- table1 %>% 
+  filter(!method %in% c("LCM", "manual dissection", "aspiration", "smFISH"))
+table1 <- table1 %>% 
+  mutate(min_spot_diam = as.character(min_spot_diam),
+         min_spot_diam = case_when(
+           !is.na(min_spot_diam) ~ min_spot_diam,
+           category %in% c("smFISH", "ISS") ~ "single cell",
+           TRUE ~ NA_character_
+         ))
+table1 <- table1 %>% 
+  mutate(max_n_genes = as.character(max_n_genes),
+         max_n_genes = case_when(
+           !is.na(max_n_genes) ~ max_n_genes,
+           category %in% c("Microdissection", "Array") ~ "Tx wide",
+           TRUE ~ NA_character_
+         ))
+```
+
+```{r}
+table1 <- table1 %>% 
+  arrange(first_published) %>% 
+  mutate(first_published = as.character(first_published))
+```
+
+```{r}
+names(table1) <- c("Method", "First published", "Category",
+                   "Max \\# genes", "Min spot diameter ($\\mu$m)")
+if (knitr::is_html_output() || interactive()) {
+  names(table1)[4] <- "Max # genes"
+}
+```
+
+```{r table1}
+knitr::kable(table1, format = out_format, escape = FALSE,
+             booktabs = knitr::is_latex_output(),
+             longtable = knitr::is_latex_output(),
+             caption = "Summary of spatial transcriptomics techniques in the current era") %>% 
+  kable_styling(latex_options = c("striped", "repeat_header")) %>% 
+  column_spec(1:5, c("6em", "5em", "8em", "5em", "5em"))
+  #%>% kable_material_dark() 
+# On RStudio Cloud, uncomment the above line of code to show this table in dark theme.
+```
+
+The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure \@ref(fig:topics), Chapter \@ref(text-mining). Because the search results---without manual inspection and curation---may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.
+
+```{r}
+publications <- get_pubs_df(data_sheets, "era")
+```
+
+```{r}
+current <- data_sheets %>% 
+  filter(era == "current") %>% 
+  select(date_published:journal, country:year, sheet) %>% 
+  distinct()
+```
+
+```{r current-hist, fig.width=6, fig.height=6, fig.cap="Number of publications over time in the current era. The gray histogram in the background is the overall trend of all current era literature. Each facet highlights a category, ordered chronologically in terms of first report. Bin width is 365 days. Plots in this figure include curated LCM literature, but not the non-curated literature."}
+pubs_per_year(current, facet_by = "sheet") +
+   scale_x_date(date_breaks = "2 years", date_labels = "%Y",
+                expand = expansion(c(0.05, 0)))
+```
+
+Chronologically, in the curated database, microdissection came first, with voxelation in 2002 [@Brown2002], followed by smFISH, ISS, no imaging, and array (Figure \@ref(fig:current-hist)). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure \@ref(fig:current-vs-prequel)). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure \@ref(fig:current-vs-prequel)). Growth in microdissection and array seemed to have contributed the most to this overall drastic growth (Figure \@ref(fig:current-hist)). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table \@ref(tab:table1). A timeline of major techniques in the current era is shown in Figure \@ref(fig:tl3).
+
+```{r current-vs-prequel, fig.width=7, fig.height=4, fig.cap="Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days. Note that the number is lower in 2021 because this figure was rendered in April 2021."}
+era_freqpoly(publications, era, preprints = TRUE) +
+   scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
+   scale_y_continuous(expand = expansion(c(0, 0.05))) +
+   theme(legend.position = "none") +
+   geom_text(data = tibble(era = c("current", "prequel"),
+                           x = ymd(c("2017-01-01", "2000-01-01")),
+                           y = c(30, 15)),
+             aes(x = x, y = y, label = era, color = era), show.legend = FALSE)
+```
+
+```{r}
+events <- read_major_events(update = TRUE)
+```
+
+```{r tl3, fig.width=10, fig.height=4, fig.cap="Timeline of major techniques related to the current era."}
+events %>% 
+    filter(category == "technique2") %>% 
+    plot_timeline(c(-0.5, 1, -1, 0.5, 0.7, -0.7, -0.5, 0.5, -0.5, 0.6, 
+                    1, -0.6, 0.3, -1), 
+                  expand_y = c(0,0), expand_x = c(0.1,0.1),
+                  include_refs = FALSE) +
+    theme(legend.position = "bottom")
+```
+
+The prequel era started with untargeted screens and grew into atlases and databases striving to be comprehensive. Screens are still a theme in the current era and spatial transcriptomics is still used in untargeted searches for genes involved in development of model organisms, but with highly multiplexed technology, this can also be done for pathological and human tissues (Figure \@ref(fig:species-pie), Figure \@ref(fig:hg-anat)). Thanks to multiplexing, while mouse was the most popular species in the prequel era, in the current era, there are almost as many studies on human tissues as those on mice and the vast majority of studies are on either humans or mice (Figure \@ref(fig:species-pie)). *Drosophila* is no longer as commonly used in the current era (Figure \@ref(fig:species-pie)), perhaps because any current era technique requiring tissue sectioning is less amenable to *Drosophila* embryos, making Tomo-seq along one body axis the only technique that has been demonstrated to be amenable [@Combs2013; @Combs2018]. Whole mount smFISH protocols exist for *Drosophila* brains [@Long2017], zebrafish embryos [@Oka2015], and embryonic mouse organs [@Wang2019], but to our best knowledge, highly multiplexed smFISH and ISS have not been adapted to whole mount samples, although they have been adapted to thick slices of cleared tissue [@Wang2018b; @Wang2021]. For *Drosophila* tissue sections, while microdissection, smFISH, and ISS may be applied, the resolution of ST and Visium may be too low to discern sufficiently fine patterns in such a small model organism.
+
+```{r}
+species <- data_sheets %>%
+  filter(era == "current", !is.na(species)) %>% 
+  unnest_cat(species)
+```
+
+```{r}
+data("species_cols")
+```
+
+```{r}
+species_pie <- species %>% 
+  mutate(species = fct_lump(species, 5)) %>% 
+  count(species) %>% 
+  mutate(species = fct_reorder(species, n, .desc = TRUE) %>% 
+           fct_relevel("Other", after = Inf)) %>% 
+  arrange(desc(species)) %>% 
+  mutate(label = paste("italic('", species, "')", "~(", n, ")"))
+```
+
+```{r species-pie, fig.width=5, fig.height=4, fig.cap="Number of publication per species."}
+ggplot(species_pie, aes(x = "", y = n, fill = species)) +
+   geom_col(position = "stack", color = "gray50", size = 0.3, show.legend = FALSE,
+            width = 1) +
+   geom_text_repel(aes(x = 1.5, label = label), parse = TRUE, segment.size = 0,
+                   position = position_stack(vjust = 0.5)) +
+   coord_polar(theta = "y") +
+   scale_fill_manual(values = species_cols) +
+   scale_y_continuous(breaks = species_pie$y_label, labels = species_pie$label) +
+   scale_x_discrete(expand = expansion(0.1)) +
+   theme_void()
+```
+
+```{r}
+data("hgFemale_key")
+data("mmFemale_key")
+data("hgMale_key")
+```
+
+```{r}
+organs <- data_sheets %>% 
+  filter(era == "current") %>% 
+  select(date_published:journal, country:year, species, sheet, 
+         organ, pathological) %>% 
+  distinct()
+organs <- organs %>% 
+  filter(species %in% c("Mus musculus", "Homo sapiens")) %>% 
+  unnest_cat(organ, other_cols = c("species", "pathological")) %>% 
+  filter(!is.na(organ))
+```
+
+```{r}
+organs_hg_f <- organs %>% 
+  filter(species == "Homo sapiens") %>% 
+  inner_join(hgFemale_key[, c("organ", "type")], by = "organ") %>% 
+  count(organ, type, pathological, name = "value")
+```
+
+```{r}
+organs_mm_f <- organs %>% 
+  filter(species == "Mus musculus") %>% 
+  inner_join(mmFemale_key[, c("organ", "type")], by = "organ") %>% 
+  count(organ, type, pathological, name = "value")
+```
+
+```{r}
+organs_hg_m <- organs %>% 
+  filter(species == "Homo sapiens") %>% 
+  inner_join(hgMale_key[, c("organ", "type")], by = "organ") %>% 
+  count(organ, type, pathological, name = "value")
+```
+
+```{r}
+limits_use <- range(c(organs_hg_f$value[!organs_hg_f$pathological], 
+                      organs_mm_f$value[!organs_mm_f$pathological]))
+```
+
+```{r}
+p3f <- organs_hg_m %>% 
+   filter(!pathological) %>% 
+   gganatogram(organism = "human", sex = "male", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Blues", direction = 1, 
+                        name = "# publications\n(healthy)",
+                        limits = limits_use)
+```
+
+```{r}
+limits_use2 <- range(c(organs_hg_f$value[organs_hg_f$pathological],
+                       organs_mm_f$value[organs_mm_f$pathological]))
+```
+
+```{r}
+p3g <- organs_hg_f %>% 
+   filter(pathological) %>% 
+   gganatogram(organism = "human", sex = "female", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Reds", direction = 1, 
+                        name = "# publications\n(pathological)", 
+                        limits = limits_use2, breaks = breaks_width(2))
+```
+
+(ref:hg-anat-cat) A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer [@Burgess2019; @Brady2021]).
+
+```{r hg-anat, fig.width=8, fig.height=6, fig.cap="(ref:hg-anat-cat)"}
+p3f + p3g +
+    plot_annotation(tag_levels = "A")
+```
+
+While atlases have so far not been in the center of the stage, some atlases have been made with current era technology, such as MERFISH [@Zhang2020], HybISS [@Manno2020], and ST [@Ortiz2020], described with similar language to that of (WM)ISH atlases. Also as in the prequel era, the brain is still the most favored organ (Figure \@ref(fig:hg-anat), Figure \@ref(fig:mm-anat)). Among pathological tissues, breast tumors are the most used (Figure \@ref(fig:hg-anat)). More recently, in the wake of the SARS-CoV-2 pandemic, a number of studies using GeoMX Digital Spatial Profiler (DSP) to profile spatial transcriptomes of lungs of COVID victims have been published [@Park2021; @Butler2021; @Delorey2021; @Margaroli2021].
+
+```{r}
+p3h <- organs_mm_f %>% 
+   filter(!pathological) %>% 
+   gganatogram(organism = "mouse", sex = "female", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Blues", direction = 1, name = "# publications\n(healthy)",
+                        limits = limits_use)
+```
+
+```{r}
+p3i <- organs_mm_f %>% 
+   filter(pathological) %>% 
+   gganatogram(organism = "mouse", sex = "female", fill = "value") +
+   coord_equal() +
+   theme_void() +
+   scale_fill_distiller(palette = "Reds", direction = 1, name = "# publications\n(pathological)",
+                        limits = limits_use2, breaks = breaks_width(2))
+```
+
+```{r mm-anat, fig.width=8, fig.height=6, fig.cap="A) Number of publications per healthy organ in the mouse. B) Number of publications for pathological organs in mouse."}
+p3h + p3i +
+    plot_annotation(tag_levels = "A")
+```
+
+However, unlike in the prequel era, in which older technologies were adapted to larger scale to produce the screens and atlases, the current era has another major theme -- new techniques, due to the challenges to be discussed in the following sections; the number of new techniques published each year has grown steadily in the past few years (Figure \@ref(fig:n-insts)). However, this difference might be due to bias in curation and change in culture. In the prequel era, very different enhancer and gene trap vectors were lumped together into enhancer or gene trap in our database, and there might have been many different early non-radioactive ISH protocols not included in our database because they were not used to profile a sufficiently large number of genes. Furthermore, in the current era, authors like to give techniques new names, making related techniques seem distinct rather than lumped together in a wider category like enhancer or gene trap. While a few techniques other than LCM have become somewhat popular, such as ISS (2013), Tomo-seq (2013), MERFISH (2015), ST (late 2016), GeoMX DSP (2019), and Visium (first preprint in 2020), most techniques never or rarely spread beyond their institutions of origin (Figure \@ref(fig:n-insts)).
+
+```{r n-insts, fig.width=6, fig.height=3, fig.cap="Techniques used by at least 3 institutions and the number of institutions that have used them."}
+methods_current %>% 
+   select(institution, method) %>% 
+   distinct() %>% 
+   mutate(method = fct_lump_min(method, 3)) %>% 
+   filter(!method %in% c("LCM", "Other")) %>% 
+   pubs_per_cat(method) +
+   labs(y = "Number of institutions using the method")
+```
+
+```{r}
+n_insts <- methods_current %>% 
+  select(institution, method) %>% 
+  distinct() %>% 
+  count(method)
+```
+
+```{r}
+new_methods <- methods_current %>% 
+  group_by(method) %>% 
+  top_n(1, desc(date_published))
+new_methods <- new_methods %>% 
+  left_join(n_insts, by = "method")
+```
+
+```{r}
+labeled <- as.character(c(1, 5, 10, 15, 20))
+labels_use <- as.character(1:22)
+labels_use[!labels_use %in% labeled] <- ""
+```
+
+```{r n-insts-hist, fig.height=4, fig.width=6, fig.cap="Number of new methods per year, colored by the number of institutions that have used the method."}
+new_methods %>% 
+   filter(method != "LCM") %>% 
+   pubs_per_year(preprints = TRUE, fill_by = "n") +
+   labs(y = "Number of new methods", x = "Date first published",
+        fill = "Number of\ninstitutions")
+```
+
+Furthermore, especially in the US, research in the current era tends to be more concentrated in a few elite institutions, while research in the prequel era tends to be more spread out to some less well-known institutions (Figure \@ref(fig:current-world)). Among the top contributing institutions in the prequel era are those hosting databases, such as Allen Institute for ABA, University of Oregon (UO) for ZFIN, UC Berkeley and Lawrence Berkeley National Laboratory (LBL) for BDGP, University of Arizona (UofA) for GEISHA, Jackson Laboratory (JAX) for GXD, Western General Hospital (WGH) for EMAGE, and Kyoto University (Kyodai) for GHOST (Figure \@ref(fig:current-world)).
+
+```{r}
+city_gc <- geocode_inst_city(publications, cache_location = here())
+pubs_on_map2 <- partial(pubs_on_map, city_gc = city_gc)
+```
+
+```{r current-world, fig.width=8, fig.height=8, fig.cap="World map of institutions. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled."}
+pubs_on_map2(data_sheets, zoom = "world", 
+             facet_by = "era", ncol = 1, label_insts = TRUE,
+             label_cities = FALSE)
+```

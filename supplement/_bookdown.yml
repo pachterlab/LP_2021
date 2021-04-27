@@ -1,0 +1,6 @@
+book_filename: "museumst"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+new_session: yes

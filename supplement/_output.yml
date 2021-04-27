@@ -1,0 +1,36 @@
+bookdown::gitbook:
+  split_by: chapter
+  css: style.css
+  config:
+    toc:
+      collapse: subsection
+      scroll_highlight: yes
+      before: |
+        <li><a href="./">Museum of Spatial Transcriptomics</a></li>
+      after: |
+        <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+    toolbar:
+      position: fixed
+    edit : null
+    #download: "pdf"
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: no
+      github: yes
+      twitter: yes
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
+    info: yes
+bookdown::pdf_book:
+  latex_engine: xelatex
+  keep_tex: yes
+  includes:
+    in_header: preamble.tex
+    

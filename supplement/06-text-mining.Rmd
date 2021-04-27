@@ -1,0 +1,748 @@
+# Text mining LCM transcriptomics abstracts {#text-mining}
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.keep = "all",
+                      message = FALSE, warning = FALSE,
+                      fig.align = "center")
+library(museumst)
+library(tidyverse)
+library(lubridate)
+library(tidytext)
+library(sf)
+library(stm)
+library(stminsights)
+library(scales)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+library(bluster)
+library(uwot)
+library(quanteda)
+library(text2vec)
+library(here)
+library(gtable)
+library(grid)
+library(gridExtra)
+library(ggrepel)
+library(rnaturalearth)
+theme_set(theme_bw())
+```
+
+To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term `"((laser capture microdissection) OR (laser microdissection)) AND ((microarray) OR (transcriptome) OR (RNA-seq))"`. For preprints, abstracts from the search term "laser microdissection" were downloaded from bioRxiv. Because bioRiv's advanced search does not acknowledge parentheses, a more complicated search term was not used. Upon random inspection, the retrieved abstracts mostly seem relevant. The number of LCM transcriptomics search results dwarfs the number of publications for other methods of spatial transcriptomics and seems to show two peaks, one around 2012, and the other in 2020 and 2021 (Figure \@ref(fig:lcm-year)); the LCM corpus contains 2252 abstracts as of March 26, 2021, while there are between 500 and 600 papers in the curated database.
+
+```{r}
+data("lcm_abstracts")
+data("lcm_city_gc")
+data("stm_res")
+data("lcm_dfm2")
+```
+
+```{r lcm-year, fig.width=7, fig.height=4, fig.cap="Number of publications in LCM transcriptomics PubMed search results over time. Bin width is 365 days."}
+pubs_per_year(lcm_abstracts, binwidth = 365)
+```
+
+LCM transcriptomics is also more geographically diffuse and spread out into many less well-known institutions and some developing countries, though some elite institutions are among the top contributors, such as Harvard Medical School and Massachusetts General Hospital (Boston), Columbia University, NYU, Rockefeller, and Sloan-Kettering (New York), NIH (Bethesda), and Cambridge University (Cambridge, UK) (Figure 8B). 
+
+```{r lcm-map, fig.width=12, fig.height=7, fig.cap="Geographic distribution of LCM transcriptomics research, with top 10 cities labeled. Number of publications is binned over longitude and latitude."}
+pubs_on_map(lcm_abstracts, lcm_city_gc, plot = "hexbin", label_cities = TRUE) +
+  theme(legend.position = "top")
+```
+
+After identifying common and relevant phrases in the abstracts, the abstracts were tokenized into unigrams. We used the `stm` R package [@Roberts2019] to identify topics. The cities in which the research was conducted, date published or posted on bioRxiv (linear, not transformed), and journal (including bioRxiv) were used as covariates for topic prevalence, because labs and journals may have preferred topics and city is a proxy to institution, and it's reasonable to assume that prevalence of at least some topic changes through time, such as due to evolution of technology. Cities and journals with fewer than 5 papers were lumped into "Other". From a trade off between held out likelihood and residual, and between topic exclusivity and semantic coherence, we chose 50 topics. Code used to find this can be found [here](https://github.com/pachterlab/museumst/blob/master/data-raw/lcm_text_mining.Rmd).
+
+Here `stm` stands for structural text mining. A generative model of word counts is fitted with the word counts in each abstract as well as abstract level covariates, here date, city, and journal. Among parameters of the model estimated are the proportion of each topic in each abstract after accounting for covariates ($\theta$), topic proportions in the corpus ($\gamma$), and probability of getting each word from each topic ($\beta$). See the [`stm` vignette](https://cran.r-project.org/web/packages/stm/vignettes/stmVignette.pdf) for more details. `stm` can not only detect topics without having a human read all the abstracts, but also find how covariates relate to topic prevalence.
+
+## Topic modeling {#topic-model}
+As already mentioned, microarray was first demonstrated on LCM samples in 1999, profiling 477 cDNAs from rat neurons [@Luo1999]. Since then, LCM transcriptomics has been used on many research topics, such as various aspects of cancer (topics 5, 6, 8, 10, 11, 13, 16, 20, 24, 27, 34, 44, 50), botany (topics 9, 15, 21, 40, 43, 45), developmental biology (topics 1, 3, 17, 18, 29, 35, 39), neuroscience (topics 7, 14, 19, 23, 25, 32, 33, 36, 47), immunology (topic 12, 22, 48), miRNA (topic 5), and technical issues related to LCM (topics 4, 28, 37, 41) (Figure \@ref(fig:topics)).
+
+```{r topics, fig.width=8, fig.height=10, fig.cap="Top words for each of the 50 topics, ordered by expected topic prevalence and showing top 5 words contributing to each topic."}
+plot_topic_prop(stm_res, x_max = 0.08)
+```
+
+In most cases, the top 5 words in each topic give us a decent idea what the topic is about. We can also plot the probability to get top words ($\beta$) in each topic. 
+```{r topic-words, fig.width=12, fig.height=15, fig.cap="Probability of top 10 words in each topic."}
+plot_topic_words(stm_res)
+```
+
+While in most cases, the topic is apparent from the top words, some topics are less apparent (e.g. topic 49). From the top words and quick glances of abstracts with the highest proportion of each topic, the 50 topics are summarized here in more human readable terms:
+
+1. Stem cell and fetal development
+2. GWAS, genetic screens, and genetics of complex phenotypes
+3. Biomechanics, ECM, eye lens, muscles, and morphogenesis
+4. Data analysis, especially of RNA-seq, but also of 3D genome structure and microarray
+5. miRNAs in cancer
+6. Quantitative analyses of cancer, clinical and bioinformatic
+7. Hippocampus and Alzheimer's disease, sometimes related to Down syndrome
+8. Prostate cancer and other stuff in molecular biology and biochemistry, probably because some prostate cancer papers have an emphasis on molecular biology
+9. Plant embryos, plant development, and some stuff about evolution and ecology related to plants
+10. Proteomics, especially in cancer
+11. Cancer progression and diagnostics, especially lung cancer
+12. Inflammation and immunology, especially in skin diseases
+13. Breast cancer and liver cancer, with an emphasis in data analysis
+14. Neural circuitry, neural plasticity, brain injury, and behavior
+15. Plant gamitogenesis and reproduction
+16. Spasmolytic polypeptide-expressing metaplasia (SPEM), oncogenes, KRAS
+17. Endometrium and implantation. Somehow the top 2 entries are about hearing loss. Why? Epithelium?
+18. Cell cycle, also hepatic zonation and circadian rhythm (the latter is also a cycle)
+19. Neurons, especially dopaminergic
+20. Tumor stroma and microenvironment
+21. Plant roots
+22. Intestine, especially microbiome and immune response
+23. Hypothalamus, obesity, and appetite
+24. PDAC, and some stuff about glioma and prostate cancer
+25. ALS, and other neurodegenerative diseases affecting motor neurons
+26. Epigenetics
+27. Tumor single cell profiling and cellular heterogeneity
+28. Tissue isolation and preparation
+29. Bone growth plate, especially recovery after radiotherapy, and some other stuff like oocytes, glaucoma, and epithelial injury
+30. Pancreas and diabetes, especially T2D
+31. Lymphocytes, lymphatic and blood vessels
+32. Prefrontal cortex and schizophrenia
+33. Synapses, dendritic spines, neuron potentiation, sometimes related to memory
+34. Cancer genomics, mutations, and phylogeny
+35. Bone formation, but also some other stuff about cancer and kidneys
+36. Neurodegenerative diseases, Alzheimer's, Parkinson's, and multiple system atrophy
+37. Spatial single cell techniques and imaging
+38. Connective tissues and ECM, and some other stuff about circadian rhythms
+39. Stem cells and development
+40. Plant seed development and reproduction
+41. RNA extraction and amplification, especially in microarray, but also in RNA-seq
+42. Lots of different stuff about epithelium
+43. Plant leaves, but also other stuff about gamitogenesis
+44. Cancer pathway analyses and molecular and cellular mechanisms
+45. Plant nitrogen fixation and soil microbiome
+46. Lots of different stuff related to fibrosis and fibroblasts, such as in lung diseases and graft rejection
+47. Neuron morphogenesis, axon guidance, somehow also angiogenesis, protein signaling
+48. Inflammation, immune response, especially in atherosclerosis, though there's some other stuff about blood vessels
+49. Model organisms and in vitro model systems
+50. Intrahepatic cholangiocarcinoma (ICC)
+
+Some of them might not really be related to LCM (e.g. GWAS), and some seem to be a mixture of different topics recognized by humans but seemingly united by something else in common. There are very likely more than 50 topics present, depending on how a topic is defined. The topics can be broadly categorized into Botany, Cancer, Development, Immunology, Neuroscience, Technical, and Other, though these categories can overlap. Some of the "Other" topics seem like mixtures of multiple topics, such as topic 29, while some are very specific and relevant, such as topic 30 (pancreas and diabetes). The broad categories will be used in further analyses.
+
+```{r}
+topic_types <- tribble(~ category, ~ topic,
+                       "Cancer", c(5,6,8,10,11,13,16,20,24,27,34,44,50),
+                       "Botany", c(9,15,21,40,43,45),
+                       "Neuroscience", c(7,14,19,23,25,32,33,36,47),
+                       "Development", c(1,3,17,18,29,35,39),
+                       "Immunology", c(12,22,48),
+                       "Technical", c(4,28,37,41))
+```
+
+```{r}
+topic_types <- topic_types %>% 
+  unnest(cols = "topic")
+```
+
+```{r}
+topics_other <- tibble(category = "Other",
+                       topic = setdiff(seq_len(50), topic_types$topic))
+topic_types <- bind_rows(topic_types, topics_other)
+topic_types <- topic_types %>% 
+  mutate(topic = factor(topic, levels = 1:50),
+         category = fct_relevel(category, "Other", after = Inf))
+```
+
+Clusters of related topics can be seen in the topic correlation plot. See [documentation of `topicCorr` in the `stm` package](https://rdrr.io/cran/stm/man/topicCorr.html) for more details. Here we use a high-dimensional undirected graphical (HUGE) model [@Zhao2012] to estimate the topic correlation graph. The topic proportions ($\theta$) are assumed to be multivariate Gaussian, and HUGE tries to identify edges connecting topics that are not independent from each other conditioned on everything else, while trying to keep the graph sparse (few edges). While $\theta$ is not Gaussian, the results from HUGE aren't unreasonable.
+
+```{r, results='hide'}
+topic_cor <- topicCorr(stm_res, method = "huge", verbose = FALSE)
+```
+
+```{r}
+topic_cor_graph <- graph_from_adjacency_matrix(topic_cor$posadj, mode = "undirected")
+topic_cor_graph <- as_tbl_graph(topic_cor_graph)
+```
+
+```{r}
+topic_cor_graph <- topic_cor_graph %>% 
+  activate(nodes) %>% 
+  mutate(topic = factor(1:50, 1:50)) %>% 
+  left_join(topic_types, by = "topic")
+```
+
+```{r topic-corr, fig.height=8, fig.width=12, fig.cap="Correlation between topics."}
+set.seed(0)
+ggraph(topic_cor_graph, layout = "fr") +
+  geom_edge_fan(color = "gray50") +
+  geom_node_point(aes(color = category), size = 6) +
+  scale_color_brewer(name = "Category", palette = "Dark2") +
+  geom_node_text(aes(label = topic), color = "white") +
+  theme(panel.border = element_blank(), 
+        legend.box.background = element_rect(color = "gray", size = 0.5),
+        legend.background = element_blank())
+```
+
+Indeed, cancer, botany, neuroscience, and technical topics tend to cluster together, although this is not the case for immunology and development. 
+
+## Changes of word usage through time {#word-time}
+
+We binned dates into years and tested for association of word proportion in each year with the year by fitting a logistic regression model and checking significance of the coefficient for year; word frequency per year since 2001 for the significant words (after Benjamini-Hochberg multiple testing correction) are shown in Figure \@ref(fig:wbt). Because too many words are significant, only top 10 from words with decreasing frequency and top 10 with increasing frequency are plotted.
+
+```{r}
+ac_dfm2_tidy <- tidy(lcm_dfm2)
+# Add the metadata
+ac_dfm2_tidy <- ac_dfm2_tidy %>% 
+  left_join(lcm_abstracts[, c("date_published", "title")], by = c("document" = "title"))
+```
+
+```{r}
+words_by_time <- ac_dfm2_tidy %>%
+  mutate(time_floor = floor_date(date_published, unit = "year")) %>%
+  filter(time_floor > ymd("2000-01-01")) %>% 
+  count(time_floor, term) %>%
+  group_by(time_floor) %>%
+  mutate(time_total = sum(n)) %>%
+  group_by(term) %>%
+  mutate(word_total = sum(n)) %>%
+  ungroup() %>%
+  rename(count = n) %>%
+  filter(word_total > 30)
+```
+
+```{r}
+words_by_time <- words_by_time %>% 
+  rename(word = term) %>% 
+  mutate(prop = count/time_total)
+```
+
+```{r}
+nested_data <- words_by_time %>%
+  nest(data = c(time_floor, count, time_total, word_total, prop))
+```
+
+```{r}
+nested_models <- nested_data %>%
+  mutate(models = map(data, ~ glm(cbind(count, time_total) ~ time_floor, ., 
+                                  family = "binomial")))
+```
+
+```{r}
+slopes <- nested_models %>%
+  mutate(models = map(models, tidy)) %>%
+  unnest(cols = "models") %>%
+  filter(term == "time_floor") %>%
+  mutate(p_val_adj = p.adjust(p.value, method = "BH"))
+slopes <- slopes %>% 
+  select(-data)
+```
+
+```{r}
+top_slopes <- slopes %>% 
+  filter(p_val_adj < 0.05) %>% 
+  arrange(p_val_adj)
+```
+
+```{r}
+top_increasing <- top_slopes %>% 
+  slice_max(estimate, n = 10) %>% 
+  mutate(type = "increasing")
+top_decreasing <- top_slopes %>% 
+  slice_max(-estimate, n = 10) %>% 
+  mutate(type = "decreasing")
+top_slopes2 <- bind_rows(top_increasing, top_decreasing)
+```
+
+```{r}
+word_plt <- words_by_time %>%
+  inner_join(top_slopes2, by = "word") %>%
+  mutate(word = fct_reorder(word, estimate),
+         type = fct_relevel(type, c("increasing", "decreasing")))
+facet_labels <- setNames(paste(word_plt$word, 
+                               format(word_plt$p_val_adj, digits = 3, scientific = TRUE)), 
+                         word_plt$word)
+```
+
+```{r}
+p1 <- ggplot(word_plt, aes(time_floor, prop)) +
+   geom_vline(xintercept = ymd("2008-06-06"), color = "gray70") +
+   geom_line() +
+   scale_x_date(date_labels = "%y") +
+   coord_cartesian(xlim = range(lcm_abstracts$date_published)) +
+   labs(x = "Year", y = "Word frequency") +
+   facet_wrap(~ word, ncol = 5, labeller = as_labeller(facet_labels))
+```
+
+```{r}
+pal_strip <- brewer_pal(palette = "Pastel1")(9)[c(1,2,9)]
+names(pal_strip) <- c("increasing", "decreasing", "n.s.")
+```
+
+(ref:wbt-cap) Word frequency over time since 2001 for words significantly associated with time, sorted from the most decreasing to the most increasing in frequency in time according to the slope in the model. The adjusted p-value of each word is shown. Vertical line marks June 6, 2008, when the first paper about RNA-seq was published [@Nagalakshmi2008]. 
+
+```{r wbt, fig.width=12, fig.height=8, fig.cap="(ref:wbt-cap)"}
+plot_facets_color(p1, type, pal_strip)
+```
+
+Here we see that words and phrases associated with microarray and transcript amplification have declined in frequency, while words associated with RNA-seq, single cell, as well as words discussing molecular mechanisms have increased in frequency (Figure \@ref(fig:wbt)). The "spatial" is associated with current era techniques. Such trends can also be clustered and shown in a heatmap. 
+
+```{r}
+words_hm <- unique(top_slopes$word)
+word_mat_df <- words_by_time %>% 
+  filter(word %in% words_hm) %>% 
+  mutate(year = year(time_floor)) %>% 
+  select(year, word, prop) %>% 
+  pivot_wider(id_cols = word, names_from = year, values_from = prop)
+```
+
+```{r}
+word_mat <- as.matrix(word_mat_df[, -1])
+rownames(word_mat) <- word_mat_df$word
+```
+
+```{r}
+word_mat <- t(scale(t(word_mat)))
+```
+
+```{r word-heat, fig.width=8, fig.height=6, fig.cap="Heat map clustering changes in word frequency over time. The rows of the matrix are normalized, only showing trend rather than frequency."}
+heatmap(word_mat, Colv = NA, scale = "none")
+```
+
+Some words have increased in frequency, especially since 2015 (Figure \@ref(fig:word-heat)). Some words sharply decreased in frequency in the early 2000s. However, some words have increased in frequency, peaking in the late 2000s and early 2010s, before declining. Among the terms whose frequency peaked around the early 2010s are "microarray" and "microarray analysis", perhaps because while RNA-seq was introduced in 2008, microarray did not immediately become obsolete, though perhaps wordings changed through the 2000s so the "cDNA" in "cDNA microarray" was omitted. Besides microarray, some of the words that decreased in frequency are biological terms related to cancer. The "frequency" here is the proportion of all words from all abstracts of a year taken up by a word; the decline in proportion can either be due to decline in interest in the topics that use the word or growth in other topics that don't use the word. This will be explored further in the next section.
+
+## Changes of topic prevalence through time {#topic-time}
+
+We tested for association of prevalence of each of the 50 topics with time using the `estimateEffect` function in the `stm` package. Samples of the parameters were taken from the variational posterior of the `stm` model to estimate the variances of the slopes of the linear model of topic prevalence vs. date published, as well as to test whether topic prevalence is significantly associated with time. The p-values of the slopes were corrected for multiple hypothesis testing with the Benjamini-Hochberg method. While the linear model only captures monotonous changes, a more flexible model, such as b-spline transform of the date, was not used because of the modest size of this corpus -- on average, each topic has only 45 abstracts, though some topics are larger and some smaller.
+
+```{r}
+set.seed(129)
+effs <- estimateEffect(~ date_num, stm_res, metadata = docvars(lcm_dfm2),
+                       nsims = 100)
+```
+
+```{r}
+effs_df <- get_effects(effs, "date_num", type = "continuous")
+effs_df <- effs_df %>% 
+  mutate(topic = fct_relevel(topic, as.character(1:50)),
+         date_published = as_date(value))
+```
+
+```{r}
+effs_summ <- tidy(effs)
+effs_summ <- effs_summ %>% 
+  filter(!str_detect(term, "Intercept")) %>% 
+  mutate(p_val_adj = p.adjust(p.value, method = "BH"),
+         type = case_when(p_val_adj >= 0.05 ~ "n.s.",
+                          estimate < 0 ~ "decreasing",
+                          estimate > 0 ~ "increasing"),
+         topic = factor(topic, levels = 1:50))
+```
+
+```{r}
+# Top 5 increasing and decreasing
+top_effs <- bind_rows(slice_max(effs_summ, estimate, n = 12),
+                      slice_min(effs_summ, estimate, n = 10)) %>% 
+  filter(p_val_adj < 0.05)
+```
+
+```{r}
+facet_labels <- setNames(paste0("Topic ", effs_summ$topic, ", p=",
+                               format(effs_summ$p_val_adj, digits = 3, scientific = TRUE)), 
+                         effs_summ$topic)
+```
+
+```{r}
+lcm_abstracts <- cbind(lcm_abstracts, as.data.frame(stm_res$theta))
+```
+
+```{r}
+year_theta_long <- lcm_abstracts %>% 
+  mutate(date_bin = floor_date(date_published, unit = "year")) %>% 
+  select(date_bin, V1:V50) %>% 
+  pivot_longer(cols = V1:V50, names_to = "topic", values_to = "theta") %>% 
+  mutate(topic = str_remove(topic, "^V"),
+         topic = fct_relevel(topic, as.character(1:50)))
+year_means <- year_theta_long %>% 
+  group_by(date_bin, topic) %>% 
+  summarize(means = mean(theta)) 
+year_means <- year_means %>% 
+  semi_join(top_effs, by = "topic") %>% 
+  filter(date_bin > ymd("2000-01-01"))
+year_means <- year_means %>% 
+  left_join(topic_types, by = "topic")
+```
+
+```{r}
+topic_annot <- tribble(
+  ~ topic, ~ annot,
+  "11", "Cancer progression",
+  "41", "Microarray & RNA amplification",
+  "8", "Prostate cancer",
+  "6", "Quantitative analyses of cancer",
+  "13", "Breast cancer",
+  "29", "Bone growth plate",
+  "10", "Cancer proteomics",
+  "47", "Neuron morphogenesis",
+  "4", "Data analysis",
+  "45", "Nitrogen fixation",
+  "14", "Neural circuitry",
+  "37", "Spatial single cell & imaging",
+  "36", "Neurodegenerative diseases",
+  "9", "Plant embryology",
+  "39", "Stem cells and development",
+  "27", "Tumor single cell profiling",
+  "34", "Mutations in cancer",
+  "19", "Dopaminergic neurons",
+  "40", "Pland seed development",
+  "44", "Cancer pathways"
+)
+topic_annot <- topic_annot %>% 
+  mutate(topic = factor(topic, 1:50),
+         annot = str_wrap(annot, width = 15)) %>% 
+  left_join(topic_types, by = "topic")
+```
+
+```{r}
+effs_df_plt <- effs_df %>% 
+  inner_join(top_effs, by = "topic") %>% 
+  left_join(topic_types, by = "topic") %>% 
+  mutate(topic = fct_reorder(topic, estimate))
+```
+
+```{r}
+max_date <- max(effs_df_plt$date_published)
+min_date <- min(effs_df_plt$date_published)
+mid_date <- min_date + floor((max_date - min_date)/2)
+```
+
+```{r}
+max_y <- max(year_means$means[year_means$topic %in% effs_df_plt$topic])
+```
+
+```{r}
+p2 <- ggplot(effs_df_plt, aes(date_published, proportion)) +
+  geom_vline(xintercept = ymd("2008-06-06"), color = "gray70") +
+  geom_line(data = year_means, aes(date_bin, means, color = category)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), alpha = 0.65, fill = "gray85",
+              color = NA, show.legend = TRUE) +
+  geom_line(aes(color = category), size = 1) +
+  geom_label(data = topic_annot, aes(x = mid_date, y = max_y, 
+                                    label = annot, color = category),
+             alpha = 0.7, vjust = 1, show.legend = FALSE) +
+  scale_color_brewer(drop = FALSE, palette = "Dark2", name = "Category") +
+  facet_wrap(~ topic, ncol = 5, labeller = as_labeller(facet_labels)) +
+  coord_cartesian(ylim = c(0, max_y)) +
+  scale_x_date(date_labels = "%y") +
+  labs(x = "Date published", y = "Topic proportion") +
+  theme(legend.position = "top")
+```
+
+(ref:tt-cap) Topic prevalence over time since 2001 with fitted linear model. Gray ribbon indicates 95% confidence interval (CI) of the slope, estimated from the samples of the variational posterior of the `stm` model. Vertical line indicates advent of RNA-seq in 2008. Light blue facet strip means decreasing trend with adjusted p < 0.05, and pink strip means increasing.
+
+```{r topic-trends, fig.width=12, fig.height=10, fig.cap="(ref:tt-cap)"}
+plot_facets_color(p2, type, pal_strip)
+```
+
+As many topics have statistically significant associations with time, only the top 10 most decreasing and top 10 most decreasing topics are plotted here (that's what I intended, but there were only 8 significantly decreasing topics, so top 12 increasing topics are shown). In the early 2000s, a major topic of research about LCM was reliability of T7-based PCR amplification of the small amount of transcripts from samples for microarray, but the prevalence of this topic (topic 41) has declined over time (Figure \@ref(fig:wbt), Figure \@ref(fig:topic-trends)). The reason for such decline can be a combination of the following: First, other topics in neuroscience and botany emerged and grew (Figure \@ref(fig:topic-trends)); some of them are now among the most prevalent topics (Figure \@ref(fig:topics)). Second, usage of terms related to microarray and PCR amplification for microarray declined while usage of terms related to RNA-seq increased after 2008 due to the advent of RNA-seq because the latter replaced microarray as the transcriptomics method of choice, so the decline is expected (Figure \@ref(fig:wbt)). Also as expected, prevalence of topics in data analysis (topic 4) and spatial single cell and imaging technologies (topic 37) increased. Interestingly, cancer topics are among the most significantly decreasing (Figure \@ref(fig:word-heat), Figure \@ref(fig:topic-trends)). Because unlike cDNA microarray, these topics are still relevant today, such decline is puzzling. 
+
+Next, we checked whether whether the rise of topics not directly related to cancer may be relevant to the decline of proportions of cancer topics. In `stm`, the abstracts are not hard assigned to topics. Rather, each abstract has a proportion of each topic, and abstracts often have over 90% of one topic. Here, for simplicity, we say an abstract "has" a topic if the proportion of the topic in the abstract is at least 25%.
+
+```{r}
+year_counts <- year_theta_long %>% 
+  filter(theta > 0.25) %>% 
+  count(date_bin, topic)
+```
+
+```{r}
+year_counts_plt <- year_counts %>% 
+  inner_join(effs_df_plt %>% 
+               select(topic, estimate, type, category) %>% 
+               distinct(), 
+             by = "topic") %>% 
+  mutate(topic = fct_reorder(topic, estimate))
+```
+
+```{r}
+max_y2 <- max(year_counts_plt$n)
+facet_labels2 <- paste("Topic", 1:50)
+names(facet_labels2) <- as.character(1:50)
+```
+
+```{r}
+p3 <- ggplot(year_counts_plt, aes(date_bin, n)) +
+  geom_vline(xintercept = ymd("2008-06-06"), color = "gray70") +
+  geom_line(aes(color = category)) +
+  geom_smooth(aes(color = category), method = "lm", formula = y ~ x, 
+              show.legend = TRUE, fill = "gray80", alpha = 0.3) +
+  geom_label(data = topic_annot, aes(x = mid_date, y = max_y2, 
+                                    label = annot, color = category),
+             alpha = 0.7, vjust = 1, show.legend = FALSE) +
+  scale_color_brewer(drop = FALSE, palette = "Dark2", name = "Category") +
+  facet_wrap(~ topic, ncol = 5, labeller = as_labeller(facet_labels2)) +
+  coord_cartesian(ylim = c(0, max_y2)) +
+  scale_x_date(date_labels = "%y") +
+  labs(x = "Date published", y = "Number of abstracts") +
+  theme(legend.position = "top")
+```
+
+```{r topic-count, fig.width=12, fig.height=10, fig.cap="Number of abstracts with each topic whose proportions changed the most in time. Gray ribbon is the 95% CI of the line fitted to the count per year."}
+plot_facets_color(p3, type, pal_strip)
+```
+
+When the number of abstracts with each topic is plotted, the declines are less drastic or reversed while the increases became much more drastic, especially after 2015, perhaps due to the rise of scRNA-seq, whose library preparation methods made it possible to quantify transcripts from small amount of tissues from LCM (Figure \@ref(fig:topic-count)). These trends don't necessarily correspond to the overall trend across the corpus (Figure \@ref(fig:lcm-year)). Then we see in recent years a diversification of topics that may be related to LCM from search results, resulting into decrease of proportion of some older topics the interest in which might not have drastically decreased if not somewhat increased, though not increasing as quickly as other topics. Nevertheless, it is clear that some cancer topics have decreased even in counts. However, remember that some of the `stm` topics seem to be mixtures of multiple topics recognizable by humans and these `stm` topics might have picked up aspects of the abstracts less readily noticed by humans. In other words, it might not be that interest in some cancers decreased per se, but thanks to scRNA-seq, the way these cancers are discussed changed, using words that contributed to other, growing topics. Furthermore, because so many different topics are drastically growing in recent years, the increase in proportion of each of them became less drastic. 
+
+```{r}
+topic_cor_graph <- topic_cor_graph %>% 
+  activate(nodes) %>% 
+  left_join(effs_summ[, c("topic", "type", "p_val_adj")], by = "topic")
+```
+
+```{r}
+neg_log10 <- trans_new("neg_log10",
+                       transform = function(x) -log10(x),
+                       inverse = function(x) 10^(-x),
+                       breaks = breaks_log())
+```
+
+```{r topic-corr-trend, fig.height=8, fig.width=12, fig.cap="Correlation between topics colored by both broad categories of the topics and whether its proportion increased, decreased, or did not significantly change (n.s.)."}
+set.seed(0)
+ggraph(topic_cor_graph, layout = "fr") +
+  geom_edge_fan(color = "gray50") +
+  geom_node_point(aes(color = category, fill = type, size = p_val_adj), 
+                  stroke = 2, shape = 21, alpha = 0.8) +
+  scale_color_brewer(name = "Category", palette = "Dark2") +
+  scale_fill_manual(values = pal_strip, name = "Trend") +
+  scale_size_area(name = "-log10(p)", max_size = 15, trans = neg_log10) +
+  geom_node_text(aes(label = topic)) +
+  theme(panel.border = element_blank(), 
+        legend.box.background = element_rect(color = "gray", size = 0.5),
+        legend.background = element_blank()) +
+  guides(color = guide_legend(override.aes = list(size = 5)),
+         fill = guide_legend(override.aes = list(size = 5)))
+```
+
+Now return to the topic correlation graph, and all the 50 topics, along with their trends, are shown (Figure \@ref(fig:topic-corr-trend)). Overall, cancer topics tend to be decreasing in proportion. As already seen in Figure \@ref(fig:topic-count), this is in part due to growth in non-cancer topics but in part due to decline in some cancer topics. Botany and neuroscience topics tend to increase in proportion. This trend is also evident in the topic correlations. Microarray and RNA amplification (topic 41) is correlated with a cancer topic, while spatial single cell and imaging (topic 37) and data analysis (topic 4) are correlated with neuroscience topics. Topic 27, which is about single cell profiling of tumors, has grown, perhaps due to the growth of scRNA-seq. Possibly, as cancer is still relevant, the decline in some cancer topics fed into topic 27 as tumors are examined at the single cell level.
+
+## Association of topics with city
+Again, with the `estimateEffects` function, we identify cities associated with certain topics. Some topics might be more spread out, while some some may be confined to a few institutions, which are approximated by city here because it's more difficult to automatically extract institutions from the author address on PubMed than cities. Some institutions might specialize in certain topics. Also note that while for PubMed papers, the cities of the first author are used, because the first author has greater contribution to the paper, only the address of the corresponding author is available from the bioRxiv API. Furthermore, multiple institutions across continents may collaborate on one paper, so the cities here only give a rough idea where LCM related research takes place. Here only the names of the cities are used, with the state and country they are in to distinguish between cities with the same name, without the longitude and latitude, because we don't expect an association between topic and the coordinates in and of themselves, nor do we expect spatial autocorrelation of the topics.
+```{r, cache=TRUE}
+set.seed(129)
+effs_loc <- estimateEffect(~ city_eff, stm_res, metadata = docvars(lcm_dfm2),
+                           nsims = 100)
+```
+
+```{r,cache=TRUE}
+effs_loc_summ <- tidy(effs_loc)
+effs_loc_summ <- effs_loc_summ %>% 
+  mutate(p_val_adj = p.adjust(p.value, method = "BH"))
+```
+
+```{r}
+top_locs <- effs_loc_summ %>% 
+  arrange(p_val_adj) %>% 
+  filter(p_val_adj < 0.005, estimate > 0, term != "(Intercept)") %>% 
+  mutate(city2 = str_remove(term, "^city_eff")) %>% 
+  left_join(lcm_city_gc, by = "city2")
+```
+
+```{r}
+top_locs <- top_locs %>% 
+  mutate(topic = factor(topic, 1:50)) %>% 
+  left_join(topic_types, by = "topic")
+top_locs <- top_locs %>% 
+  mutate(city_label = paste(str_trim(city), topic, sep = ", "))
+```
+
+```{r}
+robin <- "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m no_defs"
+map_use <- ne_countries(scale = "small", returnclass = "sf")
+map_all <- st_transform(one_world_small, robin)
+map_use <- st_transform(map_use, robin)
+```
+
+```{r}
+top_locs <- top_locs %>% 
+  mutate(geometry = st_transform(geometry, robin))
+```
+
+```{r topic-loc, fig.width=12, fig.height=8, fig.cap="Cities associated with topics (p < 0.005) shown on a map."}
+ggplot() +
+  geom_sf(data = map_use, aes(geometry = geometry), linetype = "dotted") +
+  geom_sf(data = map_all, aes(geometry = geometry), fill = NA) +
+  geom_sf(data = top_locs, aes(size = p_val_adj, color = category, 
+                               geometry = geometry), 
+          show.legend = "point", alpha = 0.7) +
+  geom_label_repel(data = top_locs, aes(geometry = geometry, label = city_label,
+                                        color = category),
+                   alpha = 0.8, stat = "sf_coordinates", max.overlaps = Inf,
+                   show.legend = FALSE, segment.alpha = 0.3) +
+  scale_size_area(trans = neg_log10, name = "-log10(p)") +
+  scale_color_brewer(name = "Category", palette = "Dark2", drop = FALSE) +
+  theme(legend.position = "top", panel.border = element_blank(),
+        axis.title = element_blank())
+```
+
+Here we note that Center for Dementia Research, Nathan Kline Institute in Orangeburg has greatly contributed to research in hippocampal CA1 pyramidal neurons in Alzheimer's disease and Down syndrome (topic 7) (Figure \@ref(fig:topic-loc)). This is the first time I heard of Nathan Kline. Department of Plant Biology at Cornell, Ithaca has greatly contributed to study of plant development (topic 9). Topic 17 is a mixture of topics recognizable by humans; besides the endometrium, some of the top entries are about hearing loss, which come from University of Rochester. George Mason University in Manassas, Virginia contributed several papers about cancer pathway analysis (topic 44). University of Pittsburgh has disproportionate contribution to the study of prefrontal cortex and schizophrenia (topic 32), dating back to 2007. Centro de Biotecnologia y Genomica de Plantas (UPM-INIA), Madrid has disproportionate contribution to the study of soil microbiome and nitrogen fixation (topic 45). University of Sheffield has a long history and disproportionate contribution to the study of neurodegenerative diseases affecting motor neurons (topic 25), dating back to 2007. 
+
+Association of a topic with an institution that used to greatly contribute to the topic but then stopped might also explain why some topics declined in prevalence over time although drastic growth in other topics might be a better explanation (Figure \@ref(fig:topic-trends), \@ref(fig:topic-count)). Topic 29 prominently features the bone growth plate though this `stm` topic has entries for other biological systems as well. These bone growth plate papers come from Upstate Medical University in Syracuse, New York, from 2005 to 2010. Decline in topic 29 might be related to cessation of study of the growth plate at this institution after 2010, though other institutions have not picked up this topic afterwards. Institute of Human Genetics and Anthropology, Friedrich-Schiller-University in Jena, Germany greatly contributed to cancer proteomics (topic 10) between 2004 and 2011 but then stopped, though other institutions carried on studying this topic. Kyushu University Beppu Hospital in Japan greatly contributed to quantitative analyses in cancer (topic 6) from 2005 to 2014, although other institutions continue contributing to this topic, whose paper count actually increased over time although the topic's proportion decreased due to drastic growth in other topics (\@ref(fig:topic-count)). The vast majority of LCM related publications from Sendai, Japan are about breast cancer (topic 13), from between 2007 to 2017, which is why Sendai is associated with this city although this topic is widespread.
+
+Association of a city with a topic can also be visualized with topic proportion in each city from `estimateEffect` (Figure \@ref(fig:city-pe)). Here topic 45 (soil microbiome and nitrogen fixation) is plotted, but readers on RStudio Cloud can try other topics.
+```{r}
+effs_df_loc <- get_effects(effs_loc, "city_eff", type = "pointestimate")
+effs_df_loc <- effs_df_loc %>% 
+  mutate(topic = fct_relevel(topic, as.character(1:50)))
+```
+
+```{r city-pe, fig.width=6, fig.height=4, fig.cap="Proportion of topic 45 in each city. Error bars are 95% CI of the point estimate."}
+effs_df_loc %>% 
+  filter(topic == 45) %>% # Change this to try other topics
+  mutate(value = fct_reorder(value, proportion, .desc = FALSE)) %>% 
+  slice_max(proportion, n = 10) %>% 
+  ggplot(aes(y = value)) +
+  geom_errorbar(aes(xmin = lower, xmax = upper), width = 0.5) +
+  geom_point(aes(x = proportion)) +
+  labs(y = NULL, x = "Topic proportion")
+```
+
+Here "disproportionate" means disproportionate within this corpus of LCM related search results. Institutions with "disproportionate" contribution to a topic do not necessarily dominate such topic although the topic may dominate the institution, i.e. the topic takes up a very large proportion of abstracts from this institution within this corpus. Nor are these institutions necessarily elite; this analysis might be an interesting way to discover labs from not so well-known institutions that may be outstanding in some topics. The institutions are often not elite because elite institutions often greatly contribute to many topics, weakening the association of the institution to the topic. Except for growth plate in Syracuse, we have not identified topics largely confined to an institution.
+
+## GloVe word embedding {#glove}
+We used global vector (GloVe) embedding to identify linear substructures in the word vector space of the LCM transcriptomics abstract corpus and to identify contexts [@Pennington]. In GloVe embedding, words are represented by vectors. Words with similar meanings tend to be closer together in this vector space, and differences between word vectors can encode meaning as well. The "meanings" come from the context, or word co-occurrence. GloVe was devised to find a word embedding with properties like "king" - "man" + "woman" = "queen" or "ice" - "solid" + "gas" = "steam", and related words like "cancer" and "tumor" are close together but both are far from unrelated words like "flower".
+
+This corpus was used to train a 125 dimensional embedding, and the embeddings of words occurring more than 30 times in the corpus were projected to lower dimensions with principal component analysis (PCA) to find axes explaining the most variance in the embedding, hopefully identifying dominant axes of meaning within this corpus. The words are also Louvain clustered in the embedding space to find clusters of words related in meaning.
+
+```{r}
+data("lcm_tokens")
+```
+
+```{r}
+ac_fcm <- fcm(lcm_tokens, context = "window", count = "weighted", weights = 1/(1:5))
+```
+
+```{r}
+glove <- GlobalVectors$new(rank = 125, x_max = 10)
+```
+
+```{r, results='hide'}
+set.seed(2021)
+ac_gv <- glove$fit_transform(ac_fcm, n_iter = 50)
+```
+
+```{r}
+ac_context <- glove$components
+ac_vectors <- ac_gv + t(ac_context)
+```
+
+```{r}
+wf <- textstat_frequency(lcm_dfm2)
+words_plot <- wf$feature[wf$frequency > 30]
+```
+
+```{r}
+ac_vectors_select <- ac_vectors[rownames(ac_vectors) %in% words_plot,]
+```
+
+```{r}
+knn_graph <- makeKNNGraph(ac_vectors_select, k = 15)
+```
+
+```{r}
+set.seed(2021)
+clusts <- cluster_louvain(knn_graph)
+```
+
+```{r}
+clusts_df <- tibble(label = rownames(ac_vectors_select),
+                    cluster = clusts$membership)
+```
+
+```{r}
+# PCA
+glove_pca <- prcomp(ac_vectors_select, rank. = 20, center = FALSE)
+```
+
+```{r pca-elbow, fig.width=6, fig.height=4, fig.cap="Proportion of variance explained by each of the first 20 principal components (PC)."}
+df_elbow <- tibble(index = 1:20,
+                   prop_var = (glove_pca$sdev^2)[1:20]/sum(glove_pca$sdev^2))
+ggplot(df_elbow, aes(index, prop_var)) +
+  geom_point() +
+  labs(x = "PC", y = "Proportion of variance")
+```
+
+The first principal component (PC) explains over 5% of the variance, and then the "elbow" is at PC5.
+
+```{r}
+pca_df <- glove_pca$x %>% 
+  as.data.frame() %>% 
+  mutate(label = rownames(.)) %>% 
+  left_join(clusts_df, by = "label")
+rownames(pca_df) <- NULL
+pca_df <- pca_df %>% 
+  mutate(cluster = factor(cluster, seq_len(max(cluster))))
+```
+
+```{r}
+# To speed up ggrepel's computation that excludes labels for overlapping
+pca_plt <- pca_df %>% 
+  mutate(label_12 = case_when(
+    PC1 > 0.3 | PC1 < -2 | PC2 > 1 | PC2 < -1 ~ label,
+    TRUE ~ ""
+  ))
+```
+
+```{r}
+shapes <- c(16,17,15,18,4,5,8,9)
+```
+
+```{r pc12, fig.width=9, fig.height=6, fig.cap="Projection of word embeddings into the first 2 PCs. Each point is a word occuring over 30 times in the corpus. Not all words are labeled to avoid overlaps in the labels. Words and points are colored by Louvain clusters."}
+ggplot(pca_plt, aes(PC1, PC2, color = cluster)) +
+  geom_point(aes(shape = cluster)) +
+  geom_text_repel(aes(label = label_12), max.overlaps = 20, segment.alpha = 0.3,
+                  show.legend = FALSE) +
+  scale_x_continuous(breaks = breaks_width(2)) +
+  scale_y_continuous(breaks = breaks_width(2)) +
+  scale_color_discrete(name = "Cluster") +
+  scale_shape_manual(values = shapes, name = "Cluster")
+```
+
+Words more positive in PC1 are often gene names, parts of gene names, or acronyms, and names of specific biological entities or processes. In contrast, words more negative in PC1 tend to be more general and more widely used. PC2 separates the technical (clusters 2 and 7, top) from the biological (clusters 1, 4 to 6) (Figure \@ref(fig:pc12)). As expected, "cancer", "tumor", and "disease" are not far from each other (bottom left), and "malignant" and "invasive" are close (bottom center). PC1 explains more variance than all other PCs; though it's only 5.5%, it picked up a very important dimension in word meanings in this corpus. PCs are arranged in decreasing order of variance explained.
+
+```{block2, note-text3, type='rmdnote', include=TRUE}
+Note that when this plot is made on different computers, the signs of PCs might flip, because the sign does not affect the magnitude of the eigenvalue (i.e. variance explained). PCs are eigenvectors of the covariance matrix of the GloVe dimensions; an eigenvector multiplied by a scalar is still an eigenvector with the same eigenvalue. 
+```
+
+```{r}
+pca_plt <- pca_plt %>% 
+  mutate(label_34 = case_when(
+    PC3 > 1 | PC3 < -1 | PC4 > 1 | PC4 < -1 ~ label,
+    TRUE ~ ""
+  ))
+```
+
+```{r pc34, fig.width=9, fig.height=6, fig.cap="Projection of word embeddings into the 3rd and 4th PCs."}
+ggplot(pca_plt, aes(PC3, PC4, color = cluster)) +
+  geom_point(aes(shape = cluster)) +
+  geom_text_repel(aes(label = label_34), max.overlaps = 20, segment.alpha = 0.3,
+                  show.legend = FALSE) +
+  scale_x_continuous(breaks = breaks_width(2)) +
+  scale_y_continuous(breaks = breaks_width(2)) +
+  scale_color_discrete(name = "Cluster") +
+  scale_shape_manual(values = shapes, name = "Cluster")
+```
+
+PC3 separates processes and interactions (cluster 6, left) from entities of samples, tissues, organs, and diseases (clusters 3, 4, 7, right). PC4 separates the molecular and cellular (bottom left) and the quantitative (clusters 1 and 3, bottom right) from the qualitative (top). Some of the qualitative terms are used to discuss implications of results of the papers (clusters 2 and 6, top left) (Figure \@ref(fig:pc34)).
+
+Now we have seen some important axes of meanings and types of words, which are not surprising given familiarity with the general structure of abstracts and applications of LCM. There must be more axes of meaning, as the first 4 PCs only explain about 12% of the total variance of word embeddings (Figure \@ref(fig.pca-elbow)). The clusters of words can be better visualized with UMAP, which is a non-linear dimension reduction method that tries to preserve distances between points but is most commonly used to project into 2 dimensions.
+```{r}
+set.seed(2021)
+ac_umap <- as.data.frame(umap(ac_vectors_select))
+ac_umap$label <- rownames(ac_vectors_select)
+ac_umap$cluster <- pca_df$cluster
+```
+
+```{r umap, fig.width=13, fig.height=13, fig.cap="UMAP projection of word embeddings."}
+ggplot(ac_umap, aes(V1, V2, color = cluster)) +
+  geom_point(aes(shape = cluster)) +
+  geom_text_repel(aes(label = label), segment.alpha = 0.3, max.overlaps = 13,
+                  show.legend = FALSE) +
+  scale_color_discrete(name = "Cluster") +
+  scale_shape_manual(values = shapes, name = "Cluster") +
+  labs(x = "UMAP1", y = "UMAP2") +
+  theme(panel.grid = element_blank(), legend.position = "top", 
+        panel.border = element_blank(),
+        axis.text = element_blank(), axis.ticks = element_blank(),
+        legend.box.background = element_rect(color = "gray", size = 0.5)) +
+  guides(color = guide_legend(byrow = TRUE, nrow = 1))
+```
+
+The clusters of words are easier to discern with Uniform Manifold Approximation and Projection (UMAP) (Figure \@ref(fig:umap)). Cluster 1 is words used to describe results of studies, with many quantitative words; "p", "0.05", and "0.01" are found in this cluster rather than cluster 3 because p-values are results of data analyses and 0.05 and 0.01 are common thresholds of significance. Cluster 2 has many words discussing results, about data analysis and implications of results, with many clinical terms. Cluster 1 seems to be molecular and cellular processes and entities. Cluster 3 has many numbers, units, and some biological words. Cluster 4 has many words specifically about cancer. Cluster 5 is words in experimental techniques. Cluster 5 is biological terms. Cluster 6 is also biological, but with more emphasis on processes and interactions. Cluster 7 is technical. These clusters of words give some idea about topics of the studies, but unlike `stm`, these clusters also give a glimpse into different parts of the abstract, such as summary of the results and implications of the results.

@@ -1,0 +1,44 @@
+Package: museumst_catalogue
+Title: museumst book
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Lambda",
+           family = "Moses",
+           role = c("aut", "cre"),
+           email = "dlu2@caltech.edu",
+           comment = c(ORCID = "0000-0002-7092-9427"))
+Description: museumst book
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+    BiocManager,
+    bluster,
+    bookdown,
+    gganatogram,
+    ggraph,
+    ggrepel,
+    grid,
+    gridExtra,
+    gtable,
+    here,
+    igraph,
+    kableExtra,
+    lubridate,
+    Matrix.utils,
+    patchwork,
+    quanteda,
+    scales,
+    sf,
+    stm,
+    stminsights,
+    text2vec,
+    tidygraph,
+    tidytext,
+    tidyverse,
+    uwot
+Remotes:
+    pachterlab/museumst
+    
