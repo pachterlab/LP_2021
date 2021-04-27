@@ -17,7 +17,6 @@ Imports:
     BiocManager,
     bluster,
     bookdown,
-    gganatogram,
     ggraph,
     ggrepel,
     grid,
@@ -41,5 +40,6 @@ Imports:
     uwot,
     xfun
 Remotes:
-    pachterlab/museumst
+    pachterlab/museumst,
+    jespermaag/gganatogram
     
