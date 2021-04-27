@@ -25,11 +25,11 @@ bookdown::render_book("supplement/index.Rmd", output_format = "bookdown::gitbook
 
 If you are cloning this repo into a fresh RStudio Cloud project or a fresh machine, install the packages required to build the book as follows:
 
-First install `remotes` with `install.packages("remotes")`. Then use `remotes:install_deps(dependencies = TRUE, pkg = "supplement/")` to install all required packages from CRAN, Bioconductor, and GitHub. So in short,
+First install `remotes` with `install.packages("remotes")`. Then use `remotes:install_deps(dependencies = TRUE)` to install all required packages from CRAN, Bioconductor, and GitHub. So in short,
 
 ```{r, eval=FALSE}
 install.packages("remotes")
-remotes::install_deps(dependencies = TRUE, pkg = "supplement/")
+remotes::install_deps(dependencies = TRUE)
 ```
 
 Because many packages are installed, the installation can be sped up with the argument `Ncpus` in `install_deps()` to specify the number of CPU cores to use to install packages in parallel, such as `Ncpus = 2L` for 2 cores. The free plan of RStudio Cloud only has 1 core, but this argument can be used when multiple cores are available.
