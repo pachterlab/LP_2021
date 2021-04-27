@@ -35,6 +35,7 @@ Imports:
     museumst,
     patchwork,
     quanteda,
+    reshape2,
     rgeos,
     rnaturalearthdata,
     rnaturalearth,
