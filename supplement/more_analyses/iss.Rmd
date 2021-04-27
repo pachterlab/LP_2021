@@ -1,0 +1,281 @@
+---
+title: "ISS"
+author: "Lambda Moses"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ISS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Here I explore the history and geography of spatial transcriptomics based on in situ sequencing through the metadata I collected.
+```{r}
+library(museumst)
+library(ggplot2)
+library(purrr)
+library(dplyr)
+library(sf)
+theme_set(theme_bw())
+```
+
+# Import data
+By default, the `read_metadata` function reads the appropriate sheet from a cache within this package. This may be outdated, since the Google Sheets are constantly updated. Use the argument `update = TRUE` to download the most up to date version. The default is `FALSE` to avoid API limits during automated CRAN checks.
+```{r}
+sheet <- read_metadata("ISS")
+```
+
+# Number of publications
+How many publications per year?
+```{r}
+# Remove duplicates as different datasets in the same publication have their own rows
+publications <- get_pubs_df(sheet, other_cols = "repo")
+```
+
+How many publications are there in total in this sheet?
+```{r}
+nrow(publications)
+```
+
+That's not a lot. So seriously, take every trend in this notebook with a grain of salt!
+
+```{r}
+# For maps later in this notebook
+city_gc <- geocode_inst_city(publications)
+pubs_on_map2 <- partial(pubs_on_map, city_gc = city_gc)
+```
+
+## Overall
+Number of publications per year. Preprints are excluded from plots over years as it takes months to publish so the dates of the preprints are incoherent with those for the other papers. 
+```{r}
+events <- read_major_events()
+```
+
+```{r, fig.width=6, fig.height=3}
+events %>% 
+  filter(category == "ISS") %>% 
+  plot_timeline(rep(c(1, -1), length.out = nrow(.)), 
+                expand_x = c(0.1, 0.1), expand_y = c(0.05, 0.05))
+```
+
+By default, preprints are excluded from plots of number of publications over time, since the timing of preprints is incoherent to that of published papers. Including preprints will inflate the number of publications in recent months, and if we make the same plot a few months later, that inflation we see now will be gone and moved to a more recent date. You can add the `preprints = TRUE` argument to all functions plotting things over time in this package to include preprints. You can also use the `binwidth` argument to specify bin width in days. The default is 365 days.
+```{r}
+pubs_per_year(publications, binwidth = 200, preprints = TRUE)
+```
+
+## By method
+How about when broken down by method (not for data analysis sheets)?
+
+```{r}
+methods <- unnest_cat(sheet, method)
+```
+
+```{r, fig.width=6, fig.height=4}
+pubs_per_year(methods, facet_by = "method", binwidth = 200)
+```
+I don't know how much this actually says due to the small sample size. This is also kind of confusing since Geo-seq really is a form of LCM coupled with SMART-seq, so it should be categorized as LCM, but the authors gave it a new name. 
+
+## By species
+
+```{r}
+species <- unnest_cat(sheet, species)
+```
+
+```{r}
+pubs_per_cat(species, species)
+```
+
+```{r}
+pubs_per_cat(species, species, isotype = TRUE, img_unit = 1)
+```
+
+
+## By journal
+```{r}
+sort(table(publications$journal))
+```
+
+## Location
+### General
+Just some barplots for number of publications per institution, city, and country. 
+```{r}
+pubs_per_cat(publications, country)
+```
+
+How about per capita? Actually this probably does not say much since many researchers in the West are immigrants. Then it raises the burning political question of who counts as the "population".
+
+```{r}
+pubs_per_capita(publications, plot = "bar")
+```
+
+Why is Israel doing so great? Why not freedom to Palestine? Yeah, freedom to Palestine!
+
+How about country over time? There might not be enough publications to show a trend.
+```{r, fig.height=4, fig.width=6}
+pubs_per_year(publications, facet_by = "country", binwidth = 200)
+```
+Now look at cities. 
+
+```{r}
+pubs_per_cat(publications, city)
+```
+
+Institutions
+```{r}
+pubs_per_cat(publications, institution)
+```
+
+OK, now here comes the maps!
+
+### Worldwide
+```{r}
+pubs_on_map2(publications)
+```
+
+Let me also plot the per capita thing on a map, as a choropleth
+```{r}
+pubs_per_capita(publications)
+```
+
+Break down by species
+```{r, fig.width=8, fig.height=6}
+pubs_on_map2(species, facet_by = "species", ncol = 2)
+```
+
+By method
+```{r, fig.width=8, fig.height=6}
+pubs_on_map2(methods, facet_by = "method", ncol = 2)
+```
+
+So while the 2013 method of ISS has spread, the other methods did not. Well, FISSEQ sort of did, since untargeted ExSeq is expansion microscopy + FISSEQ.
+
+### Europe
+Plot a map just for Europe. A problem here is that if I simply filter the `world` sf object, I'll get some islands away from what we usually think is Europe. Kind of feel bad for Russians since Russia is so large that it makes the map look bad and I don't have a paper from Russia in this spreadsheet. 
+
+```{r}
+pubs_on_map2(publications, zoom = "europe")
+```
+
+```{r, fig.width=6, fig.height=4}
+pubs_on_map2(species, zoom = "europe", facet_by = "species")
+```
+
+Maybe I just made this plot for fun. Not sure what to say about it.
+
+```{r}
+pubs_on_map2(methods, zoom = "europe", facet_by = "method")
+```
+
+### USA
+Also a plot just for America. I did not encounter a publication in this spreadsheet that is from Hawaii or Alaska, but I'll include Hawaii and Alaska in the map anyway in case I get one in the future.
+
+```{r}
+pubs_on_map2(publications, zoom = "usa")
+```
+
+```{r}
+pubs_per_capita(publications, "usa")
+```
+
+```{r, fig.width=8, fig.height=6}
+pubs_on_map2(species, zoom = "usa", facet_by = "species", ncol = 2)
+```
+
+```{r, fig.width=8, fig.height=6}
+pubs_on_map2(methods, zoom = "usa", facet_by = "method", ncol = 2)
+```
+
+# Word cloud
+## Titles
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet)
+```
+
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, species_use = "Mus musculus", scale = c(5, 0.1))
+```
+
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, species_use = "Homo sapiens")
+```
+
+## Tissues
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, col_use = "tissue")
+```
+
+I think that's in part due to STARmap, but a ISS preprint that demonstrated the scalability of a preprocessing pipeline also used the cortex.
+
+```{r, fig.height=5, fig.width=5}
+plot_wordcloud(sheet, species_use = "Mus musculus", col_use = "tissue")
+```
+
+```{r}
+plot_wordcloud(sheet, species_use = "Homo sapiens", col_use = "tissue", scale = c(5, 0.1))
+```
+
+## Over time
+
+```{r}
+range(sheet$date_published)
+```
+
+Probably not worth the effort to split by time period.
+
+## Department names
+
+```{r}
+plot_wordcloud(sheet, department, other_stop_words = inst_words, scale = c(5, 0.1))
+```
+
+## Downstream analyses
+```{r, fig.height=7, fig.width=7}
+plot_wordcloud(sheet, downstream, scale = c(4, 0.1))
+```
+
+# Programming languages
+```{r}
+langs <- unnest_cat(sheet, language)
+```
+
+```{r}
+pubs_per_cat(langs, language, isotype = TRUE, img_unit = 1)
+```
+
+# Data and code availability
+
+How many publications have provided a code repo?
+```{r}
+hist_bool(publications, !is.na(repo), binwidth = 200)
+```
+
+Since data availability status can differ among datasets for the same publications, here the number of datasets is used.
+```{r}
+hist_bool(sheet, has_matrix, binwidth = 200)
+```
+
+Is this significant? Probably not. 
+```{r}
+test_year_bool(publications, !is.na(repo))
+```
+
+# Number of genes and cells
+```{r}
+sheet %>% 
+  filter(!is.na(n_genes), !is.na(n_cells)) %>% 
+  ggplot(aes(date_published, n_genes, color = method)) +
+  geom_point()
+```
+
+```{r}
+sheet %>% 
+  filter(!is.na(n_genes), !is.na(n_cells)) %>% 
+  ggplot(aes(date_published, n_cells, color = method)) +
+  geom_point()
+```
+
+I don't see any trend that the number of genes and cells is increasing over time. Too lazy to formally test it. Plus the number of datasets is too small for me to draw conclusions.

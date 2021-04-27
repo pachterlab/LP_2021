@@ -1,0 +1,254 @@
+---
+title: "Prequel Analysis"
+author: "Lambda Moses"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Prequel Analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Here I explore the history and geography of spatial transcriptomics data analysis for prequel data through the metadata I collected.
+```{r}
+library(museumst)
+library(purrr)
+library(dplyr)
+library(ggplot2)
+library(sf)
+theme_set(theme_bw())
+```
+
+# Import data
+By default, the `read_metadata` function reads the appropriate sheet from a cache within this package. This may be outdated, since the Google Sheets are constantly updated. Use the argument `update = TRUE` to download the most up to date version. The default is `FALSE` to avoid API limits during automated CRAN checks.
+```{r}
+sheet <- read_metadata("Prequel analysis")
+```
+
+# Number of publications
+How many publications per year?
+```{r}
+anyDuplicated(sheet$title)
+```
+
+How many publications are there in total in this sheet?
+```{r}
+nrow(sheet)
+```
+
+```{r}
+# For maps later in this notebook
+city_gc <- geocode_inst_city(sheet)
+pubs_on_map2 <- partial(pubs_on_map, city_gc = city_gc)
+```
+
+## Overall
+By default, preprints are excluded from plots of number of publications over time, since the timing of preprints is incoherent to that of published papers. Including preprints will inflate the number of publications in recent months, and if we make the same plot a few months later, that inflation we see now will be gone and moved to a more recent date. You can add the `preprints = TRUE` argument to all functions plotting things over time in this package to include preprints. You can also use the `binwidth` argument to specify bin width in days. The default is 365 days.
+```{r}
+pubs_per_year(sheet, preprints = TRUE)
+```
+
+Apparently, the golden age of prequel data analysis is gone.
+
+## By category
+By the category of problem to address
+```{r}
+category <- unnest_cat(sheet, category)
+```
+
+```{r}
+pubs_per_cat(category, category)
+```
+
+```{r, fig.width=5, fig.height=5}
+pubs_per_year(category, facet_by = "category", preprints = TRUE)
+```
+
+## By species
+
+```{r}
+species <- unnest_cat(sheet, species, other_cols = "state/province")
+```
+
+```{r}
+pubs_per_cat(species, species)
+```
+
+```{r}
+pubs_per_cat(species, species, isotype = TRUE, img_unit = 5)
+```
+
+I know, for almost all cases, it's either for the BDGP atlas or the Allen Brain Atlas.
+
+```{r}
+pubs_per_year(species, facet_by = "species", preprints = TRUE)
+```
+
+I don't think it's significant, but it looks like the mouse papers came slightly later than Drosophila papers. It seems that the first peak is for Drosophila, while the second is for mice. The first is in response to the BDGP atpas, and the second is in response to ABA, hence the date whe they started.
+
+## By journal
+```{r}
+sort(table(sheet$journal), decreasing = TRUE)
+```
+
+## Location
+### General
+Just some barplots for number of publications per institution, city, and country. 
+```{r}
+pubs_per_cat(sheet, country)
+```
+
+What, Sweden isn't here? How about per capita? Actually this probably does not say much since many researchers in the West are immigrants. Then it raises the burning political question of who counts as the "population".
+
+```{r}
+pubs_per_capita(sheet, plot = "bar")
+```
+
+How about country over time? There might not be enough publications to show a trend.
+```{r, fig.height=9, fig.width=6}
+pubs_per_year(sheet, facet_by = "country")
+```
+
+It's mostly an American thing. Now look at cities. 
+
+```{r}
+pubs_per_cat(sheet, city)
+```
+
+Where the research is done is quite different from data analysis methods for current era data.
+
+Institutions
+```{r}
+pubs_per_cat(sheet, institution)
+```
+
+It's very different from the institutions for the original trilogy analysis.
+
+### Worldwide
+```{r}
+pubs_on_map2(sheet)
+```
+
+Let me also plot the per capita thing on a map, as a choropleth
+```{r}
+pubs_per_capita(sheet)
+```
+
+Break down by species
+```{r, fig.width=6, fig.height=10}
+pubs_on_map2(species, facet_by = "species", ncol = 1)
+```
+
+### Europe
+Plot a map just for Europe. A problem here is that if I simply filter the `world` sf object, I'll get some islands away from what we usually think is Europe. Kind of feel bad for Russians since Russia is so large that it makes the map look bad and I don't have a paper from Russia in this spreadsheet. 
+
+```{r}
+pubs_on_map2(sheet, zoom = "europe")
+```
+
+```{r}
+pubs_per_capita(sheet, "europe")
+```
+
+```{r}
+pubs_on_map2(species, zoom = "europe", facet_by = "species")
+```
+
+Maybe I just made this plot for fun. Not sure what to say about it.
+
+### USA
+Also a plot just for America. I did not encounter a publication in this spreadsheet that is from Hawaii or Alaska, but I'll include Hawaii and Alaska in the map anyway in case I get one in the future.
+
+```{r}
+pubs_on_map2(sheet, zoom = "usa")
+```
+
+```{r}
+pubs_per_capita(sheet, "usa")
+```
+
+Compare to current era or original trilogy anything, prequel data analysis is more spread out over different parts of the US, just like prequel data collection. Now I really why this is the case since it probably can't be explained by cost.
+
+```{r}
+pubs_on_map2(species, zoom = "usa", facet_by = "species")
+```
+
+# Word cloud
+## Titles
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet)
+```
+
+## Summaries
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, summary)
+```
+
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, core_principle, scale = c(5, 0.1))
+```
+
+That "bag" comes from bag of words.
+
+## Tissues
+```{r}
+plot_wordcloud(sheet, tissue)
+```
+
+No-brainer (pun intended). Of course it's brain from ABA, since I left the tissue colum empty for whole Drosophila embryos.
+
+## By species
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, species_use = "Drosophila melanogaster")
+```
+
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, species_use = "Mus musculus")
+```
+
+## Over time
+
+```{r}
+range(sheet$date_published)
+```
+
+### Titles
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, year_min = 2001, year_max = 2010)
+```
+
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, year_min = 2010, year_max = 2015)
+```
+
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, year_min = 2015, year_max = 2021)
+```
+
+### Summaries
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, summary, year_min = 2001, year_max = 2010, scale = c(5, 0.1))
+```
+
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, summary, year_min = 2010, year_max = 2015)
+```
+
+That 2009 is from the 2009 bag of words method.
+
+```{r, fig.height=7, fig.width=7}
+plot_wordcloud(sheet, summary, year_min = 2015, year_max = 2021)
+```
+
+NMF rose to fame.
+
+## Department names
+
+```{r, fig.height=6, fig.width=6}
+plot_wordcloud(sheet, col_use = "department", other_stop_words = inst_words)
+```
