@@ -18,6 +18,7 @@ library(ggraph)
 library(bluster)
 library(uwot)
 library(quanteda)
+library(quanteda.textstats)
 library(text2vec)
 library(here)
 library(gtable)
@@ -624,7 +625,7 @@ ac_vectors <- ac_gv + t(ac_context)
 ```
 
 ```{r}
-wf <- quanteda::textstat_frequency(lcm_dfm2)
+wf <- textstat_frequency(lcm_dfm2)
 words_plot <- wf$feature[wf$frequency > 30]
 ```
 
