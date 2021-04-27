@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 From the past to the present | Museum of Spatial Transcriptomics</title>
+  <meta name="description" content="Chapter 4 From the past to the present | Museum of Spatial Transcriptomics" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 From the past to the present | Museum of Spatial Transcriptomics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapter 4 From the past to the present | Museum of Spatial Transcriptomics" />
+  <meta name="github-repo" content="pachterlab/museumst_catalogue" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 From the past to the present | Museum of Spatial Transcriptomics" />
+  
+  <meta name="twitter:description" content="Chapter 4 From the past to the present | Museum of Spatial Transcriptomics" />
+  
+
+<meta name="author" content="Lambda Moses, dlu2@caltech.edu" />
+<meta name="author" content="Lior Pachter, lpachter@caltech.edu" />
+
+
+<meta name="date" content="2021-04-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prequel-analysis.html"/>
+<link rel="next" href="current-techs.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Museum of Spatial Transcriptomics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="part"><span><b>I Prequel era</b></span></li>
+<li class="chapter" data-level="2" data-path="prequel.html"><a href="prequel.html"><i class="fa fa-check"></i><b>2</b> Prequel era</a><ul>
+<li class="chapter" data-level="2.1" data-path="prequel.html"><a href="prequel.html#traps"><i class="fa fa-check"></i><b>2.1</b> Enhancer and gene traps</a></li>
+<li class="chapter" data-level="2.2" data-path="prequel.html"><a href="prequel.html#in-situ-reporter"><i class="fa fa-check"></i><b>2.2</b> In situ reporter</a></li>
+<li class="chapter" data-level="2.3" data-path="prequel.html"><a href="prequel.html#wmish"><i class="fa fa-check"></i><b>2.3</b> ISH and WMISH atlases</a></li>
+<li class="chapter" data-level="2.4" data-path="prequel.html"><a href="prequel.html#database_prequel"><i class="fa fa-check"></i><b>2.4</b> Databases of the prequel era</a></li>
+<li class="chapter" data-level="2.5" data-path="prequel.html"><a href="prequel.html#geo_prequel"><i class="fa fa-check"></i><b>2.5</b> Geography of the prequel era</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prequel-analysis.html"><a href="prequel-analysis.html"><i class="fa fa-check"></i><b>3</b> Data analysis in the prequel era</a><ul>
+<li class="chapter" data-level="3.1" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-gene-patterns"><i class="fa fa-check"></i><b>3.1</b> Gene patterns</a></li>
+<li class="chapter" data-level="3.2" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-spatial-regions"><i class="fa fa-check"></i><b>3.2</b> Spatial regions</a></li>
+<li class="chapter" data-level="3.3" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-gene-interactions"><i class="fa fa-check"></i><b>3.3</b> Gene interactions</a></li>
+<li class="chapter" data-level="3.4" data-path="prequel-analysis.html"><a href="prequel-analysis.html#decline"><i class="fa fa-check"></i><b>3.4</b> Decline</a></li>
+<li class="chapter" data-level="3.5" data-path="prequel-analysis.html"><a href="prequel-analysis.html#geo-prequel-analysis"><i class="fa fa-check"></i><b>3.5</b> Geography of prequel data analysis</a></li>
+</ul></li>
+<li class="part"><span><b>II Current era</b></span></li>
+<li class="chapter" data-level="4" data-path="current.html"><a href="current.html"><i class="fa fa-check"></i><b>4</b> From the past to the present</a></li>
+<li class="chapter" data-level="5" data-path="current-techs.html"><a href="current-techs.html"><i class="fa fa-check"></i><b>5</b> Current era technologies</a><ul>
+<li class="chapter" data-level="5.1" data-path="current-techs.html"><a href="current-techs.html#microdissection"><i class="fa fa-check"></i><b>5.1</b> Microdissection</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="current-techs.html"><a href="current-techs.html#history-of-lcm"><i class="fa fa-check"></i><b>5.1.1</b> History of LCM</a></li>
+<li class="chapter" data-level="5.1.2" data-path="current-techs.html"><a href="current-techs.html#lcm-usage"><i class="fa fa-check"></i><b>5.1.2</b> Usage of LCM</a></li>
+<li class="chapter" data-level="5.1.3" data-path="current-techs.html"><a href="current-techs.html#physical-microdissection"><i class="fa fa-check"></i><b>5.1.3</b> Physical microdissection</a></li>
+<li class="chapter" data-level="5.1.4" data-path="current-techs.html"><a href="current-techs.html#de-facto-microdissection"><i class="fa fa-check"></i><b>5.1.4</b> <em>De facto</em> microdissection</a></li>
+<li class="chapter" data-level="5.1.5" data-path="current-techs.html"><a href="current-techs.html#summary"><i class="fa fa-check"></i><b>5.1.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="current-techs.html"><a href="current-techs.html#smfish"><i class="fa fa-check"></i><b>5.2</b> Single molecular FISH</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="current-techs.html"><a href="current-techs.html#barcoding"><i class="fa fa-check"></i><b>5.2.1</b> Barcoding strategies</a></li>
+<li class="chapter" data-level="5.2.2" data-path="current-techs.html"><a href="current-techs.html#amplification"><i class="fa fa-check"></i><b>5.2.2</b> Signal amplification</a></li>
+<li class="chapter" data-level="5.2.3" data-path="current-techs.html"><a href="current-techs.html#crowding"><i class="fa fa-check"></i><b>5.2.3</b> Optical crowding</a></li>
+<li class="chapter" data-level="5.2.4" data-path="current-techs.html"><a href="current-techs.html#smfish-usage"><i class="fa fa-check"></i><b>5.2.4</b> Usage of smFISH based techniques</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="current-techs.html"><a href="current-techs.html#iss"><i class="fa fa-check"></i><b>5.3</b> In situ sequencing</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="current-techs.html"><a href="current-techs.html#solid"><i class="fa fa-check"></i><b>5.3.1</b> SOLiD and FISSEQ</a></li>
+<li class="chapter" data-level="5.3.2" data-path="current-techs.html"><a href="current-techs.html#cpal"><i class="fa fa-check"></i><b>5.3.2</b> cPAL and ISS</a></li>
+<li class="chapter" data-level="5.3.3" data-path="current-techs.html"><a href="current-techs.html#sedal"><i class="fa fa-check"></i><b>5.3.3</b> SEDAL and STARmap</a></li>
+<li class="chapter" data-level="5.3.4" data-path="current-techs.html"><a href="current-techs.html#sbs"><i class="fa fa-check"></i><b>5.3.4</b> Sequencing by synthesis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="current-techs.html"><a href="current-techs.html#array"><i class="fa fa-check"></i><b>5.4</b> In situ array capture</a></li>
+<li class="chapter" data-level="5.5" data-path="current-techs.html"><a href="current-techs.html#no-imaging"><i class="fa fa-check"></i><b>5.5</b> No imaging</a></li>
+<li class="chapter" data-level="5.6" data-path="current-techs.html"><a href="current-techs.html#multiomics"><i class="fa fa-check"></i><b>5.6</b> Spatial multi-omics</a></li>
+<li class="chapter" data-level="5.7" data-path="current-techs.html"><a href="current-techs.html#database-current"><i class="fa fa-check"></i><b>5.7</b> Databases of the current era</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>6</b> Text mining LCM transcriptomics abstracts</a><ul>
+<li class="chapter" data-level="6.1" data-path="text-mining.html"><a href="text-mining.html#topic-model"><i class="fa fa-check"></i><b>6.1</b> Topic modeling</a></li>
+<li class="chapter" data-level="6.2" data-path="text-mining.html"><a href="text-mining.html#word-time"><i class="fa fa-check"></i><b>6.2</b> Changes of word usage through time</a></li>
+<li class="chapter" data-level="6.3" data-path="text-mining.html"><a href="text-mining.html#topic-time"><i class="fa fa-check"></i><b>6.3</b> Changes of topic prevalence through time</a></li>
+<li class="chapter" data-level="6.4" data-path="text-mining.html"><a href="text-mining.html#association-of-topics-with-city"><i class="fa fa-check"></i><b>6.4</b> Association of topics with city</a></li>
+<li class="chapter" data-level="6.5" data-path="text-mining.html"><a href="text-mining.html#glove"><i class="fa fa-check"></i><b>6.5</b> GloVe word embedding</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="current-analysis.html"><a href="current-analysis.html"><i class="fa fa-check"></i><b>7</b> Data analysis in the current era</a><ul>
+<li class="chapter" data-level="7.1" data-path="current-analysis.html"><a href="current-analysis.html#preprocessing"><i class="fa fa-check"></i><b>7.1</b> Preprocessing</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="current-analysis.html"><a href="current-analysis.html#registration"><i class="fa fa-check"></i><b>7.1.1</b> Image registration</a></li>
+<li class="chapter" data-level="7.1.2" data-path="current-analysis.html"><a href="current-analysis.html#calling"><i class="fa fa-check"></i><b>7.1.2</b> Spot and barcode calling</a></li>
+<li class="chapter" data-level="7.1.3" data-path="current-analysis.html"><a href="current-analysis.html#segmentation"><i class="fa fa-check"></i><b>7.1.3</b> Cell segmentation</a></li>
+<li class="chapter" data-level="7.1.4" data-path="current-analysis.html"><a href="current-analysis.html#seg-alternatives"><i class="fa fa-check"></i><b>7.1.4</b> Alternatives to cell segmentation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="current-analysis.html"><a href="current-analysis.html#eda"><i class="fa fa-check"></i><b>7.2</b> Exploratory data analysis</a></li>
+<li class="chapter" data-level="7.3" data-path="current-analysis.html"><a href="current-analysis.html#reconstruction"><i class="fa fa-check"></i><b>7.3</b> Spatial reconstruction of scRNA-seq data</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="current-analysis.html"><a href="current-analysis.html#direct-dr"><i class="fa fa-check"></i><b>7.3.1</b> Direct dimension reduction</a></li>
+<li class="chapter" data-level="7.3.2" data-path="current-analysis.html"><a href="current-analysis.html#ad-hoc"><i class="fa fa-check"></i><b>7.3.2</b> <em>Ad hoc</em> scoring</a></li>
+<li class="chapter" data-level="7.3.3" data-path="current-analysis.html"><a href="current-analysis.html#generative"><i class="fa fa-check"></i><b>7.3.3</b> Generative models</a></li>
+<li class="chapter" data-level="7.3.4" data-path="current-analysis.html"><a href="current-analysis.html#latent"><i class="fa fa-check"></i><b>7.3.4</b> Shared latent space</a></li>
+<li class="chapter" data-level="7.3.5" data-path="current-analysis.html"><a href="current-analysis.html#reconst-other"><i class="fa fa-check"></i><b>7.3.5</b> Other principles</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="current-analysis.html"><a href="current-analysis.html#deconvolution"><i class="fa fa-check"></i><b>7.4</b> Cell type deconvolution</a></li>
+<li class="chapter" data-level="7.5" data-path="current-analysis.html"><a href="current-analysis.html#variable"><i class="fa fa-check"></i><b>7.5</b> Spatially variable genes</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="current-analysis.html"><a href="current-analysis.html#gpr"><i class="fa fa-check"></i><b>7.5.1</b> Gaussian process regression</a></li>
+<li class="chapter" data-level="7.5.2" data-path="current-analysis.html"><a href="current-analysis.html#laplacian"><i class="fa fa-check"></i><b>7.5.2</b> Laplacian score</a></li>
+<li class="chapter" data-level="7.5.3" data-path="current-analysis.html"><a href="current-analysis.html#variable-other"><i class="fa fa-check"></i><b>7.5.3</b> Other principles</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="current-analysis.html"><a href="current-analysis.html#pattern"><i class="fa fa-check"></i><b>7.6</b> Gene patterns</a></li>
+<li class="chapter" data-level="7.7" data-path="current-analysis.html"><a href="current-analysis.html#region"><i class="fa fa-check"></i><b>7.7</b> Spatial regions</a></li>
+<li class="chapter" data-level="7.8" data-path="current-analysis.html"><a href="current-analysis.html#cell-interaction"><i class="fa fa-check"></i><b>7.8</b> Cell-cell interaction</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="current-analysis.html"><a href="current-analysis.html#l-r"><i class="fa fa-check"></i><b>7.8.1</b> Ligand-receptor pairs</a></li>
+<li class="chapter" data-level="7.8.2" data-path="current-analysis.html"><a href="current-analysis.html#gene-cell-interact"><i class="fa fa-check"></i><b>7.8.2</b> Genes associated with cell-cell interaction</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="current-analysis.html"><a href="current-analysis.html#gene-interaction"><i class="fa fa-check"></i><b>7.9</b> Gene-gene interaction</a></li>
+<li class="chapter" data-level="7.10" data-path="current-analysis.html"><a href="current-analysis.html#subcellular"><i class="fa fa-check"></i><b>7.10</b> Subcellular transcript localization</a></li>
+<li class="chapter" data-level="7.11" data-path="current-analysis.html"><a href="current-analysis.html#HnE"><i class="fa fa-check"></i><b>7.11</b> Gene expression imputation from H&amp;E</a></li>
+</ul></li>
+<li class="part"><span><b>III Future perspectives</b></span></li>
+<li class="chapter" data-level="8" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>8</b> From the past to the present to the future</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Museum of Spatial Transcriptomics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="current" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> From the past to the present</h1>
+<p>The current era continues many of the quests of the prequel era, such as to profile the transcriptome in space, to identify genes with restricted expression, to classify gene expression patterns, to build reference gene expression atlases for model systems, and to infer anatomical regions based on gene expression. While the prequel era also sought to identify cell type markers, this has been taken over by non-spatial transcriptomics, which has been used to identify marker genes to stain for with spatial transcriptomics methods not easily scalable to the whole transcriptome. As already mentioned, (WM)ISH atlases can be understood as an improved alternative to microarray and <em>in situ</em> reporter screens, and the latter can be in turn understood as an improved alternative to enhancer and gene traps. To some extent, current era spatial transcriptomics started as an improved alternative to (WM)ISH atlases, to profile the whole transcriptome in the same cells <span class="citation">(Junker et al. <a href="#ref-Junker2014" role="doc-biblioref">2014</a>; Lee et al. <a href="#ref-Lee2014" role="doc-biblioref">2014</a>)</span>. On the other hand, part of current era of spatial transcriptomics can be seen as an improvement to bulk microarray or RNA-seq <span class="citation">(V. M. Brown et al. <a href="#ref-Brown2002" role="doc-biblioref">2002</a>; Junker et al. <a href="#ref-Junker2014" role="doc-biblioref">2014</a>; Ståhl et al. <a href="#ref-Stahl2016a" role="doc-biblioref">2016</a>; Luo et al. <a href="#ref-Luo1999" role="doc-biblioref">1999</a>)</span>, and lower throughput single cell biology <span class="citation">(Lubeck and Cai <a href="#ref-Lubeck2012" role="doc-biblioref">2012</a>; K. H. Chen et al. <a href="#ref-Chen2015" role="doc-biblioref">2015</a>)</span>.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:table1">Table 4.1: </span>Summary of spatial transcriptomics techniques in the current era
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Method
+</th>
+<th style="text-align:left;">
+First published
+</th>
+<th style="text-align:left;">
+Category
+</th>
+<th style="text-align:left;">
+Max # genes
+</th>
+<th style="text-align:left;">
+Min spot diameter (<span class="math inline">\(\mu\)</span>m)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 6em; ">
+voxelation
+</td>
+<td style="text-align:left;width: 6em; ">
+2002-02-01
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+SRM seqFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2012-06-03
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+32
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Tomo-array
+</td>
+<td style="text-align:left;width: 6em; ">
+2012-09-19
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+iceFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2013-02-17
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+20
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+2013-07-14
+</td>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+222
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Tomo-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2013-08-12
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+bDNA-smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2013-10-06
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+928
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+TIVA
+</td>
+<td style="text-align:left;width: 6em; ">
+2014-01-12
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+FISSEQ
+</td>
+<td style="text-align:left;width: 6em; ">
+2014-03-21
+</td>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+8102
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+seqFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2014-03-28
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+1116
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+MERFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2015-04-24
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+4209
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Puzzle Imaging
+</td>
+<td style="text-align:left;width: 6em; ">
+2015-07-20
+</td>
+<td style="text-align:left;width: 6em; ">
+No imaging
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Geo-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2016-03-21
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+corrFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2016-06-06
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+10
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+ST
+</td>
+<td style="text-align:left;width: 6em; ">
+2016-07-01
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+HCR-seqFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2016-10-19
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+249
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+punch
+</td>
+<td style="text-align:left;width: 6em; ">
+2017-06-28
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+SGA
+</td>
+<td style="text-align:left;width: 6em; ">
+2017-11-28
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+35
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+APEX-RIP
+</td>
+<td style="text-align:left;width: 6em; ">
+2017-12-14
+</td>
+<td style="text-align:left;width: 6em; ">
+No imaging
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Niche-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2017-12-22
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+ExM-MERFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2018-03-19
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+10050
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+seqFISH+
+</td>
+<td style="text-align:left;width: 6em; ">
+2018-07-12
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+10421
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+STARmap
+</td>
+<td style="text-align:left;width: 6em; ">
+2018-07-27
+</td>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+1020
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Paired-cell sequencing
+</td>
+<td style="text-align:left;width: 6em; ">
+2018-09-17
+</td>
+<td style="text-align:left;width: 6em; ">
+No imaging
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+osmFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2018-10-30
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+33
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+GeoMX DSP
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-02-26
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+2093
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+slide-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-03-29
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+bDNA-MERFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-05-25
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+130
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+DNA microscopy
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-06-27
+</td>
+<td style="text-align:left;width: 6em; ">
+No imaging
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+APEX-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-07-11
+</td>
+<td style="text-align:left;width: 6em; ">
+No imaging
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+INSTA-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-08-06
+</td>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+PARSIFT
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-09-04
+</td>
+<td style="text-align:left;width: 6em; ">
+No imaging
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+HDST
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-09-09
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+GaST-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-10-10
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+BARseq
+</td>
+<td style="text-align:left;width: 6em; ">
+2019-10-17
+</td>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+79
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+SCRINSHOT
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-02-07
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+29
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Visium
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-02-28
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+55
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+PIC
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-03-23
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+miRNA nanowell
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-05-09
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+9
+</td>
+<td style="text-align:left;width: 6em; ">
+300
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+split-FISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-06-15
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+317
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+HybISS
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-07-03
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+120
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+ZipSeq
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-07-06
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+ClumpSeq
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-08-06
+</td>
+<td style="text-align:left;width: 6em; ">
+No imaging
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+BARseq2
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-08-26
+</td>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+65
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+SM-Omics
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-10-15
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+slide-seq2
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-10-17
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+DBiT-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-10-19
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+C-FISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-10-23
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+HybRISS
+</td>
+<td style="text-align:left;width: 6em; ">
+2020-12-02
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+50
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Stereo-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-01-19
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+0.22
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Seq-Scope
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-01-27
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+ExSeq
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-01-29
+</td>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+297
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+par-seqFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-02-25
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+105
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+EASI-FISH
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-03-08
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+26
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+Pick-Seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-03-09
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+nanoneedles
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-03-10
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+9
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+PIXEL-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-03-17
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+1.22
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+GeoMX WTA
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-03-20
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+18190
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+CISI
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-04-15
+</td>
+<td style="text-align:left;width: 6em; ">
+smFISH
+</td>
+<td style="text-align:left;width: 6em; ">
+37
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+STRP-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-04-19
+</td>
+<td style="text-align:left;width: 6em; ">
+Microdissection
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+XYZeq
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-04-21
+</td>
+<td style="text-align:left;width: 6em; ">
+Array
+</td>
+<td style="text-align:left;width: 6em; ">
+Tx wide
+</td>
+<td style="text-align:left;width: 6em; ">
+500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 6em; ">
+electro-seq
+</td>
+<td style="text-align:left;width: 6em; ">
+2021-04-23
+</td>
+<td style="text-align:left;width: 6em; ">
+ISS
+</td>
+<td style="text-align:left;width: 6em; ">
+201
+</td>
+<td style="text-align:left;width: 6em; ">
+single cell
+</td>
+</tr>
+</tbody>
+</table>
+<p>The current era started with LCM followed by microarray in 1999 <span class="citation">(Luo et al. <a href="#ref-Luo1999" role="doc-biblioref">1999</a>)</span>. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure <a href="text-mining.html#fig:topics">6.3</a>, Chapter <a href="text-mining.html#text-mining">6</a>. Because the search results—without manual inspection and curation—may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.</p>
+<div class="figure" style="text-align: center"><span id="fig:current-hist"></span>
+<img src="04-current_files/figure-html/current-hist-1.png" alt="Number of publications over time in the current era. The gray histogram in the background is the overall trend of all current era literature. Each facet highlights a category, ordered chronologically in terms of first report. Bin width is 365 days. Plots in this figure include curated LCM literature, but not the non-curated literature." width="576" />
+<p class="caption">
+Figure 4.1: Number of publications over time in the current era. The gray histogram in the background is the overall trend of all current era literature. Each facet highlights a category, ordered chronologically in terms of first report. Bin width is 365 days. Plots in this figure include curated LCM literature, but not the non-curated literature.
+</p>
+</div>
+<p>Chronologically, in the curated database, microdissection came first, with voxelation in 2002 <span class="citation">(V. M. Brown et al. <a href="#ref-Brown2002" role="doc-biblioref">2002</a>)</span>, followed by smFISH, ISS, no imaging, and array (Figure <a href="current.html#fig:current-hist">4.1</a>). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure <a href="current.html#fig:current-vs-prequel">4.2</a>). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure <a href="current.html#fig:current-vs-prequel">4.2</a>). Growth in microdissection and array seemed to have contributed the most to this overall drastic growth (Figure <a href="current.html#fig:current-hist">4.1</a>). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table <a href="current.html#tab:table1">4.1</a>. A timeline of major techniques in the current era is shown in Figure <a href="current.html#fig:tl3">4.3</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:current-vs-prequel"></span>
+<img src="04-current_files/figure-html/current-vs-prequel-1.png" alt="Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days. Note that the number is lower in 2021 because this figure was rendered in April 2021." width="672" />
+<p class="caption">
+Figure 4.2: Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days. Note that the number is lower in 2021 because this figure was rendered in April 2021.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:tl3"></span>
+<img src="04-current_files/figure-html/tl3-1.png" alt="Timeline of major techniques related to the current era." width="960" />
+<p class="caption">
+Figure 4.3: Timeline of major techniques related to the current era.
+</p>
+</div>
+<p>The prequel era started with untargeted screens and grew into atlases and databases striving to be comprehensive. Screens are still a theme in the current era and spatial transcriptomics is still used in untargeted searches for genes involved in development of model organisms, but with highly multiplexed technology, this can also be done for pathological and human tissues (Figure <a href="current.html#fig:species-pie">4.4</a>, Figure <a href="current.html#fig:hg-anat">4.5</a>). Thanks to multiplexing, while mouse was the most popular species in the prequel era, in the current era, there are almost as many studies on human tissues as those on mice and the vast majority of studies are on either humans or mice (Figure <a href="current.html#fig:species-pie">4.4</a>). <em>Drosophila</em> is no longer as commonly used in the current era (Figure <a href="current.html#fig:species-pie">4.4</a>), perhaps because any current era technique requiring tissue sectioning is less amenable to <em>Drosophila</em> embryos, making Tomo-seq along one body axis the only technique that has been demonstrated to be amenable <span class="citation">(Combs and Eisen <a href="#ref-Combs2013" role="doc-biblioref">2013</a>; Combs and Fraser <a href="#ref-Combs2018" role="doc-biblioref">2018</a>)</span>. Whole mount smFISH protocols exist for <em>Drosophila</em> brains <span class="citation">(Long et al. <a href="#ref-Long2017" role="doc-biblioref">2017</a>)</span>, zebrafish embryos <span class="citation">(Oka and Sato <a href="#ref-Oka2015" role="doc-biblioref">2015</a>)</span>, and embryonic mouse organs <span class="citation">(Wang et al. <a href="#ref-Wang2019" role="doc-biblioref">2019</a>)</span>, but to our best knowledge, highly multiplexed smFISH and ISS have not been adapted to whole mount samples, although they have been adapted to thick slices of cleared tissue <span class="citation">(X. Wang et al. <a href="#ref-Wang2018b" role="doc-biblioref">2018</a>; Wang et al. <a href="#ref-Wang2021" role="doc-biblioref">2021</a>)</span>. For <em>Drosophila</em> tissue sections, while microdissection, smFISH, and ISS may be applied, the resolution of ST and Visium may be too low to discern sufficiently fine patterns in such a small model organism.</p>
+<div class="figure" style="text-align: center"><span id="fig:species-pie"></span>
+<img src="04-current_files/figure-html/species-pie-1.png" alt="Number of publication per species." width="480" />
+<p class="caption">
+Figure 4.4: Number of publication per species.
+</p>
+</div>
+
+<div class="figure" style="text-align: center"><span id="fig:hg-anat"></span>
+<img src="04-current_files/figure-html/hg-anat-1.png" alt="A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer (Burgess 2019; Brady et al. 2021))." width="768" />
+<p class="caption">
+Figure 4.5: A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer <span class="citation">(Burgess <a href="#ref-Burgess2019" role="doc-biblioref">2019</a>; Brady et al. <a href="#ref-Brady2021" role="doc-biblioref">2021</a>)</span>).
+</p>
+</div>
+<p>While atlases have so far not been in the center of the stage, some atlases have been made with current era technology, such as MERFISH <span class="citation">(Zhang et al. <a href="#ref-Zhang2020" role="doc-biblioref">2020</a>)</span>, HybISS <span class="citation">(Manno et al. <a href="#ref-Manno2020" role="doc-biblioref">2020</a>)</span>, and ST <span class="citation">(Ortiz et al. <a href="#ref-Ortiz2020" role="doc-biblioref">2020</a>)</span>, described with similar language to that of (WM)ISH atlases. Also as in the prequel era, the brain is still the most favored organ (Figure <a href="current.html#fig:hg-anat">4.5</a>, Figure <a href="current.html#fig:mm-anat">4.6</a>). Among pathological tissues, breast tumors are the most used (Figure <a href="current.html#fig:hg-anat">4.5</a>). More recently, in the wake of the SARS-CoV-2 pandemic, a number of studies using GeoMX Digital Spatial Profiler (DSP) to profile spatial transcriptomes of lungs of COVID victims have been published <span class="citation">(Park et al. <a href="#ref-Park2021" role="doc-biblioref">2021</a>; Butler et al. <a href="#ref-Butler2021" role="doc-biblioref">2021</a>; Delorey et al. <a href="#ref-Delorey2021" role="doc-biblioref">2021</a>; Margaroli et al. <a href="#ref-Margaroli2021" role="doc-biblioref">2021</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:mm-anat"></span>
+<img src="04-current_files/figure-html/mm-anat-1.png" alt="A) Number of publications per healthy organ in the mouse. B) Number of publications for pathological organs in mouse." width="768" />
+<p class="caption">
+Figure 4.6: A) Number of publications per healthy organ in the mouse. B) Number of publications for pathological organs in mouse.
+</p>
+</div>
+<p>However, unlike in the prequel era, in which older technologies were adapted to larger scale to produce the screens and atlases, the current era has another major theme – new techniques, due to the challenges to be discussed in the following sections; the number of new techniques published each year has grown steadily in the past few years (Figure <a href="current.html#fig:n-insts">4.7</a>). However, this difference might be due to bias in curation and change in culture. In the prequel era, very different enhancer and gene trap vectors were lumped together into enhancer or gene trap in our database, and there might have been many different early non-radioactive ISH protocols not included in our database because they were not used to profile a sufficiently large number of genes. Furthermore, in the current era, authors like to give techniques new names, making related techniques seem distinct rather than lumped together in a wider category like enhancer or gene trap. While a few techniques other than LCM have become somewhat popular, such as ISS (2013), Tomo-seq (2013), MERFISH (2015), ST (late 2016), GeoMX DSP (2019), and Visium (first preprint in 2020), most techniques never or rarely spread beyond their institutions of origin (Figure <a href="current.html#fig:n-insts">4.7</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:n-insts"></span>
+<img src="04-current_files/figure-html/n-insts-1.png" alt="Techniques used by at least 3 institutions and the number of institutions that have used them." width="576" />
+<p class="caption">
+Figure 4.7: Techniques used by at least 3 institutions and the number of institutions that have used them.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:n-insts-hist"></span>
+<img src="04-current_files/figure-html/n-insts-hist-1.png" alt="Number of new methods per year, colored by the number of institutions that have used the method." width="576" />
+<p class="caption">
+Figure 4.8: Number of new methods per year, colored by the number of institutions that have used the method.
+</p>
+</div>
+<p>Furthermore, especially in the US, research in the current era tends to be more concentrated in a few elite institutions, while research in the prequel era tends to be more spread out to some less well-known institutions (Figure <a href="current.html#fig:current-world">4.9</a>). Among the top contributing institutions in the prequel era are those hosting databases, such as Allen Institute for ABA, University of Oregon (UO) for ZFIN, UC Berkeley and Lawrence Berkeley National Laboratory (LBL) for BDGP, University of Arizona (UofA) for GEISHA, Jackson Laboratory (JAX) for GXD, Western General Hospital (WGH) for EMAGE, and Kyoto University (Kyodai) for GHOST (Figure <a href="current.html#fig:current-world">4.9</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:current-world"></span>
+<img src="04-current_files/figure-html/current-world-1.png" alt="World map of institutions. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled." width="768" />
+<p class="caption">
+Figure 4.9: World map of institutions. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.
+</p>
+</div>
+
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Brady2021">
+<p>Brady, Lauren, Michelle Kriner, Ilsa Coleman, Colm Morrissey, Martine Roudier, Lawrence D True, Roman Gulati, et al. 2021. “Inter- and intra-tumor heterogeneity of metastatic prostate cancer determined by digital spatial gene expression profiling.” <em>Nature Communications</em> 12 (1): 1426. <a href="https://doi.org/10.1038/s41467-021-21615-4">https://doi.org/10.1038/s41467-021-21615-4</a>.</p>
+</div>
+<div id="ref-Brown2002">
+<p>Brown, V. M., A. Ossadtchi, A. H. Khan, S. Yee, G. Lacan, W. P. Melega, S. R. Cherry, R. M. Leahy, and D. J. Smith. 2002. “Multiplex Three-Dimensional Brain Gene Expression Mapping in a Mouse Model of Parkinson’s Disease.” <em>Genome Research</em> 12 (6): 868–84. <a href="https://doi.org/10.1101/gr.229002">https://doi.org/10.1101/gr.229002</a>.</p>
+</div>
+<div id="ref-Burgess2019">
+<p>Burgess, Darren J. 2019. “Spatial transcriptomics coming of age.” <em>Nature Reviews Genetics</em> 20 (6): 317–17. <a href="https://doi.org/10.1038/s41576-019-0129-z">https://doi.org/10.1038/s41576-019-0129-z</a>.</p>
+</div>
+<div id="ref-Butler2021">
+<p>Butler, Daniel, Christopher Mozsary, Cem Meydan, Jonathan Foox, Joel Rosiene, Alon Shaiber, David Danko, et al. 2021. “Shotgun transcriptome, spatial omics, and isothermal profiling of SARS-CoV-2 infection reveals unique host responses, viral diversification, and drug interactions.” <em>Nature Communications</em> 12 (1): 1660. <a href="https://doi.org/10.1038/s41467-021-21361-7">https://doi.org/10.1038/s41467-021-21361-7</a>.</p>
+</div>
+<div id="ref-Chen2015">
+<p>Chen, Kok Hao, Alistair N. Boettiger, Jeffrey R. Moffitt, Siyuan Wang, and Xiaowei Zhuang. 2015. “Spatially resolved, highly multiplexed RNA profiling in single cells.” <em>Science</em>. <a href="https://doi.org/10.1126/science.aaa6090">https://doi.org/10.1126/science.aaa6090</a>.</p>
+</div>
+<div id="ref-Combs2013">
+<p>Combs, Peter A., and Michael B. Eisen. 2013. “Sequencing mRNA from Cryo-Sliced Drosophila Embryos to Determine Genome-Wide Spatial Patterns of Gene Expression.” Edited by Barbara Jennings. <em>PLoS ONE</em> 8 (8): e71820. <a href="https://doi.org/10.1371/journal.pone.0071820">https://doi.org/10.1371/journal.pone.0071820</a>.</p>
+</div>
+<div id="ref-Combs2018">
+<p>Combs, Peter A., and Hunter B. Fraser. 2018. “Spatially varying cis-regulatory divergence in Drosophila embryos elucidates cis-regulatory logic.” Edited by Claude Desplan. <em>PLOS Genetics</em> 14 (11): e1007631. <a href="https://doi.org/10.1371/journal.pgen.1007631">https://doi.org/10.1371/journal.pgen.1007631</a>.</p>
+</div>
+<div id="ref-Delorey2021">
+<p>Delorey, Toni M, Carly G K Ziegler, Graham Heimberg, Rachelly Normand, Yiming Yang, Asa Segerstolpe, Domenic Abbondanza, et al. 2021. “A single-cell and spatial atlas of autopsy tissues reveals pathology and cellular targets of SARS-CoV-2.” <em>bioRxiv</em>, January, 2021.02.25.430130. <a href="https://doi.org/10.1101/2021.02.25.430130">https://doi.org/10.1101/2021.02.25.430130</a>.</p>
+</div>
+<div id="ref-Junker2014">
+<p>Junker, Jan Philipp, Emily S. Noël, Victor Guryev, Kevin A. Peterson, Gopi Shah, Jan Huisken, Andrew P. McMahon, Eugene Berezikov, Jeroen Bakkers, and Alexander Van Oudenaarden. 2014. “Genome-wide RNA Tomography in the Zebrafish Embryo.” <em>Cell</em>. <a href="https://doi.org/10.1016/j.cell.2014.09.038">https://doi.org/10.1016/j.cell.2014.09.038</a>.</p>
+</div>
+<div id="ref-Lee2014">
+<p>Lee, Je Hyuk, Evan R Daugharthy, Jonathan Scheiman, Reza Kalhor, Joyce L Yang, Thomas C Ferrante, Richard Terry, et al. 2014. “Highly Multiplexed Subcellular RNA Sequencing in Situ.” <em>Science</em> 343 (6177): 1360 LP–1363. <a href="https://doi.org/10.1126/science.1250212">https://doi.org/10.1126/science.1250212</a>.</p>
+</div>
+<div id="ref-Long2017">
+<p>Long, Xi, Jennifer Colonell, Allan M Wong, Robert H Singer, and Timothée Lionnet. 2017. “Quantitative mRNA imaging throughout the entire Drosophila brain.” <em>Nature Methods</em> 14 (7): 703–6. <a href="https://doi.org/10.1038/nmeth.4309">https://doi.org/10.1038/nmeth.4309</a>.</p>
+</div>
+<div id="ref-Lubeck2012">
+<p>Lubeck, Eric, and Long Cai. 2012. “Single-cell systems biology by super-resolution imaging and combinatorial labeling.” <em>Nature Methods 2012 9:7</em> 9 (7): 743–48. <a href="https://doi.org/10.1038/nmeth.2069">https://doi.org/10.1038/nmeth.2069</a>.</p>
+</div>
+<div id="ref-Luo1999">
+<p>Luo, Lin, Ranelle C. Salunga, Hongqing Guo, Anton Bittner, K. C. Joy, Jose E. Galindo, Huinian Xiao, et al. 1999. “Gene expression profiles of laser-captured adjacent neuronal subtypes.” <em>Nature Medicine</em> 5 (1): 117–22. <a href="https://doi.org/10.1038/4806">https://doi.org/10.1038/4806</a>.</p>
+</div>
+<div id="ref-Manno2020">
+<p>Manno, Gioele La, Kimberly Siletti, Alessandro Furlan, Daniel Gyllborg, Elin Vinsland, Christoffer Mattsson Langseth, Irina Khven, et al. 2020. “Molecular architecture of the developing mouse brain.” <em>bioRxiv</em>, July, 2020.07.02.184051. <a href="https://doi.org/10.1101/2020.07.02.184051">https://doi.org/10.1101/2020.07.02.184051</a>.</p>
+</div>
+<div id="ref-Margaroli2021">
+<p>Margaroli, C, P Benson, N S Sharma, M C Madison, S W Robison, N Arora, K Ton, et al. 2021. “Spatial mapping of SARS-CoV-2 and H1N1 Lung Injury Identifies Differential Transcriptional Signatures.” <em>Cell Reports. Medicine</em>, March, 100242. <a href="https://doi.org/10.1016/j.xcrm.2021.100242">https://doi.org/10.1016/j.xcrm.2021.100242</a>.</p>
+</div>
+<div id="ref-Oka2015">
+<p>Oka, Yuma, and Thomas N Sato. 2015. “Whole-mount single molecule FISH method for zebrafish embryo.” <em>Scientific Reports</em> 5 (February): 8571. <a href="https://doi.org/10.1038/srep08571">https://doi.org/10.1038/srep08571</a>.</p>
+</div>
+<div id="ref-Ortiz2020">
+<p>Ortiz, Cantin, Jose Fernandez Navarro, Aleksandra Jurek, Antje Märtin, Joakim Lundeberg, and Konstantinos Meletis. 2020. “Molecular atlas of the adult mouse brain.” <em>Science Advances</em> 6 (26): eabb3446. <a href="https://doi.org/10.1126/sciadv.abb3446">https://doi.org/10.1126/sciadv.abb3446</a>.</p>
+</div>
+<div id="ref-Park2021">
+<p>Park, Jiwoon, Jonathan Foox, Tyler Hether, David Danko, Sarah Warren, Youngmi Kim, Jason Reeves, et al. 2021. “Systemic Tissue and Cellular Disruption from SARS-CoV-2 Infection revealed in COVID-19 Autopsies and Spatial Omics Tissue Maps.” <em>bioRxiv</em>, January, 2021.03.08.434433. <a href="https://doi.org/10.1101/2021.03.08.434433">https://doi.org/10.1101/2021.03.08.434433</a>.</p>
+</div>
+<div id="ref-Stahl2016a">
+<p>Ståhl, Patrik L., Fredrik Salmén, Sanja Vickovic, Anna Lundmark, José Fernández Navarro, Jens Magnusson, Stefania Giacomello, et al. 2016. “Visualization and analysis of gene expression in tissue sections by spatial transcriptomics.” <em>Science</em> 353 (6294): 78–82. <a href="https://doi.org/10.1126/science.aaf2403">https://doi.org/10.1126/science.aaf2403</a>.</p>
+</div>
+<div id="ref-Wang2019">
+<p>Wang, Chong, Tian Lu, George Emanuel, Hazen P. Babcock, and Xiaowei Zhuang. 2019. “Imaging-based pooled CRISPR screening reveals regulators of lncRNA localization.” <em>Proceedings of the National Academy of Sciences of the United States of America</em>. <a href="https://doi.org/10.1073/pnas.1903808116">https://doi.org/10.1073/pnas.1903808116</a>.</p>
+</div>
+<div id="ref-Wang2018b">
+<p>Wang, Xiao, William E. Allen, Matthew A. Wright, Emily L. Sylwestrak, Nikolay Samusik, Sam Vesuna, Kathryn Evans, et al. 2018. “Three-dimensional intact-tissue sequencing of single-cell transcriptional states.” <em>Science</em> 361 (6400): eaat5691. <a href="https://doi.org/10.1126/science.aat5691">https://doi.org/10.1126/science.aat5691</a>.</p>
+</div>
+<div id="ref-Wang2021">
+<p>Wang, Yuhan, Mark Eddison, Greg Fleishman, Martin Weigert, Shengjin Xu, Fredrick E Henry, Tim Wang, et al. 2021. “Expansion-Assisted Iterative-FISH defines lateral hypothalamus spatio-molecular organization.” <em>bioRxiv</em>, January, 2021.03.08.434304. <a href="https://doi.org/10.1101/2021.03.08.434304">https://doi.org/10.1101/2021.03.08.434304</a>.</p>
+</div>
+<div id="ref-Zhang2020">
+<p>Zhang, Meng, Stephen W Eichhorn, Brian Zingg, Zizhen Yao, Hongkui Zeng, Hongwei Dong, and Xiaowei Zhuang. 2020. “Molecular, spatial and projection diversity of neurons in primary motor cortex revealed by in situ single-cell transcriptomics.” <em>bioRxiv</em>, January, 2020.06.04.105700. <a href="https://doi.org/10.1101/2020.06.04.105700">https://doi.org/10.1101/2020.06.04.105700</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prequel-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="current-techs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
