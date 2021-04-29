@@ -25,7 +25,7 @@
 <meta name="author" content="Lior Pachter, lpachter@caltech.edu" />
 
 
-<meta name="date" content="2021-04-27" />
+<meta name="date" content="2021-04-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -249,12 +249,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Museum of Spatial Transcriptomics</h1>
 <p class="author"><em>Lambda Moses, <a href="mailto:dlu2@caltech.edu" class="email">dlu2@caltech.edu</a></em></p>
 <p class="author"><em>Lior Pachter, <a href="mailto:lpachter@caltech.edu" class="email">lpachter@caltech.edu</a></em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-04-27</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-04-29</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
 <p>This book is the much more detailed supplement of the paper Museum of Spatial Transcriptomics and is related to our <a href="https://docs.google.com/spreadsheets/d/1sJDb9B7AtYmfKv4-m8XR7uc3XXw_k4kGSout8cqZ8bY/edit?usp=sharing">database of spatial transcriptomics literature</a> akin to how a museum exhibition catalog relates to the exhibits. Code in this book can be run interactively on <a href="https://rstudio.cloud/project/2492054">RStudio Cloud</a>. This book presents analyses of metadata of the database, but more analyses can be found in the <code>more_analyses</code> directory of this repo and can be run on RStudio Cloud. As the field of spatial transcriptomics is rapidly evolving, this book will be continuously updated to reflect the current state of the field. As this book is on GitHub, it is version controlled and historical versions can be viewed. If you find errors or have suggestions, please submit an issue on GitHub: <a href="https://github.com/pachterlab/LP_2021" class="uri">https://github.com/pachterlab/LP_2021</a></p>
-<p>This book is built with the <code>bookdown</code> package from a collection of R Markdown files. How some figures look depends on parameters that can be changed, such as size of bins when binning number of publications in time to show a trend. The source code of this book is on <a href="https://rstudio.cloud/project/2492054">RStudio Cloud</a>. The dependencies are pre-installed in the RStudio Cloud project. By default, when the database is queried by code in this book, the most up to date version is used, which can be newer than the rendered static version of the book on github.io. To build the book in RStudio Cloud (will build both the web page <code>gitbook</code>), run this in the R console:</p>
+<p>This document is built with the <code>bookdown</code> package from a collection of R Markdown files. How some of figures look depends on parameters that can be changed, such as size of bins when binning number of publications in time to show a trend. The source code is on <a href="https://rstudio.cloud/project/2492054">RStudio Cloud</a>. The dependencies are pre-installed in the RStudio Cloud project. By default, when the database is queried by code, the most up to date version is used, which can be newer than the rendered static version on github.io. To build the document in RStudio Cloud (i.e., both the web page <code>gitbook</code> version and a PDF), run this in the R console:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a>bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;supplement/index.Rmd&quot;</span>, <span class="dt">output_format =</span> <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
 <p>If you are cloning this repo into a fresh RStudio Cloud project or a fresh machine, install the packages required to build the book as follows:</p>
 <p>First install <code>remotes</code> with <code>install.packages("remotes")</code>. Then use <code>remotes:install_deps(dependencies = TRUE)</code> to install all required packages from CRAN, Bioconductor, and GitHub. So in short,</p>

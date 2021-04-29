@@ -270,16 +270,16 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 ## 
 ## Residuals:
 ##    Min     1Q Median     3Q    Max 
-## -831.9 -666.0 -526.4 -314.5 9296.5 
+## -796.4 -649.1 -515.8 -320.5 9320.9 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(>|t|)
-## (Intercept)    -2817.0633  6325.0658  -0.445    0.658
-## date_published     0.1966     0.3552   0.553    0.583
+## (Intercept)    -2455.7636  6190.4982  -0.397    0.693
+## date_published     0.1754     0.3472   0.505    0.616
 ## 
-## Residual standard error: 2071 on 44 degrees of freedom
-## Multiple R-squared:  0.006914,	Adjusted R-squared:  -0.01566 
-## F-statistic: 0.3063 on 1 and 44 DF,  p-value: 0.5827
+## Residual standard error: 2051 on 45 degrees of freedom
+## Multiple R-squared:  0.005635,	Adjusted R-squared:  -0.01646 
+## F-statistic: 0.255 on 1 and 45 DF,  p-value: 0.616
 ```
 
 How total number cells profiled in each study that reported the number of cells in the main text is shown here. Note that earlier versions of this book used a threshold of 100,000 cells for outliers, but with some new datasets with more than 50,000 cells, an older MERFISH dataset previously deemed an outlier no longer looks as much like an outlier.
