@@ -474,6 +474,13 @@ The current era continues many of the quests of the prequel era, such as to prof
    <td style="text-align:left;width: 6em; "> 201 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> centrifugation on 384 well plate </td>
+   <td style="text-align:left;width: 6em; "> 2021-04-30 </td>
+   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
 </tbody>
 </table>
 
