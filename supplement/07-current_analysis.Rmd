@@ -73,7 +73,7 @@ all_prequel <- all_prequel %>%
                           TRUE ~ "data"))
 ```
 
-```{r analysis-fp, fig.width=7, fig.height=4, fig.cap="Number of publications over time for current era and prequel data analysis. Bin width is 365 days. For all panels in this figure, preprints are included."}
+```{r analysis-fp, fig.width=7, fig.height=4, fig.cap="Number of publications over time for current era and prequel data analysis. Bin width is 365 days. Preprints are included for this figure."}
 era_freqpoly(analysis_sheets, era, preprints = TRUE) +
     scale_y_continuous(expand = expansion(c(0, 0.05)))
 ```

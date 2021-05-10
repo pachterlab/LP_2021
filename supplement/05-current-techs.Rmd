@@ -302,7 +302,7 @@ ggplot(mean_genes, aes(date_published, n_genes)) +
     coord_cartesian(ylim = c(0, max(mean_genes$n_genes)))
 ```
 
-The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0.
+The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0 (t-test).
 ```{r, results='markup'}
 summary(lm(n_genes ~ date_published, data = mean_genes))
 ```
@@ -340,7 +340,7 @@ ggplot(sum_cells, aes(date_published, n_cells)) +
     coord_cartesian(ylim = c(0, max(sum_cells$n_cells)))
 ```
 
-Again, although studies that profiled large numbers of cells tend to be more recent, as there are many recent studies with smaller numbers of cells, the slope (with outliers and all) is not significantly different from 0.
+Again, although studies that profiled large numbers of cells tend to be more recent, as there are many recent studies with smaller numbers of cells, the slope (with outliers and all) is not significantly different from 0 (t-test).
 ```{r, results='markup'}
 summary(lm(n_cells ~ date_published, data = sum_cells))
 ```
