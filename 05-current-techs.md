@@ -261,7 +261,7 @@ As already noted, the number of genes whose transcripts can be possibly quantifi
 <p class="caption">(\#fig:smfish-lm-gene2)Like the previous figure, but showing the outliers.</p>
 </div>
 
-The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0.
+The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0 (t-test).
 
 ```
 ## 
@@ -297,7 +297,7 @@ Here is a version of the above plot with the outliers, to show that they are out
 <p class="caption">(\#fig:smfish-lm-cell2)Like the previous figure, but showing the outliers.</p>
 </div>
 
-Again, although studies that profiled large numbers of cells tend to be more recent, as there are many recent studies with smaller numbers of cells, the slope (with outliers and all) is not significantly different from 0.
+Again, although studies that profiled large numbers of cells tend to be more recent, as there are many recent studies with smaller numbers of cells, the slope (with outliers and all) is not significantly different from 0 (t-test).
 
 ```
 ## 

@@ -25,7 +25,7 @@
 <meta name="author" content="Lior Pachter, lpachter@caltech.edu" />
 
 
-<meta name="date" content="2021-05-07" />
+<meta name="date" content="2021-05-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -474,7 +474,7 @@ Figure 5.19: Number of genes, averaged over datasets in each study, over time. T
 Figure 5.20: Like the previous figure, but showing the outliers.
 </p>
 </div>
-<p>The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0.</p>
+<p>The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0 (t-test).</p>
 <pre><code>## 
 ## Call:
 ## lm(formula = n_genes ~ date_published, data = mean_genes)
@@ -505,7 +505,7 @@ Figure 5.21: Total number of cells per study profiled by smFISH based techniques
 Figure 5.22: Like the previous figure, but showing the outliers.
 </p>
 </div>
-<p>Again, although studies that profiled large numbers of cells tend to be more recent, as there are many recent studies with smaller numbers of cells, the slope (with outliers and all) is not significantly different from 0.</p>
+<p>Again, although studies that profiled large numbers of cells tend to be more recent, as there are many recent studies with smaller numbers of cells, the slope (with outliers and all) is not significantly different from 0 (t-test).</p>
 <pre><code>## 
 ## Call:
 ## lm(formula = n_cells ~ date_published, data = sum_cells)

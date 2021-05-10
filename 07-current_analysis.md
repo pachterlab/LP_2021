@@ -21,8 +21,8 @@ So far we have reviewed numerous techniques to collect spatial transcriptomics d
 
 
 <div class="figure" style="text-align: center">
-<img src="07-current_analysis_files/figure-html/analysis-fp-1.png" alt="Number of publications over time for current era and prequel data analysis. Bin width is 365 days. For all panels in this figure, preprints are included." width="672" />
-<p class="caption">(\#fig:analysis-fp)Number of publications over time for current era and prequel data analysis. Bin width is 365 days. For all panels in this figure, preprints are included.</p>
+<img src="07-current_analysis_files/figure-html/analysis-fp-1.png" alt="Number of publications over time for current era and prequel data analysis. Bin width is 365 days. Preprints are included for this figure." width="672" />
+<p class="caption">(\#fig:analysis-fp)Number of publications over time for current era and prequel data analysis. Bin width is 365 days. Preprints are included for this figure.</p>
 </div>
 
 Since 2019, there has been a sharp increase in interest in current era data analysis (Figure \@ref(fig:analysis-current)). If our collection of prequel data analysis literature is somewhat representative and complete, then interest in current era data analysis dwarfs the golden age of prequel data analysis from 2008 to 2014 (Figure \@ref(fig:analysis-fp)). As already shown, interests in current era data collection increased sharply since 2018 (Figure \@ref(fig:current-vs-prequel), Figure \@ref(fig:analysis-current)); interest in data analysis lagged behind interest in data collection, until around 2020 (Figure \@ref(fig:analysis-current)).
