@@ -20,8 +20,7 @@ This supplement to the paper Museum of Spatial Transcriptomics and the associate
 This document is built with the `bookdown` package from a collection of R Markdown files. How some of figures look depends on parameters that can be changed, such as size of bins when binning number of publications in time to show a trend. The source code is on [RStudio Cloud](https://rstudio.cloud/project/2492054). The dependencies are pre-installed in the RStudio Cloud project. By default, when the database is queried by code, the most up to date version is used, which can be newer than the rendered static version on github.io. To build the document in RStudio Cloud (i.e., both the web page `gitbook` version and a PDF), run this in the R console:
 
 ```{r, eval=FALSE}
-bookdown::render_book("supplement/index.Rmd", 
-                      output_format = c("bookdown::gitbook", "bookdown::pdf_book"))
+bookdown::render_book("index.Rmd", output_format = c("bookdown::gitbook", "bookdown::pdf_book"))
 ```
 
 If you are cloning this repo into a fresh RStudio Cloud project or a fresh machine, install the packages required to build the book as follows:
