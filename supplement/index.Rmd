@@ -20,7 +20,8 @@ This supplement to the paper Museum of Spatial Transcriptomics and the associate
 This document is built with the `bookdown` package from a collection of R Markdown files. How some of figures look depends on parameters that can be changed, such as size of bins when binning number of publications in time to show a trend. The source code is on [RStudio Cloud](https://rstudio.cloud/project/2492054). The dependencies are pre-installed in the RStudio Cloud project. By default, when the database is queried by code, the most up to date version is used, which can be newer than the rendered static version on github.io. To build the document in RStudio Cloud (i.e., both the web page `gitbook` version and a PDF), run this in the R console:
 
 ```{r, eval=FALSE}
-bookdown::render_book("supplement/index.Rmd", output_format = "bookdown::gitbook")
+bookdown::render_book("supplement/index.Rmd", 
+                      output_format = c("bookdown::gitbook", "bookdown::pdf_book"))
 ```
 
 If you are cloning this repo into a fresh RStudio Cloud project or a fresh machine, install the packages required to build the book as follows:
@@ -33,3 +34,11 @@ remotes::install_deps(dependencies = TRUE)
 ```
 
 Because many packages are installed, the installation can be sped up with the argument `Ncpus` in `install_deps()` to specify the number of CPU cores to use to install packages in parallel, such as `Ncpus = 2L` for 2 cores. The free plan of RStudio Cloud only has 1 core, but this argument can be used when multiple cores are available.
+
+By default, the most up to date version of the database is downloaded for analyses in this book. However, as the `museumst` R package written for these analyses contains a cached version of the database, historical versions of the database can be viewed by installing older versions of `museumst` and setting `update = FALSE` when calling `museumst::read_metadata()` when running code from this book on RStudio Cloud or your computer. Older versions of `museumst` can be installed with
+
+```{r, eval=FALSE}
+remotes::install_github("pachterlab/museumst", ref = "v0.0.0.9016")
+```
+
+where `ref` refers to a release. Release history of `museumst` can be seen [here](https://github.com/pachterlab/museumst/releases). Documentation of `museumst` can be seen [here](https://pachterlab.github.io/museumst/).
