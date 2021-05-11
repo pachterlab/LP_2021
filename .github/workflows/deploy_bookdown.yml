@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: Rscript -e 'install.packages("remotes"); remotes::install_deps(pkg = "supplement/", dependencies = TRUE)'
       - name: Render Book
-        run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd"))'
+        run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd", output_format = c("bookdown::gitbook", "bookdown::pdf_book")))'
       - uses: actions/upload-artifact@v1
         with:
           name: _book

@@ -12,7 +12,7 @@ bookdown::gitbook:
     toolbar:
       position: fixed
     edit : null
-    #download: "pdf"
+    download: "pdf"
     search: yes
     fontsettings:
       theme: white
@@ -33,4 +33,3 @@ bookdown::pdf_book:
   keep_tex: yes
   includes:
     in_header: preamble.tex
-    
