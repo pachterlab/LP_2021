@@ -10,7 +10,7 @@ bibliography: "museumst.bib"
 #csl: nature-genetics.csl
 link-citations: yes
 description: "Museum of Spatial Transcriptomics"
-github-repo: "pachterlab/museumst_catalogue"
+github-repo: "pachterlab/LP_2021"
 ---
 
 # Preface {-}
