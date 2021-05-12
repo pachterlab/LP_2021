@@ -241,20 +241,20 @@ pubs_on_map2 <- partial(pubs_on_map, city_gc = city_gc)
 
 Where were prequel era research conducted? Our database includes affiliation of the first author as of publication for all papers, and the affiliations have been geocoded to plot on maps. Around the world, most of prequel studies were performed in coastal US and Western Europe, but a some studies were performed in Asia and Oceania, but especially Japan (Figure \@ref(fig:prequel-world)). Not all of the top contributing institutions are readily recognizable "elite" institutions. Institutions include BDGP from UC Berkeley, ZFIN from University of Oregon (UO), ABA from Allen Brain Institute (Allen), GEISHA from University of Arizona (UofA), GXD from Jackson Laboratory (JAX), EMAGE from Western General Hospital (WGH), [MEPD](https://www.embl-heidelberg.de/mepd/) (for *Oryzias latipes*) from European Molecular Biology Laboratory (EMBL), and GHOST from Kyoto University (Kyodai), and mouse gene trap lines from Mount Sinai.
 
-```{r prequel-world, fig.width=8, fig.height=4, fig.cap="Number of prequel publications per city around the world, with top contributing institutions labeled."}
+```{r prequel-world, fig.width=10, fig.height=5, fig.cap="Number of prequel publications per city around the world, with top contributing institutions labeled."}
 pubs_on_map2(prequel)
 ```
 
 This can be better visualized by breaking the map down by species. Here we see locations of some model organism consortia, and that GHOST is a result of collaboration of multiple Japanese institutions (Figure \@ref(fig:map-species)).
 
-```{r map-species, fig.width=8, fig.height=10, fig.cap="Number of prequel publications per city broken down by species. Gray points are the overall number as a reference of contributions from each city and region."}
+```{r map-species, fig.width=10, fig.height=12.5, fig.cap="Number of prequel publications per city broken down by species. Gray points are the overall number as a reference of contributions from each city and region."}
 pubs_on_map2(prequel, facet_by = "species", n_top = 8, ncol = 2, n_label = 3) +
     theme(legend.position = "right")
 ```
 
 That some institutions have disproportional contribution of one technique can also be shown. Here it's clear that prequel techniques are used by many different institutions (Figure \@ref(fig:map-tech)). In contrast, as will be shown in Chapter \@ref(current), most current era techniques never spread beyond their institutions of origin. The LCM study comes from Allen Brain Institute's atlases for Allen's mouse sleep deprivation atlas [@Thompson2010] and human glioblastoma atlas [@Puchalski2018]; although LCM is a current era technique, those two studies are in the prequel sheet because they also have ISH atlases.
 
-```{r map-tech, fig.width=8, fig.height=8, fig.cap="Number of prequel publications per city broken down by technique. Gray points are the overall number as a reference of contributions from each city and region."}
+```{r map-tech, fig.width=10, fig.height=10, fig.cap="Number of prequel publications per city broken down by technique. Gray points are the overall number as a reference of contributions from each city and region."}
 prequel %>% 
     unnest_cat(method, other_cols = "short_name") %>% 
     pubs_on_map2(facet_by = "method", ncol = 2, n_label = 3) +

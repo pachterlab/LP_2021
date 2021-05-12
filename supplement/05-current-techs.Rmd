@@ -399,7 +399,7 @@ MERFISH and seqFISH and their variants are more used and have spread, though the
 
 (ref:smfish-map-cap) Geographical locations of institutions that used certain techniques. Point area is proportional to number of publication from the city of interest. Gray points in the background is all publications using smFISH based techniques. The cities and institutions labeled are those of the first author. Note that for seqFISH, the hidden Markov random field (HMRF) study at Dana Faber [@Zhu2018] and the mouse embryo study [@Lohoff2020] had collaboration with Long Cai's group at Caltech, so the dataset was most likely still collected at Caltech.
 
-```{r smfish-map, fig.width=9, fig.height=6, fig.cap="(ref:smfish-map-cap)"}
+```{r smfish-map, fig.width=10, fig.height=6.5, fig.cap="(ref:smfish-map-cap)"}
 pubs_on_map(smfish_methods2, city_gc = city_gc2, facet_by = "method2", 
             ncol = 2) +
   theme(legend.position = "top")
@@ -535,7 +535,7 @@ st_city_gc <- geocode_inst_city(array, cache_location = here())
 array_pubs <- get_pubs_df(array, other_cols = "short_name")
 ```
 
-```{r array-map, fig.height=11, fig.width=8, fig.cap="Cities and institutions using ST and Visium. Preprints are included."}
+```{r array-map, fig.height=13.75, fig.width=10, fig.cap="Cities and institutions using ST and Visium. Preprints are included."}
 pubs_on_map(array_methods, city_gc = st_city_gc, facet_by = "method", n_top = 2, 
             n_label = 5, ncol = 1)
 ```

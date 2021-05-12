@@ -119,7 +119,7 @@ pubs_per_year(category, facet_by = "category", n_top = 4,
 city_gc <- geocode_inst_city(analysis_sheets)
 ```
 
-```{r analysis-map, fig.width=9, fig.height=9, fig.cap="Map of where first authors of current era and prequel data analysis papers were located as of publication. Top 5 institutions in each era are labeled."}
+```{r analysis-map, fig.width=10, fig.height=10, fig.cap="Map of where first authors of current era and prequel data analysis papers were located as of publication. Top 5 institutions in each era are labeled."}
 pubs_on_map(analysis_sheets, city_gc, facet_by = "era", ncol = 1, n_label = 5)
 ```
 
