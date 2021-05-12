@@ -218,7 +218,6 @@ We tested for association of prevalence of each of the 50 topics with time using
 
 (ref:tt-cap) Topic prevalence over time since 2001 with fitted linear model. Gray ribbon indicates 95% confidence interval (CI) of the slope, estimated from the samples of the variational posterior of the `stm` model. Vertical line indicates advent of RNA-seq in 2008. Light blue facet strip means decreasing trend with adjusted p < 0.05, and pink strip means increasing.
 
-\newpage
 \begin{figure}
 
 {\centering \includegraphics{06-text-mining_files/figure-latex/topic-trends-1} 
@@ -240,14 +239,14 @@ Next, we checked whether whether the rise of topics not directly related to canc
 
 
 
-\newpage
+(ref:topic-count-cap) Number of abstracts with each topic whose proportions changed the most in time. Gray ribbon is the 95% CI of the line fitted to the count per year.
 \begin{figure}
 
 {\centering \includegraphics{06-text-mining_files/figure-latex/topic-count-1} 
 
 }
 
-\caption{Number of abstracts with each topic whose proportions changed the most in time. Gray ribbon is the 95% CI of the line fitted to the count per year.}(\#fig:topic-count)
+\caption{(ref:topic-count-cap)}(\#fig:topic-count)
 \end{figure}
 
 When the number of abstracts with each topic is plotted, the declines are less drastic or reversed while the increases became much more drastic, especially after 2015, perhaps due to the rise of scRNA-seq, whose library preparation methods made it possible to quantify transcripts from small amount of tissues from LCM (Figure \@ref(fig:topic-count)). These trends don't necessarily correspond to the overall trend across the corpus (Figure \@ref(fig:lcm-year)). Then we see in recent years a diversification of topics that may be related to LCM from search results, resulting into decrease of proportion of some older topics the interest in which might not have drastically decreased if not somewhat increased, though not increasing as quickly as other topics. Nevertheless, it is clear that some cancer topics have decreased even in counts. However, remember that some of the `stm` topics seem to be mixtures of multiple topics recognizable by humans and these `stm` topics might have picked up aspects of the abstracts less readily noticed by humans. In other words, it might not be that interest in some cancers decreased per se, but thanks to scRNA-seq, the way these cancers are discussed changed, using words that contributed to other, growing topics. Furthermore, because so many different topics are drastically growing in recent years, the increase in proportion of each of them became less drastic. 
@@ -297,13 +296,15 @@ Association of a topic with an institution that used to greatly contribute to th
 Association of a city with a topic can also be visualized with topic proportion in each city from `estimateEffect` (Figure \@ref(fig:city-pe)). Here topic 45 (soil microbiome and nitrogen fixation) is plotted, but readers on RStudio Cloud can try other topics.
 
 
+(ref:city-pe-cap) Proportion of topic 45 in each city. Error bars are 95% CI of the point estimate.
+
 \begin{figure}
 
 {\centering \includegraphics{06-text-mining_files/figure-latex/city-pe-1} 
 
 }
 
-\caption{Proportion of topic 45 in each city. Error bars are 95% CI of the point estimate.}(\#fig:city-pe)
+\caption{(ref:city-pe-cap)}(\#fig:city-pe)
 \end{figure}
 
 Here "disproportionate" means disproportionate within this corpus of LCM related search results. Institutions with "disproportionate" contribution to a topic do not necessarily dominate such topic although the topic may dominate the institution, i.e. the topic takes up a very large proportion of abstracts from this institution within this corpus. Nor are these institutions necessarily elite; this analysis might be an interesting way to discover labs from not so well-known institutions that may be outstanding in some topics. The institutions are often not elite because elite institutions often greatly contribute to many topics, weakening the association of the institution to the topic. Except for growth plate in Syracuse, we have not identified topics largely confined to an institution.

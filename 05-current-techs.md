@@ -323,13 +323,14 @@ As already noted, the number of genes whose transcripts can be possibly quantifi
 
 
 
+(ref:slg-cap) Number of genes, averaged over datasets in each study, over time. The studies profiling 10,000 genes are excluded to better show the trend among more ordinary studies. Gray ribbon is 95% confidence interval (CI).
 \begin{figure}
 
 {\centering \includegraphics{05-current-techs_files/figure-latex/smfish-lm-gene-1} 
 
 }
 
-\caption{Number of genes, averaged over datasets in each study, over time. The studies profiling 10,000 genes are excluded to better show the trend among more ordinary studies.}(\#fig:smfish-lm-gene)
+\caption{(ref:slg-cap)}(\#fig:smfish-lm-gene)
 \end{figure}
 
 \begin{figure}
