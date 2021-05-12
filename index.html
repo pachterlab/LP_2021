@@ -25,7 +25,7 @@
 <meta name="author" content="Lior Pachter, lpachter@caltech.edu" />
 
 
-<meta name="date" content="2021-05-10" />
+<meta name="date" content="2021-05-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -249,18 +249,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Museum of Spatial Transcriptomics</h1>
 <p class="author"><em>Lambda Moses, <a href="mailto:dlu2@caltech.edu" class="email">dlu2@caltech.edu</a></em></p>
 <p class="author"><em>Lior Pachter, <a href="mailto:lpachter@caltech.edu" class="email">lpachter@caltech.edu</a></em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-05-10</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-05-11</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
 <p>This supplement to the paper Museum of Spatial Transcriptomics and the associated <a href="https://docs.google.com/spreadsheets/d/1sJDb9B7AtYmfKv4-m8XR7uc3XXw_k4kGSout8cqZ8bY/edit?usp=sharing">database of spatial transcriptomics literature</a> is inspired by museum catalogs that provide insight and detail to further understanding of the exhibits. The results presented are based on code that can be run interactively on <a href="https://rstudio.cloud/project/2492054">RStudio Cloud</a>. We present key analyses of metadata curated for the database, and provide further analyses and results beyond what could be included here in the <code>more_analyses</code> directory of this repository. The markdown that generates this text is on GitHub, and is version controlled so that its development can be tracked now and in the future. Please notify us of errors, omissions, or other suggestions via submission of issues on GitHub: <a href="https://github.com/pachterlab/LP_2021" class="uri">https://github.com/pachterlab/LP_2021</a></p>
 <p>This document is built with the <code>bookdown</code> package from a collection of R Markdown files. How some of figures look depends on parameters that can be changed, such as size of bins when binning number of publications in time to show a trend. The source code is on <a href="https://rstudio.cloud/project/2492054">RStudio Cloud</a>. The dependencies are pre-installed in the RStudio Cloud project. By default, when the database is queried by code, the most up to date version is used, which can be newer than the rendered static version on github.io. To build the document in RStudio Cloud (i.e., both the web page <code>gitbook</code> version and a PDF), run this in the R console:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a>bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;supplement/index.Rmd&quot;</span>, <span class="dt">output_format =</span> <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a>bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="dt">output_format =</span> <span class="kw">c</span>(<span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="st">&quot;bookdown::pdf_book&quot;</span>))</span></code></pre></div>
 <p>If you are cloning this repo into a fresh RStudio Cloud project or a fresh machine, install the packages required to build the book as follows:</p>
 <p>First install <code>remotes</code> with <code>install.packages("remotes")</code>. Then use <code>remotes:install_deps(dependencies = TRUE)</code> to install all required packages from CRAN, Bioconductor, and GitHub. So in short,</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span>
 <span id="cb2-2"><a href="index.html#cb2-2"></a>remotes<span class="op">::</span><span class="kw">install_deps</span>(<span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <p>Because many packages are installed, the installation can be sped up with the argument <code>Ncpus</code> in <code>install_deps()</code> to specify the number of CPU cores to use to install packages in parallel, such as <code>Ncpus = 2L</code> for 2 cores. The free plan of RStudio Cloud only has 1 core, but this argument can be used when multiple cores are available.</p>
+<p>By default, the most up to date version of the database is downloaded for analyses in this book. However, as the <code>museumst</code> R package written for these analyses contains a cached version of the database, historical versions of the database can be viewed by installing older versions of <code>museumst</code> and setting <code>update = FALSE</code> when calling <code>museumst::read_metadata()</code> when running code from this book on RStudio Cloud or your computer. Older versions of <code>museumst</code> can be installed with</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;pachterlab/museumst&quot;</span>, <span class="dt">ref =</span> <span class="st">&quot;v0.0.0.9016&quot;</span>)</span></code></pre></div>
+<p>where <code>ref</code> refers to a release. Release history of <code>museumst</code> can be seen <a href="https://github.com/pachterlab/museumst/releases">here</a>. Documentation of <code>museumst</code> can be seen <a href="https://pachterlab.github.io/museumst/">here</a>.</p>
 
 </div>
             </section>
@@ -309,7 +312,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["museumst.pdf"],
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

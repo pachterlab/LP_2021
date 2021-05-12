@@ -3,7 +3,7 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses, dlu2@caltech.edu
   - Lior Pachter, lpachter@caltech.edu
-date: "2021-05-10"
+date: "2021-05-11"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
@@ -21,7 +21,7 @@ This document is built with the `bookdown` package from a collection of R Markdo
 
 
 ```r
-bookdown::render_book("supplement/index.Rmd", output_format = "bookdown::gitbook")
+bookdown::render_book("index.Rmd", output_format = c("bookdown::gitbook", "bookdown::pdf_book"))
 ```
 
 If you are cloning this repo into a fresh RStudio Cloud project or a fresh machine, install the packages required to build the book as follows:
@@ -35,3 +35,12 @@ remotes::install_deps(dependencies = TRUE)
 ```
 
 Because many packages are installed, the installation can be sped up with the argument `Ncpus` in `install_deps()` to specify the number of CPU cores to use to install packages in parallel, such as `Ncpus = 2L` for 2 cores. The free plan of RStudio Cloud only has 1 core, but this argument can be used when multiple cores are available.
+
+By default, the most up to date version of the database is downloaded for analyses in this book. However, as the `museumst` R package written for these analyses contains a cached version of the database, historical versions of the database can be viewed by installing older versions of `museumst` and setting `update = FALSE` when calling `museumst::read_metadata()` when running code from this book on RStudio Cloud or your computer. Older versions of `museumst` can be installed with
+
+
+```r
+remotes::install_github("pachterlab/museumst", ref = "v0.0.0.9016")
+```
+
+where `ref` refers to a release. Release history of `museumst` can be seen [here](https://github.com/pachterlab/museumst/releases). Documentation of `museumst` can be seen [here](https://pachterlab.github.io/museumst/).
