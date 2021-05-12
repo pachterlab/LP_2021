@@ -218,6 +218,7 @@ We tested for association of prevalence of each of the 50 topics with time using
 
 (ref:tt-cap) Topic prevalence over time since 2001 with fitted linear model. Gray ribbon indicates 95% confidence interval (CI) of the slope, estimated from the samples of the variational posterior of the `stm` model. Vertical line indicates advent of RNA-seq in 2008. Light blue facet strip means decreasing trend with adjusted p < 0.05, and pink strip means increasing.
 
+\newpage
 \begin{figure}
 
 {\centering \includegraphics{06-text-mining_files/figure-latex/topic-trends-1} 
@@ -226,8 +227,6 @@ We tested for association of prevalence of each of the 50 topics with time using
 
 \caption{(ref:tt-cap)}(\#fig:topic-trends)
 \end{figure}
-
-\newpage
 
 As many topics have statistically significant associations with time, only the top 10 most decreasing and top 10 most decreasing topics are plotted here (that's what I intended, but there were only 8 significantly decreasing topics, so top 12 increasing topics are shown). In the early 2000s, a major topic of research about LCM was reliability of T7-based PCR amplification of the small amount of transcripts from samples for microarray, but the prevalence of this topic (topic 41) has declined over time (Figure \@ref(fig:wbt), Figure \@ref(fig:topic-trends)). The reason for such decline can be a combination of the following: First, other topics in neuroscience and botany emerged and grew (Figure \@ref(fig:topic-trends)); some of them are now among the most prevalent topics (Figure \@ref(fig:topics)). Second, usage of terms related to microarray and PCR amplification for microarray declined while usage of terms related to RNA-seq increased after 2008 due to the advent of RNA-seq because the latter replaced microarray as the transcriptomics method of choice, so the decline is expected (Figure \@ref(fig:wbt)). Also as expected, prevalence of topics in data analysis (topic 4) and spatial single cell and imaging technologies (topic 37) increased. Interestingly, cancer topics are among the most significantly decreasing (Figure \@ref(fig:word-heat), Figure \@ref(fig:topic-trends)). Because unlike cDNA microarray, these topics are still relevant today, such decline is puzzling. 
 
@@ -241,7 +240,7 @@ Next, we checked whether whether the rise of topics not directly related to canc
 
 
 
-
+\newpage
 \begin{figure}
 
 {\centering \includegraphics{06-text-mining_files/figure-latex/topic-count-1} 
@@ -390,7 +389,7 @@ Now we have seen some important axes of meanings and types of words, which are n
 
 }
 
-\caption{UMAP projection of word embeddings.}(\#fig:umap)
+\caption{UMAP projection of word embeddings. Zoom in if reading the PDF version of this book.}(\#fig:umap)
 \end{figure}
 
 The clusters of words are easier to discern with Uniform Manifold Approximation and Projection (UMAP) (Figure \@ref(fig:umap)). Cluster 1 is words used to describe results of studies, with many quantitative words; "p", "0.05", and "0.01" are found in this cluster rather than cluster 3 because p-values are results of data analyses and 0.05 and 0.01 are common thresholds of significance. Cluster 2 has many words discussing results, about data analysis and implications of results, with many clinical terms. Cluster 1 seems to be molecular and cellular processes and entities. Cluster 3 has many numbers, units, and some biological words. Cluster 4 has many words specifically about cancer. Cluster 5 is words in experimental techniques. Cluster 5 is biological terms. Cluster 6 is also biological, but with more emphasis on processes and interactions. Cluster 7 is technical. These clusters of words give some idea about topics of the studies, but unlike `stm`, these clusters also give a glimpse into different parts of the abstract, such as summary of the results and implications of the results.
