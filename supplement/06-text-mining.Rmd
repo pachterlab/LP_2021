@@ -430,7 +430,6 @@ p2 <- ggplot(effs_df_plt, aes(date_published, proportion)) +
 
 (ref:tt-cap) Topic prevalence over time since 2001 with fitted linear model. Gray ribbon indicates 95% confidence interval (CI) of the slope, estimated from the samples of the variational posterior of the `stm` model. Vertical line indicates advent of RNA-seq in 2008. Light blue facet strip means decreasing trend with adjusted p < 0.05, and pink strip means increasing.
 
-\newpage
 ```{r topic-trends, fig.width=10, fig.height=12, fig.cap="(ref:tt-cap)"}
 plot_facets_color(p2, type, pal_strip)
 ```
@@ -477,8 +476,8 @@ p3 <- ggplot(year_counts_plt, aes(date_bin, n)) +
   theme(legend.position = "top")
 ```
 
-\newpage
-```{r topic-count, fig.width=10, fig.height=12, fig.cap="Number of abstracts with each topic whose proportions changed the most in time. Gray ribbon is the 95% CI of the line fitted to the count per year."}
+(ref:topic-count-cap) Number of abstracts with each topic whose proportions changed the most in time. Gray ribbon is the 95% CI of the line fitted to the count per year.
+```{r topic-count, fig.width=10, fig.height=12, fig.cap="(ref:topic-count-cap)"}
 plot_facets_color(p3, type, pal_strip)
 ```
 
@@ -586,7 +585,9 @@ effs_df_loc <- effs_df_loc %>%
   mutate(topic = fct_relevel(topic, as.character(1:50)))
 ```
 
-```{r city-pe, fig.width=6, fig.height=4, fig.cap="Proportion of topic 45 in each city. Error bars are 95% CI of the point estimate."}
+(ref:city-pe-cap) Proportion of topic 45 in each city. Error bars are 95% CI of the point estimate.
+
+```{r city-pe, fig.width=6, fig.height=4, fig.cap="(ref:city-pe-cap)"}
 effs_df_loc %>% 
   filter(topic == 45) %>% # Change this to try other topics
   mutate(value = fct_reorder(value, proportion, .desc = FALSE)) %>% 

@@ -278,7 +278,7 @@ mean_genes <- smfish %>%
   summarize(n_genes = mean(n_genes, na.rm = TRUE))
 ```
 
-```{r smfish-lm-gene, fig.width=9, fig.height=6, fig.cap="Number of genes, averaged over datasets in each study, over time. The studies profiling 10,000 genes are excluded to better show the trend among more ordinary studies."}
+```{r smfish-lm-gene, fig.width=9, fig.height=6, fig.cap="Number of genes, averaged over datasets in each study, over time. The studies profiling 10,000 genes are excluded to better show the trend among more ordinary studies. Gray ribbon is standard error."}
 mean_genes2 <- mean_genes %>% 
   filter(n_genes < 1500)
 ggplot(mean_genes2, aes(date_published, n_genes)) +
