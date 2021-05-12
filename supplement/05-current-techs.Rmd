@@ -87,7 +87,7 @@ Some methods have been developed that do not directly cut tissues. Instead, cell
 
 Transcriptome *in vivo* analysis (TIVA) from 2014 can be viewed as the first of these methods [@Lovatt2014]. Live cell culture is incubated with the photoactivable cage with a poly-U sequence that captures poly-A transcripts. Select cells are photoactivated by 405 nm laser and the captured transcripts are sequenced. TIVA is widely cited, perhaps because it is one of the earliest single cell resolution and transcriptome wide methods, predating RNA-seq from LCM isolated single cells. However, because TIVA has only been demonstrated on fewer than a dozen cells per sample, to the best of our knowledge it has not been used in any other publication to collect new data.
 
-```{r niche, out.width="50%", fig.cap="Niche-seq schematics. Green: cells with photoactivated PA-GFP."}
+```{r niche, out.width="35%", fig.cap="Niche-seq schematics. Green: cells with photoactivated PA-GFP."}
 knitr::include_graphics("niche.png")
 ```
 
@@ -122,7 +122,7 @@ One quantitative approach to transcripts abundance estimation is to display indi
 
 (ref:smfish-cap) A) Schematic of smFISH from [@Femino1998]. The long thick line stands for the mRNA, and short think line stands for DNA oligo probe. B) smFISH with singly labeled probes from [@Raj2008].
 
-```{r smfish, out.width="60%", fig.cap="(ref:smfish-cap)"}
+```{r smfish, out.width="50%", fig.cap="(ref:smfish-cap)"}
 knitr::include_graphics("smfish1998.png")
 ```
 
@@ -542,11 +542,11 @@ pubs_on_map(array_methods, city_gc = st_city_gc, facet_by = "method", n_top = 2,
 
 ST [@Stahl2016a] and Visium are the most widely used current era technique after LCM (Figure \@ref(fig:n-insts), Figure \@ref(fig:array-map)). In ST, the printed spots have diameter of 100 $\mu$m and are 200 $\mu$m apart from center to center (Figure \@ref(fig:array-dims)). Multiple sections can be mounted to the same slide, separated by a rubber mask. For each section, there are 1007 spots covering an area of 6200 $\times$ 6600 $\mu$m. The 5' end of the capture sequence is a linker to be cleaved to release the transcripts, followed by amplification and sequencing handle, an 18 nt spatial barcode, a 9 nt UMI, and poly-T (Figure \@ref(fig:array-umi)). For the genes quantified with smFISH, ST's detection efficiency is around 6.9% compared to smFISH, within the range of the efficiency of scRNA-seq techniques. Despite the low resolution, ST is popular probably due to transcriptome wide profiling, ease to apply to larger area of tissue, not requiring specialized equipment such as SRM and custom flow cells, commercial kits, possible automation of library preparation [@Jemt2016], availability of a documented and open source data preprocessing pipeline called ST Pipeline [@Navarro2017], and the extra information from H&E staining before library preparation.
 
-```{r array-dims, out.width="60%", fig.cap="Schematic of spot construction and size of array based techniques."}
+```{r array-dims, out.width="50%", fig.cap="Schematic of spot construction and size of array based techniques."}
 knitr::include_graphics("fig13a.png")
 ```
 
-```{r array-umi, out.width="60%", fig.cap="Barcode and UMI structure and lengths of array based techniques."}
+```{r array-umi, out.width="50%", fig.cap="Barcode and UMI structure and lengths of array based techniques."}
 knitr::include_graphics("fig13b.png")
 ```
 
