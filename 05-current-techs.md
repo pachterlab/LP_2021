@@ -51,7 +51,7 @@ LCM has a number of disadvantages, some of which are addressed by other current 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1.27in,height=2.12in]{voxelation} 
+{\centering \includegraphics[width=0.2\linewidth]{voxelation} 
 
 }
 
@@ -64,7 +64,7 @@ LCM did not completely replace microdissection with a physical blade. Voxelation
 
 \begin{figure}
 
-{\centering \includegraphics[width=2in,height=2.1in]{tomo} 
+{\centering \includegraphics[width=0.3\linewidth]{tomo} 
 
 }
 
@@ -93,7 +93,7 @@ Transcriptome *in vivo* analysis (TIVA) from 2014 can be viewed as the first of 
 
 \begin{figure}
 
-{\centering \includegraphics[width=2.5in,height=2in]{niche} 
+{\centering \includegraphics[width=0.5\linewidth]{niche} 
 
 }
 
@@ -137,7 +137,7 @@ One quantitative approach to transcripts abundance estimation is to display indi
 
 \begin{figure}
 
-{\centering \includegraphics[width=2.94in,height=1.26in]{smfish1998} 
+{\centering \includegraphics[width=0.6\linewidth]{smfish1998} 
 
 }
 
@@ -591,7 +591,7 @@ ST [@Stahl2016a] and Visium are the most widely used current era technique after
 
 \begin{figure}
 
-{\centering \includegraphics[width=2.8in,height=3.5in]{fig13a} 
+{\centering \includegraphics[width=0.6\linewidth]{fig13a} 
 
 }
 
@@ -600,7 +600,7 @@ ST [@Stahl2016a] and Visium are the most widely used current era technique after
 
 \begin{figure}
 
-{\centering \includegraphics[width=2.8in,height=3.5in]{fig13b} 
+{\centering \includegraphics[width=0.6\linewidth]{fig13b} 
 
 }
 
