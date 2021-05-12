@@ -311,7 +311,7 @@ Figure 5.3: Tomo-seq, here showing C. elegans.
 <p>Some methods have been developed that do not directly cut tissues. Instead, cells, or ROIs judged from histology, are optically and molecularly marked so that only transcripts or cells from the marked regions are captured. Because these methods involve selection of pre-defined ROIs within the section, we call them <em>de facto</em> microdissection.</p>
 <p>Transcriptome <em>in vivo</em> analysis (TIVA) from 2014 can be viewed as the first of these methods <span class="citation">(Lovatt et al. <a href="#ref-Lovatt2014" role="doc-biblioref">2014</a>)</span>. Live cell culture is incubated with the photoactivable cage with a poly-U sequence that captures poly-A transcripts. Select cells are photoactivated by 405 nm laser and the captured transcripts are sequenced. TIVA is widely cited, perhaps because it is one of the earliest single cell resolution and transcriptome wide methods, predating RNA-seq from LCM isolated single cells. However, because TIVA has only been demonstrated on fewer than a dozen cells per sample, to the best of our knowledge it has not been used in any other publication to collect new data.</p>
 <div class="figure" style="text-align: center"><span id="fig:niche"></span>
-<img src="niche.png" alt="Niche-seq schematics. Green: cells with photoactivated PA-GFP." width="50%" />
+<img src="niche.png" alt="Niche-seq schematics. Green: cells with photoactivated PA-GFP." width="35%" />
 <p class="caption">
 Figure 5.4: Niche-seq schematics. Green: cells with photoactivated PA-GFP.
 </p>
@@ -342,7 +342,7 @@ Figure 5.6: Number of publications per category of techniques in the current era
 <p>One quantitative approach to transcripts abundance estimation is to display individual transcripts as distinct puncta with FISH and count them. That FISH can be used to visualize single mRNA molecules was first demonstrated in 1998 <span class="citation">(Femino et al. <a href="#ref-Femino1998" role="doc-biblioref">1998</a>)</span>. Five or more probes targeting adjacent parts of the transcript, each about 50 nt long and labeled with 5 fluorophores were hybridized to the transcripts. The puncta seen were shown to be likely individual mRNA molecules, as the fluorescence intensity of each punctum was consistent with the number of fluorophores, and the number of puncta for <span class="math inline">\(\beta\)</span>-actin was consistent with the number of <span class="math inline">\(\beta\)</span>-actin transcripts measured by other means, and the colors of puncta seen from probes with different colored fluorophores targeting different parts of the transcript were consistent with organization of the fluorophores on the transcript (Figure <a href="current-techs.html#fig:smfish">5.7</a>).</p>
 
 <div class="figure" style="text-align: center"><span id="fig:smfish"></span>
-<img src="smfish1998.png" alt="A) Schematic of smFISH from (Femino et al. 1998). The long thick line stands for the mRNA, and short think line stands for DNA oligo probe. B) smFISH with singly labeled probes from (Raj et al. 2008)." width="60%" />
+<img src="smfish1998.png" alt="A) Schematic of smFISH from (Femino et al. 1998). The long thick line stands for the mRNA, and short think line stands for DNA oligo probe. B) smFISH with singly labeled probes from (Raj et al. 2008)." width="50%" />
 <p class="caption">
 Figure 5.7: A) Schematic of smFISH from <span class="citation">(Femino et al. <a href="#ref-Femino1998" role="doc-biblioref">1998</a>)</span>. The long thick line stands for the mRNA, and short think line stands for DNA oligo probe. B) smFISH with singly labeled probes from <span class="citation">(Raj et al. <a href="#ref-Raj2008" role="doc-biblioref">2008</a>)</span>.
 </p>
@@ -732,13 +732,13 @@ Figure 5.31: Cities and institutions using ST and Visium. Preprints are included
 </div>
 <p>ST <span class="citation">(Ståhl et al. <a href="#ref-Stahl2016a" role="doc-biblioref">2016</a>)</span> and Visium are the most widely used current era technique after LCM (Figure <a href="current.html#fig:n-insts">4.7</a>, Figure <a href="current-techs.html#fig:array-map">5.31</a>). In ST, the printed spots have diameter of 100 <span class="math inline">\(\mu\)</span>m and are 200 <span class="math inline">\(\mu\)</span>m apart from center to center (Figure <a href="current-techs.html#fig:array-dims">5.32</a>). Multiple sections can be mounted to the same slide, separated by a rubber mask. For each section, there are 1007 spots covering an area of 6200 <span class="math inline">\(\times\)</span> 6600 <span class="math inline">\(\mu\)</span>m. The 5’ end of the capture sequence is a linker to be cleaved to release the transcripts, followed by amplification and sequencing handle, an 18 nt spatial barcode, a 9 nt UMI, and poly-T (Figure <a href="current-techs.html#fig:array-umi">5.33</a>). For the genes quantified with smFISH, ST’s detection efficiency is around 6.9% compared to smFISH, within the range of the efficiency of scRNA-seq techniques. Despite the low resolution, ST is popular probably due to transcriptome wide profiling, ease to apply to larger area of tissue, not requiring specialized equipment such as SRM and custom flow cells, commercial kits, possible automation of library preparation <span class="citation">(Jemt et al. <a href="#ref-Jemt2016" role="doc-biblioref">2016</a>)</span>, availability of a documented and open source data preprocessing pipeline called ST Pipeline <span class="citation">(Navarro et al. <a href="#ref-Navarro2017" role="doc-biblioref">2017</a>)</span>, and the extra information from H&amp;E staining before library preparation.</p>
 <div class="figure" style="text-align: center"><span id="fig:array-dims"></span>
-<img src="fig13a.png" alt="Schematic of spot construction and size of array based techniques." width="60%" />
+<img src="fig13a.png" alt="Schematic of spot construction and size of array based techniques." width="50%" />
 <p class="caption">
 Figure 5.32: Schematic of spot construction and size of array based techniques.
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:array-umi"></span>
-<img src="fig13b.png" alt="Barcode and UMI structure and lengths of array based techniques." width="60%" />
+<img src="fig13b.png" alt="Barcode and UMI structure and lengths of array based techniques." width="50%" />
 <p class="caption">
 Figure 5.33: Barcode and UMI structure and lengths of array based techniques.
 </p>

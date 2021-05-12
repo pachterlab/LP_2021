@@ -93,7 +93,7 @@ Transcriptome *in vivo* analysis (TIVA) from 2014 can be viewed as the first of 
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{niche} 
+{\centering \includegraphics[width=0.35\linewidth]{niche} 
 
 }
 
@@ -137,7 +137,7 @@ One quantitative approach to transcripts abundance estimation is to display indi
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{smfish1998} 
+{\centering \includegraphics[width=0.5\linewidth]{smfish1998} 
 
 }
 
@@ -591,7 +591,7 @@ ST [@Stahl2016a] and Visium are the most widely used current era technique after
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{fig13a} 
+{\centering \includegraphics[width=0.5\linewidth]{fig13a} 
 
 }
 
@@ -600,7 +600,7 @@ ST [@Stahl2016a] and Visium are the most widely used current era technique after
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{fig13b} 
+{\centering \includegraphics[width=0.5\linewidth]{fig13b} 
 
 }
 

@@ -227,9 +227,12 @@ We tested for association of prevalence of each of the 50 topics with time using
 \caption{(ref:tt-cap)}(\#fig:topic-trends)
 \end{figure}
 
+\newpage
+
 As many topics have statistically significant associations with time, only the top 10 most decreasing and top 10 most decreasing topics are plotted here (that's what I intended, but there were only 8 significantly decreasing topics, so top 12 increasing topics are shown). In the early 2000s, a major topic of research about LCM was reliability of T7-based PCR amplification of the small amount of transcripts from samples for microarray, but the prevalence of this topic (topic 41) has declined over time (Figure \@ref(fig:wbt), Figure \@ref(fig:topic-trends)). The reason for such decline can be a combination of the following: First, other topics in neuroscience and botany emerged and grew (Figure \@ref(fig:topic-trends)); some of them are now among the most prevalent topics (Figure \@ref(fig:topics)). Second, usage of terms related to microarray and PCR amplification for microarray declined while usage of terms related to RNA-seq increased after 2008 due to the advent of RNA-seq because the latter replaced microarray as the transcriptomics method of choice, so the decline is expected (Figure \@ref(fig:wbt)). Also as expected, prevalence of topics in data analysis (topic 4) and spatial single cell and imaging technologies (topic 37) increased. Interestingly, cancer topics are among the most significantly decreasing (Figure \@ref(fig:word-heat), Figure \@ref(fig:topic-trends)). Because unlike cDNA microarray, these topics are still relevant today, such decline is puzzling. 
 
 Next, we checked whether whether the rise of topics not directly related to cancer may be relevant to the decline of proportions of cancer topics. In `stm`, the abstracts are not hard assigned to topics. Rather, each abstract has a proportion of each topic, and abstracts often have over 90% of one topic. Here, for simplicity, we say an abstract "has" a topic if the proportion of the topic in the abstract is at least 25%.
+
 
 
 
