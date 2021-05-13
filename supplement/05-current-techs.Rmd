@@ -416,7 +416,7 @@ The following disadvantages may explain why smFISH based spatial transcriptomics
 languages <- unnest_cat(smfish, language)
 ```
 
-```{r smfish-langs, fig.width=6, fig.height=4, fig.cap="Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 5 publications."}
+```{r smfish-langs, fig.width=6, fig.height=4, fig.cap="Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications."}
 pubs_per_cat(languages, category = language, isotype = TRUE, n_top = 5, 
              img_unit = 2) +
    labs(x = NULL, title = "Programming language")
