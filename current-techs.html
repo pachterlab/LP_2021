@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="Chapter 5 Current era technologies | Museum of Spatial Transcriptomics" />
-  <meta name="github-repo" content="pachterlab/museumst_catalogue" />
+  <meta name="github-repo" content="pachterlab/LP_2021" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 5 Current era technologies | Museum of Spatial Transcriptomics" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Lior Pachter, lpachter@caltech.edu" />
 
 
-<meta name="date" content="2021-05-12" />
+<meta name="date" content="2021-05-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -548,9 +548,9 @@ Figure 5.25: Geographical locations of institutions that used certain techniques
 <p>Second, since individual transcripts are imaged and counted, smFISH based methods are highly quantitative and records subcellular localization of transcripts. While most smFISH based spatial transcriptomics studies analyze data at the cellular gene count level, not using subcellular transcript localization, cells have been shown to show great variation in subcellular localization of transcripts of the same set of genes and a number of “archetypal” patterns have been described <span class="citation">(Samacoits et al. <a href="#ref-Samacoits2018a" role="doc-biblioref">2018</a>; Stoeger et al. <a href="#ref-Stoeger2015" role="doc-biblioref">2015</a>; Cabili et al. <a href="#ref-Cabili2015" role="doc-biblioref">2015</a>)</span>.</p>
 <p>The following disadvantages may explain why smFISH based spatial transcriptomics has not been widely used on large number of cells and genes (Figure <a href="current-techs.html#fig:smfish-lm-gene">5.19</a>, Figure <a href="current-techs.html#fig:smfish-lm-cell">5.21</a>), and why MERFISH is the most used technique (Figure<a href="current-techs.html#fig:smfish-trend">5.23</a>). First, multiple rounds of hybridization and high magnification mean that data collection is time consuming. MERFISH version 2 greatly sped up imaging, as version 1 requires higher magnification and needs to photobleach fields of view (FOV) one at a time; one FOV in version 1 is 40 <span class="math inline">\(\mu\)</span>m <span class="math inline">\(\times\)</span> 40 <span class="math inline">\(\mu\)</span>m, while one FOV in version 2 is 223 <span class="math inline">\(\mu\)</span>m <span class="math inline">\(\times\)</span> 223 <span class="math inline">\(\mu\)</span>m. Version 2 also cut imaging time in half by using 2 colors, targeting 2 bits per round. This way, for 130 genes and 40,000 cells, MERFISH took about 18 hours <span class="citation">(Moffitt et al. <a href="#ref-Moffitt2016a" role="doc-biblioref">2016</a>)</span>, while HCR-seqFISH would take days because of overnight hybridization after probes are stripped for each round of hybridization although the seqFISH barcode is much shorter. When scaled to 10,000 genes, MERFISH takes 23 rounds of hybridization <span class="citation">(C. Xia, Fan, et al. <a href="#ref-Xia2019a" role="doc-biblioref">2019</a>)</span>, while seqFISH+ takes 80 rounds <span class="citation">(Eng et al. <a href="#ref-Eng2019a" role="doc-biblioref">2019</a>)</span>, although because ExM was used for MERFISH in this case to reduce optical crowding, expanding the area to be images ~4 folds, the actual imaging time of ExM-MERFISH and seqFISH+ here may have been comparable. Perhaps MERFISH has been scaled to larger number of cells and used in more studies beyond the institution of origin (Figure <a href="current-techs.html#fig:smfish-map">5.25</a>) because of the higher detection efficiency and shorter imaging time.</p>
 <div class="figure" style="text-align: center"><span id="fig:smfish-langs"></span>
-<img src="05-current-techs_files/figure-html/smfish-langs-1.png" alt="Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 5 publications." width="576" />
+<img src="05-current-techs_files/figure-html/smfish-langs-1.png" alt="Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications." width="576" />
 <p class="caption">
-Figure 5.26: Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 5 publications.
+Figure 5.26: Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications.
 </p>
 </div>
 <p>Second, with increasing area of tissue and number of genes covered, smFISH based spatial transcriptomics generates terabytes of images – for each FOV, there is an image for each channel, z-plane, and round of hybridization. Images from the MERFISH dataset of 40,000 cells and 130 genes took 2 to 3 days to process on a multi-core server, although the number of cores was not stated <span class="citation">(Moffitt et al. <a href="#ref-Moffitt2016a" role="doc-biblioref">2016</a>)</span>. In contrast, it takes hours, or even just minutes, to process the fastq files of a scRNA-seq dataset to get the gene count matrix <span class="citation">(Melsted et al. <a href="#ref-Melsted2021" role="doc-biblioref">2021</a>)</span>, nor do the fastq files take up so much disk space. Until 2019, software to process such images and to decode the combinatorial barcodes was typically written in the proprietary programming language MATLAB (Figure <a href="current-techs.html#fig:smfish-langs">5.26</a>), and poorly documented, so it was difficult for people outside the lab of origin to use.</p>

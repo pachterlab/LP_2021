@@ -460,7 +460,7 @@ The following disadvantages may explain why smFISH based spatial transcriptomics
 
 }
 
-\caption{Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 5 publications.}(\#fig:smfish-langs)
+\caption{Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications.}(\#fig:smfish-langs)
 \end{figure}
 
 Second, with increasing area of tissue and number of genes covered, smFISH based spatial transcriptomics generates terabytes of images -- for each FOV, there is an image for each channel, z-plane, and round of hybridization. Images from the MERFISH dataset of 40,000 cells and 130 genes took 2 to 3 days to process on a multi-core server, although the number of cores was not stated [@Moffitt2016a]. In contrast, it takes hours, or even just minutes, to process the fastq files of a scRNA-seq dataset to get the gene count matrix [@Melsted2021], nor do the fastq files take up so much disk space. Until 2019, software to process such images and to decode the combinatorial barcodes was typically written in the proprietary programming language MATLAB (Figure \@ref(fig:smfish-langs)), and poorly documented, so it was difficult for people outside the lab of origin to use.

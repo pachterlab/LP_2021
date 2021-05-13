@@ -3,14 +3,14 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses, dlu2@caltech.edu
   - Lior Pachter, lpachter@caltech.edu
-date: "2021-05-12"
+date: "2021-05-13"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
 #csl: nature-genetics.csl
 link-citations: yes
 description: "Museum of Spatial Transcriptomics"
-github-repo: "pachterlab/museumst_catalogue"
+github-repo: "pachterlab/LP_2021"
 ---
 
 # Preface {-}
