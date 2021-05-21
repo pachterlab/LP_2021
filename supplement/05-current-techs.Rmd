@@ -278,21 +278,9 @@ mean_genes <- smfish %>%
   summarize(n_genes = mean(n_genes, na.rm = TRUE))
 ```
 
-(ref:slg-cap) Number of genes, averaged over datasets in each study, over time. The studies profiling 10,000 genes are excluded to better show the trend among more ordinary studies. Gray ribbon is 95% confidence interval (CI).
-```{r smfish-lm-gene, fig.width=9, fig.height=6, fig.cap="(ref:slg-cap)"}
-mean_genes2 <- mean_genes %>% 
-  filter(n_genes < 1500)
-ggplot(mean_genes2, aes(date_published, n_genes)) +
-  geom_point(aes(color = method)) +
-  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
-  geom_smooth(method = "lm") +
-  labs(x = "Date published", title = "Mean number of genes per study per method",
-       y = NULL) +
-  theme(legend.position = "none") +
-    coord_cartesian(ylim = c(0, max(mean_genes2$n_genes)))
-```
+(ref:smfish-lm-cap) Number of genes, averaged over datasets in each study, over time. Gray ribbon is 95% confidence interval (CI).
 
-```{r smfish-lm-gene2, fig.width=9, fig.height=6, fig.cap="Like the previous figure, but showing the outliers."}
+```{r smfish-lm-gene, fig.width=9, fig.height=6, fig.cap="(ref:smfish-lm-cap)"}
 ggplot(mean_genes, aes(date_published, n_genes)) +
     geom_point(aes(color = method)) +
     geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
@@ -308,7 +296,7 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 summary(lm(n_genes ~ date_published, data = mean_genes))
 ```
 
-How total number cells profiled in each study that reported the number of cells in the main text is shown here. Note that earlier versions of this book used a threshold of 100,000 cells for outliers, but with some new datasets with more than 50,000 cells, an older MERFISH dataset previously deemed an outlier no longer looks as much like an outlier.
+How total number cells profiled in each study that reported the number of cells in the main text is shown here. 
 ```{r}
 sum_cells <- smfish %>% 
   group_by(date_published, title, method) %>% 
@@ -316,22 +304,7 @@ sum_cells <- smfish %>%
   filter(n_cells > 0)
 ```
 
-```{r smfish-lm-cell, fig.width=9, fig.height=6, fig.cap="Total number of cells per study profiled by smFISH based techniques over time. Studies with more than 200,000 cells are excluded to better show the trend among more ordinary studies. "}
-sum_cells2 <- sum_cells %>% 
-  filter(n_cells < 2e5)
-ggplot(sum_cells2, aes(date_published, n_cells)) +
-  geom_point(aes(color = method)) +
-  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
-  geom_smooth(method = "lm") +
-  labs(x = "Date published", title = "Total number of cells per study", 
-       y = NULL) +
-  theme(legend.position = "none") +
-  coord_cartesian(ylim = c(0, max(sum_cells2$n_cells)))
-```
-
-Here is a version of the above plot with the outliers, to show that they are outliers.
-
-```{r smfish-lm-cell2, fig.width=9, fig.height=6, fig.cap="Like the previous figure, but showing the outliers."}
+```{r smfish-lm-cell, fig.width=9, fig.height=6, fig.cap="Total number of cells per study profiled by smFISH based techniques over time."}
 ggplot(sum_cells, aes(date_published, n_cells)) +
     geom_point(aes(color = method)) +
     geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
