@@ -163,7 +163,7 @@ events <- read_major_events(update = TRUE)
 ```{r tl3, fig.width=10, fig.height=4, fig.cap="Timeline of major techniques related to the current era."}
 events %>% 
     filter(category == "technique2") %>% 
-    plot_timeline(c(-0.5, 1, -1, 0.5, 0.7, -0.7, -0.5, 0.5, -0.5, 0.6, 
+    plot_timeline(c(-0.5, 0.5, -0.5, -1, 0.5, 0.7, -0.7, -0.5, 0.5, -0.5, 0.6, 
                     1, -0.6, 0.3, -1), 
                   expand_y = c(0,0), expand_x = c(0.1,0.1),
                   include_refs = FALSE) +
