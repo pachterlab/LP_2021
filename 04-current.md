@@ -121,7 +121,7 @@ electro-seq & 2021-04-23 & ISS & 201 & single cell\\
 \cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2021-04-30} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\*
 \end{longtable}
 
-The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure \@ref(fig:topics), Chapter \@ref(text-mining). Because the search results---without manual inspection and curation---may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.
+The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure \@ref(fig:topics), Chapter \@ref(text-mining)). Because the search results---without manual inspection and curation---may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.
 
 
 
@@ -144,7 +144,7 @@ Chronologically, in the curated database, microdissection came first, with voxel
 
 }
 
-\caption{Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days. Note that the number is lower in 2021 because this figure was rendered in April 2021.}(\#fig:current-vs-prequel)
+\caption{Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days.}(\#fig:current-vs-prequel)
 \end{figure}
 
 
