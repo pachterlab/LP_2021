@@ -56,21 +56,28 @@ smfish <- read_metadata("smFISH", update = TRUE)
 ```
 
 ```{r}
-mean_genes <- smfish %>% 
-  group_by(date_published, title, method) %>% 
-  summarize(n_genes = mean(n_genes, na.rm = TRUE))
+smfish <- smfish %>% 
+  mutate(mask = case_when(n_genes > 5000 ~ "1",
+                          TRUE ~ "2"))
 ```
 
 ```{r}
-(p3c <- mean_genes %>% 
-  filter(n_genes < 2000) %>% 
+(p3c <- smfish %>% 
+  filter(!is.na(n_genes)) %>% 
   ggplot(aes(date_published, n_genes)) +
-  geom_point(aes(color = method)) +
-  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
-  geom_smooth(method = "lm") +
-  labs(x = "Date published", title = "Mean number of genes per study per technique",
+  geom_point(aes(color = method), alpha = 0.5) +
+  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5,
+                  max.overlaps = 20, min.segment.length = 0.22) +
+  geom_smooth(method = "lm", 
+              data = smfish %>% filter(mask == "2", !is.na(n_genes))) +
+  labs(x = "Date published", 
+       title = "Number of genes per dataset",
        y = NULL) +
-  theme(legend.position = "none"))
+  theme(legend.position = "none", strip.text = element_blank(),
+        strip.background = element_blank()) +
+  facet_grid(rows = vars(mask), space = "free_y", scales = "free_y") +
+  scale_y_continuous(breaks = scales::breaks_width(1000),
+                     expand = expansion(add = c(150,150))))
 ```
 
 ```{r}
@@ -102,7 +109,7 @@ data("species_cols")
 
 ```{r}
 species_pie <- species %>% 
-  mutate(species = fct_lump(species, 3)) %>% 
+  mutate(species = fct_lump(species, 4)) %>% 
   count(species) %>% 
   mutate(species = fct_reorder(species, n, .desc = TRUE) %>% 
            fct_relevel("Other", after = Inf)) %>% 
