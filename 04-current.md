@@ -54,7 +54,7 @@ Tomo-seq & 2013-08-12 & Microdissection & Tx wide & NA\\
 \cellcolor{gray!6}{bDNA-smFISH} & \cellcolor{gray!6}{2013-10-06} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{928} & \cellcolor{gray!6}{single cell}\\
 TIVA & 2014-01-12 & Microdissection & Tx wide & NA\\
 \cellcolor{gray!6}{FISSEQ} & \cellcolor{gray!6}{2014-03-21} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{8102} & \cellcolor{gray!6}{single cell}\\
-seqFISH & 2014-03-28 & smFISH & 1116 & single cell\\
+seqFISH & 2014-03-28 & smFISH & 10421 & single cell\\
 \addlinespace
 \cellcolor{gray!6}{MERFISH} & \cellcolor{gray!6}{2015-04-24} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{4209} & \cellcolor{gray!6}{single cell}\\
 Puzzle Imaging & 2015-07-20 & No imaging & NA & NA\\
@@ -69,27 +69,27 @@ SGA & 2017-11-28 & smFISH & 35 & single cell\\
 Niche-seq & 2017-12-22 & Microdissection & Tx wide & NA\\
 \addlinespace
 \cellcolor{gray!6}{ExM-MERFISH} & \cellcolor{gray!6}{2018-03-19} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10050} & \cellcolor{gray!6}{single cell}\\
-seqFISH+ & 2018-07-12 & smFISH & 10421 & single cell\\
-\cellcolor{gray!6}{STARmap} & \cellcolor{gray!6}{2018-07-27} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{1020} & \cellcolor{gray!6}{single cell}\\
-Paired-cell sequencing & 2018-09-17 & No imaging & NA & NA\\
-\cellcolor{gray!6}{osmFISH} & \cellcolor{gray!6}{2018-10-30} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{single cell}\\
+STARmap & 2018-07-27 & ISS & 1020 & single cell\\
+\cellcolor{gray!6}{Paired-cell sequencing} & \cellcolor{gray!6}{2018-09-17} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+osmFISH & 2018-10-30 & smFISH & 33 & single cell\\
+\cellcolor{gray!6}{seqFISH+} & \cellcolor{gray!6}{2019-03-25} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10000} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
-GeoMX DSP & 2019-02-26 & Microdissection & 2093 & NA\\
-\cellcolor{gray!6}{slide-seq} & \cellcolor{gray!6}{2019-03-29} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{10}\\
-bDNA-MERFISH & 2019-05-25 & smFISH & 130 & single cell\\
-\cellcolor{gray!6}{DNA microscopy} & \cellcolor{gray!6}{2019-06-27} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
-APEX-seq & 2019-07-11 & No imaging & NA & NA\\
+slide-seq & 2019-03-29 & Array & Tx wide & 10\\
+\cellcolor{gray!6}{bDNA-MERFISH} & \cellcolor{gray!6}{2019-05-25} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{130} & \cellcolor{gray!6}{single cell}\\
+DNA microscopy & 2019-06-27 & No imaging & NA & NA\\
+\cellcolor{gray!6}{APEX-seq} & \cellcolor{gray!6}{2019-07-11} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+INSTA-seq & 2019-08-06 & ISS & NA & single cell\\
 \addlinespace
-\cellcolor{gray!6}{INSTA-seq} & \cellcolor{gray!6}{2019-08-06} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{single cell}\\
-PARSIFT & 2019-09-04 & No imaging & NA & NA\\
-\cellcolor{gray!6}{HDST} & \cellcolor{gray!6}{2019-09-09} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{2}\\
-GaST-seq & 2019-10-10 & Microdissection & Tx wide & NA\\
-\cellcolor{gray!6}{BARseq} & \cellcolor{gray!6}{2019-10-17} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{79} & \cellcolor{gray!6}{single cell}\\
+\cellcolor{gray!6}{PARSIFT} & \cellcolor{gray!6}{2019-09-04} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+HDST & 2019-09-09 & Array & Tx wide & 2\\
+\cellcolor{gray!6}{GaST-seq} & \cellcolor{gray!6}{2019-10-10} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+BARseq & 2019-10-17 & ISS & 79 & single cell\\
+\cellcolor{gray!6}{SCRINSHOT} & \cellcolor{gray!6}{2020-02-07} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{29} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
-SCRINSHOT & 2020-02-07 & smFISH & 29 & single cell\\
-\cellcolor{gray!6}{Visium} & \cellcolor{gray!6}{2020-02-28} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
-PIC & 2020-03-23 & Microdissection & Tx wide & NA\\
-\cellcolor{gray!6}{miRNA nanowell} & \cellcolor{gray!6}{2020-05-09} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{300}\\
+Visium & 2020-02-28 & Array & Tx wide & 55\\
+\cellcolor{gray!6}{PIC} & \cellcolor{gray!6}{2020-03-23} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+miRNA nanowell & 2020-05-09 & Array & 9 & 300\\
+\cellcolor{gray!6}{GeoMX DSP} & \cellcolor{gray!6}{2020-05-11} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{2093} & \cellcolor{gray!6}{NA}\\
 split-FISH & 2020-06-15 & smFISH & 317 & single cell\\
 \addlinespace
 \cellcolor{gray!6}{HybISS} & \cellcolor{gray!6}{2020-07-03} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{120} & \cellcolor{gray!6}{single cell}\\
