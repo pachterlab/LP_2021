@@ -62,7 +62,8 @@ plot_topic_prop(stm_res, x_max = 0.08)
 
 In most cases, the top 5 words in each topic give us a decent idea what the topic is about. We can also plot the probability to get top words ($\beta$) in each topic. 
 ```{r topic-words, fig.width=12, fig.height=15, fig.cap="Probability of top 10 words in each topic."}
-plot_topic_words(stm_res)
+plot_topic_words(stm_res) +
+  theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
 ```
 
 While in most cases, the topic is apparent from the top words, some topics are less apparent (e.g. topic 49). From the top words and quick glances of abstracts with the highest proportion of each topic, the 50 topics are summarized here in more human readable terms:
@@ -710,7 +711,7 @@ ggplot(pca_plt, aes(PC1, PC2, color = cluster)) +
 Words more positive in PC1 are often gene names, parts of gene names, or acronyms, and names of specific biological entities or processes. In contrast, words more negative in PC1 tend to be more general and more widely used. PC2 separates the technical (clusters 2 and 7, top) from the biological (clusters 1, 4 to 6) (Figure \@ref(fig:pc12)). As expected, "cancer", "tumor", and "disease" are not far from each other (bottom left), and "malignant" and "invasive" are close (bottom center). PC1 explains more variance than all other PCs; though it's only 5.5%, it picked up a very important dimension in word meanings in this corpus. PCs are arranged in decreasing order of variance explained.
 
 ```{block2, note-text3, type='rmdnote', include=TRUE, echo = TRUE}
-Note that when this plot is made on different computers, the signs of PCs might flip, because the sign does not affect the magnitude of the eigenvalue (i.e. variance explained). PCs are eigenvectors of the covariance matrix of the GloVe dimensions; an eigenvector multiplied by a scalar is still an eigenvector with the same eigenvalue. 
+Note that when the PCA plot is made on different computers, the signs of PCs might flip, because the sign does not affect the magnitude of the eigenvalue (i.e. variance explained). PCs are eigenvectors of the covariance matrix of the GloVe dimensions; an eigenvector multiplied by a scalar is still an eigenvector with the same eigenvalue. 
 ```
 
 ```{r}

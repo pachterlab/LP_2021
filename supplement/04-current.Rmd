@@ -124,7 +124,7 @@ knitr::kable(table1, format = out_format, escape = FALSE,
 # On RStudio Cloud, uncomment the above line of code to show this table in dark theme.
 ```
 
-The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure \@ref(fig:topics), Chapter \@ref(text-mining). Because the search results---without manual inspection and curation---may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.
+The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure \@ref(fig:topics), Chapter \@ref(text-mining)). Because the search results---without manual inspection and curation---may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.
 
 ```{r}
 publications <- get_pubs_df(data_sheets, "era")
@@ -145,7 +145,7 @@ pubs_per_year(current, facet_by = "sheet") +
 
 Chronologically, in the curated database, microdissection came first, with voxelation in 2002 [@Brown2002], followed by smFISH, ISS, no imaging, and array (Figure \@ref(fig:current-hist)). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure \@ref(fig:current-vs-prequel)). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure \@ref(fig:current-vs-prequel)). Growth in microdissection and array seemed to have contributed the most to this overall drastic growth (Figure \@ref(fig:current-hist)). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table \@ref(tab:table1). A timeline of major techniques in the current era is shown in Figure \@ref(fig:tl3).
 
-```{r current-vs-prequel, fig.width=7, fig.height=4, fig.cap="Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days. Note that the number is lower in 2021 because this figure was rendered in April 2021."}
+```{r current-vs-prequel, fig.width=7, fig.height=4, fig.cap="Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days."}
 era_freqpoly(publications, era, preprints = TRUE) +
    scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
    scale_y_continuous(expand = expansion(c(0, 0.05))) +
