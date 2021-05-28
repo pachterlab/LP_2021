@@ -25,7 +25,7 @@
 <meta name="author" content="Lior Pachter, lpachter@caltech.edu" />
 
 
-<meta name="date" content="2021-05-25" />
+<meta name="date" content="2021-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -326,7 +326,7 @@ Figure 5.3: Tomo-seq, here showing C. elegans.
 Figure 5.4: Niche-seq schematics. Green: cells with photoactivated PA-GFP.
 </p>
 </div>
-<p>Two <em>de facto</em> microdissection methods have spread beyond their institutions of origin. One of them is Niche-seq, which was developed as LCM is still usually used to isolate groups of cells rather than single cells and involves tissue fixation <span class="citation">(Medaglia et al. <a href="#ref-Medaglia2017" role="doc-biblioref">2017</a>)</span>. Select regions of <em>ex vivo</em> tissues from transgenic mice expressing photoactivable GFP (PA-GFP), here lymph node and spleen B cell and T cell niches, are photoactivated at 820 nm with two photon irradiation. Then the tissue is dissociated and cells with photoactivated PA-GFP are collected from flow cytometry–based fluorescence-activated cell sorting (FACS) for scRNA-seq with MARS-seq (Figure <a href="current-techs.html#fig:niche">5.4</a>). After its inception, Niche-seq has been used once more in lymph node niches <span class="citation">(De Giovanni et al. <a href="#ref-DeGiovanni2020" role="doc-biblioref">2020</a>)</span>. However, as Niche-seq requires transgenic mice expressing PA-GFP and living tissue, it cannot be applied to human tissues, to fixed tissues, or when a PA-GFP line is unavailable. This might limit further growth of Niche-seq. Moreover, the spatial context of cells within the photoactivated region is lost, limiting spatial resolution.</p>
+<p>Two <em>de facto</em> microdissection methods have spread beyond their institutions of origin. One of them is Niche-seq, which was developed as LCM is still usually used to isolate groups of cells rather than single cells and involves tissue fixation <span class="citation">(Medaglia et al. <a href="#ref-Medaglia2017" role="doc-biblioref">2017</a>)</span>. Select regions of <em>ex vivo</em> tissues from transgenic mice expressing photoactivable GFP (PA-GFP), here lymph node and spleen B cell and T cell niches, are photoactivated at 820 nm with two photon irradiation. Then the tissue is dissociated and cells with photoactivated PA-GFP are collected from flow cytometry–based fluorescence-activated cell sorting (FACS) for scRNA-seq with MARS-seq (Figure <a href="current-techs.html#fig:niche">5.4</a>). This approach was originally used in 2010 to isolate B cells from light and dark zones of the lymph node followed by transcriptome profiling with microarray in bulk <span class="citation">(<span class="citeproc-not-found" data-reference-id="Victoria2010"><strong>???</strong></span>)</span>; the difference in Niche-seq is that the scRNA-seq of the sorted cells. After its inception, Niche-seq has been used once more in lymph node niches <span class="citation">(De Giovanni et al. <a href="#ref-DeGiovanni2020" role="doc-biblioref">2020</a>)</span>. However, as Niche-seq requires transgenic mice expressing PA-GFP and living tissue, it cannot be applied to human tissues, to fixed tissues, or when a PA-GFP line is unavailable. This might limit further growth of Niche-seq. Moreover, the spatial context of cells within the photoactivated region is lost, limiting spatial resolution.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:dsp"></span>
 <img src="dsp.png" alt="GeoMX DSP schematics, inspired by figures in (Merritt et al. 2019). Black: transcripts in tissue. Gray: probes. Green: indexing oligo." width="100%" />
@@ -482,24 +482,24 @@ Figure 5.18: Record total number of cells per study profiled by smFISH based tec
 Figure 5.19: Number of genes per datasets in each study, over time. Gray ribbon is 95% confidence interval (CI). The points are translucent; more opaque points are multiple datasets from the same study.
 </p>
 </div>
-<p>The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0 (t-test). The number of genes was not log transformed precisely to show that even the outliers can’t give a significantly rising trend.</p>
+<p>The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0 (t-test). The number of genes was not log transformed precisely to show that even the outliers can’t give a significantly rising trend and to visually emphasize that the number of genes profiled by the vast majority of smFISH based studies is well below 1000.</p>
 <pre><code>## 
 ## Call:
 ## lm(formula = n_genes ~ date_published, data = smfish)
 ## 
 ## Residuals:
 ##    Min     1Q Median     3Q    Max 
-## -716.1 -618.5 -515.5 -407.1 9803.3 
+## -710.0 -608.4 -516.1 -410.1 9809.5 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    -1515.9241  4955.9415  -0.306    0.760
-## date_published     0.1204     0.2772   0.434    0.665
+## (Intercept)    -1324.3427  4899.7555  -0.270    0.788
+## date_published     0.1092     0.2739   0.399    0.691
 ## 
-## Residual standard error: 2108 on 89 degrees of freedom
+## Residual standard error: 2098 on 90 degrees of freedom
 ##   (5 observations deleted due to missingness)
-## Multiple R-squared:  0.002115,   Adjusted R-squared:  -0.009097 
-## F-statistic: 0.1886 on 1 and 89 DF,  p-value: 0.6651</code></pre>
+## Multiple R-squared:  0.001764,   Adjusted R-squared:  -0.009327 
+## F-statistic: 0.159 on 1 and 90 DF,  p-value: 0.691</code></pre>
 <p>To better show the trend of the vast majority of datasets that profiled far fewer than 10,000 genes, a broken y-axis is introduced to zoom into the majority of datasets (<a href="current-techs.html#fig:smfish-broken-y">5.20</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:smfish-broken-y"></span>
 <img src="05-current-techs_files/figure-html/smfish-broken-y-1.png" alt="Like the previous figure, but more zoomed in to datasets with fewer than 10,000 genes." width="864" />
@@ -521,16 +521,16 @@ Figure 5.21: Total number of cells per study profiled by smFISH based techniques
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -173754 -120441  -95966   10604  909877 
+## -161866 -117427  -93644   -6971  916882 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    -1.237e+06  9.524e+05  -1.299    0.206
-## date_published  7.591e+01  5.364e+01   1.415    0.169
+## (Intercept)    -1.090e+06  9.211e+05  -1.184    0.247
+## date_published  6.728e+01  5.177e+01   1.300    0.205
 ## 
-## Residual standard error: 236800 on 25 degrees of freedom
-## Multiple R-squared:  0.07416,    Adjusted R-squared:  0.03713 
-## F-statistic: 2.003 on 1 and 25 DF,  p-value: 0.1694</code></pre>
+## Residual standard error: 234600 on 26 degrees of freedom
+## Multiple R-squared:  0.061,  Adjusted R-squared:  0.02489 
+## F-statistic: 1.689 on 1 and 26 DF,  p-value: 0.2051</code></pre>
 <p>MERFISH is the technique used in the most studies (Figure <a href="current-techs.html#fig:smfish-trend">5.22</a>), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure <a href="current-techs.html#fig:smfish-n-insts">5.23</a>). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table <a href="current-techs.html#tab:table2">5.1</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:smfish-trend"></span>
 <img src="05-current-techs_files/figure-html/smfish-trend-1.png" alt="Number of publications over time, broken down by technique type. Preprints are included, and the gray histogram in the background is the overall trend of all smFISH based techniques." width="576" />
@@ -672,7 +672,7 @@ Except for bDNA-MERFISH, it has not been used in a highly multiplexed setting
 </tr>
 </tbody>
 </table>
-<p>So far we have reviewed studies that showcase new techniques and technical improvements such as signal amplification and resolving optical crowding. Some smFISH based techniques have been used in studies that focus on biological problems rather than new techniques. HCR-seqFISH has been used twice in biological studies, in chicken neural tube (35 genes) <span class="citation">(Lignell et al. <a href="#ref-Lignell2017" role="doc-biblioref">2017</a>)</span> and mouse T cell precursors (65 genes) <span class="citation">(Zhou et al. <a href="#ref-Zhou2019" role="doc-biblioref">2019</a>)</span> though both were conducted within Caltech, the institution of origin. Moreover, spatial location of cells is not necessarily a reason to use HCR-seqFISH; Zhou et al. used HCR-seqFISH because of the high detection efficiency compared to scRNA-seq in dissociated FACS sorted T cell progenitors, so when spatial information is already lost. More recently, pseudocolor seqFISH was used in a mouse embryo atlas at University of Cambridge (though Long Cai is still a coauthor), finally moving beyond the stage of testing into new biological research <span class="citation">(Lohoff et al. <a href="#ref-Lohoff2020" role="doc-biblioref">2020</a>)</span>. A new version of seqFISH, par-seqFISH, was developed to profile 105 genes in the biofilm bacterium <em>Pseudomonas aeruginosa</em> <span class="citation">(Dar et al. <a href="#ref-Dar2021" role="doc-biblioref">2021</a>)</span>. This may open the way to spatial transcriptomics in not only biofilms, but in the microbiome in general.</p>
+<p>So far we have reviewed studies that showcase new techniques and technical improvements such as signal amplification and resolving optical crowding. Some smFISH based techniques have been used in studies that focus on biological problems rather than new techniques. HCR-seqFISH has been used twice in biological studies, in chicken neural tube (35 genes) <span class="citation">(Lignell et al. <a href="#ref-Lignell2017" role="doc-biblioref">2017</a>)</span> and mouse T cell precursors (65 genes) <span class="citation">(Zhou et al. <a href="#ref-Zhou2019" role="doc-biblioref">2019</a>)</span> though both were conducted within Caltech, the institution of origin. Moreover, spatial location of cells is not necessarily a reason to use HCR-seqFISH; Zhou et al. used HCR-seqFISH because of the high detection efficiency compared to scRNA-seq in dissociated FACS sorted T cell progenitors, so when spatial information is already lost. More recently, pseudocolor seqFISH was used in a mouse embryo atlas at University of Cambridge (though Long Cai is still a coauthor), finally moving beyond the stage of testing into new biological research <span class="citation">(Lohoff et al. <a href="#ref-Lohoff2020" role="doc-biblioref">2020</a>)</span>. Combinatorial barcoding has also been used to profile bacterial species in the microbiome by targeting rRNAs, though this does not profile the transcriptome, nor is it single molecular <span class="citation">(Shi et al. <a href="#ref-Shi2020" role="doc-biblioref">2020</a>; Cao et al. <a href="#ref-Cao2021" role="doc-biblioref">2021</a>)</span>. For spatial transcriptome in bacteria, a new version of seqFISH, par-seqFISH, was developed to profile 105 genes in the biofilm bacterium <em>Pseudomonas aeruginosa</em> <span class="citation">(Dar et al. <a href="#ref-Dar2021" role="doc-biblioref">2021</a>)</span>. This may open the way to spatial transcriptomics in not only biofilms, but in the microbiome in general.</p>
 <p>MERFISH has been used more broadly in biological studies. Within Harvard, the institution of origin, MERFISH has been used to create atlases of the hypothalamic preoptic region (155 genes) <span class="citation">(Moffitt et al. <a href="#ref-Moffitt2018" role="doc-biblioref">2018</a>)</span> and the primary motor cortex (MOp) (258 genes) <span class="citation">(Zhang et al. <a href="#ref-Zhang2020" role="doc-biblioref">2020</a>)</span> in mice, and adapted to stain for chromatin conformation and transcription foci (introns) <span class="citation">(Su and Song <a href="#ref-Su2020" role="doc-biblioref">2020</a>)</span>. Outside Harvard (Figure <a href="current-techs.html#fig:smfish-map">5.24</a>), MERFISH has been used to study how gene expression variability relates to cell state in cell culture <span class="citation">(Foreman and Wollman <a href="#ref-Foreman2019" role="doc-biblioref">2019</a>)</span> and used in conjunction with smFISH based chromatin tracing to study the relationships between chromatin compartmentalization and gene expression <span class="citation">(M. Liu et al. <a href="#ref-Liu2020" role="doc-biblioref">2020</a>)</span>.</p>
 <p>After its inception, HybISS became part of a single cell atlas of the developing mouse nervous system <span class="citation">(Manno et al. <a href="#ref-Manno2020" role="doc-biblioref">2020</a>)</span>. This atlas is mostly scRNA-seq data, but 119 genes were stained with HybISS to validate secondary organizers discovered via scRNA-seq.</p>
 </div>
@@ -904,6 +904,9 @@ Figure 5.34: Record spot diameter of array based methods over time.
 </div>
 <div id="ref-Cabili2015">
 <p>Cabili, Moran N., Margaret C. Dunagin, Patrick D. McClanahan, Andrew Biaesch, Olivia Padovan-Merhar, Aviv Regev, John L. Rinn, and Arjun Raj. 2015. “Localization and abundance analysis of human lncRNAs at single-cell and single-molecule resolution.” <em>Genome Biology</em> 16 (1): 20. <a href="https://doi.org/10.1186/s13059-015-0586-4">https://doi.org/10.1186/s13059-015-0586-4</a>.</p>
+</div>
+<div id="ref-Cao2021">
+<p>Cao, Zhaohui, Wenlong Zuo, Lanxiang Wang, Junyu Chen, Zepeng Qu, Fan Jin, and Lei Dai. 2021. “Spatial profiling of microbial communities by sequential FISH with error-robust encoding.” <em>bioRxiv</em>, January, 2021.05.27.445923. <a href="https://doi.org/10.1101/2021.05.27.445923">https://doi.org/10.1101/2021.05.27.445923</a>.</p>
 </div>
 <div id="ref-Carlberg2019">
 <p>Carlberg, Konstantin, Marina Korotkova, Ludvig Larsson, Anca I Catrina, Patrik L Ståhl, and Vivianne Malmström. 2019. “Exploring inflammatory signatures in arthritic joint biopsies with Spatial Transcriptomics.” <em>Scientific Reports</em> 9 (1): 18975. <a href="https://doi.org/10.1038/s41598-019-55441-y">https://doi.org/10.1038/s41598-019-55441-y</a>.</p>
@@ -1339,6 +1342,9 @@ Figure 5.34: Record spot diameter of array based methods over time.
 </div>
 <div id="ref-Shendure2005">
 <p>Shendure, Jay. 2005. “Accurate Multiplex Polony Sequencing of an Evolved Bacterial Genome.” <em>Science</em> 309 (5741): 1728–32. <a href="https://doi.org/10.1126/science.1117389">https://doi.org/10.1126/science.1117389</a>.</p>
+</div>
+<div id="ref-Shi2020">
+<p>Shi, Hao, Qiaojuan Shi, Benjamin Grodner, Joan Sesing Lenz, Warren R Zipfel, Ilana Lauren Brito, and Iwijn De Vlaminck. 2020. “Highly multiplexed spatial mapping of microbial communities.” <em>Nature</em> 588 (7839): 676–81. <a href="https://doi.org/10.1038/s41586-020-2983-4">https://doi.org/10.1038/s41586-020-2983-4</a>.</p>
 </div>
 <div id="ref-Singh2003">
 <p>Singh, Ram P., Vanessa M. Brown, Abhijit Chaudhari, Arshad H. Khan, Alex Ossadtchi, Daniel M. Sforza, A.Ken Meadors, Simon R. Cherry, Richard M. Leahy, and Desmond J. Smith. 2003. “High-resolution voxelation mapping of human and rodent brain gene expression.” <em>Journal of Neuroscience Methods</em> 125 (1-2): 93–101. <a href="https://doi.org/10.1016/S0165-0270(03)00045-1">https://doi.org/10.1016/S0165-0270(03)00045-1</a>.</p>

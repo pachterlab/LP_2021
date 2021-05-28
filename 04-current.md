@@ -45,56 +45,56 @@ Method & First published & Category & Max \# genes & Min spot diameter ($\mu$m)\
 \bottomrule
 \endlastfoot
 \cellcolor{gray!6}{voxelation} & \cellcolor{gray!6}{2002-02-01} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-SRM seqFISH & 2012-06-03 & smFISH & 32 & single cell\\
-\cellcolor{gray!6}{Tomo-array} & \cellcolor{gray!6}{2012-09-19} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-iceFISH & 2013-02-17 & smFISH & 20 & single cell\\
-\cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{2013-07-14} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{222} & \cellcolor{gray!6}{single cell}\\
+PA-GFP & 2010-11-12 & Microdissection & Tx wide & NA\\
+\cellcolor{gray!6}{SRM seqFISH} & \cellcolor{gray!6}{2012-06-03} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{32} & \cellcolor{gray!6}{single cell}\\
+Tomo-array & 2012-09-19 & Microdissection & Tx wide & NA\\
+\cellcolor{gray!6}{iceFISH} & \cellcolor{gray!6}{2013-02-17} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{20} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
-Tomo-seq & 2013-08-12 & Microdissection & Tx wide & NA\\
-\cellcolor{gray!6}{bDNA-smFISH} & \cellcolor{gray!6}{2013-10-06} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{928} & \cellcolor{gray!6}{single cell}\\
-TIVA & 2014-01-12 & Microdissection & Tx wide & NA\\
-\cellcolor{gray!6}{FISSEQ} & \cellcolor{gray!6}{2014-03-21} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{8102} & \cellcolor{gray!6}{single cell}\\
-seqFISH & 2014-03-28 & smFISH & 10421 & single cell\\
+ISS & 2013-07-14 & ISS & 222 & single cell\\
+\cellcolor{gray!6}{Tomo-seq} & \cellcolor{gray!6}{2013-08-12} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+bDNA-smFISH & 2013-10-06 & smFISH & 928 & single cell\\
+\cellcolor{gray!6}{TIVA} & \cellcolor{gray!6}{2014-01-12} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+FISSEQ & 2014-03-21 & ISS & 8102 & single cell\\
 \addlinespace
-\cellcolor{gray!6}{MERFISH} & \cellcolor{gray!6}{2015-04-24} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{4209} & \cellcolor{gray!6}{single cell}\\
-Puzzle Imaging & 2015-07-20 & No imaging & NA & NA\\
-\cellcolor{gray!6}{Geo-seq} & \cellcolor{gray!6}{2016-03-21} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-corrFISH & 2016-06-06 & smFISH & 10 & single cell\\
-\cellcolor{gray!6}{ST} & \cellcolor{gray!6}{2016-07-01} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{100}\\
+\cellcolor{gray!6}{seqFISH} & \cellcolor{gray!6}{2014-03-28} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10421} & \cellcolor{gray!6}{single cell}\\
+MERFISH & 2015-04-24 & smFISH & 4209 & single cell\\
+\cellcolor{gray!6}{Puzzle Imaging} & \cellcolor{gray!6}{2015-07-20} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+Geo-seq & 2016-03-21 & Microdissection & Tx wide & NA\\
+\cellcolor{gray!6}{corrFISH} & \cellcolor{gray!6}{2016-06-06} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
-HCR-seqFISH & 2016-10-19 & smFISH & 249 & single cell\\
-\cellcolor{gray!6}{punch} & \cellcolor{gray!6}{2017-06-28} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-SGA & 2017-11-28 & smFISH & 35 & single cell\\
-\cellcolor{gray!6}{APEX-RIP} & \cellcolor{gray!6}{2017-12-14} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
-Niche-seq & 2017-12-22 & Microdissection & Tx wide & NA\\
+ST & 2016-07-01 & Array & Tx wide & 100\\
+\cellcolor{gray!6}{HCR-seqFISH} & \cellcolor{gray!6}{2016-10-19} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{249} & \cellcolor{gray!6}{single cell}\\
+punch & 2017-06-28 & Microdissection & Tx wide & NA\\
+\cellcolor{gray!6}{SGA} & \cellcolor{gray!6}{2017-11-28} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{35} & \cellcolor{gray!6}{single cell}\\
+APEX-RIP & 2017-12-14 & No imaging & NA & NA\\
 \addlinespace
-\cellcolor{gray!6}{ExM-MERFISH} & \cellcolor{gray!6}{2018-03-19} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10050} & \cellcolor{gray!6}{single cell}\\
-STARmap & 2018-07-27 & ISS & 1020 & single cell\\
-\cellcolor{gray!6}{Paired-cell sequencing} & \cellcolor{gray!6}{2018-09-17} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
-osmFISH & 2018-10-30 & smFISH & 33 & single cell\\
-\cellcolor{gray!6}{seqFISH+} & \cellcolor{gray!6}{2019-03-25} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10000} & \cellcolor{gray!6}{single cell}\\
+\cellcolor{gray!6}{Niche-seq} & \cellcolor{gray!6}{2017-12-22} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+ExM-MERFISH & 2018-03-19 & smFISH & 10050 & single cell\\
+\cellcolor{gray!6}{STARmap} & \cellcolor{gray!6}{2018-07-27} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{1020} & \cellcolor{gray!6}{single cell}\\
+Paired-cell sequencing & 2018-09-17 & No imaging & NA & NA\\
+\cellcolor{gray!6}{osmFISH} & \cellcolor{gray!6}{2018-10-30} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
-slide-seq & 2019-03-29 & Array & Tx wide & 10\\
-\cellcolor{gray!6}{bDNA-MERFISH} & \cellcolor{gray!6}{2019-05-25} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{130} & \cellcolor{gray!6}{single cell}\\
-DNA microscopy & 2019-06-27 & No imaging & NA & NA\\
-\cellcolor{gray!6}{APEX-seq} & \cellcolor{gray!6}{2019-07-11} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
-INSTA-seq & 2019-08-06 & ISS & NA & single cell\\
+seqFISH+ & 2019-03-25 & smFISH & 10000 & single cell\\
+\cellcolor{gray!6}{slide-seq} & \cellcolor{gray!6}{2019-03-29} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{10}\\
+bDNA-MERFISH & 2019-05-25 & smFISH & 130 & single cell\\
+\cellcolor{gray!6}{DNA microscopy} & \cellcolor{gray!6}{2019-06-27} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+APEX-seq & 2019-07-11 & No imaging & NA & NA\\
 \addlinespace
-\cellcolor{gray!6}{PARSIFT} & \cellcolor{gray!6}{2019-09-04} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
-HDST & 2019-09-09 & Array & Tx wide & 2\\
-\cellcolor{gray!6}{GaST-seq} & \cellcolor{gray!6}{2019-10-10} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-BARseq & 2019-10-17 & ISS & 79 & single cell\\
-\cellcolor{gray!6}{SCRINSHOT} & \cellcolor{gray!6}{2020-02-07} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{29} & \cellcolor{gray!6}{single cell}\\
+\cellcolor{gray!6}{INSTA-seq} & \cellcolor{gray!6}{2019-08-06} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{single cell}\\
+PARSIFT & 2019-09-04 & No imaging & NA & NA\\
+\cellcolor{gray!6}{HDST} & \cellcolor{gray!6}{2019-09-09} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{2}\\
+GaST-seq & 2019-10-10 & Microdissection & Tx wide & NA\\
+\cellcolor{gray!6}{BARseq} & \cellcolor{gray!6}{2019-10-17} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{79} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
-Visium & 2020-02-28 & Array & Tx wide & 55\\
-\cellcolor{gray!6}{PIC} & \cellcolor{gray!6}{2020-03-23} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-miRNA nanowell & 2020-05-09 & Array & 9 & 300\\
-\cellcolor{gray!6}{GeoMX DSP} & \cellcolor{gray!6}{2020-05-11} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{2093} & \cellcolor{gray!6}{NA}\\
-split-FISH & 2020-06-15 & smFISH & 317 & single cell\\
+SCRINSHOT & 2020-02-07 & smFISH & 29 & single cell\\
+\cellcolor{gray!6}{Visium} & \cellcolor{gray!6}{2020-02-28} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
+PIC & 2020-03-23 & Microdissection & Tx wide & NA\\
+\cellcolor{gray!6}{miRNA nanowell} & \cellcolor{gray!6}{2020-05-09} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{300}\\
+GeoMX DSP & 2020-05-11 & Microdissection & 2093 & NA\\
 \addlinespace
-\cellcolor{gray!6}{HybISS} & \cellcolor{gray!6}{2020-07-03} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{120} & \cellcolor{gray!6}{single cell}\\
-ZipSeq & 2020-07-06 & Microdissection & Tx wide & NA\\
-\cellcolor{gray!6}{ClumpSeq} & \cellcolor{gray!6}{2020-08-06} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+\cellcolor{gray!6}{split-FISH} & \cellcolor{gray!6}{2020-06-15} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{317} & \cellcolor{gray!6}{single cell}\\
+HybISS & 2020-07-03 & smFISH & 120 & single cell\\
+\cellcolor{gray!6}{ZipSeq} & \cellcolor{gray!6}{2020-07-06} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 BARseq2 & 2020-08-26 & ISS & 65 & single cell\\
 \cellcolor{gray!6}{SM-Omics} & \cellcolor{gray!6}{2020-10-15} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{100}\\
 \addlinespace
@@ -118,7 +118,8 @@ STRP-seq & 2021-04-19 & Microdissection & Tx wide & NA\\
 \addlinespace
 \cellcolor{gray!6}{XYZeq} & \cellcolor{gray!6}{2021-04-21} & \cellcolor{gray!6}{Array} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{500}\\
 electro-seq & 2021-04-23 & ISS & 201 & single cell\\
-\cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2021-04-30} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\*
+\cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2021-04-30} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+ClumpSeq & 2021-05-24 & No imaging & NA & NA\\*
 \end{longtable}
 
 The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure \@ref(fig:topics), Chapter \@ref(text-mining)). Because the search results---without manual inspection and curation---may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.
