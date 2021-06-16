@@ -131,7 +131,9 @@ langs <- unnest_cat(data_sheets, language)
 
 ```{r user-langs, fig.width=6, fig.height=4, fig.cap="Number of publications for data collection using each of the 5 most popular programming languages for downstream data analysis."}
 pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 10) +
-    labs(title = "Users (downstream analysis)")
+  labs(title = "Users (downstream analysis)") +
+  scale_y_continuous(expand = expansion(c(0,0.05)),
+                     breaks = breaks_width(20))
 ```
 
 ```{r}
@@ -150,7 +152,7 @@ xlim <- langs %>%
 pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE,
              img_unit = 10) +
     scale_y_continuous(limits = c(0, xlim), 
-                       breaks = seq(0, 80, by = 20),
+                       breaks = seq(0, 140, by = 20),
                        expand = expansion(mult = c(0,0.05))) +
     labs(title = "Package developers")
 ```
