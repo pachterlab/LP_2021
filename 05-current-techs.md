@@ -359,17 +359,17 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 ## 
 ## Residuals:
 ##    Min     1Q Median     3Q    Max 
-## -710.0 -608.4 -516.1 -410.1 9809.5 
+## -688.0 -578.7 -497.5 -408.6 9821.2 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(>|t|)
-## (Intercept)    -1324.3427  4899.7555  -0.270    0.788
-## date_published     0.1092     0.2739   0.399    0.691
+## (Intercept)    -951.55486 4789.36073  -0.199    0.843
+## date_published    0.08753    0.26740   0.327    0.744
 ## 
-## Residual standard error: 2098 on 90 degrees of freedom
+## Residual standard error: 2078 on 92 degrees of freedom
 ##   (5 observations deleted due to missingness)
-## Multiple R-squared:  0.001764,	Adjusted R-squared:  -0.009327 
-## F-statistic: 0.159 on 1 and 90 DF,  p-value: 0.691
+## Multiple R-squared:  0.001163,	Adjusted R-squared:  -0.009694 
+## F-statistic: 0.1071 on 1 and 92 DF,  p-value: 0.7442
 ```
 
 To better show the trend of the vast majority of datasets that profiled far fewer than 10,000 genes, a broken y-axis is introduced to zoom into the majority of datasets (\@ref(fig:smfish-broken-y)).

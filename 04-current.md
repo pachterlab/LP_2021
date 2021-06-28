@@ -120,7 +120,9 @@ STRP-seq & 2021-04-19 & Microdissection & Tx wide & NA\\
 electro-seq & 2021-04-23 & ISS & 201 & single cell\\
 \cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2021-04-30} & \cellcolor{gray!6}{Microdissection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 ClumpSeq & 2021-05-24 & No imaging & NA & NA\\
-\cellcolor{gray!6}{Halo-seq} & \cellcolor{gray!6}{2021-06-08} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\*
+\cellcolor{gray!6}{Halo-seq} & \cellcolor{gray!6}{2021-06-08} & \cellcolor{gray!6}{No imaging} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+\addlinespace
+MOSAICA & 2021-06-23 & smFISH & 10 & single cell\\*
 \end{longtable}
 
 The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure \@ref(fig:topics), Chapter \@ref(text-mining)). Because the search results---without manual inspection and curation---may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.

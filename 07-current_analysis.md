@@ -341,12 +341,12 @@ Name & Language & Title & Date published\\
 \midrule
 \href{NA}{\cellcolor{gray!6}{NMFreg}} & \cellcolor{gray!6}{Python; MATLAB} & \href{https://doi.org/10.1126/science.aaw1219}{\cellcolor{gray!6}{Slide-seq: A scalable technology for measuring genome-wide expression at high spatial resolution}} & \cellcolor{gray!6}{2019-03-29}\\
 \href{https://github.com/satijalab/seurat}{Seurat3} & R & \href{https://doi.org/10.1016/j.cell.2019.05.031}{Comprehensive Integration of Single-Cell Data} & 2019-06-13\\
-\href{https://github.com/dmcable/RCTD}{\cellcolor{gray!6}{RCTD}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41587-021-00830-w}{\cellcolor{gray!6}{Robust decomposition of cell type mixtures in spatial transcriptomics}} & \cellcolor{gray!6}{2020-05-08}\\
-\href{NA}{Tangram} & Python & \href{https://doi.org/10.1101/2020.08.29.272831}{Deep learning and alignment of spatially-resolved whole transcriptomes of single cells in the mouse brain with Tangram} & 2020-08-30\\
-\href{https://github.com/almaan/stereoscope}{\cellcolor{gray!6}{stereoscope}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s42003-020-01247-y}{\cellcolor{gray!6}{Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography}} & \cellcolor{gray!6}{2020-10-09}\\
+\href{NA}{\cellcolor{gray!6}{Tangram}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.08.29.272831}{\cellcolor{gray!6}{Deep learning and alignment of spatially-resolved whole transcriptomes of single cells in the mouse brain with Tangram}} & \cellcolor{gray!6}{2020-08-30}\\
+\href{https://github.com/almaan/stereoscope}{stereoscope} & Python & \href{https://doi.org/10.1038/s42003-020-01247-y}{Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography} & 2020-10-09\\
+\href{NA}{\cellcolor{gray!6}{DSTG}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/bib/bbaa414}{\cellcolor{gray!6}{DSTG: Deconvoluting Spatial Transcriptomics Data through Graph-based Artificial Intelligence}} & \cellcolor{gray!6}{2021-01-22}\\
 \addlinespace
-\href{NA}{DSTG} & Python & \href{https://doi.org/10.1093/bib/bbaa414}{DSTG: Deconvoluting Spatial Transcriptomics Data through Graph-based Artificial Intelligence} & 2021-01-22\\
-\href{https://github.com/MarcElosua/SPOTlight}{\cellcolor{gray!6}{SPOTlight}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1093/nar/gkab043}{\cellcolor{gray!6}{SPOTlight:Seeded NMF regression to Deconvolute Spatial Transcriptomics Spots with Single-Cell Transcriptomes}} & \cellcolor{gray!6}{2021-02-05}\\
+\href{https://github.com/MarcElosua/SPOTlight}{SPOTlight} & R & \href{https://doi.org/10.1093/nar/gkab043}{SPOTlight:Seeded NMF regression to Deconvolute Spatial Transcriptomics Spots with Single-Cell Transcriptomes} & 2021-02-05\\
+\href{https://github.com/dmcable/RCTD}{\cellcolor{gray!6}{RCTD}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41587-021-00830-w}{\cellcolor{gray!6}{Robust decomposition of cell type mixtures in spatial transcriptomics}} & \cellcolor{gray!6}{2021-02-18}\\
 \href{https://github.com/RubD/Giotto}{Giotto} & R & \href{https://doi.org/10.1186/s13059-021-02286-2}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data} & 2021-03-08\\
 \bottomrule
 \end{longtable}
@@ -382,7 +382,7 @@ Name & Language & Title & Date published\\
 \href{https://github.com/theMILOlab/SPATA}{SPATA} & R & \href{https://doi.org/10.1101/2020.10.20.346544}{Inferring spatially transient gene expression pattern from spatial transcriptomic studies} & 2020-10-21\\
 \addlinespace
 \href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
-\href{https://pypi.org/project/somde/}{SOMDE} & Python & \href{https://doi.org/10.1101/2020.12.10.419549}{SOMDE: A scalable method for identifying spatially variable genes with self-organizing map} & 2021-03-24\\
+\href{https://pypi.org/project/somde/}{SOMDE} & Python & \href{https://doi.org/10.1093/bioinformatics/btab471}{SOMDE: A scalable method for identifying spatially variable genes with self-organizing map} & 2021-06-24\\
 \bottomrule
 \end{longtable}
 
