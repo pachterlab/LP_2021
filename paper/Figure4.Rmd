@@ -65,6 +65,7 @@ pubs <- get_pubs_df(data_sheets, other_cols = "sheet")
 
 ```{r}
 data("sheet_fill")
+sheet_fill2 <- sheet_fill[nms]
 ```
 
 ```{r}
@@ -74,7 +75,7 @@ data("sheet_fill")
    geom_area(aes(x = date_published, y = after_stat(count), fill = sheet), 
              stat = "bin", color = "gray", size = 0.5, binwidth = 120, 
              position = "stack") +
-   scale_fill_manual(values = sheet_fill, name = "Category") +
+   scale_fill_manual(values = sheet_fill2, name = "Category") +
    scale_y_continuous(expand = expansion(c(0, 0.05))) +
    scale_x_date(breaks = seq(ymd("2001-01-01"), ymd("2022-01-01"), by = "2 years"), 
                 expand = expansion(c(0,0.05)),
