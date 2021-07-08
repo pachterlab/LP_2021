@@ -39,7 +39,7 @@ Since 2019, there has been a sharp increase in interest in current era data anal
 
 }
 
-\caption{Number of publication over time for current era data collection and data analysis. Bin width is 120 days. Note that the count drops in 2021 because this plot was made in April 2021.}(\#fig:analysis-current)
+\caption{Number of publication over time for current era data collection and data analysis. Bin width is 120 days. Note that the count drops in 2021 because this plot was made at the beginning of a new bin.}(\#fig:analysis-current)
 \end{figure}
 
 \begin{figure}
@@ -376,13 +376,13 @@ Name & Language & Title & Date published\\
 \href{https://github.com/CamaraLab/RayleighSelection}{\cellcolor{gray!6}{RayleighSelection}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1371/journal.pcbi.1007509}{\cellcolor{gray!6}{Clustering-independent analysis of genomic data using spectral simplicial theory}} & \cellcolor{gray!6}{2019-11-22}\\
 \addlinespace
 \href{https://github.com/xzhoulab/SPARK}{SPARK} & R; C++ & \href{https://doi.org/10.1038/s41592-019-0701-7}{Statistical analysis of spatial expression patterns for spatially resolved transcriptomic studies} & 2020-01-27\\
-\href{https://github.com/ManchesterBioinference/GPcounts}{\cellcolor{gray!6}{GPcounts}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.07.29.227207}{\cellcolor{gray!6}{Non-parametric modelling of temporal and spatial counts data from RNA-seq experiments}} & \cellcolor{gray!6}{2020-07-30}\\
-\href{NA}{GLISS} & NA & \href{https://doi.org/10.1101/2020.08.12.248971}{Integrative Spatial Single-cell Analysis with Graph-based Feature Learning} & 2020-08-13\\
-\href{https://github.com/alexisvdb/singleCellHaystack}{\cellcolor{gray!6}{singleCellHaystack}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41467-020-17900-3}{\cellcolor{gray!6}{A clustering-independent method for finding differentially expressed genes in single-cell transcriptome data}} & \cellcolor{gray!6}{2020-08-28}\\
-\href{https://github.com/theMILOlab/SPATA}{SPATA} & R & \href{https://doi.org/10.1101/2020.10.20.346544}{Inferring spatially transient gene expression pattern from spatial transcriptomic studies} & 2020-10-21\\
+\href{NA}{\cellcolor{gray!6}{GLISS}} & \cellcolor{gray!6}{NA} & \href{https://doi.org/10.1101/2020.08.12.248971}{\cellcolor{gray!6}{Integrative Spatial Single-cell Analysis with Graph-based Feature Learning}} & \cellcolor{gray!6}{2020-08-13}\\
+\href{https://github.com/alexisvdb/singleCellHaystack}{singleCellHaystack} & R & \href{https://doi.org/10.1038/s41467-020-17900-3}{A clustering-independent method for finding differentially expressed genes in single-cell transcriptome data} & 2020-08-28\\
+\href{https://github.com/theMILOlab/SPATA}{\cellcolor{gray!6}{SPATA}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2020.10.20.346544}{\cellcolor{gray!6}{Inferring spatially transient gene expression pattern from spatial transcriptomic studies}} & \cellcolor{gray!6}{2020-10-21}\\
+\href{https://github.com/RubD/Giotto}{Giotto} & R & \href{https://doi.org/10.1186/s13059-021-02286-2}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data} & 2021-03-08\\
 \addlinespace
-\href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
-\href{https://pypi.org/project/somde/}{SOMDE} & Python & \href{https://doi.org/10.1093/bioinformatics/btab471}{SOMDE: A scalable method for identifying spatially variable genes with self-organizing map} & 2021-06-24\\
+\href{https://pypi.org/project/somde/}{\cellcolor{gray!6}{SOMDE}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/bioinformatics/btab471}{\cellcolor{gray!6}{SOMDE: A scalable method for identifying spatially variable genes with self-organizing map}} & \cellcolor{gray!6}{2021-06-24}\\
+\href{https://github.com/ManchesterBioinference/GPcounts}{GPcounts} & Python & \href{https://doi.org/10.1093/bioinformatics/btab486}{Non-parametric modelling of temporal and spatial counts data from RNA-seq experiments} & 2021-07-02\\
 \bottomrule
 \end{longtable}
 
