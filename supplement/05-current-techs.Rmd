@@ -608,19 +608,29 @@ In response to the low efficiency and complicated procedure to localize barcodes
 
 ```{r}
 min_spot_size <- array %>% 
-    select(spot_diameter_um, date_published) %>% 
-    filter(!is.na(spot_diameter_um)) %>% 
-    distinct() %>% 
-    arrange(date_published, spot_diameter_um) %>% 
-    mutate(record_diam = cummin(spot_diameter_um))
+  select(method, spot_diameter_um, date_published) %>% 
+  filter(!is.na(spot_diameter_um)) %>% 
+  distinct() %>% 
+  arrange(date_published, spot_diameter_um) %>% 
+  mutate(record_diam = cummin(spot_diameter_um))
+```
+
+```{r}
+min_spot_size <- min_spot_size %>% 
+  mutate(drop = c(NA, diff(record_diam)),
+         label = case_when(
+           drop < 0 | is.na(drop) ~ method,
+           TRUE ~ ""
+         ))
 ```
 
 ```{r spot-diam, fig.width=6, fig.height=4, fig.cap="Record spot diameter of array based methods over time."}
 ggplot(min_spot_size, aes(date_published, record_diam)) +
-    geom_step() +
-    scale_y_log10() +
-    annotation_logticks(sides = "l") +
-    labs(x = "Date", title = bquote(Record~spot~diameter~(mu*m)), y = NULL)
+  geom_step() +
+  geom_text_repel(aes(label = label)) +
+  scale_y_log10() +
+  annotation_logticks(sides = "l") +
+  labs(x = "Date", title = bquote(Record~spot~diameter~(mu*m)), y = NULL)
 ```
 
 The record resolution of array based techniques is ever increasing (Figure \@ref(fig:spot-diam)); sub-micron techniques are appearing in 2021. The record is broken by Stereo-seq in January 2021, reporting a spot diameter of 220 nm although the distance between spots is 500 or 715 nm [@Chen2021a]. In Stereo-seq, circularized DNA containing a random 25 nt barcode is RCA amplified and deposited into an etched grid. The barcode is sequenced and then oligos with polyT and molecular ID are hybridized to the barcode to capture polyA transcripts from the mounted tissue. The reported capture efficiency is around 170 transcripts per 100 $\mu m^2$ in mouse brain, on par with that of the Visium mouse brain dataset from the 10X website reanalyzed in the same study. 
