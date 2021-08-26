@@ -558,8 +558,20 @@ array_pubs <- get_pubs_df(array, other_cols = "short_name")
 ```
 
 ```{r array-map, fig.height=13.75, fig.width=10, fig.cap="Cities and institutions using ST and Visium. Preprints are included."}
-pubs_on_map(array_methods, city_gc = st_city_gc, facet_by = "method", n_top = 2, 
+pubs_on_map(array_methods, city_gc = st_city_gc, facet_by = "method", n_top = 2,
             n_label = 5, ncol = 1)
+```
+
+```{r array-us, fig.height=9, fig.width=6, fig.cap="Cities and institutions using ST and Visium around continental US. Preprints are included."}
+pubs_on_map(array_methods, city_gc = st_city_gc, facet_by = "method", 
+            zoom = "usa",
+            n_top = 2, n_label = 5, ncol = 1)
+```
+
+```{r array-europe, fig.height=10, fig.width=6, fig.cap="Cities and institutions using ST and Visium in western Europe. Preprints are included."}
+pubs_on_map(array_methods, city_gc = st_city_gc, facet_by = "method", 
+            zoom = "europe",
+            n_top = 2, n_label = 5, ncol = 1)
 ```
 
 ST [@Stahl2016a] and Visium are the most widely used current era technique after LCM (Figure \@ref(fig:n-insts), Figure \@ref(fig:array-map)). In ST, the printed spots have diameter of 100 $\mu$m and are 200 $\mu$m apart from center to center (Figure \@ref(fig:array-dims)). Multiple sections can be mounted to the same slide, separated by a rubber mask. For each section, there are 1007 spots covering an area of 6200 $\times$ 6600 $\mu$m. The 5' end of the capture sequence is a linker to be cleaved to release the transcripts, followed by amplification and sequencing handle, an 18 nt spatial barcode, a 9 nt UMI, and poly-T (Figure \@ref(fig:array-umi)). For the genes quantified with smFISH, ST's detection efficiency is around 6.9% compared to smFISH, within the range of the efficiency of scRNA-seq techniques. Despite the low resolution, ST is popular probably due to transcriptome wide profiling, ease to apply to larger area of tissue, not requiring specialized equipment such as SRM and custom flow cells, commercial kits, possible automation of library preparation [@Jemt2016], availability of a documented and open source data preprocessing pipeline called ST Pipeline [@Navarro2017], and the extra information from H&E staining before library preparation.

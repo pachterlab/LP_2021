@@ -245,6 +245,18 @@ Where were prequel era research conducted? Our database includes affiliation of 
 pubs_on_map2(prequel)
 ```
 
+```{r prequel-us, fig.width=9, fig.height=6, fig.cap="Number of prequel publications in the US and Canada, with top contributing institutions labeled."}
+pubs_on_map2(prequel, zoom = "usa")
+```
+
+```{r prequel-europe, fig.width=6, fig.height=6,  fig.cap="Number of prequel publications in western Europe, with top contributing institutions labeled."}
+pubs_on_map2(prequel, zoom = "europe")
+```
+
+```{r prequel-ne-asia, fig.width=8, fig.height=6, fig.cap="Number of prequel publications in northeast Asia, with top contributing institutions labeled."}
+pubs_on_map2(prequel, zoom = "ne_asia")
+```
+
 This can be better visualized by breaking the map down by species. Here we see locations of some model organism consortia, and that GHOST is a result of collaboration of multiple Japanese institutions (Figure \@ref(fig:map-species)).
 
 ```{r map-species, fig.width=10, fig.height=12.5, fig.cap="Number of prequel publications per city broken down by species. Gray points are the overall number as a reference of contributions from each city and region."}
