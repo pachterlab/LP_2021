@@ -298,19 +298,20 @@ mean_genes <- smfish %>%
 
 ```{r smfish-lm-gene, fig.width=9, fig.height=6, fig.cap="(ref:smfish-lm-cap)"}
 ggplot(smfish, aes(date_published, n_genes)) +
-    geom_point(aes(color = method), alpha = 0.5) +
-    geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5,
-                    max.overlaps = 20) +
-    geom_smooth(method = "lm") +
-    labs(x = "Date published", title = "Number of genes per dataset",
-         y = NULL) +
-    theme(legend.position = "none") +
-    coord_cartesian(ylim = c(0, max(mean_genes$n_genes)))
+  geom_point(aes(color = method), alpha = 0.5) +
+  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5,
+                  max.overlaps = 20) +
+  geom_smooth(method = "lm") +
+  labs(x = "Date published", title = "Number of genes per dataset",
+       y = NULL) +
+  theme(legend.position = "none") +
+  scale_y_log10() +
+  annotation_logticks(sides = "l")
 ```
 
 The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0 (t-test). The number of genes was not log transformed precisely to show that even the outliers can't give a significantly rising trend and to visually emphasize that the number of genes profiled by the vast majority of smFISH based studies is well below 1000.
 ```{r, results='markup'}
-summary(lm(n_genes ~ date_published, data = smfish))
+summary(lm(log(n_genes) ~ date_published, data = smfish))
 ```
 
 To better show the trend of the vast majority of datasets that profiled far fewer than 10,000 genes, a broken y-axis is introduced to zoom into the majority of datasets (\@ref(fig:smfish-broken-y)).
@@ -335,9 +336,11 @@ smfish %>%
        y = NULL) +
   theme(legend.position = "none", strip.text = element_blank(),
         strip.background = element_blank()) +
-  facet_grid(rows = vars(mask), space = "free_y", scales = "free_y") +
-  scale_y_continuous(breaks = scales::breaks_width(1000),
-                     expand = expansion(add = c(150,150)))
+  #facet_grid(rows = vars(mask), space = "free_y", scales = "free_y") +
+  #scale_y_continuous(breaks = scales::breaks_width(1000),
+  #                   expand = expansion(add = c(150,150)))
+  scale_y_log10() +
+  annotation_logticks()
 ```
 
 How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.
@@ -350,17 +353,19 @@ sum_cells <- smfish %>%
 
 ```{r smfish-lm-cell, fig.width=9, fig.height=6, fig.cap="Total number of cells per study profiled by smFISH based techniques over time."}
 ggplot(sum_cells, aes(date_published, n_cells)) +
-    geom_point(aes(color = method)) +
-    geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
-    geom_smooth(method = "lm") +
-    labs(x = "Date published", title = "Total number of cells per study", y = NULL) +
-    theme(legend.position = "none") +
-    coord_cartesian(ylim = c(0, max(sum_cells$n_cells)))
+  geom_point(aes(color = method)) +
+  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
+  geom_smooth(method = "lm") +
+  labs(x = "Date published", title = "Total number of cells per study", y = NULL) +
+  theme(legend.position = "none") +
+  #coord_cartesian(ylim = c(0, max(sum_cells$n_cells)))
+  scale_y_log10() +
+  annotation_logticks()
 ```
 
 Again, although studies that profiled large numbers of cells tend to be more recent, as there are many recent studies with smaller numbers of cells, the slope (with outliers and all) is not significantly different from 0 (t-test).
 ```{r, results='markup'}
-summary(lm(n_cells ~ date_published, data = sum_cells))
+summary(lm(log(n_cells) ~ date_published, data = sum_cells))
 ```
 
 MERFISH is the technique used in the most studies (Figure \@ref(fig:smfish-trend)), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure \@ref(fig:smfish-n-insts)). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table \@ref(tab:table2).
