@@ -167,7 +167,7 @@ xlim <- langs %>%
 pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE,
              img_unit = 10) +
     scale_y_continuous(limits = c(0, xlim), 
-                       breaks = seq(0, 140, by = 20),
+                       breaks = seq(0, xlim, by = 20),
                        expand = expansion(mult = c(0,0.05))) +
     labs(title = "Package developers")
 ```
