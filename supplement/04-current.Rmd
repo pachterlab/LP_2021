@@ -145,7 +145,7 @@ pubs_per_year(current, facet_by = "sheet") +
 
 Chronologically, in the curated database, microdissection came first, with voxelation in 2002 [@Brown2002], followed by smFISH, ISS, no imaging, and array (Figure \@ref(fig:current-hist)). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure \@ref(fig:current-vs-prequel)). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure \@ref(fig:current-vs-prequel)). Growth in microdissection and array seemed to have contributed the most to this overall drastic growth (Figure \@ref(fig:current-hist)). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table \@ref(tab:table1). A timeline of major techniques in the current era is shown in Figure \@ref(fig:tl3).
 
-```{r current-vs-prequel, fig.width=7, fig.height=4, fig.cap="Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days."}
+```{r current-vs-prequel, fig.width=7, fig.height=4, fig.cap="Comparing number of publications over time in the prequel and the current eras. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full."}
 era_freqpoly(publications, era, preprints = TRUE) +
    scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
    scale_y_continuous(expand = expansion(c(0, 0.05))) +

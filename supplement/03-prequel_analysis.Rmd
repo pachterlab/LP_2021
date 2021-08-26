@@ -25,7 +25,7 @@ all_prequel <- all_prequel %>%
                           TRUE ~ "data"))
 ```
 
-```{r prequel-poly, fig.width=7, fig.height=4, fig.cap="Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days."}
+```{r prequel-poly, fig.width=7, fig.height=4, fig.cap="Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full."}
 era_freqpoly(all_prequel, Type, preprints = TRUE, binwidth = 365) +
     scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
     scale_y_continuous(expand = expansion(c(0,0.05)))

@@ -73,21 +73,21 @@ all_prequel <- all_prequel %>%
                           TRUE ~ "data"))
 ```
 
-```{r analysis-fp, fig.width=7, fig.height=4, fig.cap="Number of publications over time for current era and prequel data analysis. Bin width is 365 days. Preprints are included for this figure."}
-era_freqpoly(analysis_sheets, era, preprints = TRUE) +
+```{r analysis-fp, fig.width=7, fig.height=4, fig.cap="Number of publications over time for current era and prequel data analysis. Bin width is 120 days. Preprints are included for this figure. The x-shaped points show the number of publications from the last bin, which is not yet full."}
+era_freqpoly(analysis_sheets, era, preprints = TRUE, binwidth = 120) +
     scale_y_continuous(expand = expansion(c(0, 0.05)))
 ```
 
 Since 2019, there has been a sharp increase in interest in current era data analysis (Figure \@ref(fig:analysis-current)). If our collection of prequel data analysis literature is somewhat representative and complete, then interest in current era data analysis dwarfs the golden age of prequel data analysis from 2008 to 2014 (Figure \@ref(fig:analysis-fp)). As already shown, interests in current era data collection increased sharply since 2018 (Figure \@ref(fig:current-vs-prequel), Figure \@ref(fig:analysis-current)); interest in data analysis lagged behind interest in data collection, until around 2020 (Figure \@ref(fig:analysis-current)).
 
-```{r analysis-current, fig.width=7, fig.height=4, fig.cap="Number of publication over time for current era data collection and data analysis. Bin width is 120 days. Note that the count drops in 2021 because this plot was made at the beginning of a new bin."}
+```{r analysis-current, fig.width=7, fig.height=4, fig.cap="Number of publication over time for current era data collection and data analysis. Bin width is 120 days. The x-shaped points show the number of publications from the last bin, which is not yet full."}
 era_freqpoly(all_current, type, preprints = TRUE, binwidth = 120) +
     scale_x_date(breaks = scales::breaks_pretty(10)) +
     scale_y_continuous(expand = expansion(c(0, 0.05))) +
     labs(title = "Current era")
 ```
 
-```{r analysis-prequel, fig.width=7, fig.height=4, fig.cap="Number of publications over time for prequel data collection and data analysis. Bin width is 365 days."}
+```{r analysis-prequel, fig.width=7, fig.height=4, fig.cap="Number of publications over time for prequel data collection and data analysis. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full."}
 era_freqpoly(all_prequel, type, preprints = TRUE, binwidth = 365) +
     scale_x_date(breaks = scales::breaks_pretty(10)) +
     scale_y_continuous(expand = expansion(c(0, 0.05))) +
