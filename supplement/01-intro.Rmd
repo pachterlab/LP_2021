@@ -18,7 +18,7 @@ Metadata of the publications collected include date published (or posted on bioR
 
 There are some caveats to our review and database. First, while we narrate a history of evolution of techniques and in some cases explain how one technique influenced another, we do not present aspects of the history that are not apparent from the publications. Studying those aspects of the history of the field may require interviewing the people who developed the techniques, as well as exploration of additional unpublished material. Second, our database was originally only meant for papers, so relevant materials that are not in presented in that format are underrepresented. Examples of such materials include databases and software not presented as papers (e.g. the XDB3 database [@XDB3]). This means that the metadata analyses in this book might not be representative of all material that exists in spatial transcriptomics. Third, as the curation was done manually and the search engines are imperfect, the database might not include some relevant literature unknown to us. Please contact us or open an issue in the GitHub repo of this book if you wish to suggest new entries to the database.
 
-The database is continuously manually updated daily by screening RSS feeds from the search terms in PubMed and bioRxiv mentioned above. New entries and the associated metadata can also be submitted via the [Google Form]().
+The database is continuously manually updated daily by screening RSS feeds from the search terms in PubMed and bioRxiv mentioned above. New entries and the associated metadata can also be submitted via the [Google Form](https://forms.gle/HjQD9x6AMjR7C62SA).
 
 ## Organization of the database and this book
 
