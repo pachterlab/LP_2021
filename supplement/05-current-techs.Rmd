@@ -333,35 +333,6 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 summary(lm(log(n_genes) ~ date_published, data = smfish))
 ```
 
-To better show the trend of the vast majority of datasets that profiled far fewer than 10,000 genes, a broken y-axis is introduced to zoom into the majority of datasets (\@ref(fig:smfish-broken-y)).
-```{r}
-smfish <- smfish %>% 
-  mutate(mask = case_when(n_genes > 5000 ~ "1",
-                          #n_genes > 1000 ~ "2",
-                          TRUE ~ "2"))
-```
-
-```{r smfish-broken-y, fig.width=9, fig.height=6, fig.cap="Like the previous figure, but more zoomed in to datasets with fewer than 10,000 genes.", out.width="100%"}
-smfish %>% 
-  filter(!is.na(n_genes)) %>% 
-  ggplot(aes(date_published, n_genes)) +
-  geom_point(aes(color = method), alpha = 0.5) +
-  geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5,
-                  max.overlaps = 20, min.segment.length = 0.22) +
-  geom_smooth(method = "lm", 
-              data = smfish %>% filter(mask == "2", !is.na(n_genes))) +
-  labs(x = "Date published", 
-       title = "Number of genes per dataset",
-       y = NULL) +
-  theme(legend.position = "none", strip.text = element_blank(),
-        strip.background = element_blank()) +
-  #facet_grid(rows = vars(mask), space = "free_y", scales = "free_y") +
-  #scale_y_continuous(breaks = scales::breaks_width(1000),
-  #                   expand = expansion(add = c(150,150)))
-  scale_y_log10() +
-  annotation_logticks()
-```
-
 How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.
 ```{r}
 sum_cells <- smfish %>% 
