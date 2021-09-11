@@ -26,10 +26,10 @@ jobs:
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown","tinytex"))'
       - name: Install tinytex
         run: Rscript -e 'tinytex::install_tinytex()'
-      - name: Install GitHub dependencies
-        run: Rscript -e 'install.packages("remotes"); library(remotes); install_github("pachterlab/museumst"); install_github("jespermaag/gganatogram"); install_github("clauswilke/ggtextures"); install_github("UrbanInstitute/urbnmapr")'
       - name: Install dependencies
-        run: Rscript -e 'remotes::install_deps(pkg = "supplement/", dependencies = TRUE)'
+        run: Rscript -e 'install.packages("remotes"); remotes::install_deps(pkg = "supplement/", dependencies = TRUE)'
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       - name: Render Book
         run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd", output_format = c("bookdown::gitbook", "bookdown::pdf_book")))'
       - uses: actions/upload-artifact@v1
