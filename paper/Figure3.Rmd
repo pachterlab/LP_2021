@@ -20,7 +20,7 @@ theme_set(theme_bw())
 ```
 
 ```{r}
-nms <- c("Prequel", "Microdissection", "smFISH", "Array", "ISS", "No imaging")
+nms <- c("Prequel", "Microdissection", "smFISH", "NGS wo MD", "ISS", "No imaging")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 
