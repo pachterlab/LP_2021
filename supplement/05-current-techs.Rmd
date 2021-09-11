@@ -315,7 +315,7 @@ mean_genes <- smfish %>%
 
 (ref:smfish-lm-cap) Number of genes per datasets in each study, over time. Gray ribbon is 95% confidence interval (CI). The points are translucent; more opaque points are multiple datasets from the same study. 
 
-```{r smfish-lm-gene, fig.width=9, fig.height=6, fig.cap="(ref:smfish-lm-cap)"}
+```{r smfish-lm-gene, fig.width=9, fig.height=6, fig.cap="(ref:smfish-lm-cap)", out.width="100%"}
 ggplot(smfish, aes(date_published, n_genes)) +
   geom_point(aes(color = method), alpha = 0.5) +
   geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5,
@@ -341,7 +341,7 @@ smfish <- smfish %>%
                           TRUE ~ "2"))
 ```
 
-```{r smfish-broken-y, fig.width=9, fig.height=6, fig.cap="Like the previous figure, but more zoomed in to datasets with fewer than 10,000 genes."}
+```{r smfish-broken-y, fig.width=9, fig.height=6, fig.cap="Like the previous figure, but more zoomed in to datasets with fewer than 10,000 genes.", out.width="100%"}
 smfish %>% 
   filter(!is.na(n_genes)) %>% 
   ggplot(aes(date_published, n_genes)) +
@@ -370,7 +370,7 @@ sum_cells <- smfish %>%
   filter(n_cells > 0)
 ```
 
-```{r smfish-lm-cell, fig.width=9, fig.height=6, fig.cap="Total number of cells per study profiled by smFISH based techniques over time."}
+```{r smfish-lm-cell, fig.width=9, fig.height=6, fig.cap="Total number of cells per study profiled by smFISH based techniques over time.", out.width="100%"}
 ggplot(sum_cells, aes(date_published, n_cells)) +
   geom_point(aes(color = method)) +
   geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5) +
@@ -441,7 +441,7 @@ MERFISH and seqFISH and their variants are more used and have spread, though the
 
 (ref:smfish-map-cap) Geographical locations of institutions that used certain techniques. Point area is proportional to number of publication from the city of interest. Gray points in the background is all publications using smFISH based techniques. The cities and institutions labeled are those of the first author. Note that for seqFISH, the hidden Markov random field (HMRF) study at Dana Faber [@Zhu2018] and the mouse embryo study [@Lohoff2020] had collaboration with Long Cai's group at Caltech, so the dataset was most likely still collected at Caltech.
 
-```{r smfish-map, fig.width=10, fig.height=6.5, fig.cap="(ref:smfish-map-cap)"}
+```{r smfish-map, fig.width=10, fig.height=6.5, fig.cap="(ref:smfish-map-cap)", out.width="100%"}
 pubs_on_map(smfish_methods2, city_gc = city_gc2, facet_by = "method2", 
             ncol = 2) +
   theme(legend.position = "top")
@@ -581,7 +581,7 @@ st_city_gc <- geocode_inst_city(array, cache_location = here())
 array_pubs <- get_pubs_df(array, other_cols = "short_name")
 ```
 
-```{r array-map, fig.height=13.75, fig.width=10, fig.cap="Cities and institutions using ST and Visium. Preprints are included."}
+```{r array-map, fig.height=13.75, fig.width=10, fig.cap="Cities and institutions using ST and Visium. Preprints are included.", out.width="100%"}
 pubs_on_map(array_methods, city_gc = st_city_gc, facet_by = "method", n_top = 2,
             n_label = 5, ncol = 1)
 ```

@@ -35,7 +35,7 @@ An overall timeline for prequel techniques is shown in Figure \@ref(fig:tl1), wh
 events <- read_major_events(update = TRUE)
 ```
 
-```{r tl1, fig.width=8, fig.height=4, fig.cap="Timeline of prequel techniques."}
+```{r tl1, fig.width=8, fig.height=4, fig.cap="Timeline of prequel techniques.", out.width="100%"}
 events %>% 
     filter(category == "technique") %>% 
     plot_timeline(c(1.5, -1.5, 1, -1.5, 1, -1.5, 2, -2.5, 1.2),
@@ -72,7 +72,7 @@ In the 1980s and 1990s, with increasing throughput of Sanger sequencing and the 
 
 (ref:hist1c) Number of publications over time in the prequel era, broken down by technique and colored by species. The gray histogram in the background is the histogram for all prequel publications over time. The bin width of this histogram is 365 days. Here WMISH and ISH exclude fluorescent ISH (FISH).
 
-```{r hist1, fig.width=8, fig.height=8, fig.cap='(ref:hist1c)'}
+```{r hist1, fig.width=8, fig.height=8, fig.cap='(ref:hist1c)', out.width="100%"}
 method <- unnest_cat(prequel, method, other_cols = "species")
 pubs_per_year(method, facet_by = "method", fill_by = "species", n_top_fill = 7) +
    labs(title = "Number of publications over time", y = NULL) +
@@ -118,7 +118,7 @@ item_annot <- prequel %>%
 
 (ref:itemc) Number of prequel publications over time, broken down by what the entities stained for were called and colored by species. Bin width is 365 days. Vertical line marks the date when the draft mouse reference genome was published [@Waterston2002], as context of transition from "clone" and "line" to "gene".
 
-```{r items, fig.width=8, fig.height=8, fig.cap='(ref:itemc)'}
+```{r items, fig.width=8, fig.height=8, fig.cap='(ref:itemc)', out.width="100%"}
 pubs_per_year(prequel, facet_by = "item_type", n_top = 5, 
                       fill_by = "species") +
    geom_vline(xintercept = ymd("2002-12-05"), color = "gray70") +
@@ -141,7 +141,7 @@ pubs_per_cat(ish, species) +
 
 While (WM)ISH atlases are available for several species, the mouse is by far the favored model organism (Figure \@ref(fig:species)). A timeline of the first (WM)ISH atlas for each of the species and some notable atlases are shown in Figure \@ref(fig:tl2). Especially for mice, atlases for other specific types of genes were published in the late 2000s and the 2010s, such as genes coding for RNA binding proteins [@McKee2005], fibroblast growth factors and their receptors [@Yaylaoglu2005], proteins with catalytic activities [@Cankaya2007], transcription factors and cofactors [@Yokoyama2009], metabolic enzymes and soluble carriers [@Geffers2013], cholesterol biosynthetic enzymes [@Sisecioglu2015], and ion channels (in rats) [@Shcherbatyy2014]. Among the mouse atlases, while the brain gets disproportionately strong interests, with the influential [ABA](https://portal.brain-map.org) [@Lein2007] and [GenePaint](https://gp3.mpg.de) [@Carson2002], ISH atlases exist for the eye [@Thut2001; @Blackshaw2004], genitourinary tract ([GenitoUrinary Development Molecular Anatomy Project (GUDMAP)](https://www.gudmap.org)) [@Harding2011], and lung ([LungMAP](https://lungmap.net)) [@Ardini-Poleske2017] (Figure \@ref(fig:tl2), Figure \@ref(fig:anat1)).
 
-```{r tl2, fig.width=10, fig.height=6, fig.cap="Timeline of the first (WM)ISH databases for each species for which such databases are available, as well as some notable databases."}
+```{r tl2, fig.width=10, fig.height=6, fig.cap="Timeline of the first (WM)ISH databases for each species for which such databases are available, as well as some notable databases.", out.width="100%"}
 events %>% 
   filter(category == "ISH atlas") %>% 
   plot_timeline(c(0.5, -0.5, -0.85, 0.7, -0.25, 1, -0.5, 0.3, -0.8, 0.5, -1, 
@@ -241,32 +241,32 @@ pubs_on_map2 <- partial(pubs_on_map, city_gc = city_gc)
 
 Where were prequel era research conducted? Our database includes affiliation of the first author as of publication for all papers, and the affiliations have been geocoded to plot on maps. Around the world, most of prequel studies were performed in coastal US and Western Europe, but a some studies were performed in Asia and Oceania, but especially Japan (Figure \@ref(fig:prequel-world)). Not all of the top contributing institutions are readily recognizable "elite" institutions. Institutions include BDGP from UC Berkeley, ZFIN from University of Oregon (UO), ABA from Allen Brain Institute (Allen), GEISHA from University of Arizona (UofA), GXD from Jackson Laboratory (JAX), EMAGE from Western General Hospital (WGH), [MEPD](https://www.embl-heidelberg.de/mepd/) (for *Oryzias latipes*) from European Molecular Biology Laboratory (EMBL), and GHOST from Kyoto University (Kyodai), and mouse gene trap lines from Mount Sinai.
 
-```{r prequel-world, fig.width=10, fig.height=5, fig.cap="Number of prequel publications per city around the world, with top contributing institutions labeled."}
+```{r prequel-world, fig.width=10, fig.height=5, fig.cap="Number of prequel publications per city around the world, with top contributing institutions labeled.", out.width="100%"}
 pubs_on_map2(prequel)
 ```
 
-```{r prequel-us, fig.width=9, fig.height=6, fig.cap="Number of prequel publications in the US and Canada, with top contributing institutions labeled."}
+```{r prequel-us, fig.width=9, fig.height=6, fig.cap="Number of prequel publications in the US and Canada, with top contributing institutions labeled.", out.width="100%"}
 pubs_on_map2(prequel, zoom = "usa")
 ```
 
-```{r prequel-europe, fig.width=6, fig.height=6,  fig.cap="Number of prequel publications in western Europe, with top contributing institutions labeled."}
+```{r prequel-europe, fig.width=6, fig.height=6, fig.cap="Number of prequel publications in western Europe, with top contributing institutions labeled."}
 pubs_on_map2(prequel, zoom = "europe")
 ```
 
-```{r prequel-ne-asia, fig.width=8, fig.height=6, fig.cap="Number of prequel publications in northeast Asia, with top contributing institutions labeled."}
+```{r prequel-ne-asia, fig.width=8, fig.height=6, fig.cap="Number of prequel publications in northeast Asia, with top contributing institutions labeled.", out.width="100%"}
 pubs_on_map2(prequel, zoom = "ne_asia")
 ```
 
 This can be better visualized by breaking the map down by species. Here we see locations of some model organism consortia, and that GHOST is a result of collaboration of multiple Japanese institutions (Figure \@ref(fig:map-species)).
 
-```{r map-species, fig.width=10, fig.height=12.5, fig.cap="Number of prequel publications per city broken down by species. Gray points are the overall number as a reference of contributions from each city and region."}
+```{r map-species, fig.width=10, fig.height=12.5, fig.cap="Number of prequel publications per city broken down by species. Gray points are the overall number as a reference of contributions from each city and region.", out.width="100%"}
 pubs_on_map2(prequel, facet_by = "species", n_top = 8, ncol = 2, n_label = 3) +
     theme(legend.position = "right")
 ```
 
 That some institutions have disproportional contribution of one technique can also be shown. Here it's clear that prequel techniques are used by many different institutions (Figure \@ref(fig:map-tech)). In contrast, as will be shown in Chapter \@ref(current), most current era techniques never spread beyond their institutions of origin. The LCM study comes from Allen Brain Institute's atlases for Allen's mouse sleep deprivation atlas [@Thompson2010] and human glioblastoma atlas [@Puchalski2018]; although LCM is a current era technique, those two studies are in the prequel sheet because they also have ISH atlases.
 
-```{r map-tech, fig.width=10, fig.height=10, fig.cap="Number of prequel publications per city broken down by technique. Gray points are the overall number as a reference of contributions from each city and region."}
+```{r map-tech, fig.width=10, fig.height=10, fig.cap="Number of prequel publications per city broken down by technique. Gray points are the overall number as a reference of contributions from each city and region.", out.width="100%"}
 prequel %>% 
     unnest_cat(method, other_cols = "short_name") %>% 
     pubs_on_map2(facet_by = "method", ncol = 2, n_label = 3) +

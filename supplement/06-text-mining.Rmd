@@ -44,7 +44,7 @@ pubs_per_year(lcm_abstracts, binwidth = 365)
 
 LCM transcriptomics is also more geographically diffuse and spread out into many less well-known institutions and some developing countries, though some elite institutions are among the top contributors, such as Harvard Medical School and Massachusetts General Hospital (Boston), Columbia University, NYU, Rockefeller, and Sloan-Kettering (New York), NIH (Bethesda), and Cambridge University (Cambridge, UK) (Figure 8B). 
 
-```{r lcm-map, fig.width=10, fig.height=6, fig.cap="Geographic distribution of LCM transcriptomics research, with top 10 cities labeled. Number of publications is binned over longitude and latitude."}
+```{r lcm-map, fig.width=10, fig.height=6, fig.cap="Geographic distribution of LCM transcriptomics research, with top 10 cities labeled. Number of publications is binned over longitude and latitude.", out.width="100%"}
 pubs_on_map(lcm_abstracts, lcm_city_gc, plot = "hexbin", label_cities = TRUE) +
   theme(legend.position = "top")
 ```
@@ -56,12 +56,12 @@ Here `stm` stands for structural text mining. A generative model of word counts 
 ## Topic modeling {#topic-model}
 As already mentioned, microarray was first demonstrated on LCM samples in 1999, profiling 477 cDNAs from rat neurons [@Luo1999]. Since then, LCM transcriptomics has been used on many research topics, such as various aspects of cancer (topics 5, 6, 8, 10, 11, 13, 16, 20, 24, 27, 34, 44, 50), botany (topics 9, 15, 21, 40, 43, 45), developmental biology (topics 1, 3, 17, 18, 29, 35, 39), neuroscience (topics 7, 14, 19, 23, 25, 32, 33, 36, 47), immunology (topic 12, 22, 48), miRNA (topic 5), and technical issues related to LCM (topics 4, 28, 37, 41) (Figure \@ref(fig:topics)).
 
-```{r topics, fig.width=8, fig.height=10, fig.cap="Top words for each of the 50 topics, ordered by expected topic prevalence and showing top 5 words contributing to each topic."}
+```{r topics, fig.width=8, fig.height=10, fig.cap="Top words for each of the 50 topics, ordered by expected topic prevalence and showing top 5 words contributing to each topic.", out.width="100%"}
 plot_topic_prop(stm_res, x_max = 0.08)
 ```
 
 In most cases, the top 5 words in each topic give us a decent idea what the topic is about. We can also plot the probability to get top words ($\beta$) in each topic. 
-```{r topic-words, fig.width=12, fig.height=15, fig.cap="Probability of top 10 words in each topic."}
+```{r topic-words, fig.width=12, fig.height=15, fig.cap="Probability of top 10 words in each topic.", out.width="100%"}
 plot_topic_words(stm_res) +
   theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
 ```
@@ -163,7 +163,7 @@ topic_cor_graph <- topic_cor_graph %>%
   left_join(topic_types, by = "topic")
 ```
 
-```{r topic-corr, fig.height=7, fig.width=10, fig.cap="Correlation between topics."}
+```{r topic-corr, fig.height=7, fig.width=10, fig.cap="Correlation between topics.", out.width="100%"}
 set.seed(0)
 ggraph(topic_cor_graph, layout = "fr") +
   geom_edge_fan(color = "gray50") +
@@ -272,7 +272,7 @@ names(pal_strip) <- c("increasing", "decreasing", "n.s.")
 
 (ref:wbt-cap) Word frequency over time since 2001 for words significantly associated with time, sorted from the most decreasing to the most increasing in frequency in time according to the slope in the model. The adjusted p-value of each word is shown. Vertical line marks June 6, 2008, when the first paper about RNA-seq was published [@Nagalakshmi2008]. 
 
-```{r wbt, fig.width=10, fig.height=10, fig.cap="(ref:wbt-cap)"}
+```{r wbt, fig.width=10, fig.height=10, fig.cap="(ref:wbt-cap)", out.width="100%"}
 plot_facets_color(p1, type, pal_strip)
 ```
 
@@ -304,7 +304,7 @@ rownames(word_mat) <- word_mat_df$word
 word_mat <- t(scale(t(word_mat)))
 ```
 
-```{r word-heat, fig.width=8, fig.height=6, fig.cap="Heat map clustering changes in word frequency over time. The rows of the matrix are normalized, only showing trend rather than frequency."}
+```{r word-heat, fig.width=8, fig.height=6, fig.cap="Heat map clustering changes in word frequency over time. The rows of the matrix are normalized, only showing trend rather than frequency.", out.width="100%"}
 heatmap(word_mat, Colv = NA, scale = "none")
 ```
 
@@ -439,7 +439,7 @@ p2 <- ggplot(effs_df_plt, aes(date_published, proportion)) +
 
 (ref:tt-cap) Topic prevalence over time since 2001 with fitted linear model. Gray ribbon indicates 95% confidence interval (CI) of the slope, estimated from the samples of the variational posterior of the `stm` model. Vertical line indicates advent of RNA-seq in 2008. Light blue facet strip means decreasing trend with adjusted p < 0.05, and pink strip means increasing.
 
-```{r topic-trends, fig.width=10, fig.height=12, fig.cap="(ref:tt-cap)"}
+```{r topic-trends, fig.width=10, fig.height=12, fig.cap="(ref:tt-cap)", out.width="100%"}
 plot_facets_color(p2, type, pal_strip)
 ```
 
@@ -486,7 +486,7 @@ p3 <- ggplot(year_counts_plt, aes(date_bin, n)) +
 ```
 
 (ref:topic-count-cap) Number of abstracts with each topic whose proportions changed the most in time. Gray ribbon is the 95% CI of the line fitted to the count per year.
-```{r topic-count, fig.width=10, fig.height=12, fig.cap="(ref:topic-count-cap)"}
+```{r topic-count, fig.width=10, fig.height=12, fig.cap="(ref:topic-count-cap)", out.width="100%"}
 plot_facets_color(p3, type, pal_strip)
 ```
 
@@ -505,7 +505,7 @@ neg_log10 <- trans_new("neg_log10",
                        breaks = breaks_log())
 ```
 
-```{r topic-corr-trend, fig.height=7, fig.width=10, fig.cap="Correlation between topics colored by both broad categories of the topics and whether its proportion increased, decreased, or did not significantly change (n.s.)."}
+```{r topic-corr-trend, fig.height=7, fig.width=10, fig.cap="Correlation between topics colored by both broad categories of the topics and whether its proportion increased, decreased, or did not significantly change (n.s.).", out.width="100%"}
 set.seed(0)
 ggraph(topic_cor_graph, layout = "fr") +
   geom_edge_fan(color = "gray50") +
@@ -566,7 +566,7 @@ top_locs <- top_locs %>%
   mutate(geometry = st_transform(geometry, robin))
 ```
 
-```{r topic-loc, fig.width=10, fig.height=6, fig.cap="Cities associated with topics (p < 0.005) shown on a map."}
+```{r topic-loc, fig.width=10, fig.height=6, fig.cap="Cities associated with topics (p < 0.005) shown on a map.", out.width="100%"}
 ggplot() +
   geom_sf(data = map_use, aes(geometry = geometry), linetype = "dotted") +
   geom_sf(data = map_all, aes(geometry = geometry), fill = NA) +
@@ -697,7 +697,7 @@ pca_plt <- pca_df %>%
 shapes <- c(16,17,15,18,4,5,8,9)
 ```
 
-```{r pc12, fig.width=9, fig.height=6, fig.cap="Projection of word embeddings into the first 2 PCs. Each point is a word occuring over 30 times in the corpus. Not all words are labeled to avoid overlaps in the labels. Words and points are colored by Louvain clusters."}
+```{r pc12, fig.width=9, fig.height=6, fig.cap="Projection of word embeddings into the first 2 PCs. Each point is a word occuring over 30 times in the corpus. Not all words are labeled to avoid overlaps in the labels. Words and points are colored by Louvain clusters.", out.width="100%"}
 ggplot(pca_plt, aes(PC1, PC2, color = cluster)) +
   geom_point(aes(shape = cluster)) +
   geom_text_repel(aes(label = label_12), max.overlaps = 20, segment.alpha = 0.3,
@@ -722,7 +722,7 @@ pca_plt <- pca_plt %>%
   ))
 ```
 
-```{r pc34, fig.width=9, fig.height=6, fig.cap="Projection of word embeddings into the 3rd and 4th PCs."}
+```{r pc34, fig.width=9, fig.height=6, fig.cap="Projection of word embeddings into the 3rd and 4th PCs.", out.width="100%"}
 ggplot(pca_plt, aes(PC3, PC4, color = cluster)) +
   geom_point(aes(shape = cluster)) +
   geom_text_repel(aes(label = label_34), max.overlaps = 20, segment.alpha = 0.3,
@@ -743,7 +743,7 @@ ac_umap$label <- rownames(ac_vectors_select)
 ac_umap$cluster <- pca_df$cluster
 ```
 
-```{r umap, fig.width=13, fig.height=13, fig.cap="UMAP projection of word embeddings. Zoom in if reading the PDF version of this book."}
+```{r umap, fig.width=13, fig.height=13, fig.cap="UMAP projection of word embeddings. Zoom in if reading the PDF version of this book.", out.width="100%"}
 ggplot(ac_umap, aes(V1, V2, color = cluster)) +
   geom_point(aes(shape = cluster)) +
   geom_text_repel(aes(label = label), segment.alpha = 0.3, max.overlaps = 13,
