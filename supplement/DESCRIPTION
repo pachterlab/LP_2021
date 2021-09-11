@@ -17,6 +17,7 @@ Imports:
     bookdown,
     broom,
     bluster,
+    downlit,
     gganatogram,
     ggraph,
     ggrepel,

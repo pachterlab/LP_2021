@@ -1,6 +1,6 @@
 bookdown::bs4_book:
   theme:
-    primary: "#5D3D8B"
+    primary: "#BO70D5"
   repo: https://github.com/pachterlab/LP_2021/tree/main/supplement
 bookdown::pdf_book:
   latex_engine: xelatex

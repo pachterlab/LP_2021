@@ -101,7 +101,9 @@ Transcriptome *in vivo* analysis (TIVA) from 2014 can be viewed as the first of 
 knitr::include_graphics("niche.png")
 ```
 
-Two *de facto* microdissection methods have spread beyond their institutions of origin. One of them is Niche-seq, which was developed as LCM is still usually used to isolate groups of cells rather than single cells and involves tissue fixation [@Medaglia2017]. Select regions of *ex vivo* tissues from transgenic mice expressing photoactivable GFP (PA-GFP), here lymph node and spleen B cell and T cell niches, are photoactivated at 820 nm with two photon irradiation. Then the tissue is dissociated and cells with photoactivated PA-GFP are collected from flow cytometry--based fluorescence-activated cell sorting (FACS) for scRNA-seq with MARS-seq (Figure \@ref(fig:niche)). This approach was originally used in 2010 to isolate B cells from light and dark zones of the lymph node followed by transcriptome profiling with microarray in bulk [@Victoria2010]; the difference in Niche-seq is that the scRNA-seq of the sorted cells. After its inception, Niche-seq has been used once more in lymph node niches [@DeGiovanni2020]. However, as Niche-seq requires transgenic mice expressing PA-GFP and living tissue, it cannot be applied to human tissues, to fixed tissues, or when a PA-GFP line is unavailable. This might limit further growth of Niche-seq. Moreover, the spatial context of cells within the photoactivated region is lost, limiting spatial resolution.
+Two *de facto* microdissection methods have spread beyond their institutions of origin. One of them is Niche-seq, which was developed as LCM is still usually used to isolate groups of cells rather than single cells and involves tissue fixation [@Medaglia2017]. Select regions of *ex vivo* tissues from transgenic mice expressing photoactivable GFP (PA-GFP), here lymph node and spleen B cell and T cell niches, are photoactivated at 820 nm with two photon irradiation. Then the tissue is dissociated and cells with photoactivated PA-GFP are collected from flow cytometry--based fluorescence-activated cell sorting (FACS) for scRNA-seq with MARS-seq (Figure \@ref(fig:niche)). This approach was originally used in 2010 to isolate B cells from light and dark zones of the lymph node followed by transcriptome profiling with microarray in bulk [@Victora2010]; the difference in Niche-seq is the scRNA-seq of the sorted cells. After its inception, Niche-seq has been used once more in lymph node niches [@DeGiovanni2020]. However, as Niche-seq requires transgenic mice expressing PA-GFP and living tissue, it cannot be applied to human tissues, to fixed tissues, or when a PA-GFP line is unavailable. This might limit further growth of Niche-seq. Moreover, the spatial context of cells within the photoactivated region is lost, limiting spatial resolution.
+ 
+(Need to say the gray area between "array" and "microdissection" in dbit-seq and XYZeq)
 
 (ref:dsp) GeoMX DSP schematics, inspired by figures in [@Merritt2019]. Black: transcripts in tissue. Gray: probes. Green: indexing oligo.
 
@@ -111,9 +113,26 @@ knitr::include_graphics("dsp.png")
 
 Another method that spread beyond its institution of origin is the commercial GeoMX DSP from NanoString [@Merritt2019], which can be used for both high throughput immunofluorescence and transcript quantification in FFPE tissue sections. For transcript quantification, probes are attached to indexing oligos with a UV cleavable linker (Figure \@ref(fig:dsp)). The selected ROI is illuminated by UV to remove the index oligos from the probes. Then the released index oligos are aspirated and quantified with either NGS or NanoString nCounter. This can be repeated for multiple ROIs, which can be a grid for unbiased profiling [@Merritt2019]. The probes tile the transcripts, and each probe has a distinct index oligo, so in NGS, each tile is counted separately, enabling isoform quantification [@Merritt2019]. GeoMx DSP is not transcriptome wide; up to 1860 target transcripts have been quantified [@Margaroli2021]. Also, as pre-defined probes are required, unlike in RNA-seq, novel transcripts cannot be quantified. Ready made probe sets for oncology, immunology, and neuroscience are sold by NanoString [@DSPPanels]. Although GeoMx DSP was published in 2019, it has spread to several different institutionss, and has been used on pancreatic ductal adenocarcinoma (PDAC) [@Hwang2020], hepatocellular carcinoma (HCC) [@Sharma2020], reactive lymph nodes [@Tripodo2020], and COVID infected lungs from autopsy [@Park2021; @Butler2021; @Delorey2021; @Margaroli2021]. A variant of GeoMX DSP, called GeoMX Whole Transcriptome Atlas (WTA), has been used to profile transcripts of 18190 genes, nearly covering the whole transcriptome [@Roberts2021]. In GeoMX WTA, the UV cleaved index oligo must be sequenced with NGS to identify the gene each transcript is from.
 
+### Targeted vs. untargeted
+
+Some microdissection methods can only be used in a regular grid, such as Tomo-seq, while some can be used either in a regular grid or in targeted ROIs, such as LCM and GeoMX DSP. Some are primarily used for ROIs, such as Niche-seq.
+
+```{r}
+ms <- read_metadata("Microdissection")
+ms_pubs <- get_pubs_df(ms, c("type", "method"))
+```
+
+```{r}
+ms_pubs %>% 
+  mutate(method = fct_lump_min(method, 2) %>% fct_infreq() %>% fct_rev()) %>% 
+  ggplot(aes(y = method, fill = type)) +
+  geom_bar(orientation = "y")
+```
+
+
 ### Summary
 ```{r}
-nms <- c("Microdissection", "smFISH", "Array", "ISS", "No imaging")
+nms <- c("Microdissection", "smFISH", "NGS wo MD", "ISS", "No imaging")
 current <- read_metadata(nms, update = TRUE) %>% 
     select(date_published:journal, country:year, sheet) %>% 
     distinct()
@@ -124,7 +143,7 @@ pubs_per_cat(current, sheet) +
     labs(x = "Category")
 ```
 
-Overall, in the current era, microdissection is the most widely used type of technique (Figure \@ref(fig:categories)). Excluding LCM, Tomo-seq is the most popular technique after ST and Visium (Figure \@ref(fig:n-insts)). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure \@ref(fig:current-hist), Figure \@ref(fig:lcm-year)). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted [@Baccin2020; @Hwang2020]. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM), Nanostring's commercial data collection and analysis service for GeoMX DSP [@nanostring_tap], not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.
+(Need to update text) Overall, in the current era, microdissection is the most widely used type of technique (Figure \@ref(fig:categories)). Excluding LCM, Tomo-seq is the most popular technique after ST and Visium (Figure \@ref(fig:n-insts)). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure \@ref(fig:current-hist), Figure \@ref(fig:lcm-year)). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted [@Baccin2020; @Hwang2020]. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM), Nanostring's commercial data collection and analysis service for GeoMX DSP [@nanostring_tap], not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.
 
 ## Single molecular FISH {#smfish}
 
@@ -492,7 +511,7 @@ So far we have reviewed studies that showcase new techniques and technical impro
 
 MERFISH has been used more broadly in biological studies. Within Harvard, the institution of origin, MERFISH has been used to create atlases of the hypothalamic preoptic region (155 genes) [@Moffitt2018] and the primary motor cortex (MOp) (258 genes) [@Zhang2020] in mice, and adapted to stain for chromatin conformation and transcription foci (introns) [@Su2020]. Outside Harvard (Figure \@ref(fig:smfish-map)), MERFISH has been used to study how gene expression variability relates to cell state in cell culture [@Foreman2019] and used in conjunction with smFISH based chromatin tracing to study the relationships between chromatin compartmentalization and gene expression [@Liu2020].
 
-After its inception, HybISS became part of a single cell atlas of the developing mouse nervous system [@Manno2020]. This atlas is mostly scRNA-seq data, but 119 genes were stained with HybISS to validate secondary organizers discovered via scRNA-seq.
+After its inception, HybISS became part of a single cell atlas of the developing mouse nervous system [@Manno2021]. This atlas is mostly scRNA-seq data, but 119 genes were stained with HybISS to validate secondary organizers discovered via scRNA-seq.
 
 ## In situ sequencing {#iss}
 
@@ -556,7 +575,7 @@ While most *in situ* sequencing techniques use SBL, some use SBS, indeed with a 
 This section reviews techniques that capture transcripts from a permeabilized tissue section on a spatially organized array for RNA-seq. These techniques are similar to 3' based scRNA-seq, with amplification and sequencing handle, barcode, UMI, and poly-T to capture polyadenylated transcripts, except that each spot in the array has its own barcode, rather than each droplet. These techniques can be transcriptome wide, but do not have single cell resolution; the resolution is the size and shape of the spots. In ST and Visium, the array is constructed by printing the capture sequences onto commercial microarray slides, so the 5' end of the sequences are attached to the slide; where each spatial barcode is placed is known. Alternatively, the capture sequences can be attached to beads like in droplet scRNA-seq, as in Slide-seq and HDST. The beads are randomly placed on a slide in a single layer, and the location of barcodes are determined before library preparation when the capture sequences and transcripts are released from the slide.
 
 ```{r}
-array <- read_metadata("Array", update = TRUE)
+array <- read_metadata("NGS wo MD", update = TRUE)
 array_methods <- unnest_cat(array, method, other_cols = "short_name")
 st_city_gc <- geocode_inst_city(array, cache_location = here())
 array_pubs <- get_pubs_df(array, other_cols = "short_name")
@@ -649,7 +668,7 @@ This is putative because this is based on reports in the main text. There are co
 
 All these array based techniques reviewed so far capture polyadenylated transcripts. While miRNAs form a major topic in LCM literature (Figure \@ref(fig:topics)) and are profiled in some prequel era ISH atlases, current era techniques mostly preclude miRNA quantification. For smFISH based techniques, miRNAs are way too short to accommodate the large number of probes, even with signal amplification. While RCA has been adapted to miRNA, to our best knowledge, it has not been demonstrated to show individual miRNAs as discrete puncta like in smFISH and ISS, nor has it been demonstrated in a highly multiplexed fashion [@Neubacher2009; @Kim2020; @Zhou2020]. Without a poly-A tail, miRNAs are precluded by the other array based techniques as well. To quantify miRNAs in space, an array based technique was developed as an alternative to LCM and designed for FFPE tissues [@Nagarajan2020]. The tissue is pixelated, and each pixel is 300 $\mu$m $\times$ 300 $\mu$m. Within each pixel is a smaller 3 $\times$ 3 array, each spot of which has probes for one miRNA; The locations of the spots within each pixel can be easily discerned with a fluorescent microscope. This way, up to 9 miRNAs can be profiled in the same tissue section at the same time, although the 9 miRNAs are from somewhat nearby cells but not the same cells.
 
-## No imaging {#no-imaging}
+## No *priori* {#no-priori}
 
 The techniques reviewed above, involve either imaging (e.g. LCM, smFISH, ISS, Slide-seq, and HDST) or prior knowledge of locations (e.g. Tomo-seq, ST, Visium, and DBiT-seq). Some spatial transcriptomics techniques have been developed that require neither imaging nor prior knowledge of locations, and we review these in this section.
 
@@ -672,3 +691,5 @@ The database holding various spatial gene expression data was proposed early in 
 Another database by the Brain Research through Advancing Innovative Neurotechnologies (BRAIN) Initiative - Cell Census Network (BICCN) is under construction as of late 2020 [@Adkins2020]. This is an international collaboration providing and generating multi-modal data for the mouse, human, and non-human primate brain, collected with scRNA-seq, ATAC-seq, neuron projection tracing, MRI, IHC, MERFISH [@Zhang2020], osmFISH, seqFISH, and etc. The database website is hosted by the Allen Institute, and thus may be considered a continuation of the ABA. Data can be queried by species, technique, modality, and the lab that generated the data, but not by gene symbols.
 
 While current era mouse brain atlases still reference the prequel ABA ontologies [@Ortiz2020; @Chen2020; @Vickovic2020; @Lohoff2020], data cannot be queried by ontology in the current era databases, nor by a reference gene expression pattern as in the prequel database FlyExpress [@Kumar2017]. With more quantitative and comprehensive data, the traditional ontology may need to be revised. Unlike prequel databases such as ABA, EMAGE, and FlyExpress, to the best of our knowledge, current era spatial data has not been systematically registered to a 3D model for integrative analysis across datasets and for visualization.
+
+(mention human cell atlas)

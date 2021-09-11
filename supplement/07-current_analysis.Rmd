@@ -31,7 +31,7 @@ analysis_sheets <- read_metadata(nms, update = TRUE)
 ```
 
 ```{r}
-nms <- c("Prequel", "Microdissection", "smFISH", "Array", "ISS", "No imaging")
+nms <- c("Prequel", "Microdissection", "smFISH", "NGS wo MD", "ISS", "No imaging")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 
@@ -128,12 +128,12 @@ pubs_on_map(analysis_sheets, city_gc, facet_by = "era", zoom = "usa",
             ncol = 1, n_label = 10)
 ```
 
-```{r analysis-usa, fig.width=6, fig.height=10, fig.cap="Map of where first authors of current era and prequel data analysis papers were located as of publication in western Europe. Top 5 institutions in each era are labeled."}
+```{r analysis-europe, fig.width=6, fig.height=10, fig.cap="Map of where first authors of current era and prequel data analysis papers were located as of publication in western Europe. Top 5 institutions in each era are labeled."}
 pubs_on_map(analysis_sheets, city_gc, facet_by = "era", zoom = "europe",
             ncol = 1, n_label = 10)
 ```
 
-```{r analysis-usa, fig.width=6, fig.height=9, fig.cap="Map of where first authors of current era and prequel data analysis papers were located as of publication in northeastern Asia. Top 5 institutions in each era are labeled."}
+```{r analysis-asia, fig.width=6, fig.height=9, fig.cap="Map of where first authors of current era and prequel data analysis papers were located as of publication in northeastern Asia. Top 5 institutions in each era are labeled."}
 pubs_on_map(analysis_sheets, city_gc, facet_by = "era", zoom = "ne_asia",
             ncol = 1, n_label = 10)
 ```
@@ -172,7 +172,7 @@ pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE,
     labs(title = "Package developers")
 ```
 
-The same top 5 programming languages are the most common for developing data analysis packages (Figure \@ref(fig:dev-langs)). Python is the most popular, especially for packages involving deep learning, image processing, using Torch for optimization, or are command line tools. R follows, and is more popular for exploratory data analysis (EDA) and data visualization, but often both R and Python are used in the same package. Other languages aren't nearly as commonly used for packages reported on in our database. The above observations about usage of R and Python seem to reflect the broader cultural differences between the R and Python communities; the former caters more to the users and statisticians who do not specialize in computer science, while the latter caters more to developers and computer science specialists. MATLAB is not as commonly used for package development. While popularity of Python and R have grown (and some others such as Julia), the popularity of MATLAB seems more level (Figure \@ref(fig:documented)). C and C++ are more common in package development than in downstream analysis, but are often used in conjunction with either R or Python or both as C and C++ are used for performance while R and Python are for user interface. With packages such as [`reticulate`](https://rstudio.github.io/reticulate/), [`rpy2`](https://rpy2.github.io/doc/latest/html/introduction.html), [`basilisk`](https://bioconductor.org/packages/release/bioc/html/basilisk.html), [`Rcpp`](http://rcpp.org), and [`Cython`](https://cython.org), the most popular open source languages can be made interoperable to each other to some extent, making use of the best resources from each language.
+The same top 5 programming languages are the most common for developing data analysis packages (Figure \@ref(fig:dev-langs)). Python is the most popular, especially for packages involving deep learning, image processing, using Torch for optimization, or are command line tools. R follows, and is more popular for exploratory data analysis (EDA) and data visualization, but sometimes both R and Python are used in the same package. Other languages aren't nearly as commonly used for packages reported on in our database. The above observations about usage of R and Python seem to reflect the broader cultural differences between the R and Python communities; the former caters more to the users and statisticians who do not specialize in computer science, while the latter caters more to developers and computer science specialists. MATLAB is not as commonly used for package development. While popularity of Python and R have grown (and some others such as Julia), the popularity of MATLAB seems more level (Figure \@ref(fig:documented)). C and C++ are more common in package development than in downstream analysis, but are often used in conjunction with either R or Python or both as C and C++ are used for performance while R and Python are for user interface. With packages such as [`reticulate`](https://rstudio.github.io/reticulate/), [`rpy2`](https://rpy2.github.io/doc/latest/html/introduction.html), [`basilisk`](https://bioconductor.org/packages/release/bioc/html/basilisk.html), [`Rcpp`](http://rcpp.org), and [`Cython`](https://cython.org), the most popular open source languages can be made interoperable to each other to some extent, making use of the best resources from each language.
 
 ```{r documented, fig.width=9, fig.height=6, fig.cap="Among data analysis publications, the number of packages that are or are not well documented over time."}
 hist_bool_line(analysis_langs, documented, facet_by = "language", 
@@ -181,7 +181,7 @@ hist_bool_line(analysis_langs, documented, facet_by = "language",
   labs(title = "Documented")
 ```
 
-We have also recorded whether the package is well documented and whether it's hosted on a public repository as a loose proxy of user friendliness and quality. Here "well documented" means at least all arguments of all functions exposed to the user are documented, though we consider it better when examples are included. Public repositories can to some extent indicate user friendliness and quality because the packages need to pass some sort of checking in order to be hosted on the repositories, though some repositories, such as Bioconductor, have stricter standards than others. Moreover, installation of the package is easier when the package is on a public repository. A modest majority of Python packages and the vast majority of R and C++ packages are well documented, while many MATLAB packages are not (Figure \@ref(fig:documented)). Most packages are not on a public repository such as CRAN, Bioconductor, pip, and conda (Figure \@ref(fig:repo)).
+We have also recorded whether the package is well documented and whether it's hosted on a public repository as a loose proxy of user friendliness and quality. Here "well documented" means at least all arguments of all functions exposed to the user are documented, though we consider it better when examples are included. Public repositories can to some extent indicate user friendliness and quality because the packages need to pass some sort of checking in order to be hosted on the repositories, though some repositories, such as Bioconductor, have stricter standards than others. Moreover, installation of the package is easier when the package is on a public repository. A majority of Python packages and the vast majority of R and C++ packages are well documented, while many MATLAB packages are not (Figure \@ref(fig:documented)). Most packages are not on a public repository such as CRAN, Bioconductor, pip, and conda (Figure \@ref(fig:repo)).
 
 ```{r repo, fig.width=9, fig.height=6, fig.cap="The number of packages that are or are not on a public repository such as CRAN, Bioconductor, pip, or conda over time. In both C and D, the bin width is 365 days. NA means the source code repository is not available."}
 hist_bool_line(analysis_langs, `CRAN/Bioc/pip/conda`, "language", 
