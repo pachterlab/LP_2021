@@ -1,281 +1,101 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics</title>
-  <meta name="description" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics" />
-  <meta property="og:type" content="book" />
-  
-  
-  <meta property="og:description" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics" />
-  <meta name="github-repo" content="pachterlab/LP_2021" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics" />
-  
-  <meta name="twitter:description" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics" />
-  
-
-<meta name="author" content="Lambda Moses, dlu2@caltech.edu" />
-<meta name="author" content="Lior Pachter, lpachter@caltech.edu" />
-
-
-<meta name="date" content="2021-07-08" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="current-techs.html"/>
-<link rel="next" href="current-analysis.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-
-
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
-
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics</title>
+<meta name="author" content="Lambda Moses, dlu2@caltech.edu">
+<meta name="author" content="Lior Pachter, lpachter@caltech.edu">
+<meta name="description" content='To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term "((laser capture microdissection) OR (laser microdissection)) AND...'>
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics">
+<meta property="og:type" content="book">
+<meta property="og:description" content='To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term "((laser capture microdissection) OR (laser microdissection)) AND...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics">
+<meta name="twitter:description" content='To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term "((laser capture microdissection) OR (laser microdissection)) AND...'>
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="./">Museum of Spatial Transcriptomics</a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="part"><span><b>I Prequel era</b></span></li>
-<li class="chapter" data-level="2" data-path="prequel.html"><a href="prequel.html"><i class="fa fa-check"></i><b>2</b> Prequel era</a><ul>
-<li class="chapter" data-level="2.1" data-path="prequel.html"><a href="prequel.html#traps"><i class="fa fa-check"></i><b>2.1</b> Enhancer and gene traps</a></li>
-<li class="chapter" data-level="2.2" data-path="prequel.html"><a href="prequel.html#in-situ-reporter"><i class="fa fa-check"></i><b>2.2</b> In situ reporter</a></li>
-<li class="chapter" data-level="2.3" data-path="prequel.html"><a href="prequel.html#wmish"><i class="fa fa-check"></i><b>2.3</b> ISH and WMISH atlases</a></li>
-<li class="chapter" data-level="2.4" data-path="prequel.html"><a href="prequel.html#database_prequel"><i class="fa fa-check"></i><b>2.4</b> Databases of the prequel era</a></li>
-<li class="chapter" data-level="2.5" data-path="prequel.html"><a href="prequel.html#geo_prequel"><i class="fa fa-check"></i><b>2.5</b> Geography of the prequel era</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="prequel-analysis.html"><a href="prequel-analysis.html"><i class="fa fa-check"></i><b>3</b> Data analysis in the prequel era</a><ul>
-<li class="chapter" data-level="3.1" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-gene-patterns"><i class="fa fa-check"></i><b>3.1</b> Gene patterns</a></li>
-<li class="chapter" data-level="3.2" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-spatial-regions"><i class="fa fa-check"></i><b>3.2</b> Spatial regions</a></li>
-<li class="chapter" data-level="3.3" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-gene-interactions"><i class="fa fa-check"></i><b>3.3</b> Gene interactions</a></li>
-<li class="chapter" data-level="3.4" data-path="prequel-analysis.html"><a href="prequel-analysis.html#decline"><i class="fa fa-check"></i><b>3.4</b> Decline</a></li>
-<li class="chapter" data-level="3.5" data-path="prequel-analysis.html"><a href="prequel-analysis.html#geo-prequel-analysis"><i class="fa fa-check"></i><b>3.5</b> Geography of prequel data analysis</a></li>
-</ul></li>
-<li class="part"><span><b>II Current era</b></span></li>
-<li class="chapter" data-level="4" data-path="current.html"><a href="current.html"><i class="fa fa-check"></i><b>4</b> From the past to the present</a></li>
-<li class="chapter" data-level="5" data-path="current-techs.html"><a href="current-techs.html"><i class="fa fa-check"></i><b>5</b> Current era technologies</a><ul>
-<li class="chapter" data-level="5.1" data-path="current-techs.html"><a href="current-techs.html#microdissection"><i class="fa fa-check"></i><b>5.1</b> Microdissection</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="current-techs.html"><a href="current-techs.html#history-of-lcm"><i class="fa fa-check"></i><b>5.1.1</b> History of LCM</a></li>
-<li class="chapter" data-level="5.1.2" data-path="current-techs.html"><a href="current-techs.html#lcm-usage"><i class="fa fa-check"></i><b>5.1.2</b> Usage of LCM</a></li>
-<li class="chapter" data-level="5.1.3" data-path="current-techs.html"><a href="current-techs.html#physical-microdissection"><i class="fa fa-check"></i><b>5.1.3</b> Physical microdissection</a></li>
-<li class="chapter" data-level="5.1.4" data-path="current-techs.html"><a href="current-techs.html#de-facto-microdissection"><i class="fa fa-check"></i><b>5.1.4</b> <em>De facto</em> microdissection</a></li>
-<li class="chapter" data-level="5.1.5" data-path="current-techs.html"><a href="current-techs.html#summary"><i class="fa fa-check"></i><b>5.1.5</b> Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="current-techs.html"><a href="current-techs.html#smfish"><i class="fa fa-check"></i><b>5.2</b> Single molecular FISH</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="current-techs.html"><a href="current-techs.html#barcoding"><i class="fa fa-check"></i><b>5.2.1</b> Barcoding strategies</a></li>
-<li class="chapter" data-level="5.2.2" data-path="current-techs.html"><a href="current-techs.html#amplification"><i class="fa fa-check"></i><b>5.2.2</b> Signal amplification</a></li>
-<li class="chapter" data-level="5.2.3" data-path="current-techs.html"><a href="current-techs.html#crowding"><i class="fa fa-check"></i><b>5.2.3</b> Optical crowding</a></li>
-<li class="chapter" data-level="5.2.4" data-path="current-techs.html"><a href="current-techs.html#smfish-usage"><i class="fa fa-check"></i><b>5.2.4</b> Usage of smFISH based techniques</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="current-techs.html"><a href="current-techs.html#iss"><i class="fa fa-check"></i><b>5.3</b> In situ sequencing</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="current-techs.html"><a href="current-techs.html#solid"><i class="fa fa-check"></i><b>5.3.1</b> SOLiD and FISSEQ</a></li>
-<li class="chapter" data-level="5.3.2" data-path="current-techs.html"><a href="current-techs.html#cpal"><i class="fa fa-check"></i><b>5.3.2</b> cPAL and ISS</a></li>
-<li class="chapter" data-level="5.3.3" data-path="current-techs.html"><a href="current-techs.html#sedal"><i class="fa fa-check"></i><b>5.3.3</b> SEDAL and STARmap</a></li>
-<li class="chapter" data-level="5.3.4" data-path="current-techs.html"><a href="current-techs.html#sbs"><i class="fa fa-check"></i><b>5.3.4</b> Sequencing by synthesis</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="current-techs.html"><a href="current-techs.html#array"><i class="fa fa-check"></i><b>5.4</b> In situ array capture</a></li>
-<li class="chapter" data-level="5.5" data-path="current-techs.html"><a href="current-techs.html#no-imaging"><i class="fa fa-check"></i><b>5.5</b> No imaging</a></li>
-<li class="chapter" data-level="5.6" data-path="current-techs.html"><a href="current-techs.html#multiomics"><i class="fa fa-check"></i><b>5.6</b> Spatial multi-omics</a></li>
-<li class="chapter" data-level="5.7" data-path="current-techs.html"><a href="current-techs.html#database-current"><i class="fa fa-check"></i><b>5.7</b> Databases of the current era</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>6</b> Text mining LCM transcriptomics abstracts</a><ul>
-<li class="chapter" data-level="6.1" data-path="text-mining.html"><a href="text-mining.html#topic-model"><i class="fa fa-check"></i><b>6.1</b> Topic modeling</a></li>
-<li class="chapter" data-level="6.2" data-path="text-mining.html"><a href="text-mining.html#word-time"><i class="fa fa-check"></i><b>6.2</b> Changes of word usage through time</a></li>
-<li class="chapter" data-level="6.3" data-path="text-mining.html"><a href="text-mining.html#topic-time"><i class="fa fa-check"></i><b>6.3</b> Changes of topic prevalence through time</a></li>
-<li class="chapter" data-level="6.4" data-path="text-mining.html"><a href="text-mining.html#association-of-topics-with-city"><i class="fa fa-check"></i><b>6.4</b> Association of topics with city</a></li>
-<li class="chapter" data-level="6.5" data-path="text-mining.html"><a href="text-mining.html#glove"><i class="fa fa-check"></i><b>6.5</b> GloVe word embedding</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="current-analysis.html"><a href="current-analysis.html"><i class="fa fa-check"></i><b>7</b> Data analysis in the current era</a><ul>
-<li class="chapter" data-level="7.1" data-path="current-analysis.html"><a href="current-analysis.html#preprocessing"><i class="fa fa-check"></i><b>7.1</b> Preprocessing</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="current-analysis.html"><a href="current-analysis.html#registration"><i class="fa fa-check"></i><b>7.1.1</b> Image registration</a></li>
-<li class="chapter" data-level="7.1.2" data-path="current-analysis.html"><a href="current-analysis.html#calling"><i class="fa fa-check"></i><b>7.1.2</b> Spot and barcode calling</a></li>
-<li class="chapter" data-level="7.1.3" data-path="current-analysis.html"><a href="current-analysis.html#segmentation"><i class="fa fa-check"></i><b>7.1.3</b> Cell segmentation</a></li>
-<li class="chapter" data-level="7.1.4" data-path="current-analysis.html"><a href="current-analysis.html#seg-alternatives"><i class="fa fa-check"></i><b>7.1.4</b> Alternatives to cell segmentation</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="current-analysis.html"><a href="current-analysis.html#eda"><i class="fa fa-check"></i><b>7.2</b> Exploratory data analysis</a></li>
-<li class="chapter" data-level="7.3" data-path="current-analysis.html"><a href="current-analysis.html#reconstruction"><i class="fa fa-check"></i><b>7.3</b> Spatial reconstruction of scRNA-seq data</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="current-analysis.html"><a href="current-analysis.html#direct-dr"><i class="fa fa-check"></i><b>7.3.1</b> Direct dimension reduction</a></li>
-<li class="chapter" data-level="7.3.2" data-path="current-analysis.html"><a href="current-analysis.html#ad-hoc"><i class="fa fa-check"></i><b>7.3.2</b> <em>Ad hoc</em> scoring</a></li>
-<li class="chapter" data-level="7.3.3" data-path="current-analysis.html"><a href="current-analysis.html#generative"><i class="fa fa-check"></i><b>7.3.3</b> Generative models</a></li>
-<li class="chapter" data-level="7.3.4" data-path="current-analysis.html"><a href="current-analysis.html#latent"><i class="fa fa-check"></i><b>7.3.4</b> Shared latent space</a></li>
-<li class="chapter" data-level="7.3.5" data-path="current-analysis.html"><a href="current-analysis.html#reconst-other"><i class="fa fa-check"></i><b>7.3.5</b> Other principles</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="current-analysis.html"><a href="current-analysis.html#deconvolution"><i class="fa fa-check"></i><b>7.4</b> Cell type deconvolution</a></li>
-<li class="chapter" data-level="7.5" data-path="current-analysis.html"><a href="current-analysis.html#variable"><i class="fa fa-check"></i><b>7.5</b> Spatially variable genes</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="current-analysis.html"><a href="current-analysis.html#gpr"><i class="fa fa-check"></i><b>7.5.1</b> Gaussian process regression</a></li>
-<li class="chapter" data-level="7.5.2" data-path="current-analysis.html"><a href="current-analysis.html#laplacian"><i class="fa fa-check"></i><b>7.5.2</b> Laplacian score</a></li>
-<li class="chapter" data-level="7.5.3" data-path="current-analysis.html"><a href="current-analysis.html#variable-other"><i class="fa fa-check"></i><b>7.5.3</b> Other principles</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="current-analysis.html"><a href="current-analysis.html#pattern"><i class="fa fa-check"></i><b>7.6</b> Gene patterns</a></li>
-<li class="chapter" data-level="7.7" data-path="current-analysis.html"><a href="current-analysis.html#region"><i class="fa fa-check"></i><b>7.7</b> Spatial regions</a></li>
-<li class="chapter" data-level="7.8" data-path="current-analysis.html"><a href="current-analysis.html#cell-interaction"><i class="fa fa-check"></i><b>7.8</b> Cell-cell interaction</a><ul>
-<li class="chapter" data-level="7.8.1" data-path="current-analysis.html"><a href="current-analysis.html#l-r"><i class="fa fa-check"></i><b>7.8.1</b> Ligand-receptor pairs</a></li>
-<li class="chapter" data-level="7.8.2" data-path="current-analysis.html"><a href="current-analysis.html#gene-cell-interact"><i class="fa fa-check"></i><b>7.8.2</b> Genes associated with cell-cell interaction</a></li>
-</ul></li>
-<li class="chapter" data-level="7.9" data-path="current-analysis.html"><a href="current-analysis.html#gene-interaction"><i class="fa fa-check"></i><b>7.9</b> Gene-gene interaction</a></li>
-<li class="chapter" data-level="7.10" data-path="current-analysis.html"><a href="current-analysis.html#subcellular"><i class="fa fa-check"></i><b>7.10</b> Subcellular transcript localization</a></li>
-<li class="chapter" data-level="7.11" data-path="current-analysis.html"><a href="current-analysis.html#HnE"><i class="fa fa-check"></i><b>7.11</b> Gene expression imputation from H&amp;E</a></li>
-</ul></li>
-<li class="part"><span><b>III Future perspectives</b></span></li>
-<li class="chapter" data-level="8" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>8</b> From the past to the present to the future</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Museum of Spatial Transcriptomics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Museum of Spatial Transcriptomics</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">Prequel era</li>
+<li><a class="" href="prequel.html"><span class="header-section-number">2</span> Prequel era</a></li>
+<li><a class="" href="prequel-analysis.html"><span class="header-section-number">3</span> Data analysis in the prequel era</a></li>
+<li class="book-part">Current era</li>
+<li><a class="" href="current.html"><span class="header-section-number">4</span> From the past to the present</a></li>
+<li><a class="" href="current-techs.html"><span class="header-section-number">5</span> Current era technologies</a></li>
+<li><a class="active" href="text-mining.html"><span class="header-section-number">6</span> Text mining LCM transcriptomics abstracts</a></li>
+<li><a class="" href="current-analysis.html"><span class="header-section-number">7</span> Data analysis in the current era</a></li>
+<li class="book-part">Future perspectives</li>
+<li><a class="" href="future.html"><span class="header-section-number">8</span> From the past to the present to the future</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/pachterlab/LP_2021/tree/main/supplement">View book source <i class="fab fa-github"></i></a></p>
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="text-mining" class="section level1">
-<h1><span class="header-section-number">Chapter 6</span> Text mining LCM transcriptomics abstracts</h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="text-mining" class="section level1">
+<h1>
+<span class="header-section-number">6</span> Text mining LCM transcriptomics abstracts<a class="anchor" aria-label="anchor" href="#text-mining"><i class="fas fa-link"></i></a>
+</h1>
 <p>To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term <code>"((laser capture microdissection) OR (laser microdissection)) AND ((microarray) OR (transcriptome) OR (RNA-seq))"</code>. For preprints, abstracts from the search term “laser microdissection” were downloaded from bioRxiv. Because bioRiv’s advanced search does not acknowledge parentheses, a more complicated search term was not used. Upon random inspection, the retrieved abstracts mostly seem relevant. The number of LCM transcriptomics search results dwarfs the number of publications for other methods of spatial transcriptomics and seems to show two peaks, one around 2012, and the other in 2020 and 2021 (Figure <a href="text-mining.html#fig:lcm-year">6.1</a>); the LCM corpus contains 2252 abstracts as of March 26, 2021, while there are between 500 and 600 papers in the curated database.</p>
-<div class="figure" style="text-align: center"><span id="fig:lcm-year"></span>
-<img src="06-text-mining_files/figure-html/lcm-year-1.png" alt="Number of publications in LCM transcriptomics PubMed search results over time. Bin width is 365 days." width="672" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:lcm-year"></span>
+<img src="06-text-mining_files/figure-html/lcm-year-1.png" alt="Number of publications in LCM transcriptomics PubMed search results over time. Bin width is 365 days." width="672"><p class="caption">
 Figure 6.1: Number of publications in LCM transcriptomics PubMed search results over time. Bin width is 365 days.
 </p>
 </div>
 <p>LCM transcriptomics is also more geographically diffuse and spread out into many less well-known institutions and some developing countries, though some elite institutions are among the top contributors, such as Harvard Medical School and Massachusetts General Hospital (Boston), Columbia University, NYU, Rockefeller, and Sloan-Kettering (New York), NIH (Bethesda), and Cambridge University (Cambridge, UK) (Figure 8B).</p>
-<div class="figure" style="text-align: center"><span id="fig:lcm-map"></span>
-<img src="06-text-mining_files/figure-html/lcm-map-1.png" alt="Geographic distribution of LCM transcriptomics research, with top 10 cities labeled. Number of publications is binned over longitude and latitude." width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:lcm-map"></span>
+<img src="06-text-mining_files/figure-html/lcm-map-1.png" alt="Geographic distribution of LCM transcriptomics research, with top 10 cities labeled. Number of publications is binned over longitude and latitude." width="100%"><p class="caption">
 Figure 6.2: Geographic distribution of LCM transcriptomics research, with top 10 cities labeled. Number of publications is binned over longitude and latitude.
 </p>
 </div>
-<p>After identifying common and relevant phrases in the abstracts, the abstracts were tokenized into unigrams. We used the <code>stm</code> R package <span class="citation">(Roberts, Stewart, and Tingley <a href="#ref-Roberts2019" role="doc-biblioref">2019</a>)</span> to identify topics. The cities in which the research was conducted, date published or posted on bioRxiv (linear, not transformed), and journal (including bioRxiv) were used as covariates for topic prevalence, because labs and journals may have preferred topics and city is a proxy to institution, and it’s reasonable to assume that prevalence of at least some topic changes through time, such as due to evolution of technology. Cities and journals with fewer than 5 papers were lumped into “Other”. From a trade off between held out likelihood and residual, and between topic exclusivity and semantic coherence, we chose 50 topics. Code used to find this can be found <a href="https://github.com/pachterlab/museumst/blob/master/data-raw/lcm_text_mining.Rmd">here</a>.</p>
+<p>After identifying common and relevant phrases in the abstracts, the abstracts were tokenized into unigrams. We used the <code>stm</code> R package <span class="citation">(Roberts, Stewart, and Tingley <a href="references.html#ref-Roberts2019" role="doc-biblioref">2019</a>)</span> to identify topics. The cities in which the research was conducted, date published or posted on bioRxiv (linear, not transformed), and journal (including bioRxiv) were used as covariates for topic prevalence, because labs and journals may have preferred topics and city is a proxy to institution, and it’s reasonable to assume that prevalence of at least some topic changes through time, such as due to evolution of technology. Cities and journals with fewer than 5 papers were lumped into “Other”. From a trade off between held out likelihood and residual, and between topic exclusivity and semantic coherence, we chose 50 topics. Code used to find this can be found <a href="https://github.com/pachterlab/museumst/blob/master/data-raw/lcm_text_mining.Rmd">here</a>.</p>
 <p>Here <code>stm</code> stands for structural text mining. A generative model of word counts is fitted with the word counts in each abstract as well as abstract level covariates, here date, city, and journal. Among parameters of the model estimated are the proportion of each topic in each abstract after accounting for covariates (<span class="math inline">\(\theta\)</span>), topic proportions in the corpus (<span class="math inline">\(\gamma\)</span>), and probability of getting each word from each topic (<span class="math inline">\(\beta\)</span>). See the <a href="https://cran.r-project.org/web/packages/stm/vignettes/stmVignette.pdf"><code>stm</code> vignette</a> for more details. <code>stm</code> can not only detect topics without having a human read all the abstracts, but also find how covariates relate to topic prevalence.</p>
 <div id="topic-model" class="section level2">
-<h2><span class="header-section-number">6.1</span> Topic modeling</h2>
-<p>As already mentioned, microarray was first demonstrated on LCM samples in 1999, profiling 477 cDNAs from rat neurons <span class="citation">(Luo et al. <a href="#ref-Luo1999" role="doc-biblioref">1999</a>)</span>. Since then, LCM transcriptomics has been used on many research topics, such as various aspects of cancer (topics 5, 6, 8, 10, 11, 13, 16, 20, 24, 27, 34, 44, 50), botany (topics 9, 15, 21, 40, 43, 45), developmental biology (topics 1, 3, 17, 18, 29, 35, 39), neuroscience (topics 7, 14, 19, 23, 25, 32, 33, 36, 47), immunology (topic 12, 22, 48), miRNA (topic 5), and technical issues related to LCM (topics 4, 28, 37, 41) (Figure <a href="text-mining.html#fig:topics">6.3</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:topics"></span>
-<img src="06-text-mining_files/figure-html/topics-1.png" alt="Top words for each of the 50 topics, ordered by expected topic prevalence and showing top 5 words contributing to each topic." width="768" />
-<p class="caption">
+<h2>
+<span class="header-section-number">6.1</span> Topic modeling<a class="anchor" aria-label="anchor" href="#topic-model"><i class="fas fa-link"></i></a>
+</h2>
+<p>As already mentioned, microarray was first demonstrated on LCM samples in 1999, profiling 477 cDNAs from rat neurons <span class="citation">(Luo et al. <a href="references.html#ref-Luo1999" role="doc-biblioref">1999</a>)</span>. Since then, LCM transcriptomics has been used on many research topics, such as various aspects of cancer (topics 5, 6, 8, 10, 11, 13, 16, 20, 24, 27, 34, 44, 50), botany (topics 9, 15, 21, 40, 43, 45), developmental biology (topics 1, 3, 17, 18, 29, 35, 39), neuroscience (topics 7, 14, 19, 23, 25, 32, 33, 36, 47), immunology (topic 12, 22, 48), miRNA (topic 5), and technical issues related to LCM (topics 4, 28, 37, 41) (Figure <a href="text-mining.html#fig:topics">6.3</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:topics"></span>
+<img src="06-text-mining_files/figure-html/topics-1.png" alt="Top words for each of the 50 topics, ordered by expected topic prevalence and showing top 5 words contributing to each topic." width="100%"><p class="caption">
 Figure 6.3: Top words for each of the 50 topics, ordered by expected topic prevalence and showing top 5 words contributing to each topic.
 </p>
 </div>
 In most cases, the top 5 words in each topic give us a decent idea what the topic is about. We can also plot the probability to get top words (<span class="math inline">\(\beta\)</span>) in each topic.
-<div class="figure" style="text-align: center"><span id="fig:topic-words"></span>
-<img src="06-text-mining_files/figure-html/topic-words-1.png" alt="Probability of top 10 words in each topic." width="1152" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:topic-words"></span>
+<img src="06-text-mining_files/figure-html/topic-words-1.png" alt="Probability of top 10 words in each topic." width="100%"><p class="caption">
 Figure 6.4: Probability of top 10 words in each topic.
 </p>
 </div>
@@ -333,68 +153,74 @@ Figure 6.4: Probability of top 10 words in each topic.
 <li>Intrahepatic cholangiocarcinoma (ICC)</li>
 </ol>
 <p>Some of them might not really be related to LCM (e.g. GWAS), and some seem to be a mixture of different topics recognized by humans but seemingly united by something else in common. There are very likely more than 50 topics present, depending on how a topic is defined. The topics can be broadly categorized into Botany, Cancer, Development, Immunology, Neuroscience, Technical, and Other, though these categories can overlap. Some of the “Other” topics seem like mixtures of multiple topics, such as topic 29, while some are very specific and relevant, such as topic 30 (pancreas and diabetes). The broad categories will be used in further analyses.</p>
-<p>Clusters of related topics can be seen in the topic correlation plot. See <a href="https://rdrr.io/cran/stm/man/topicCorr.html">documentation of <code>topicCorr</code> in the <code>stm</code> package</a> for more details. Here we use a high-dimensional undirected graphical (HUGE) model <span class="citation">(Zhao et al. <a href="#ref-Zhao2012" role="doc-biblioref">2012</a>)</span> to estimate the topic correlation graph. The topic proportions (<span class="math inline">\(\theta\)</span>) are assumed to be multivariate Gaussian, and HUGE tries to identify edges connecting topics that are not independent from each other conditioned on everything else, while trying to keep the graph sparse (few edges). While <span class="math inline">\(\theta\)</span> is not Gaussian, the results from HUGE aren’t unreasonable.</p>
-<div class="figure" style="text-align: center"><span id="fig:topic-corr"></span>
-<img src="06-text-mining_files/figure-html/topic-corr-1.png" alt="Correlation between topics." width="960" />
-<p class="caption">
+<p>Clusters of related topics can be seen in the topic correlation plot. See <a href="https://rdrr.io/cran/stm/man/topicCorr.html">documentation of <code>topicCorr</code> in the <code>stm</code> package</a> for more details. Here we use a high-dimensional undirected graphical (HUGE) model <span class="citation">(Zhao et al. <a href="references.html#ref-Zhao2012" role="doc-biblioref">2012</a>)</span> to estimate the topic correlation graph. The topic proportions (<span class="math inline">\(\theta\)</span>) are assumed to be multivariate Gaussian, and HUGE tries to identify edges connecting topics that are not independent from each other conditioned on everything else, while trying to keep the graph sparse (few edges). While <span class="math inline">\(\theta\)</span> is not Gaussian, the results from HUGE aren’t unreasonable.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:topic-corr"></span>
+<img src="06-text-mining_files/figure-html/topic-corr-1.png" alt="Correlation between topics." width="100%"><p class="caption">
 Figure 6.5: Correlation between topics.
 </p>
 </div>
 <p>Indeed, cancer, botany, neuroscience, and technical topics tend to cluster together, although this is not the case for immunology and development.</p>
 </div>
 <div id="word-time" class="section level2">
-<h2><span class="header-section-number">6.2</span> Changes of word usage through time</h2>
+<h2>
+<span class="header-section-number">6.2</span> Changes of word usage through time<a class="anchor" aria-label="anchor" href="#word-time"><i class="fas fa-link"></i></a>
+</h2>
 <p>We binned dates into years and tested for association of word proportion in each year with the year by fitting a logistic regression model and checking significance of the coefficient for year; word frequency per year since 2001 for the significant words (after Benjamini-Hochberg multiple testing correction) are shown in Figure <a href="text-mining.html#fig:wbt">6.6</a>. Because too many words are significant, only top 10 from words with decreasing frequency and top 10 with increasing frequency are plotted.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:wbt"></span>
-<img src="06-text-mining_files/figure-html/wbt-1.png" alt="Word frequency over time since 2001 for words significantly associated with time, sorted from the most decreasing to the most increasing in frequency in time according to the slope in the model. The adjusted p-value of each word is shown. Vertical line marks June 6, 2008, when the first paper about RNA-seq was published (Nagalakshmi et al. 2008)." width="960" />
-<p class="caption">
-Figure 6.6: Word frequency over time since 2001 for words significantly associated with time, sorted from the most decreasing to the most increasing in frequency in time according to the slope in the model. The adjusted p-value of each word is shown. Vertical line marks June 6, 2008, when the first paper about RNA-seq was published <span class="citation">(Nagalakshmi et al. <a href="#ref-Nagalakshmi2008" role="doc-biblioref">2008</a>)</span>.
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:wbt"></span>
+<img src="06-text-mining_files/figure-html/wbt-1.png" alt="Word frequency over time since 2001 for words significantly associated with time, sorted from the most decreasing to the most increasing in frequency in time according to the slope in the model. The adjusted p-value of each word is shown. Vertical line marks June 6, 2008, when the first paper about RNA-seq was published (Nagalakshmi et al. 2008)." width="100%"><p class="caption">
+Figure 6.6: Word frequency over time since 2001 for words significantly associated with time, sorted from the most decreasing to the most increasing in frequency in time according to the slope in the model. The adjusted p-value of each word is shown. Vertical line marks June 6, 2008, when the first paper about RNA-seq was published <span class="citation">(Nagalakshmi et al. <a href="references.html#ref-Nagalakshmi2008" role="doc-biblioref">2008</a>)</span>.
 </p>
 </div>
 <p>Here we see that words and phrases associated with microarray and RNA amplification have declined in frequency, while words associated with RNA-seq, single cell, as well as words discussing molecular mechanisms have increased in frequency (Figure <a href="text-mining.html#fig:wbt">6.6</a>). While transcripts from LCM samples from recent studies were still amplified, the relevant terms decreased in frequency probably because more recent studies, such as ones in the curated database, tend to cite established protocols and kits of library preparation that do the amplification such as Smart-seq2 rather than discussing amplification directly. The “spatial” is associated with current era techniques. Such trends can also be clustered and shown in a heatmap.</p>
-<div class="figure" style="text-align: center"><span id="fig:word-heat"></span>
-<img src="06-text-mining_files/figure-html/word-heat-1.png" alt="Heat map clustering changes in word frequency over time. The rows of the matrix are normalized, only showing trend rather than frequency." width="768" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:word-heat"></span>
+<img src="06-text-mining_files/figure-html/word-heat-1.png" alt="Heat map clustering changes in word frequency over time. The rows of the matrix are normalized, only showing trend rather than frequency." width="100%"><p class="caption">
 Figure 6.7: Heat map clustering changes in word frequency over time. The rows of the matrix are normalized, only showing trend rather than frequency.
 </p>
 </div>
-<p>Some words have increased in frequency, especially since 2015 (Figure <a href="text-mining.html#fig:word-heat">6.7</a>). Some words sharply decreased in frequency in the early 2000s. However, some words have increased in frequency, peaking in the late 2000s and early 2010s, before declining. Among the terms whose frequency peaked around the early 2010s are “microarray” and “microarray analysis”, perhaps because while RNA-seq was introduced in 2008, microarray did not immediately become obsolete, or perhaps because microarray results are often compared to RNA-seq results, though perhaps wordings changed through the 2000s so the “cDNA” in “cDNA microarray” was omitted (Figure <a href="text-mining.html#fig:wbt">6.6</a>). Frequency of “real time PCR” also declined, probably because real time PCR was often performed along side microarray but not scRNA-seq to corroborate microarray results (e.g. <span class="citation">(Cunnea et al. <a href="#ref-Cunnea2010" role="doc-biblioref">2010</a>; Kitamura et al. <a href="#ref-Kitamura2017" role="doc-biblioref">2017</a>)</span>), so usage of this term declined with the decline of the cDNA microarray. Besides microarray related terms, some of the words that decreased in frequency are biological terms related to cancer. The “frequency” here is the proportion of all words from all abstracts of a year taken up by a word; the decline in proportion can either be due to decline in interest in the topics that use the word or growth in other topics that don’t use the word. This will be explored further in the next section.</p>
+<p>Some words have increased in frequency, especially since 2015 (Figure <a href="text-mining.html#fig:word-heat">6.7</a>). Some words sharply decreased in frequency in the early 2000s. However, some words have increased in frequency, peaking in the late 2000s and early 2010s, before declining. Among the terms whose frequency peaked around the early 2010s are “microarray” and “microarray analysis”, perhaps because while RNA-seq was introduced in 2008, microarray did not immediately become obsolete, or perhaps because microarray results are often compared to RNA-seq results, though perhaps wordings changed through the 2000s so the “cDNA” in “cDNA microarray” was omitted (Figure <a href="text-mining.html#fig:wbt">6.6</a>). Frequency of “real time PCR” also declined, probably because real time PCR was often performed along side microarray but not scRNA-seq to corroborate microarray results (e.g. <span class="citation">(Cunnea et al. <a href="references.html#ref-Cunnea2010" role="doc-biblioref">2010</a>; Kitamura et al. <a href="references.html#ref-Kitamura2017" role="doc-biblioref">2017</a>)</span>), so usage of this term declined with the decline of the cDNA microarray. Besides microarray related terms, some of the words that decreased in frequency are biological terms related to cancer. The “frequency” here is the proportion of all words from all abstracts of a year taken up by a word; the decline in proportion can either be due to decline in interest in the topics that use the word or growth in other topics that don’t use the word. This will be explored further in the next section.</p>
 </div>
 <div id="topic-time" class="section level2">
-<h2><span class="header-section-number">6.3</span> Changes of topic prevalence through time</h2>
+<h2>
+<span class="header-section-number">6.3</span> Changes of topic prevalence through time<a class="anchor" aria-label="anchor" href="#topic-time"><i class="fas fa-link"></i></a>
+</h2>
 <p>We tested for association of prevalence of each of the 50 topics with time using the <code>estimateEffect</code> function in the <code>stm</code> package. Samples of the parameters were taken from the variational posterior of the <code>stm</code> model to estimate the variances of the slopes of the linear model of topic prevalence vs. date published, as well as to test whether topic prevalence is significantly associated with time. The p-values of the slopes were corrected for multiple hypothesis testing with the Benjamini-Hochberg method. While the linear model only captures monotonous changes, a more flexible model, such as b-spline transform of the date, was not used because of the modest size of this corpus – on average, each topic has only 45 abstracts, though some topics are larger and some smaller.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:topic-trends"></span>
-<img src="06-text-mining_files/figure-html/topic-trends-1.png" alt="Topic prevalence over time since 2001 with fitted linear model. Gray ribbon indicates 95% confidence interval (CI) of the slope, estimated from the samples of the variational posterior of the stm model. Vertical line indicates advent of RNA-seq in 2008. Light blue facet strip means decreasing trend with adjusted p &lt; 0.05, and pink strip means increasing." width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:topic-trends"></span>
+<img src="06-text-mining_files/figure-html/topic-trends-1.png" alt="Topic prevalence over time since 2001 with fitted linear model. Gray ribbon indicates 95% confidence interval (CI) of the slope, estimated from the samples of the variational posterior of the stm model. Vertical line indicates advent of RNA-seq in 2008. Light blue facet strip means decreasing trend with adjusted p &lt; 0.05, and pink strip means increasing." width="100%"><p class="caption">
 Figure 6.8: Topic prevalence over time since 2001 with fitted linear model. Gray ribbon indicates 95% confidence interval (CI) of the slope, estimated from the samples of the variational posterior of the <code>stm</code> model. Vertical line indicates advent of RNA-seq in 2008. Light blue facet strip means decreasing trend with adjusted p &lt; 0.05, and pink strip means increasing.
 </p>
 </div>
 <p>As many topics have statistically significant associations with time, only the top 10 most decreasing and top 10 most decreasing topics are plotted here (that’s what I intended, but there were only 8 significantly decreasing topics, so top 12 increasing topics are shown). In the early 2000s, a major topic of research about LCM was reliability of T7-based PCR amplification of the small amount of transcripts from samples for microarray, but the prevalence of this topic (topic 41) has declined over time (Figure <a href="text-mining.html#fig:wbt">6.6</a>, Figure <a href="text-mining.html#fig:topic-trends">6.8</a>). The reason for such decline can be a combination of the following: First, other topics in neuroscience and botany emerged and grew (Figure <a href="text-mining.html#fig:topic-trends">6.8</a>); some of them are now among the most prevalent topics (Figure <a href="text-mining.html#fig:topics">6.3</a>). Second, usage of terms related to microarray and RNA amplification for microarray declined while usage of terms related to RNA-seq increased after 2008 due to the advent of RNA-seq because the latter replaced microarray as the transcriptomics method of choice, so the decline is expected (Figure <a href="text-mining.html#fig:wbt">6.6</a>). Also as expected, prevalence of topics in data analysis (topic 4) and spatial single cell and imaging technologies (topic 37) increased. Interestingly, cancer topics are among the most significantly decreasing (Figure <a href="text-mining.html#fig:word-heat">6.7</a>, Figure <a href="text-mining.html#fig:topic-trends">6.8</a>). Because unlike cDNA microarray, these topics are still relevant today, such decline is puzzling.</p>
 <p>Next, we checked whether whether the rise of topics not directly related to cancer may be relevant to the decline of proportions of cancer topics. In <code>stm</code>, the abstracts are not hard assigned to topics. Rather, each abstract has a proportion of each topic, and abstracts often have over 90% of one topic. Here, for simplicity, we say an abstract “has” a topic if the proportion of the topic in the abstract is at least 25%.</p>
 (ref:topic-count-cap) Number of abstracts with each topic whose proportions changed the most in time. Gray ribbon is the 95% CI of the line fitted to the count per year.
-<div class="figure" style="text-align: center"><span id="fig:topic-count"></span>
-<img src="06-text-mining_files/figure-html/topic-count-1.png" alt="(ref:topic-count-cap)" width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:topic-count"></span>
+<img src="06-text-mining_files/figure-html/topic-count-1.png" alt="(ref:topic-count-cap)" width="100%"><p class="caption">
 Figure 6.9: (ref:topic-count-cap)
 </p>
 </div>
 <p>When the number of abstracts with each topic is plotted, the declines are less drastic or reversed while the increases became much more drastic, especially after 2015, perhaps due to the rise of scRNA-seq, whose library preparation methods made it possible to quantify transcripts from small amount of tissues from LCM (Figure <a href="text-mining.html#fig:topic-count">6.9</a>). These trends don’t necessarily correspond to the overall trend across the corpus (Figure <a href="text-mining.html#fig:lcm-year">6.1</a>). Then we see in recent years a diversification of topics that may be related to LCM from search results, resulting into decrease of proportion of some older topics the interest in which might not have drastically decreased if not somewhat increased, though not increasing as quickly as other topics. Nevertheless, it is clear that some cancer topics have decreased even in counts. However, remember that some of the <code>stm</code> topics seem to be mixtures of multiple topics recognizable by humans and these <code>stm</code> topics might have picked up aspects of the abstracts less readily noticed by humans. In other words, it might not be that interest in some cancers decreased per se, but thanks to scRNA-seq, the way these cancers are discussed changed, using words that contributed to other, growing topics. Furthermore, because so many different topics are drastically growing in recent years, the increase in proportion of each of them became less drastic.</p>
-<div class="figure" style="text-align: center"><span id="fig:topic-corr-trend"></span>
-<img src="06-text-mining_files/figure-html/topic-corr-trend-1.png" alt="Correlation between topics colored by both broad categories of the topics and whether its proportion increased, decreased, or did not significantly change (n.s.)." width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:topic-corr-trend"></span>
+<img src="06-text-mining_files/figure-html/topic-corr-trend-1.png" alt="Correlation between topics colored by both broad categories of the topics and whether its proportion increased, decreased, or did not significantly change (n.s.)." width="100%"><p class="caption">
 Figure 6.10: Correlation between topics colored by both broad categories of the topics and whether its proportion increased, decreased, or did not significantly change (n.s.).
 </p>
 </div>
 <p>Now return to the topic correlation graph, and all the 50 topics, along with their trends, are shown (Figure <a href="text-mining.html#fig:topic-corr-trend">6.10</a>). Overall, cancer topics tend to be decreasing in proportion. As already seen in Figure <a href="text-mining.html#fig:topic-count">6.9</a>, this is in part due to growth in non-cancer topics but in part due to decline in some cancer topics. Botany and neuroscience topics tend to increase in proportion. This trend is also evident in the topic correlations. Microarray and RNA amplification (topic 41) is correlated with a cancer topic, while spatial single cell and imaging (topic 37) and data analysis (topic 4) are correlated with neuroscience topics. Topic 27, which is about single cell profiling of tumors, has grown, perhaps due to the growth of scRNA-seq. Possibly, as cancer is still relevant, the decline in some cancer topics fed into topic 27 as tumors are examined at the single cell level.</p>
 </div>
 <div id="association-of-topics-with-city" class="section level2">
-<h2><span class="header-section-number">6.4</span> Association of topics with city</h2>
+<h2>
+<span class="header-section-number">6.4</span> Association of topics with city<a class="anchor" aria-label="anchor" href="#association-of-topics-with-city"><i class="fas fa-link"></i></a>
+</h2>
 <p>Again, with the <code>estimateEffects</code> function, we identify cities associated with certain topics. Some topics might be more spread out, while some some may be confined to a few institutions, which are approximated by city here because it’s more difficult to automatically extract institutions from the author address on PubMed than cities. Some institutions might specialize in certain topics. Also note that while for PubMed papers, the cities of the first author are used, because the first author has greater contribution to the paper, only the address of the corresponding author is available from the bioRxiv API. Furthermore, multiple institutions across continents may collaborate on one paper, so the cities here only give a rough idea where LCM related research takes place. Here only the names of the cities are used, with the state and country they are in to distinguish between cities with the same name, without the longitude and latitude, because we don’t expect an association between topic and the coordinates in and of themselves, nor do we expect spatial autocorrelation of the topics.</p>
-<div class="figure" style="text-align: center"><span id="fig:topic-loc"></span>
-<img src="06-text-mining_files/figure-html/topic-loc-1.png" alt="Cities associated with topics (p &lt; 0.005) shown on a map." width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:topic-loc"></span>
+<img src="06-text-mining_files/figure-html/topic-loc-1.png" alt="Cities associated with topics (p &lt; 0.005) shown on a map." width="100%"><p class="caption">
 Figure 6.11: Cities associated with topics (p &lt; 0.005) shown on a map.
 </p>
 </div>
@@ -402,28 +228,30 @@ Figure 6.11: Cities associated with topics (p &lt; 0.005) shown on a map.
 <p>Association of a topic with an institution that used to greatly contribute to the topic but then stopped might also explain why some topics declined in prevalence over time although drastic growth in other topics might be a better explanation (Figure <a href="text-mining.html#fig:topic-trends">6.8</a>, <a href="text-mining.html#fig:topic-count">6.9</a>). Topic 29 prominently features the bone growth plate though this <code>stm</code> topic has entries for other biological systems as well. These bone growth plate papers come from Upstate Medical University in Syracuse, New York, from 2005 to 2010. Decline in topic 29 might be related to cessation of study of the growth plate at this institution after 2010, though other institutions have not picked up this topic afterwards. Institute of Human Genetics and Anthropology, Friedrich-Schiller-University in Jena, Germany greatly contributed to cancer proteomics (topic 10) between 2004 and 2011 but then stopped, though other institutions carried on studying this topic. Kyushu University Beppu Hospital in Japan greatly contributed to quantitative analyses in cancer (topic 6) from 2005 to 2014, although other institutions continue contributing to this topic, whose paper count actually increased over time although the topic’s proportion decreased due to drastic growth in other topics (<a href="text-mining.html#fig:topic-count">6.9</a>). The vast majority of LCM related publications from Sendai, Japan are about breast cancer (topic 13), from between 2007 to 2017, which is why Sendai is associated with this city although this topic is widespread.</p>
 <p>Association of a city with a topic can also be visualized with topic proportion in each city from <code>estimateEffect</code> (Figure <a href="text-mining.html#fig:city-pe">6.12</a>). Here topic 45 (soil microbiome and nitrogen fixation) is plotted, but readers on RStudio Cloud can try other topics.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:city-pe"></span>
-<img src="06-text-mining_files/figure-html/city-pe-1.png" alt="Proportion of topic 45 in each city. Error bars are 95% CI of the point estimate." width="576" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:city-pe"></span>
+<img src="06-text-mining_files/figure-html/city-pe-1.png" alt="Proportion of topic 45 in each city. Error bars are 95% CI of the point estimate." width="576"><p class="caption">
 Figure 6.12: Proportion of topic 45 in each city. Error bars are 95% CI of the point estimate.
 </p>
 </div>
 <p>Here “disproportionate” means disproportionate within this corpus of LCM related search results. Institutions with “disproportionate” contribution to a topic do not necessarily dominate such topic although the topic may dominate the institution, i.e. the topic takes up a very large proportion of abstracts from this institution within this corpus. Nor are these institutions necessarily elite; this analysis might be an interesting way to discover labs from not so well-known institutions that may be outstanding in some topics. The institutions are often not elite because elite institutions often greatly contribute to many topics, weakening the association of the institution to the topic. Except for growth plate in Syracuse, we have not identified topics largely confined to an institution.</p>
 </div>
 <div id="glove" class="section level2">
-<h2><span class="header-section-number">6.5</span> GloVe word embedding</h2>
-<p>We used global vector (GloVe) embedding to identify linear substructures in the word vector space of the LCM transcriptomics abstract corpus and to identify contexts <span class="citation">(Pennington, Socher, and Manning, <a href="#ref-Pennington" role="doc-biblioref">n.d.</a>)</span>. In GloVe embedding, words are represented by vectors. Words with similar meanings tend to be closer together in this vector space, and differences between word vectors can encode meaning as well. The “meanings” come from the context, or word co-occurrence. GloVe was devised to find a word embedding with properties like “king” - “man” + “woman” = “queen” or “ice” - “solid” + “gas” = “steam”, and related words like “cancer” and “tumor” are close together but both are far from unrelated words like “flower”.</p>
+<h2>
+<span class="header-section-number">6.5</span> GloVe word embedding<a class="anchor" aria-label="anchor" href="#glove"><i class="fas fa-link"></i></a>
+</h2>
+<p>We used global vector (GloVe) embedding to identify linear substructures in the word vector space of the LCM transcriptomics abstract corpus and to identify contexts <span class="citation">(Pennington, Socher, and Manning, <a href="references.html#ref-Pennington" role="doc-biblioref">n.d.</a>)</span>. In GloVe embedding, words are represented by vectors. Words with similar meanings tend to be closer together in this vector space, and differences between word vectors can encode meaning as well. The “meanings” come from the context, or word co-occurrence. GloVe was devised to find a word embedding with properties like “king” - “man” + “woman” = “queen” or “ice” - “solid” + “gas” = “steam”, and related words like “cancer” and “tumor” are close together but both are far from unrelated words like “flower”.</p>
 <p>This corpus was used to train a 125 dimensional embedding, and the embeddings of words occurring more than 30 times in the corpus were projected to lower dimensions with principal component analysis (PCA) to find axes explaining the most variance in the embedding, hopefully identifying dominant axes of meaning within this corpus. The words are also Louvain clustered in the embedding space to find clusters of words related in meaning.</p>
-<div class="figure" style="text-align: center"><span id="fig:pca-elbow"></span>
-<img src="06-text-mining_files/figure-html/pca-elbow-1.png" alt="Proportion of variance explained by each of the first 20 principal components (PC)." width="576" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pca-elbow"></span>
+<img src="06-text-mining_files/figure-html/pca-elbow-1.png" alt="Proportion of variance explained by each of the first 20 principal components (PC)." width="576"><p class="caption">
 Figure 6.13: Proportion of variance explained by each of the first 20 principal components (PC).
 </p>
 </div>
 <p>The first principal component (PC) explains over 5% of the variance, and then the “elbow” is at PC5.</p>
-<div class="figure" style="text-align: center"><span id="fig:pc12"></span>
-<img src="06-text-mining_files/figure-html/pc12-1.png" alt="Projection of word embeddings into the first 2 PCs. Each point is a word occuring over 30 times in the corpus. Not all words are labeled to avoid overlaps in the labels. Words and points are colored by Louvain clusters." width="864" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pc12"></span>
+<img src="06-text-mining_files/figure-html/pc12-1.png" alt="Projection of word embeddings into the first 2 PCs. Each point is a word occuring over 30 times in the corpus. Not all words are labeled to avoid overlaps in the labels. Words and points are colored by Louvain clusters." width="100%"><p class="caption">
 Figure 6.14: Projection of word embeddings into the first 2 PCs. Each point is a word occuring over 30 times in the corpus. Not all words are labeled to avoid overlaps in the labels. Words and points are colored by Louvain clusters.
 </p>
 </div>
@@ -433,17 +261,17 @@ Figure 6.14: Projection of word embeddings into the first 2 PCs. Each point is a
 Note that when the PCA plot is made on different computers, the signs of PCs might flip, because the sign does not affect the magnitude of the eigenvalue (i.e. variance explained). PCs are eigenvectors of the covariance matrix of the GloVe dimensions; an eigenvector multiplied by a scalar is still an eigenvector with the same eigenvalue.
 </div>
 
-<div class="figure" style="text-align: center"><span id="fig:pc34"></span>
-<img src="06-text-mining_files/figure-html/pc34-1.png" alt="Projection of word embeddings into the 3rd and 4th PCs." width="864" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pc34"></span>
+<img src="06-text-mining_files/figure-html/pc34-1.png" alt="Projection of word embeddings into the 3rd and 4th PCs." width="100%"><p class="caption">
 Figure 6.15: Projection of word embeddings into the 3rd and 4th PCs.
 </p>
 </div>
 <p>PC3 separates processes and interactions (cluster 6, left) from entities of samples, tissues, organs, and diseases (clusters 3, 4, 7, right). PC4 separates the molecular and cellular (bottom left) and the quantitative (clusters 1 and 3, bottom right) from the qualitative (top). Some of the qualitative terms are used to discuss implications of results of the papers (clusters 2 and 6, top left) (Figure <a href="text-mining.html#fig:pc34">6.15</a>).</p>
 <p>Now we have seen some important axes of meanings and types of words, which are not surprising given familiarity with the general structure of abstracts and applications of LCM. There must be more axes of meaning, as the first 4 PCs only explain about 12% of the total variance of word embeddings (Figure <a href="text-mining.html#fig:pca-elbow">6.13</a>). The clusters of words can be better visualized with UMAP, which is a non-linear dimension reduction method that tries to preserve distances between points but is most commonly used to project into 2 dimensions.</p>
-<div class="figure" style="text-align: center"><span id="fig:umap"></span>
-<img src="06-text-mining_files/figure-html/umap-1.png" alt="UMAP projection of word embeddings. Zoom in if reading the PDF version of this book." width="1248" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:umap"></span>
+<img src="06-text-mining_files/figure-html/umap-1.png" alt="UMAP projection of word embeddings. Zoom in if reading the PDF version of this book." width="100%"><p class="caption">
 Figure 6.16: UMAP projection of word embeddings. Zoom in if reading the PDF version of this book.
 </p>
 </div>
@@ -451,92 +279,44 @@ Figure 6.16: UMAP projection of word embeddings. Zoom in if reading the PDF vers
 
 </div>
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Cunnea2010">
-<p>Cunnea, Paula, Jill McMahon, Enda O’Connell, Kaveh Mashayekhi, Una Fitzgerald, and Stephen McQuaid. 2010. “Gene expression analysis of the microvascular compartment in multiple sclerosis using laser microdissected blood vessels.” <em>Acta Neuropathologica</em> 119 (5): 601–15. <a href="https://doi.org/10.1007/s00401-009-0618-9">https://doi.org/10.1007/s00401-009-0618-9</a>.</p>
-</div>
-<div id="ref-Kitamura2017">
-<p>Kitamura, S, T Tanahashi, E Aoyagi, T Nakagawa, K Okamoto, T Kimura, H Miyamoto, et al. 2017. “Response Predictors of S-1, Cisplatin, and Docetaxel Combination Chemotherapy for Metastatic Gastric Cancer: Microarray Analysis of Whole Human Genes.” <em>Oncology</em> 93 (2): 127–35. <a href="https://doi.org/10.1159/000464329">https://doi.org/10.1159/000464329</a>.</p>
-</div>
-<div id="ref-Luo1999">
-<p>Luo, Lin, Ranelle C. Salunga, Hongqing Guo, Anton Bittner, K. C. Joy, Jose E. Galindo, Huinian Xiao, et al. 1999. “Gene expression profiles of laser-captured adjacent neuronal subtypes.” <em>Nature Medicine</em> 5 (1): 117–22. <a href="https://doi.org/10.1038/4806">https://doi.org/10.1038/4806</a>.</p>
-</div>
-<div id="ref-Nagalakshmi2008">
-<p>Nagalakshmi, Ugrappa, Zhong Wang, Karl Waern, Chong Shou, Debasish Raha, Mark Gerstein, and Michael Snyder. 2008. “The Transcriptional Landscape of the Yeast Genome Defined by RNA Sequencing.” <em>Science</em> 320 (5881): 1344–9. <a href="https://doi.org/10.1126/science.1158441">https://doi.org/10.1126/science.1158441</a>.</p>
-</div>
-<div id="ref-Pennington">
-<p>Pennington, Jeffrey, Richard Socher, and Christopher D Manning. n.d. “GloVe: Global Vectors for Word Representation.”</p>
-</div>
-<div id="ref-Roberts2019">
-<p>Roberts, Margaret E., Brandon M. Stewart, and Dustin Tingley. 2019. “Stm: An R package for structural topic models.” <em>Journal of Statistical Software</em> 91. <a href="https://doi.org/10.18637/jss.v091.i02">https://doi.org/10.18637/jss.v091.i02</a>.</p>
-</div>
-<div id="ref-Zhao2012">
-<p>Zhao, Tuo, Han Liu, Kathryn Roeder, John Lafferty, and Larry Wasserman. 2012. “The Huge Package for High-Dimensional Undirected Graph Estimation in R.” <em>J. Mach. Learn. Res.</em> 13 (null): 1059–62.</p>
-</div>
-</div>
-            </section>
+  <div class="chapter-nav">
+<div class="prev"><a href="current-techs.html"><span class="header-section-number">5</span> Current era technologies</a></div>
+<div class="next"><a href="current-analysis.html"><span class="header-section-number">7</span> Data analysis in the current era</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#text-mining"><span class="header-section-number">6</span> Text mining LCM transcriptomics abstracts</a></li>
+<li><a class="nav-link" href="#topic-model"><span class="header-section-number">6.1</span> Topic modeling</a></li>
+<li><a class="nav-link" href="#word-time"><span class="header-section-number">6.2</span> Changes of word usage through time</a></li>
+<li><a class="nav-link" href="#topic-time"><span class="header-section-number">6.3</span> Changes of topic prevalence through time</a></li>
+<li><a class="nav-link" href="#association-of-topics-with-city"><span class="header-section-number">6.4</span> Association of topics with city</a></li>
+<li><a class="nav-link" href="#glove"><span class="header-section-number">6.5</span> GloVe word embedding</a></li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="current-techs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="current-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/pachterlab/LP_2021/tree/main/supplement/blob/master/06-text-mining.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/pachterlab/LP_2021/tree/main/supplement/edit/master/06-text-mining.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, <a href="mailto:dlu2@caltech.edu" class="email">dlu2@caltech.edu</a>, Lior Pachter, <a href="mailto:lpachter@caltech.edu" class="email">lpachter@caltech.edu</a>. It was last built on 2021-09-12.</p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": true,
-"facebook": false,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": null,
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["museumst.pdf"],
-"toc": {
-"collapse": "subsection",
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "fixed"
-},
-"search": true,
-"info": true
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -548,7 +328,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>

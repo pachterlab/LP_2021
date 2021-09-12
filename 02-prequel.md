@@ -10,22 +10,18 @@ Some previous reviews on spatial transcriptomics start the history of spatial tr
 
 We call this body of literature "prequel", because first, its origin predates LCM microarray. Second, unlike most technologies covered by existing spatial transcriptomics reviews, the techniques used were not multiplexed and were less quantitative, and as a result, they have fallen out of favor. In contrast, what comes after "prequel" will be called "current", although the prequel and current eras chronologically overlap. Given what current era spatial transcriptomics is commonly perceived to be, here "prequel" is broadly defined as methods that fulfill the more relaxed definition of "spatial transcriptomics" in this book, but do not involve cDNA microarray, next generation sequencing (NGS), or single molecular imaging.
 
-There are 204 prequel papers in our database. Prequel literature is included in the database and covered here for the following reasons. First, the legacy of the prequel era has influenced more recent spatial transcriptomic research; the present and future are shaped by the past. For example, spatial reconstruction of scRNA-seq data in Seurat v1 [@Satija2015], the Achim et al. *Platynereis* study [@Achim2015], `DistMap` [@Karaiskos2017], and the Zeisel et al. Mouse Brain Atlas [@Zeisel2018] used (WM)ISH atlases as spatial references. Recent Spatial Transcriptomics^TM^ (ST) mouse brain data are still compared to the ISH atlas of Allen Brain Atlas (ABA) [@Ortiz2020; @Chen2020]. A study on spatial reconstruction of scATAC-seq data compared the *in silico* reconstruction to the FlyLight *Drosophila* enhancer atlas [@Jenett2012; @BravoGonzalez-Blas2020]. Hence prequel resources can still be useful in the current era. Second, some features of the prequel era may benefit future spatial transcriptomics studies; this will be discussed after more recent technologies are reviewed. Third, the various quests in the current era have already begun in the prequel era, and this history can show where we are in these quests.
+There are 204 prequel papers in our database. Prequel literature is included in the database and covered here for the following reasons. First, the legacy of the prequel era has influenced more recent spatial transcriptomic research; the present and future are shaped by the past. For example, spatial reconstruction of scRNA-seq data in Seurat v1 [@Satija2015], the Achim et al. *Platynereis* study [@Achim2015], `DistMap` [@Karaiskos2017], and the Zeisel et al. Mouse Brain Atlas [@Zeisel2018] used (WM)ISH atlases as spatial references. Recent Spatial Transcriptomics^TM^ (ST) mouse brain data are still compared to the ISH atlas of Allen Brain Atlas (ABA) [@Ortiz2020; @Chen2020]. A study on spatial reconstruction of scATAC-seq data compared the *in silico* reconstruction to the FlyLight *Drosophila* enhancer atlas [@Jenett2012; @BravoGonzalez-Blas2020]. Hence prequel resources can still be useful in the current era. We expand on this in Chapter \@ref(current). Second, some features of the prequel era may benefit future spatial transcriptomics studies; this will be discussed after more recent technologies are reviewed. Third, the various quests in the current era have already begun in the prequel era, and this history can show how the coming together of new technologies made us better at achieving the previous generation's dreams.
 
-Fourth, as shown later in this book, existing current era spatial transcriptomics data are by and large from humans and mice, and especially the brain (Figure \@ref(fig:species-pie), Figure \@ref(fig:anat1)). For other model and non-model organisms (e.g. *Xenopus laevis* [@Bowes2009; @XDB3], *Ciona intestinalis* [@Satou2001], *Danio rerio* [@Sprague2003; @Belmamoune2008], *Oryzias latipes* [@Henrich2003], *Gallus gallus* [@Bell2004], *Taeniopygia guttata* [@Lovell2020], and to some extent, even *Drosophila melanogaster* [@Tomancak2002; @LuengoHendriks2006a]), some tissues other than the brain (e.g. lung [@Ardini-Poleske2017], retina [@Blackshaw2004], genitourinary tract [@Harding2011]), and miRNAs [@Ahmed2015; @Karali2010; @Diez-Roux2011; @Aboobaker2005; @Wienholds2005; @Darnell2006], the most comprehensive spatial transcriptomic resources, if any are are available at all, are still (WM)ISH atlases. For plants, the most comprehensive resources can still be enhancer and gene trap screens [@Johnson2005; @Nakayama2005]. Hence, while current era technologies may produce more quantitative and highly multiplexed data, they have not completely superseded (WM)ISH atlases. Finally, the historical literature is curated for the same reason why museums and libraries keep historical maps and scientific works that have been superseded by more recent work; it is part of our heritage.
+Fourth, as shown later in this book, existing current era spatial transcriptomics data are by and large from humans and mice, and especially the brain (Figure \@ref(fig:species-pie), Figure \@ref(fig:anat1)). For other model and non-model organisms (e.g. *Xenopus laevis* [@Bowes2009; @XDB3], *Ciona intestinalis* [@Satou2001], *Danio rerio* [@Sprague2003; @Belmamoune2008], *Oryzias latipes* [@Henrich2003], *Gallus gallus* [@Bell2004], *Taeniopygia guttata* [@Lovell2020], and to some extent, even *Drosophila melanogaster* [@Tomancak2002; @LuengoHendriks2006a]), some tissues other than the brain (e.g. lung [@Ardini-Poleske2017], retina [@Blackshaw2004], genitourinary tract [@Harding2011]), and miRNAs [@Ahmed2015; @Karali2010; @Diez-Roux2011; @Aboobaker2005; @Wienholds2005; @Darnell2006], the most comprehensive spatial transcriptomic resources, if any are are available at all, are still (WM)ISH atlases. For plants, the most comprehensive resources can still be enhancer and gene trap screens [@Johnson2005; @Nakayama2005]. Hence, while current era technologies may produce more quantitative and highly multiplexed data, they have not completely superseded (WM)ISH atlases. This may be likened to the Jet Age in the history of aviation. While massive jet airliners made aviation available to the masses so when most people fly they fly with jets, jet airliners have not completely superseded airplanes with reciprocating engines and propellers; the latter are still very common in general aviation. Finally, the historical literature is curated for the same reason why museums and libraries keep historical maps and scientific works that have been superseded by more recent work; it is part of our heritage.
 
 An overall timeline for prequel techniques is shown in Figure \@ref(fig:tl1), which will be discussed in more details in the rest of this chapter.
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/tl1-1} 
-
-}
-
-\caption{Timeline of prequel techniques.}(\#fig:tl1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/tl1-1.png" alt="Timeline of prequel techniques." width="100%" />
+<p class="caption">(\#fig:tl1)Timeline of prequel techniques.</p>
+</div>
 
 ## Enhancer and gene traps {#traps}
 
@@ -35,14 +31,10 @@ The first enhancer trap screen in *Drosophila melanogaster* was published in 198
 
 (ref:trap) Illustrations of enhancer trap as described in [@OKane1987] and gene trap as described in [@Gossler1989] (Created with BioRender.com).
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{fig1A} 
-
-}
-
-\caption{(ref:trap)}(\#fig:trap1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="fig1A.png" alt="(ref:trap)" width="100%" />
+<p class="caption">(\#fig:trap1)(ref:trap)</p>
+</div>
 
 Since then, different vectors have been developed for better efficiency and flexibility [@Stanford2001], and enhancer traps have been applied at increasing scale. The 1987 study recovered 39 lines [@OKane1987], possibly characterizing 39 genes, but already in 1989, over 3000 lines were possible in one study [@Bier1989]. Enhancer trapping was also adapted to other species, such as mouse [@Gossler1989; @Allen1988] and *Arabidopsis thaliana* [@Sundaresan1995].
 
@@ -60,14 +52,10 @@ In the 1980s and 1990s, with increasing throughput of Sanger sequencing and the 
 
 (ref:hist1c) Number of publications over time in the prequel era, broken down by technique and colored by species. The gray histogram in the background is the histogram for all prequel publications over time. The bin width of this histogram is 365 days. Here WMISH and ISH exclude fluorescent ISH (FISH).
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/hist1-1} 
-
-}
-
-\caption{(ref:hist1c)}(\#fig:hist1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/hist1-1.png" alt="(ref:hist1c)" width="100%" />
+<p class="caption">(\#fig:hist1)(ref:hist1c)</p>
+</div>
 
 ## In situ reporter {#in-situ-reporter}
 
@@ -97,14 +85,10 @@ The genes from which the clones come from were often unknown, so early (WM)ISH a
 
 (ref:itemc) Number of prequel publications over time, broken down by what the entities stained for were called and colored by species. Bin width is 365 days. Vertical line marks the date when the draft mouse reference genome was published [@Waterston2002], as context of transition from "clone" and "line" to "gene".
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/items-1} 
-
-}
-
-\caption{(ref:itemc)}(\#fig:items)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/items-1.png" alt="(ref:itemc)" width="100%" />
+<p class="caption">(\#fig:items)(ref:itemc)</p>
+</div>
 
 The rise of (WM)ISH atlases started before the completion of genome projects in humans and common model organisms, although their later growth was transformed by the reference genome. In the 2000s, with the availability of sequenced cDNA collections covering increasing proportion of predicted genes and the consequent rise of transcriptome-wide microarray [@Stapleton2002; @Carter2003], genes to be stained for in (WM)ISH atlases could be pre-screened based on microarray data of the tissue of interest, with probes made from cDNA clones readily available from such collections [@Yoshikawa2006; @Lein2004]. In addition, probes could be computationally designed based on reference genome sequences [@Lein2007]. Perhaps because of these developments, since the turn of the century, entities stained for have been predominantly referred to as "genes" (Figure \@ref(fig:items)). Notably, while radioactive ISH has been mostly replaced by non-radioactive ISH by the 2000s, there is a mouse hippocampus ISH atlas published in 2004 that used radioactive ISH to profile all of its 104 genes [@Lein2004]. 
 
@@ -112,25 +96,17 @@ Also with the rise of cDNA microarray in the late 1990s and early 2000s, some (W
 
 Since the 2000s, (WM)ISH atlases have been made for specific types of genes and a number of mouse tissues. In 2004, locked nucleic acid (LNA) modified oligonucleotide probes were introduced, greatly improving sensitivity of miRNA northern blot [@Valoczi2004] and made (WM)ISH atlases for miRNAs possible. The first miRNA WMISH atlas was published in 2005, which profiled 115 miRNAs in zebrafish embryos [@Wienholds2005]. Since then, miRNA atlases were created for mice [@Karali2010; @Diez-Roux2011; @Kloosterman2006], Drosophila [@Aboobaker2005], chicken [@Darnell2006], and Xenopus laevis [@Ahmed2015].
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/species-1} 
-
-}
-
-\caption{Number of (WM)ISH publications per species.}(\#fig:species)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/species-1.png" alt="Number of (WM)ISH publications per species." width="576" />
+<p class="caption">(\#fig:species)Number of (WM)ISH publications per species.</p>
+</div>
 
 While (WM)ISH atlases are available for several species, the mouse is by far the favored model organism (Figure \@ref(fig:species)). A timeline of the first (WM)ISH atlas for each of the species and some notable atlases are shown in Figure \@ref(fig:tl2). Especially for mice, atlases for other specific types of genes were published in the late 2000s and the 2010s, such as genes coding for RNA binding proteins [@McKee2005], fibroblast growth factors and their receptors [@Yaylaoglu2005], proteins with catalytic activities [@Cankaya2007], transcription factors and cofactors [@Yokoyama2009], metabolic enzymes and soluble carriers [@Geffers2013], cholesterol biosynthetic enzymes [@Sisecioglu2015], and ion channels (in rats) [@Shcherbatyy2014]. Among the mouse atlases, while the brain gets disproportionately strong interests, with the influential [ABA](https://portal.brain-map.org) [@Lein2007] and [GenePaint](https://gp3.mpg.de) [@Carson2002], ISH atlases exist for the eye [@Thut2001; @Blackshaw2004], genitourinary tract ([GenitoUrinary Development Molecular Anatomy Project (GUDMAP)](https://www.gudmap.org)) [@Harding2011], and lung ([LungMAP](https://lungmap.net)) [@Ardini-Poleske2017] (Figure \@ref(fig:tl2), Figure \@ref(fig:anat1)).
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/tl2-1} 
-
-}
-
-\caption{Timeline of the first (WM)ISH databases for each species for which such databases are available, as well as some notable databases.}(\#fig:tl2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/tl2-1.png" alt="Timeline of the first (WM)ISH databases for each species for which such databases are available, as well as some notable databases." width="100%" />
+<p class="caption">(\#fig:tl2)Timeline of the first (WM)ISH databases for each species for which such databases are available, as well as some notable databases.</p>
+</div>
 
 While the vast majority of (WM)ISH atlases used bright field imaging, a few used FISH (Figure \@ref(fig:hist1)), for advantages conferred by FISH discussed below. A notable FISH atlas is the Berkeley *Drosophila* Transcription Network Project ([BDTNP](http://www.cb.uu.se/~cris/BDTNP_Imaging.html)) from 2006 to 2008, which profiled expression patterns of 95 genes in the *Drosophila* embryo across 6 developmental stages up to the beginning of gastrulation [@Fowlkes2008; @LuengoHendriks2006a]. Two genes are imaged in each embryo, and the images of 1822 embryos were registered across both space and time to construct 3D virtual embryos on which patterns of different genes can be quantitatively compared [@Fowlkes2008]; the 3D imaging and penetration into the opaque yolk is made possible by two photon microscopy, in which only the fluorophores in the region of focus are excited [@LuengoHendriks2006a]. Another notable FISH atlas is [Fly-FISH](http://fly-fish.ccbr.utoronto.ca) from 2007, which profiled subcellular localization of transcripts of 3370 genes in *Drosophila* embryos [@Lecuyer2007]. While subcellular localization of transcripts can sometimes be discerned in bright field WMISH [@Tomancak2002], Fly-FISH shows higher subcellular resolution thanks to a FISH protocol using tyramide signal amplification. To our best knowledge, this is the first transcriptomic atlas of a multi-cellular organism to profile subcellular transcript localization. While more recent smFISH based methods record subcellular information, such information is typically not used in downstream analyses.
 
@@ -142,25 +118,17 @@ While the vast majority of (WM)ISH atlases used bright field imaging, a few used
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/anat1-1} 
-
-}
-
-\caption{A) Number of mouse publications per organ for (WM)ISH atlases (including FISH). B) Maximum number of genes in atlases for each organ, as of publication of the paper about the atlases. The color is in log scale to improve dynamic range.}(\#fig:anat1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/anat1-1.png" alt="A) Number of mouse publications per organ for (WM)ISH atlases (including FISH). B) Maximum number of genes in atlases for each organ, as of publication of the paper about the atlases. The color is in log scale to improve dynamic range." width="576" />
+<p class="caption">(\#fig:anat1)A) Number of mouse publications per organ for (WM)ISH atlases (including FISH). B) Maximum number of genes in atlases for each organ, as of publication of the paper about the atlases. The color is in log scale to improve dynamic range.</p>
+</div>
 
 WMISH was the most commonly used technique in the prequel era, followed by ISH (Figure \@ref(fig:tech1)). In summary, advances of non-radioactive ISH and WMISH from radioactive ISH, limitations of enhancer and gene trap and *in situ* reporter screens, cDNA collections that cover most of predicted genes, limitations of bulk microarray, reference genomes that allow for computational probe design, and ISH robots may have been responsible for the rise of (WM)ISH atlases. Another important factor may be the rise of digital photography and the internet in the 1990s, as developing thousands of analogue photos is an arduous task. Moreover, online digital atlases have been much more accessible to the wider community. Assuming that the number of publications in a field reflects interest in that field during a period of time, and if our collection is representative of the actual body of literature, then the golden age of the prequel era was the 2000s and WMISH was responsible for that peak, while section ISH and "collection", i.e. databases of gene expression patterns curated from publications and some (WM)ISH atlases, account for much of the interest after 2010 (Figure \@ref(fig:hist1)). The websites of many of the older (WM)ISH atlases are no longer accessible. However, some of the atlases from that period of time still live on in extant curated databases, which will be discussed in the next section.
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/tech1-1} 
-
-}
-
-\caption{Number of prequel publications per technique.}(\#fig:tech1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/tech1-1.png" alt="Number of prequel publications per technique." width="576" />
+<p class="caption">(\#fig:tech1)Number of prequel publications per technique.</p>
+</div>
 
 The golden age declined before the rise of current era spatial transcriptomics, which started around 2014 \@ref(fig:current-vs-prequel). What contributed to the decline of the golden age? Perhaps with proliferation of such atlases, curated databases exceeding 10,000 genes, and especially with over 20,000 genes in ABA mapped to a high quality 3D mouse brain model, there are already enough gene expression pattern resources for the most commonly studied genes, tissues (especially the brain), and developmental stages in the most common model organisms, thus making new atlases in those systems unnecessary. Moreover, in the last decade, the under-utilization of gene expression atlases [@DeBoer2009] may have reduced motivation to build new atlases. Or perhaps, more importantly, inherent limitations of non-multiplexed (WM)ISH contributed to the decline in interest in such methods. In these atlases, typically only one gene is stained for in each individual embryo or tissue section. Gene expression patterns of different genes can only be meaningfully compared and classified in tissues with a stereotypical structure, such as wild type embryos and the brain, but not tumors and pathological tissues, even though there is intense interest in spatial transcriptomics in tumors as evidenced by the LCM and ST literature \@ref(fig:topics). A large number of embryos or sections are required for such atlases, thus increasing cost and making human atlases extremely difficult and costly, if ethical at all. Furthermore, since the chromogenic reaction in bright field ISH can be prolonged to increase staining intensity, the patterns are not quantitative and consequently, analyses of such patterns typically involve binarization and quantitative expression levels of genes cannot be compared. Even with a stereotypical structure, image registration can be challenging because of biological differences between individuals [@Fowlkes2008].
 
@@ -172,14 +140,10 @@ The rise of the curated databases started in the 1990s. Already in 1992, the cha
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/dbs-1} 
-
-}
-
-\caption{Number of extant spatial gene expression databases per species.}(\#fig:dbs)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/dbs-1.png" alt="Number of extant spatial gene expression databases per species." width="576" />
+<p class="caption">(\#fig:dbs)Number of extant spatial gene expression databases per species.</p>
+</div>
 
 Data can be exchanged between databases. For example, among mouse databases GenePaint [@Carson2002] and EMAGE now contain data from [Eurexpress](http://www.eurexpress.org/ee/) [@Diez-Roux2011; @DeBoer2009], and EMAGE uses data from GXD for the 3D gene expression models [@Ringwald1999]. ANISEED contains data from WMISH atlases [GHOST](http://ghost.zool.kyoto-u.ac.jp) for Ciona intestinalis [@Satou2001] and MAboya Gene Expression patterns and Sequence Tags (MAGEST) for *Halocynthia roretzi* [@Kawashima2000]. FlyExpress contains data from *Drosophila* atlases such as BDGP and Fly-FISH. Data in databases that ceased to operate may still be available in extant databases. For instance, AXelDb WMISH atlas and database for *Xenopus laevis* [@Gawantka1998] has been subsumed in Xenbase while AXelDb's own website has long been defunct. Likewise, as of April 2021, the MAGEST website is defunct but the data lives on in ANISEED.
 
@@ -191,33 +155,36 @@ Some of the databases go beyond collecting data from other databases. Databases 
 
 Where were prequel era research conducted? Our database includes affiliation of the first author as of publication for all papers, and the affiliations have been geocoded to plot on maps. Around the world, most of prequel studies were performed in coastal US and Western Europe, but a some studies were performed in Asia and Oceania, but especially Japan (Figure \@ref(fig:prequel-world)). Not all of the top contributing institutions are readily recognizable "elite" institutions. Institutions include BDGP from UC Berkeley, ZFIN from University of Oregon (UO), ABA from Allen Brain Institute (Allen), GEISHA from University of Arizona (UofA), GXD from Jackson Laboratory (JAX), EMAGE from Western General Hospital (WGH), [MEPD](https://www.embl-heidelberg.de/mepd/) (for *Oryzias latipes*) from European Molecular Biology Laboratory (EMBL), and GHOST from Kyoto University (Kyodai), and mouse gene trap lines from Mount Sinai.
 
-\begin{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/prequel-world-1.png" alt="Number of prequel publications per city around the world, with top contributing institutions labeled." width="100%" />
+<p class="caption">(\#fig:prequel-world)Number of prequel publications per city around the world, with top contributing institutions labeled.</p>
+</div>
 
-{\centering \includegraphics{02-prequel_files/figure-latex/prequel-world-1} 
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/prequel-us-1.png" alt="Number of prequel publications in the US and Canada, with top contributing institutions labeled." width="100%" />
+<p class="caption">(\#fig:prequel-us)Number of prequel publications in the US and Canada, with top contributing institutions labeled.</p>
+</div>
 
-}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/prequel-europe-1.png" alt="Number of prequel publications in western Europe, with top contributing institutions labeled." width="576" />
+<p class="caption">(\#fig:prequel-europe)Number of prequel publications in western Europe, with top contributing institutions labeled.</p>
+</div>
 
-\caption{Number of prequel publications per city around the world, with top contributing institutions labeled.}(\#fig:prequel-world)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/prequel-ne-asia-1.png" alt="Number of prequel publications in northeast Asia, with top contributing institutions labeled." width="100%" />
+<p class="caption">(\#fig:prequel-ne-asia)Number of prequel publications in northeast Asia, with top contributing institutions labeled.</p>
+</div>
 
 This can be better visualized by breaking the map down by species. Here we see locations of some model organism consortia, and that GHOST is a result of collaboration of multiple Japanese institutions (Figure \@ref(fig:map-species)).
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/map-species-1} 
-
-}
-
-\caption{Number of prequel publications per city broken down by species. Gray points are the overall number as a reference of contributions from each city and region.}(\#fig:map-species)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/map-species-1.png" alt="Number of prequel publications per city broken down by species. Gray points are the overall number as a reference of contributions from each city and region." width="100%" />
+<p class="caption">(\#fig:map-species)Number of prequel publications per city broken down by species. Gray points are the overall number as a reference of contributions from each city and region.</p>
+</div>
 
 That some institutions have disproportional contribution of one technique can also be shown. Here it's clear that prequel techniques are used by many different institutions (Figure \@ref(fig:map-tech)). In contrast, as will be shown in Chapter \@ref(current), most current era techniques never spread beyond their institutions of origin. The LCM study comes from Allen Brain Institute's atlases for Allen's mouse sleep deprivation atlas [@Thompson2010] and human glioblastoma atlas [@Puchalski2018]; although LCM is a current era technique, those two studies are in the prequel sheet because they also have ISH atlases.
 
-\begin{figure}
-
-{\centering \includegraphics{02-prequel_files/figure-latex/map-tech-1} 
-
-}
-
-\caption{Number of prequel publications per city broken down by technique. Gray points are the overall number as a reference of contributions from each city and region.}(\#fig:map-tech)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="02-prequel_files/figure-html/map-tech-1.png" alt="Number of prequel publications per city broken down by technique. Gray points are the overall number as a reference of contributions from each city and region." width="100%" />
+<p class="caption">(\#fig:map-tech)Number of prequel publications per city broken down by technique. Gray points are the overall number as a reference of contributions from each city and region.</p>
+</div>

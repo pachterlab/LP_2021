@@ -1,8 +1,6 @@
 # Data analysis in the prequel era {#prequel-analysis}
 
-\BeginKnitrBlock{rmdtip}
-Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math heavy.
-\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math heavy.</div>\EndKnitrBlock{rmdtip}
 
 
 
@@ -10,14 +8,10 @@ From the earliest days of enhancer and gene traps to the (WM)ISH atlases, identi
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{03-prequel_analysis_files/figure-latex/prequel-poly-1} 
-
-}
-
-\caption{Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days.}(\#fig:prequel-poly)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/prequel-poly-1.png" alt="Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full." width="672" />
+<p class="caption">(\#fig:prequel-poly)Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full.</p>
+</div>
 
 Except for one study on *Platynereis dumereilii* in 2014 [@Pettit2014], on *Xenopus tropicalis* in 2018 [@Patrushev2018], one on post mortem human brain in 2021 [@Abed-Esfahani2021], all data analysis methods in our collection were designed for either *Drosophila melanogaster* or *Mus musculus* (Figure \@ref(fig:pa-species)). There seem to have been two waves; the first for *Drosophila*, peaking in the late 2000s, mostly concerning the BDGP in situ atlas, and the second for mice, peaking in early 2010s, mostly concerning ABA (Figure \@ref(fig:pa-species)). The apparent rise since 2019 is in part driven by deep learning methods to annotate gene expression patterns or infer gene interactions. Given the small number of publications in this category and potential incompleteness of the curation, the trends should be taken with a grain of salt.
 
@@ -25,28 +19,20 @@ Except for one study on *Platynereis dumereilii* in 2014 [@Pettit2014], on *Xeno
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{03-prequel_analysis_files/figure-latex/pa-species-1} 
-
-}
-
-\caption{Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets.}(\#fig:pa-species)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-species-1.png" alt="Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets." width="576" />
+<p class="caption">(\#fig:pa-species)Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets.</p>
+</div>
 
 ## Gene patterns {#prequel-gene-patterns}
 The most common goal of these data analysis methods was to annotate and compare gene expression patterns, especially to automate annotation of the BDGP atlas (Figure \@ref(fig:pa-category)). It seems reasonable to focus on 4 phases in this category: first, in early to mid 2000s, after image registration, the images were binarized into "expressed" and "not expressed" regions, and the shapes of the expressed regions were summarized and compared. Metrics to summarize the shapes included [moment invariant](https://towardsdatascience.com/introduction-to-the-invariant-moment-and-its-application-to-the-feature-extraction-ee991f39ec) [@Jayaraman2001; @Gurunathan2004], Hamming distance [@Kumar2002], and a weighted score involving [L1 distance](https://iq.opengenus.org/manhattan-distance/) between column or row histograms of two images [@Liu2007]. These unsupervised methods enabled clustering of patterns and querying genes with similar patterns to a given gene.
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{03-prequel_analysis_files/figure-latex/pa-category-1} 
-
-}
-
-\caption{Number of publications in each time bin for each category of data analysis is highlighted in the facets.}(\#fig:pa-category)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-category-1.png" alt="Number of publications in each time bin for each category of data analysis is highlighted in the facets." width="576" />
+<p class="caption">(\#fig:pa-category)Number of publications in each time bin for each category of data analysis is highlighted in the facets.</p>
+</div>
 
 Second, from the mid 2000s to mid 2010s, many supervised and unsupervised methods for gene expression pattern annotation or comparison were developed. In supervised methods, extensive feature engineering more sophisticated than binarization was performed on registered images for image annotation with machine learning classification. These methods were trained with existing BDGP annotations and developed to automatically annotate the BDGP expression patterns with controlled vocabulary (CV) of anatomical regions where genes were expressed. In BDGP, a gene gets annotated with a CV if the gene was deemed expressed in the anatomical region and developmental stage denoted by the CV, so the annotation typically contained a list of CVs.
 
@@ -59,7 +45,7 @@ Third, another notable type of the feature engineering is dimension reduction. I
 Fourth, since 2015, [convolutional neural networks (CNNs)](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) have been adopted to analyze gene expression patterns. Typically, a pre-trained model, such as ResNet50, OverFeat, or Alexnet is used. With some modifications or retraining of the original model, the model can be used to extract features for gene pattern annotation with logistic regression [@Zeng2015], classifying new patterns [@Andonian2019, @Long2021], and predicting interactions between genes [@Yang2019].
 
 ## Spatial regions {#prequel-spatial-regions}
-Closely related to classifying gene expression patterns are these questions: What are the implications of gene expression patterns to traditional anatomical regions as in the CV? Can we discover novel anatomical regions from gene expression? How well do expression-based regions correspond to the traditional regions? A few studies, which we call "spatial region", tried to answer these questions in the ABA (Figure \@ref(fig:pa-category)). Clusters of expression patterns of cell type specific genes [@Ko2013], or the most localized genes [@Grange2014], principal components of the patterns [@Bohland2010a], or patterns of coexpression modules were compared to traditional anatomy [@Grange2014]. At least in the mouse brain, while with the principal components, these clusters may correspond to traditional anatomy quite well [@Bohland2010a], when cell types are taken into account in clustering, gene expression seems to be able to refine traditional anatomy [@Ko2013; @Grange2014].
+Closely related to classifying gene expression patterns are these questions: What are the implications of gene expression patterns to traditional anatomical regions as in the CV? Can we discover novel anatomical regions from gene expression? How well do expression-based regions correspond to the traditional regions? A few studies, which we call "spatial region", tried to answer these questions in the ABA (Figure \@ref(fig:pa-category)). Clusters of expression patterns of cell type specific genes [@Ko2013], or the most localized genes [@Grange2014], principal components of the patterns [@Bohland2010a], or patterns of coexpression modules were compared to traditional anatomy [@Grange2014]. At least in the mouse brain, with the principal components, these clusters may correspond to traditional anatomy quite well [@Bohland2010a]. However, when cell types are taken into account in clustering, gene expression seems to be able to refine traditional anatomy [@Ko2013; @Grange2014].
 
 A clustering strategy for identifying spatial regions that takes the spatial neighborhood into account is [Markov random field (MRF)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/lecture-notes/lec23.pdf). In MRFs, nearby voxels can be made to be more likely to share a label, which can be cell type or histological region, and the probability of a voxel taking each of the labels only depends on labels of neighboring voxels. MRFs were used to delineate spatial regions in a 3D FISH atlas of the developing [*Platynereis dumereilii*](https://platynereis.github.io/) brain [@Pettit2014], with 86 high quality genes. The images in the atlas were aligned into a 3D model and broken into voxels 3 $\mu$m per side, which is smaller than a typical single cell; the spatial neighborhood graph is the 3D square grid of the voxels. As FISH is not very quantitative, the gene expression was manually binarized. Expression of each gene at each voxel is modeled with a [Bernoulli distribution](https://mathworld.wolfram.com/BernoulliDistribution.html), and the 86 genes are assumed to be independent. Cluster label assignment is modeled with [Potts model](https://en.wikipedia.org/wiki/Potts_model), a type of MRF in which only neighboring voxels with the same label contribute to the probability distribution of the labels, thus favoring neighbors with the same label. The parameters, such as interaction strength between neighboring voxels for the Potts model and the probability parameter of the Bernoulli distributions are estimated with [expectation maximization (EM)](http://ai.stanford.edu/~chuongdo/papers/em_tutorial.pdf).
 
@@ -71,7 +57,7 @@ However, as mutant lines are harder to obtain than wild type images, the simples
 Alternatively, a sparse [Markov network](http://ml.informatik.uni-freiburg.de/former/_media/teaching/ws1314/gm/11-markov_logic_networks.handout.pdf) whose nodes are genes and edges are presence of interaction can be learnt from expression profiles in each voxel [@Puniyani2013], or a CNN can be trained on known interactions and predict new interactions based on gene expression patterns [@Yang2019]. There are other types of analyses, such as inferring gene function from expression pattern, identifying spatially variable genes, and gene expression imputation at locations. The latter two are still important topics in current era data analysis.
 
 ## Decline {#decline}
-What contributed to the decline of the golden age of prequel data analysis? Partly a lack of usage of the methods developed, which was exacerbated by the decline of the golden age of (WM)ISH atlases in the 2010s (Figure \@ref(fig:hist1)). While many methods to automate gene expression pattern annotation for BDGP were developed before 2013, for the 2013 BDGP update that added images of 708 transcription factors, the BDGP annotated the new images with human curators instead of the automated methods [@Hammonds2013]. Nor did BDGP use the new methods to compare and classify the new gene expression patterns; instead, the curator assigned CV annotations were used for analysis [@Hammonds2013; @Tomancak2007]. BDGP did not have a major update after 2013; as existing images have already been annotated, there is no need to automate annotations.
+What contributed to the decline of the golden age of prequel data analysis? Partly a lack of usage of the methods developed, which was exacerbated by the decline of the golden age of (WM)ISH atlases in the 2010s so there were fewer new atlases where the methods can be applied (Figure \@ref(fig:hist1)). While many methods to automate gene expression pattern annotation for BDGP were developed before 2013, for the 2013 BDGP update that added images of 708 transcription factors, the BDGP annotated the new images with human curators instead of the automated methods [@Hammonds2013]. Nor did BDGP use the new methods to compare and classify the new gene expression patterns; instead, the curator assigned CV annotations were used for analysis [@Hammonds2013; @Tomancak2007]. BDGP did not have a major update after 2013; as existing images have already been annotated, there is no need to automate annotations.
 
 There are additional possible reasons why these methods were not used: First, it is unclear from the publications of the methods where the software implementation can be obtained. Second, a reason why most prequel analysis methods were developed for either BDGP or ABA is that since one gene is stained for in one embryo/section at a time, the images must be registered and standardized for different genes to be comparable; BDGP, through FlyExpress [@Kumar2017], and ABA, provide images that have already been registered and standardized, while many other atlases, such as GEISHA, do not. Due to challenges in image registration in other organisms, the automated gene expression pattern analysis methods can't be applied. Third, lack of usage of these methods can also be due to insufficient accuracy; from 2009 to 2013, the [area under the curve (AUC)](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5) of the automated annotations is typically around 0.8 and rarely exceeded 0.9 [@Ji2009; @Pruteanu-Malinici2011; @Yuan2012; @Sun2013], which means when using such tools to annotate new images, extensive human review would still be required.
 
@@ -81,22 +67,19 @@ There are additional possible reasons why these methods were not used: First, it
 
 If our collection is representative, then contribution to prequel data analysis concentrates in a few institutions (Figure \@ref(fig:pa-map)), not all of which are elite.
 
-\begin{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-map-1.png" alt="Number of publications per city for prequel data analysis." width="100%" />
+<p class="caption">(\#fig:pa-map)Number of publications per city for prequel data analysis.</p>
+</div>
 
-{\centering \includegraphics{03-prequel_analysis_files/figure-latex/pa-map-1} 
-
-}
-
-\caption{Number of publications per city for prequel data analysis.}(\#fig:pa-map)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-map-us-1.png" alt="Number of publications per city for prequel data analysis in the US." width="100%" />
+<p class="caption">(\#fig:pa-map-us)Number of publications per city for prequel data analysis in the US.</p>
+</div>
 
 When broken down by species, it seems that distinct institutions contributed to data analysis of *Drosophila* and mouse data. UC Berkeley and Lawrence Berkeley National Laboratory (LBL) are responsible for BDGP, and Allen is responsible for ABA. However, among the top contributors are other institutions such as Arizona State University (ASU) and Old Dominion University (ODU) (Figure \@ref(fig:pa-species2)).
 
-\begin{figure}
-
-{\centering \includegraphics{03-prequel_analysis_files/figure-latex/pa-species2-1} 
-
-}
-
-\caption{Number of publications per city for prequel data analysis broken down by species of interest.}(\#fig:pa-species2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-species2-1.png" alt="Number of publications per city for prequel data analysis broken down by species of interest." width="100%" />
+<p class="caption">(\#fig:pa-species2)Number of publications per city for prequel data analysis broken down by species of interest.</p>
+</div>

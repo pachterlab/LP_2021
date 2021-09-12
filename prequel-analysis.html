@@ -1,316 +1,150 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics</title>
-  <meta name="description" content="Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics" />
-  <meta property="og:type" content="book" />
-  
-  
-  <meta property="og:description" content="Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics" />
-  <meta name="github-repo" content="pachterlab/LP_2021" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics" />
-  
-  <meta name="twitter:description" content="Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics" />
-  
-
-<meta name="author" content="Lambda Moses, dlu2@caltech.edu" />
-<meta name="author" content="Lior Pachter, lpachter@caltech.edu" />
-
-
-<meta name="date" content="2021-07-08" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="prequel.html"/>
-<link rel="next" href="current.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-
-
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
-
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics</title>
+<meta name="author" content="Lambda Moses, dlu2@caltech.edu">
+<meta name="author" content="Lior Pachter, lpachter@caltech.edu">
+<meta name="description" content="Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Data analysis in the prequel era | Museum of Spatial Transcriptomics">
+<meta name="twitter:description" content="Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="./">Museum of Spatial Transcriptomics</a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="part"><span><b>I Prequel era</b></span></li>
-<li class="chapter" data-level="2" data-path="prequel.html"><a href="prequel.html"><i class="fa fa-check"></i><b>2</b> Prequel era</a><ul>
-<li class="chapter" data-level="2.1" data-path="prequel.html"><a href="prequel.html#traps"><i class="fa fa-check"></i><b>2.1</b> Enhancer and gene traps</a></li>
-<li class="chapter" data-level="2.2" data-path="prequel.html"><a href="prequel.html#in-situ-reporter"><i class="fa fa-check"></i><b>2.2</b> In situ reporter</a></li>
-<li class="chapter" data-level="2.3" data-path="prequel.html"><a href="prequel.html#wmish"><i class="fa fa-check"></i><b>2.3</b> ISH and WMISH atlases</a></li>
-<li class="chapter" data-level="2.4" data-path="prequel.html"><a href="prequel.html#database_prequel"><i class="fa fa-check"></i><b>2.4</b> Databases of the prequel era</a></li>
-<li class="chapter" data-level="2.5" data-path="prequel.html"><a href="prequel.html#geo_prequel"><i class="fa fa-check"></i><b>2.5</b> Geography of the prequel era</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="prequel-analysis.html"><a href="prequel-analysis.html"><i class="fa fa-check"></i><b>3</b> Data analysis in the prequel era</a><ul>
-<li class="chapter" data-level="3.1" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-gene-patterns"><i class="fa fa-check"></i><b>3.1</b> Gene patterns</a></li>
-<li class="chapter" data-level="3.2" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-spatial-regions"><i class="fa fa-check"></i><b>3.2</b> Spatial regions</a></li>
-<li class="chapter" data-level="3.3" data-path="prequel-analysis.html"><a href="prequel-analysis.html#prequel-gene-interactions"><i class="fa fa-check"></i><b>3.3</b> Gene interactions</a></li>
-<li class="chapter" data-level="3.4" data-path="prequel-analysis.html"><a href="prequel-analysis.html#decline"><i class="fa fa-check"></i><b>3.4</b> Decline</a></li>
-<li class="chapter" data-level="3.5" data-path="prequel-analysis.html"><a href="prequel-analysis.html#geo-prequel-analysis"><i class="fa fa-check"></i><b>3.5</b> Geography of prequel data analysis</a></li>
-</ul></li>
-<li class="part"><span><b>II Current era</b></span></li>
-<li class="chapter" data-level="4" data-path="current.html"><a href="current.html"><i class="fa fa-check"></i><b>4</b> From the past to the present</a></li>
-<li class="chapter" data-level="5" data-path="current-techs.html"><a href="current-techs.html"><i class="fa fa-check"></i><b>5</b> Current era technologies</a><ul>
-<li class="chapter" data-level="5.1" data-path="current-techs.html"><a href="current-techs.html#microdissection"><i class="fa fa-check"></i><b>5.1</b> Microdissection</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="current-techs.html"><a href="current-techs.html#history-of-lcm"><i class="fa fa-check"></i><b>5.1.1</b> History of LCM</a></li>
-<li class="chapter" data-level="5.1.2" data-path="current-techs.html"><a href="current-techs.html#lcm-usage"><i class="fa fa-check"></i><b>5.1.2</b> Usage of LCM</a></li>
-<li class="chapter" data-level="5.1.3" data-path="current-techs.html"><a href="current-techs.html#physical-microdissection"><i class="fa fa-check"></i><b>5.1.3</b> Physical microdissection</a></li>
-<li class="chapter" data-level="5.1.4" data-path="current-techs.html"><a href="current-techs.html#de-facto-microdissection"><i class="fa fa-check"></i><b>5.1.4</b> <em>De facto</em> microdissection</a></li>
-<li class="chapter" data-level="5.1.5" data-path="current-techs.html"><a href="current-techs.html#summary"><i class="fa fa-check"></i><b>5.1.5</b> Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="current-techs.html"><a href="current-techs.html#smfish"><i class="fa fa-check"></i><b>5.2</b> Single molecular FISH</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="current-techs.html"><a href="current-techs.html#barcoding"><i class="fa fa-check"></i><b>5.2.1</b> Barcoding strategies</a></li>
-<li class="chapter" data-level="5.2.2" data-path="current-techs.html"><a href="current-techs.html#amplification"><i class="fa fa-check"></i><b>5.2.2</b> Signal amplification</a></li>
-<li class="chapter" data-level="5.2.3" data-path="current-techs.html"><a href="current-techs.html#crowding"><i class="fa fa-check"></i><b>5.2.3</b> Optical crowding</a></li>
-<li class="chapter" data-level="5.2.4" data-path="current-techs.html"><a href="current-techs.html#smfish-usage"><i class="fa fa-check"></i><b>5.2.4</b> Usage of smFISH based techniques</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="current-techs.html"><a href="current-techs.html#iss"><i class="fa fa-check"></i><b>5.3</b> In situ sequencing</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="current-techs.html"><a href="current-techs.html#solid"><i class="fa fa-check"></i><b>5.3.1</b> SOLiD and FISSEQ</a></li>
-<li class="chapter" data-level="5.3.2" data-path="current-techs.html"><a href="current-techs.html#cpal"><i class="fa fa-check"></i><b>5.3.2</b> cPAL and ISS</a></li>
-<li class="chapter" data-level="5.3.3" data-path="current-techs.html"><a href="current-techs.html#sedal"><i class="fa fa-check"></i><b>5.3.3</b> SEDAL and STARmap</a></li>
-<li class="chapter" data-level="5.3.4" data-path="current-techs.html"><a href="current-techs.html#sbs"><i class="fa fa-check"></i><b>5.3.4</b> Sequencing by synthesis</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="current-techs.html"><a href="current-techs.html#array"><i class="fa fa-check"></i><b>5.4</b> In situ array capture</a></li>
-<li class="chapter" data-level="5.5" data-path="current-techs.html"><a href="current-techs.html#no-imaging"><i class="fa fa-check"></i><b>5.5</b> No imaging</a></li>
-<li class="chapter" data-level="5.6" data-path="current-techs.html"><a href="current-techs.html#multiomics"><i class="fa fa-check"></i><b>5.6</b> Spatial multi-omics</a></li>
-<li class="chapter" data-level="5.7" data-path="current-techs.html"><a href="current-techs.html#database-current"><i class="fa fa-check"></i><b>5.7</b> Databases of the current era</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>6</b> Text mining LCM transcriptomics abstracts</a><ul>
-<li class="chapter" data-level="6.1" data-path="text-mining.html"><a href="text-mining.html#topic-model"><i class="fa fa-check"></i><b>6.1</b> Topic modeling</a></li>
-<li class="chapter" data-level="6.2" data-path="text-mining.html"><a href="text-mining.html#word-time"><i class="fa fa-check"></i><b>6.2</b> Changes of word usage through time</a></li>
-<li class="chapter" data-level="6.3" data-path="text-mining.html"><a href="text-mining.html#topic-time"><i class="fa fa-check"></i><b>6.3</b> Changes of topic prevalence through time</a></li>
-<li class="chapter" data-level="6.4" data-path="text-mining.html"><a href="text-mining.html#association-of-topics-with-city"><i class="fa fa-check"></i><b>6.4</b> Association of topics with city</a></li>
-<li class="chapter" data-level="6.5" data-path="text-mining.html"><a href="text-mining.html#glove"><i class="fa fa-check"></i><b>6.5</b> GloVe word embedding</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="current-analysis.html"><a href="current-analysis.html"><i class="fa fa-check"></i><b>7</b> Data analysis in the current era</a><ul>
-<li class="chapter" data-level="7.1" data-path="current-analysis.html"><a href="current-analysis.html#preprocessing"><i class="fa fa-check"></i><b>7.1</b> Preprocessing</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="current-analysis.html"><a href="current-analysis.html#registration"><i class="fa fa-check"></i><b>7.1.1</b> Image registration</a></li>
-<li class="chapter" data-level="7.1.2" data-path="current-analysis.html"><a href="current-analysis.html#calling"><i class="fa fa-check"></i><b>7.1.2</b> Spot and barcode calling</a></li>
-<li class="chapter" data-level="7.1.3" data-path="current-analysis.html"><a href="current-analysis.html#segmentation"><i class="fa fa-check"></i><b>7.1.3</b> Cell segmentation</a></li>
-<li class="chapter" data-level="7.1.4" data-path="current-analysis.html"><a href="current-analysis.html#seg-alternatives"><i class="fa fa-check"></i><b>7.1.4</b> Alternatives to cell segmentation</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="current-analysis.html"><a href="current-analysis.html#eda"><i class="fa fa-check"></i><b>7.2</b> Exploratory data analysis</a></li>
-<li class="chapter" data-level="7.3" data-path="current-analysis.html"><a href="current-analysis.html#reconstruction"><i class="fa fa-check"></i><b>7.3</b> Spatial reconstruction of scRNA-seq data</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="current-analysis.html"><a href="current-analysis.html#direct-dr"><i class="fa fa-check"></i><b>7.3.1</b> Direct dimension reduction</a></li>
-<li class="chapter" data-level="7.3.2" data-path="current-analysis.html"><a href="current-analysis.html#ad-hoc"><i class="fa fa-check"></i><b>7.3.2</b> <em>Ad hoc</em> scoring</a></li>
-<li class="chapter" data-level="7.3.3" data-path="current-analysis.html"><a href="current-analysis.html#generative"><i class="fa fa-check"></i><b>7.3.3</b> Generative models</a></li>
-<li class="chapter" data-level="7.3.4" data-path="current-analysis.html"><a href="current-analysis.html#latent"><i class="fa fa-check"></i><b>7.3.4</b> Shared latent space</a></li>
-<li class="chapter" data-level="7.3.5" data-path="current-analysis.html"><a href="current-analysis.html#reconst-other"><i class="fa fa-check"></i><b>7.3.5</b> Other principles</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="current-analysis.html"><a href="current-analysis.html#deconvolution"><i class="fa fa-check"></i><b>7.4</b> Cell type deconvolution</a></li>
-<li class="chapter" data-level="7.5" data-path="current-analysis.html"><a href="current-analysis.html#variable"><i class="fa fa-check"></i><b>7.5</b> Spatially variable genes</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="current-analysis.html"><a href="current-analysis.html#gpr"><i class="fa fa-check"></i><b>7.5.1</b> Gaussian process regression</a></li>
-<li class="chapter" data-level="7.5.2" data-path="current-analysis.html"><a href="current-analysis.html#laplacian"><i class="fa fa-check"></i><b>7.5.2</b> Laplacian score</a></li>
-<li class="chapter" data-level="7.5.3" data-path="current-analysis.html"><a href="current-analysis.html#variable-other"><i class="fa fa-check"></i><b>7.5.3</b> Other principles</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="current-analysis.html"><a href="current-analysis.html#pattern"><i class="fa fa-check"></i><b>7.6</b> Gene patterns</a></li>
-<li class="chapter" data-level="7.7" data-path="current-analysis.html"><a href="current-analysis.html#region"><i class="fa fa-check"></i><b>7.7</b> Spatial regions</a></li>
-<li class="chapter" data-level="7.8" data-path="current-analysis.html"><a href="current-analysis.html#cell-interaction"><i class="fa fa-check"></i><b>7.8</b> Cell-cell interaction</a><ul>
-<li class="chapter" data-level="7.8.1" data-path="current-analysis.html"><a href="current-analysis.html#l-r"><i class="fa fa-check"></i><b>7.8.1</b> Ligand-receptor pairs</a></li>
-<li class="chapter" data-level="7.8.2" data-path="current-analysis.html"><a href="current-analysis.html#gene-cell-interact"><i class="fa fa-check"></i><b>7.8.2</b> Genes associated with cell-cell interaction</a></li>
-</ul></li>
-<li class="chapter" data-level="7.9" data-path="current-analysis.html"><a href="current-analysis.html#gene-interaction"><i class="fa fa-check"></i><b>7.9</b> Gene-gene interaction</a></li>
-<li class="chapter" data-level="7.10" data-path="current-analysis.html"><a href="current-analysis.html#subcellular"><i class="fa fa-check"></i><b>7.10</b> Subcellular transcript localization</a></li>
-<li class="chapter" data-level="7.11" data-path="current-analysis.html"><a href="current-analysis.html#HnE"><i class="fa fa-check"></i><b>7.11</b> Gene expression imputation from H&amp;E</a></li>
-</ul></li>
-<li class="part"><span><b>III Future perspectives</b></span></li>
-<li class="chapter" data-level="8" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>8</b> From the past to the present to the future</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Museum of Spatial Transcriptomics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Museum of Spatial Transcriptomics</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">Prequel era</li>
+<li><a class="" href="prequel.html"><span class="header-section-number">2</span> Prequel era</a></li>
+<li><a class="active" href="prequel-analysis.html"><span class="header-section-number">3</span> Data analysis in the prequel era</a></li>
+<li class="book-part">Current era</li>
+<li><a class="" href="current.html"><span class="header-section-number">4</span> From the past to the present</a></li>
+<li><a class="" href="current-techs.html"><span class="header-section-number">5</span> Current era technologies</a></li>
+<li><a class="" href="text-mining.html"><span class="header-section-number">6</span> Text mining LCM transcriptomics abstracts</a></li>
+<li><a class="" href="current-analysis.html"><span class="header-section-number">7</span> Data analysis in the current era</a></li>
+<li class="book-part">Future perspectives</li>
+<li><a class="" href="future.html"><span class="header-section-number">8</span> From the past to the present to the future</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/pachterlab/LP_2021/tree/main/supplement">View book source <i class="fab fa-github"></i></a></p>
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="prequel-analysis" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Data analysis in the prequel era</h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="prequel-analysis" class="section level1">
+<h1>
+<span class="header-section-number">3</span> Data analysis in the prequel era<a class="anchor" aria-label="anchor" href="#prequel-analysis"><i class="fas fa-link"></i></a>
+</h1>
 
 <div class="rmdtip">
 Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math heavy.
 </div>
 
-<p>From the earliest days of enhancer and gene traps to the (WM)ISH atlases, identifying genes with spatially and temporally variable expression patterns, comparing and classifying the patterns, identifying new marker genes of cell types and developmental stages, and using gene expression to redefine cell types have been among the goals of the studies <span class="citation">(O’Kane and Gehring <a href="#ref-OKane1987" role="doc-biblioref">1987</a>; Gossler et al. <a href="#ref-Gossler1989" role="doc-biblioref">1989</a>; Wurst et al. <a href="#ref-Wurst1995a" role="doc-biblioref">1995</a>; Sundaresan et al. <a href="#ref-Sundaresan1995" role="doc-biblioref">1995</a>; Gawantka et al. <a href="#ref-Gawantka1998" role="doc-biblioref">1998</a>; Tomancak et al. <a href="#ref-Tomancak2002" role="doc-biblioref">2002</a>; Lein et al. <a href="#ref-Lein2007" role="doc-biblioref">2007</a>)</span>. In the prequel era, these were typically done manually, which, with the growing size of atlases in the 2000s, was time consuming and potentially inconsistent between curators. Thus, computational methods were developed to analyze images from the (WM)ISH atlases. This chapter reviews data analysis methods designed for (WM)ISH atlases and does not involve scRNA-seq data; methods involving both (WM)ISH and scRNA-seq are reviewed in Chapter <a href="current-analysis.html#current-analysis">7</a> for the current era because scRNA-seq is at present a popular and rapidly growing field, too in vogue to be considered “prequel”. If our collection is representative, then the rise of prequel data analysis methods arrived much later than that of data collection (Figure <a href="prequel-analysis.html#fig:prequel-poly">3.1</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:prequel-poly"></span>
-<img src="03-prequel_analysis_files/figure-html/prequel-poly-1.png" alt="Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days." width="672" />
-<p class="caption">
-Figure 3.1: Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days.
+<p>From the earliest days of enhancer and gene traps to the (WM)ISH atlases, identifying genes with spatially and temporally variable expression patterns, comparing and classifying the patterns, identifying new marker genes of cell types and developmental stages, and using gene expression to redefine cell types have been among the goals of the studies <span class="citation">(O’Kane and Gehring <a href="references.html#ref-OKane1987" role="doc-biblioref">1987</a>; Gossler et al. <a href="references.html#ref-Gossler1989" role="doc-biblioref">1989</a>; Wurst et al. <a href="references.html#ref-Wurst1995a" role="doc-biblioref">1995</a>; Sundaresan et al. <a href="references.html#ref-Sundaresan1995" role="doc-biblioref">1995</a>; Gawantka et al. <a href="references.html#ref-Gawantka1998" role="doc-biblioref">1998</a>; Tomancak et al. <a href="references.html#ref-Tomancak2002" role="doc-biblioref">2002</a>; Lein et al. <a href="references.html#ref-Lein2007" role="doc-biblioref">2007</a>)</span>. In the prequel era, these were typically done manually, which, with the growing size of atlases in the 2000s, was time consuming and potentially inconsistent between curators. Thus, computational methods were developed to analyze images from the (WM)ISH atlases. This chapter reviews data analysis methods designed for (WM)ISH atlases and does not involve scRNA-seq data; methods involving both (WM)ISH and scRNA-seq are reviewed in Chapter <a href="current-analysis.html#current-analysis">7</a> for the current era because scRNA-seq is at present a popular and rapidly growing field, too in vogue to be considered “prequel”. If our collection is representative, then the rise of prequel data analysis methods arrived much later than that of data collection (Figure <a href="prequel-analysis.html#fig:prequel-poly">3.1</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:prequel-poly"></span>
+<img src="03-prequel_analysis_files/figure-html/prequel-poly-1.png" alt="Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full." width="672"><p class="caption">
+Figure 3.1: Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full.
 </p>
 </div>
-<p>Except for one study on <em>Platynereis dumereilii</em> in 2014 <span class="citation">(Pettit et al. <a href="#ref-Pettit2014" role="doc-biblioref">2014</a>)</span>, on <em>Xenopus tropicalis</em> in 2018 <span class="citation">(Patrushev et al. <a href="#ref-Patrushev2018" role="doc-biblioref">2018</a>)</span>, one on post mortem human brain in 2021 <span class="citation">(Abed-Esfahani et al. <a href="#ref-Abed-Esfahani2021" role="doc-biblioref">2021</a>)</span>, all data analysis methods in our collection were designed for either <em>Drosophila melanogaster</em> or <em>Mus musculus</em> (Figure <a href="prequel-analysis.html#fig:pa-species">3.2</a>). There seem to have been two waves; the first for <em>Drosophila</em>, peaking in the late 2000s, mostly concerning the BDGP in situ atlas, and the second for mice, peaking in early 2010s, mostly concerning ABA (Figure <a href="prequel-analysis.html#fig:pa-species">3.2</a>). The apparent rise since 2019 is in part driven by deep learning methods to annotate gene expression patterns or infer gene interactions. Given the small number of publications in this category and potential incompleteness of the curation, the trends should be taken with a grain of salt.</p>
-<div class="figure" style="text-align: center"><span id="fig:pa-species"></span>
-<img src="03-prequel_analysis_files/figure-html/pa-species-1.png" alt="Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets." width="576" />
-<p class="caption">
+<p>Except for one study on <em>Platynereis dumereilii</em> in 2014 <span class="citation">(Pettit et al. <a href="references.html#ref-Pettit2014" role="doc-biblioref">2014</a>)</span>, on <em>Xenopus tropicalis</em> in 2018 <span class="citation">(Patrushev et al. <a href="references.html#ref-Patrushev2018" role="doc-biblioref">2018</a>)</span>, one on post mortem human brain in 2021 <span class="citation">(Abed-Esfahani et al. <a href="references.html#ref-Abed-Esfahani2021" role="doc-biblioref">2021</a>)</span>, all data analysis methods in our collection were designed for either <em>Drosophila melanogaster</em> or <em>Mus musculus</em> (Figure <a href="prequel-analysis.html#fig:pa-species">3.2</a>). There seem to have been two waves; the first for <em>Drosophila</em>, peaking in the late 2000s, mostly concerning the BDGP in situ atlas, and the second for mice, peaking in early 2010s, mostly concerning ABA (Figure <a href="prequel-analysis.html#fig:pa-species">3.2</a>). The apparent rise since 2019 is in part driven by deep learning methods to annotate gene expression patterns or infer gene interactions. Given the small number of publications in this category and potential incompleteness of the curation, the trends should be taken with a grain of salt.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pa-species"></span>
+<img src="03-prequel_analysis_files/figure-html/pa-species-1.png" alt="Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets." width="576"><p class="caption">
 Figure 3.2: Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets.
 </p>
 </div>
 <div id="prequel-gene-patterns" class="section level2">
-<h2><span class="header-section-number">3.1</span> Gene patterns</h2>
-<p>The most common goal of these data analysis methods was to annotate and compare gene expression patterns, especially to automate annotation of the BDGP atlas (Figure <a href="prequel-analysis.html#fig:pa-category">3.3</a>). It seems reasonable to focus on 4 phases in this category: first, in early to mid 2000s, after image registration, the images were binarized into “expressed” and “not expressed” regions, and the shapes of the expressed regions were summarized and compared. Metrics to summarize the shapes included <a href="https://towardsdatascience.com/introduction-to-the-invariant-moment-and-its-application-to-the-feature-extraction-ee991f39ec">moment invariant</a> <span class="citation">(Jayaraman, Panchanathan, and Kumar <a href="#ref-Jayaraman2001" role="doc-biblioref">2001</a>; Gurunathan et al. <a href="#ref-Gurunathan2004" role="doc-biblioref">2004</a>)</span>, Hamming distance <span class="citation">(Kumar et al. <a href="#ref-Kumar2002" role="doc-biblioref">2002</a>)</span>, and a weighted score involving <a href="https://iq.opengenus.org/manhattan-distance/">L1 distance</a> between column or row histograms of two images <span class="citation">(Liu et al. <a href="#ref-Liu2007" role="doc-biblioref">2007</a>)</span>. These unsupervised methods enabled clustering of patterns and querying genes with similar patterns to a given gene.</p>
-<div class="figure" style="text-align: center"><span id="fig:pa-category"></span>
-<img src="03-prequel_analysis_files/figure-html/pa-category-1.png" alt="Number of publications in each time bin for each category of data analysis is highlighted in the facets." width="576" />
-<p class="caption">
+<h2>
+<span class="header-section-number">3.1</span> Gene patterns<a class="anchor" aria-label="anchor" href="#prequel-gene-patterns"><i class="fas fa-link"></i></a>
+</h2>
+<p>The most common goal of these data analysis methods was to annotate and compare gene expression patterns, especially to automate annotation of the BDGP atlas (Figure <a href="prequel-analysis.html#fig:pa-category">3.3</a>). It seems reasonable to focus on 4 phases in this category: first, in early to mid 2000s, after image registration, the images were binarized into “expressed” and “not expressed” regions, and the shapes of the expressed regions were summarized and compared. Metrics to summarize the shapes included <a href="https://towardsdatascience.com/introduction-to-the-invariant-moment-and-its-application-to-the-feature-extraction-ee991f39ec">moment invariant</a> <span class="citation">(Jayaraman, Panchanathan, and Kumar <a href="references.html#ref-Jayaraman2001" role="doc-biblioref">2001</a>; Gurunathan et al. <a href="references.html#ref-Gurunathan2004" role="doc-biblioref">2004</a>)</span>, Hamming distance <span class="citation">(Kumar et al. <a href="references.html#ref-Kumar2002" role="doc-biblioref">2002</a>)</span>, and a weighted score involving <a href="https://iq.opengenus.org/manhattan-distance/">L1 distance</a> between column or row histograms of two images <span class="citation">(Liu et al. <a href="references.html#ref-Liu2007" role="doc-biblioref">2007</a>)</span>. These unsupervised methods enabled clustering of patterns and querying genes with similar patterns to a given gene.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pa-category"></span>
+<img src="03-prequel_analysis_files/figure-html/pa-category-1.png" alt="Number of publications in each time bin for each category of data analysis is highlighted in the facets." width="576"><p class="caption">
 Figure 3.3: Number of publications in each time bin for each category of data analysis is highlighted in the facets.
 </p>
 </div>
 <p>Second, from the mid 2000s to mid 2010s, many supervised and unsupervised methods for gene expression pattern annotation or comparison were developed. In supervised methods, extensive feature engineering more sophisticated than binarization was performed on registered images for image annotation with machine learning classification. These methods were trained with existing BDGP annotations and developed to automatically annotate the BDGP expression patterns with controlled vocabulary (CV) of anatomical regions where genes were expressed. In BDGP, a gene gets annotated with a CV if the gene was deemed expressed in the anatomical region and developmental stage denoted by the CV, so the annotation typically contained a list of CVs.</p>
-<p>The feature engineering can be based on the wavelet transform <span class="citation">(Zhou and Peng <a href="#ref-Zhou2007a" role="doc-biblioref">2007</a>)</span> and Fourier coefficients <span class="citation">(Heffel et al. <a href="#ref-Heffel2008a" role="doc-biblioref">2008</a>)</span>, but a particularly popular feature engineering method was <a href="https://docs.opencv.org/master/da/df5/tutorial_py_sift_intro.html">scale-invariant feature transform (SIFT)</a> <span class="citation">(Lowe <a href="#ref-Lowe2004" role="doc-biblioref">2004</a>; Ji et al. <a href="#ref-Ji2008" role="doc-biblioref">2008</a>; Li et al. <a href="#ref-Li2009" role="doc-biblioref">2009</a>; S. Ji, Li, et al. <a href="#ref-Ji2009" role="doc-biblioref">2009</a>)</span>. A method published in 2009 that used SIFT followed by <a href="https://machinelearningmastery.com/gentle-introduction-bag-words-model/">bag of words</a> where “word” is a <a href="https://medium.com/analytics-vidhya/k-means-clustering-explained-419ee66d095e">k means</a> cluster (code book) was quite influential <span class="citation">(S. Ji, Li, et al. <a href="#ref-Ji2009" role="doc-biblioref">2009</a>)</span>; several later methods were inspired by this method, with improved code books <span class="citation">(Sun et al. <a href="#ref-Sun2013" role="doc-biblioref">2013</a>; S. Ji, Yuan, et al. <a href="#ref-Ji2009a" role="doc-biblioref">2009</a>; Yuan et al. <a href="#ref-Yuan2012" role="doc-biblioref">2012</a>; Liscovitch, Shalit, and Chechik <a href="#ref-Liscovitch2013a" role="doc-biblioref">2013</a>)</span>. The most common classifier that take in the features to predict annotations is <a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">support vector machine (SVM)</a> <span class="citation">(Sun et al. <a href="#ref-Sun2013" role="doc-biblioref">2013</a>; Yuan et al. <a href="#ref-Yuan2012" role="doc-biblioref">2012</a>)</span> or multi-label variants of it <span class="citation">(Ji et al. <a href="#ref-Ji2008" role="doc-biblioref">2008</a>; S. Ji, Li, et al. <a href="#ref-Ji2009" role="doc-biblioref">2009</a>)</span>.</p>
-<p>Unsupervised methods rely on clustering algorithms after images are registered on a common mesh, such as <a href="https://towardsdatascience.com/unsupervised-machine-learning-affinity-propagation-algorithm-explained-d1fef85f22c8">affinity propagation clustering</a> <span class="citation">(Frise, Hammonds, and Celniker <a href="#ref-Frise2010" role="doc-biblioref">2010</a>)</span> and co-clustering (rows and columns of matrix are clustered simultaneously) <span class="citation">(Jagalur et al. <a href="#ref-Jagalur2007" role="doc-biblioref">2007</a>; Zhang et al. <a href="#ref-Zhang2013" role="doc-biblioref">2013</a>)</span>.</p>
-<p>Third, another notable type of the feature engineering is dimension reduction. In 2006, some methods applied dimension reduction methods such as <a href="https://liorpachter.wordpress.com/2014/05/26/what-is-principal-component-analysis/">principal component analysis (PCA)</a> and <a href="http://wwwf.imperial.ac.uk/~nsjones/TalkSlides/HyvarinenSlides.pdf">independent component analysis (ICA)</a> to the registered images to find “eigen” patterns <span class="citation">(Pan et al. <a href="#ref-Pan2006" role="doc-biblioref">2006</a>; Hanchuan Peng et al. <a href="#ref-Peng2006" role="doc-biblioref">2006</a>)</span>. Instead of PCA or ICA, the dimension reduction can also be sparse Bayesian factor analysis <span class="citation">(Pruteanu-Malinici, Mace, and Ohler <a href="#ref-Pruteanu-Malinici2011" role="doc-biblioref">2011</a>)</span>, sparse dictionary learning <span class="citation">(Li et al. <a href="#ref-Li2017" role="doc-biblioref">2017</a>)</span>, and <a href="http://www.cs.cmu.edu/~11755/lectures/Lee_Seung_NMF.pdf">non-negative matrix factorization (NMF)</a> <span class="citation">(Noto, Barnagian, and Castro <a href="#ref-Noto2017" role="doc-biblioref">2017</a>; Wu et al. <a href="#ref-Wu2016" role="doc-biblioref">2016</a>)</span>. The dimension reduction can be used for unsupervised clustering of genes <span class="citation">(Pan et al. <a href="#ref-Pan2006" role="doc-biblioref">2006</a>; Hanchuan Peng et al. <a href="#ref-Peng2006" role="doc-biblioref">2006</a>; Pruteanu-Malinici, Mace, and Ohler <a href="#ref-Pruteanu-Malinici2011" role="doc-biblioref">2011</a>)</span>, as well as supervised classification methods such as SVM and <a href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">logistic regression</a> to annotate gene expression patterns with controlled vocabulary <span class="citation">(Pruteanu-Malinici, Mace, and Ohler <a href="#ref-Pruteanu-Malinici2011" role="doc-biblioref">2011</a>; Wu et al. <a href="#ref-Wu2016" role="doc-biblioref">2016</a>)</span>. Notably, in NMF, both the matrix for basis patterns and the coefficient matrix for the genes tend to exhibit block structures; the blocks in the gene coefficient matrix has been used to cluster genes <span class="citation">(Noto, Barnagian, and Castro <a href="#ref-Noto2017" role="doc-biblioref">2017</a>)</span>.</p>
-<p>Fourth, since 2015, <a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53">convolutional neural networks (CNNs)</a> have been adopted to analyze gene expression patterns. Typically, a pre-trained model, such as ResNet50, OverFeat, or Alexnet is used. With some modifications or retraining of the original model, the model can be used to extract features for gene pattern annotation with logistic regression <span class="citation">(Zeng et al. <a href="#ref-Zeng2015" role="doc-biblioref">2015</a>)</span>, classifying new patterns <span class="citation">(Andonian et al. <a href="#ref-Andonian2019" role="doc-biblioref">2019</a>, @Long2021)</span>, and predicting interactions between genes <span class="citation">(Yang, Fang, and Shen <a href="#ref-Yang2019" role="doc-biblioref">2019</a>)</span>.</p>
+<p>The feature engineering can be based on the wavelet transform <span class="citation">(Zhou and Peng <a href="references.html#ref-Zhou2007a" role="doc-biblioref">2007</a>)</span> and Fourier coefficients <span class="citation">(Heffel et al. <a href="references.html#ref-Heffel2008a" role="doc-biblioref">2008</a>)</span>, but a particularly popular feature engineering method was <a href="https://docs.opencv.org/master/da/df5/tutorial_py_sift_intro.html">scale-invariant feature transform (SIFT)</a> <span class="citation">(Lowe <a href="references.html#ref-Lowe2004" role="doc-biblioref">2004</a>; Ji et al. <a href="references.html#ref-Ji2008" role="doc-biblioref">2008</a>; Li et al. <a href="references.html#ref-Li2009" role="doc-biblioref">2009</a>; S. Ji, Li, et al. <a href="references.html#ref-Ji2009" role="doc-biblioref">2009</a>)</span>. A method published in 2009 that used SIFT followed by <a href="https://machinelearningmastery.com/gentle-introduction-bag-words-model/">bag of words</a> where “word” is a <a href="https://medium.com/analytics-vidhya/k-means-clustering-explained-419ee66d095e">k means</a> cluster (code book) was quite influential <span class="citation">(S. Ji, Li, et al. <a href="references.html#ref-Ji2009" role="doc-biblioref">2009</a>)</span>; several later methods were inspired by this method, with improved code books <span class="citation">(Sun et al. <a href="references.html#ref-Sun2013" role="doc-biblioref">2013</a>; S. Ji, Yuan, et al. <a href="references.html#ref-Ji2009a" role="doc-biblioref">2009</a>; Yuan et al. <a href="references.html#ref-Yuan2012" role="doc-biblioref">2012</a>; Liscovitch, Shalit, and Chechik <a href="references.html#ref-Liscovitch2013a" role="doc-biblioref">2013</a>)</span>. The most common classifier that take in the features to predict annotations is <a href="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47">support vector machine (SVM)</a> <span class="citation">(Sun et al. <a href="references.html#ref-Sun2013" role="doc-biblioref">2013</a>; Yuan et al. <a href="references.html#ref-Yuan2012" role="doc-biblioref">2012</a>)</span> or multi-label variants of it <span class="citation">(Ji et al. <a href="references.html#ref-Ji2008" role="doc-biblioref">2008</a>; S. Ji, Li, et al. <a href="references.html#ref-Ji2009" role="doc-biblioref">2009</a>)</span>.</p>
+<p>Unsupervised methods rely on clustering algorithms after images are registered on a common mesh, such as <a href="https://towardsdatascience.com/unsupervised-machine-learning-affinity-propagation-algorithm-explained-d1fef85f22c8">affinity propagation clustering</a> <span class="citation">(Frise, Hammonds, and Celniker <a href="references.html#ref-Frise2010" role="doc-biblioref">2010</a>)</span> and co-clustering (rows and columns of matrix are clustered simultaneously) <span class="citation">(Jagalur et al. <a href="references.html#ref-Jagalur2007" role="doc-biblioref">2007</a>; Zhang et al. <a href="references.html#ref-Zhang2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Third, another notable type of the feature engineering is dimension reduction. In 2006, some methods applied dimension reduction methods such as <a href="https://liorpachter.wordpress.com/2014/05/26/what-is-principal-component-analysis/">principal component analysis (PCA)</a> and <a href="http://wwwf.imperial.ac.uk/~nsjones/TalkSlides/HyvarinenSlides.pdf">independent component analysis (ICA)</a> to the registered images to find “eigen” patterns <span class="citation">(Pan et al. <a href="references.html#ref-Pan2006" role="doc-biblioref">2006</a>; Hanchuan Peng et al. <a href="references.html#ref-Peng2006" role="doc-biblioref">2006</a>)</span>. Instead of PCA or ICA, the dimension reduction can also be sparse Bayesian factor analysis <span class="citation">(Pruteanu-Malinici, Mace, and Ohler <a href="references.html#ref-Pruteanu-Malinici2011" role="doc-biblioref">2011</a>)</span>, sparse dictionary learning <span class="citation">(Li et al. <a href="references.html#ref-Li2017" role="doc-biblioref">2017</a>)</span>, and <a href="http://www.cs.cmu.edu/~11755/lectures/Lee_Seung_NMF.pdf">non-negative matrix factorization (NMF)</a> <span class="citation">(Noto, Barnagian, and Castro <a href="references.html#ref-Noto2017" role="doc-biblioref">2017</a>; Wu et al. <a href="references.html#ref-Wu2016" role="doc-biblioref">2016</a>)</span>. The dimension reduction can be used for unsupervised clustering of genes <span class="citation">(Pan et al. <a href="references.html#ref-Pan2006" role="doc-biblioref">2006</a>; Hanchuan Peng et al. <a href="references.html#ref-Peng2006" role="doc-biblioref">2006</a>; Pruteanu-Malinici, Mace, and Ohler <a href="references.html#ref-Pruteanu-Malinici2011" role="doc-biblioref">2011</a>)</span>, as well as supervised classification methods such as SVM and <a href="https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc">logistic regression</a> to annotate gene expression patterns with controlled vocabulary <span class="citation">(Pruteanu-Malinici, Mace, and Ohler <a href="references.html#ref-Pruteanu-Malinici2011" role="doc-biblioref">2011</a>; Wu et al. <a href="references.html#ref-Wu2016" role="doc-biblioref">2016</a>)</span>. Notably, in NMF, both the matrix for basis patterns and the coefficient matrix for the genes tend to exhibit block structures; the blocks in the gene coefficient matrix has been used to cluster genes <span class="citation">(Noto, Barnagian, and Castro <a href="references.html#ref-Noto2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p>Fourth, since 2015, <a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53">convolutional neural networks (CNNs)</a> have been adopted to analyze gene expression patterns. Typically, a pre-trained model, such as ResNet50, OverFeat, or Alexnet is used. With some modifications or retraining of the original model, the model can be used to extract features for gene pattern annotation with logistic regression <span class="citation">(Zeng et al. <a href="references.html#ref-Zeng2015" role="doc-biblioref">2015</a>)</span>, classifying new patterns <span class="citation">(Andonian et al. <a href="references.html#ref-Andonian2019" role="doc-biblioref">2019</a>, @Long2021)</span>, and predicting interactions between genes <span class="citation">(Yang, Fang, and Shen <a href="references.html#ref-Yang2019" role="doc-biblioref">2019</a>)</span>.</p>
 </div>
 <div id="prequel-spatial-regions" class="section level2">
-<h2><span class="header-section-number">3.2</span> Spatial regions</h2>
-<p>Closely related to classifying gene expression patterns are these questions: What are the implications of gene expression patterns to traditional anatomical regions as in the CV? Can we discover novel anatomical regions from gene expression? How well do expression-based regions correspond to the traditional regions? A few studies, which we call “spatial region”, tried to answer these questions in the ABA (Figure <a href="prequel-analysis.html#fig:pa-category">3.3</a>). Clusters of expression patterns of cell type specific genes <span class="citation">(Ko et al. <a href="#ref-Ko2013" role="doc-biblioref">2013</a>)</span>, or the most localized genes <span class="citation">(Grange et al. <a href="#ref-Grange2014" role="doc-biblioref">2014</a>)</span>, principal components of the patterns <span class="citation">(Bohland et al. <a href="#ref-Bohland2010a" role="doc-biblioref">2010</a>)</span>, or patterns of coexpression modules were compared to traditional anatomy <span class="citation">(Grange et al. <a href="#ref-Grange2014" role="doc-biblioref">2014</a>)</span>. At least in the mouse brain, while with the principal components, these clusters may correspond to traditional anatomy quite well <span class="citation">(Bohland et al. <a href="#ref-Bohland2010a" role="doc-biblioref">2010</a>)</span>, when cell types are taken into account in clustering, gene expression seems to be able to refine traditional anatomy <span class="citation">(Ko et al. <a href="#ref-Ko2013" role="doc-biblioref">2013</a>; Grange et al. <a href="#ref-Grange2014" role="doc-biblioref">2014</a>)</span>.</p>
-<p>A clustering strategy for identifying spatial regions that takes the spatial neighborhood into account is <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/lecture-notes/lec23.pdf">Markov random field (MRF)</a>. In MRFs, nearby voxels can be made to be more likely to share a label, which can be cell type or histological region, and the probability of a voxel taking each of the labels only depends on labels of neighboring voxels. MRFs were used to delineate spatial regions in a 3D FISH atlas of the developing <a href="https://platynereis.github.io/"><em>Platynereis dumereilii</em></a> brain <span class="citation">(Pettit et al. <a href="#ref-Pettit2014" role="doc-biblioref">2014</a>)</span>, with 86 high quality genes. The images in the atlas were aligned into a 3D model and broken into voxels 3 <span class="math inline">\(\mu\)</span>m per side, which is smaller than a typical single cell; the spatial neighborhood graph is the 3D square grid of the voxels. As FISH is not very quantitative, the gene expression was manually binarized. Expression of each gene at each voxel is modeled with a <a href="https://mathworld.wolfram.com/BernoulliDistribution.html">Bernoulli distribution</a>, and the 86 genes are assumed to be independent. Cluster label assignment is modeled with <a href="https://en.wikipedia.org/wiki/Potts_model">Potts model</a>, a type of MRF in which only neighboring voxels with the same label contribute to the probability distribution of the labels, thus favoring neighbors with the same label. The parameters, such as interaction strength between neighboring voxels for the Potts model and the probability parameter of the Bernoulli distributions are estimated with <a href="http://ai.stanford.edu/~chuongdo/papers/em_tutorial.pdf">expectation maximization (EM)</a>.</p>
+<h2>
+<span class="header-section-number">3.2</span> Spatial regions<a class="anchor" aria-label="anchor" href="#prequel-spatial-regions"><i class="fas fa-link"></i></a>
+</h2>
+<p>Closely related to classifying gene expression patterns are these questions: What are the implications of gene expression patterns to traditional anatomical regions as in the CV? Can we discover novel anatomical regions from gene expression? How well do expression-based regions correspond to the traditional regions? A few studies, which we call “spatial region”, tried to answer these questions in the ABA (Figure <a href="prequel-analysis.html#fig:pa-category">3.3</a>). Clusters of expression patterns of cell type specific genes <span class="citation">(Ko et al. <a href="references.html#ref-Ko2013" role="doc-biblioref">2013</a>)</span>, or the most localized genes <span class="citation">(Grange et al. <a href="references.html#ref-Grange2014" role="doc-biblioref">2014</a>)</span>, principal components of the patterns <span class="citation">(Bohland et al. <a href="references.html#ref-Bohland2010a" role="doc-biblioref">2010</a>)</span>, or patterns of coexpression modules were compared to traditional anatomy <span class="citation">(Grange et al. <a href="references.html#ref-Grange2014" role="doc-biblioref">2014</a>)</span>. At least in the mouse brain, with the principal components, these clusters may correspond to traditional anatomy quite well <span class="citation">(Bohland et al. <a href="references.html#ref-Bohland2010a" role="doc-biblioref">2010</a>)</span>. However, when cell types are taken into account in clustering, gene expression seems to be able to refine traditional anatomy <span class="citation">(Ko et al. <a href="references.html#ref-Ko2013" role="doc-biblioref">2013</a>; Grange et al. <a href="references.html#ref-Grange2014" role="doc-biblioref">2014</a>)</span>.</p>
+<p>A clustering strategy for identifying spatial regions that takes the spatial neighborhood into account is <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/lecture-notes/lec23.pdf">Markov random field (MRF)</a>. In MRFs, nearby voxels can be made to be more likely to share a label, which can be cell type or histological region, and the probability of a voxel taking each of the labels only depends on labels of neighboring voxels. MRFs were used to delineate spatial regions in a 3D FISH atlas of the developing <a href="https://platynereis.github.io/"><em>Platynereis dumereilii</em></a> brain <span class="citation">(Pettit et al. <a href="references.html#ref-Pettit2014" role="doc-biblioref">2014</a>)</span>, with 86 high quality genes. The images in the atlas were aligned into a 3D model and broken into voxels 3 <span class="math inline">\(\mu\)</span>m per side, which is smaller than a typical single cell; the spatial neighborhood graph is the 3D square grid of the voxels. As FISH is not very quantitative, the gene expression was manually binarized. Expression of each gene at each voxel is modeled with a <a href="https://mathworld.wolfram.com/BernoulliDistribution.html">Bernoulli distribution</a>, and the 86 genes are assumed to be independent. Cluster label assignment is modeled with <a href="https://en.wikipedia.org/wiki/Potts_model">Potts model</a>, a type of MRF in which only neighboring voxels with the same label contribute to the probability distribution of the labels, thus favoring neighbors with the same label. The parameters, such as interaction strength between neighboring voxels for the Potts model and the probability parameter of the Bernoulli distributions are estimated with <a href="http://ai.stanford.edu/~chuongdo/papers/em_tutorial.pdf">expectation maximization (EM)</a>.</p>
 </div>
 <div id="prequel-gene-interactions" class="section level2">
-<h2><span class="header-section-number">3.3</span> Gene interactions</h2>
-<p>While not single cell resolution, (WM)ISH atlases provide transcriptomes within the tissue at a resolution far higher than that of typical bulk RNA-seq and bulk microarray, thus opening the way to studying coexperssion and interaction between genes within the tissue. There are a few methods that aim to decide whether two genes interact according to (WM)ISH images, some dating published long before the popularization of scRNA-seq. Already in 2002, an early method that compares binarized gene expression patterns was used to identify interactions among genes by comparing patterns from wild type and mutant backgrounds <span class="citation">(Kumar et al. <a href="#ref-Kumar2002" role="doc-biblioref">2002</a>)</span>.</p>
-<p>However, as mutant lines are harder to obtain than wild type images, the simplest method is to set a threshold in <a href="https://www.questionpro.com/blog/pearson-correlation-coefficient/">Pearson correlation</a> coefficient between two genes to decide an edge should be drawn on the gene coexpression graph <span class="citation">(Wu et al. <a href="#ref-Wu2016" role="doc-biblioref">2016</a>; Campiteli et al. <a href="#ref-Campiteli2013" role="doc-biblioref">2013</a>)</span>.</p>
-<p>Alternatively, a sparse <a href="http://ml.informatik.uni-freiburg.de/former/_media/teaching/ws1314/gm/11-markov_logic_networks.handout.pdf">Markov network</a> whose nodes are genes and edges are presence of interaction can be learnt from expression profiles in each voxel <span class="citation">(Puniyani and Xing <a href="#ref-Puniyani2013" role="doc-biblioref">2013</a>)</span>, or a CNN can be trained on known interactions and predict new interactions based on gene expression patterns <span class="citation">(Yang, Fang, and Shen <a href="#ref-Yang2019" role="doc-biblioref">2019</a>)</span>. There are other types of analyses, such as inferring gene function from expression pattern, identifying spatially variable genes, and gene expression imputation at locations. The latter two are still important topics in current era data analysis.</p>
+<h2>
+<span class="header-section-number">3.3</span> Gene interactions<a class="anchor" aria-label="anchor" href="#prequel-gene-interactions"><i class="fas fa-link"></i></a>
+</h2>
+<p>While not single cell resolution, (WM)ISH atlases provide transcriptomes within the tissue at a resolution far higher than that of typical bulk RNA-seq and bulk microarray, thus opening the way to studying coexperssion and interaction between genes within the tissue. There are a few methods that aim to decide whether two genes interact according to (WM)ISH images, some dating published long before the popularization of scRNA-seq. Already in 2002, an early method that compares binarized gene expression patterns was used to identify interactions among genes by comparing patterns from wild type and mutant backgrounds <span class="citation">(Kumar et al. <a href="references.html#ref-Kumar2002" role="doc-biblioref">2002</a>)</span>.</p>
+<p>However, as mutant lines are harder to obtain than wild type images, the simplest method is to set a threshold in <a href="https://www.questionpro.com/blog/pearson-correlation-coefficient/">Pearson correlation</a> coefficient between two genes to decide an edge should be drawn on the gene coexpression graph <span class="citation">(Wu et al. <a href="references.html#ref-Wu2016" role="doc-biblioref">2016</a>; Campiteli et al. <a href="references.html#ref-Campiteli2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Alternatively, a sparse <a href="http://ml.informatik.uni-freiburg.de/former/_media/teaching/ws1314/gm/11-markov_logic_networks.handout.pdf">Markov network</a> whose nodes are genes and edges are presence of interaction can be learnt from expression profiles in each voxel <span class="citation">(Puniyani and Xing <a href="references.html#ref-Puniyani2013" role="doc-biblioref">2013</a>)</span>, or a CNN can be trained on known interactions and predict new interactions based on gene expression patterns <span class="citation">(Yang, Fang, and Shen <a href="references.html#ref-Yang2019" role="doc-biblioref">2019</a>)</span>. There are other types of analyses, such as inferring gene function from expression pattern, identifying spatially variable genes, and gene expression imputation at locations. The latter two are still important topics in current era data analysis.</p>
 </div>
 <div id="decline" class="section level2">
-<h2><span class="header-section-number">3.4</span> Decline</h2>
-<p>What contributed to the decline of the golden age of prequel data analysis? Partly a lack of usage of the methods developed, which was exacerbated by the decline of the golden age of (WM)ISH atlases in the 2010s (Figure <a href="prequel.html#fig:hist1">2.3</a>). While many methods to automate gene expression pattern annotation for BDGP were developed before 2013, for the 2013 BDGP update that added images of 708 transcription factors, the BDGP annotated the new images with human curators instead of the automated methods <span class="citation">(Hammonds et al. <a href="#ref-Hammonds2013" role="doc-biblioref">2013</a>)</span>. Nor did BDGP use the new methods to compare and classify the new gene expression patterns; instead, the curator assigned CV annotations were used for analysis <span class="citation">(Hammonds et al. <a href="#ref-Hammonds2013" role="doc-biblioref">2013</a>; Tomancak et al. <a href="#ref-Tomancak2007" role="doc-biblioref">2007</a>)</span>. BDGP did not have a major update after 2013; as existing images have already been annotated, there is no need to automate annotations.</p>
-<p>There are additional possible reasons why these methods were not used: First, it is unclear from the publications of the methods where the software implementation can be obtained. Second, a reason why most prequel analysis methods were developed for either BDGP or ABA is that since one gene is stained for in one embryo/section at a time, the images must be registered and standardized for different genes to be comparable; BDGP, through FlyExpress <span class="citation">(Kumar et al. <a href="#ref-Kumar2017" role="doc-biblioref">2017</a>)</span>, and ABA, provide images that have already been registered and standardized, while many other atlases, such as GEISHA, do not. Due to challenges in image registration in other organisms, the automated gene expression pattern analysis methods can’t be applied. Third, lack of usage of these methods can also be due to insufficient accuracy; from 2009 to 2013, the <a href="https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5">area under the curve (AUC)</a> of the automated annotations is typically around 0.8 and rarely exceeded 0.9 <span class="citation">(S. Ji, Li, et al. <a href="#ref-Ji2009" role="doc-biblioref">2009</a>; Pruteanu-Malinici, Mace, and Ohler <a href="#ref-Pruteanu-Malinici2011" role="doc-biblioref">2011</a>; Yuan et al. <a href="#ref-Yuan2012" role="doc-biblioref">2012</a>; Sun et al. <a href="#ref-Sun2013" role="doc-biblioref">2013</a>)</span>, which means when using such tools to annotate new images, extensive human review would still be required.</p>
+<h2>
+<span class="header-section-number">3.4</span> Decline<a class="anchor" aria-label="anchor" href="#decline"><i class="fas fa-link"></i></a>
+</h2>
+<p>What contributed to the decline of the golden age of prequel data analysis? Partly a lack of usage of the methods developed, which was exacerbated by the decline of the golden age of (WM)ISH atlases in the 2010s so there were fewer new atlases where the methods can be applied (Figure <a href="prequel.html#fig:hist1">2.3</a>). While many methods to automate gene expression pattern annotation for BDGP were developed before 2013, for the 2013 BDGP update that added images of 708 transcription factors, the BDGP annotated the new images with human curators instead of the automated methods <span class="citation">(Hammonds et al. <a href="references.html#ref-Hammonds2013" role="doc-biblioref">2013</a>)</span>. Nor did BDGP use the new methods to compare and classify the new gene expression patterns; instead, the curator assigned CV annotations were used for analysis <span class="citation">(Hammonds et al. <a href="references.html#ref-Hammonds2013" role="doc-biblioref">2013</a>; Tomancak et al. <a href="references.html#ref-Tomancak2007" role="doc-biblioref">2007</a>)</span>. BDGP did not have a major update after 2013; as existing images have already been annotated, there is no need to automate annotations.</p>
+<p>There are additional possible reasons why these methods were not used: First, it is unclear from the publications of the methods where the software implementation can be obtained. Second, a reason why most prequel analysis methods were developed for either BDGP or ABA is that since one gene is stained for in one embryo/section at a time, the images must be registered and standardized for different genes to be comparable; BDGP, through FlyExpress <span class="citation">(Kumar et al. <a href="references.html#ref-Kumar2017" role="doc-biblioref">2017</a>)</span>, and ABA, provide images that have already been registered and standardized, while many other atlases, such as GEISHA, do not. Due to challenges in image registration in other organisms, the automated gene expression pattern analysis methods can’t be applied. Third, lack of usage of these methods can also be due to insufficient accuracy; from 2009 to 2013, the <a href="https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5">area under the curve (AUC)</a> of the automated annotations is typically around 0.8 and rarely exceeded 0.9 <span class="citation">(S. Ji, Li, et al. <a href="references.html#ref-Ji2009" role="doc-biblioref">2009</a>; Pruteanu-Malinici, Mace, and Ohler <a href="references.html#ref-Pruteanu-Malinici2011" role="doc-biblioref">2011</a>; Yuan et al. <a href="references.html#ref-Yuan2012" role="doc-biblioref">2012</a>; Sun et al. <a href="references.html#ref-Sun2013" role="doc-biblioref">2013</a>)</span>, which means when using such tools to annotate new images, extensive human review would still be required.</p>
 </div>
 <div id="geo-prequel-analysis" class="section level2">
-<h2><span class="header-section-number">3.5</span> Geography of prequel data analysis</h2>
+<h2>
+<span class="header-section-number">3.5</span> Geography of prequel data analysis<a class="anchor" aria-label="anchor" href="#geo-prequel-analysis"><i class="fas fa-link"></i></a>
+</h2>
 <p>If our collection is representative, then contribution to prequel data analysis concentrates in a few institutions (Figure <a href="prequel-analysis.html#fig:pa-map">3.4</a>), not all of which are elite.</p>
-<div class="figure" style="text-align: center"><span id="fig:pa-map"></span>
-<img src="03-prequel_analysis_files/figure-html/pa-map-1.png" alt="Number of publications per city for prequel data analysis." width="960" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pa-map"></span>
+<img src="03-prequel_analysis_files/figure-html/pa-map-1.png" alt="Number of publications per city for prequel data analysis." width="100%"><p class="caption">
 Figure 3.4: Number of publications per city for prequel data analysis.
 </p>
 </div>
-<p>When broken down by species, it seems that distinct institutions contributed to data analysis of <em>Drosophila</em> and mouse data. UC Berkeley and Lawrence Berkeley National Laboratory (LBL) are responsible for BDGP, and Allen is responsible for ABA. However, among the top contributors are other institutions such as Arizona State University (ASU) and Old Dominion University (ODU) (Figure <a href="prequel-analysis.html#fig:pa-species2">3.5</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:pa-species2"></span>
-<img src="03-prequel_analysis_files/figure-html/pa-species2-1.png" alt="Number of publications per city for prequel data analysis broken down by species of interest." width="960" />
-<p class="caption">
-Figure 3.5: Number of publications per city for prequel data analysis broken down by species of interest.
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pa-map-us"></span>
+<img src="03-prequel_analysis_files/figure-html/pa-map-us-1.png" alt="Number of publications per city for prequel data analysis in the US." width="100%"><p class="caption">
+Figure 3.5: Number of publications per city for prequel data analysis in the US.
+</p>
+</div>
+<p>When broken down by species, it seems that distinct institutions contributed to data analysis of <em>Drosophila</em> and mouse data. UC Berkeley and Lawrence Berkeley National Laboratory (LBL) are responsible for BDGP, and Allen is responsible for ABA. However, among the top contributors are other institutions such as Arizona State University (ASU) and Old Dominion University (ODU) (Figure <a href="prequel-analysis.html#fig:pa-species2">3.6</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:pa-species2"></span>
+<img src="03-prequel_analysis_files/figure-html/pa-species2-1.png" alt="Number of publications per city for prequel data analysis broken down by species of interest." width="100%"><p class="caption">
+Figure 3.6: Number of publications per city for prequel data analysis broken down by species of interest.
 </p>
 </div>
 
@@ -319,203 +153,44 @@ Figure 3.5: Number of publications per city for prequel data analysis broken dow
 
 
 
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Abed-Esfahani2021">
-<p>Abed-Esfahani, Pegah, Benjamin C Darwin, Derek Howard, Nick Wang, Ethan Kim, Jason Lerch, and Leon French. 2021. “Evaluation of deep convolutional neural networks for in situ hybridization gene expression image representation.” <em>bioRxiv</em>, January, 2021.01.22.427860. <a href="https://doi.org/10.1101/2021.01.22.427860">https://doi.org/10.1101/2021.01.22.427860</a>.</p>
-</div>
-<div id="ref-Andonian2019">
-<p>Andonian, Alexander, Daniel Paseltiner, Travis J. Gould, and Jason B. Castro. 2019. “A deep learning based method for large-scale classification, registration, and clustering of in-situ hybridization experiments in the mouse olfactory bulb.” <em>Journal of Neuroscience Methods</em> 312 (January): 162–68. <a href="https://doi.org/10.1016/j.jneumeth.2018.12.003">https://doi.org/10.1016/j.jneumeth.2018.12.003</a>.</p>
-</div>
-<div id="ref-Bohland2010a">
-<p>Bohland, Jason W., Hemant Bokil, Sayan D. Pathak, Chang-Kyu Lee, Lydia Ng, Christopher Lau, Chihchau Kuan, Michael Hawrylycz, and Partha P. Mitra. 2010. “Clustering of spatial gene expression patterns in the mouse brain and comparison with classical neuroanatomy.” <em>Methods</em> 50 (2): 105–12. <a href="https://doi.org/10.1016/j.ymeth.2009.09.001">https://doi.org/10.1016/j.ymeth.2009.09.001</a>.</p>
-</div>
-<div id="ref-Campiteli2013">
-<p>Campiteli, Monica Guimarães, Cesar Henrique Comin, Luciano Da Fontoura Costa, M. Madan Babu, and Roberto Marcondes Cesar. 2013. “A methodology to infer gene networks from spatial patterns of expression – an application to fluorescence in situ hybridization images.” <em>Molecular BioSystems</em> 9 (7): 1926. <a href="https://doi.org/10.1039/c3mb25475e">https://doi.org/10.1039/c3mb25475e</a>.</p>
-</div>
-<div id="ref-Frise2010">
-<p>Frise, Erwin, Ann S Hammonds, and Susan E Celniker. 2010. “Systematic image‐driven analysis of the spatial Drosophila embryonic expression landscape.” <em>Molecular Systems Biology</em> 6 (1): 345. <a href="https://doi.org/10.1038/msb.2009.102">https://doi.org/10.1038/msb.2009.102</a>.</p>
-</div>
-<div id="ref-Gawantka1998">
-<p>Gawantka, Volker, Nicolas Pollet, Hajo Delius, Martin Vingron, Ralf Pfister, Rebecca Nitsch, Claudia Blumenstock, and Christof Niehrs. 1998. “Gene expression screening in Xenopus identifies molecular pathways, predicts gene function and provides a global view of embryonic patterning.” <em>Mechanisms of Development</em> 77 (2): 95–141. <a href="https://doi.org/10.1016/S0925-4773(98)00115-4">https://doi.org/10.1016/S0925-4773(98)00115-4</a>.</p>
-</div>
-<div id="ref-Gossler1989">
-<p>Gossler, Achim, A. Joyner, Janet Rossant, and W. Skarnes. 1989. “Mouse embryonic stem cells and reporter constructs to detect developmentally regulated genes.” <em>Science</em> 244 (4903): 463–65. <a href="https://doi.org/10.1126/science.2497519">https://doi.org/10.1126/science.2497519</a>.</p>
-</div>
-<div id="ref-Grange2014">
-<p>Grange, Pascal, Jason W. Bohland, Benjamin W. Okaty, Ken Sugino, Hemant Bokil, Sacha B. Nelson, Lydia Ng, Michael Hawrylycz, and Partha P. Mitra. 2014. “Cell-type-based model explaining coexpression patterns of genes in the brain.” <em>Proceedings of the National Academy of Sciences</em> 111 (14): 5397–5402. <a href="https://doi.org/10.1073/pnas.1312098111">https://doi.org/10.1073/pnas.1312098111</a>.</p>
-</div>
-<div id="ref-Gurunathan2004">
-<p>Gurunathan, Rajalakshmi, Bernard Van Emden, Sethuraman Panchanathan, and Sudhir Kumar. 2004. “Identifying spatially similar gene expression patterns in early stage fruit fly embryo images: Binary feature versus invariant moment digital representations.” <em>BMC Bioinformatics</em> 5 (1): 202. <a href="https://doi.org/10.1186/1471-2105-5-202">https://doi.org/10.1186/1471-2105-5-202</a>.</p>
-</div>
-<div id="ref-Hammonds2013">
-<p>Hammonds, Ann S., Christopher A. Bristow, William W. Fisher, Richard Weiszmann, Siqi Wu, Volker Hartenstein, Manolis Kellis, Bin Yu, Erwin Frise, and Susan E. Celniker. 2013. “Spatial expression of transcription factors in Drosophila embryonic organ development.” <em>Genome Biology</em> 14 (12): R140. <a href="https://doi.org/10.1186/gb-2013-14-12-r140">https://doi.org/10.1186/gb-2013-14-12-r140</a>.</p>
-</div>
-<div id="ref-Peng2006">
-<p>Hanchuan Peng, Fuhui Long, M. B. Eisen, and E. W. Myers. 2006. “Clustering Gene Expression Patterns of Fly Embryos.” In <em>3rd Ieee International Symposium on Biomedical Imaging: Macro to Nano, 2006.</em>, 2006:1144–7. IEEE. <a href="https://doi.org/10.1109/ISBI.2006.1625125">https://doi.org/10.1109/ISBI.2006.1625125</a>.</p>
-</div>
-<div id="ref-Heffel2008a">
-<p>Heffel, Andreas, Peter F. Stadler, Sonja J. Prohaska, Gerhard Kauer, and Jens-Peer Kuska. 2008. “Process flow for classification and clustering of fruit fly gene expression patterns.” In <em>2008 15th Ieee International Conference on Image Processing</em>, 721–24. IEEE. <a href="https://doi.org/10.1109/ICIP.2008.4711856">https://doi.org/10.1109/ICIP.2008.4711856</a>.</p>
-</div>
-<div id="ref-Jagalur2007">
-<p>Jagalur, Manjunatha, Chris Pal, Erik Learned-Miller, R Thomas Zoeller, and David Kulp. 2007. “Analyzing in situ gene expression in the mouse brain with image registration, feature extraction and block clustering.” <em>BMC Bioinformatics</em> 8 (Suppl 10): S5. <a href="https://doi.org/10.1186/1471-2105-8-S10-S5">https://doi.org/10.1186/1471-2105-8-S10-S5</a>.</p>
-</div>
-<div id="ref-Jayaraman2001">
-<p>Jayaraman, Karthik, Sethuraman Panchanathan, and Sudhir Kumar. 2001. “Classification and Indexing of Gene Expression Images.”</p>
-</div>
-<div id="ref-Ji2009">
-<p>Ji, Shuiwang, Ying Xin Li, Zhi Hua Zhou, Sudhir Kumar, and Jieping Ye. 2009. “A bag-of-words approach for Drosophila gene expression pattern annotation.” <em>BMC Bioinformatics</em> 10 (1): 119. <a href="https://doi.org/10.1186/1471-2105-10-119">https://doi.org/10.1186/1471-2105-10-119</a>.</p>
-</div>
-<div id="ref-Ji2008">
-<p>Ji, Shuiwang, Liang Sun, Rong Jin, Sudhir Kumar, and Jieping Ye. 2008. “Automated annotation of Drosophila gene expression patterns using a controlled vocabulary.” <em>Bioinformatics</em> 24 (17): 1881–8. <a href="https://doi.org/10.1093/bioinformatics/btn347">https://doi.org/10.1093/bioinformatics/btn347</a>.</p>
-</div>
-<div id="ref-Ji2009a">
-<p>Ji, Shuiwang, Lei Yuan, Ying-Xin Li, Zhi-Hua Zhou, Sudhir Kumar, and Jieping Ye. 2009. “Drosophila gene expression pattern annotation using sparse features and term-term interactions.” In <em>Proceedings of the 15th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining - Kdd ’09</em>, 407. New York, New York, USA: ACM Press. <a href="https://doi.org/10.1145/1557019.1557068">https://doi.org/10.1145/1557019.1557068</a>.</p>
-</div>
-<div id="ref-Ko2013">
-<p>Ko, Younhee, Seth A. Ament, James A. Eddy, Juan Caballero, John C. Earls, Leroy Hood, and Nathan D. Price. 2013. “Cell type-specific genes show striking and distinct patterns of spatial expression in the mouse brain.” <em>Proceedings of the National Academy of Sciences</em> 110 (8): 3095–3100. <a href="https://doi.org/10.1073/pnas.1222897110">https://doi.org/10.1073/pnas.1222897110</a>.</p>
-</div>
-<div id="ref-Kumar2002">
-<p>Kumar, Sudhir, Karthik Jayaraman, Sethuraman Panchanathan, Rajalakshmi Gurunathan, Ana Marti-Subirana, and Stuart J Newfeld. 2002. “BEST: A Novel Computational Approach for Comparing Gene Expression Patterns From Early Stages of &lt;em&gt;Drosophila melanogaster&lt;/em&gt; Development.” <em>Genetics</em> 162 (4): 2037 LP–2047. <a href="http://www.genetics.org/content/162/4/2037.abstract">http://www.genetics.org/content/162/4/2037.abstract</a>.</p>
-</div>
-<div id="ref-Kumar2017">
-<p>Kumar, Sudhir, Charlotte Konikoff, Maxwell Sanderford, Li Liu, Stuart Newfeld, Jieping Ye, and Rob J. Kulathinal. 2017. “FlyExpress 7: An Integrated Discovery Platform To Study Coexpressed Genes Using in situ Hybridization Images in Drosophila.” <em>G3; Genes|Genomes|Genetics</em> 7 (8): 2791–7. <a href="https://doi.org/10.1534/g3.117.040345">https://doi.org/10.1534/g3.117.040345</a>.</p>
-</div>
-<div id="ref-Lein2007">
-<p>Lein, Ed S., Michael J. Hawrylycz, Nancy Ao, Mikael Ayres, Amy Bensinger, Amy Bernard, Andrew F. Boe, et al. 2007. “Genome-wide atlas of gene expression in the adult mouse brain.” <em>Nature</em> 445 (7124): 168–76. <a href="https://doi.org/10.1038/nature05453">https://doi.org/10.1038/nature05453</a>.</p>
-</div>
-<div id="ref-Li2009">
-<p>Li, Ying-Xin, Shuiwang Ji, Sudhir Kumar, Jieping Ye, and Zhi-Hua Zhou. 2009. “Drosophila Gene Expression Pattern Annotation through Multi-Instance Multi-Label Learning.” <em>IJCAI : Proceedings of the Conference</em> 2009 (January): 1445–50. <a href="http://www.ncbi.nlm.nih.gov/pubmed/20824158%20http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC2932460">http://www.ncbi.nlm.nih.gov/pubmed/20824158 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC2932460</a>.</p>
-</div>
-<div id="ref-Li2017">
-<p>Li, Yujie, Hanbo Chen, Xi Jiang, Xiang Li, Jinglei Lv, Hanchuan Peng, Joe Z. Tsien, and Tianming Liu. 2017. “Discover mouse gene coexpression landscapes using dictionary learning and sparse coding.” <em>Brain Structure and Function</em> 222 (9): 4253–70. <a href="https://doi.org/10.1007/s00429-017-1460-9">https://doi.org/10.1007/s00429-017-1460-9</a>.</p>
-</div>
-<div id="ref-Liscovitch2013a">
-<p>Liscovitch, Noa, Uri Shalit, and Gal Chechik. 2013. “FuncISH: learning a functional representation of neural ISH images.” <em>Bioinformatics</em> 29 (13): i36–i43. <a href="https://doi.org/10.1093/bioinformatics/btt207">https://doi.org/10.1093/bioinformatics/btt207</a>.</p>
-</div>
-<div id="ref-Liu2007">
-<p>Liu, Zheng, S. Frank Yan, John R. Walker, Theresa A. Zwingman, Tao Jiang, Jing Li, and Yingyao Zhou. 2007. “Study of gene function based on spatial co-expression in a high-resolution mouse brain atlas.” <em>BMC Systems Biology</em> 1 (1): 19. <a href="https://doi.org/10.1186/1752-0509-1-19">https://doi.org/10.1186/1752-0509-1-19</a>.</p>
-</div>
-<div id="ref-Lowe2004">
-<p>Lowe, David G. 2004. “Distinctive Image Features from Scale-Invariant Keypoints.” <em>International Journal of Computer Vision</em> 60 (2): 91–110. <a href="https://doi.org/10.1023/B:VISI.0000029664.99615.94">https://doi.org/10.1023/B:VISI.0000029664.99615.94</a>.</p>
-</div>
-<div id="ref-Noto2017">
-<p>Noto, Torben, Derrick Barnagian, and Jason B. Castro. 2017. “Genome-scale investigation of olfactory system spatial heterogeneity.” Edited by Hiroaki Matsunami. <em>PLOS ONE</em> 12 (5): e0178087. <a href="https://doi.org/10.1371/journal.pone.0178087">https://doi.org/10.1371/journal.pone.0178087</a>.</p>
-</div>
-<div id="ref-OKane1987">
-<p>O’Kane, C. J., and W. J. Gehring. 1987. “Detection in situ of genomic regulatory elements in Drosophila.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 84 (24): 9123–7. <a href="https://doi.org/10.1073/pnas.84.24.9123">https://doi.org/10.1073/pnas.84.24.9123</a>.</p>
-</div>
-<div id="ref-Pan2006">
-<p>Pan, Jia-Yu, André Guilherme, Ribeiro Balan, Eric P. Xing, Agma Juci Machado Traina, and Christos Faloutsos. 2006. “Automatic mining of fruit fly embryo images.” In <em>Proceedings of the 12th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining - Kdd ’06</em>, 2006:693. New York, New York, USA: ACM Press. <a href="https://doi.org/10.1145/1150402.1150489">https://doi.org/10.1145/1150402.1150489</a>.</p>
-</div>
-<div id="ref-Patrushev2018">
-<p>Patrushev, Ilya, Christina James-Zorn, Aldo Ciau-Uitz, Roger Patient, and Michael J. Gilchrist. 2018. “New methods for computational decomposition of whole-mount in situ images enable effective curation of a large, highly redundant collection of Xenopus images.” <em>PLoS Computational Biology</em> 14 (8): e1006077. <a href="https://doi.org/10.1371/journal.pcbi.1006077">https://doi.org/10.1371/journal.pcbi.1006077</a>.</p>
-</div>
-<div id="ref-Pettit2014">
-<p>Pettit, Jean-Baptiste, Raju Tomer, Kaia Achim, Sylvia Richardson, Lamiae Azizi, and John Marioni. 2014. “Identifying Cell Types from Spatially Referenced Single-Cell Expression Datasets.” Edited by Quaid Morris. <em>PLoS Computational Biology</em> 10 (9): e1003824. <a href="https://doi.org/10.1371/journal.pcbi.1003824">https://doi.org/10.1371/journal.pcbi.1003824</a>.</p>
-</div>
-<div id="ref-Pruteanu-Malinici2011">
-<p>Pruteanu-Malinici, Iulian, Daniel L. Mace, and Uwe Ohler. 2011. “Automatic Annotation of Spatial Expression Patterns via Sparse Bayesian Factor Models.” Edited by Joel S. Bader. <em>PLoS Computational Biology</em> 7 (7): e1002098. <a href="https://doi.org/10.1371/journal.pcbi.1002098">https://doi.org/10.1371/journal.pcbi.1002098</a>.</p>
-</div>
-<div id="ref-Puniyani2013">
-<p>Puniyani, Kriti, and Eric P. Xing. 2013. “GINI: From ISH Images to Gene Interaction Networks.” Edited by Gal Chechik. <em>PLoS Computational Biology</em> 9 (10): e1003227. <a href="https://doi.org/10.1371/journal.pcbi.1003227">https://doi.org/10.1371/journal.pcbi.1003227</a>.</p>
-</div>
-<div id="ref-Sun2013">
-<p>Sun, Qian, Sherin Muckatira, Lei Yuan, Shuiwang Ji, Stuart Newfeld, Sudhir Kumar, and Jieping Ye. 2013. “Image-level and group-level models for Drosophila gene expression pattern annotation.” <em>BMC Bioinformatics</em> 14 (1): 350. <a href="https://doi.org/10.1186/1471-2105-14-350">https://doi.org/10.1186/1471-2105-14-350</a>.</p>
-</div>
-<div id="ref-Sundaresan1995">
-<p>Sundaresan, Venkatesan, Patricia Springer, Thomas Volpe, Samuel Haward, Jonathan D. G. Jones, Caroline Dean, Hong Ma, and Robert Martienssen. 1995. “Patterns of gene action in plant development revealed by enhancer trap and gene trap transposable elements.” <em>Genes &amp; Development</em> 9 (14): 1797–1810. <a href="https://doi.org/10.1101/gad.9.14.1797">https://doi.org/10.1101/gad.9.14.1797</a>.</p>
-</div>
-<div id="ref-Tomancak2002">
-<p>Tomancak, Pavel, Amy Beaton, Richard Weiszmann, Elaine Kwan, Sheng Qiang Shu, Suzanna E. Lewis, Stephen Richards, et al. 2002. “Systematic determination of patterns of gene expression during Drosophila embryogenesis.” <em>Genome Biology</em> 3 (12): research0088.1. <a href="https://doi.org/10.1186/gb-2002-3-12-research0088">https://doi.org/10.1186/gb-2002-3-12-research0088</a>.</p>
-</div>
-<div id="ref-Tomancak2007">
-<p>Tomancak, Pavel, Benjamin P. Berman, Amy Beaton, Richard Weiszmann, Elaine Kwan, Volker Hartenstein, Susan E. Celniker, and Gerald M. Rubin. 2007. “Global analysis of patterns of gene expression during Drosophila embryogenesis.” <em>Genome Biology</em> 8 (7): R145. <a href="https://doi.org/10.1186/gb-2007-8-7-r145">https://doi.org/10.1186/gb-2007-8-7-r145</a>.</p>
-</div>
-<div id="ref-Wu2016">
-<p>Wu, Siqi, Antony Joseph, Ann S. Hammonds, Susan E. Celniker, Bin Yu, and Erwin Frise. 2016. “Stability-driven nonnegative matrix factorization to interpret spatial gene expression and build local gene networks.” <em>Proceedings of the National Academy of Sciences</em> 113 (16): 4290–5. <a href="https://doi.org/10.1073/pnas.1521171113">https://doi.org/10.1073/pnas.1521171113</a>.</p>
-</div>
-<div id="ref-Wurst1995a">
-<p>Wurst, W, J Rossant, V Prideaux, M Kownacka, A Joyner, D P Hill, F Guillemot, S Gasca, D Cado, and A Auerbach. 1995. “A large-scale gene-trap screen for insertional mutations in developmentally regulated genes in mice.” <em>Genetics</em> 139 (2). <a href="https://www.genetics.org/content/139/2/889">https://www.genetics.org/content/139/2/889</a>.</p>
-</div>
-<div id="ref-Yang2019">
-<p>Yang, Yang, Qingwei Fang, and Hong-Bin Shen. 2019. “Predicting gene regulatory interactions based on spatial gene expression data and deep learning.” Edited by Smita Krishnaswamy. <em>PLOS Computational Biology</em> 15 (9): e1007324. <a href="https://doi.org/10.1371/journal.pcbi.1007324">https://doi.org/10.1371/journal.pcbi.1007324</a>.</p>
-</div>
-<div id="ref-Yuan2012">
-<p>Yuan, Lei, Alexander Woodard, Shuiwang Ji, Yuan Jiang, Zhi-Hua Zhou, Sudhir Kumar, and Jieping Ye. 2012. “Learning Sparse Representations for Fruit-Fly Gene Expression Pattern Image Annotation and Retrieval.” <em>BMC Bioinformatics</em> 13 (1): 107. <a href="https://doi.org/10.1186/1471-2105-13-107">https://doi.org/10.1186/1471-2105-13-107</a>.</p>
-</div>
-<div id="ref-Zeng2015">
-<p>Zeng, Tao, Rongjian Li, Ravi Mukkamala, Jieping Ye, and Shuiwang Ji. 2015. “Deep convolutional neural networks for annotating gene expression patterns in the mouse brain.” <em>BMC Bioinformatics</em> 16 (1): 147. <a href="https://doi.org/10.1186/s12859-015-0553-9">https://doi.org/10.1186/s12859-015-0553-9</a>.</p>
-</div>
-<div id="ref-Zhang2013">
-<p>Zhang, Wenlu, Daming Feng, Rongjian Li, Andrey Chernikov, Nikos Chrisochoides, Christopher Osgood, Charlotte Konikoff, Stuart Newfeld, Sudhir Kumar, and Shuiwang Ji. 2013. “A mesh generation and machine learning framework for Drosophila gene expression pattern image analysis.” <em>BMC Bioinformatics</em> 14 (1): 372. <a href="https://doi.org/10.1186/1471-2105-14-372">https://doi.org/10.1186/1471-2105-14-372</a>.</p>
-</div>
-<div id="ref-Zhou2007a">
-<p>Zhou, Jie, and Hanchuan Peng. 2007. “Automatic recognition and annotation of gene expression patterns of fly embryos.” <em>Bioinformatics</em> 23 (5): 589–96. <a href="https://doi.org/10.1093/bioinformatics/btl680">https://doi.org/10.1093/bioinformatics/btl680</a>.</p>
-</div>
-</div>
-            </section>
+  <div class="chapter-nav">
+<div class="prev"><a href="prequel.html"><span class="header-section-number">2</span> Prequel era</a></div>
+<div class="next"><a href="current.html"><span class="header-section-number">4</span> From the past to the present</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#prequel-analysis"><span class="header-section-number">3</span> Data analysis in the prequel era</a></li>
+<li><a class="nav-link" href="#prequel-gene-patterns"><span class="header-section-number">3.1</span> Gene patterns</a></li>
+<li><a class="nav-link" href="#prequel-spatial-regions"><span class="header-section-number">3.2</span> Spatial regions</a></li>
+<li><a class="nav-link" href="#prequel-gene-interactions"><span class="header-section-number">3.3</span> Gene interactions</a></li>
+<li><a class="nav-link" href="#decline"><span class="header-section-number">3.4</span> Decline</a></li>
+<li><a class="nav-link" href="#geo-prequel-analysis"><span class="header-section-number">3.5</span> Geography of prequel data analysis</a></li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="prequel.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="current.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/pachterlab/LP_2021/tree/main/supplement/blob/master/03-prequel_analysis.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/pachterlab/LP_2021/tree/main/supplement/edit/master/03-prequel_analysis.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, <a href="mailto:dlu2@caltech.edu" class="email">dlu2@caltech.edu</a>, Lior Pachter, <a href="mailto:lpachter@caltech.edu" class="email">lpachter@caltech.edu</a>. It was last built on 2021-09-12.</p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": true,
-"facebook": false,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": null,
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["museumst.pdf"],
-"toc": {
-"collapse": "subsection",
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "fixed"
-},
-"search": true,
-"info": true
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -527,7 +202,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>
