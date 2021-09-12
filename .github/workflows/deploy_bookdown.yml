@@ -23,15 +23,13 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-3-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-3-
       - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown","bookdown","tinytex"))'
-      - name: Install tinytex
-        run: Rscript -e 'tinytex::install_tinytex()'
+        run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
       - name: Install dependencies
         run: Rscript -e 'install.packages("remotes"); remotes::install_deps(pkg = "supplement/", dependencies = TRUE)'
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       - name: Render Book
-        run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd", output_format = c("bookdown::gitbook", "bookdown::pdf_book")))'
+        run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd", output_format = c("bookdown::bs4_book")))'
       - uses: actions/upload-artifact@v1
         with:
           name: _book
