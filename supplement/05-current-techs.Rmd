@@ -174,7 +174,7 @@ hg_p <- organs_hg_m %>%
                        name = "# publications\n(pathological)")
 ```
 
-```{r dsp-organs, fig.width=8, fig.height=6, fig.cap="Number of GeoMX DSP or WTA studies for healthy and pathological human organs. Male is shown here because there are studies for the prostate but not for female specific organs."}
+```{r dsp-organs, fig.width=8, fig.height=6, out.width="100%", fig.cap="Number of GeoMX DSP or WTA studies for healthy and pathological human organs. Male is shown here because there are studies for the prostate but not for female specific organs."}
 hg_h + hg_p +
   plot_annotation(tag_levels = "A")
 ```
@@ -717,7 +717,7 @@ hg_p <- organs_hg_f %>%
 
 (ref:hg-visium-cap) Number of Visium studies for healthy (A) and pathological (B) human organs. Female is shown here due to several breast cancer and ovary studies. There is one human prostate Visium study in our database [@McCray2021].
 
-```{r visium-organs, fig.width=8, fig.height=6, fig.cap="(ref:hg-visium-cap)"}
+```{r visium-organs, fig.width=8, fig.height=6, out.width="100%", fig.cap="(ref:hg-visium-cap)"}
 hg_h + hg_p +
   plot_annotation(tag_levels = "A")
 ```
@@ -750,7 +750,7 @@ mm_p <- organs_mm_f %>%
                        name = "# publications\n(pathological)")
 ```
 
-```{r visium-organs-mm, fig.width=8, fig.height=6, fig.cap="Number of Visium studies for healthy (A) and pathological (B) mouse organs. Female is shown here as there is a uterus study while there is no study on male specific organs in our database."}
+```{r visium-organs-mm, fig.width=8, fig.height=6, out.width="100%", fig.cap="Number of Visium studies for healthy (A) and pathological (B) mouse organs. Female is shown here as there is a uterus study while there is no study on male specific organs in our database."}
 mm_h + mm_p +
   plot_annotation(tag_levels = "A")
 ```
