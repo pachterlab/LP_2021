@@ -198,10 +198,15 @@ laplacian
 variable-other
 pattern
 region
+clustering
+markov-random-field
+graph-convolutional-network
+spatial-statistics
 cell-interaction
 l-r
 gene-cell-interact
 gene-interaction
 subcellular
 HnE
+prospective-users
 future
