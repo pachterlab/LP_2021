@@ -41,7 +41,7 @@ dittoseq_colors <-
     "#00446B", "#803800", "#8D3666", "#3D3D3D")
 ```
 
-```{r all-methods, fig.width=6, fig.height=4, fig.cap='Number of publications (including preprints) using each technique to collect new data in both prequel and current era. Only the top 10 in terms of number of publications of all time are colored, and the rest are lumped into Other. Bin width is 180 days, or about half a year. The LCM is for curated LCM literature, which might not be representative of all LCM literature given LCM's long term popularity.'}
+```{r all-methods, fig.width=6, fig.height=4, fig.cap="Number of publications (including preprints) using each technique to collect new data in both prequel and current era. Only the top 10 in terms of number of publications of all time are colored, and the rest are lumped into Other. Bin width is 180 days, or about half a year. The LCM is for curated LCM literature, which might not be representative of all LCM literature given LCM's long term popularity."}
 ggplot(all_methods2, aes(date_published, fill = method2)) +
   geom_histogram(binwidth = 180) +
   #geom_area(stat = "bin", binwidth = 180) +
