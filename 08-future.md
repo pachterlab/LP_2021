@@ -10,7 +10,9 @@ Second, in several fields that are no doubt mature, while many different technol
 
 
 ```r
-# For a plot showing the rise of Visium and DSP relative to other techniques
+knitr::opts_chunk$set(echo = FALSE, fig.keep = "all",
+                      message = FALSE, warning = FALSE,
+                      fig.align = "center")
 library(tidyverse)
 ```
 
@@ -37,68 +39,19 @@ theme_set(theme_bw())
 ```
 
 
-```r
-nms <- c("Prequel", "Microdissection", "NGS wo MD", "smFISH", "ISS", "No priori", 
-         "Other")
-all_methods <- read_metadata(nms, update = TRUE) %>% 
-  unnest_cat(method)
-```
 
 
-```r
-all_methods2 <- all_methods %>% 
-  mutate(method2 = fct_lump_n(method, 10) %>% fct_infreq() %>% 
-           fct_relevel("Other", after = Inf) %>% 
-           fct_rev())
-```
 
 
-```r
-# Colorblind friendly palette
-dittoseq_colors <- 
-  c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", 
-    "#CC79A7", "#666666", "#AD7700", "#1C91D4", "#007756", "#D5C711", 
-    "#005685", "#A04700", "#B14380", "#4D4D4D", "#FFBE2D", "#80C7EF", 
-    "#00F6B3", "#F4EB71", "#06A5FF", "#FF8320", "#D99BBD", "#8C8C8C", 
-    "#FFCB57", "#9AD2F2", "#2CFFC6", "#F6EF8E", "#38B7FF", "#FF9B4D", 
-    "#E0AFCA", "#A3A3A3", "#8A5F00", "#1674A9", "#005F45", "#AA9F0D", 
-    "#00446B", "#803800", "#8D3666", "#3D3D3D")
-```
 
-
-```r
-ggplot(all_methods2, aes(date_published, fill = method2)) +
-  geom_histogram(binwidth = 180) +
-  #geom_area(stat = "bin", binwidth = 180) +
-  scale_fill_manual(values = c("gray70", rev(dittoseq_colors[1:10])),
-                    name = "Method") +
-  scale_y_continuous(expand = expansion(c(0, 0.05))) +
-  labs(x = "Date published", y = "Number of publications")
-```
-
-<div class="figure">
-<img src="08-future_files/figure-html/all-methods-1.png" alt="Number of publications (including preprints) using each technique to collect new data in both prequel and current era. Only the top 10 in terms of number of publications of all time are colored, and the rest are lumped into Other. Bin width is 180 days, or about half a year. The LCM is for curated LCM literature, which might not be representative of all LCM literature given LCM's long term popularity." width="576" />
+<div class="figure" style="text-align: center">
+<img src="08-future_files/figure-html/all-methods-1.png" alt="Number of publications (including preprints) using each technique to collect new data in both prequel and current era. Only the top 10 in terms of number of publications of all time are colored, and the rest are lumped into Other. Bin width is 180 days, or about half a year. The LCM is for curated LCM literature, which might not be representative of all LCM literature given LCM's long term popularity." width="672" />
 <p class="caption">(\#fig:all-methods)Number of publications (including preprints) using each technique to collect new data in both prequel and current era. Only the top 10 in terms of number of publications of all time are colored, and the rest are lumped into Other. Bin width is 180 days, or about half a year. The LCM is for curated LCM literature, which might not be representative of all LCM literature given LCM's long term popularity.</p>
 </div>
 
-
-```r
-ggplot(all_methods2, aes(date_published, fill = method2)) +
-  geom_histogram(binwidth = 180, position = "fill") +
-  scale_fill_manual(values = c("gray70", rev(dittoseq_colors[1:10])),
-                    name = "Method") +
-  scale_y_continuous(expand = expansion(0)) +
-  scale_x_date(expand = expansion(0)) +
-  labs(x = "Date published", y = "Proportion of publications")
-```
-
-```
-## Warning: Removed 132 rows containing missing values (geom_bar).
-```
-
-<div class="figure">
-<img src="08-future_files/figure-html/all-methods-props-1.png" alt="Proportion of publications per bin using each of the top 10 techniques for data collection." width="576" />
-<p class="caption">(\#fig:all-methods-props)Proportion of publications per bin using each of the top 10 techniques for data collection.</p>
+<div class="figure" style="text-align: center">
+<img src="08-future_files/figure-html/all-methods-prop-1.png" alt="Proportion of publications per bin using each of the top 10 techniques for data collection." width="672" />
+<p class="caption">(\#fig:all-methods-prop)Proportion of publications per bin using each of the top 10 techniques for data collection.</p>
 </div>
 
 Spatial transcriptomics still faces many challenges. First, there still is the trade off between quantity and quality. ST and Visium, which have limited resolution and low detection efficiency, can be more easily applied to larger areas of tissue and the whole transcriptome. ISS has been applied to whole mouse brain sections, because while it has lower detection efficiency than smFISH, the amplified and less crowded signals can be detected at lower magnification. In contrast, while smFISH based techniques have subcellular resolution and often over 80% detection efficiency, the efficiency is compromised when applied to 10000 genes and these techniques are more difficult to apply to larger areas of tissue. As there are still challenges, new techniques to collect data are constantly being developed. Second, compared to the prequel era, the current era is more elitist. While commercial LCM, ST, and Visium have spread far and wide, the various high quality smFISH based techniques mostly failed to spread beyond their usually elite institutions of origin. This might be due to difficulty in building custom equipment, challenges in customizing the protocols to different tissues, limits in number of genes and cells profiled, lack of core facilities for these techniques, and lack of unified, efficient, open source, and well documented software platform to process the data. However, with the rise of commercial platforms for highly multiplexed smFISH such as MERSCOPE, Rebus Esper, and Molecular Cartography, this might soon change.

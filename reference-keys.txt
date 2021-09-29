@@ -64,7 +64,7 @@ fig:smfish-langs
 tab:table2
 fig:fisseq
 fig:solid
-fig:cpal
+fig:cpal-fig
 fig:sedal
 fig:array-map
 fig:array-us
@@ -117,7 +117,7 @@ tab:gene-int-pkgs
 tab:subcellular-pkgs
 tab:hne-pkgs
 fig:all-methods
-fig:all-methods-props
+fig:all-methods-prop
 intro
 database
 organization-of-the-database-and-this-book
