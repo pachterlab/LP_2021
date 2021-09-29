@@ -404,7 +404,7 @@ ggplot(sum_cells, aes(date_published, n_cells)) +
   annotation_logticks()
 ```
 
-After log transforming the total number of cells per study (when reported), whose distribution is very right skewed, it does seem that the total number of cells increased with time (Figure \@ref(fig:smfish-lm-cell)). New smFISH based techniques in our database from 2021 are all optimized for features other than larger number of genes and are applied to relative small numbers of genes in demonstration. For instance, EASI-FISH is optimized for thick brain sections [@Wang2021]. par-seqFISH is optimized for bacteria [@Dar2021]. CISI is optimized for reducing the number of imaging cycles and avoiding direct spot calling and has not been demonstrated on large number of genes [@Cleary]. The distinctive feature of MOSAICA is to use both the color and the lifetime of the fluorophores and is only demonstrated to be 10-plex [@Vu2021]. Recent applications of existing techniques also tend to feature larger number of cells but at most 100 something genes (e.g. 120 genes in [@Langseth2021]), where the smFISH based dataset is complementary to scRNA-seq datasets of the same system, using marker genes from scRNA-seq clusters.
+After log transforming the total number of cells per study (when reported), whose distribution is very right skewed, it does seem that the total number of cells increased with time (Figure \@ref(fig:smfish-lm-cell)). New smFISH based techniques in our database from 2021 are all optimized for features other than larger number of genes and are applied to relative small numbers of genes in demonstration. For instance, EASI-FISH is optimized for thick brain sections [@Wang2021]. par-seqFISH is optimized for bacteria [@Dar2021]. CISI is optimized for reducing the number of imaging cycles and avoiding direct spot calling and has not been demonstrated on large number of genes [@Cleary2021]. The distinctive feature of MOSAICA is to use both the color and the lifetime of the fluorophores and is only demonstrated to be 10-plex [@Vu2021]. Recent applications of existing techniques also tend to feature larger number of cells but at most 100 something genes (e.g. 120 genes in [@Langseth2021]), where the smFISH based dataset is complementary to scRNA-seq datasets of the same system, using marker genes from scRNA-seq clusters.
 
 ```{r, results='markup'}
 summary(lm(log(n_cells) ~ date_published, data = sum_cells))
@@ -571,9 +571,9 @@ In INSTA-seq [@Furth2019], recessed sequencing primers and multiple rounds hybri
 
 ### cPAL and ISS {#cpal}
 
-An alternative SBL scheme is combinatorial probe anchor ligation (cPAL), which to our best knowledge, was first demonstrated in 2005 [@Shendure2005]. In cPAL, an anchor primer is hybridized to a constant region immediately adjacent to the target. T4 DNA ligase requires matching base pairing up to 6 bases from the ligation junction when ligating from 5' to 3' and 7 bases when ligating from 3' to 5'. The first base of the target 5' to the constant region is interrogated by a 9-mer probe whose 5' most base is represented by the color of a fluorophore and ligated to the primer if a perfect match is present (Figure \@ref(fig:cpal)). Then the ligated construct is stripped and a new primer is hybridized to the constant region. The second base is interrogated by a 9-mer probe whose second 5' most base is represented by the fluorophore. This can carry on until the 6th base on the 5' direction. When the constant region is 5' to the target, bases 3' to the constant region are interrogated in a similar fashion. With constant regions flanking a target so primers bind in both direction, a 13 nt target can be sequenced this way, and the read length can be somewhat increased by adding degenerate bases to the anchor primer extending into the target [@Drmanac2010].
+An alternative SBL scheme is combinatorial probe anchor ligation (cPAL), which to our best knowledge, was first demonstrated in 2005 [@Shendure2005]. In cPAL, an anchor primer is hybridized to a constant region immediately adjacent to the target. T4 DNA ligase requires matching base pairing up to 6 bases from the ligation junction when ligating from 5' to 3' and 7 bases when ligating from 3' to 5'. The first base of the target 5' to the constant region is interrogated by a 9-mer probe whose 5' most base is represented by the color of a fluorophore and ligated to the primer if a perfect match is present (Figure \@ref(fig:cpal-fig)). Then the ligated construct is stripped and a new primer is hybridized to the constant region. The second base is interrogated by a 9-mer probe whose second 5' most base is represented by the fluorophore. This can carry on until the 6th base on the 5' direction. When the constant region is 5' to the target, bases 3' to the constant region are interrogated in a similar fashion. With constant regions flanking a target so primers bind in both direction, a 13 nt target can be sequenced this way, and the read length can be somewhat increased by adding degenerate bases to the anchor primer extending into the target [@Drmanac2010].
 
-```{r cpal, out.width="100%", fig.cap="Schematic of cPAL as used in ISS."}
+```{r cpal-fig, out.width="100%", fig.cap="Schematic of cPAL as used in ISS."}
 knitr::include_graphics("cpal.png")
 ```
 
@@ -851,7 +851,7 @@ Pros:
 
 Cons:
 
-1. In ROI based studies, typically only a small number of ROIs are used. It can be labor intensive to study the histological staining to manually select ROIs.
+1. In ROI based studies, typically only a small number of ROIs are used. It can be labor intensive to study the histological staining to manually select too many ROIs.
 2. Unlike in techniques that rely on spatial barcodes that can be pooled and later demultiplexed, when spatial locations are only known from selection of ROIs, scaling to larger number of ROIs becomes more challenging as samples need to be collected ROI to ROI. This also applies to Tomo-seq.
 
 Compared to techniques with single cell and single molecule resolution, including those based on smFISH and ISS:
@@ -859,7 +859,7 @@ Compared to techniques with single cell and single molecule resolution, includin
 Pros:
 
 1. When RNA-seq or cDNA microarray is performed after ROI selection, then it's transcriptome wide. Even when it's not transcriptome wide, such as with some gene panels in GeoMX DSP, well over 1000 genes can be profiled at a time, while smFISH and ISS based methods are typically used on fewer than 300 genes. Furthermore, for LCM, with RNA-seq, new transcripts and isoforms can be discovered as there are no probes confined to known transcripts.
-2. Again, existing well-established commercial platforms and core facilities for LCM and GeoMX DSP, though this might change with MERSCOP, Rebus Esper, Molecular Cartography, and commercial probe panels.
+2. Again, existing well-established commercial platforms and core facilities for LCM and GeoMX DSP, though this might change with MERSCOPE, Rebus Esper, Molecular Cartography, and commercial probe panels.
 3. Because at present, the rawest data the user sees from smFISH and ISS is the images, while the rawest data the user sees from NGS (for LCM and higher-plexed GeoMX DSP/WTA) is fastq files, processing the raw data to get a gene count matrix is more difficult and time consuming for smFISH and ISS.
 4. Don't need to custom design and invest in probes
 5. Compatible with FFPE tissues. While RNAscope and SCRINSHOT are FFPE compatible, we are unaware of usage of SCRINSHOT beyond its lab of origin and the higher-plexed methods scalable to thousands of genes like MERFISH have not yet been demonstrated on FFPE.

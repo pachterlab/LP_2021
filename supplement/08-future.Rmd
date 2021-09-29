@@ -53,7 +53,7 @@ ggplot(all_methods2, aes(date_published, fill = method2)) +
   labs(x = "Date published", y = "Number of publications")
 ```
 
-```{r all-methods-props, fig.width=7, fig.height=4, fig.cap="Proportion of publications per bin using each of the top 10 techniques for data collection."}
+```{r all-methods-prop, fig.width=7, fig.height=4, fig.cap="Proportion of publications per bin using each of the top 10 techniques for data collection."}
 ggplot(all_methods2, aes(date_published, fill = method2)) +
   geom_histogram(binwidth = 180, position = "fill") +
   scale_fill_manual(values = c("gray70", rev(dittoseq_colors[1:10])),

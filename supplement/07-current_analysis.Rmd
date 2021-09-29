@@ -145,7 +145,7 @@ langs <- unnest_cat(data_sheets, language)
 ```
 
 ```{r user-langs, fig.width=6, fig.height=4, fig.cap="Number of publications for data collection using each of the 5 most popular programming languages for downstream data analysis."}
-pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 10) +
+pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 20) +
   labs(title = "Users (downstream analysis)") +
   scale_y_continuous(expand = expansion(c(0,0.05)),
                      breaks = breaks_width(20))
@@ -163,11 +163,11 @@ xlim <- langs %>%
   pull(n)
 ```
 
-```{r dev-langs, fig.width=6, fig.height=4, fig.cap="Number of publication for data analysis using each of the 5 most popular programming languages for package development. In this and the previous figure, each icon stands for 10 publications, and the x axes of both figures are aligned. Note that multiple programming languages can be used in one publication."}
+```{r dev-langs, fig.width=6, fig.height=4, fig.cap="Number of publication for data analysis using each of the 5 most popular programming languages for package development. In this and the previous figure, each icon stands for 20 publications, and the x axes of both figures are aligned. Note that multiple programming languages can be used in one publication."}
 pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE,
-             img_unit = 10) +
+             img_unit = 20) +
     scale_y_continuous(limits = c(0, xlim), 
-                       breaks = seq(0, xlim, by = 20),
+                       breaks = breaks_width(20),
                        expand = expansion(mult = c(0,0.05))) +
     labs(title = "Package developers")
 ```
@@ -394,6 +394,8 @@ In contrast, STdeconvolve [@Miller2021a] does not use a scRNA-seq reference and 
 Some of the packages already mentioned in previous sections have cell type deconvolution functionalities as well. For instance, Seurat's data transfer based on anchors between datasets can also be used to transfer cell type annotations, and the *ad hoc* score for the transferred cell types has been used as a qualitative measure of cell type composition in Visium spots [@Mantri2020]. Giotto implements 3 methods for qualitative cell type deconvolution: First, a score based on fold change in expression of marker genes in a spot compared to the mean across spots. Second, another score scoring genes for specificity in both scRNA-seq cell types and ST or Visium spots and the sum of the top 100 gene scores is the cell type enrichment score for each spot. For these two methods, p-values are calculated from [permutation testing](https://www.r-bloggers.com/2019/04/what-is-a-permutation-test/). Third, given a fixed set of cell type marker genes, a [hypergeometric test](https://brilliant.org/wiki/hypergeometric-distribution/) is used to test for enrichment of marker genes among top 5% expressed genes of the spot. In Tangram, the cell mapping matrix from scRNA-seq to ST or Visium can be inferred as the ground truth cell density per spot can be measured from H&E staining. When cells from scRNA-seq are mapped to spots in ST and Visium, the cell type annotations are also mapped.
 
 The [graph convolutional neural network (GCN)](https://tkipf.github.io/graph-convolutional-networks/) has been applied to cell type deconvolution, in DSTG [@Su2020]. First, scRNA-seq cells are randomly assigned to "spots" of 2 to 8 cells, forming a pseudo-ST dataset. Then the pseudo-ST and real ST data are projected to a CCA space, and a mutual $k$ nearest neighbor graph is built in this space. After that both the pseudo and real ST data and the graph are fed into a GCN, trained to minimize cross entropy between imputed cell composition and actual cell composition in the pseudo-ST spots. Finally, the trained model is used to predict cell composition in real ST data.
+
+As already mentioned in Section \@ref(reconstruction), some methods exploit spatial autocorrelation in gene expression to map dissociated cells from scRNA-seq to a spatial reference or to impute gene expression in space. Also as well be discussed in Section \@ref(region), some methods that find spatial regions based on the transcriptome favor spatial autocorrelation in cluster labels, i.e. neighboring spots or cells tend to have the same label. Cell type colocalization is also spatially autocorrelated, but spatial autocorrelation is generally not exploited in cell type deconvolution methods. 
 
 ## Spatially variable genes {#variable}
 
