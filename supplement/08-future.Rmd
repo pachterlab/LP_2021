@@ -12,6 +12,9 @@ Second, in several fields that are no doubt mature, while many different technol
 knitr::opts_chunk$set(echo = FALSE, fig.keep = "all",
                       message = FALSE, warning = FALSE,
                       fig.align = "center")
+```
+
+```{r}
 library(tidyverse)
 library(museumst)
 theme_set(theme_bw())
