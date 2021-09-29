@@ -116,6 +116,8 @@ tab:interact-pkgs
 tab:gene-int-pkgs
 tab:subcellular-pkgs
 tab:hne-pkgs
+fig:all-methods
+fig:all-methods-props
 intro
 database
 organization-of-the-database-and-this-book
@@ -165,7 +167,7 @@ array
 gray-areas-and-single-cell-resolution
 detection-efficiencies
 no-priori
-overall-comparisons
+comparisons
 roi-based
 ngs-wo-md
 smfish-1
@@ -176,7 +178,7 @@ text-mining
 topic-model
 word-time
 topic-time
-association-of-topics-with-city
+topic-city
 glove
 current-analysis
 preprocessing
@@ -192,6 +194,10 @@ generative
 latent
 reconst-other
 deconvolution
+negative-binomial
+other-generalized-linear-models
+topic-modeling
+other-principles-without-explicit-statistical-modeling
 variable
 gpr
 laplacian

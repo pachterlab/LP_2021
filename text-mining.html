@@ -213,9 +213,9 @@ Figure 6.10: Correlation between topics colored by both broad categories of the 
 </div>
 <p>Now return to the topic correlation graph, and all the 50 topics, along with their trends, are shown (Figure <a href="text-mining.html#fig:topic-corr-trend">6.10</a>). Overall, cancer topics tend to be decreasing in proportion. As already seen in Figure <a href="text-mining.html#fig:topic-count">6.9</a>, this is in part due to growth in non-cancer topics but in part due to decline in some cancer topics. Botany and neuroscience topics tend to increase in proportion. This trend is also evident in the topic correlations. Microarray and RNA amplification (topic 41) is correlated with a cancer topic, while spatial single cell and imaging (topic 37) and data analysis (topic 4) are correlated with neuroscience topics. Topic 27, which is about single cell profiling of tumors, has grown, perhaps due to the growth of scRNA-seq. Possibly, as cancer is still relevant, the decline in some cancer topics fed into topic 27 as tumors are examined at the single cell level.</p>
 </div>
-<div id="association-of-topics-with-city" class="section level2">
+<div id="topic-city" class="section level2">
 <h2>
-<span class="header-section-number">6.4</span> Association of topics with city<a class="anchor" aria-label="anchor" href="#association-of-topics-with-city"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4</span> Association of topics with city<a class="anchor" aria-label="anchor" href="#topic-city"><i class="fas fa-link"></i></a>
 </h2>
 <p>Again, with the <code>estimateEffects</code> function, we identify cities associated with certain topics. Some topics might be more spread out, while some some may be confined to a few institutions, which are approximated by city here because it’s more difficult to automatically extract institutions from the author address on PubMed than cities. Some institutions might specialize in certain topics. Also note that while for PubMed papers, the cities of the first author are used, because the first author has greater contribution to the paper, only the address of the corresponding author is available from the bioRxiv API. Furthermore, multiple institutions across continents may collaborate on one paper, so the cities here only give a rough idea where LCM related research takes place. Here only the names of the cities are used, with the state and country they are in to distinguish between cities with the same name, without the longitude and latitude, because we don’t expect an association between topic and the coordinates in and of themselves, nor do we expect spatial autocorrelation of the topics.</p>
 <div class="figure" style="text-align: center">
@@ -289,7 +289,7 @@ Figure 6.16: UMAP projection of word embeddings. Zoom in if reading the PDF vers
 <li><a class="nav-link" href="#topic-model"><span class="header-section-number">6.1</span> Topic modeling</a></li>
 <li><a class="nav-link" href="#word-time"><span class="header-section-number">6.2</span> Changes of word usage through time</a></li>
 <li><a class="nav-link" href="#topic-time"><span class="header-section-number">6.3</span> Changes of topic prevalence through time</a></li>
-<li><a class="nav-link" href="#association-of-topics-with-city"><span class="header-section-number">6.4</span> Association of topics with city</a></li>
+<li><a class="nav-link" href="#topic-city"><span class="header-section-number">6.4</span> Association of topics with city</a></li>
 <li><a class="nav-link" href="#glove"><span class="header-section-number">6.5</span> GloVe word embedding</a></li>
 </ul>
 
@@ -308,7 +308,7 @@ Figure 6.16: UMAP projection of word embeddings. Zoom in if reading the PDF vers
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2021-09-26.</p>
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2021-09-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
