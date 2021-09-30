@@ -7,14 +7,14 @@
 <title>Chapter 5 Current era technologies | Museum of Spatial Transcriptomics</title>
 <meta name="author" content="Lambda Moses">
 <meta name="author" content="Lior Pachter">
-<meta name="description" content="5.1 Microdissection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue. The samples can be isolated physically or by molecular techniques....">
+<meta name="description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Current era technologies | Museum of Spatial Transcriptomics">
 <meta property="og:type" content="book">
-<meta property="og:description" content="5.1 Microdissection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue. The samples can be isolated physically or by molecular techniques....">
+<meta property="og:description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 5 Current era technologies | Museum of Spatial Transcriptomics">
-<meta name="twitter:description" content="5.1 Microdissection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue. The samples can be isolated physically or by molecular techniques....">
+<meta name="twitter:description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -65,18 +65,18 @@
 <h1>
 <span class="header-section-number">5</span> Current era technologies<a class="anchor" aria-label="anchor" href="#current-techs"><i class="fas fa-link"></i></a>
 </h1>
-<div id="microdissection" class="section level2">
+<div id="roi-selection" class="section level2">
 <h2>
-<span class="header-section-number">5.1</span> Microdissection<a class="anchor" aria-label="anchor" href="#microdissection"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> ROI selection<a class="anchor" aria-label="anchor" href="#roi-selection"><i class="fas fa-link"></i></a>
 </h2>
-<p>A simple way to preserve spatial information is to isolate the samples from known locations in the tissue. The samples can be isolated physically or by molecular techniques. The known locations can be targeted, for cells with certain histological characteristics, or untargeted, on a grid over the tissue.</p>
+<p>A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve the locations. The samples can be isolated physically or by molecular techniques. The known locations can be targeted, for cells with certain histological characteristics, or untargeted, on a grid over the tissue.</p>
 <div id="history-of-lcm" class="section level3">
 <h3>
 <span class="header-section-number">5.1.1</span> History of LCM<a class="anchor" aria-label="anchor" href="#history-of-lcm"><i class="fas fa-link"></i></a>
 </h3>
-<div id="microdissection-1" class="section level4">
+<div id="microdissection" class="section level4">
 <h4>
-<span class="header-section-number">5.1.1.1</span> Microdissection<a class="anchor" aria-label="anchor" href="#microdissection-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1.1</span> Microdissection<a class="anchor" aria-label="anchor" href="#microdissection"><i class="fas fa-link"></i></a>
 </h4>
 <p>LCM, also known as laser microdissection (LMD), is by far the most commonly used method of microdissection. Before LCM, manual microdissection could isolate small pieces of tissue, but the process was laborious <span class="citation">(Bidarimath, Edwards, and Tayade <a href="references.html#ref-Bidarimath2015" role="doc-biblioref">2015</a>)</span>. Laser microdissection predates ISH, though it was not used for spatial transcriptomics until it was possible to profile the transcriptome from small quantity of tissue.</p>
 <p>A precursor to laser microdissection is the 1912 “Strahlenstich”, which focused a conventional light source to a spot a few micrometers in size to cut tissues <span class="citation">(Greulich <a href="references.html#ref-Greulich1999" role="doc-biblioref">1999</a>)</span>. Soon after the invention of the laser in 1960, ruby laser was used to manipulate mitochondria, and a ruby laser microdissection system was commercialized by Zeiss in 1965 <span class="citation">(Greulich <a href="references.html#ref-Greulich1999" role="doc-biblioref">1999</a>)</span>. UV laser was used to create chromosomal lesions in 1969 <span class="citation">(Berns, Olson, and Rounds <a href="references.html#ref-BERNS1969" role="doc-biblioref">1969</a>)</span>. The first use of UV laser to cut tissue was in 1976 <span class="citation">(Meier-Ruge et al. <a href="references.html#ref-Meier-Ruge1976" role="doc-biblioref">1976</a>)</span> (Figure <a href="current.html#fig:tl3">4.3</a>).</p>
@@ -178,7 +178,7 @@ Figure 5.5: GeoMX DSP schematics, inspired by figures in <span class="citation">
 <h3>
 <span class="header-section-number">5.1.5</span> Targeted vs. untargeted<a class="anchor" aria-label="anchor" href="#targeted-vs.-untargeted"><i class="fas fa-link"></i></a>
 </h3>
-<p>Some methods can only be used in a regular grid, such as Tomo-seq, while some can be used either in a regular grid or in targeted ROIs, such as LCM and GeoMX DSP (Figure <a href="current-techs.html#fig:targeted">5.6</a>. Some are primarily used for ROIs, such as Niche-seq. Sometimes an ROI in the section may be chosen, which is then divided into smaller regular parts, in between targeted and untargeted.</p>
+<p>Some methods can only be used in a regular grid, such as Tomo-seq, while some can be used either in a regular grid or in targeted ROIs, such as LCM and GeoMX DSP (Figure <a href="current-techs.html#fig:targeted">5.6</a>. Some are primarily used for targeted ROIs, such as Niche-seq. Sometimes an ROI in the section may be chosen, which is then divided into smaller regular parts, in between targeted and untargeted.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:targeted"></span>
 <img src="05-current-techs_files/figure-html/targeted-1.png" alt="Number of studies of each of the three types: targeted, in between, and untargeted, using each microdissection based technique plus GeoMX DSP. Techniques used in less than two studies or two types are lumped into Other." width="576"><p class="caption">
@@ -192,7 +192,7 @@ Figure 5.6: Number of studies of each of the three types: targeted, in between, 
 Figure 5.7: Number of GeoMX DSP or WTA studies for healthy and pathological human organs. Male is shown here because there are studies for the prostate but not for female specific organs.
 </p>
 </div>
-<p>In an earlier version of this book, in the current era, microdissection was the most widely used type of techniques. However, NGS wo MD has surpassed microdissection more recently due to the rapid growth of popularity of Visium (Figure <a href="current-techs.html#fig:categories">5.8</a>). Excluding LCM, GeoMX DSP and Tomo-seq are the most popular techniques after ST and Visium (Figure <a href="current.html#fig:n-insts">4.7</a>). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure <a href="current.html#fig:current-hist">4.1</a>, Figure <a href="text-mining.html#fig:lcm-year">6.1</a>). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted <span class="citation">(Baccin et al. <a href="references.html#ref-Baccin2020" role="doc-biblioref">2020</a>; Hwang et al. <a href="references.html#ref-Hwang2020" role="doc-biblioref">2020</a>)</span>. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM, NGS, and Nanostring nCounter for GeoMX DSP), Nanostring’s Technology Access Platform (TAP), a commercial data collection and analysis service for GeoMX DSP <span class="citation">(“DSP Technology Access Program (TAP)” <a href="references.html#ref-nanostring_tap" role="doc-biblioref">n.d.</a>)</span>, not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.</p>
+<p>In an earlier version of this book, in the current era, microdissection was the most widely used type of techniques. However, NGS barcoding has surpassed microdissection more recently due to the rapid growth of popularity of Visium (Figure <a href="current-techs.html#fig:categories">5.8</a>). Excluding LCM, GeoMX DSP and Tomo-seq are the most popular techniques after ST and Visium (Figure <a href="current.html#fig:n-insts">4.7</a>). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure <a href="current.html#fig:current-hist">4.1</a>, Figure <a href="text-mining.html#fig:lcm-year">6.1</a>). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted <span class="citation">(Baccin et al. <a href="references.html#ref-Baccin2020" role="doc-biblioref">2020</a>; Hwang et al. <a href="references.html#ref-Hwang2020" role="doc-biblioref">2020</a>)</span>. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM, NGS, and Nanostring nCounter for GeoMX DSP), Nanostring’s Technology Access Platform (TAP), a commercial data collection and analysis service for GeoMX DSP <span class="citation">(“DSP Technology Access Program (TAP)” <a href="references.html#ref-nanostring_tap" role="doc-biblioref">n.d.</a>)</span>, not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:categories"></span>
 <img src="05-current-techs_files/figure-html/categories-1.png" alt="Number of publications per category of techniques in the current era. Non-curated LCM literature is excluded." width="576"><p class="caption">
@@ -247,7 +247,7 @@ Figure 5.12: Schematic of MERFISH <span class="citation">(K. H. Chen et al. <a h
 </p>
 </div>
 <p>An alternative to seqFISH was developed with error correction in mind – multiplexed error-robust FISH (MERFISH) <span class="citation">(K. H. Chen et al. <a href="references.html#ref-Chen2015" role="doc-biblioref">2015</a>)</span>. In MERFISH each encoding probe has a 30 nt long region that targets the transcript, and 2 or 3 20 nt <span class="citation">(Moffitt et al. <a href="references.html#ref-Moffitt2016a" role="doc-biblioref">2016</a>)</span> readout sequences to bind to readout probes (Figure <a href="current-techs.html#fig:merfish">5.12</a>). First, the encoding probes are hybridized to the transcripts. For each round of hybridization, readout probes, singly labeled, are hybridized to the readout sequences on the encoding probes and imaged. Then the fluorescence of the previous round is either photobleached (version 1) <span class="citation">(K. H. Chen et al. <a href="references.html#ref-Chen2015" role="doc-biblioref">2015</a>)</span> or when the fluorophore is bound to the readout probe with a disulfide bond, cleaved off with a reducing agent such as Tris(2-carboxyethyl)phosphine (TCEP) (version 2) <span class="citation">(Moffitt et al. <a href="references.html#ref-Moffitt2016a" role="doc-biblioref">2016</a>)</span>. The readout probes are not stripped, and in the next round, new readout probes are hybridized to new readout sequences and imaged.</p>
-<p>The MERFISH barcodes are binary, with “1” for a round with fluorescence, and “0” without, and must differ from other barcodes at at least 4 places, i.e. with <a href="https://en.wikipedia.org/wiki/Hamming_distance">Hamming distance</a> of at least 4 (HD4). As missing signal is the most common error, each barcode has 4 1’s, or Hamming weight 4. This way, when one round is missing, the gene can still be uniquely identified, but when 2 rounds are missing, the remaining barcode is equally distant to 2 genes, so the error cannot be corrected (Figure <a href="current-techs.html#fig:merfish">5.12</a>). Sixteen rounds of imaging, or 16 bits, would result in 140 barcodes. In this case, there are 16 different readout sequences, and each gene is assigned 4 of them, for the 4 1’s in the barcode. If the code is expanded to 69 bits, then about 10,000 genes can be encoded, and imaging time can be cut to a third by using 3 colors to image 3 bits per round <span class="citation">(C. Xia, Fan, et al. <a href="references.html#ref-Xia2019a" role="doc-biblioref">2019</a>)</span>. An HD2 code, i.e. barcodes are at least hamming distance 2 away from each other, can also be used, but errors can only be recognized but not corrected. All variants of MERFISH use this type of binary barcoding.</p>
+<p>The MERFISH barcodes are binary, with “1” for a round with fluorescence, and “0” without, and must differ from other barcodes at at least 4 places, i.e. with <a href="https://en.wikipedia.org/wiki/Hamming_distance">Hamming distance</a> of at least 4 (HD4). As missing signal is the most common error, each barcode has 4 1’s, or Hamming weight 4. This way, when one round is missing, the gene can still be uniquely identified, but when 2 rounds are missing, the remaining barcode is equally distant to 2 genes, so the error cannot be corrected (Figure <a href="current-techs.html#fig:merfish">5.12</a>). Sixteen rounds of imaging, or 16 bits, would result in 140 barcodes. In this case, there are 16 different readout sequences, and each gene is assigned 4 of them, for the 4 1’s in the barcode. If the code is expanded to 69 bits, then about 10,000 genes can be encoded, and by using 3 colors to image 3 bits per round, only 23 rounds of imaging are needed to cover the 69 bits, cutting imaging time to a third <span class="citation">(C. Xia, Fan, et al. <a href="references.html#ref-Xia2019a" role="doc-biblioref">2019</a>)</span>. An HD2 code, i.e. barcodes are at least hamming distance 2 away from each other, can also be used, but errors can only be recognized but not corrected. All variants of MERFISH use this type of binary barcoding.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:sf-plus"></span>
 <img src="seqfish-plus.png" alt="Schematic of seqFISH with pseudocolors." width="100%"><p class="caption">
@@ -616,9 +616,9 @@ Figure 5.30: Schematic of RCA of SNAIL probe and SEDAL. Also showing error propa
 </div>
 <div id="array" class="section level2">
 <h2>
-<span class="header-section-number">5.4</span> NGS without microdissection<a class="anchor" aria-label="anchor" href="#array"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> NGS with spatial barcoding<a class="anchor" aria-label="anchor" href="#array"><i class="fas fa-link"></i></a>
 </h2>
-<p>This section reviews techniques that capture transcripts from a permeabilized tissue section on a spatially organized array for RNA-seq. These techniques are similar to 3’ based scRNA-seq, with amplification and sequencing handle, barcode, UMI, and poly-T to capture polyadenylated transcripts, except that each spot in the array has its own barcode, rather than each droplet. As the spots are not organized in a regular array in Slide-seq, PIXEL-seq, and Seq-scope, this section more generally concerns techniques that pre-determine spatial locations of each spatial barcode before capturing polyadenylated transcripts, so the spatial location is encoded by the barcode rather than selection of ROIs as in microdissection. These techniques are generally transcriptome wide, but do not have single cell resolution; the resolution is the size and shape of the spots and spacing between the spots. In ST and Visium, the array is constructed by printing the capture sequences onto commercial microarray slides, so the 5’ end of the sequences are attached to the slide; where each spatial barcode is placed is known. In DBiT-seq, the array is constructed by depositing barcodes specific to each microfluidic channel with orthogonal channels. Alternatively, the capture sequences can be attached to beads like in droplet scRNA-seq, as in Slide-seq and HDST. The beads are randomly placed on a slide in a single layer, and the location of barcodes are determined before library preparation when the capture sequences and transcripts are released from the slide.</p>
+<p>This section reviews techniques that capture transcripts from a permeabilized tissue section on a spatially organized array for RNA-seq. These techniques are similar to 3’ based scRNA-seq, with amplification and sequencing handle, barcode, UMI, and poly-T to capture polyadenylated transcripts, except that each spot in the array has its own barcode, rather than each droplet. As the spots are not organized in a regular array in Slide-seq, PIXEL-seq, and Seq-scope, this section more generally concerns techniques that pre-determine spatial locations of each spatial barcode before capturing polyadenylated transcripts, so the spatial location is encoded by the barcode rather than selection and isolation of ROIs. These techniques are generally transcriptome wide, but do not have single cell resolution; the resolution is the size and shape of the spots and spacing between the spots. In ST and Visium, the array is constructed by printing the capture sequences onto commercial microarray slides, so the 5’ end of the sequences are attached to the slide; where each spatial barcode is placed is known. In DBiT-seq, the array is constructed by depositing barcodes specific to each microfluidic channel with orthogonal channels. Alternatively, the capture sequences can be attached to beads like in droplet scRNA-seq, as in Slide-seq and HDST. The beads are randomly placed on a slide in a single layer, and the location of barcodes are determined before library preparation when the capture sequences and transcripts are released from the slide.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:array-map"></span>
 <img src="05-current-techs_files/figure-html/array-map-1.png" alt="Cities and institutions using ST and Visium. Preprints are included." width="100%"><p class="caption">
@@ -769,11 +769,11 @@ Figure 5.40: Record spot diameter of array based methods over time.
 <li>Lower detection efficiency than some of the smFISH based methods, though ISS based methods also tend to be inefficient.</li>
 </ol>
 </div>
-<div id="ngs-wo-md" class="section level3">
+<div id="ngs-barcoding" class="section level3">
 <h3>
-<span class="header-section-number">5.7.2</span> NGS wo MD<a class="anchor" aria-label="anchor" href="#ngs-wo-md"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7.2</span> NGS barcoding<a class="anchor" aria-label="anchor" href="#ngs-barcoding"><i class="fas fa-link"></i></a>
 </h3>
-<p>In the previous subsection, cons of ROI based methods compared to NGS wo MD would be the pros of NGS wo MD compared to ROI based methods. Compared to smFISH and ISS:</p>
+<p>In the previous subsection, cons of ROI based methods compared to NGS barcoding would be the pros of NGS barcoding compared to ROI based methods. Compared to smFISH and ISS:</p>
 <p>Pros:</p>
 <ol style="list-style-type: decimal">
 <li>Transcriptome wide, and can discover new transcripts and isoforms. Visium has been adapted for full length sequencing.</li>
@@ -861,7 +861,7 @@ Figure 5.40: Record spot diameter of array based methods over time.
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#current-techs"><span class="header-section-number">5</span> Current era technologies</a></li>
 <li>
-<a class="nav-link" href="#microdissection"><span class="header-section-number">5.1</span> Microdissection</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#roi-selection"><span class="header-section-number">5.1</span> ROI selection</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#history-of-lcm"><span class="header-section-number">5.1.1</span> History of LCM</a></li>
 <li><a class="nav-link" href="#lcm-usage"><span class="header-section-number">5.1.2</span> Usage of LCM</a></li>
 <li><a class="nav-link" href="#physical-microdissection"><span class="header-section-number">5.1.3</span> Physical microdissection</a></li>
@@ -886,14 +886,14 @@ Figure 5.40: Record spot diameter of array based methods over time.
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#array"><span class="header-section-number">5.4</span> NGS without microdissection</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#gray-areas-and-single-cell-resolution"><span class="header-section-number">5.4.1</span> Gray areas and single cell resolution</a></li></ul>
+<a class="nav-link" href="#array"><span class="header-section-number">5.4</span> NGS with spatial barcoding</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#gray-areas-and-single-cell-resolution"><span class="header-section-number">5.4.1</span> Gray areas and single cell resolution</a></li></ul>
 </li>
 <li><a class="nav-link" href="#detection-efficiencies"><span class="header-section-number">5.5</span> Detection efficiencies</a></li>
 <li><a class="nav-link" href="#no-priori"><span class="header-section-number">5.6</span> No priori</a></li>
 <li>
 <a class="nav-link" href="#comparisons"><span class="header-section-number">5.7</span> Overall comparisons</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#roi-based"><span class="header-section-number">5.7.1</span> ROI based</a></li>
-<li><a class="nav-link" href="#ngs-wo-md"><span class="header-section-number">5.7.2</span> NGS wo MD</a></li>
+<li><a class="nav-link" href="#ngs-barcoding"><span class="header-section-number">5.7.2</span> NGS barcoding</a></li>
 <li><a class="nav-link" href="#smfish-1"><span class="header-section-number">5.7.3</span> smFISH</a></li>
 <li><a class="nav-link" href="#choosing-the-right-technique"><span class="header-section-number">5.7.4</span> Choosing the right technique</a></li>
 </ul>
@@ -917,7 +917,7 @@ Figure 5.40: Record spot diameter of array based methods over time.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2021-09-29.</p>
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2021-09-30.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -67,14 +67,14 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> voxelation </td>
    <td style="text-align:left;width: 6em; "> 2002-02-01 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> PA-GFP </td>
    <td style="text-align:left;width: 6em; "> 2010-11-12 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -88,7 +88,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> Tomo-array </td>
    <td style="text-align:left;width: 6em; "> 2012-09-19 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -109,7 +109,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> Tomo-seq </td>
    <td style="text-align:left;width: 6em; "> 2013-08-12 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -123,7 +123,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> TIVA </td>
    <td style="text-align:left;width: 6em; "> 2014-01-12 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -158,7 +158,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> Geo-seq </td>
    <td style="text-align:left;width: 6em; "> 2016-03-21 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -172,7 +172,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> ST </td>
    <td style="text-align:left;width: 6em; "> 2016-07-01 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 100 </td>
   </tr>
@@ -186,7 +186,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> punch </td>
    <td style="text-align:left;width: 6em; "> 2017-06-28 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -207,7 +207,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> Niche-seq </td>
    <td style="text-align:left;width: 6em; "> 2017-12-22 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -249,7 +249,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> slide-seq </td>
    <td style="text-align:left;width: 6em; "> 2019-03-29 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
@@ -263,7 +263,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> GeoMX DSP </td>
    <td style="text-align:left;width: 6em; "> 2019-06-21 </td>
-   <td style="text-align:left;width: 6em; "> Other </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> 2093 </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -298,14 +298,14 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> HDST </td>
    <td style="text-align:left;width: 6em; "> 2019-09-09 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> GaST-seq </td>
    <td style="text-align:left;width: 6em; "> 2019-10-10 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -326,7 +326,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> miRNA nanowell </td>
    <td style="text-align:left;width: 6em; "> 2020-05-09 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> 9 </td>
    <td style="text-align:left;width: 6em; "> 300 </td>
   </tr>
@@ -340,21 +340,21 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> Visium </td>
    <td style="text-align:left;width: 6em; "> 2020-06-22 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 55 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> ZipSeq </td>
    <td style="text-align:left;width: 6em; "> 2020-07-06 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> SMD-seq </td>
    <td style="text-align:left;width: 6em; "> 2020-08-11 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -375,21 +375,21 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> SM-Omics </td>
    <td style="text-align:left;width: 6em; "> 2020-10-15 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 100 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> slide-seq2 </td>
    <td style="text-align:left;width: 6em; "> 2020-10-17 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> DBiT-seq </td>
    <td style="text-align:left;width: 6em; "> 2020-10-19 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
@@ -410,21 +410,21 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> Stereo-seq </td>
    <td style="text-align:left;width: 6em; "> 2021-01-19 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 0.22 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> GeoMX WTA </td>
    <td style="text-align:left;width: 6em; "> 2021-01-25 </td>
-   <td style="text-align:left;width: 6em; "> Other </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> 18361 </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> Seq-Scope </td>
    <td style="text-align:left;width: 6em; "> 2021-01-27 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 0.5 </td>
   </tr>
@@ -452,21 +452,21 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> Pick-Seq </td>
    <td style="text-align:left;width: 6em; "> 2021-03-09 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> nanoneedles </td>
    <td style="text-align:left;width: 6em; "> 2021-03-10 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> 9 </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> PIXEL-seq </td>
    <td style="text-align:left;width: 6em; "> 2021-03-17 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 1.22 </td>
   </tr>
@@ -480,14 +480,14 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> STRP-seq </td>
    <td style="text-align:left;width: 6em; "> 2021-04-19 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> XYZeq </td>
    <td style="text-align:left;width: 6em; "> 2021-04-21 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 500 </td>
   </tr>
@@ -501,7 +501,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> centrifugation on 384 well plate </td>
    <td style="text-align:left;width: 6em; "> 2021-04-30 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -529,14 +529,14 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> sci-Space </td>
    <td style="text-align:left;width: 6em; "> 2021-07-02 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 73.2 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> PIC </td>
    <td style="text-align:left;width: 6em; "> 2021-07-20 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
@@ -550,14 +550,14 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> SPACECAT </td>
    <td style="text-align:left;width: 6em; "> 2021-08-17 </td>
-   <td style="text-align:left;width: 6em; "> Microdissection </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> Space-TREX </td>
    <td style="text-align:left;width: 6em; "> 2021-09-01 </td>
-   <td style="text-align:left;width: 6em; "> NGS wo MD </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 55 </td>
   </tr>
@@ -573,14 +573,14 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
 <p class="caption">(\#fig:current-hist)Number of publications over time in the current era. The gray histogram in the background is the overall trend of all current era literature. Each facet highlights a category, ordered chronologically in terms of first report. Bin width is 365 days. Plots in this figure include curated LCM literature, but not the non-curated literature.</p>
 </div>
 
-Chronologically, in the curated database, microdissection came first, with voxelation in 2002 [@Brown2002], followed by smFISH, ISS, no imaging, and NGS wo MD (Figure \@ref(fig:current-hist)). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure \@ref(fig:current-vs-prequel)). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure \@ref(fig:current-vs-prequel)). Growth in microdissection and NGS wo MD seemed to have contributed the most to this overall drastic growth (Figure \@ref(fig:current-hist)). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table \@ref(tab:table1). 
+Chronologically, in the curated database, microdissection came first, with voxelation in 2002 [@Brown2002], followed by smFISH, ISS, no imaging, and NGS barcoding (Figure \@ref(fig:current-hist)). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure \@ref(fig:current-vs-prequel)). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure \@ref(fig:current-vs-prequel)). Growth in microdissection and NGS barcoding seemed to have contributed the most to this overall drastic growth (Figure \@ref(fig:current-hist)). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table \@ref(tab:table1). 
 
 <div class="figure" style="text-align: center">
 <img src="04-current_files/figure-html/current-vs-prequel-1.png" alt="Comparing number of publications over time in the prequel and the current eras. Bin width is 180 days. The x-shaped points show the number of publications from the last bin, which is not yet full." width="672" />
 <p class="caption">(\#fig:current-vs-prequel)Comparing number of publications over time in the prequel and the current eras. Bin width is 180 days. The x-shaped points show the number of publications from the last bin, which is not yet full.</p>
 </div>
 
-A timeline of foundational or influential techniques in the current era is shown in Figure \@ref(fig:tl3). This is not meant to be a timeline of all current era techniques, but only of techniques that either laid the foundation of popular current era techniques (e.g. Solexa, later Illumina, sequencing) or very influential within a category of techniques (e.g. MERFISH for smFISH based techniques, and ST for NGS wo MD). Just like the "revolution" of current era spatial transcriptomics, each item in the timeline must not be understood as works of the "solitary genius". Rather, each of the landmark innovations in the timeline occurred in its own historical context, with influences from predecessors, which are not plotted in the timeline for the sake of brevity.
+A timeline of foundational or influential techniques in the current era is shown in Figure \@ref(fig:tl3). This is not meant to be a timeline of all current era techniques, but only of techniques that either laid the foundation of popular current era techniques (e.g. Solexa, later Illumina, sequencing) or very influential within a category of techniques (e.g. MERFISH for smFISH based techniques, and ST for NGS barcoding). Just like the "revolution" of current era spatial transcriptomics, each item in the timeline must not be understood as works of the "solitary genius". Rather, each of the landmark innovations in the timeline occurred in its own historical context, with influences from predecessors, which are not plotted in the timeline for the sake of brevity.
 
 
 <div class="figure" style="text-align: center">
@@ -677,7 +677,7 @@ Protocols of WMISH (as used in GEISHA) [@Bell2004], ISH (as used in GenePaint an
 <p class="caption">(\#fig:fastq-published)Whether fastq files from published NGS based papers (no preprints) are available on a public data repository such as GEO over time. Bin width is 180 days.</p>
 </div>
 
-While in prequel (WM)ISH atlases, the images are themselves _the_ data, current era data goes beyond visualization of gene expression in space. NGS based current era data has the sequencing reads in fastq files, which can be re-processed for RNA velocity and isoform analyses. The fastq files are often deposited in data repositories such as GEO and ENA, where they can be downloaded for re-processing. However, for some human data, to protect patients' privacy, the fastq files are not available or have controlled access. While the fastq files from most published papers for NGS based current era datasets are available in a data repository (Figure \@ref(fig:fastq-published)), the fastq files from most NGS based current era preprints are not available, especially the older preprints (Figure \@(fig:fastq-preprint)). Sometimes preprints state that the data will be deposited on GEO upon acceptance of the manuscript (e.g. [@Zuo2021]).
+While in prequel (WM)ISH atlases, the images are themselves _the_ data, current era data goes beyond visualization of gene expression in space. NGS based current era data has the sequencing reads in fastq files, which can be re-processed for RNA velocity and isoform analyses. The fastq files are often deposited in data repositories such as GEO and ENA, where they can be downloaded for re-processing. However, for some human data, to protect patients' privacy, the fastq files are not available or have controlled access. While the fastq files from most published papers for NGS based current era datasets are available in a data repository (Figure \@ref(fig:fastq-published)), the fastq files from most NGS based current era preprints are not available, especially the older preprints (Figure \@ref(fig:fastq-preprint)). Sometimes preprints state that the data will be deposited on GEO upon acceptance of the manuscript (e.g. [@Zuo2021]).
 
 <div class="figure" style="text-align: center">
 <img src="04-current_files/figure-html/fastq-preprint-1.png" alt="Whether fastq files from published NGS based preprints are available on a public data repository such as GEO over time. Bin width is 90 days." width="576" />

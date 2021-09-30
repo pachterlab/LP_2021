@@ -138,9 +138,9 @@ legacy-of-the-prequel-era
 metadata-of-the-current-era
 learning-from-the-past
 current-techs
-microdissection
+roi-selection
 history-of-lcm
-microdissection-1
+microdissection
 lcm-amplification
 lcm-usage
 physical-microdissection
@@ -169,7 +169,7 @@ detection-efficiencies
 no-priori
 comparisons
 roi-based
-ngs-wo-md
+ngs-barcoding
 smfish-1
 choosing-the-right-technique
 multiomics
