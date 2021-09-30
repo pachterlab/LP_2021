@@ -1,5 +1,5 @@
 ---
-title: "NGS wo MD"
+title: "NGS barcoding"
 author: "Lambda Moses"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -26,7 +26,7 @@ theme_set(theme_bw())
 # Import data
 By default, the `read_metadata` function reads the appropriate sheet from a cache within this package. This may be outdated, since the Google Sheets are constantly updated. Use the argument `update = TRUE` to download the most up to date version. The default is `FALSE` to avoid API limits during automated CRAN checks.
 ```{r}
-sheet <- read_metadata("NGS wo MD")
+sheet <- read_metadata("NGS barcoding")
 ```
 
 # Number of publications

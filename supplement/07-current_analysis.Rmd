@@ -31,7 +31,7 @@ analysis_sheets <- read_metadata(nms, update = TRUE)
 ```
 
 ```{r}
-nms <- c("Prequel", "Microdissection", "smFISH", "NGS wo MD", "ISS", "No imaging", "Other")
+nms <- c("Prequel", "ROI selection", "smFISH", "NGS barcoding", "ISS", "No imaging")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 

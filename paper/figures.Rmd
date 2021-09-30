@@ -287,7 +287,7 @@ ggsave("fig4.png", fig4, height = 8, width = 8)
 
 # Figure 5
 ```{r}
-nms <- c("Prequel", "Microdissection", "smFISH", "NGS wo MD", "ISS", "No imaging")
+nms <- c("Prequel", "ROI selection", "smFISH", "NGS barcoding", "ISS", "No imaging")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 
@@ -572,7 +572,7 @@ ggsave("fig6.png", plot = fig6, width = 10, height = 7.5)
 # Table 1
 Method names, sheet (i.e. category), date first published, resolution, max number of genes, max number of cells/bins per study. I'll add references manually in Overleaf. 
 ```{r}
-nms2 <- c("Microdissection", "smFISH", "NGS wo MD", "ISS")
+nms2 <- c("ROI selection", "smFISH", "NGS barcoding", "ISS")
 df_ncells <- read_metadata(nms2, update = TRUE)
 ```
 
@@ -609,7 +609,7 @@ n_genes <- df_ngenes %>%
 ```
 
 ```{r}
-df_spots <- read_metadata("NGS wo MD", update = TRUE)
+df_spots <- read_metadata("NGS barcoding", update = TRUE)
 ```
 
 ```{r}
@@ -637,7 +637,7 @@ table1 <- table1 %>%
   mutate(max_n_genes = as.character(max_n_genes),
          max_n_genes = case_when(
            !is.na(max_n_genes) ~ max_n_genes,
-           category %in% c("Microdissection", "NGS wo MD") ~ "transcriptome wide",
+           category %in% c("ROI selection", "NGS barcoding") ~ "transcriptome wide",
            TRUE ~ NA_character_
          ))
 ```
@@ -1229,7 +1229,7 @@ pubs_per_cat(iss_methods, method)
 
 # Figure 13
 ```{r}
-array <- read_metadata("NGS wo MD", update = TRUE)
+array <- read_metadata("NGS barcoding", update = TRUE)
 ```
 
 ```{r}
@@ -1295,7 +1295,7 @@ analysis_sheets <- read_metadata(nms, update = TRUE)
 ```
 
 ```{r}
-nms <- c("Prequel", "Microdissection", "smFISH", "NGS wo MD", "ISS", "No imaging")
+nms <- c("Prequel", "ROI selection", "smFISH", "NGS barcoding", "ISS", "No imaging")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 

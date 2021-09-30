@@ -35,7 +35,7 @@ How does the trend in number of papers in the original trilogy compare to that i
 
 By default, the `read_metadata` function reads the appropriate sheet from a cache within this package. This may be outdated, since the Google Sheets are constantly updated. Use the argument `update = TRUE` to download the most up to date version. The default is `FALSE` to avoid API limits during automated CRAN checks.
 ```{r}
-nms <- c("Prequel", "Microdissection", "smFISH", "NGS wo MD", "ISS", "No imaging")
+nms <- c("Prequel", "ROI selection", "smFISH", "NGS barcoding", "ISS", "No imaging")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 
@@ -170,9 +170,9 @@ Also break this down further: this is to reproduce this plot in the other notebo
 ```{r, fig.width=6, fig.height=6}
 binwidths <- tribble(~ sheet, ~ binwidth,
                       "Prequel", 365,
-                      "Microdissection", 365,
+                      "ROI selection", 365,
                       "smFISH", 365,
-                      "NGS wo MD", 100,
+                      "NGS barcoding", 100,
                       "ISS", 200)
 pmap(binwidths, ~ data_sheets %>% 
        filter(sheet == ..1) %>% 

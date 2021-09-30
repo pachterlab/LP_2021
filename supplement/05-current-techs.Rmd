@@ -15,9 +15,9 @@ library(patchwork)
 theme_set(theme_bw())
 ```
 
-## Microdissection
+## ROI selection
 
-A simple way to preserve spatial information is to isolate the samples from known locations in the tissue. The samples can be isolated physically or by molecular techniques. The known locations can be targeted, for cells with certain histological characteristics, or untargeted, on a grid over the tissue.
+A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve the locations. The samples can be isolated physically or by molecular techniques. The known locations can be targeted, for cells with certain histological characteristics, or untargeted, on a grid over the tissue.
 
 ### History of LCM
 
@@ -114,10 +114,10 @@ knitr::include_graphics("dsp.png")
 Another method that spread beyond its institution of origin is the commercial GeoMX DSP from NanoString [@Merritt2019], which can be used for both high throughput immunofluorescence and transcript quantification in FFPE tissue sections. While GeoMX DSP does not physically isolate relevant parts of the tissue, it is discussed in this section because like other microdissection based techniques, GeoMX DSP is primarily ROI based, and spatial location is known from selection of the ROI. For transcript quantification, probes are attached to indexing oligos with a UV cleavable linker (Figure \@ref(fig:dsp)). The selected ROI is illuminated by UV to remove the index oligos from the probes. Then the released index oligos are aspirated and quantified with either NGS or NanoString nCounter. This can be repeated for multiple ROIs, which can be a grid for unbiased profiling [@Merritt2019]. The probes tile the transcripts, and each probe has a distinct index oligo, so in NGS, each tile is counted separately, enabling isoform quantification [@Merritt2019]. GeoMx DSP is not transcriptome wide; up to 1860 target transcripts have been quantified [@Margaroli2021]. Also, as pre-defined probes are required, unlike in RNA-seq, novel transcripts cannot be quantified. Ready made probe sets for oncology, immunology, and neuroscience are sold by NanoString [@DSPPanels]. Although GeoMx DSP was published in 2019, it has spread to several different institutions, and has been used on pancreatic ductal adenocarcinoma (PDAC) [@Hwang2020], hepatocellular carcinoma (HCC) [@Sharma2020], reactive lymph nodes [@Tripodo2020], and COVID infected lungs from autopsy [@Park2021; @Butler2021; @Delorey2021a; @Margaroli2021]. A variant of GeoMX DSP, called GeoMX Whole Transcriptome Atlas (WTA), has been used to profile transcripts of 18190 genes, nearly covering the whole transcriptome [@Roberts2021]. In GeoMX WTA, the UV cleaved index oligo must be sequenced with NGS to identify the gene each transcript is from.
 
 ### Targeted vs. untargeted
-Some methods can only be used in a regular grid, such as Tomo-seq, while some can be used either in a regular grid or in targeted ROIs, such as LCM and GeoMX DSP (Figure \@ref(fig:targeted). Some are primarily used for ROIs, such as Niche-seq. Sometimes an ROI in the section may be chosen, which is then divided into smaller regular parts, in between targeted and untargeted. 
+Some methods can only be used in a regular grid, such as Tomo-seq, while some can be used either in a regular grid or in targeted ROIs, such as LCM and GeoMX DSP (Figure \@ref(fig:targeted). Some are primarily used for targeted ROIs, such as Niche-seq. Sometimes an ROI in the section may be chosen, which is then divided into smaller regular parts, in between targeted and untargeted. 
 
 ```{r}
-ms <- read_metadata(c("Microdissection", "Other"), update = TRUE)
+ms <- read_metadata(c("ROI selection"), update = TRUE)
 ms_pubs <- get_pubs_df(ms, c("type", "method"))
 ```
 
@@ -179,10 +179,10 @@ hg_h + hg_p +
   plot_annotation(tag_levels = "A")
 ```
 
-In an earlier version of this book, in the current era, microdissection was the most widely used type of techniques. However, NGS wo MD has surpassed microdissection more recently due to the rapid growth of popularity of Visium (Figure \@ref(fig:categories)). Excluding LCM, GeoMX DSP and Tomo-seq are the most popular techniques after ST and Visium (Figure \@ref(fig:n-insts)). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure \@ref(fig:current-hist), Figure \@ref(fig:lcm-year)). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted [@Baccin2020; @Hwang2020]. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM, NGS, and Nanostring nCounter for GeoMX DSP), Nanostring's Technology Access Platform (TAP), a commercial data collection and analysis service for GeoMX DSP [@nanostring_tap], not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.
+In an earlier version of this book, in the current era, microdissection was the most widely used type of techniques. However, NGS barcoding has surpassed microdissection more recently due to the rapid growth of popularity of Visium (Figure \@ref(fig:categories)). Excluding LCM, GeoMX DSP and Tomo-seq are the most popular techniques after ST and Visium (Figure \@ref(fig:n-insts)). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure \@ref(fig:current-hist), Figure \@ref(fig:lcm-year)). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted [@Baccin2020; @Hwang2020]. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM, NGS, and Nanostring nCounter for GeoMX DSP), Nanostring's Technology Access Platform (TAP), a commercial data collection and analysis service for GeoMX DSP [@nanostring_tap], not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.
 
 ```{r}
-nms <- c("Microdissection", "smFISH", "NGS wo MD", "ISS", "No priori", "Other")
+nms <- c("ROI selection", "smFISH", "NGS barcoding", "ISS", "No priori")
 current <- read_metadata(nms, update = TRUE) %>% 
     select(date_published:journal, country:year, sheet) %>% 
     distinct()
@@ -600,12 +600,12 @@ Then SEDAL is used to sequence the gene specific barcodes. The sequences flankin
 ### Sequencing by synthesis {#sbs}
 While most *in situ* sequencing techniques use SBL, some use SBS, indeed with a heated stage to perform SBS in situ. Because Illumina SBS is much more well-known and widely used than SBL for NGS, we will not recap it here. SBS has been tried to sequence DNA barcodes of antibodies in highly multiplexed immunofluorescence [@Kohman2020]. BARseq [@Chen2019], a method to trace neuron projections is also based on SBS. In BARseq, the gap filling version of ISS (Section \@ref(cpal)) is used and the filled gap that is the projection tracing barcode is sequenced with Illumina SBS chemistry. BARseq has also been adapted to profile endogenous transcripts (up to 79 genes as of writing) and image projection barcodes in the same neurons (BARseq2) [@Sun2020a; @Chen2021]; gene expression and projection can be correlated in some though not all cells. For endogenous transcripts, the mRNA is first reverse transcribed, and the barcode version of ISS (Section \@ref(cpal)) is used to amplify the barcodes (in the padlock probe but not the cDNA) with RCA, which are then sequenced *in situ* with SBS. For transcripts, BARseq2 detects slightly more copies of mRNAs than 10X v3 scRNA-seq for the same gene in the same tissue. 
 
-## NGS without microdissection {#array}
+## NGS with spatial barcoding {#array}
 
-This section reviews techniques that capture transcripts from a permeabilized tissue section on a spatially organized array for RNA-seq. These techniques are similar to 3' based scRNA-seq, with amplification and sequencing handle, barcode, UMI, and poly-T to capture polyadenylated transcripts, except that each spot in the array has its own barcode, rather than each droplet. As the spots are not organized in a regular array in Slide-seq, PIXEL-seq, and Seq-scope, this section more generally concerns techniques that pre-determine spatial locations of each spatial barcode before capturing polyadenylated transcripts, so the spatial location is encoded by the barcode rather than selection of ROIs as in microdissection. These techniques are generally transcriptome wide, but do not have single cell resolution; the resolution is the size and shape of the spots and spacing between the spots. In ST and Visium, the array is constructed by printing the capture sequences onto commercial microarray slides, so the 5' end of the sequences are attached to the slide; where each spatial barcode is placed is known. In DBiT-seq, the array is constructed by depositing barcodes specific to each microfluidic channel with orthogonal channels. Alternatively, the capture sequences can be attached to beads like in droplet scRNA-seq, as in Slide-seq and HDST. The beads are randomly placed on a slide in a single layer, and the location of barcodes are determined before library preparation when the capture sequences and transcripts are released from the slide. 
+This section reviews techniques that capture transcripts from a permeabilized tissue section on a spatially organized array for RNA-seq. These techniques are similar to 3' based scRNA-seq, with amplification and sequencing handle, barcode, UMI, and poly-T to capture polyadenylated transcripts, except that each spot in the array has its own barcode, rather than each droplet. As the spots are not organized in a regular array in Slide-seq, PIXEL-seq, and Seq-scope, this section more generally concerns techniques that pre-determine spatial locations of each spatial barcode before capturing polyadenylated transcripts, so the spatial location is encoded by the barcode rather than selection and isolation of ROIs. These techniques are generally transcriptome wide, but do not have single cell resolution; the resolution is the size and shape of the spots and spacing between the spots. In ST and Visium, the array is constructed by printing the capture sequences onto commercial microarray slides, so the 5' end of the sequences are attached to the slide; where each spatial barcode is placed is known. In DBiT-seq, the array is constructed by depositing barcodes specific to each microfluidic channel with orthogonal channels. Alternatively, the capture sequences can be attached to beads like in droplet scRNA-seq, as in Slide-seq and HDST. The beads are randomly placed on a slide in a single layer, and the location of barcodes are determined before library preparation when the capture sequences and transcripts are released from the slide. 
 
 ```{r}
-array <- read_metadata("NGS wo MD", update = TRUE)
+array <- read_metadata("NGS barcoding", update = TRUE)
 array_methods <- unnest_cat(array, method, other_cols = "short_name")
 st_city_gc <- geocode_inst_city(array, cache_location = here())
 array_pubs <- get_pubs_df(array, other_cols = "short_name")
@@ -871,9 +871,9 @@ Cons:
 3. Low z resolution for 3D profiling. EASI-FISH has been applied to cleared 300 $\mu$m (pre-expansion) sections, and STARmap has been applied to 150 $\mu$m sections. For ROI based methods, the thick section would need to be first sectioned into thinner sections for ROI selection. Also, within the thin section, the ROI is effectively 2D while boundaries between cells vary through the z-plane. In frozen sections, the section thickness is usually at least 10 $\mu$m, and in FFPE, the section thickness is usually at least 4 $\mu$m, so the z resolution is lower than that of confocal and light sheet microscopy. However, 3D thick sections are also challenging for smFISH and ISS. Only relatively small numbers of genes have been profiled in the thick sections (26 for EASI-FISH and 28 for STARmap).
 4. Lower detection efficiency than some of the smFISH based methods, though ISS based methods also tend to be inefficient.
 
-### NGS wo MD
+### NGS barcoding
 
-In the previous subsection, cons of ROI based methods compared to NGS wo MD would be the pros of NGS wo MD compared to ROI based methods. Compared to smFISH and ISS:
+In the previous subsection, cons of ROI based methods compared to NGS barcoding would be the pros of NGS barcoding compared to ROI based methods. Compared to smFISH and ISS:
 
 Pros:
 

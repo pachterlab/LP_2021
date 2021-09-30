@@ -51,8 +51,8 @@ Second, the ABA has much better infrastructure to facilitate quantitative analys
 The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due to the immense popularity of LCM followed by microarray or RNA-seq, the body of LCM literature is too vast for unbiased and comprehensive manual curation, so the curated database does not include most LCM literature, which was instead collected from a PubMed search and text mined (Figure \@ref(fig:topics), Chapter \@ref(text-mining)). Because the search results---without manual inspection and curation---may contain irrelevant entries and miss relevant ones, they are separated from the curated database in our analyses. Current era literature in the curated database is classified into Microdissection, smFISH, ISS, Array, and No Imaging, to be defined in detail in their corresponding sections below.
 
 ```{r}
-nms <- c("Prequel", "Microdissection", "smFISH", "NGS wo MD", "ISS", 
-         "No priori", "Other")
+nms <- c("Prequel", "ROI selection", "smFISH", "NGS barcoding", "ISS", 
+         "No priori")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 
@@ -70,7 +70,7 @@ methods_current <- data_sheets %>%
 ```
 
 ```{r}
-nms2 <- c("Microdissection", "smFISH", "NGS wo MD", "ISS", "Other")
+nms2 <- c("ROI selection", "smFISH", "NGS barcoding", "ISS")
 df_ncells <- read_metadata(nms2, update = TRUE)
 ```
 
@@ -92,7 +92,7 @@ n_genes <- df_ncells %>%
 ```
 
 ```{r}
-df_spots <- read_metadata("NGS wo MD", update = TRUE)
+df_spots <- read_metadata("NGS barcoding", update = TRUE)
 ```
 
 ```{r}
@@ -119,7 +119,7 @@ table1 <- table1 %>%
   mutate(max_n_genes = as.character(max_n_genes),
          max_n_genes = case_when(
            !is.na(max_n_genes) ~ max_n_genes,
-           category %in% c("Microdissection", "NGS wo MD") ~ "Tx wide",
+           category %in% c("ROI selection", "NGS barcoding") ~ "Tx wide",
            TRUE ~ NA_character_
          ))
 ```
@@ -166,7 +166,7 @@ pubs_per_year(current, facet_by = "sheet") +
                 expand = expansion(c(0.05, 0)))
 ```
 
-Chronologically, in the curated database, microdissection came first, with voxelation in 2002 [@Brown2002], followed by smFISH, ISS, no imaging, and NGS wo MD (Figure \@ref(fig:current-hist)). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure \@ref(fig:current-vs-prequel)). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure \@ref(fig:current-vs-prequel)). Growth in microdissection and NGS wo MD seemed to have contributed the most to this overall drastic growth (Figure \@ref(fig:current-hist)). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table \@ref(tab:table1). 
+Chronologically, in the curated database, microdissection came first, with voxelation in 2002 [@Brown2002], followed by smFISH, ISS, no imaging, and NGS barcoding (Figure \@ref(fig:current-hist)). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure \@ref(fig:current-vs-prequel)). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure \@ref(fig:current-vs-prequel)). Growth in microdissection and NGS barcoding seemed to have contributed the most to this overall drastic growth (Figure \@ref(fig:current-hist)). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table \@ref(tab:table1). 
 
 ```{r current-vs-prequel, fig.width=7, fig.height=4, fig.cap="Comparing number of publications over time in the prequel and the current eras. Bin width is 180 days. The x-shaped points show the number of publications from the last bin, which is not yet full."}
 era_freqpoly(publications, era, preprints = TRUE, binwidth = 180) +
@@ -179,7 +179,7 @@ era_freqpoly(publications, era, preprints = TRUE, binwidth = 180) +
              aes(x = x, y = y, label = era, color = era), show.legend = FALSE)
 ```
 
-A timeline of foundational or influential techniques in the current era is shown in Figure \@ref(fig:tl3). This is not meant to be a timeline of all current era techniques, but only of techniques that either laid the foundation of popular current era techniques (e.g. Solexa, later Illumina, sequencing) or very influential within a category of techniques (e.g. MERFISH for smFISH based techniques, and ST for NGS wo MD). Just like the "revolution" of current era spatial transcriptomics, each item in the timeline must not be understood as works of the "solitary genius". Rather, each of the landmark innovations in the timeline occurred in its own historical context, with influences from predecessors, which are not plotted in the timeline for the sake of brevity.
+A timeline of foundational or influential techniques in the current era is shown in Figure \@ref(fig:tl3). This is not meant to be a timeline of all current era techniques, but only of techniques that either laid the foundation of popular current era techniques (e.g. Solexa, later Illumina, sequencing) or very influential within a category of techniques (e.g. MERFISH for smFISH based techniques, and ST for NGS barcoding). Just like the "revolution" of current era spatial transcriptomics, each item in the timeline must not be understood as works of the "solitary genius". Rather, each of the landmark innovations in the timeline occurred in its own historical context, with influences from predecessors, which are not plotted in the timeline for the sake of brevity.
 ```{r}
 events <- read_major_events(update = TRUE)
 ```
@@ -411,7 +411,7 @@ new_methods %>%
 ```
 
 ```{r}
-ngs <- read_metadata(c("NGS wo MD", "Microdissection"))
+ngs <- read_metadata(c("NGS barcoding", "ROI selection"))
 ngs2 <- ngs %>% 
   filter(!method %in% c("voxelation", "Tomo-array", "PA-GFP")) %>% 
   get_pubs_df(other_cols = c("accession", "method"))
