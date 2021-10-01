@@ -29,7 +29,7 @@ jobs:
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       - name: Render Book
-        run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd", output_format = c("bookdown::bs4_book")))'
+        run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd", output_format = c("bookdown::bs4_book", "bookdown::pdf_book")))'
       - uses: actions/upload-artifact@v1
         with:
           name: _book
