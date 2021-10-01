@@ -302,14 +302,14 @@ p3g <- organs_hg_f %>%
                        limits = limits_use2)
 ```
 
-(ref:hg-anat-cat) A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer [@Burgess2019; @Brady2021]). Note that these anatograms only includes organs available in the R package [`gganatogram`](https://github.com/jespermaag/gganatogram). Datasets from organs unavailable in the package are not shown. For metastases, the organ used for plotting here is the destination of metastases, so a liver metastasis of breast cancer would be plotted in the liver.
+(ref:hg-anat-cat) A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer [@Burgess2019; @Brady2021]). 
 
 ```{r hg-anat, fig.width=8, fig.height=6, fig.cap="(ref:hg-anat-cat)", out.width="100%"}
 p3f + p3g +
     plot_annotation(tag_levels = "A")
 ```
 
-While atlases have so far not been in the center of the stage, some atlases have been made with current era technology, such as MERFISH [@Zhang2020], HybISS [@LaManno2021], ST [@Ortiz2020], Visium [@Wu2021], GeoMX DSP [@Delorey2021a], and Slide-seq2 [@Lake2021] described and analyzed with similar language to that of (WM)ISH atlases. Also as in the prequel era, the brain is still the most favored healthy organ (Figure \@ref(fig:hg-anat), Figure \@ref(fig:mm-anat)). Among pathological tissues, breast tumors are the most used (Figure \@ref(fig:hg-anat)). More recently, in the wake of the SARS-CoV-2 pandemic, a number of studies using GeoMX Digital Spatial Profiler (DSP) to profile spatial transcriptomes of lungs of COVID victims have been published [@Park2021; @Butler2021; @Delorey2021a; @Margaroli2021].
+While atlases have so far not been in the center of the stage, some atlases have been made with current era technology, such as MERFISH [@Zhang2020], HybISS [@LaManno2021], ST [@Ortiz2020], Visium [@Wu2021], GeoMX DSP [@Delorey2021a], and Slide-seq2 [@Lake2021] described and analyzed with similar language to that of (WM)ISH atlases. Also as in the prequel era, the brain is still the most favored healthy organ (Figure \@ref(fig:hg-anat), Figure \@ref(fig:mm-anat)). Among pathological tissues, breast tumors are the most used (Figure \@ref(fig:hg-anat)). Note that these anatograms only includes organs available in the R package [`gganatogram`](https://github.com/jespermaag/gganatogram). Datasets from organs unavailable in the package are not shown. For metastases, the organ used for plotting here is the destination of metastases, so a liver metastasis of breast cancer would be plotted in the liver. More recently, in the wake of the SARS-CoV-2 pandemic, a number of studies using GeoMX Digital Spatial Profiler (DSP) to profile spatial transcriptomes of lungs of COVID victims have been published [@Park2021; @Butler2021; @Delorey2021a; @Margaroli2021].
 
 ```{r}
 p3h <- organs_mm_f %>% 
