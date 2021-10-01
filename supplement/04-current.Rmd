@@ -299,7 +299,7 @@ p3g <- organs_hg_f %>%
   theme_void() +
   scale_fill_distiller(palette = "Reds", direction = 1, 
                        name = "# publications\n(pathological)", 
-                       limits = limits_use2, breaks = breaks_width(2))
+                       limits = limits_use2)
 ```
 
 (ref:hg-anat-cat) A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer [@Burgess2019; @Brady2021]). Note that these anatograms only includes organs available in the R package [`gganatogram`](https://github.com/jespermaag/gganatogram). Datasets from organs unavailable in the package are not shown. For metastases, the organ used for plotting here is the destination of metastases, so a liver metastasis of breast cancer would be plotted in the liver.
@@ -328,7 +328,7 @@ p3i <- organs_mm_f %>%
    coord_equal() +
    theme_void() +
    scale_fill_distiller(palette = "Reds", direction = 1, name = "# publications\n(pathological)",
-                        limits = limits_use2, breaks = breaks_width(2))
+                        limits = limits_use2)
 ```
 
 ```{r mm-anat, fig.width=8, fig.height=6, fig.cap="A) Number of publications per healthy organ in the mouse. B) Number of publications for pathological organs in mouse.", out.width="100%"}
