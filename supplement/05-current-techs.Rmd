@@ -117,7 +117,7 @@ Another method that spread beyond its institution of origin is the commercial Ge
 Some methods can only be used in a regular grid, such as Tomo-seq, while some can be used either in a regular grid or in targeted ROIs, such as LCM and GeoMX DSP (Figure \@ref(fig:targeted). Some are primarily used for targeted ROIs, such as Niche-seq. Sometimes an ROI in the section may be chosen, which is then divided into smaller regular parts, in between targeted and untargeted. 
 
 ```{r}
-ms <- read_metadata(c("ROI selection"), update = TRUE)
+ms <- read_metadata("ROI selection", update = TRUE)
 ms_pubs <- get_pubs_df(ms, c("type", "method"))
 ```
 
@@ -133,7 +133,47 @@ ms_pubs %>%
   labs(x = "Number of studies", y = "Method")
 ```
 
-After LCM, GeoMX DSP/WTA is the most popular targeted ROI based technique, and as already mentioned, GeoMX DSP has been used in several COVID autopsy studies. GeoMX DSP is often used to profile proteins, which is beyond the scope of this book; our database only contains metadata for GeoMX DSP transcriptomic datasets. As of writing, all GeoMX DSP datasets in our database are from human, and are from predominantly pathological FFPE tissues. Because of COVID, GeoMX DSP is more used on the lungs for transcriptomics than other tissues (Figure \@ref(fig:dsp-organs).
+After LCM, GeoMX DSP/WTA is the most popular targeted ROI based technique, and as already mentioned, GeoMX DSP has been used in several COVID autopsy studies. GeoMX DSP is often used to profile proteins, which is beyond the scope of this book; our database only contains metadata for GeoMX DSP transcriptomic datasets. As of writing, all GeoMX DSP datasets in our database are from human, and are from predominantly pathological FFPE tissues (Figures \@ref(fig:ffpe), \@ref(fig:ffpe-hgmm)). Because of COVID, GeoMX DSP is more used on the lungs for transcriptomics than other tissues (Figure \@ref(fig:dsp-organs)).
+
+```{r}
+nms <- c("ROI selection", "smFISH", "NGS barcoding", "ISS", "No priori")
+ffpe <- read_metadata(nms, update = TRUE) %>% 
+  select(title, method, species, tissue, pathological) %>% 
+  distinct() %>% 
+  filter(!is.na(tissue), !is.na(method)) %>% 
+  mutate(is_ffpe = str_detect(tissue, "FFPE"))
+ffpe2 <- ffpe %>% 
+  mutate(method = fct_lump_min(method, 5) %>% fct_infreq() %>% fct_rev())
+```
+
+```{r ffpe, fig.width = 6, fig.height=4, fig.cap="Number of FFPE and frozen section datasets from each current era technique; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6."}
+ggplot(ffpe2, aes(y = method, fill = is_ffpe)) +
+  geom_bar() +
+  scale_x_continuous(expand = expansion(c(0,0.05))) +
+  scale_fill_discrete(name = "Is the\nsample\nFFPE") +
+  labs(x = "Number of datasets", y = "Method")
+```
+
+```{r}
+ffpe_pathological <- ffpe %>% 
+  filter(species %in% c("Homo sapiens", "Mus musculus"),
+         !is.na(pathological)) %>% 
+  mutate(method = fct_lump_min(method, 5) %>% fct_infreq() %>% fct_rev())
+```
+
+```{r ffpe-hgmm, fig.width=7, fig.height=6, fig.cap="Number of FFPE and frozen section datasets from each current era technique in humans and mice healthy and pathological tissues; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6."}
+ffpe_pathological <- ffpe_pathological %>% 
+  mutate(pathological_label = case_when(
+    pathological ~ "Pathological",
+    TRUE ~ "Healthy"
+  ))
+ggplot(ffpe_pathological, aes(y = method, fill = is_ffpe)) +
+  geom_bar() +
+  facet_grid(pathological_label ~ species) +
+  scale_x_continuous(expand = expansion(c(0, 0.05))) +
+  scale_fill_discrete(name = "Is the\nsample\nFFPE") +
+  labs(x = "Number of datasets", y = "Method")
+```
 
 ```{r}
 data("hgMale_key")
@@ -179,10 +219,9 @@ hg_h + hg_p +
   plot_annotation(tag_levels = "A")
 ```
 
-In an earlier version of this book, in the current era, microdissection was the most widely used type of techniques. However, NGS barcoding has surpassed microdissection more recently due to the rapid growth of popularity of Visium (Figure \@ref(fig:categories)). Excluding LCM, GeoMX DSP and Tomo-seq are the most popular techniques after ST and Visium (Figure \@ref(fig:n-insts)). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure \@ref(fig:current-hist), Figure \@ref(fig:lcm-year)). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted [@Baccin2020; @Hwang2020]. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM, NGS, and Nanostring nCounter for GeoMX DSP), Nanostring's Technology Access Platform (TAP), a commercial data collection and analysis service for GeoMX DSP [@nanostring_tap], not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.
+In an earlier version of this book, in the current era, ROI selection (formerly Microdissection) was the most widely used type of techniques. However, NGS barcoding has surpassed ROI selection more recently due to the rapid growth of popularity of Visium (Figure \@ref(fig:categories)). Excluding LCM, GeoMX DSP and Tomo-seq are the most popular techniques after ST and Visium (Figure \@ref(fig:n-insts)). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure \@ref(fig:current-hist), Figure \@ref(fig:lcm-year)). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted [@Baccin2020; @Hwang2020]. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM, NGS, and Nanostring nCounter for GeoMX DSP), Nanostring's Technology Access Platform (TAP), a commercial data collection and analysis service for GeoMX DSP [@nanostring_tap], not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.
 
 ```{r}
-nms <- c("ROI selection", "smFISH", "NGS barcoding", "ISS", "No priori")
 current <- read_metadata(nms, update = TRUE) %>% 
     select(date_published:journal, country:year, sheet) %>% 
     distinct()
@@ -281,7 +320,7 @@ Chronologically, the next of the popular signal amplification method is padlock 
 knitr::include_graphics("rca.png")
 ```
 
-In spatial transcriptomics, padlock probe and RCA were initially used for *in situ* sequencing (ISS) [@Ke2013], but more recently adapted to smFISH. The padlock probe with the gene barcode is hybridized to *in situ* reverse transcribed cDNA as in ISS and hybridization-based ISS (HybISS) [@Gyllborg2020], or the mRNA itself as in SCRINSHOT [@Sountoulidis2020], hybridization-based RNA ISS (HybRISS) [@Lee2020], and barcoded oligonucleotides ligated on RNA amplified for multiplexed and parallel *in situ* analyses (BOLORAMIS) [@Liu2021]. RCA can be initiated with the target cDNA itself as a primer or with a separate primer when the target is mRNA. Then readout probes are hybridized to the RCA amplified gene barcode, with [@Gyllborg2020] or without [@Sountoulidis2020] a bridge probe. In Hyb(R)ISS and SCRINSHOT, multiple rounds of readout hybridization encode each gene with a sequence of colors as in seqFISH; although error correction is not discussed, the seqFISH error correction scheme can be easily adapted. Perhaps because of larger number of copies of the gene barcode sequence produced by RCA, Hyb(R)ISS and SCRINSHOT use 5 probes per gene, each with a 30 nt (HybISS, target sequences are proprietary information of CARTANA for HybRISS) or 40 nt (SCRINSHOT) region to target the transcript. While we are unaware of isoform specific studies conducted with Hyb(R)ISS or SCRINSHOT, isoform specific exons may more realistically accommodate the 5 probes. While smFISH based techniques were typically designed for frozen sections, SCRINSHOT was designed for FFPE sections.
+In spatial transcriptomics, padlock probe and RCA were initially used for *in situ* sequencing (ISS) [@Ke2013], but more recently adapted to smFISH. The padlock probe with the gene barcode is hybridized to *in situ* reverse transcribed cDNA as in ISS and hybridization-based ISS (HybISS) [@Gyllborg2020], or the mRNA itself as in SCRINSHOT [@Sountoulidis2020], hybridization-based RNA ISS (HybRISS) [@Lee2020], and barcoded oligonucleotides ligated on RNA amplified for multiplexed and parallel *in situ* analyses (BOLORAMIS) [@Liu2021]. RCA can be initiated with the target cDNA itself as a primer or with a separate primer when the target is mRNA. Then readout probes are hybridized to the RCA amplified gene barcode, with [@Gyllborg2020] or without [@Sountoulidis2020] a bridge probe. In Hyb(R)ISS and SCRINSHOT, multiple rounds of readout hybridization encode each gene with a sequence of colors as in seqFISH; although error correction is not discussed, the seqFISH error correction scheme can be easily adapted. Perhaps because of larger number of copies of the gene barcode sequence produced by RCA, Hyb(R)ISS and SCRINSHOT use 5 probes per gene, each with a 30 nt (HybISS, target sequences are proprietary information of CARTANA for HybRISS) or 40 nt (SCRINSHOT) region to target the transcript. While we are unaware of isoform specific studies conducted with Hyb(R)ISS or SCRINSHOT, isoform specific exons may more realistically accommodate the 5 probes. 
 
 #### Hybridization chain reaction {#hcr}
 
@@ -497,14 +536,13 @@ Fourth, to profile large numbers of genes, numerous probes need to be designed, 
 
 ```{r}
 tab2 <- tibble(Technique = c("HCR-seqFISH", "seqFISH+", "MERFISH", 
-                             "ExM-MERFISH", "HybISS", "SCRINSHOT", 
+                             "ExM-MERFISH", "HybISS", 
                              "HybRISS", "bDNA-smFISH"),
                Pro = c("Relatively high efficiency (84%), fewer rounds of hybridization, error correction",
                        "Avoids optical crowding, scalable",
                        "High efficiency (95%) with HD4 code, error correction, version 2 relatively fast, scalable",
                        "Avoids optical crowding, clears tissue",
                        "Only 5 probes per gene, applicable to isoform specific exons, padlock probe reduces background, lower magnification when imaging (20x and 40x, while MERFISH uses 60x), can discern SNPs",
-                       "Similar to HybISS, but designed for FFPE tissue",
                        "Avoids inefficiency of reverse transcription, better signal to noise ratio and more transcripts detected then HybISS.",
                        "Commercial RNAscope kit, reduces background and amplifies signal, amplified moiety does not grow indefinitely"),
                Con = c("Lower efficiency than MERFISH, time consuming to re-hybridize probes to target after stripping",
@@ -512,7 +550,6 @@ tab2 <- tibble(Technique = c("HCR-seqFISH", "seqFISH+", "MERFISH",
                        "Numerous rounds of hybridization, numerous probes requiring long transcripts though this is resolved by bDNA signal amplification",
                        "Each FOV contains less of the original tissue",
                        "Error correction not reported, amplicon takes up space and might drift away if not cross linked",
-                       "Same as HybISS",
                        "Padlock probe sequences are proprietary to CARTANA",
                        "Except for bDNA-MERFISH, it has not been used in a highly multiplexed setting"))
 ```
