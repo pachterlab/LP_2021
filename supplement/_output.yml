@@ -3,7 +3,7 @@ bookdown::bs4_book:
     primary: "#B070D5"
   repo: https://github.com/pachterlab/LP_2021/tree/main/supplement
 bookdown::pdf_book:
-  latex_engine: xelatex
+  #latex_engine: xelatex
   keep_tex: no
   includes:
     in_header: preamble.tex
