@@ -23,7 +23,9 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-3-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-3-
       - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
+        run: Rscript -e 'install.packages(c("rmarkdown","bookdown", "tinytex"))'
+      - name: Install tinytex
+        run: Rscript -e 'tinytex::install_tinytex()'
       - name: Install dependencies
         run: Rscript -e 'install.packages("remotes"); remotes::install_deps(pkg = "supplement/", dependencies = TRUE)'
         env:
