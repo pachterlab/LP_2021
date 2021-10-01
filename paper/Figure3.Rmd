@@ -1,7 +1,7 @@
 ---
 title: "Figure 3"
 author: "Lambda Moses"
-date: "04/06/2021"
+date: "10/01/2021"
 output: html_document
 ---
 
@@ -20,7 +20,7 @@ theme_set(theme_bw())
 ```
 
 ```{r}
-nms <- c("Prequel", "ROI selection", "smFISH", "NGS barcoding", "ISS", "No imaging")
+nms <- c("Prequel", "ROI selection", "smFISH", "NGS barcoding", "ISS", "No priori")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 
@@ -62,22 +62,16 @@ smfish <- smfish %>%
 ```
 
 ```{r}
-(p3c <- smfish %>% 
-  filter(!is.na(n_genes)) %>% 
-  ggplot(aes(date_published, n_genes)) +
+(p3c <- ggplot(smfish, aes(date_published, n_genes)) +
   geom_point(aes(color = method), alpha = 0.5) +
   geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5,
-                  max.overlaps = 20, min.segment.length = 0.22) +
-  geom_smooth(method = "lm", 
-              data = smfish %>% filter(mask == "2", !is.na(n_genes))) +
-  labs(x = "Date published", 
-       title = "Number of genes per dataset",
+                  max.overlaps = 10) +
+  geom_smooth(method = "lm") +
+  labs(x = "Date published", title = "Number of genes per dataset",
        y = NULL) +
-  theme(legend.position = "none", strip.text = element_blank(),
-        strip.background = element_blank()) +
-  facet_grid(rows = vars(mask), space = "free_y", scales = "free_y") +
-  scale_y_continuous(breaks = scales::breaks_width(1000),
-                     expand = expansion(add = c(150,150))))
+  theme(legend.position = "none") +
+  scale_y_log10() +
+  annotation_logticks(sides = "l"))
 ```
 
 ```{r}
@@ -94,7 +88,8 @@ sum_cells <- smfish %>%
   geom_smooth(method = "lm") +
   labs(x = "Date published", title = "Total number of cells per study", y = NULL) +
   theme(legend.position = "none") +
-  coord_cartesian(ylim = c(0, max(sum_cells$n_cells))))
+  scale_y_log10() +
+  annotation_logticks())
 ```
 
 ```{r}
@@ -197,7 +192,7 @@ limits_use2 <- range(c(organs_hg_f$value[organs_hg_f$pathological],
    coord_equal() +
    theme_void() +
    scale_fill_distiller(palette = "Reds", direction = 1, name = "# publications\n(pathological)",
-                        limits = limits_use2, breaks = breaks_width(2)))
+                        limits = limits_use2))
 ```
 
 ```{r}
@@ -217,7 +212,7 @@ limits_use2 <- range(c(organs_hg_f$value[organs_hg_f$pathological],
    coord_equal() +
    theme_void() +
    scale_fill_distiller(palette = "Reds", direction = 1, name = "# publications\n(pathological)",
-                        limits = limits_use2, breaks = breaks_width(2)))
+                        limits = limits_use2))
 ```
 
 ```{r}
@@ -226,7 +221,7 @@ langs <- unnest_cat(data_sheets, language)
 ```
 
 ```{r}
-(p3j <- pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 10) +
+(p3j <- pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 20) +
   labs(title = "Users (downstream analysis)"))
 ```
 ```{r}
@@ -246,9 +241,9 @@ max_x <- max(lang_counts$n)
 ```
 
 ```{r}
-(p3k <- pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE, img_unit = 10) +
+(p3k <- pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE, img_unit = 20) +
   scale_y_continuous(limits = c(0, max_x), 
-                     breaks = seq(0, max_x, by = 20),
+                     breaks = breaks_width(50),
                      expand = expansion(mult = c(0, 0.05))) +
   labs(title = "Package developers"))
 ```
