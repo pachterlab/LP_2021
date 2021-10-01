@@ -41,6 +41,8 @@ fig:tomo
 fig:niche
 fig:dsp
 fig:targeted
+fig:ffpe
+fig:ffpe-hgmm
 fig:dsp-organs
 fig:categories
 fig:smfish
