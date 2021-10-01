@@ -190,7 +190,7 @@ hist_bool_line(analysis_langs, `CRAN/Bioc/pip/conda`, "language",
   labs(title = "CRAN/Bioc/pip/conda")
 ```
 
-Some of the most popular categories of analyses (Figure \@ref(fig:analysis-cats)) are reviewed in the rest of this section, arranged roughly in the order each task is performed in a data analysis workflow, from converting raw data to something more amenable to biological interpretations to forming biological hypotheses. Each category will first be defined, and the common core principles will be summarized.
+Some of the most popular categories of analyses (Figure \@ref(fig:analysis-cats)) are reviewed in the rest of this section, arranged roughly in the order each task is performed in a data analysis workflow, from converting raw data to something more amenable to biological interpretations to forming biological hypotheses. The former is specific to certain types of techniques, and includes image processing (smFISH and ISS), spatial reconstruction (scRNA-seq and smFISH and ISS data that are not transcriptome wide), and cell type deconvolution (NGS barcoding data that are not single cell resolution). The latter can largely be applied across types of techniques if given a gene by cell or spot matrix and cell or spot locations. Exceptions to the "largely" include analyses of subcellular transcript location which can only be applied to single molecule resolution data and spatial point process based methods which are more appropriate to model the cell or transcript locations rather than the fixed Visium spot locations. Each category will first be defined, and the common core principles will be summarized. 
 
 ## Preprocessing {#preprocessing}
 
