@@ -52,548 +52,145 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
 
 
 
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>(\#tab:table1)Summary of spatial transcriptomics techniques in the current era</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Method </th>
-   <th style="text-align:left;"> First published </th>
-   <th style="text-align:left;"> Category </th>
-   <th style="text-align:left;"> Max # genes </th>
-   <th style="text-align:left;"> Min spot diameter ($\mu$m) </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;width: 6em; "> voxelation </td>
-   <td style="text-align:left;width: 6em; "> 2002-02-01 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> PA-GFP </td>
-   <td style="text-align:left;width: 6em; "> 2010-11-12 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> SRM seqFISH </td>
-   <td style="text-align:left;width: 6em; "> 2012-06-03 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 32 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Tomo-array </td>
-   <td style="text-align:left;width: 6em; "> 2012-09-19 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> iceFISH </td>
-   <td style="text-align:left;width: 6em; "> 2013-02-17 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 20 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 2013-07-14 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 222 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Tomo-seq </td>
-   <td style="text-align:left;width: 6em; "> 2013-08-12 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> bDNA-smFISH </td>
-   <td style="text-align:left;width: 6em; "> 2013-10-06 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 928 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> TIVA </td>
-   <td style="text-align:left;width: 6em; "> 2014-01-12 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> FISSEQ </td>
-   <td style="text-align:left;width: 6em; "> 2014-03-21 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 8102 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> seqFISH </td>
-   <td style="text-align:left;width: 6em; "> 2014-03-28 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 10421 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> MERFISH </td>
-   <td style="text-align:left;width: 6em; "> 2015-04-24 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 4209 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Puzzle Imaging </td>
-   <td style="text-align:left;width: 6em; "> 2015-07-20 </td>
-   <td style="text-align:left;width: 6em; "> No priori </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Geo-seq </td>
-   <td style="text-align:left;width: 6em; "> 2016-03-21 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> corrFISH </td>
-   <td style="text-align:left;width: 6em; "> 2016-06-06 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> ST </td>
-   <td style="text-align:left;width: 6em; "> 2016-07-01 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 100 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> HCR-seqFISH </td>
-   <td style="text-align:left;width: 6em; "> 2016-10-19 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 249 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> punch </td>
-   <td style="text-align:left;width: 6em; "> 2017-06-28 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> SGA </td>
-   <td style="text-align:left;width: 6em; "> 2017-11-28 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 35 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> APEX-RIP </td>
-   <td style="text-align:left;width: 6em; "> 2017-12-14 </td>
-   <td style="text-align:left;width: 6em; "> No priori </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Niche-seq </td>
-   <td style="text-align:left;width: 6em; "> 2017-12-22 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> ExM-MERFISH </td>
-   <td style="text-align:left;width: 6em; "> 2018-03-19 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 10050 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> STARmap </td>
-   <td style="text-align:left;width: 6em; "> 2018-07-27 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 1020 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Paired-cell sequencing </td>
-   <td style="text-align:left;width: 6em; "> 2018-09-17 </td>
-   <td style="text-align:left;width: 6em; "> No priori </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> osmFISH </td>
-   <td style="text-align:left;width: 6em; "> 2018-10-30 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 33 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> seqFISH+ </td>
-   <td style="text-align:left;width: 6em; "> 2019-03-25 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 10000 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> slide-seq </td>
-   <td style="text-align:left;width: 6em; "> 2019-03-29 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> bDNA-MERFISH </td>
-   <td style="text-align:left;width: 6em; "> 2019-05-25 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 130 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> GeoMX DSP </td>
-   <td style="text-align:left;width: 6em; "> 2019-06-21 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> 2093 </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> DNA microscopy </td>
-   <td style="text-align:left;width: 6em; "> 2019-06-27 </td>
-   <td style="text-align:left;width: 6em; "> No priori </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> APEX-seq </td>
-   <td style="text-align:left;width: 6em; "> 2019-07-11 </td>
-   <td style="text-align:left;width: 6em; "> No priori </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> INSTA-seq </td>
-   <td style="text-align:left;width: 6em; "> 2019-08-06 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> PARSIFT </td>
-   <td style="text-align:left;width: 6em; "> 2019-09-04 </td>
-   <td style="text-align:left;width: 6em; "> No priori </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> HDST </td>
-   <td style="text-align:left;width: 6em; "> 2019-09-09 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> GaST-seq </td>
-   <td style="text-align:left;width: 6em; "> 2019-10-10 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> BARseq </td>
-   <td style="text-align:left;width: 6em; "> 2019-10-17 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 79 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> miRNA nanowell </td>
-   <td style="text-align:left;width: 6em; "> 2020-05-09 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> 9 </td>
-   <td style="text-align:left;width: 6em; "> 300 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> split-FISH </td>
-   <td style="text-align:left;width: 6em; "> 2020-06-15 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 317 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Visium </td>
-   <td style="text-align:left;width: 6em; "> 2020-06-22 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 55 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> ZipSeq </td>
-   <td style="text-align:left;width: 6em; "> 2020-07-06 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> SMD-seq </td>
-   <td style="text-align:left;width: 6em; "> 2020-08-11 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> BARseq2 </td>
-   <td style="text-align:left;width: 6em; "> 2020-08-26 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 65 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> HybISS </td>
-   <td style="text-align:left;width: 6em; "> 2020-09-29 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 120 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> SM-Omics </td>
-   <td style="text-align:left;width: 6em; "> 2020-10-15 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 100 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> slide-seq2 </td>
-   <td style="text-align:left;width: 6em; "> 2020-10-17 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> DBiT-seq </td>
-   <td style="text-align:left;width: 6em; "> 2020-10-19 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> C-FISH </td>
-   <td style="text-align:left;width: 6em; "> 2020-10-23 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 2 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> SCRINSHOT </td>
-   <td style="text-align:left;width: 6em; "> 2020-11-20 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 29 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> HybRISS </td>
-   <td style="text-align:left;width: 6em; "> 2020-12-02 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 50 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Stereo-seq </td>
-   <td style="text-align:left;width: 6em; "> 2021-01-19 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 0.22 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> GeoMX WTA </td>
-   <td style="text-align:left;width: 6em; "> 2021-01-25 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> 18361 </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Seq-Scope </td>
-   <td style="text-align:left;width: 6em; "> 2021-01-27 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 0.5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> ExSeq </td>
-   <td style="text-align:left;width: 6em; "> 2021-01-29 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 297 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> BOLORAMIS </td>
-   <td style="text-align:left;width: 6em; "> 2021-03-08 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 96 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> EASI-FISH </td>
-   <td style="text-align:left;width: 6em; "> 2021-03-08 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 26 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Pick-Seq </td>
-   <td style="text-align:left;width: 6em; "> 2021-03-09 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> nanoneedles </td>
-   <td style="text-align:left;width: 6em; "> 2021-03-10 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> 9 </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> PIXEL-seq </td>
-   <td style="text-align:left;width: 6em; "> 2021-03-17 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 1.22 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> CISI </td>
-   <td style="text-align:left;width: 6em; "> 2021-04-15 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 37 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> STRP-seq </td>
-   <td style="text-align:left;width: 6em; "> 2021-04-19 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> XYZeq </td>
-   <td style="text-align:left;width: 6em; "> 2021-04-21 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 500 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> electro-seq </td>
-   <td style="text-align:left;width: 6em; "> 2021-04-23 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 201 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> centrifugation on 384 well plate </td>
-   <td style="text-align:left;width: 6em; "> 2021-04-30 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> ClumpSeq </td>
-   <td style="text-align:left;width: 6em; "> 2021-05-24 </td>
-   <td style="text-align:left;width: 6em; "> No priori </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Halo-seq </td>
-   <td style="text-align:left;width: 6em; "> 2021-06-08 </td>
-   <td style="text-align:left;width: 6em; "> No priori </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> MOSAICA </td>
-   <td style="text-align:left;width: 6em; "> 2021-06-23 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> sci-Space </td>
-   <td style="text-align:left;width: 6em; "> 2021-07-02 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 73.2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> PIC </td>
-   <td style="text-align:left;width: 6em; "> 2021-07-20 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> par-seqFISH </td>
-   <td style="text-align:left;width: 6em; "> 2021-08-13 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 105 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> SPACECAT </td>
-   <td style="text-align:left;width: 6em; "> 2021-08-17 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Space-TREX </td>
-   <td style="text-align:left;width: 6em; "> 2021-09-01 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 55 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> RNAscope </td>
-   <td style="text-align:left;width: 6em; "> 2021-09-29 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 95 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-</tbody>
-</table>
+
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{6em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{5em}}
+\caption{(\#tab:table1)Summary of spatial transcriptomics techniques in the current era}\\
+\toprule
+Method & First published & Category & Max \# genes & Min spot diameter ($\mu$m)\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:table1)Summary of spatial transcriptomics techniques in the current era \textit{(continued)}}\\
+\toprule
+Method & First published & Category & Max \# genes & Min spot diameter ($\mu$m)\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+\cellcolor{gray!6}{voxelation} & \cellcolor{gray!6}{2002-02-01} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+PA-GFP & 2010-11-12 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{SRM seqFISH} & \cellcolor{gray!6}{2012-06-03} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{32} & \cellcolor{gray!6}{single cell}\\
+Tomo-array & 2012-09-19 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{iceFISH} & \cellcolor{gray!6}{2013-02-17} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{20} & \cellcolor{gray!6}{single cell}\\
+\addlinespace
+ISS & 2013-07-14 & ISS & 222 & single cell\\
+\cellcolor{gray!6}{Tomo-seq} & \cellcolor{gray!6}{2013-08-12} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+bDNA-smFISH & 2013-10-06 & smFISH & 928 & single cell\\
+\cellcolor{gray!6}{TIVA} & \cellcolor{gray!6}{2014-01-12} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+FISSEQ & 2014-03-21 & ISS & 8102 & single cell\\
+\addlinespace
+\cellcolor{gray!6}{seqFISH} & \cellcolor{gray!6}{2014-03-28} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10421} & \cellcolor{gray!6}{single cell}\\
+MERFISH & 2015-04-24 & smFISH & 4209 & single cell\\
+\cellcolor{gray!6}{Puzzle Imaging} & \cellcolor{gray!6}{2015-07-20} & \cellcolor{gray!6}{No priori} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+Geo-seq & 2016-03-21 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{corrFISH} & \cellcolor{gray!6}{2016-06-06} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{single cell}\\
+\addlinespace
+ST & 2016-07-01 & NGS barcoding & Tx wide & 100\\
+\cellcolor{gray!6}{HCR-seqFISH} & \cellcolor{gray!6}{2016-10-19} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{249} & \cellcolor{gray!6}{single cell}\\
+punch & 2017-06-28 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{SGA} & \cellcolor{gray!6}{2017-11-28} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{35} & \cellcolor{gray!6}{single cell}\\
+APEX-RIP & 2017-12-14 & No priori & NA & NA\\
+\addlinespace
+\cellcolor{gray!6}{Niche-seq} & \cellcolor{gray!6}{2017-12-22} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+ExM-MERFISH & 2018-03-19 & smFISH & 10050 & single cell\\
+\cellcolor{gray!6}{STARmap} & \cellcolor{gray!6}{2018-07-27} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{1020} & \cellcolor{gray!6}{single cell}\\
+Paired-cell sequencing & 2018-09-17 & No priori & NA & NA\\
+\cellcolor{gray!6}{osmFISH} & \cellcolor{gray!6}{2018-10-30} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{single cell}\\
+\addlinespace
+seqFISH+ & 2019-03-25 & smFISH & 10000 & single cell\\
+\cellcolor{gray!6}{slide-seq} & \cellcolor{gray!6}{2019-03-29} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{10}\\
+bDNA-MERFISH & 2019-05-25 & smFISH & 130 & single cell\\
+\cellcolor{gray!6}{GeoMX DSP} & \cellcolor{gray!6}{2019-06-21} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{2093} & \cellcolor{gray!6}{NA}\\
+DNA microscopy & 2019-06-27 & No priori & NA & NA\\
+\addlinespace
+\cellcolor{gray!6}{APEX-seq} & \cellcolor{gray!6}{2019-07-11} & \cellcolor{gray!6}{No priori} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+INSTA-seq & 2019-08-06 & ISS & NA & single cell\\
+\cellcolor{gray!6}{PARSIFT} & \cellcolor{gray!6}{2019-09-04} & \cellcolor{gray!6}{No priori} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+HDST & 2019-09-09 & NGS barcoding & Tx wide & 2\\
+\cellcolor{gray!6}{GaST-seq} & \cellcolor{gray!6}{2019-10-10} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+\addlinespace
+BARseq & 2019-10-17 & ISS & 79 & single cell\\
+\cellcolor{gray!6}{miRNA nanowell} & \cellcolor{gray!6}{2020-05-09} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{300}\\
+split-FISH & 2020-06-15 & smFISH & 317 & single cell\\
+\cellcolor{gray!6}{Visium} & \cellcolor{gray!6}{2020-06-22} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
+ZipSeq & 2020-07-06 & ROI selection & Tx wide & NA\\
+\addlinespace
+\cellcolor{gray!6}{SMD-seq} & \cellcolor{gray!6}{2020-08-11} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+BARseq2 & 2020-08-26 & ISS & 65 & single cell\\
+\cellcolor{gray!6}{HybISS} & \cellcolor{gray!6}{2020-09-29} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{120} & \cellcolor{gray!6}{single cell}\\
+SM-Omics & 2020-10-15 & NGS barcoding & Tx wide & 100\\
+\cellcolor{gray!6}{slide-seq2} & \cellcolor{gray!6}{2020-10-17} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{10}\\
+\addlinespace
+DBiT-seq & 2020-10-19 & NGS barcoding & Tx wide & 10\\
+\cellcolor{gray!6}{C-FISH} & \cellcolor{gray!6}{2020-10-23} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{single cell}\\
+SCRINSHOT & 2020-11-20 & smFISH & 29 & single cell\\
+\cellcolor{gray!6}{HybRISS} & \cellcolor{gray!6}{2020-12-02} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{50} & \cellcolor{gray!6}{single cell}\\
+Stereo-seq & 2021-01-19 & NGS barcoding & Tx wide & 0.22\\
+\addlinespace
+\cellcolor{gray!6}{GeoMX WTA} & \cellcolor{gray!6}{2021-01-25} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{18361} & \cellcolor{gray!6}{NA}\\
+Seq-Scope & 2021-01-27 & NGS barcoding & Tx wide & 0.5\\
+\cellcolor{gray!6}{ExSeq} & \cellcolor{gray!6}{2021-01-29} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{297} & \cellcolor{gray!6}{single cell}\\
+BOLORAMIS & 2021-03-08 & ISS & 96 & single cell\\
+\cellcolor{gray!6}{EASI-FISH} & \cellcolor{gray!6}{2021-03-08} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{26} & \cellcolor{gray!6}{single cell}\\
+\addlinespace
+Pick-Seq & 2021-03-09 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{nanoneedles} & \cellcolor{gray!6}{2021-03-10} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{NA}\\
+PIXEL-seq & 2021-03-17 & NGS barcoding & Tx wide & 1.22\\
+\cellcolor{gray!6}{CISI} & \cellcolor{gray!6}{2021-04-15} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{single cell}\\
+STRP-seq & 2021-04-19 & ROI selection & Tx wide & NA\\
+\addlinespace
+\cellcolor{gray!6}{XYZeq} & \cellcolor{gray!6}{2021-04-21} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{500}\\
+electro-seq & 2021-04-23 & ISS & 201 & single cell\\
+\cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2021-04-30} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+ClumpSeq & 2021-05-24 & No priori & NA & NA\\
+\cellcolor{gray!6}{Halo-seq} & \cellcolor{gray!6}{2021-06-08} & \cellcolor{gray!6}{No priori} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+\addlinespace
+MOSAICA & 2021-06-23 & smFISH & 10 & single cell\\
+\cellcolor{gray!6}{sci-Space} & \cellcolor{gray!6}{2021-07-02} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{73.2}\\
+PIC & 2021-07-20 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{par-seqFISH} & \cellcolor{gray!6}{2021-08-13} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{105} & \cellcolor{gray!6}{single cell}\\
+SPACECAT & 2021-08-17 & ROI selection & Tx wide & NA\\
+\addlinespace
+\cellcolor{gray!6}{Space-TREX} & \cellcolor{gray!6}{2021-09-01} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
+RNAscope & 2021-09-29 & smFISH & 95 & single cell\\*
+\end{longtable}
 
 
 
 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/current-hist-1.png" alt="Number of publications over time in the current era. The gray histogram in the background is the overall trend of all current era literature. Each facet highlights a category, ordered chronologically in terms of first report. Bin width is 365 days. Plots in this figure include curated LCM literature, but not the non-curated literature." width="576" />
-<p class="caption">(\#fig:current-hist)Number of publications over time in the current era. The gray histogram in the background is the overall trend of all current era literature. Each facet highlights a category, ordered chronologically in terms of first report. Bin width is 365 days. Plots in this figure include curated LCM literature, but not the non-curated literature.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/current-hist-1} 
+
+}
+
+\caption{Number of publications over time in the current era. The gray histogram in the background is the overall trend of all current era literature. Each facet highlights a category, ordered chronologically in terms of first report. Bin width is 365 days. Plots in this figure include curated LCM literature, but not the non-curated literature.}(\#fig:current-hist)
+\end{figure}
 
 Chronologically, in the curated database, microdissection came first, with voxelation in 2002 [@Brown2002], followed by smFISH, ISS, no imaging, and NGS barcoding (Figure \@ref(fig:current-hist)). Despite an early start in the midst of the (WM)ISH golden age, if not including non-curated LCM literature, the current era did not really take off until around 2014 (Figure \@ref(fig:current-vs-prequel)). Ever since, its has seen drastic growth, far exceeding that of the prequel era in the 1990s and 2000s (Figure \@ref(fig:current-vs-prequel)). Growth in microdissection and NGS barcoding seemed to have contributed the most to this overall drastic growth (Figure \@ref(fig:current-hist)). All techniques in the curated database, along with their classification, maximum number of genes, spatial resolution, and references are listed in Table \@ref(tab:table1). 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/current-vs-prequel-1.png" alt="Comparing number of publications over time in the prequel and the current eras. Bin width is 180 days. The x-shaped points show the number of publications from the last bin, which is not yet full." width="672" />
-<p class="caption">(\#fig:current-vs-prequel)Comparing number of publications over time in the prequel and the current eras. Bin width is 180 days. The x-shaped points show the number of publications from the last bin, which is not yet full.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/current-vs-prequel-1} 
+
+}
+
+\caption{Comparing number of publications over time in the prequel and the current eras. Bin width is 180 days. The x-shaped points show the number of publications from the last bin, which is not yet full.}(\#fig:current-vs-prequel)
+\end{figure}
 
 A timeline of foundational or influential techniques in the current era is shown in Figure \@ref(fig:tl3). This is not meant to be a timeline of all current era techniques, but only of techniques that either laid the foundation of popular current era techniques (e.g. Solexa, later Illumina, sequencing) or very influential within a category of techniques (e.g. MERFISH for smFISH based techniques, and ST for NGS barcoding). Just like the "revolution" of current era spatial transcriptomics, each item in the timeline must not be understood as works of the "solitary genius". Rather, each of the landmark innovations in the timeline occurred in its own historical context, with influences from predecessors, which are not plotted in the timeline for the sake of brevity.
 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/tl3-1.png" alt="Timeline of major techniques related to the current era." width="100%" />
-<p class="caption">(\#fig:tl3)Timeline of major techniques related to the current era.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{04-current_files/figure-latex/tl3-1} 
+
+}
+
+\caption{Timeline of major techniques related to the current era.}(\#fig:tl3)
+\end{figure}
 
 The prequel era started with untargeted screens and grew into atlases and databases striving to be comprehensive. Screens are still a theme in the current era and spatial transcriptomics is still used in untargeted searches for genes involved in development of model organisms, but with highly multiplexed technology, this can also be done for pathological and human tissues (Figure \@ref(fig:species-pie), Figure \@ref(fig:hg-anat)). Thanks to multiplexing, while mouse was the most popular species in the prequel era, in the current era, there are more studies on human tissues than those on mice and the vast majority of studies are on either humans or mice (Figure \@ref(fig:species-pie)). Furthermore, there are datasets for a wider range of organs in mice in the current era (e.g. colon, liver, uterus, and etc.) than in the prequel era though there still is more interest in the brain (Figure \@ref(fig:mm-anat), Figure \@ref(fig:anat1)).
 
@@ -605,10 +202,14 @@ The prequel era started with untargeted screens and grew into atlases and databa
 
 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/species-pie-1.png" alt="Number of publication per species." width="480" />
-<p class="caption">(\#fig:species-pie)Number of publication per species.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/species-pie-1} 
+
+}
+
+\caption{Number of publication per species.}(\#fig:species-pie)
+\end{figure}
 
 
 
@@ -628,41 +229,57 @@ The prequel era started with untargeted screens and grew into atlases and databa
 
 
 
-(ref:hg-anat-cat) A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer [@Burgess2019; @Brady2021]). Note that these anatograms only includes organs available in the R package [`gganatogram`](https://github.com/jespermaag/gganatogram). Datasets from organs unavailable in the package are not shown. For metastases, the organ used for plotting here is the destination of metastases, so a liver metastasis of breast cancer would be plotted in the liver.
+(ref:hg-anat-cat) A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer [@Burgess2019; @Brady2021]). 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/hg-anat-1.png" alt="(ref:hg-anat-cat)" width="100%" />
-<p class="caption">(\#fig:hg-anat)(ref:hg-anat-cat)</p>
-</div>
+\begin{figure}
 
-While atlases have so far not been in the center of the stage, some atlases have been made with current era technology, such as MERFISH [@Zhang2020], HybISS [@LaManno2021], ST [@Ortiz2020], Visium [@Wu2021], GeoMX DSP [@Delorey2021a], and Slide-seq2 [@Lake2021] described and analyzed with similar language to that of (WM)ISH atlases. Also as in the prequel era, the brain is still the most favored healthy organ (Figure \@ref(fig:hg-anat), Figure \@ref(fig:mm-anat)). Among pathological tissues, breast tumors are the most used (Figure \@ref(fig:hg-anat)). More recently, in the wake of the SARS-CoV-2 pandemic, a number of studies using GeoMX Digital Spatial Profiler (DSP) to profile spatial transcriptomes of lungs of COVID victims have been published [@Park2021; @Butler2021; @Delorey2021a; @Margaroli2021].
+{\centering \includegraphics[width=1\linewidth]{04-current_files/figure-latex/hg-anat-1} 
+
+}
+
+\caption{(ref:hg-anat-cat)}(\#fig:hg-anat)
+\end{figure}
+
+While atlases have so far not been in the center of the stage, some atlases have been made with current era technology, such as MERFISH [@Zhang2020], HybISS [@LaManno2021], ST [@Ortiz2020], Visium [@Wu2021], GeoMX DSP [@Delorey2021a], and Slide-seq2 [@Lake2021] described and analyzed with similar language to that of (WM)ISH atlases. Also as in the prequel era, the brain is still the most favored healthy organ (Figure \@ref(fig:hg-anat), Figure \@ref(fig:mm-anat)). Among pathological tissues, breast tumors are the most used (Figure \@ref(fig:hg-anat)). Note that these anatograms only includes organs available in the R package [`gganatogram`](https://github.com/jespermaag/gganatogram). Datasets from organs unavailable in the package are not shown. For metastases, the organ used for plotting here is the destination of metastases, so a liver metastasis of breast cancer would be plotted in the liver. More recently, in the wake of the SARS-CoV-2 pandemic, a number of studies using GeoMX Digital Spatial Profiler (DSP) to profile spatial transcriptomes of lungs of COVID victims have been published [@Park2021; @Butler2021; @Delorey2021a; @Margaroli2021].
 
 
 
 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/mm-anat-1.png" alt="A) Number of publications per healthy organ in the mouse. B) Number of publications for pathological organs in mouse." width="100%" />
-<p class="caption">(\#fig:mm-anat)A) Number of publications per healthy organ in the mouse. B) Number of publications for pathological organs in mouse.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{04-current_files/figure-latex/mm-anat-1} 
+
+}
+
+\caption{A) Number of publications per healthy organ in the mouse. B) Number of publications for pathological organs in mouse.}(\#fig:mm-anat)
+\end{figure}
 
 However, unlike in the prequel era, in which older technologies were adapted to larger scale to produce the screens and atlases, the current era has another major theme -- new techniques, due to the challenges to be discussed in the following sections; the number of new techniques published each year has grown steadily in the past few years (Figure \@ref(fig:n-insts-hist)). However, this difference might be due to bias in curation and change in culture. In the prequel era, very different enhancer and gene trap vectors were lumped together into enhancer or gene trap in our database, and there might have been many different early non-radioactive ISH protocols not included in our database because they were not used to profile a sufficiently large number of genes. Furthermore, in the current era, authors like to give techniques new names, making related techniques seem distinct rather than lumped together in a wider category like enhancer or gene trap. 
 
 While a few techniques other than LCM have become popular, such as ISS (2013), Tomo-seq (2013), MERFISH (2015), ST (late 2016), GeoMX DSP (2019, only showing transcriptomics studies here), and Visium (first preprint in 2020), most techniques never or rarely spread beyond their institutions of origin (Figures \@ref(fig:n-insts), \@ref(fig:n-insts-hist)). Furthermore, except for Visium and LCM, prequel (WM)ISH, enhancer trap, and gene trap have been used by more institutions than current era techniques (\@ref(fig:n-insts-prequel)). This might be because there has not been enough time for recently published new techniques to be implemented elsewhere, or if they have been implemented, there has not been enough time for the relevant studies to be published. Or that there has been much less time for relatively new commercial techniques like GeoMX DSP to spread to more institutions compared to (WM)ISH. Furthermore, usage of Visium and GeoMX DSP might have been spread by commercialization and core facilities and usage of Tomo-seq might have been spread by relative ease of implementation with standard lab equipment; implementing complex current era techniques that require custom built equipment such as custom fluidics systems independently may be more challenging, thus hampering their widespread adoption. This is analogous to a well-tested and fool proof commercial cake mix widely available at grocery stores that only calls for standard kitchen equipment such as the oven and the hand mixer as opposed to a cake recipe that is not only very complicated but also requires the home cook to build custom kitchen equipment. Even if instructions to assemble the custom equipment is available, most people would probably prefer to buy the pre-assembled product when feasible. The average home cook would most likely prefer the former to the latter. Having a core facility  perform a procedure is like ordering a cake from a bakery, which is much easier than DIY trials and errors and building custom equipment.
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/n-insts-1.png" alt="Techniques used by at least 3 institutions and the number of institutions that have used them." width="576" />
-<p class="caption">(\#fig:n-insts)Techniques used by at least 3 institutions and the number of institutions that have used them.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/n-insts-1} 
+
+}
+
+\caption{Techniques used by at least 3 institutions and the number of institutions that have used them.}(\#fig:n-insts)
+\end{figure}
 
 
 
 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/n-insts-prequel-1.png" alt="Prequel techniques used by at least 3 institutions and the number of institutions that have used them." width="576" />
-<p class="caption">(\#fig:n-insts-prequel)Prequel techniques used by at least 3 institutions and the number of institutions that have used them.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/n-insts-prequel-1} 
+
+}
+
+\caption{Prequel techniques used by at least 3 institutions and the number of institutions that have used them.}(\#fig:n-insts-prequel)
+\end{figure}
 
 Protocols of WMISH (as used in GEISHA) [@Bell2004], ISH (as used in GenePaint and ABA) [@Yaylaoglu2005], [Visium](https://assets.ctfassets.net/an68im79xiti/1ivOrdgMWRePeFqrUwj2Mk/8cb9e32ec7863c34474c230d5ce3c51a/CG000239_VisiumSpatialGeneExpression_UserGuide_RevE_.pdf), and MERFISH [@Moffitt2016] all have numerous steps. What (WM)ISH and Visium seem to have in common besides that they are widely adopted is that a significant part of the protocol is taken care of, by commercial automated systems (for (WM)ISH) or core facilities (for Visium), so there is less DIY hassle. Commercial automated ISH systems are commonly used by large scale (WM)ISH atlases. For example, GEISHA used the Abimed In Situ Pro [@Bell2004], and GenePaint [@Geffers2015], ABA [@Lein2007], and LungMap [@Ljungberg2019] used the Tecan EVO liquid handling platform (or its pre-commercial version), to automate ISH staining of numerous sections or embryos and genes. Several major institutions have core facilities that perform Visium [@illinois; @umich; @ncl], and even if the core facility does not perform Visium as a whole, NGS core facilities are common. Furthermore, the Visium protocol does not require custom made equipment that cannot be purchased from 10X itself and major lab equipment companies such as Bio-Rad and VWR. Visium involves scanning the H&E image of the tissue section, which can be done by a histology core. As library preparation of the forerunner of Visium, ST, can be automated [@Jemt2016], it would be reasonable to say that Visium library preparation can be automated. In contrast, the MERFISH protocol involves a custom built fluidics system to automate the imaging and liquid handling and long imaging time that might not be appropriate for a microscopy core facility. However, as MERFISH is getting commercialized by Vizgen and automated with the [MERSCOPE](https://vizgen.com/products/) product, it might become more widely adopted in the near future as the commercial package removes a lot of DIY hassle to independently implement MERFISH.
 
@@ -672,48 +289,76 @@ Protocols of WMISH (as used in GEISHA) [@Bell2004], ISH (as used in GenePaint an
 
 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/n-insts-hist-1.png" alt="Number of new methods per year, colored by the number of institutions that have used the method." width="672" />
-<p class="caption">(\#fig:n-insts-hist)Number of new methods per year, colored by the number of institutions that have used the method.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/n-insts-hist-1} 
+
+}
+
+\caption{Number of new methods per year, colored by the number of institutions that have used the method.}(\#fig:n-insts-hist)
+\end{figure}
 
 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/fastq-published-1.png" alt="Whether fastq files from published NGS based papers (no preprints) are available on a public data repository such as GEO over time. Bin width is 180 days." width="576" />
-<p class="caption">(\#fig:fastq-published)Whether fastq files from published NGS based papers (no preprints) are available on a public data repository such as GEO over time. Bin width is 180 days.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/fastq-published-1} 
+
+}
+
+\caption{Whether fastq files from published NGS based papers (no preprints) are available on a public data repository such as GEO over time. Bin width is 180 days.}(\#fig:fastq-published)
+\end{figure}
 
 While in prequel (WM)ISH atlases, the images are themselves _the_ data, current era data goes beyond visualization of gene expression in space. NGS based current era data has the sequencing reads in fastq files, which can be re-processed for RNA velocity and isoform analyses. The fastq files are often deposited in data repositories such as GEO and ENA, where they can be downloaded for re-processing. However, for some human data, to protect patients' privacy, the fastq files are not available or have controlled access. While the fastq files from most published papers for NGS based current era datasets are available in a data repository (Figure \@ref(fig:fastq-published)), the fastq files from most NGS based current era preprints are not available, especially the older preprints (Figure \@ref(fig:fastq-preprint)). Sometimes preprints state that the data will be deposited on GEO upon acceptance of the manuscript (e.g. [@Zuo2021]).
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/fastq-preprint-1.png" alt="Whether fastq files from published NGS based preprints are available on a public data repository such as GEO over time. Bin width is 90 days." width="576" />
-<p class="caption">(\#fig:fastq-preprint)Whether fastq files from published NGS based preprints are available on a public data repository such as GEO over time. Bin width is 90 days.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/fastq-preprint-1} 
+
+}
+
+\caption{Whether fastq files from published NGS based preprints are available on a public data repository such as GEO over time. Bin width is 90 days.}(\#fig:fastq-preprint)
+\end{figure}
 
 Especially in the US, research in the current era tends to be more concentrated in a few elite institutions, while research in the prequel era tends to be more spread out to some less well-known institutions (Figure \@ref(fig:current-world), \@ref(fig:current-us)). Among the top contributing institutions in the prequel era are those hosting databases, such as Allen Institute for ABA, University of Oregon (UO) for ZFIN, UC Berkeley and Lawrence Berkeley National Laboratory (LBL) for BDGP, University of Arizona (UofA) for GEISHA, Jackson Laboratory (JAX) for GXD, Western General Hospital (WGH) for EMAGE, and Kyoto University (Kyodai) for GHOST (Figure \@ref(fig:current-us)). By and large, in western Europe and northeast Asia, prequel and current era research was conducted in different institutions as well (Figure \@ref(fig:current-europe), Figure \@ref(fig:current-ne-asia)).
 
 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/current-world-1.png" alt="World map of institutions. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled." width="100%" />
-<p class="caption">(\#fig:current-world)World map of institutions. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.</p>
-</div>
+\begin{figure}
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/current-us-1.png" alt="Map of institutions around continental US. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled." width="576" />
-<p class="caption">(\#fig:current-us)Map of institutions around continental US. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.</p>
-</div>
+{\centering \includegraphics[width=1\linewidth]{04-current_files/figure-latex/current-world-1} 
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/current-europe-1.png" alt="Map of institutions around western Europe. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled." width="576" />
-<p class="caption">(\#fig:current-europe)Map of institutions around western Europe. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.</p>
-</div>
+}
 
-<div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/current-ne-asia-1.png" alt="Map of institutions in northeast Asia. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled." width="576" />
-<p class="caption">(\#fig:current-ne-asia)Map of institutions in northeast Asia. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.</p>
-</div>
+\caption{World map of institutions. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.}(\#fig:current-world)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/current-us-1} 
+
+}
+
+\caption{Map of institutions around continental US. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.}(\#fig:current-us)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/current-europe-1} 
+
+}
+
+\caption{Map of institutions around western Europe. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.}(\#fig:current-europe)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{04-current_files/figure-latex/current-ne-asia-1} 
+
+}
+
+\caption{Map of institutions in northeast Asia. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.}(\#fig:current-ne-asia)
+\end{figure}
 
 ## Learning from the past
 What can we learn from the history of the prequel era? We might be able to learn something from the past, as people in the past have come up with good ideas that have been mostly forgotten in the present era. An example of such idea in the history of cycling is the 1930s network of at least 280 miles of cycleways separated from motor traffic in the UK, forgotten even by the Ministry of Transport itself; with the new wave of bike advocacy since the 1970s, there have been recent efforts to resurrect these old cycleways [@Laskow2017]. Furthermore, the past can illustrate what might happen next and what to do to get better outcome during similar developments at present, such as how the 1918 Spanish flu pandemic has been compared to the current COVID pandemic to point to strategies (e.g. [@Sharma2021; @Robinson2021]). 

@@ -18,15 +18,23 @@ Second, in several fields that are no doubt mature, while many different technol
 
 
 
-<div class="figure" style="text-align: center">
-<img src="08-future_files/figure-html/all-methods-1.png" alt="Number of publications (including preprints) using each technique to collect new data in both prequel and current era. Only the top 10 in terms of number of publications of all time are colored, and the rest are lumped into Other. Bin width is 180 days, or about half a year. The LCM is for curated LCM literature, which might not be representative of all LCM literature given LCM's long term popularity." width="672" />
-<p class="caption">(\#fig:all-methods)Number of publications (including preprints) using each technique to collect new data in both prequel and current era. Only the top 10 in terms of number of publications of all time are colored, and the rest are lumped into Other. Bin width is 180 days, or about half a year. The LCM is for curated LCM literature, which might not be representative of all LCM literature given LCM's long term popularity.</p>
-</div>
+\begin{figure}
 
-<div class="figure" style="text-align: center">
-<img src="08-future_files/figure-html/all-methods-prop-1.png" alt="Proportion of publications per bin using each of the top 10 techniques for data collection." width="672" />
-<p class="caption">(\#fig:all-methods-prop)Proportion of publications per bin using each of the top 10 techniques for data collection.</p>
-</div>
+{\centering \includegraphics{08-future_files/figure-latex/all-methods-1} 
+
+}
+
+\caption{Number of publications (including preprints) using each technique to collect new data in both prequel and current era. Only the top 10 in terms of number of publications of all time are colored, and the rest are lumped into Other. Bin width is 180 days, or about half a year. The LCM is for curated LCM literature, which might not be representative of all LCM literature given LCM's long term popularity.}(\#fig:all-methods)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{08-future_files/figure-latex/all-methods-prop-1} 
+
+}
+
+\caption{Proportion of publications per bin using each of the top 10 techniques for data collection.}(\#fig:all-methods-prop)
+\end{figure}
 
 Spatial transcriptomics still faces many challenges. First, there still is the trade off between quantity and quality. ST and Visium, which have limited resolution and low detection efficiency, can be more easily applied to larger areas of tissue and the whole transcriptome. ISS has been applied to whole mouse brain sections, because while it has lower detection efficiency than smFISH, the amplified and less crowded signals can be detected at lower magnification. In contrast, while smFISH based techniques have subcellular resolution and often over 80% detection efficiency, the efficiency is compromised when applied to 10000 genes and these techniques are more difficult to apply to larger areas of tissue. As there are still challenges, new techniques to collect data are constantly being developed. Second, compared to the prequel era, the current era is more elitist. While commercial LCM, ST, and Visium have spread far and wide, the various high quality smFISH based techniques mostly failed to spread beyond their usually elite institutions of origin. This might be due to difficulty in building custom equipment, challenges in customizing the protocols to different tissues, limits in number of genes and cells profiled, lack of core facilities for these techniques, and lack of unified, efficient, open source, and well documented software platform to process the data. However, with the rise of commercial platforms for highly multiplexed smFISH such as MERSCOPE, Rebus Esper, and Molecular Cartography, this might soon change.
 

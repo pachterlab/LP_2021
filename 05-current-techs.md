@@ -15,10 +15,14 @@ A precursor to laser microdissection is the 1912 "Strahlenstich", which focused 
 
 (ref:lcm-cap) A) IR LCM schematic. B) UV LCM and LPC schematic, like in Zeiss PALM Microbeam. C) UV LCM, letting microdissected region fall by gravity, like in Leica LMD. All schematics in this book, i.e. anything not made with `ggplot2`, were created with BioRender.com
 
-<div class="figure" style="text-align: center">
-<img src="LCM.png" alt="(ref:lcm-cap)" width="100%" />
-<p class="caption">(\#fig:lcm)(ref:lcm-cap)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{LCM} 
+
+}
+
+\caption{(ref:lcm-cap)}(\#fig:lcm)
+\end{figure}
 
 At present, there are two main types of LCM: IR and UV. IR LCM was introduced in 1996 [@Emmert-Buck1996]. It utilizes a cap with thermoplastic film which is placed over an area of interest, and an IR laser to briefly heat select areas of tissues to 90 °C so the film melts in the area and fuses to the area of tissue of interest [@Emmert-Buck1996] (Figure \@ref(fig:lcm) A). This was commercialized as the Arcturus PixCell II LCM System in 1997, which was used in several early LCM studies including the first one in 1999 [@Luo1999; @Ohyama2000; @Sgroi1999; @Kitahara2001] (Figure \@ref(fig:tl3)).
 
@@ -55,19 +59,27 @@ LCM has a number of disadvantages, some of which are addressed by other current 
 
 (ref:vox) Voxelation of human brain, as in [@Brown2002a].
 
-<div class="figure" style="text-align: center">
-<img src="voxelation.png" alt="(ref:vox)" width="20%" />
-<p class="caption">(\#fig:voxelation)(ref:vox)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.2\linewidth]{voxelation} 
+
+}
+
+\caption{(ref:vox)}(\#fig:voxelation)
+\end{figure}
 
 LCM did not completely replace microdissection with a physical blade. Voxelation was one of the alternatives to LCM developed to profile spatial transcriptomes in 3D and address the limitation of throughput of ISH. In voxelation, a grid of steel blades is used to cut tissue into cubes for microarray profiling, but the resolution is low. Human brains were first cut into 8 mm thick slabs and then a grid of 1 cm per side [@Brown2002a; @Singh2003], and mouse brains were first cut into 1 mm thick slabs and then a grid of 1 mm per side [@Brown2002; @Singh2003; @Chin2007] (Figure \@ref(fig:voxelation)). With low resolution, it's easier to use voxelation to profile large 3D tissues of multiple slabs that would be much more laborious with LCM's thinner sections and higher resolution [@Brown2002]. As the human voxels were quite large (almost 1 ml) and corresponding voxels of 20 to 30 mice were pooled [@Brown2002; @Chin2007] to get enough transcripts, the voxelation studies did not mention T7-based PCR amplification of transcripts, unlike for LCM samples [@Nakamura2004]. To the best of our knowledge, voxelation never spread beyond its institution of origin, UCLA School of Medicine, and has not been used in a publication to generate new data since 2007 [@Chin2007] and for data analysis since 2009 [@An2009].
 
 #### Tomo-seq
 
-<div class="figure" style="text-align: center">
-<img src="tomo.png" alt="Tomo-seq, here showing C. elegans." width="30%" />
-<p class="caption">(\#fig:tomo)Tomo-seq, here showing C. elegans.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.3\linewidth]{tomo} 
+
+}
+
+\caption{Tomo-seq, here showing C. elegans.}(\#fig:tomo)
+\end{figure}
 
 Another alternative to LCM is Tomo-seq/array, which has continued to be utilized in recent years. In this approach, the tissue is sectioned with a cryotome like tomography (hence the "Tomo"), and the transcripts in each section are extracted for microarray (Tomo-array) or RNA-seq (Tomo-seq) profiling; the resolution is limited by section thickness, which has gone down to 8 $\mu$m [@VandenBrink2020]. Three-D expression maps can be reconstructed from sections along the anterior-posterior (AP), dorsal-ventral (DV), and left-right (LR) axes. All three themes, namely screening, atlas curation, and new technique development, are present in Tomo-seq/array literature.
 
@@ -89,19 +101,27 @@ Some methods have been developed that do not directly cut tissues. Instead, cell
 
 Transcriptome *in vivo* analysis (TIVA) from 2014 can be viewed as the first of these methods [@Lovatt2014]. Live cell culture is incubated with the photoactivable cage with a poly-U sequence that captures poly-A transcripts. Select cells are photoactivated by 405 nm laser and the captured transcripts are sequenced. TIVA is widely cited, perhaps because it is one of the earliest single cell resolution and transcriptome wide methods, predating RNA-seq from LCM isolated single cells. However, because TIVA has only been demonstrated on fewer than a dozen cells per sample, to the best of our knowledge it has not been used in any other publication to collect new data.
 
-<div class="figure" style="text-align: center">
-<img src="niche.png" alt="Niche-seq schematics. Green: cells with photoactivated PA-GFP." width="35%" />
-<p class="caption">(\#fig:niche)Niche-seq schematics. Green: cells with photoactivated PA-GFP.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.35\linewidth]{niche} 
+
+}
+
+\caption{Niche-seq schematics. Green: cells with photoactivated PA-GFP.}(\#fig:niche)
+\end{figure}
 
 A *de facto* microdissection method that has spread beyond its institution of origin is Niche-seq, which was developed as LCM is still usually used to isolate groups of cells rather than single cells and involves tissue fixation [@Medaglia2017]. Select regions of *ex vivo* tissues from transgenic mice expressing photoactivable GFP (PA-GFP), here lymph node and spleen B cell and T cell niches, are photoactivated at 820 nm with two photon irradiation. Then the tissue is dissociated and cells with photoactivated PA-GFP are collected from flow cytometry-based fluorescence-activated cell sorting (FACS) for scRNA-seq with MARS-seq (Figure \@ref(fig:niche)). This approach was originally used in 2010 to isolate B cells from light and dark zones of the lymph node followed by transcriptome profiling with microarray in bulk [@Victora2010]; the difference in Niche-seq is scRNA-seq of the sorted cells. After its inception, Niche-seq has been used once more in lymph node niches [@DeGiovanni2020]. However, as Niche-seq requires transgenic mice expressing PA-GFP and living tissue, it cannot be applied to human tissues, to fixed tissues, or when a PA-GFP line is unavailable. This might limit further growth of Niche-seq. Moreover, the spatial context of cells within the photoactivated region is lost, limiting spatial resolution.
 
 (ref:dsp) GeoMX DSP schematics, inspired by figures in [@Merritt2019]. Black: transcripts in tissue. Gray: probes. Green: indexing oligo.
 
-<div class="figure" style="text-align: center">
-<img src="dsp.png" alt="(ref:dsp)" width="100%" />
-<p class="caption">(\#fig:dsp)(ref:dsp)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{dsp} 
+
+}
+
+\caption{(ref:dsp)}(\#fig:dsp)
+\end{figure}
 
 Another method that spread beyond its institution of origin is the commercial GeoMX DSP from NanoString [@Merritt2019], which can be used for both high throughput immunofluorescence and transcript quantification in FFPE tissue sections. While GeoMX DSP does not physically isolate relevant parts of the tissue, it is discussed in this section because like other microdissection based techniques, GeoMX DSP is primarily ROI based, and spatial location is known from selection of the ROI. For transcript quantification, probes are attached to indexing oligos with a UV cleavable linker (Figure \@ref(fig:dsp)). The selected ROI is illuminated by UV to remove the index oligos from the probes. Then the released index oligos are aspirated and quantified with either NGS or NanoString nCounter. This can be repeated for multiple ROIs, which can be a grid for unbiased profiling [@Merritt2019]. The probes tile the transcripts, and each probe has a distinct index oligo, so in NGS, each tile is counted separately, enabling isoform quantification [@Merritt2019]. GeoMx DSP is not transcriptome wide; up to 1860 target transcripts have been quantified [@Margaroli2021]. Also, as pre-defined probes are required, unlike in RNA-seq, novel transcripts cannot be quantified. Ready made probe sets for oncology, immunology, and neuroscience are sold by NanoString [@DSPPanels]. Although GeoMx DSP was published in 2019, it has spread to several different institutions, and has been used on pancreatic ductal adenocarcinoma (PDAC) [@Hwang2020], hepatocellular carcinoma (HCC) [@Sharma2020], reactive lymph nodes [@Tripodo2020], and COVID infected lungs from autopsy [@Park2021; @Butler2021; @Delorey2021a; @Margaroli2021]. A variant of GeoMX DSP, called GeoMX Whole Transcriptome Atlas (WTA), has been used to profile transcripts of 18190 genes, nearly covering the whole transcriptome [@Roberts2021]. In GeoMX WTA, the UV cleaved index oligo must be sequenced with NGS to identify the gene each transcript is from.
 
@@ -110,26 +130,38 @@ Some methods can only be used in a regular grid, such as Tomo-seq, while some ca
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/targeted-1.png" alt="Number of studies of each of the three types: targeted, in between, and untargeted, using each microdissection based technique plus GeoMX DSP. Techniques used in less than two studies or two types are lumped into Other." width="576" />
-<p class="caption">(\#fig:targeted)Number of studies of each of the three types: targeted, in between, and untargeted, using each microdissection based technique plus GeoMX DSP. Techniques used in less than two studies or two types are lumped into Other.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/targeted-1} 
+
+}
+
+\caption{Number of studies of each of the three types: targeted, in between, and untargeted, using each microdissection based technique plus GeoMX DSP. Techniques used in less than two studies or two types are lumped into Other.}(\#fig:targeted)
+\end{figure}
 
 After LCM, GeoMX DSP/WTA is the most popular targeted ROI based technique, and as already mentioned, GeoMX DSP has been used in several COVID autopsy studies. GeoMX DSP is often used to profile proteins, which is beyond the scope of this book; our database only contains metadata for GeoMX DSP transcriptomic datasets. As of writing, all GeoMX DSP datasets in our database are from human, and are from predominantly pathological FFPE tissues (Figures \@ref(fig:ffpe), \@ref(fig:ffpe-hgmm)). Because of COVID, GeoMX DSP is more used on the lungs for transcriptomics than other tissues (Figure \@ref(fig:dsp-organs)).
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/ffpe-1.png" alt="Number of FFPE and frozen section datasets from each current era technique; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6." width="576" />
-<p class="caption">(\#fig:ffpe)Number of FFPE and frozen section datasets from each current era technique; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/ffpe-1} 
+
+}
+
+\caption{Number of FFPE and frozen section datasets from each current era technique; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6.}(\#fig:ffpe)
+\end{figure}
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/ffpe-hgmm-1.png" alt="Number of FFPE and frozen section datasets from each current era technique in humans and mice healthy and pathological tissues; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6." width="672" />
-<p class="caption">(\#fig:ffpe-hgmm)Number of FFPE and frozen section datasets from each current era technique in humans and mice healthy and pathological tissues; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/ffpe-hgmm-1} 
+
+}
+
+\caption{Number of FFPE and frozen section datasets from each current era technique in humans and mice healthy and pathological tissues; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6.}(\#fig:ffpe-hgmm)
+\end{figure}
 
 
 
@@ -141,19 +173,27 @@ After LCM, GeoMX DSP/WTA is the most popular targeted ROI based technique, and a
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/dsp-organs-1.png" alt="Number of GeoMX DSP or WTA studies for healthy and pathological human organs. Male is shown here because there are studies for the prostate but not for female specific organs." width="100%" />
-<p class="caption">(\#fig:dsp-organs)Number of GeoMX DSP or WTA studies for healthy and pathological human organs. Male is shown here because there are studies for the prostate but not for female specific organs.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{05-current-techs_files/figure-latex/dsp-organs-1} 
+
+}
+
+\caption{Number of GeoMX DSP or WTA studies for healthy and pathological human organs. Male is shown here because there are studies for the prostate but not for female specific organs.}(\#fig:dsp-organs)
+\end{figure}
 
 In an earlier version of this book, in the current era, ROI selection (formerly Microdissection) was the most widely used type of techniques. However, NGS barcoding has surpassed ROI selection more recently due to the rapid growth of popularity of Visium (Figure \@ref(fig:categories)). Excluding LCM, GeoMX DSP and Tomo-seq are the most popular techniques after ST and Visium (Figure \@ref(fig:n-insts)). Microdissection has not been replaced by other seemingly more sophisticated techniques such as ST and MERFISH, and is still popular in 2020 and 2021 (Figure \@ref(fig:current-hist), Figure \@ref(fig:lcm-year)). Microdissection techniques generally do not have single cell resolution, but combined with scRNA-seq or snRNA-seq data, cell type compositions of ROIs can be computationally deconvoluted [@Baccin2020; @Hwang2020]. The popularity may be due to availability of commercial platforms (LCM and GeoMX DSP), core facilities (LCM, NGS, and Nanostring nCounter for GeoMX DSP), Nanostring's Technology Access Platform (TAP), a commercial data collection and analysis service for GeoMX DSP [@nanostring_tap], not requiring specialized equipment (Tomo-seq, manual microdissection), or disadvantages of other techniques discussed later in this chapter.
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/categories-1.png" alt="Number of publications per category of techniques in the current era. Non-curated LCM literature is excluded." width="576" />
-<p class="caption">(\#fig:categories)Number of publications per category of techniques in the current era. Non-curated LCM literature is excluded.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/categories-1} 
+
+}
+
+\caption{Number of publications per category of techniques in the current era. Non-curated LCM literature is excluded.}(\#fig:categories)
+\end{figure}
 
 ## Single molecular FISH {#smfish}
 
@@ -161,10 +201,14 @@ One quantitative approach to transcript abundance estimation is to display indiv
 
 (ref:smfish-cap) A) Schematic of smFISH from [@Femino1998]. The long thick line stands for the mRNA, and short think line stands for DNA oligo probe. B) smFISH with singly labeled probes from [@Raj2008].
 
-<div class="figure" style="text-align: center">
-<img src="smfish1998.png" alt="(ref:smfish-cap)" width="50%" />
-<p class="caption">(\#fig:smfish)(ref:smfish-cap)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{smfish1998} 
+
+}
+
+\caption{(ref:smfish-cap)}(\#fig:smfish)
+\end{figure}
 
 The 1998 approach had a number of disadvantages, leading to development of an alternative approach in 2008 [@Raj2008]. First, probes labeled with multiple fluorophore moieties are difficult to synthesize and purify. Second, the multiple fluorophores on the same probe can interact with each other and self-quench. Third, out of the 5 probes per transcript, only 1 or 2 may have actually hybridized to the transcript in most cases, making it difficult to distinguish between true signal and non-specific binding. In the 2008 method, each 17-22 nt probe is labeled with one fluorophore at the 3' end, and a larger number of probes (48 or more) targeting tandem sequences of the transcript were used to improve signal to noise ratio (Figure \@ref(fig:smfish)). The probes were computationally designed and ordered from Biosearch Technologies. This method influenced later highly multiplexed smFISH techniques; computational probe design and commercial synthesis would remain crucial.
 
@@ -174,10 +218,14 @@ To use smFISH to quantify transcripts transcriptome wide, there is an obvious ch
 
 (ref:hb-cap) A) Combinatorial barcoding in immunological DNA FISH, as described in [@Nederlof1990]. The line stands for the probe and the circle, triangle, and square stand for haptens. Not to scale, and only one hapten of each kind is shown on one probe. B) Combinatorial barcoding in [@Levsky2002]. Short colored lines stand for probes with fluorophores of the color. C) Schematic of SRM seqFISH as described in [@Lubeck2012].
 
-<div class="figure" style="text-align: center">
-<img src="historical_barcoding.png" alt="(ref:hb-cap)" width="90%" />
-<p class="caption">(\#fig:hb)(ref:hb-cap)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{historical_barcoding} 
+
+}
+
+\caption{(ref:hb-cap)}(\#fig:hb)
+\end{figure}
 
 For transcript detection, to our best knowledge, the first attempt was in 2002 [@Levsky2002]; fluorophore labeled probes were synthesized as in the 1998 smFISH method, and either probes of one color or a mixture of probes of 2 colors were hybridized to the transcript, and imaged with different channels, to visualize transcription foci in the nucleus (Figure \@ref(fig:hb)). This way, combinations of 2 of the 4 available colors plus blank were used to encode 10 different transcripts.
 
@@ -189,10 +237,14 @@ This changed in 2014, with the advent of seqFISH [@Lubeck2014]. Twenty four sing
 
 (ref:seqfish-cap) Probe structures of 2014 seqFISH [@Lubeck2014] and seqFISH error correction.
 
-<div class="figure" style="text-align: center">
-<img src="seqfish.png" alt="(ref:seqfish-cap)" width="100%" />
-<p class="caption">(\#fig:seqfish)(ref:seqfish-cap)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{seqfish} 
+
+}
+
+\caption{(ref:seqfish-cap)}(\#fig:seqfish)
+\end{figure}
 
 The most common error in multi-round smFISH is missing signal, most likely in one round [@Shah2016; @Chen2015]. If all $F^N$ barcodes are used and one round is missing for a mRNA molecule, then the existing signal of this molecule is consistent to $F$ genes, so it cannot be uniquely identified. If a small proportion of barcodes are intentionally left out to control for false positives, as done in this first version of seqFISH (4 out of 16), then error correction is still not guaranteed. A further defense against errors in 2014 seqFISH was to repeat the 2 rounds of hybridization 3 times, so 6 rounds were performed. This filtered out false positives where repeated rounds didn't match, and barring false positives, this can recover the original 2 barcoding rounds if up to 2 of the 6 total rounds have missing signal. 
 
@@ -200,28 +252,40 @@ Another error correction scheme was introduced in 2016, with hybridization chain
 
 (ref:merfish-cap) Schematic of MERFISH [@Chen2015; @Moffitt2016a] and MERFISH error correction.
 
-<div class="figure" style="text-align: center">
-<img src="merfish.png" alt="(ref:merfish-cap)" width="100%" />
-<p class="caption">(\#fig:merfish)(ref:merfish-cap)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{merfish} 
+
+}
+
+\caption{(ref:merfish-cap)}(\#fig:merfish)
+\end{figure}
 
 An alternative to seqFISH was developed with error correction in mind -- multiplexed error-robust FISH (MERFISH) [@Chen2015]. In MERFISH each encoding probe has a 30 nt long region that targets the transcript, and 2 or 3 20 nt [@Moffitt2016a] readout sequences to bind to readout probes (Figure \@ref(fig:merfish)). First, the encoding probes are hybridized to the transcripts. For each round of hybridization, readout probes, singly labeled, are hybridized to the readout sequences on the encoding probes and imaged. Then the fluorescence of the previous round is either photobleached (version 1) [@Chen2015] or when the fluorophore is bound to the readout probe with a disulfide bond, cleaved off with a reducing agent such as Tris(2-carboxyethyl)phosphine (TCEP) (version 2) [@Moffitt2016a]. The readout probes are not stripped, and in the next round, new readout probes are hybridized to new readout sequences and imaged.
 
 The MERFISH barcodes are binary, with "1" for a round with fluorescence, and "0" without, and must differ from other barcodes at at least 4 places, i.e. with [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) of at least 4 (HD4). As missing signal is the most common error, each barcode has 4 1's, or Hamming weight 4. This way, when one round is missing, the gene can still be uniquely identified, but when 2 rounds are missing, the remaining barcode is equally distant to 2 genes, so the error cannot be corrected (Figure \@ref(fig:merfish)). Sixteen rounds of imaging, or 16 bits, would result in 140 barcodes. In this case, there are 16 different readout sequences, and each gene is assigned 4 of them, for the 4 1's in the barcode. If the code is expanded to 69 bits, then about 10,000 genes can be encoded, and by using 3 colors to image 3 bits per round, only 23 rounds of imaging are needed to cover the 69 bits, cutting imaging time to a third [@Xia2019a]. An HD2 code, i.e. barcodes are at least hamming distance 2 away from each other, can also be used, but errors can only be recognized but not corrected. All variants of MERFISH use this type of binary barcoding.
 
-<div class="figure" style="text-align: center">
-<img src="seqfish-plus.png" alt="Schematic of seqFISH with pseudocolors." width="100%" />
-<p class="caption">(\#fig:sf-plus)Schematic of seqFISH with pseudocolors.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{seqfish-plus} 
+
+}
+
+\caption{Schematic of seqFISH with pseudocolors.}(\#fig:sf-plus)
+\end{figure}
 
 More recently, a new variant of seqFISH was devised to scale up to 10,000 genes [@Shah2018]. The barcoding and hybridization scheme enabling such scale was first introduced in vitro in 2017 as RNA SPOTs [@Eng2017], and was then adapted to cultured cells in 2018, targeting introns of nascent transcripts of over 10,000 genes [@Shah2018]. In 2019, this scheme was used to profile mature transcripts of 10,000 genes in both cell culture and the mouse brain, and with super-resolution [@Eng2019a]. Super-resolution beyond the diffraction limit can be achieved by computationally super-resolving the transcript spots with a radial center algorithm [@Parthasarathy2012] when spot density is very high to help with decoding barcodes; the super-resolution version is known as seqFISH+. While this new version of seqFISH can reduce optical crowding and greatly expand the palette, the super-resolution algorithm that can further reduce crowding does not have to be used to locate the transcript spots when density is low. This version of seqFISH was again used to visualize genomic loci (super-resolution) [@Takei2020] and mature transcripts of a smaller number of genes (not super-resolution) [@Lohoff2020].
 
 This method is quite different from previous seqFISH variants, and is in some ways reminiscent of MERFISH. Like previous versions of seqFISH, each barcode is a series of colors, but a large number of "pseudocolors", specifically 20 per channel in the seqFISH+ study, are used rather than the 5 fluorophores, so 3 rounds of hybridization can encode $20^3$ or 8000 genes per channel. Any number of pseudocolors and rounds can be used depending on the number of genes profiled. Each primary probe has a 28 nt region targeting the transcript and 4 readout sites of 15 nt. Each readout site has as many different sequences as there are pseudocolors, and the 4 sites correspond to the series of 4 pseudocolors in the barcode. First, 24 primary probes are hybridized to the transcripts. Then for each place of the barcode, 20 (or whatever number of pseudocolors) rounds of hybridization with readout probes are performed, stripping with formamide between rounds. In these 20 rounds, each gene should light up only once, and its place in the 20 rounds is its pseudocolor (Figure \@ref(fig:sf-plus)). This way, in each image, only 1 out of 20 molecules of interest imaged in the channel fluoresce, reducing optical crowding. For the entire barcode of length 4, there would be 80 rounds of hybridization. In contrast, in MERFISH, with the 16 bit barcode, this would be 1 out of 4. Like in MERFISH, a larger number of real colors, or channels, can be used to increase throughput, to image multiple pseudocolors simultaneously. So with 3 channels, 24,000 genes can be encoded. The same error correction method as in HCR seqFISH was used, so while a barcode of length 3 is sufficient, length 4 was used.
 
-<div class="figure" style="text-align: center">
-<img src="split-fish.png" alt="Schematic of split-FISH." width="100%" />
-<p class="caption">(\#fig:split-fish)Schematic of split-FISH.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{split-fish} 
+
+}
+
+\caption{Schematic of split-FISH.}(\#fig:split-fish)
+\end{figure}
 
 Another new method, called split-FISH [@Goh2020] was devised to reduce off target hybridization, and thus background noise and some barcoding errors. For each encoding probe or bridge probe like in MERFISH, a pair of split probes hybridize to the transcript itself, inspired by the Z probes of RNAscope (Figure \@ref(fig:split-fish)). Half of the split probes would bind to the transcript, and the other half bind to the bridge probe. Then as in MERFISH, the bridge probe has 2 readout sequences and singly labeled readout probes bind to the bridge probe for imaging. This method reduces off target hybridization because the bridge probe can only indirectly bind to the transcript if both of the split probes hybridize to the transcript. To encode 317 genes, 2 places out of 26 in binary barcodes are chosen to be "1", resulting into 325 possible barcodes; 8 of them are left blank to control for false positives. Error correction is not mentioned.
 
@@ -235,10 +299,14 @@ As already mentioned, in smFISH, a large number of singly labeled probes can be 
 
 Dating back at least as far back as to 1993 [@Urdea1993], early use of bDNA in ISH was to detect low copy number of viral genomes, eventually down to single copies [@Player2001]. bDNA signal amplification involves several steps of hybridization (Figure \@ref(fig:bdna)). First, usually some sort of bridge probe binds to the transcript itself. Then the primary amplifier binds to the bridge probe, leaving a long overhang. Then multiple secondary amplifiers bind to the primary amplifier on the overhang of the primary amplifier, and each secondary amplifier also leaves an overhang. Finally, multiple labeled readout probes bind to each secondary amplifier. This way, space available for hybridization of the readout probes is drastically expanded, allowing for more fluorophores per unit transcript length.
 
-<div class="figure" style="text-align: center">
-<img src="bdna.png" alt="Schematic of bDNA. The Z probes are specific to RNAscope, but the other parts are generic to bDNA." width="100%" />
-<p class="caption">(\#fig:bdna)Schematic of bDNA. The Z probes are specific to RNAscope, but the other parts are generic to bDNA.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{bdna} 
+
+}
+
+\caption{Schematic of bDNA. The Z probes are specific to RNAscope, but the other parts are generic to bDNA.}(\#fig:bdna)
+\end{figure}
 
 For FISH, a particularly influential bDNA method is RNAscope, introduced in 2012 for FFPE tissues, and is now commercially available from ACD [@Wang2012]. In addition to bDNA amplification, RNAscope reduces background noise from non-specific hybridization by using 2 bridge Z probes in between the transcript and the primary amplifier, so the primary amplifier will only bind when both Z probes are present. An smFISH RNAscope method has been used to profile around 1000 genes in cell culture [@Battich2013] and 49 genes in the mouse somatosensory cortex [@Bayraktar2020], although these experiments were not highly multiplexed and only one or a handful of genes distinguishable by fluorophore color were stained for in the same cells or sections; numerous cells and sections were stained to cover all genes in the gene panels. [ACD RNAscope HiPlex v2](https://acdbio.com/rnascope-hiplex-assays) can profile 12 targets, but without barcoding. Up to 4 targets are imaged with 4 different fluorescent channels per round of imaging, then the fluorophores are cleaved for the next round of imaging. With fresh frozen tissue, this can be applied to up to 48 targets. bDNA has also made its way into more highly multiplexed smFISH, as a variant of MERFISH [@Xia2019c]. Here, the primary amplifier binds to the readout regions of the MERFISH encoding probe. Like in regular MERFISH (v2), the fluorophores are attached to the readout probes by a disulfide bond and removed by TCEP after each round of hybridization; the bDNA moiety is not removed. With bDNA amplification, only 16 probes per gene can detect about as many transcripts as with 92 unamplified probes [@Xia2019c].
 
@@ -246,19 +314,27 @@ For FISH, a particularly influential bDNA method is RNAscope, introduced in 2012
 
 Chronologically, the next of the popular signal amplification method is padlock probe RCA. Padlock probe was introduced in 1994 by Mats Nilsson as a way to reduce background in ISH and to detect single nucleotide variants (SNVs) [@Nilsson1994]. Both ends of of the padlock probe must hybridize to the target without terminal mismatches for the ligase to connect the ends of the probe to form a circle (Figure \@ref(fig:rca)); thus padlock probe and RCA can detect SNPs and point mutations [@Larsson2010; @Lizardi1998]. The circle encloses the target like a padlock on a string, hence the name "padlock probe". Then probes that are not circularized are digested by an exonuclease. RCA was introduced in 1995 as a way to create tandem repeats and potentially point to origins of tandem repeats in genomes, not seeming to have signal amplification in mind [@Fire1995]. A primer anneals to circularized DNA and is then elongated by $\Phi29$ DNA polymerase, and as the polymerase goes around the circle many times, many copies of the complimentary sequences of the circle are made (Figure \@ref(fig:rca)). In 1998, padlock probes and RCA were united to create a method of signal amplification [@Baner1998; @Lizardi1998].
 
-<div class="figure" style="text-align: center">
-<img src="rca.png" alt="Schematic of RCA, here shown with target priming though a separate primer can also be used. Red segment is the gene barcode." width="100%" />
-<p class="caption">(\#fig:rca)Schematic of RCA, here shown with target priming though a separate primer can also be used. Red segment is the gene barcode.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{rca} 
+
+}
+
+\caption{Schematic of RCA, here shown with target priming though a separate primer can also be used. Red segment is the gene barcode.}(\#fig:rca)
+\end{figure}
 
 In spatial transcriptomics, padlock probe and RCA were initially used for *in situ* sequencing (ISS) [@Ke2013], but more recently adapted to smFISH. The padlock probe with the gene barcode is hybridized to *in situ* reverse transcribed cDNA as in ISS and hybridization-based ISS (HybISS) [@Gyllborg2020], or the mRNA itself as in SCRINSHOT [@Sountoulidis2020], hybridization-based RNA ISS (HybRISS) [@Lee2020], and barcoded oligonucleotides ligated on RNA amplified for multiplexed and parallel *in situ* analyses (BOLORAMIS) [@Liu2021]. RCA can be initiated with the target cDNA itself as a primer or with a separate primer when the target is mRNA. Then readout probes are hybridized to the RCA amplified gene barcode, with [@Gyllborg2020] or without [@Sountoulidis2020] a bridge probe. In Hyb(R)ISS and SCRINSHOT, multiple rounds of readout hybridization encode each gene with a sequence of colors as in seqFISH; although error correction is not discussed, the seqFISH error correction scheme can be easily adapted. Perhaps because of larger number of copies of the gene barcode sequence produced by RCA, Hyb(R)ISS and SCRINSHOT use 5 probes per gene, each with a 30 nt (HybISS, target sequences are proprietary information of CARTANA for HybRISS) or 40 nt (SCRINSHOT) region to target the transcript. While we are unaware of isoform specific studies conducted with Hyb(R)ISS or SCRINSHOT, isoform specific exons may more realistically accommodate the 5 probes. 
 
 #### Hybridization chain reaction {#hcr}
 
-<div class="figure" style="text-align: center">
-<img src="hcr.png" alt="Schematic of HCR, showing 3 cycles, but this can continue indefinitely until H1 and H2 are exhausted. Arrow shows 5' to 3' direction." width="100%" />
-<p class="caption">(\#fig:hcr)Schematic of HCR, showing 3 cycles, but this can continue indefinitely until H1 and H2 are exhausted. Arrow shows 5' to 3' direction.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{hcr} 
+
+}
+
+\caption{Schematic of HCR, showing 3 cycles, but this can continue indefinitely until H1 and H2 are exhausted. Arrow shows 5' to 3' direction.}(\#fig:hcr)
+\end{figure}
 
 A third signal amplification method is HCR, introduced in 2004 [@Dirks2004], which has been adapted to seqFISH, giving rise to HCR-seqFISH. EASI-FISH also uses HCR for signal amplification. In singly labeled hairpins, the long stem is protected by the short stem, but can also hybridize with short stems of other hairpins (Figure \@ref(fig:hcr)). The long stem of H1 can hybridize to the short stem of H2, and vice versa (Figure \@ref(fig:hcr)). First, an initiator probe is hybridized to the transcript (24 per gene in the 2016 HCR-seqFISH study). Then the long stem of H1 hybridizes to the part of initiator not hybridized to the transcript, now leaving the short stem vacant. Then the long stem of H2 hybridizes to the vacant short stem of H1, and now the short stem of H2 is vacant for another H1. This cycle can continue indefinitely until H1 and H2 are depleted. This way, many fluorophores are tethered to the target transcript without increasing the number of probes bound to the transcript, thus amplifying signal.
 
@@ -280,10 +356,14 @@ A more recent method, BarDensr, models the observed brightness of potentially mi
 
 CISI uses seqFISH-like barcoding, but does not even require spot detection. Gene abundance is computationally inferred with [compressed sensing](https://en.wikipedia.org/wiki/Compressed_sensing). First, an autoencoder is trained on composite images with different channels. Then in the latent space inferred by the autoencoder, the channels are decompressed with compressed sensing principles and decoded into genes with the decoder branch of the trained autoencoder. The barcodes and genes must be carefully chosen from an existing dataset. The genes must be described by a small number of coexpression modules so module activity is sparse. Inferring the sparse module activity before inferring individual gene levels at the decompression step is more tractable than directly inferring individual gene abundances.
 
-<div class="figure" style="text-align: center">
-<img src="exm.png" alt="Schematic of expansion microscopy." width="100%" />
-<p class="caption">(\#fig:exm)Schematic of expansion microscopy.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{exm} 
+
+}
+
+\caption{Schematic of expansion microscopy.}(\#fig:exm)
+\end{figure}
 
 A strategy that has been reused is expansion microscopy (ExM). When a polyelectrolyte gel is dialyzed in water, it expands as its polymer network changes into extended conformations [@Chen2015b]. First, the tissue is infused with monomers of the gel. Then with small molecule linkers, molecules of interest such as fluorophores and RNAs can be covalently incorporated to the polymer network over the course of free radical polymerization. After the gel forms, proteins in the tissue are digested to homogenize mechanical properties of the gel and to clear the tissue to reduce autofluorescent background. Then the gel is soaked in water to expand, linearly expanding 3 to 4.5 times on each side [@Chen2015b; @Chen2016] (Figure \@ref(fig:exm)). This way, transcripts attached to the gel are physically separated, avoiding optical crowding. ExM has thus been adapted to MERFISH for this purpose [@Wang2018], as well as EASI-FISH. In addition, EASI-FISH was used to quantify transcripts in 300 $\mu$m thick brain slices and imaging was accelerated with light sheet microscopy. However, a disadvantage of ExM is that each FOV now covers less of the original tissue, thus increasing imaging time. Furthermore, the expanded gel would continue to expand during the rounds of hybridization. As the expansion is non-linear and non-isotropic, barcode decoding is challenging as it's difficult to match transcript spots across rounds of hybridizations.
 
@@ -293,17 +373,25 @@ A strategy that has been reused is expansion microscopy (ExM). When a polyelectr
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/records-gene-1.png" alt="Record number of genes per dataset quantified by smFISH based techniques over time." width="576" />
-<p class="caption">(\#fig:records-gene)Record number of genes per dataset quantified by smFISH based techniques over time.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/records-gene-1} 
+
+}
+
+\caption{Record number of genes per dataset quantified by smFISH based techniques over time.}(\#fig:records-gene)
+\end{figure}
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/records-cell-1.png" alt="Record total number of cells per study profiled by smFISH based techniques over time." width="576" />
-<p class="caption">(\#fig:records-cell)Record total number of cells per study profiled by smFISH based techniques over time.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/records-cell-1} 
+
+}
+
+\caption{Record total number of cells per study profiled by smFISH based techniques over time.}(\#fig:records-cell)
+\end{figure}
 
 As already noted, the number of genes whose transcripts can be possibly quantified simultaneously in the same piece of tissue with highly multiplexed smFISH based technology has increased over time (Figure \@ref(fig:records-gene)). The number of cells that can be imaged in one study has also increased (Figure \@ref(fig:records-cell)). However, in practice, the actual number of genes and cells profiled has not significantly increased (Figure \@ref(fig:smfish-lm-gene), Figure \@ref(fig:smfish-lm-cell)). These plots only show papers that reported the number of cells and genes in the main text; if we download and process all publicly available datasets associated with such papers, the trends might change, although figures of papers that do not report the number of cells (number of genes is usually reported in smFISH and ISS studies) don't seem to indicate that the trend would change significantly. Moreover, as discussed in Section \@ref(multiomics), some of the studies used smFISH based methods to visualize DNA loci and 3D chromatin structure alongside transcripts. The number of genes here is for the transcripts, including when only introns are targeted. 
 
@@ -313,10 +401,14 @@ An earlier version of the plot of number of genes over time plotted the mean num
 
 (ref:smfish-lm-cap) Number of genes per datasets in each study, over time. Gray ribbon is 95% confidence interval (CI). The points are translucent; more opaque points are multiple datasets from the same study. 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/smfish-lm-gene-1.png" alt="(ref:smfish-lm-cap)" width="100%" />
-<p class="caption">(\#fig:smfish-lm-gene)(ref:smfish-lm-cap)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{05-current-techs_files/figure-latex/smfish-lm-gene-1} 
+
+}
+
+\caption{(ref:smfish-lm-cap)}(\#fig:smfish-lm-gene)
+\end{figure}
 
 The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0 (t-test), after log transforming the number of genes per dataset. 
 
@@ -343,10 +435,14 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/smfish-lm-cell-1.png" alt="Total number of cells per study profiled by smFISH based techniques over time." width="100%" />
-<p class="caption">(\#fig:smfish-lm-cell)Total number of cells per study profiled by smFISH based techniques over time.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{05-current-techs_files/figure-latex/smfish-lm-cell-1} 
+
+}
+
+\caption{Total number of cells per study profiled by smFISH based techniques over time.}(\#fig:smfish-lm-cell)
+\end{figure}
 
 After log transforming the total number of cells per study (when reported), whose distribution is very right skewed, it does seem that the total number of cells increased with time (Figure \@ref(fig:smfish-lm-cell)). New smFISH based techniques in our database from 2021 are all optimized for features other than larger number of genes and are applied to relative small numbers of genes in demonstration. For instance, EASI-FISH is optimized for thick brain sections [@Wang2021]. par-seqFISH is optimized for bacteria [@Dar2021]. CISI is optimized for reducing the number of imaging cycles and avoiding direct spot calling and has not been demonstrated on large number of genes [@Cleary2021]. The distinctive feature of MOSAICA is to use both the color and the lifetime of the fluorophores and is only demonstrated to be 10-plex [@Vu2021]. Recent applications of existing techniques also tend to feature larger number of cells but at most 100 something genes (e.g. 120 genes in [@Langseth2021]), where the smFISH based dataset is complementary to scRNA-seq datasets of the same system, using marker genes from scRNA-seq clusters.
 
@@ -376,17 +472,25 @@ MERFISH is the smFISH based technique used in the most institutions (Figure \@re
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/smfish-trend-1.png" alt="Number of publications over time, broken down by technique type. Preprints are included, and the gray histogram in the background is the overall trend of all smFISH based techniques. Bin width is 365 days." width="576" />
-<p class="caption">(\#fig:smfish-trend)Number of publications over time, broken down by technique type. Preprints are included, and the gray histogram in the background is the overall trend of all smFISH based techniques. Bin width is 365 days.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/smfish-trend-1} 
+
+}
+
+\caption{Number of publications over time, broken down by technique type. Preprints are included, and the gray histogram in the background is the overall trend of all smFISH based techniques. Bin width is 365 days.}(\#fig:smfish-trend)
+\end{figure}
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/smfish-n-insts-1.png" alt="Number of techniques that have been used by each number of institutions; most techniques have only been used by 1 institution, i.e. the institution of origin." width="576" />
-<p class="caption">(\#fig:smfish-n-insts)Number of techniques that have been used by each number of institutions; most techniques have only been used by 1 institution, i.e. the institution of origin.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/smfish-n-insts-1} 
+
+}
+
+\caption{Number of techniques that have been used by each number of institutions; most techniques have only been used by 1 institution, i.e. the institution of origin.}(\#fig:smfish-n-insts)
+\end{figure}
 
 
 
@@ -394,10 +498,14 @@ MERFISH and seqFISH and their variants are more used and have spread, though the
 
 (ref:smfish-map-cap) Geographical locations of institutions that used certain techniques. Point area is proportional to number of publication from the city of interest. Gray points in the background is all publications using smFISH based techniques. The cities and institutions labeled are those of the first author. Note that for seqFISH, the hidden Markov random field (HMRF) study at Dana Faber [@Zhu2018] and the mouse embryo study [@Lohoff2020] had collaboration with Long Cai's group at Caltech, so the dataset was most likely still collected at Caltech.
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/smfish-map-1.png" alt="(ref:smfish-map-cap)" width="100%" />
-<p class="caption">(\#fig:smfish-map)(ref:smfish-map-cap)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{05-current-techs_files/figure-latex/smfish-map-1} 
+
+}
+
+\caption{(ref:smfish-map-cap)}(\#fig:smfish-map)
+\end{figure}
 
 SmFISH based techniques have the following advantages. First, smFISH, especially with larger number of probes, have nearly 100% detection efficiency of transcripts [@Lubeck2012], i.e. detecting almost all transcripts that are present. Different ways to evaluate efficiency of spatial transcriptomics techniques have been reported. The reported "efficiency" of MERFISH was estimated by the average ratio between the number of transcripts per segmented cell detected by MERFISH and those detected by smFISH in the same cell type for 10 genes. With combinatorial barcoding, however, the efficiency is decreased. Studies for other techniques may use different ways to estimate efficiency. Compared to smFISH, MERFISH version 2 with HD4 code has about 95% detection efficiency on 130 genes and 92 probes per gene, although the efficiency dropped to \~25% with the HD2 code that can encode nearly 1000 genes but can only identify but not correct errors [@Moffitt2016a; @Foreman2019]. When scaled to 10,050 genes, MERFISH has around 79% detection efficiency [@Xia2019c]. As for HCR-seqFISH, the efficiency is around 84% (smFISH and HCR-seqFISH were performed in the same cell for 5 genes) [@Shah2016], and for seqFISH+, around 49% (slope of line fitted to average transcript count per cell in seqFISH+ vs. smFISH for 60 genes) [@Eng2019a]. Nevertheless, this is much better than the efficiency of ST, which is around 6.9% compared to smFISH in the 2016 ST study (transcript counts for 3 genes in ST spots were compared to those from smFISH of 100 $\mu$m diameter discs at comparable brain regions in an adjacent section) [@Stahl2016a]. To put the 6.9% in context, from ERCC spike ins and in some cases comparison to smFISH, scRNA-seq methods such as Drop-seq, 10X, inDrop, CEL-seq, and CEL-seq2 have capture efficiency of between 3% and 25% [@Macosko2015; @Zheng2017; @Klein2015; @Hashimshony2016; @Grun2014]. Thus smFISH based spatial transcriptomics methods can be much more efficient than scRNA-seq, though efficiency of RCA based smFISH compared to regular smFISH has not been reported.
 
@@ -407,10 +515,14 @@ The following disadvantages may explain why smFISH based spatial transcriptomics
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/smfish-langs-1.png" alt="Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications." width="576" />
-<p class="caption">(\#fig:smfish-langs)Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/smfish-langs-1} 
+
+}
+
+\caption{Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications.}(\#fig:smfish-langs)
+\end{figure}
 
 Second, with increasing area of tissue and number of genes covered, smFISH based spatial transcriptomics generates terabytes of images -- for each FOV, there is an image for each channel, z-plane, and round of hybridization. Images from the MERFISH dataset of 40,000 cells and 130 genes took 2 to 3 days to process on a multi-core server, although the number of cores was not stated [@Moffitt2016a]. In contrast, it takes hours, or even just minutes, to process the fastq files of a scRNA-seq dataset to get the gene count matrix [@Melsted2021], nor do the fastq files take up so much disk space. So for the user, processing the most upstream form of data is much more challenging for highly multiplexed smFISH than scRNA-seq. Until 2019, software to process such images and to decode the combinatorial barcodes was typically written in the proprietary programming language MATLAB (Figure \@ref(fig:smfish-langs)), and poorly documented, so it was difficult for people outside the lab of origin to use.
 
@@ -424,53 +536,25 @@ Fourth, to profile large numbers of genes, numerous probes need to be designed, 
 
 
 
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>(\#tab:table2)Pros and cons of smFISH based techniques.</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Technique </th>
-   <th style="text-align:left;"> Pro </th>
-   <th style="text-align:left;"> Con </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;width: 6em; "> HCR-seqFISH </td>
-   <td style="text-align:left;width: 6em; "> Relatively high efficiency (84%), fewer rounds of hybridization, error correction </td>
-   <td style="text-align:left;width: 6em; "> Lower efficiency than MERFISH, time consuming to re-hybridize probes to target after stripping </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> seqFISH+ </td>
-   <td style="text-align:left;width: 6em; "> Avoids optical crowding, scalable </td>
-   <td style="text-align:left;width: 6em; "> Lower efficiency (49%), numerous rounds of hybridization </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> MERFISH </td>
-   <td style="text-align:left;width: 6em; "> High efficiency (95%) with HD4 code, error correction, version 2 relatively fast, scalable </td>
-   <td style="text-align:left;width: 6em; "> Numerous rounds of hybridization, numerous probes requiring long transcripts though this is resolved by bDNA signal amplification </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> ExM-MERFISH </td>
-   <td style="text-align:left;width: 6em; "> Avoids optical crowding, clears tissue </td>
-   <td style="text-align:left;width: 6em; "> Each FOV contains less of the original tissue </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> HybISS </td>
-   <td style="text-align:left;width: 6em; "> Only 5 probes per gene, applicable to isoform specific exons, padlock probe reduces background, lower magnification when imaging (20x and 40x, while MERFISH uses 60x), can discern SNPs </td>
-   <td style="text-align:left;width: 6em; "> Error correction not reported, amplicon takes up space and might drift away if not cross linked </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> HybRISS </td>
-   <td style="text-align:left;width: 6em; "> Avoids inefficiency of reverse transcription, better signal to noise ratio and more transcripts detected then HybISS. </td>
-   <td style="text-align:left;width: 6em; "> Padlock probe sequences are proprietary to CARTANA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> bDNA-smFISH </td>
-   <td style="text-align:left;width: 6em; "> Commercial RNAscope kit, reduces background and amplifies signal, amplified moiety does not grow indefinitely </td>
-   <td style="text-align:left;width: 6em; "> Except for bDNA-MERFISH, it has not been used in a highly multiplexed setting </td>
-  </tr>
-</tbody>
-</table>
+\begin{table}
+
+\caption{(\#tab:table2)Pros and cons of smFISH based techniques.}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{6em}>{\raggedright\arraybackslash}p{12em}>{\raggedright\arraybackslash}p{12em}}
+\toprule
+Technique & Pro & Con\\
+\midrule
+\cellcolor{gray!6}{HCR-seqFISH} & \cellcolor{gray!6}{Relatively high efficiency (84\%), fewer rounds of hybridization, error correction} & \cellcolor{gray!6}{Lower efficiency than MERFISH, time consuming to re-hybridize probes to target after stripping}\\
+seqFISH+ & Avoids optical crowding, scalable & Lower efficiency (49\%), numerous rounds of hybridization\\
+\cellcolor{gray!6}{MERFISH} & \cellcolor{gray!6}{High efficiency (95\%) with HD4 code, error correction, version 2 relatively fast, scalable} & \cellcolor{gray!6}{Numerous rounds of hybridization, numerous probes requiring long transcripts though this is resolved by bDNA signal amplification}\\
+ExM-MERFISH & Avoids optical crowding, clears tissue & Each FOV contains less of the original tissue\\
+\cellcolor{gray!6}{HybISS} & \cellcolor{gray!6}{Only 5 probes per gene, applicable to isoform specific exons, padlock probe reduces background, lower magnification when imaging (20x and 40x, while MERFISH uses 60x), can discern SNPs} & \cellcolor{gray!6}{Error correction not reported, amplicon takes up space and might drift away if not cross linked}\\
+\addlinespace
+HybRISS & Avoids inefficiency of reverse transcription, better signal to noise ratio and more transcripts detected then HybISS. & Padlock probe sequences are proprietary to CARTANA\\
+\cellcolor{gray!6}{bDNA-smFISH} & \cellcolor{gray!6}{Commercial RNAscope kit, reduces background and amplifies signal, amplified moiety does not grow indefinitely} & \cellcolor{gray!6}{Except for bDNA-MERFISH, it has not been used in a highly multiplexed setting}\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 So far we have reviewed studies that showcase new techniques and technical improvements such as signal amplification and resolving optical crowding. Some smFISH based techniques have been used in studies that focus on biological problems rather than new techniques. HCR-seqFISH has been used twice in biological studies, in chicken neural tube (35 genes) [@Lignell2017] and mouse T cell precursors (65 genes) [@Zhou2019] though both were conducted within Caltech, the institution of origin. Moreover, spatial location of cells is not necessarily a reason to use HCR-seqFISH; Zhou et al. used HCR-seqFISH because of the high detection efficiency compared to scRNA-seq in dissociated FACS sorted T cell progenitors, so when spatial information is already lost. More recently, pseudocolor seqFISH was used in a mouse embryo atlas at University of Cambridge (though Long Cai is still a coauthor), finally moving beyond the stage of testing into new biological research [@Lohoff2020]. Combinatorial barcoding has also been used to profile bacterial species in the microbiome by targeting rRNAs, though this does not profile the transcriptome, nor is it single molecular [@Shi2020; @Cao2021]. For spatial transcriptome in bacteria, a new version of seqFISH, par-seqFISH, was developed to profile 105 genes in the biofilm bacterium *Pseudomonas aeruginosa* [@Dar2021]. This may open the way to spatial transcriptomics in not only biofilms, but in the microbiome in general.
 
@@ -490,17 +574,25 @@ Almost all spatial transcriptomics techniques based on SBL require _in situ_ rev
 
 The earliest proposal of SBL we are able to locate is a patent filed in 1995 describing a method similar to sequencing by oligo ligation detection (SOLiD). An initiator oligonucleotide hybridizes to the template to be sequenced, and is extended by ligation to a 9-mer probe with a label such as a fluorophore that indicates one or two nucleotides of the probe [@Macevicz1995]. The probe has a blocking moiety so only one probe is ligated in each cycle. Then the blocking moiety is removed so the initiator can be further extended by ligation in the next cycle. As mismatches in the probe inhibit ligation, the nucleotide of interest in the probe can be read off from the label after probes that are not ligated are removed. This can determine every 9th nucleotide in the template, and with 9 different initiators, each out of phase by one nucleotide, the sequence of the entire template can be determined. However, this method existed only on paper, while since 2006, Applied Biosystems (Applera) seemed to have developed SOLiD independently from that patent after acquiring Agencourt, which developed a sequencing by ligation method that would be the foundation of SOLiD [@Alsup2009].
 
-<div class="figure" style="text-align: center">
-<img src="fisseq.png" alt="Schematic of RCA in FISSEQ." width="100%" />
-<p class="caption">(\#fig:fisseq)Schematic of RCA in FISSEQ.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{fisseq} 
+
+}
+
+\caption{Schematic of RCA in FISSEQ.}(\#fig:fisseq)
+\end{figure}
 
 In 2014, single cell resolution and transcriptome wide spatial transcriptomics was far out of reach (Figure \@ref(fig:records-gene)). An attempt to reach this goal was fluorescent in situ sequencing (FISSEQ) [@Lee2014]. A universal adapter and random hexamer reverse transcription (RT) primer was hybridized to the mRNAs to reverse transcribe them into cDNA (Figure \@ref(fig:fisseq)). Then the cDNA, now with the adaptor on the 5' end, is circularized, and amplified with RCA with a primer complementary to the adaptor. Then again, with sequencing primers receding into the adaptor, SOLiD is used to sequence the cDNA amplicons in situ.
 
-<div class="figure" style="text-align: center">
-<img src="solid.png" alt="Schematic of SOLiD sequencing, determining the sequence GATTACA. The rows are arranged in the order of 5' to 3' positions of the first fluorescent probe, but the actual hybridization and ligation can take a different order. As part of the constant region, the 'A' highlighted in red is known." width="100%" />
-<p class="caption">(\#fig:solid)Schematic of SOLiD sequencing, determining the sequence GATTACA. The rows are arranged in the order of 5' to 3' positions of the first fluorescent probe, but the actual hybridization and ligation can take a different order. As part of the constant region, the 'A' highlighted in red is known.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{solid} 
+
+}
+
+\caption{Schematic of SOLiD sequencing, determining the sequence GATTACA. The rows are arranged in the order of 5' to 3' positions of the first fluorescent probe, but the actual hybridization and ligation can take a different order. As part of the constant region, the 'A' highlighted in red is known.}(\#fig:solid)
+\end{figure}
 
 In SOLiD, color of the fluorophore encodes the two 3'-most bases of 8-mer probes with other bases degenerate (Figure \@ref(fig:solid)). Once a probe perfectly matching the target right after the primer, the probe is ligated to the primer and the fluorescent signal is recorded. Then the fluorophore and the nearest 3 bases of the probe are cleaved off. In the next cycle, a new matching probe is ligated to the now extended primer. This is continued until the end of the target, for 7 cycles per primer in the case of FISSEQ [@Lee2015]. For the first 7 cycles, the primer matches the adaptor (N). Then the primer N, extended for 7 cycles is stripped, and a new primer receding one nucleotide to the 5' end of the adaptor (N-1) is added in cycle 8. Again 7 cycles of ligation are performed and the extended primer N-1 is stripped after cycle 14 to make room for N-2. For N-2, N-3, and N-4, a bridge oligo is used so the target with unknown sequence, rather than the adaptor with known sequence, is interrogated by the probes. With N through N-4, the entire target is covered. With the fluorescent signals recorded from the rounds of ligation, and the knowledge of the last nucleotide of the adaptor interrogated by the first ligation to primer N-1, the sequence of the target can be determined. Figure \@ref(fig:solid) shows how SOLiD determines the sequence "GATTACA". As already mentioned in the smFISH section, with increasing number of genes profiled, optical crowding is increasingly a problem. To mitigate optical crowding, the primer N can have one or more degenerate bases at the 5' end reaching into the target; with one degenerate base, only 1/4 of the amplicons are sequenced. With two bases, this would be 1/16. This is repeated to cover all transcripts, but increases imaging time.
 
@@ -514,10 +606,14 @@ In INSTA-seq [@Furth2019], recessed sequencing primers and multiple rounds hybri
 
 An alternative SBL scheme is combinatorial probe anchor ligation (cPAL), which to our best knowledge, was first demonstrated in 2005 [@Shendure2005]. In cPAL, an anchor primer is hybridized to a constant region immediately adjacent to the target. T4 DNA ligase requires matching base pairing up to 6 bases from the ligation junction when ligating from 5' to 3' and 7 bases when ligating from 3' to 5'. The first base of the target 5' to the constant region is interrogated by a 9-mer probe whose 5' most base is represented by the color of a fluorophore and ligated to the primer if a perfect match is present (Figure \@ref(fig:cpal-fig)). Then the ligated construct is stripped and a new primer is hybridized to the constant region. The second base is interrogated by a 9-mer probe whose second 5' most base is represented by the fluorophore. This can carry on until the 6th base on the 5' direction. When the constant region is 5' to the target, bases 3' to the constant region are interrogated in a similar fashion. With constant regions flanking a target so primers bind in both direction, a 13 nt target can be sequenced this way, and the read length can be somewhat increased by adding degenerate bases to the anchor primer extending into the target [@Drmanac2010].
 
-<div class="figure" style="text-align: center">
-<img src="cpal.png" alt="Schematic of cPAL as used in ISS." width="100%" />
-<p class="caption">(\#fig:cpal-fig)Schematic of cPAL as used in ISS.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{cpal} 
+
+}
+
+\caption{Schematic of cPAL as used in ISS.}(\#fig:cpal-fig)
+\end{figure}
 
 The only in situ sequencing method that was reused after its inception was originally demonstrated in 2013 by Mats Nilsson's group [@Ke2013], which we call ISS here (Figure \@ref(fig:n-insts)). First, padlock probes are hybridized to in situ reverse transcribed cDNAs and RCA amplified (Figure \@ref(fig:rca)). The padlock probe can carry a gene specific 4 nt barcode (barcode version), or leave a 4 nt gap between the ends of the probe after it's hybridized to the cDNA to be filled when the probe is circularized (gap filling version). Then the barcode or the filled gap is sequenced in situ, with an anchor primer binding 3' to the target, with cPAL. Because of limited read length of cPAL, short sequences uniquely identify each gene and isoform for the gap filling approach becomes difficult to find with increasing number of genes and isoforms. In contrast, a barcode with length $n$ can encode $4^n$ genes and isoforms. As a result, the barcode approach was repeatedly used after the inception of ISS and was commercialized by CARTANA, which was recently acquired by 10X Genomics.
 
@@ -531,10 +627,14 @@ The number of genes that can be profiled by ISS is limited by the barcode length
 
 Both SOLiD and cPAL have some drawbacks. As the gene specific barcode does not have to be long to encode all genes in the genome, when the barcode is used, limits in read length is not a major limitation. Because one color encodes two bases, SOLiD is very accurate [@Liu2012], but error in one cycle propagates to later cycles. At least in the mouse brain, SOLiD also has high background [@Wang2018]. In contrast, cPAL does not have an inbuilt error rejection mechanism; the barcode must be elongated to allow for error correction, much like in the error correction scheme of seqFISH. Furthermore, in ISS, the mRNA is first reverse transcribed into cDNA because ligation of the padlock probe is inefficient when the template is RNA [@Larsson2010]. However, the efficiency of RT depends on the gene of interest and the variability of RT efficiency depends on RNA concentration [@Schwaber2019; @Bustin2015].
 
-<div class="figure" style="text-align: center">
-<img src="sedal.png" alt="Schematic of RCA of SNAIL probe and SEDAL. Also showing error propagation and identification of 2 base encoding. As part of the constant region, the 'G' highlighted in red is known." width="100%" />
-<p class="caption">(\#fig:sedal)Schematic of RCA of SNAIL probe and SEDAL. Also showing error propagation and identification of 2 base encoding. As part of the constant region, the 'G' highlighted in red is known.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{sedal} 
+
+}
+
+\caption{Schematic of RCA of SNAIL probe and SEDAL. Also showing error propagation and identification of 2 base encoding. As part of the constant region, the 'G' highlighted in red is known.}(\#fig:sedal)
+\end{figure}
 
 A new method of in situ sequencing, namely sequencing with error-reduction by dynamic annealing and ligation (SEDAL) in spatially-resolved transcript amplicon readout mapping (STARmap), was devised to address these shortcomings [@Wang2018]. In STARmap, the specific amplification of nucleic acids via intramolecular ligation (SNAIL) probe is a derivative of the original padlock probe that avoids RT altogether. A primer partially hybridizes to the mRNA, and partially to the padlock probe (Figure \@ref(fig:sedal)). The padlock probe carrying a 5 nt gene specific barcode hybridizes to the mRNA adjacent to the primer, but both ends of the padlock probe hybridize to the primer instead, so when the ends are ligated together, the template is DNA rather than RNA, thus avoiding both RT and inefficiency of ligation with RNA template, and then the primer is used to initiate RCA. As both the primer and the padlock probe must match the mRNA template for RCA to occur, SNAIL probes are specific and background of non-specific binding is eliminated. To reduce background autofluorescence and prevent the RCA amplicons from moving, the amplicons are crosslinked into a hydrogel and the tissue is cleared of proteins and lipids.
 
@@ -549,39 +649,63 @@ This section reviews techniques that capture transcripts from a permeabilized ti
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/array-map-1.png" alt="Cities and institutions using ST and Visium. Preprints are included." width="100%" />
-<p class="caption">(\#fig:array-map)Cities and institutions using ST and Visium. Preprints are included.</p>
-</div>
+\begin{figure}
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/array-us-1.png" alt="Cities and institutions using ST and Visium around continental US. Preprints are included." width="576" />
-<p class="caption">(\#fig:array-us)Cities and institutions using ST and Visium around continental US. Preprints are included.</p>
-</div>
+{\centering \includegraphics[width=1\linewidth]{05-current-techs_files/figure-latex/array-map-1} 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/array-europe-1.png" alt="Cities and institutions using ST and Visium in western Europe. Preprints are included." width="576" />
-<p class="caption">(\#fig:array-europe)Cities and institutions using ST and Visium in western Europe. Preprints are included.</p>
-</div>
+}
+
+\caption{Cities and institutions using ST and Visium. Preprints are included.}(\#fig:array-map)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/array-us-1} 
+
+}
+
+\caption{Cities and institutions using ST and Visium around continental US. Preprints are included.}(\#fig:array-us)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/array-europe-1} 
+
+}
+
+\caption{Cities and institutions using ST and Visium in western Europe. Preprints are included.}(\#fig:array-europe)
+\end{figure}
 
 ST [@Stahl2016a] and Visium are the most widely used current era technique after LCM (Figure \@ref(fig:n-insts), Figure \@ref(fig:array-map)). In ST, the printed spots have diameter of 100 $\mu$m and are 200 $\mu$m apart from center to center (Figure \@ref(fig:array-dims)). Multiple sections can be mounted to the same slide, separated by a rubber mask. For each section, there are 1007 spots covering an area of 6200 $\times$ 6600 $\mu$m. The 5' end of the capture sequence is a linker to be cleaved to release the transcripts, followed by amplification and sequencing handle, an 18 nt spatial barcode, a 9 nt UMI, and poly-T (Figure \@ref(fig:array-umi)). For the genes quantified with smFISH, ST's detection efficiency is around 6.9% compared to smFISH (transcript count per area for 3 genes in corresponding regions in adjacent sections), within the range of the efficiency of scRNA-seq techniques. Despite the low resolution, ST is popular probably due to transcriptome wide profiling, ease to apply to larger area of tissue, not requiring specialized equipment such as SRM and custom fluidics systems, commercial kits, possible automation of library preparation [@Jemt2016], availability of a documented and open source data preprocessing pipeline called ST Pipeline [@Navarro2017], and the extra information from H&E staining before library preparation.
 
-<div class="figure" style="text-align: center">
-<img src="fig13a.png" alt="Schematic of spot construction and size of array based techniques." width="50%" />
-<p class="caption">(\#fig:array-dims)Schematic of spot construction and size of array based techniques.</p>
-</div>
+\begin{figure}
 
-<div class="figure" style="text-align: center">
-<img src="fig13b.png" alt="Barcode and UMI structure and lengths of array based techniques." width="50%" />
-<p class="caption">(\#fig:array-umi)Barcode and UMI structure and lengths of array based techniques.</p>
-</div>
+{\centering \includegraphics[width=0.5\linewidth]{fig13a} 
+
+}
+
+\caption{Schematic of spot construction and size of array based techniques.}(\#fig:array-dims)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fig13b} 
+
+}
+
+\caption{Barcode and UMI structure and lengths of array based techniques.}(\#fig:array-umi)
+\end{figure}
 
 After its inception, ST has been used in a wide range of clinical pathological tissues, such as heart after heart failure [@Asp2017], peritonitis-affected gingival tissue [@Lundmark2018], prostate cancer [@Berglund2018], breast cancer [@He2020], arthritic joint biopsies [@Carlberg2019], lymph nodes affected by melanoma metastasis [@Thrane2018], spinal cords [@Maniatis2019] and cerebellums [@Gregory2020] affected by amyotrophic lateral sclerosis (ALS), and squamous cell carcinoma [@Ji2020]. ST has also been used to construct gene expression atlases of healthy tissues such as the developing human heart [@Asp2019] and the mouse brain [@Ortiz2020]. In addition, ST is the only current era technique other than LCM and manual microdissection that has been adapted to plants [@Giacomello2017]. Common downstream data analyses include identifying differentially expressed (DE) genes between diseased and healthy regions, gene set enrichment analysis (GSEA) among DE genes, and cell type deconvolution of the spots by integrating ST and scRNA-seq data. Data analysis methods designed specifically for ST or Visium will be reviewed in more detail in Chapter \@ref(current-analysis).
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/array-trend-1.png" alt="Number of publications over time, broken down by technique. The facets are ordered by recent usage of the technique. Bin width is 90 days." width="576" />
-<p class="caption">(\#fig:array-trend)Number of publications over time, broken down by technique. The facets are ordered by recent usage of the technique. Bin width is 90 days.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/array-trend-1} 
+
+}
+
+\caption{Number of publications over time, broken down by technique. The facets are ordered by recent usage of the technique. Bin width is 90 days.}(\#fig:array-trend)
+\end{figure}
 
 Although introduced fairly recently, after 10X Genomics acquired ST in December 2018, the 10X Visium has quickly gained popularity and spread to multiple institutions (Figure \@ref(fig:n-insts)), and is used by many studies that utilize an array method in late 2020 and 2021 (Figure \@ref(fig:array-map), Figure \@ref(fig:array-trend)). While usage of ST seems concentrated in Sweden, where ST comes from, usage of Visium is more decentralized (Figure \@ref(fig:array-map)). Visium is similar to ST and shares the advantages of ST, but with higher spatial resolution. The spots are 100 $\mu$m apart center to center, each with a diameter of 55 $\mu$m, arranged in a hexagonal configuration (Figure \@ref(fig:array-dims)). After adjusting for spot area, Visium seems to capture somewhat more transcripts and genes compared to ST [@Liu2020a], but more datasets in the same tissues and accounting for sequencing depths are needed to make a fairer comparison. In addition, Visium's growth in popularity may be due to core facilities at multiple institutions providing Visium services [@illinois; @umich; @ncl]. As a new version of ST, Visium was originally designed for fresh frozen OCT embedded tissue and 3' Illumina sequencing. However, Visium has more recently been adapted to FFPE tissue [@Villacampa2020], as well as to Nanopore long read sequencing to quantify isoforms [@Lebrigand2020; @Joglekar2020], although Visium is still predominantly used on fresh frozen tissues for 3' end sequencing (Add figure about FFPE for all current era methods).
 
@@ -591,10 +715,14 @@ Visium studies in our database are almost exclusively on humans and mice, and mo
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/species-pie-visium-1.png" alt="Number of publication per species." width="480" />
-<p class="caption">(\#fig:species-pie-visium)Number of publication per species.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/species-pie-visium-1} 
+
+}
+
+\caption{Number of publication per species.}(\#fig:species-pie-visium)
+\end{figure}
 
 
 
@@ -608,10 +736,14 @@ Visium studies in our database are almost exclusively on humans and mice, and mo
 
 (ref:hg-visium-cap) Number of Visium studies for healthy (A) and pathological (B) human organs. Female is shown here due to several breast cancer and ovary studies. There is one human prostate Visium study in our database [@McCray2021].
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/visium-organs-1.png" alt="(ref:hg-visium-cap)" width="100%" />
-<p class="caption">(\#fig:visium-organs)(ref:hg-visium-cap)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{05-current-techs_files/figure-latex/visium-organs-1} 
+
+}
+
+\caption{(ref:hg-visium-cap)}(\#fig:visium-organs)
+\end{figure}
 
 
 
@@ -619,10 +751,14 @@ Visium studies in our database are almost exclusively on humans and mice, and mo
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/visium-organs-mm-1.png" alt="Number of Visium studies for healthy (A) and pathological (B) mouse organs. Female is shown here as there is a uterus study while there is no study on male specific organs in our database." width="100%" />
-<p class="caption">(\#fig:visium-organs-mm)Number of Visium studies for healthy (A) and pathological (B) mouse organs. Female is shown here as there is a uterus study while there is no study on male specific organs in our database.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{05-current-techs_files/figure-latex/visium-organs-mm-1} 
+
+}
+
+\caption{Number of Visium studies for healthy (A) and pathological (B) mouse organs. Female is shown here as there is a uterus study while there is no study on male specific organs in our database.}(\#fig:visium-organs-mm)
+\end{figure}
 
 In response to the low resolution of ST, Slide-seq was developed to increase the resolution of array based spatial transcriptomics [@Rodriques2019]. Beads like those used in Drop-seq [@Macosko2015] with diameter 10 $\mu$m are spread on a slide in a single layer, not necessarily in a regular grid, and bead barcodes are generated with 16 rounds of split pool, each round adding one nucleotide, broken into 2 blocks of 8 nt (2 blocks of 8 and 7 nt in version 2) (Figure \@ref(fig:array-dims), Figure \@ref(fig:array-umi)). As the location of each barcode is not pre-determined, the slide is imaged and the barcodes are sequenced in situ with SOLiD. Then the OCT frozen tissue section is mounted on the layer of beads on the slide and the beads are removed for library preparation. The first version of Slide-seq is very inefficient; for the genes compared, the Slide-seq only detects 2 to 3 orders of magnitude fewer transcripts per cell for 3 genes than smFISH in an adjacent section and about 2.7% compared to Drop-seq for the same cell type from CA1 [@Rodriques2019].
 
@@ -636,10 +772,14 @@ In response to the low efficiency and complicated procedure to localize barcodes
 
 
 
-<div class="figure" style="text-align: center">
-<img src="05-current-techs_files/figure-html/spot-diam-1.png" alt="Record spot diameter of array based methods over time." width="576" />
-<p class="caption">(\#fig:spot-diam)Record spot diameter of array based methods over time.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics{05-current-techs_files/figure-latex/spot-diam-1} 
+
+}
+
+\caption{Record spot diameter of array based methods over time.}(\#fig:spot-diam)
+\end{figure}
 
 The record resolution of array based techniques is ever increasing (Figure \@ref(fig:spot-diam)); sub-micron techniques are appearing in 2021. The record is broken by Stereo-seq in January 2021, reporting a spot diameter of 220 nm although the distance between spots is 500 or 715 nm [@Chen2021a]. In Stereo-seq, circularized DNA containing a random 25 nt barcode is RCA amplified and deposited into an etched grid. The barcode is sequenced and then oligos with polyT and molecular ID are hybridized to the barcode to capture polyA transcripts from the mounted tissue. The reported capture efficiency is around 170 UMIs per 100 $\mu m^2$ in mouse brain, on par with that of the Visium mouse brain dataset from the 10X website reanalyzed in the same study. 
 
