@@ -61,7 +61,7 @@ plot_topic_prop(stm_res, x_max = 0.08)
 ```
 
 In most cases, the top 5 words in each topic give us a decent idea what the topic is about. We can also plot the probability to get top words ($\beta$) in each topic. 
-```{r topic-words, fig.width=12, fig.height=15, fig.cap="Probability of top 10 words in each topic.", out.width="100%"}
+```{r topic-words, fig.width=12, fig.height=15, fig.cap="Probability of top 10 words in each topic. Open image in new tab to see the text.", out.width="100%"}
 plot_topic_words(stm_res) +
   theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
 ```
