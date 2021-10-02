@@ -49,7 +49,7 @@ In most cases, the top 5 words in each topic give us a decent idea what the topi
 
 }
 
-\caption{Probability of top 10 words in each topic.}(\#fig:topic-words)
+\caption{Probability of top 10 words in each topic. Open image in new tab to see the text.}(\#fig:topic-words)
 \end{figure}
 
 While in most cases, the topic is apparent from the top words, some topics are less apparent (e.g. topic 49). From the top words and quick glances of abstracts with the highest proportion of each topic, the 50 topics are summarized here in more human readable terms:
