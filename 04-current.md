@@ -225,10 +225,6 @@ The prequel era started with untargeted screens and grew into atlases and databa
 
 
 
-
-
-
-
 (ref:hg-anat-cat) A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer [@Burgess2019; @Brady2021]). 
 
 \begin{figure}
