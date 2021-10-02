@@ -271,24 +271,13 @@ organs_hg_m <- organs %>%
 ```
 
 ```{r}
-limits_use <- range(c(organs_hg_f$value[!organs_hg_f$pathological], 
-                      organs_mm_f$value[!organs_mm_f$pathological]))
-```
-
-```{r}
 p3f <- organs_hg_m %>% 
    filter(!pathological) %>% 
    gganatogram(organism = "human", sex = "male", fill = "value") +
    coord_equal() +
    theme_void() +
    scale_fill_distiller(palette = "Blues", direction = 1, 
-                        name = "# publications\n(healthy)",
-                        limits = limits_use)
-```
-
-```{r}
-limits_use2 <- range(c(organs_hg_f$value[organs_hg_f$pathological],
-                       organs_mm_f$value[organs_mm_f$pathological]))
+                        name = "# publications\n(healthy)")
 ```
 
 ```{r}
@@ -298,8 +287,7 @@ p3g <- organs_hg_f %>%
   coord_equal() +
   theme_void() +
   scale_fill_distiller(palette = "Reds", direction = 1, 
-                       name = "# publications\n(pathological)", 
-                       limits = limits_use2)
+                       name = "# publications\n(pathological)")
 ```
 
 (ref:hg-anat-cat) A) Number of publications for each healthy organ in human (male shown here, as there is no study on healthy female specific organs in humans at present). B) Number of publications for pathological organs in human (female shown here, but there are two studies on prostate cancer [@Burgess2019; @Brady2021]). 
@@ -317,8 +305,7 @@ p3h <- organs_mm_f %>%
    gganatogram(organism = "mouse", sex = "female", fill = "value") +
    coord_equal() +
    theme_void() +
-   scale_fill_distiller(palette = "Blues", direction = 1, name = "# publications\n(healthy)",
-                        limits = limits_use)
+   scale_fill_distiller(palette = "Blues", direction = 1, name = "# publications\n(healthy)")
 ```
 
 ```{r}
@@ -327,8 +314,9 @@ p3i <- organs_mm_f %>%
    gganatogram(organism = "mouse", sex = "female", fill = "value") +
    coord_equal() +
    theme_void() +
-   scale_fill_distiller(palette = "Reds", direction = 1, name = "# publications\n(pathological)",
-                        limits = limits_use2)
+   scale_fill_distiller(palette = "Reds", direction = 1, 
+                        name = "# publications\n(pathological)",
+                        breaks = scales::breaks_pretty(5))
 ```
 
 ```{r mm-anat, fig.width=8, fig.height=6, fig.cap="A) Number of publications per healthy organ in the mouse. B) Number of publications for pathological organs in mouse.", out.width="100%"}
