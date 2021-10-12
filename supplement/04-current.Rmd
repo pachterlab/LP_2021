@@ -52,7 +52,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
 
 ```{r}
 nms <- c("Prequel", "ROI selection", "smFISH", "NGS barcoding", "ISS", 
-         "No priori")
+         "De novo")
 data_sheets <- read_metadata(nms, update = TRUE)
 ```
 

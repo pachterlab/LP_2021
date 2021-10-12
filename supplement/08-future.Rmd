@@ -21,7 +21,7 @@ theme_set(theme_bw())
 ```
 
 ```{r}
-nms <- c("Prequel", "ROI selection", "NGS barcoding", "smFISH", "ISS", "No priori")
+nms <- c("Prequel", "ROI selection", "NGS barcoding", "smFISH", "ISS", "De novo")
 all_methods <- read_metadata(nms, update = TRUE) %>% 
   unnest_cat(method)
 ```
