@@ -82,7 +82,7 @@ FISSEQ & 2014-03-21 & ISS & 8102 & single cell\\
 \addlinespace
 \cellcolor{gray!6}{seqFISH} & \cellcolor{gray!6}{2014-03-28} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10421} & \cellcolor{gray!6}{single cell}\\
 MERFISH & 2015-04-24 & smFISH & 4209 & single cell\\
-\cellcolor{gray!6}{Puzzle Imaging} & \cellcolor{gray!6}{2015-07-20} & \cellcolor{gray!6}{No priori} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+\cellcolor{gray!6}{Puzzle Imaging} & \cellcolor{gray!6}{2015-07-20} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
 Geo-seq & 2016-03-21 & ROI selection & Tx wide & NA\\
 \cellcolor{gray!6}{corrFISH} & \cellcolor{gray!6}{2016-06-06} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
@@ -90,23 +90,23 @@ ST & 2016-07-01 & NGS barcoding & Tx wide & 100\\
 \cellcolor{gray!6}{HCR-seqFISH} & \cellcolor{gray!6}{2016-10-19} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{249} & \cellcolor{gray!6}{single cell}\\
 punch & 2017-06-28 & ROI selection & Tx wide & NA\\
 \cellcolor{gray!6}{SGA} & \cellcolor{gray!6}{2017-11-28} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{35} & \cellcolor{gray!6}{single cell}\\
-APEX-RIP & 2017-12-14 & No priori & NA & NA\\
+APEX-RIP & 2017-12-14 & De novo & NA & NA\\
 \addlinespace
 \cellcolor{gray!6}{Niche-seq} & \cellcolor{gray!6}{2017-12-22} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 ExM-MERFISH & 2018-03-19 & smFISH & 10050 & single cell\\
 \cellcolor{gray!6}{STARmap} & \cellcolor{gray!6}{2018-07-27} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{1020} & \cellcolor{gray!6}{single cell}\\
-Paired-cell sequencing & 2018-09-17 & No priori & NA & NA\\
+Paired-cell sequencing & 2018-09-17 & De novo & NA & NA\\
 \cellcolor{gray!6}{osmFISH} & \cellcolor{gray!6}{2018-10-30} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{33} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
 seqFISH+ & 2019-03-25 & smFISH & 10000 & single cell\\
 \cellcolor{gray!6}{slide-seq} & \cellcolor{gray!6}{2019-03-29} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{10}\\
 bDNA-MERFISH & 2019-05-25 & smFISH & 130 & single cell\\
 \cellcolor{gray!6}{GeoMX DSP} & \cellcolor{gray!6}{2019-06-21} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{2093} & \cellcolor{gray!6}{NA}\\
-DNA microscopy & 2019-06-27 & No priori & NA & NA\\
+DNA microscopy & 2019-06-27 & De novo & NA & NA\\
 \addlinespace
-\cellcolor{gray!6}{APEX-seq} & \cellcolor{gray!6}{2019-07-11} & \cellcolor{gray!6}{No priori} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+\cellcolor{gray!6}{APEX-seq} & \cellcolor{gray!6}{2019-07-11} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
 INSTA-seq & 2019-08-06 & ISS & NA & single cell\\
-\cellcolor{gray!6}{PARSIFT} & \cellcolor{gray!6}{2019-09-04} & \cellcolor{gray!6}{No priori} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+\cellcolor{gray!6}{PARSIFT} & \cellcolor{gray!6}{2019-09-04} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
 HDST & 2019-09-09 & NGS barcoding & Tx wide & 2\\
 \cellcolor{gray!6}{GaST-seq} & \cellcolor{gray!6}{2019-10-10} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 \addlinespace
@@ -128,7 +128,7 @@ SCRINSHOT & 2020-11-20 & smFISH & 29 & single cell\\
 \cellcolor{gray!6}{HybRISS} & \cellcolor{gray!6}{2020-12-02} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{50} & \cellcolor{gray!6}{single cell}\\
 Stereo-seq & 2021-01-19 & NGS barcoding & Tx wide & 0.22\\
 \addlinespace
-\cellcolor{gray!6}{GeoMX WTA} & \cellcolor{gray!6}{2021-01-25} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{18361} & \cellcolor{gray!6}{NA}\\
+\cellcolor{gray!6}{GeoMX WTA} & \cellcolor{gray!6}{2021-01-25} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{20175} & \cellcolor{gray!6}{NA}\\
 Seq-Scope & 2021-01-27 & NGS barcoding & Tx wide & 0.5\\
 \cellcolor{gray!6}{ExSeq} & \cellcolor{gray!6}{2021-01-29} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{297} & \cellcolor{gray!6}{single cell}\\
 BOLORAMIS & 2021-03-08 & ISS & 96 & single cell\\
@@ -143,8 +143,8 @@ STRP-seq & 2021-04-19 & ROI selection & Tx wide & NA\\
 \cellcolor{gray!6}{XYZeq} & \cellcolor{gray!6}{2021-04-21} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{500}\\
 electro-seq & 2021-04-23 & ISS & 201 & single cell\\
 \cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2021-04-30} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-ClumpSeq & 2021-05-24 & No priori & NA & NA\\
-\cellcolor{gray!6}{Halo-seq} & \cellcolor{gray!6}{2021-06-08} & \cellcolor{gray!6}{No priori} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+ClumpSeq & 2021-05-24 & De novo & NA & NA\\
+\cellcolor{gray!6}{Halo-seq} & \cellcolor{gray!6}{2021-06-08} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
 \addlinespace
 MOSAICA & 2021-06-23 & smFISH & 10 & single cell\\
 \cellcolor{gray!6}{sci-Space} & \cellcolor{gray!6}{2021-07-02} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{73.2}\\

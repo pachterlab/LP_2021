@@ -419,17 +419,17 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.8897 -1.0735  0.1476  0.3782  4.7170 
+## -3.8994 -1.0741  0.1347  0.4010  4.7240 
 ## 
 ## Coefficients:
 ##                 Estimate Std. Error t value Pr(>|t|)
-## (Intercept)    3.5101229  3.3759295   1.040    0.301
-## date_published 0.0000578  0.0001875   0.308    0.758
+## (Intercept)    3.147e+00  3.307e+00   0.952    0.344
+## date_published 7.789e-05  1.834e-04   0.425    0.672
 ## 
 ## Residual standard error: 1.566 on 98 degrees of freedom
 ##   (15 observations deleted due to missingness)
-## Multiple R-squared:  0.000969,	Adjusted R-squared:  -0.009225 
-## F-statistic: 0.09506 on 1 and 98 DF,  p-value: 0.7585
+## Multiple R-squared:  0.001837,	Adjusted R-squared:  -0.008348 
+## F-statistic: 0.1804 on 1 and 98 DF,  p-value: 0.672
 ```
 
 How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.
@@ -454,18 +454,18 @@ After log transforming the total number of cells per study (when reported), whos
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.7216 -1.4826 -0.3631  1.9080  4.6749 
+## -3.7078 -1.4532 -0.3456  1.5231  4.7017 
 ## 
 ## Coefficients:
-##                  Estimate Std. Error t value Pr(>|t|)   
-## (Intercept)    -1.965e+01  7.921e+00  -2.480  0.01941 * 
-## date_published  1.614e-03  4.428e-04   3.645  0.00108 **
+##                  Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    -1.998e+01  7.702e+00  -2.594 0.014911 *  
+## date_published  1.631e-03  4.302e-04   3.793 0.000731 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.164 on 28 degrees of freedom
-## Multiple R-squared:  0.3218,	Adjusted R-squared:  0.2976 
-## F-statistic: 13.29 on 1 and 28 DF,  p-value: 0.001079
+## Residual standard error: 2.135 on 28 degrees of freedom
+## Multiple R-squared:  0.3394,	Adjusted R-squared:  0.3158 
+## F-statistic: 14.38 on 1 and 28 DF,  p-value: 0.0007309
 ```
 
 MERFISH is the smFISH based technique used in the most institutions (Figure \@ref(fig:n-insts)), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure \@ref(fig:smfish-n-insts)). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table \@ref(tab:table2).
@@ -814,7 +814,7 @@ A percentage is not shown where it is not reported. This is putative because thi
 
 While fresh frozen tissues are predominantly used in the current era, DBiT-seq, Visium, and LCM have been adapted to FFPE tissues. RNAscope can be used on FFPE tissue for up to 12 targets. SCRINSHOT is designed for FFPE, and GeoMX DSP has been predominantly used on FFPE tissues. FFPE is a common way to archive tissue specimen, and sometimes the only tissues available is FFPE, sometimes years if not decades old. From techniques that have both fresh frozen and FFPE protocols, FFPE and storage of FFPE samples seem to significantly degrade the transcripts and reduce detection efficiency, but there can still be enough information preserved to identify cell types in the spots and correlation between gene expression measured in FFPE and fresh frozen tissues is usually high. In a FFPE Visium mouse brain dataset, at a sequencing depth of ~50,000 reads per tissue covered spot, the spots have on average ~1200 genes and ~2200 UMIs detected. In contrast, in a similar fresh frozen mouse brain section, with sequencing depth of ~115,000 reads per tissue covered spot, the spots have on average ~6000 genes and ~27200 UMIs detected [@Villacampa2020]. While the fresh frozen sample has higher sequencing depth, FFPE seems to reduce the number of genes and UMIs detected beyond the impact of sequencing depth. As Visium captures the transcripts on spots printed to a glass slide, the transcripts need to be dissociated from the tissue, and in the case of FFPE, it means de-crosslinking. In FFPE DBiT-seq, the transcripts don't have to be de-crosslinked as the barcodes are deposited into the tissue. FFPE reduced cDNA length from an average of ~1400 nt in PFA fixed fresh frozen tissue to about ~600 nt on average. In mouse embryos, while DBiT-seq on PFA fixed fresh frozen tissue gives on average 2100 genes and 4688 UMIs per 25 $\mu$m spot, FFPE tissue gives only 355 genes and 520 UMIs in the same sized spots on average [@Liu2020b]. However, sequencing depth is not discussed. From these studies, in both Visium and DBiT-seq, FFPE might decrease detection efficiency in terms of number of UMIs detected per unit area by about 5 (if considering sequencing depth in the Visium study) to 10 folds. 
 
-## No *priori* {#no-priori}
+## *De novo* reconstruction of spatial locations {#no-priori}
 
 The techniques reviewed above, involve either imaging (e.g. LCM, smFISH, ISS, Slide-seq, and HDST) or prior knowledge of locations (e.g. Tomo-seq, ST, Visium, and DBiT-seq). Some spatial transcriptomics techniques have been developed that require neither imaging nor prior knowledge of locations, and we review these in this section. While techniques that deposit spatial barcodes in an array at known locations such as Visium and DBiT-seq do not require imaging to know the location of gene expression, the spatial barcode locations are known *a priori*. In contrast, techniques reviewed in this section do not involve *a priori* knowledge of locations.
 
