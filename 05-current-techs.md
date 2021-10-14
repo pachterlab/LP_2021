@@ -419,17 +419,17 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.8994 -1.0741  0.1347  0.4010  4.7240 
+## -3.7976 -1.0577  0.1624  0.4060  4.7632 
 ## 
 ## Coefficients:
 ##                 Estimate Std. Error t value Pr(>|t|)
-## (Intercept)    3.147e+00  3.307e+00   0.952    0.344
-## date_published 7.789e-05  1.834e-04   0.425    0.672
+## (Intercept)    4.439e+00  3.170e+00   1.400    0.164
+## date_published 2.775e-06  1.753e-04   0.016    0.987
 ## 
-## Residual standard error: 1.566 on 98 degrees of freedom
+## Residual standard error: 1.55 on 105 degrees of freedom
 ##   (15 observations deleted due to missingness)
-## Multiple R-squared:  0.001837,	Adjusted R-squared:  -0.008348 
-## F-statistic: 0.1804 on 1 and 98 DF,  p-value: 0.672
+## Multiple R-squared:  2.388e-06,	Adjusted R-squared:  -0.009521 
+## F-statistic: 0.0002507 on 1 and 105 DF,  p-value: 0.9874
 ```
 
 How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.

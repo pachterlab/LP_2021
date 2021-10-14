@@ -153,7 +153,8 @@ PIC & 2021-07-20 & ROI selection & Tx wide & NA\\
 SPACECAT & 2021-08-17 & ROI selection & Tx wide & NA\\
 \addlinespace
 \cellcolor{gray!6}{Space-TREX} & \cellcolor{gray!6}{2021-09-01} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
-RNAscope & 2021-09-29 & smFISH & 95 & single cell\\*
+RNAscope & 2021-09-29 & smFISH & 95 & single cell\\
+\cellcolor{gray!6}{Molecular Cartography} & \cellcolor{gray!6}{2021-10-12} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{81} & \cellcolor{gray!6}{single cell}\\*
 \end{longtable}
 
 
