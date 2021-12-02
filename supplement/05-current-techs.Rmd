@@ -520,9 +520,9 @@ The following disadvantages may explain why smFISH based spatial transcriptomics
 languages <- unnest_cat(smfish, language)
 ```
 
-```{r smfish-langs, fig.width=6, fig.height=4, fig.cap="Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications."}
+```{r smfish-langs, fig.width=6, fig.height=4, fig.cap="Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 5 publications."}
 pubs_per_cat(languages, category = language, isotype = TRUE, n_top = 5, 
-             img_unit = 2) +
+             img_unit = 5) +
    labs(x = NULL, title = "Programming language")
 ```
 
@@ -677,8 +677,8 @@ knitr::include_graphics("fig13b.png")
 
 After its inception, ST has been used in a wide range of clinical pathological tissues, such as heart after heart failure [@Asp2017], peritonitis-affected gingival tissue [@Lundmark2018], prostate cancer [@Berglund2018], breast cancer [@He2020], arthritic joint biopsies [@Carlberg2019], lymph nodes affected by melanoma metastasis [@Thrane2018], spinal cords [@Maniatis2019] and cerebellums [@Gregory2020] affected by amyotrophic lateral sclerosis (ALS), and squamous cell carcinoma [@Ji2020]. ST has also been used to construct gene expression atlases of healthy tissues such as the developing human heart [@Asp2019] and the mouse brain [@Ortiz2020]. In addition, ST is the only current era technique other than LCM and manual microdissection that has been adapted to plants [@Giacomello2017]. Common downstream data analyses include identifying differentially expressed (DE) genes between diseased and healthy regions, gene set enrichment analysis (GSEA) among DE genes, and cell type deconvolution of the spots by integrating ST and scRNA-seq data. Data analysis methods designed specifically for ST or Visium will be reviewed in more detail in Chapter \@ref(current-analysis).
 
-```{r array-trend, fig.width=6, fig.height=6, fig.cap="Number of publications over time, broken down by technique. The facets are ordered by recent usage of the technique. Bin width is 90 days."}
-pubs_per_year(array_methods, facet_by = "method", n_top = 2, sort_by = "recent",
+```{r array-trend, fig.width=6, fig.height=6, fig.cap="Number of publications over time, broken down by technique. The facets are ordered by total usage of the technique. Bin width is 90 days."}
+pubs_per_year(array_methods, facet_by = "method", n_top = 2, sort_by = "count",
                       preprints = TRUE, binwidth = 90)
 ```
 
@@ -694,6 +694,7 @@ data("species_cols")
 species_pie <- array %>% 
   filter(!is.na(species)) %>% 
   unnest_cat(species) %>% 
+  mutate(species = fct_lump(species, 4)) %>% 
   count(species) %>% 
   arrange(desc(species)) %>% 
   mutate(label = paste("italic('", species, "')", "~(", n, ")"))
