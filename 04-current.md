@@ -120,12 +120,12 @@ ZipSeq & 2020-07-06 & ROI selection & Tx wide & NA\\
 BARseq2 & 2020-08-26 & ISS & 65 & single cell\\
 \cellcolor{gray!6}{HybISS} & \cellcolor{gray!6}{2020-09-29} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{120} & \cellcolor{gray!6}{single cell}\\
 SM-Omics & 2020-10-15 & NGS barcoding & Tx wide & 100\\
-\cellcolor{gray!6}{slide-seq2} & \cellcolor{gray!6}{2020-10-17} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{10}\\
+\cellcolor{gray!6}{DBiT-seq} & \cellcolor{gray!6}{2020-10-19} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{10}\\
 \addlinespace
-DBiT-seq & 2020-10-19 & NGS barcoding & Tx wide & 10\\
-\cellcolor{gray!6}{C-FISH} & \cellcolor{gray!6}{2020-10-23} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{2} & \cellcolor{gray!6}{single cell}\\
-SCRINSHOT & 2020-11-20 & smFISH & 29 & single cell\\
-\cellcolor{gray!6}{HybRISS} & \cellcolor{gray!6}{2020-12-02} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{50} & \cellcolor{gray!6}{single cell}\\
+C-FISH & 2020-10-23 & smFISH & 2 & single cell\\
+\cellcolor{gray!6}{SCRINSHOT} & \cellcolor{gray!6}{2020-11-20} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{29} & \cellcolor{gray!6}{single cell}\\
+HybRISS & 2020-12-02 & smFISH & 50 & single cell\\
+\cellcolor{gray!6}{slide-seq2} & \cellcolor{gray!6}{2020-12-07} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{10}\\
 Stereo-seq & 2021-01-19 & NGS barcoding & Tx wide & 0.22\\
 \addlinespace
 \cellcolor{gray!6}{GeoMX WTA} & \cellcolor{gray!6}{2021-01-25} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{20175} & \cellcolor{gray!6}{NA}\\
@@ -154,7 +154,12 @@ SPACECAT & 2021-08-17 & ROI selection & Tx wide & NA\\
 \addlinespace
 \cellcolor{gray!6}{Space-TREX} & \cellcolor{gray!6}{2021-09-01} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
 RNAscope & 2021-09-29 & smFISH & 95 & single cell\\
-\cellcolor{gray!6}{Molecular Cartography} & \cellcolor{gray!6}{2021-10-12} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{81} & \cellcolor{gray!6}{single cell}\\*
+\cellcolor{gray!6}{Molecular Cartography} & \cellcolor{gray!6}{2021-10-12} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{100} & \cellcolor{gray!6}{single cell}\\
+Visium protein & 2021-10-16 & NGS barcoding & Tx wide & Inf\\
+\cellcolor{gray!6}{scStereo-seq} & \cellcolor{gray!6}{2021-10-21} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{Inf}\\
+\addlinespace
+coppaFISH & 2021-10-24 & smFISH & 72 & single cell\\
+\cellcolor{gray!6}{SMI} & \cellcolor{gray!6}{2021-11-04} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{960} & \cellcolor{gray!6}{single cell}\\*
 \end{longtable}
 
 

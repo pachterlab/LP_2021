@@ -189,13 +189,13 @@ Name & Language & Title & Date published\\
 \href{https://github.com/shenlab-ucsf/SMART-Q}{SMART-Q} & Python & \href{https://doi.org/10.1371/journal.pone.0228760}{SMART-Q: An Integrative Pipeline Quantifying Cell Type-Specific RNA Transcription} & 2020-04-29\\
 \href{https://github.com/wahlby-lab/spage2vec}{\cellcolor{gray!6}{spage2vec}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1111/febs.15572}{\cellcolor{gray!6}{Spage2vec: Unsupervised detection of spatial gene expression constellations}} & \cellcolor{gray!6}{2020-09-25}\\
 \addlinespace
-\href{https://github.com/kharchenkolab/Baysor}{Baysor} & Julia & \href{https://doi.org/10.1101/2020.10.05.326777}{Bayesian segmentation of spatially resolved transcriptomics data} & 2020-10-06\\
-\href{https://github.com/BBQuercus/deepBlink}{\cellcolor{gray!6}{deepBlink}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.12.14.422631}{\cellcolor{gray!6}{deepBlink: Threshold-independent detection and localization of diffraction-limited spots}} & \cellcolor{gray!6}{2020-12-15}\\
-\href{https://github.com/axanderssonuu/istdeco}{ISTDECO} & Python & \href{https://doi.org/10.1101/2021.03.01.433040}{ISTDECO: In Situ Transcriptomics Decoding by Deconvolution} & 2021-03-02\\
-\href{https://github.com/jacksonloper/bardensr}{\cellcolor{gray!6}{BarDensr}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1371/journal.pcbi.1008256}{\cellcolor{gray!6}{BARcode DEmixing through Non-negative Spatial Regression (BarDensr)}} & \cellcolor{gray!6}{2021-03-08}\\
-\href{https://github.com/wollmanlab/JSTA}{JSTA} & Python; C & \href{https://doi.org/10.15252/msb.202010108}{Joint cell segmentation and cell type annotation for spatial transcriptomics} & 2021-05-31\\
+\href{https://github.com/BBQuercus/deepBlink}{deepBlink} & Python & \href{https://doi.org/10.1101/2020.12.14.422631}{deepBlink: Threshold-independent detection and localization of diffraction-limited spots} & 2020-12-15\\
+\href{https://github.com/axanderssonuu/istdeco}{\cellcolor{gray!6}{ISTDECO}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2021.03.01.433040}{\cellcolor{gray!6}{ISTDECO: In Situ Transcriptomics Decoding by Deconvolution}} & \cellcolor{gray!6}{2021-03-02}\\
+\href{https://github.com/jacksonloper/bardensr}{BarDensr} & Python & \href{https://doi.org/10.1371/journal.pcbi.1008256}{BARcode DEmixing through Non-negative Spatial Regression (BarDensr)} & 2021-03-08\\
+\href{https://github.com/wollmanlab/JSTA}{\cellcolor{gray!6}{JSTA}} & \cellcolor{gray!6}{Python; C} & \href{https://doi.org/10.15252/msb.202010108}{\cellcolor{gray!6}{Joint cell segmentation and cell type annotation for spatial transcriptomics}} & \cellcolor{gray!6}{2021-05-31}\\
+\href{https://github.com/eilslabs/ssam}{SSAM} & Python; C++ & \href{https://doi.org/10.1038/s41467-021-23807-4}{Cell segmentation-free inference of cell types from in situ transcriptomics data} & 2021-06-10\\
 \addlinespace
-\href{https://github.com/eilslabs/ssam}{\cellcolor{gray!6}{SSAM}} & \cellcolor{gray!6}{Python; C++} & \href{https://doi.org/10.1038/s41467-021-23807-4}{\cellcolor{gray!6}{Cell segmentation-free inference of cell types from in situ transcriptomics data}} & \cellcolor{gray!6}{2021-06-10}\\
+\href{https://github.com/kharchenkolab/Baysor}{\cellcolor{gray!6}{Baysor}} & \cellcolor{gray!6}{Julia} & \href{https://doi.org/10.1038/s41587-021-01044-w}{\cellcolor{gray!6}{Bayesian segmentation of spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2021-10-14}\\
 \bottomrule
 \end{longtable}
 
@@ -294,11 +294,11 @@ Name & Language & Title & Date published\\
 \addlinespace
 \href{https://github.com/jfnavarro/st_analysis}{\cellcolor{gray!6}{st\_analysis}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1126/sciadv.abb3446}{\cellcolor{gray!6}{Molecular atlas of the adult mouse brain}} & \cellcolor{gray!6}{2020-06-26}\\
 \href{NA}{GLISS} & NA & \href{https://doi.org/10.1101/2020.08.12.248971}{Integrative Spatial Single-cell Analysis with Graph-based Feature Learning} & 2020-08-13\\
-\href{NA}{\cellcolor{gray!6}{Tangram}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.08.29.272831}{\cellcolor{gray!6}{Deep learning and alignment of spatially-resolved whole transcriptomes of single cells in the mouse brain with Tangram}} & \cellcolor{gray!6}{2020-08-30}\\
-\href{https://github.com/tabdelaal/SpaGE}{SpaGE} & Python & \href{https://doi.org/10.1093/nar/gkaa740}{SpaGE: Spatial Gene Enhancement using scRNA-seq} & 2020-09-21\\
-\href{https://github.com/kuanglab/FIST}{\cellcolor{gray!6}{FIST}} & \cellcolor{gray!6}{MATLAB} & \href{https://doi.org/10.1371/journal.pcbi.1008218}{\cellcolor{gray!6}{Imputation of Spatially-resolved Transcriptomes by Graph-regularized Tensor Completion}} & \cellcolor{gray!6}{2021-04-07}\\
+\href{https://github.com/tabdelaal/SpaGE}{\cellcolor{gray!6}{SpaGE}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/nar/gkaa740}{\cellcolor{gray!6}{SpaGE: Spatial Gene Enhancement using scRNA-seq}} & \cellcolor{gray!6}{2020-09-21}\\
+\href{https://github.com/kuanglab/FIST}{FIST} & MATLAB & \href{https://doi.org/10.1371/journal.pcbi.1008218}{Imputation of Spatially-resolved Transcriptomes by Graph-regularized Tensor Completion} & 2021-04-07\\
+\href{https://github.com/welch-lab/liger}{\cellcolor{gray!6}{LIGER}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1038/s41587-021-00867-x}{\cellcolor{gray!6}{Iterative single-cell multi-omic integration using online learning}} & \cellcolor{gray!6}{2021-04-19}\\
 \addlinespace
-\href{https://github.com/welch-lab/liger}{LIGER} & R; C++ & \href{https://doi.org/10.1038/s41587-021-00867-x}{Iterative single-cell multi-omic integration using online learning} & 2021-04-19\\
+\href{https://github.com/broadinstitute/Tangram}{Tangram} & Python & \href{https://doi.org/10.1038/s41592-021-01264-7}{Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram} & 2021-10-28\\
 \bottomrule
 \end{longtable}
 
@@ -368,19 +368,19 @@ Name & Language & Title & Date published\\
 \midrule
 \href{NA}{\cellcolor{gray!6}{NMFreg}} & \cellcolor{gray!6}{Python; MATLAB} & \href{https://doi.org/10.1126/science.aaw1219}{\cellcolor{gray!6}{Slide-seq: A scalable technology for measuring genome-wide expression at high spatial resolution}} & \cellcolor{gray!6}{2019-03-29}\\
 \href{https://github.com/satijalab/seurat}{Seurat3} & R & \href{https://doi.org/10.1016/j.cell.2019.05.031}{Comprehensive Integration of Single-Cell Data} & 2019-06-13\\
-\href{NA}{\cellcolor{gray!6}{Tangram}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.08.29.272831}{\cellcolor{gray!6}{Deep learning and alignment of spatially-resolved whole transcriptomes of single cells in the mouse brain with Tangram}} & \cellcolor{gray!6}{2020-08-30}\\
-\href{https://github.com/Nanostring-Biostats/SpatialDecon/}{SpatialDecon} & R & \href{https://doi.org/10.1101/2020.08.04.235168}{Advances in mixed cell deconvolution enable quantification of cell types in spatially-resolved gene expression data} & 2020-09-29\\
-\href{https://github.com/almaan/stereoscope}{\cellcolor{gray!6}{stereoscope}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s42003-020-01247-y}{\cellcolor{gray!6}{Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography}} & \cellcolor{gray!6}{2020-10-09}\\
+\href{https://github.com/Nanostring-Biostats/SpatialDecon/}{\cellcolor{gray!6}{SpatialDecon}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2020.08.04.235168}{\cellcolor{gray!6}{Advances in mixed cell deconvolution enable quantification of cell types in spatially-resolved gene expression data}} & \cellcolor{gray!6}{2020-09-29}\\
+\href{https://github.com/almaan/stereoscope}{stereoscope} & Python & \href{https://doi.org/10.1038/s42003-020-01247-y}{Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography} & 2020-10-09\\
+\href{NA}{\cellcolor{gray!6}{DSTG}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/bib/bbaa414}{\cellcolor{gray!6}{DSTG: Deconvoluting Spatial Transcriptomics Data through Graph-based Artificial Intelligence}} & \cellcolor{gray!6}{2021-01-22}\\
 \addlinespace
-\href{NA}{DSTG} & Python & \href{https://doi.org/10.1093/bib/bbaa414}{DSTG: Deconvoluting Spatial Transcriptomics Data through Graph-based Artificial Intelligence} & 2021-01-22\\
-\href{https://github.com/MarcElosua/SPOTlight}{\cellcolor{gray!6}{SPOTlight}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1093/nar/gkab043}{\cellcolor{gray!6}{SPOTlight:Seeded NMF regression to Deconvolute Spatial Transcriptomics Spots with Single-Cell Transcriptomes}} & \cellcolor{gray!6}{2021-02-05}\\
-\href{https://github.com/dmcable/RCTD}{RCTD} & R & \href{https://doi.org/10.1038/s41587-021-00830-w}{Robust decomposition of cell type mixtures in spatial transcriptomics} & 2021-02-18\\
-\href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
-\href{https://github.com/YosefLab/scvi-tools}{DestVI} & Python & \href{https://doi.org/10.1101/2021.05.10.443517}{Multi-resolution deconvolution of spatial transcriptomics data reveals continuous patterns of inflammation} & 2021-05-11\\
+\href{https://github.com/MarcElosua/SPOTlight}{SPOTlight} & R & \href{https://doi.org/10.1093/nar/gkab043}{SPOTlight:Seeded NMF regression to Deconvolute Spatial Transcriptomics Spots with Single-Cell Transcriptomes} & 2021-02-05\\
+\href{https://github.com/dmcable/RCTD}{\cellcolor{gray!6}{RCTD}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41587-021-00830-w}{\cellcolor{gray!6}{Robust decomposition of cell type mixtures in spatial transcriptomics}} & \cellcolor{gray!6}{2021-02-18}\\
+\href{https://github.com/RubD/Giotto}{Giotto} & R & \href{https://doi.org/10.1186/s13059-021-02286-2}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data} & 2021-03-08\\
+\href{https://github.com/YosefLab/scvi-tools}{\cellcolor{gray!6}{DestVI}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2021.05.10.443517}{\cellcolor{gray!6}{Multi-resolution deconvolution of spatial transcriptomics data reveals continuous patterns of inflammation}} & \cellcolor{gray!6}{2021-05-11}\\
+\href{https://github.com/DongqingSun96/STRIDE}{STRIDE} & Python & \href{https://doi.org/10.1101/2021.09.08.459458}{STRIDE: accurately decomposing and integrating spatial transcriptomics using single-cell RNA sequencing} & 2021-09-09\\
 \addlinespace
-\href{https://github.com/JEFworks-Lab/STdeconvolve}{\cellcolor{gray!6}{STdeconvolve}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2021.06.15.448381}{\cellcolor{gray!6}{Reference-free cell-type deconvolution of pixel-resolution spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2021-06-16}\\
-\href{https://github.com/TaoYang-dev/AdRoit}{AdRoit} & R & \href{https://doi.org/10.1101/2020.12.14.422697}{AdRoit: an accurate and robust method to infer complex transcriptome composition} & 2021-07-16\\
-\href{https://github.com/DongqingSun96/STRIDE}{\cellcolor{gray!6}{STRIDE}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2021.09.08.459458}{\cellcolor{gray!6}{STRIDE: accurately decomposing and integrating spatial transcriptomics using single-cell RNA sequencing}} & \cellcolor{gray!6}{2021-09-09}\\
+\href{https://github.com/TaoYang-dev/AdRoit}{\cellcolor{gray!6}{AdRoit}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s42003-021-02739-1}{\cellcolor{gray!6}{AdRoit is an accurate and robust method to infer complex transcriptome composition}} & \cellcolor{gray!6}{2021-10-22}\\
+\href{https://github.com/broadinstitute/Tangram}{Tangram} & Python & \href{https://doi.org/10.1038/s41592-021-01264-7}{Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram} & 2021-10-28\\
+\href{https://github.com/JEFworks-Lab/STdeconvolve}{\cellcolor{gray!6}{STdeconvolve}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2021.06.15.448381}{\cellcolor{gray!6}{Reference-free cell-type deconvolution of pixel-resolution spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2021-11-10}\\
 \bottomrule
 \end{longtable}
 
@@ -513,17 +513,17 @@ Name & Language & Title & Date published\\
 \midrule
 \href{https://bitbucket.org/qzhudfci/smfishhmrf-py/src/default/}{\cellcolor{gray!6}{smfishHmrf}} & \cellcolor{gray!6}{R; Python; C} & \href{https://doi.org/10.1038/nbt.4260}{\cellcolor{gray!6}{Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data}} & \cellcolor{gray!6}{2018-10-29}\\
 \href{NA}{stLearn} & Python & \href{https://doi.org/10.1101/2020.05.31.125658}{stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues} & 2020-05-31\\
-\href{https://github.com/kharchenkolab/Baysor}{\cellcolor{gray!6}{Baysor}} & \cellcolor{gray!6}{Julia} & \href{https://doi.org/10.1101/2020.10.05.326777}{\cellcolor{gray!6}{Bayesian segmentation of spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2020-10-06}\\
-\href{https://github.com/jianhuupenn/SpaGCN/tree/master/SpaGCN_package}{SpaGCN} & Python & \href{https://doi.org/10.1101/2020.11.30.405118}{Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network} & 2020-12-02\\
 \href{https://github.com/SysFate/MULTILAYER}{\cellcolor{gray!6}{MULTILAYER}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1016/j.cels.2021.04.008}{\cellcolor{gray!6}{Inferring biologically relevant molecular tissue substructures by agglomerative clustering of digitized spatial transcriptomes with multilayer}} & \cellcolor{gray!6}{2021-05-07}\\
-\addlinespace
 \href{https://github.com/edward130603/BayesSpace}{BayesSpace} & R; C++ & \href{https://doi.org/10.1038/s41587-021-00935-2}{Spatial transcriptomics at subspot resolution with BayesSpace} & 2021-06-03\\
 \href{https://github.com/eilslabs/ssam}{\cellcolor{gray!6}{SSAM}} & \cellcolor{gray!6}{Python; C++} & \href{https://doi.org/10.1038/s41467-021-23807-4}{\cellcolor{gray!6}{Cell segmentation-free inference of cell types from in situ transcriptomics data}} & \cellcolor{gray!6}{2021-06-10}\\
+\addlinespace
 \href{https://github.com/OSU-BMBL/RESEPT}{RESEPT} & Python & \href{https://doi.org/10.1101/2021.07.08.451210}{RESEPT: tissue architecture inference and visualization from spatially resolved transcriptomics} & 2021-07-16\\
 \href{https://github.com/ellispatrick/lisaClust}{\cellcolor{gray!6}{lisaClust}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2021.08.16.456469}{\cellcolor{gray!6}{Spatial analysis for highly multiplexed imaging data to identify tissue microenvironments}} & \cellcolor{gray!6}{2021-08-17}\\
-\href{https://github.com/Shufeyangyi2015310117/SC.MEB}{SC-MEB} & R; C++ & \href{https://doi.org/10.1101/2021.06.05.447181}{SC-MEB: spatial clustering with hidden Markov random field using empirical Bayes} & 2021-09-07\\
+\href{NA}{STGATE} & Python & \href{https://doi.org/10.1101/2021.08.21.457240}{Deciphering spatial domains from spatially resolved transcriptomics with adaptive graph attention auto-encoder} & 2021-09-25\\
+\href{https://github.com/kharchenkolab/Baysor}{\cellcolor{gray!6}{Baysor}} & \cellcolor{gray!6}{Julia} & \href{https://doi.org/10.1038/s41587-021-01044-w}{\cellcolor{gray!6}{Bayesian segmentation of spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2021-10-14}\\
+\href{https://github.com/jianhuupenn/SpaGCN/tree/master/SpaGCN_package}{SpaGCN} & Python & \href{https://doi.org/10.1038/s41592-021-01255-8}{SpaGCN: Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network} & 2021-10-28\\
 \addlinespace
-\href{NA}{\cellcolor{gray!6}{STGATE}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2021.08.21.457240}{\cellcolor{gray!6}{Deciphering spatial domains from spatially resolved transcriptomics with adaptive graph attention auto-encoder}} & \cellcolor{gray!6}{2021-09-25}\\
+\href{https://github.com/Shufeyangyi2015310117/SC.MEB}{\cellcolor{gray!6}{SC-MEB}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1093/bib/bbab466}{\cellcolor{gray!6}{SC-MEB: spatial clustering with hidden Markov random field using empirical Bayes}} & \cellcolor{gray!6}{2021-11-25}\\
 \bottomrule
 \end{longtable}
 
@@ -647,9 +647,9 @@ These studies analyzing subcellular transcript localization were all performed o
 \toprule
 Name & Language & Title & Date published\\
 \midrule
-\href{https://github.com/ludvb/xfuse}{\cellcolor{gray!6}{Xfuse}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.02.28.963413}{\cellcolor{gray!6}{Super-resolved spatial transcriptomics by deep data fusion}} & \cellcolor{gray!6}{2020-03-13}\\
-\href{https://github.com/bryanhe/ST-Net}{ST-Net} & Python & \href{https://doi.org/10.1038/s41551-020-0578-x}{Integrating Spatial Gene Expression and Breast Tumour Morphology via Deep Learning} & 2020-06-22\\
-\href{https://github.com/alonalj/PathoMCH}{\cellcolor{gray!6}{PathoMCH}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41598-020-75708-z}{\cellcolor{gray!6}{Spatial transcriptomics inferred from pathology whole-slide images links tumor heterogeneity to survival in breast and lung cancer}} & \cellcolor{gray!6}{2020-11-02}\\
+\href{https://github.com/bryanhe/ST-Net}{\cellcolor{gray!6}{ST-Net}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41551-020-0578-x}{\cellcolor{gray!6}{Integrating Spatial Gene Expression and Breast Tumour Morphology via Deep Learning}} & \cellcolor{gray!6}{2020-06-22}\\
+\href{https://github.com/alonalj/PathoMCH}{PathoMCH} & Python & \href{https://doi.org/10.1038/s41598-020-75708-z}{Spatial transcriptomics inferred from pathology whole-slide images links tumor heterogeneity to survival in breast and lung cancer} & 2020-11-02\\
+\href{https://github.com/ludvb/xfuse}{\cellcolor{gray!6}{Xfuse}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41587-021-01075-3}{\cellcolor{gray!6}{Super-resolved spatial transcriptomics by deep data fusion}} & \cellcolor{gray!6}{2021-11-29}\\
 \bottomrule
 \end{longtable}
 
