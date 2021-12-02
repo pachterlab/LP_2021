@@ -427,7 +427,7 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 ## date_published 0.0001386  0.0001802   0.769    0.444
 ## 
 ## Residual standard error: 1.649 on 113 degrees of freedom
-##   (15 observations deleted due to missingness)
+##   (16 observations deleted due to missingness)
 ## Multiple R-squared:  0.005202,	Adjusted R-squared:  -0.003601 
 ## F-statistic: 0.5909 on 1 and 113 DF,  p-value: 0.4437
 ```
@@ -521,7 +521,7 @@ The following disadvantages may explain why smFISH based spatial transcriptomics
 
 }
 
-\caption{Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 2 publications.}(\#fig:smfish-langs)
+\caption{Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 5 publications.}(\#fig:smfish-langs)
 \end{figure}
 
 Second, with increasing area of tissue and number of genes covered, smFISH based spatial transcriptomics generates terabytes of images -- for each FOV, there is an image for each channel, z-plane, and round of hybridization. Images from the MERFISH dataset of 40,000 cells and 130 genes took 2 to 3 days to process on a multi-core server, although the number of cores was not stated [@Moffitt2016a]. In contrast, it takes hours, or even just minutes, to process the fastq files of a scRNA-seq dataset to get the gene count matrix [@Melsted2021], nor do the fastq files take up so much disk space. So for the user, processing the most upstream form of data is much more challenging for highly multiplexed smFISH than scRNA-seq. Until 2019, software to process such images and to decode the combinatorial barcodes was typically written in the proprietary programming language MATLAB (Figure \@ref(fig:smfish-langs)), and poorly documented, so it was difficult for people outside the lab of origin to use.
@@ -704,7 +704,7 @@ After its inception, ST has been used in a wide range of clinical pathological t
 
 }
 
-\caption{Number of publications over time, broken down by technique. The facets are ordered by recent usage of the technique. Bin width is 90 days.}(\#fig:array-trend)
+\caption{Number of publications over time, broken down by technique. The facets are ordered by total usage of the technique. Bin width is 90 days.}(\#fig:array-trend)
 \end{figure}
 
 Although introduced fairly recently, after 10X Genomics acquired ST in December 2018, the 10X Visium has quickly gained popularity and spread to multiple institutions (Figure \@ref(fig:n-insts)), and is used by many studies that utilize an array method in late 2020 and 2021 (Figure \@ref(fig:array-map), Figure \@ref(fig:array-trend)). While usage of ST seems concentrated in Sweden, where ST comes from, usage of Visium is more decentralized (Figure \@ref(fig:array-map)). Visium is similar to ST and shares the advantages of ST, but with higher spatial resolution. The spots are 100 $\mu$m apart center to center, each with a diameter of 55 $\mu$m, arranged in a hexagonal configuration (Figure \@ref(fig:array-dims)). After adjusting for spot area, Visium seems to capture somewhat more transcripts and genes compared to ST [@Liu2020a], but more datasets in the same tissues and accounting for sequencing depths are needed to make a fairer comparison. In addition, Visium's growth in popularity may be due to core facilities at multiple institutions providing Visium services [@illinois; @umich; @ncl]. As a new version of ST, Visium was originally designed for fresh frozen OCT embedded tissue and 3' Illumina sequencing. However, Visium has more recently been adapted to FFPE tissue [@Villacampa2020], as well as to Nanopore long read sequencing to quantify isoforms [@Lebrigand2020; @Joglekar2020], although Visium is still predominantly used on fresh frozen tissues for 3' end sequencing (Add figure about FFPE for all current era methods).

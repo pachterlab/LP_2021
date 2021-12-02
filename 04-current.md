@@ -159,7 +159,8 @@ Visium protein & 2021-10-16 & NGS barcoding & Tx wide & Inf\\
 \cellcolor{gray!6}{scStereo-seq} & \cellcolor{gray!6}{2021-10-21} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{Inf}\\
 \addlinespace
 coppaFISH & 2021-10-24 & smFISH & 72 & single cell\\
-\cellcolor{gray!6}{SMI} & \cellcolor{gray!6}{2021-11-04} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{960} & \cellcolor{gray!6}{single cell}\\*
+\cellcolor{gray!6}{SMI} & \cellcolor{gray!6}{2021-11-04} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{960} & \cellcolor{gray!6}{single cell}\\
+Raman2RNA & 2021-12-01 & smFISH & NA & single cell\\*
 \end{longtable}
 
 
