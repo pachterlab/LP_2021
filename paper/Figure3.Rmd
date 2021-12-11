@@ -261,6 +261,6 @@ fig3_bottom <- p3c + p3d +
 ```
 
 ```{r}
-ggsave("fig3.png", fig3, width = 12, height = 14)
+ggsave("fig3.pdf", fig3, width = 12, height = 14)
 ```
 

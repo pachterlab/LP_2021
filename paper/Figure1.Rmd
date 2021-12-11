@@ -55,7 +55,7 @@ events <- read_major_events(update = TRUE)
 ```
 
 ```{r}
-ggsave("fig1.png", fig1, width = 12, height = 13)
+ggsave("fig1.pdf", fig1, width = 12, height = 13)
 ```
 
 ```{r}
