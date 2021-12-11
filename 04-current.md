@@ -132,35 +132,35 @@ Stereo-seq & 2021-01-19 & NGS barcoding & Tx wide & 0.22\\
 Seq-Scope & 2021-01-27 & NGS barcoding & Tx wide & 0.5\\
 \cellcolor{gray!6}{ExSeq} & \cellcolor{gray!6}{2021-01-29} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{297} & \cellcolor{gray!6}{single cell}\\
 BOLORAMIS & 2021-03-08 & ISS & 96 & single cell\\
-\cellcolor{gray!6}{EASI-FISH} & \cellcolor{gray!6}{2021-03-08} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{26} & \cellcolor{gray!6}{single cell}\\
+\cellcolor{gray!6}{Pick-Seq} & \cellcolor{gray!6}{2021-03-09} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 \addlinespace
-Pick-Seq & 2021-03-09 & ROI selection & Tx wide & NA\\
-\cellcolor{gray!6}{nanoneedles} & \cellcolor{gray!6}{2021-03-10} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{9} & \cellcolor{gray!6}{NA}\\
-PIXEL-seq & 2021-03-17 & NGS barcoding & Tx wide & 1.22\\
-\cellcolor{gray!6}{CISI} & \cellcolor{gray!6}{2021-04-15} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{37} & \cellcolor{gray!6}{single cell}\\
-STRP-seq & 2021-04-19 & ROI selection & Tx wide & NA\\
+nanoneedles & 2021-03-10 & ROI selection & 9 & NA\\
+\cellcolor{gray!6}{PIXEL-seq} & \cellcolor{gray!6}{2021-03-17} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{1.22}\\
+CISI & 2021-04-15 & smFISH & 37 & single cell\\
+\cellcolor{gray!6}{STRP-seq} & \cellcolor{gray!6}{2021-04-19} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+XYZeq & 2021-04-21 & NGS barcoding & Tx wide & 500\\
 \addlinespace
-\cellcolor{gray!6}{XYZeq} & \cellcolor{gray!6}{2021-04-21} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{500}\\
-electro-seq & 2021-04-23 & ISS & 201 & single cell\\
-\cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2021-04-30} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-ClumpSeq & 2021-05-24 & De novo & NA & NA\\
-\cellcolor{gray!6}{Halo-seq} & \cellcolor{gray!6}{2021-06-08} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
-\addlinespace
+\cellcolor{gray!6}{electro-seq} & \cellcolor{gray!6}{2021-04-23} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{201} & \cellcolor{gray!6}{single cell}\\
+centrifugation on 384 well plate & 2021-04-30 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{ClumpSeq} & \cellcolor{gray!6}{2021-05-24} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
 MOSAICA & 2021-06-23 & smFISH & 10 & single cell\\
 \cellcolor{gray!6}{sci-Space} & \cellcolor{gray!6}{2021-07-02} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{73.2}\\
+\addlinespace
 PIC & 2021-07-20 & ROI selection & Tx wide & NA\\
 \cellcolor{gray!6}{par-seqFISH} & \cellcolor{gray!6}{2021-08-13} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{105} & \cellcolor{gray!6}{single cell}\\
 SPACECAT & 2021-08-17 & ROI selection & Tx wide & NA\\
-\addlinespace
 \cellcolor{gray!6}{Space-TREX} & \cellcolor{gray!6}{2021-09-01} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
 RNAscope & 2021-09-29 & smFISH & 95 & single cell\\
+\addlinespace
 \cellcolor{gray!6}{Molecular Cartography} & \cellcolor{gray!6}{2021-10-12} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{100} & \cellcolor{gray!6}{single cell}\\
 Visium protein & 2021-10-16 & NGS barcoding & Tx wide & Inf\\
 \cellcolor{gray!6}{scStereo-seq} & \cellcolor{gray!6}{2021-10-21} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{Inf}\\
-\addlinespace
 coppaFISH & 2021-10-24 & smFISH & 72 & single cell\\
 \cellcolor{gray!6}{SMI} & \cellcolor{gray!6}{2021-11-04} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{960} & \cellcolor{gray!6}{single cell}\\
-Raman2RNA & 2021-12-01 & smFISH & NA & single cell\\*
+\addlinespace
+Raman2RNA & 2021-12-01 & smFISH & 9 & single cell\\
+\cellcolor{gray!6}{EASI-FISH} & \cellcolor{gray!6}{2021-12-06} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{26} & \cellcolor{gray!6}{single cell}\\
+Halo-seq & 2021-12-07 & De novo & NA & NA\\*
 \end{longtable}
 
 
