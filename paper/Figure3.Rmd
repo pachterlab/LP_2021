@@ -56,21 +56,15 @@ smfish <- read_metadata("smFISH", update = TRUE)
 ```
 
 ```{r}
-smfish <- smfish %>% 
-  mutate(mask = case_when(n_genes > 5000 ~ "1",
-                          TRUE ~ "2"))
-```
-
-```{r}
 (p3c <- ggplot(smfish, aes(date_published, n_genes)) +
   geom_point(aes(color = method), alpha = 0.5) +
   geom_text_repel(aes(label = method, color = method), segment.alpha = 0.5,
-                  max.overlaps = 10) +
+                  max.overlaps = 20) +
   geom_smooth(method = "lm") +
   labs(x = "Date published", title = "Number of genes per dataset",
        y = NULL) +
   theme(legend.position = "none") +
-  scale_y_log10() +
+  scale_y_log10(expand = expansion(mult = c(0.1, 0.2))) +
   annotation_logticks(sides = "l"))
 ```
 
