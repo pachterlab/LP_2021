@@ -248,9 +248,9 @@ Name & Language & Title & Date published\\
 \href{https://github.com/jbergenstrahle/STUtility}{STUtility} & R & \href{https://doi.org/10.1186/s12864-020-06832-3}{Seamless integration of image and molecular analysis for spatial transcriptomics workflows} & 2020-07-16\\
 \href{https://github.com/theMILOlab/SPATA}{\cellcolor{gray!6}{SPATA}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2020.10.20.346544}{\cellcolor{gray!6}{Inferring spatially transient gene expression pattern from spatial transcriptomic studies}} & \cellcolor{gray!6}{2020-10-21}\\
 \addlinespace
-\href{https://github.com/theislab/squidpy}{Squidpy} & Python & \href{https://doi.org/10.1101/2021.02.19.431994}{Squidpy: a scalable framework for spatial single cell analysis} & 2021-02-20\\
-\href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
-\href{https://bioconductor.org/packages/SpatialExperiment}{SpatialExperiment} & R & \href{https://doi.org/10.1101/2021.01.27.428431}{SpatialExperiment: infrastructure for spatially resolved transcriptomics data in R using Bioconductor} & 2021-08-18\\
+\href{https://github.com/RubD/Giotto}{Giotto} & R & \href{https://doi.org/10.1186/s13059-021-02286-2}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data} & 2021-03-08\\
+\href{https://bioconductor.org/packages/SpatialExperiment}{\cellcolor{gray!6}{SpatialExperiment}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2021.01.27.428431}{\cellcolor{gray!6}{SpatialExperiment: infrastructure for spatially resolved transcriptomics data in R using Bioconductor}} & \cellcolor{gray!6}{2022-01-31}\\
+\href{https://github.com/theislab/squidpy}{Squidpy} & Python & \href{https://doi.org/10.1038/s41592-021-01358-2}{Squidpy: a scalable framework for spatial single cell analysis} & 2022-01-31\\
 \bottomrule
 \end{longtable}
 

@@ -165,7 +165,9 @@ SMI & 2022-01-02 & smFISH & 960 & single cell\\
 MOSAICA & 2022-01-10 & smFISH & 10 & single cell\\
 \addlinespace
 \cellcolor{gray!6}{EEL FISH} & \cellcolor{gray!6}{2022-01-13} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{445} & \cellcolor{gray!6}{single cell}\\
-STARmap PLUS & 2022-01-16 & ISS & 2766 & single cell\\*
+STARmap PLUS & 2022-01-16 & ISS & 2766 & single cell\\
+\cellcolor{gray!6}{LoRNA} & \cellcolor{gray!6}{2022-01-25} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+manual dissection with velocimetry and cell tracking & 2022-01-31 & ROI selection & Tx wide & NA\\*
 \end{longtable}
 
 
