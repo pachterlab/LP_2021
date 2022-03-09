@@ -64,7 +64,7 @@ data_sheets <- data_sheets %>%
 
 ```{r}
 methods_current <- data_sheets %>% 
-  select(title, date_published, method, sheet, era, institution) %>% 
+  select(title, date_published, method, sheet, era, short_name) %>% 
   filter(!is.na(method), era == "current") %>% 
   distinct()
 ```
@@ -330,7 +330,7 @@ While a few techniques other than LCM have become popular, such as ISS (2013), T
 
 ```{r n-insts, fig.width=6, fig.height=3, fig.cap="Techniques used by at least 3 institutions and the number of institutions that have used them."}
 methods_current %>% 
-  select(institution, method) %>% 
+  select(short_name, method) %>% 
   distinct() %>% 
   mutate(method = fct_lump_min(method, 3)) %>% 
   filter(!method %in% c("LCM", "Other")) %>% 
@@ -340,7 +340,7 @@ methods_current %>%
 
 ```{r}
 xmax_current <- methods_current %>% 
-  select(institution, method) %>% 
+  select(short_name, method) %>% 
   distinct() %>% 
   count(method) %>% 
   slice_max(n, n = 1) %>% 
@@ -349,7 +349,7 @@ xmax_current <- methods_current %>%
 
 ```{r}
 methods_prequel <- data_sheets %>% 
-  select(title, date_published, method, sheet, era, country:institution) %>% 
+  select(title, date_published, method, sheet, era, country:short_name) %>% 
   filter(!is.na(method), era == "prequel") %>% 
   distinct()
 ```
@@ -357,7 +357,7 @@ methods_prequel <- data_sheets %>%
 ```{r n-insts-prequel, fig.width=6, fig.height=3, fig.cap="Prequel techniques used by at least 3 institutions and the number of institutions that have used them."}
 methods_prequel %>% 
   unnest_cat(method) %>% 
-  select(institution, method) %>% 
+  select(short_name, method) %>% 
   distinct() %>% 
   mutate(method = fct_lump_min(method, 3)) %>% 
   filter(!method %in% c("LCM", "Other")) %>% 
@@ -371,7 +371,7 @@ Protocols of WMISH (as used in GEISHA) [@Bell2004], ISH (as used in GenePaint an
 
 ```{r}
 n_insts <- methods_current %>% 
-  select(institution, method) %>% 
+  select(short_name, method) %>% 
   distinct() %>% 
   count(method)
 ```
