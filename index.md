@@ -3,7 +3,7 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses
   - Lior Pachter
-date: "2022-02-03"
+date: "2022-03-09"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
