@@ -356,7 +356,7 @@ methods_prequel <- data_sheets %>%
 
 ```{r n-insts-prequel, fig.width=6, fig.height=3, fig.cap="Prequel techniques used by at least 3 institutions and the number of institutions that have used them."}
 methods_prequel %>% 
-  unnest_cat(method) %>% 
+  unnest_cat(method, other_cols = "short_name") %>% 
   select(short_name, method) %>% 
   distinct() %>% 
   mutate(method = fct_lump_min(method, 3)) %>% 
