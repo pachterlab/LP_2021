@@ -1,7 +1,10 @@
 bookdown::bs4_book:
   theme:
     primary: "#B070D5"
-  repo: https://github.com/pachterlab/LP_2021/tree/main/supplement
+  repo:
+    base: https://github.com/pachterlab/LP_2021
+    branch: main
+    subdir: supplement
 bookdown::pdf_book:
   latex_engine: xelatex
   keep_tex: no
