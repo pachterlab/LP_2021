@@ -148,7 +148,7 @@ par-seqFISH & 2021-08-13 & smFISH & 105 & single cell\\
 \addlinespace
 RNAscope & 2021-09-29 & smFISH & 95 & single cell\\
 \cellcolor{gray!6}{Molecular Cartography} & \cellcolor{gray!6}{2021-10-12} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{100} & \cellcolor{gray!6}{single cell}\\
-Visium protein & 2021-10-16 & NGS barcoding & Tx wide & Inf\\
+Visium protein & 2021-10-16 & NGS barcoding & Tx wide & 55\\
 \cellcolor{gray!6}{scStereo-seq} & \cellcolor{gray!6}{2021-10-21} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{Inf}\\
 coppaFISH & 2021-10-24 & smFISH & 72 & single cell\\
 \addlinespace
@@ -166,9 +166,15 @@ LoRNA & 2022-01-25 & De novo & NA & NA\\
 \addlinespace
 \cellcolor{gray!6}{manual dissection with velocimetry and cell tracking} & \cellcolor{gray!6}{2022-01-31} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 SM-Omics & 2022-02-10 & NGS barcoding & Tx wide & 100\\
-\cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2022-02-23} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-Space-TREX & 2022-02-24 & NGS barcoding & Tx wide & 55\\
-\cellcolor{gray!6}{MERR APEX-seq} & \cellcolor{gray!6}{2022-03-03} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\*
+\cellcolor{gray!6}{FUNseq} & \cellcolor{gray!6}{2022-02-22} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+centrifugation on 384 well plate & 2022-02-23 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{Space-TREX} & \cellcolor{gray!6}{2022-02-24} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
+\addlinespace
+MERR APEX-seq & 2022-03-03 & De novo & NA & NA\\
+\cellcolor{gray!6}{vCatFISH} & \cellcolor{gray!6}{2022-03-16} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{single cell}\\
+clampFISH 2.0 & 2022-03-17 & smFISH & 10 & single cell\\
+\cellcolor{gray!6}{SPOTS} & \cellcolor{gray!6}{2022-03-18} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
+TATTOO-seq & 2022-03-20 & ROI selection & Tx wide & NA\\*
 \end{longtable}
 
 

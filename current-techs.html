@@ -8,7 +8,7 @@
 <meta name="author" content="Lambda Moses">
 <meta name="author" content="Lior Pachter">
 <meta name="description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Current era technologies | Museum of Spatial Transcriptomics">
 <meta property="og:type" content="book">
 <meta property="og:description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
@@ -19,7 +19,10 @@
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -57,7 +60,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/pachterlab/LP_2021/tree/main/supplement">View book source <i class="fab fa-github"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/pachterlab/LP_2021">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -377,17 +380,17 @@ Figure 5.23: Number of genes per datasets in each study, over time. Gray ribbon 
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.9972 -1.1094 -0.0376  0.4646  4.6818 
+## -3.9694 -1.1017 -0.0443  0.4935  4.6905 
 ## 
 ## Coefficients:
 ##                 Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    2.0070131  3.0542059   0.657    0.512
-## date_published 0.0001446  0.0001675   0.863    0.390
+## (Intercept)    2.4055915  2.9719877   0.809    0.420
+## date_published 0.0001216  0.0001627   0.748    0.456
 ## 
-## Residual standard error: 1.614 on 124 degrees of freedom
+## Residual standard error: 1.602 on 130 degrees of freedom
 ##   (16 observations deleted due to missingness)
-## Multiple R-squared:  0.005973,   Adjusted R-squared:  -0.002043 
-## F-statistic: 0.7451 on 1 and 124 DF,  p-value: 0.3897</code></pre>
+## Multiple R-squared:  0.004282,   Adjusted R-squared:  -0.003377 
+## F-statistic: 0.5591 on 1 and 130 DF,  p-value: 0.456</code></pre>
 <p>How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:smfish-lm-cell"></span>
@@ -402,18 +405,18 @@ Figure 5.24: Total number of cells per study profiled by smFISH based techniques
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.9648 -1.4159 -0.1816  1.5183  4.7091 
+## -4.1498 -1.5026 -0.2861  1.5579  4.6389 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)    -2.025e+01  7.024e+00  -2.883 0.006881 ** 
-## date_published  1.646e-03  3.886e-04   4.235 0.000172 ***
+## (Intercept)    -2.209e+01  6.810e+00  -3.244  0.00259 ** 
+## date_published  1.753e-03  3.757e-04   4.667 4.37e-05 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.145 on 33 degrees of freedom
-## Multiple R-squared:  0.3522, Adjusted R-squared:  0.3325 
-## F-statistic: 17.94 on 1 and 33 DF,  p-value: 0.0001717</code></pre>
+## Residual standard error: 2.14 on 35 degrees of freedom
+## Multiple R-squared:  0.3836, Adjusted R-squared:  0.366 
+## F-statistic: 21.78 on 1 and 35 DF,  p-value: 4.371e-05</code></pre>
 <p>MERFISH is the smFISH based technique used in the most institutions (Figure <a href="current.html#fig:n-insts">4.7</a>), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure <a href="current-techs.html#fig:smfish-n-insts">5.26</a>). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table <a href="current-techs.html#tab:table2">5.1</a>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:smfish-trend"></span>
@@ -905,8 +908,8 @@ Figure 5.42: Record spot diameter of array based methods over time.
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/pachterlab/LP_2021/tree/main/supplement/blob/master/05-current-techs.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/pachterlab/LP_2021/tree/main/supplement/edit/master/05-current-techs.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/pachterlab/LP_2021/blob/main/supplement/05-current-techs.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/pachterlab/LP_2021/edit/main/supplement/05-current-techs.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -918,7 +921,7 @@ Figure 5.42: Record spot diameter of array based methods over time.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2022-03-10.</p>
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2022-03-22.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
