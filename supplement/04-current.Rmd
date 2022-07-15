@@ -111,7 +111,7 @@ table1 <- table1 %>%
 table1 <- table1 %>% 
   mutate(min_spot_diam = as.character(min_spot_diam),
          min_spot_diam = case_when(
-           !is.na(min_spot_diam) ~ min_spot_diam,
+           !is.na(min_spot_diam) & min_spot_diam != "Inf" ~ min_spot_diam,
            category %in% c("smFISH", "ISS") ~ "single cell",
            TRUE ~ NA_character_
          ))
@@ -393,7 +393,7 @@ labels_use[!labels_use %in% labeled] <- ""
 ```{r n-insts-hist, fig.height=4, fig.width=7, fig.cap="Number of new methods per year, colored by the number of institutions that have used the method."}
 new_methods %>% 
    filter(method != "LCM") %>% 
-   pubs_per_year(preprints = TRUE, fill_by = "n") +
+   pubs_per_year(preprints = TRUE, fill_by = "n", log_color = TRUE) +
    labs(y = "Number of new methods", x = "Date first published",
         fill = "Number of\ninstitutions")
 ```
