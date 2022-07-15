@@ -694,7 +694,7 @@ pca_plt <- pca_df %>%
 ```
 
 ```{r}
-shapes <- c(16,17,15,18,4,5,8,9)
+shapes <- c(16,17,15,18,4,5,8,9,1)
 ```
 
 ```{r pc12, fig.width=9, fig.height=6, fig.cap="Projection of word embeddings into the first 2 PCs. Each point is a word occuring over 30 times in the corpus. Not all words are labeled to avoid overlaps in the labels. Words and points are colored by Louvain clusters.", out.width="100%"}
