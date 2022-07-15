@@ -155,7 +155,7 @@ EASI-FISH & 2021-12-06 & smFISH & 26 & single cell\\
 \cellcolor{gray!6}{Halo-seq} & \cellcolor{gray!6}{2021-12-07} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
 OpTAG-seq & 2021-12-30 & ROI selection & Tx wide & NA\\
 \cellcolor{gray!6}{SMI} & \cellcolor{gray!6}{2022-01-02} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{960} & \cellcolor{gray!6}{single cell}\\
-SiT & 2022-01-05 & NGS barcoding & Tx wide & Inf\\
+SiT & 2022-01-05 & NGS barcoding & Tx wide & 55\\
 \cellcolor{gray!6}{MOSAICA} & \cellcolor{gray!6}{2022-01-10} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
 EEL FISH & 2022-01-13 & smFISH & 445 & single cell\\
@@ -176,9 +176,9 @@ TATTOO-seq & 2022-03-20 & ROI selection & Tx wide & NA\\
 \cellcolor{gray!6}{SPARC-seq} & \cellcolor{gray!6}{2022-03-23} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{50}\\
 Spatial-CITE-seq & 2022-04-02 & NGS barcoding & Tx wide & 25\\
 \addlinespace
-\cellcolor{gray!6}{GPS-seq} & \cellcolor{gray!6}{2022-04-05} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{Inf}\\
+\cellcolor{gray!6}{GPS-seq} & \cellcolor{gray!6}{2022-04-05} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 STRS & 2022-04-21 & NGS barcoding & Tx wide & 55\\
-\cellcolor{gray!6}{scStereo-seq} & \cellcolor{gray!6}{2022-05-04} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{Inf}\\
+\cellcolor{gray!6}{scStereo-seq} & \cellcolor{gray!6}{2022-05-04} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{0.22}\\
 Select-seq & 2022-05-09 & ROI selection & Tx wide & NA\\
 \cellcolor{gray!6}{HybRISS} & \cellcolor{gray!6}{2022-05-13} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{50} & \cellcolor{gray!6}{single cell}\\
 \addlinespace

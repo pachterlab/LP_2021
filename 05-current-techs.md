@@ -483,6 +483,8 @@ MERFISH is the smFISH based technique used in the most institutions (Figure \@re
 
 
 
+
+
 \begin{figure}
 
 {\centering \includegraphics{05-current-techs_files/figure-latex/smfish-n-insts-1} 
