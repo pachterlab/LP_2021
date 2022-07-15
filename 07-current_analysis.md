@@ -249,8 +249,8 @@ Name & Language & Title & Date published\\
 \href{https://github.com/theMILOlab/SPATA}{\cellcolor{gray!6}{SPATA}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2020.10.20.346544}{\cellcolor{gray!6}{Inferring spatially transient gene expression pattern from spatial transcriptomic studies}} & \cellcolor{gray!6}{2020-10-21}\\
 \addlinespace
 \href{https://github.com/RubD/Giotto}{Giotto} & R & \href{https://doi.org/10.1186/s13059-021-02286-2}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data} & 2021-03-08\\
-\href{https://bioconductor.org/packages/SpatialExperiment}{\cellcolor{gray!6}{SpatialExperiment}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2021.01.27.428431}{\cellcolor{gray!6}{SpatialExperiment: infrastructure for spatially resolved transcriptomics data in R using Bioconductor}} & \cellcolor{gray!6}{2022-01-31}\\
-\href{https://github.com/theislab/squidpy}{Squidpy} & Python & \href{https://doi.org/10.1038/s41592-021-01358-2}{Squidpy: a scalable framework for spatial single cell analysis} & 2022-01-31\\
+\href{https://github.com/theislab/squidpy}{\cellcolor{gray!6}{Squidpy}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41592-021-01358-2}{\cellcolor{gray!6}{Squidpy: a scalable framework for spatial single cell analysis}} & \cellcolor{gray!6}{2022-01-31}\\
+\href{https://bioconductor.org/packages/SpatialExperiment}{SpatialExperiment} & R & \href{https://doi.org/10.1093/bioinformatics/btac299}{SpatialExperiment: infrastructure for spatially resolved transcriptomics data in R using Bioconductor} & 2022-04-28\\
 \bottomrule
 \end{longtable}
 
@@ -374,13 +374,13 @@ Name & Language & Title & Date published\\
 \addlinespace
 \href{https://github.com/dmcable/RCTD}{RCTD} & R & \href{https://doi.org/10.1038/s41587-021-00830-w}{Robust decomposition of cell type mixtures in spatial transcriptomics} & 2021-02-18\\
 \href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
-\href{https://github.com/YosefLab/scvi-tools}{DestVI} & Python & \href{https://doi.org/10.1101/2021.05.10.443517}{Multi-resolution deconvolution of spatial transcriptomics data reveals continuous patterns of inflammation} & 2021-05-11\\
-\href{https://github.com/TaoYang-dev/AdRoit}{\cellcolor{gray!6}{AdRoit}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s42003-021-02739-1}{\cellcolor{gray!6}{AdRoit is an accurate and robust method to infer complex transcriptome composition}} & \cellcolor{gray!6}{2021-10-22}\\
-\href{https://github.com/broadinstitute/Tangram}{Tangram} & Python & \href{https://doi.org/10.1038/s41592-021-01264-7}{Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram} & 2021-10-28\\
-\addlinespace
-\href{https://github.com/JEFworks-Lab/STdeconvolve}{\cellcolor{gray!6}{STdeconvolve}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2021.06.15.448381}{\cellcolor{gray!6}{Reference-free cell-type deconvolution of pixel-resolution spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2021-11-10}\\
+\href{https://github.com/TaoYang-dev/AdRoit}{AdRoit} & R & \href{https://doi.org/10.1038/s42003-021-02739-1}{AdRoit is an accurate and robust method to infer complex transcriptome composition} & 2021-10-22\\
+\href{https://github.com/broadinstitute/Tangram}{\cellcolor{gray!6}{Tangram}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41592-021-01264-7}{\cellcolor{gray!6}{Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram}} & \cellcolor{gray!6}{2021-10-28}\\
 \href{https://github.com/Nanostring-Biostats/SpatialDecon/}{SpatialDecon} & R & \href{https://doi.org/10.1038/s41467-022-28020-5}{Advances in mixed cell deconvolution enable quantification of cell types in spatially-resolved gene expression data} & 2022-01-19\\
+\addlinespace
 \href{https://github.com/DongqingSun96/STRIDE}{\cellcolor{gray!6}{STRIDE}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/nar/gkac150}{\cellcolor{gray!6}{STRIDE: accurately decomposing and integrating spatial transcriptomics using single-cell RNA sequencing}} & \cellcolor{gray!6}{2022-03-07}\\
+\href{https://github.com/YosefLab/scvi-tools}{DestVI} & Python & \href{https://doi.org/10.1101/2021.05.10.443517}{DestVI identifies continuums of cell types in spatial transcriptomics data} & 2022-04-21\\
+\href{https://github.com/JEFworks-Lab/STdeconvolve}{\cellcolor{gray!6}{STdeconvolve}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41467-022-30033-z}{\cellcolor{gray!6}{Reference-free cell-type deconvolution of pixel-resolution spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2022-04-29}\\
 \bottomrule
 \end{longtable}
 
@@ -519,11 +519,9 @@ Name & Language & Title & Date published\\
 \addlinespace
 \href{https://github.com/OSU-BMBL/RESEPT}{RESEPT} & Python & \href{https://doi.org/10.1101/2021.07.08.451210}{RESEPT: tissue architecture inference and visualization from spatially resolved transcriptomics} & 2021-07-16\\
 \href{https://github.com/ellispatrick/lisaClust}{\cellcolor{gray!6}{lisaClust}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2021.08.16.456469}{\cellcolor{gray!6}{Spatial analysis for highly multiplexed imaging data to identify tissue microenvironments}} & \cellcolor{gray!6}{2021-08-17}\\
-\href{NA}{STGATE} & Python & \href{https://doi.org/10.1101/2021.08.21.457240}{Deciphering spatial domains from spatially resolved transcriptomics with adaptive graph attention auto-encoder} & 2021-09-25\\
-\href{https://github.com/kharchenkolab/Baysor}{\cellcolor{gray!6}{Baysor}} & \cellcolor{gray!6}{Julia} & \href{https://doi.org/10.1038/s41587-021-01044-w}{\cellcolor{gray!6}{Bayesian segmentation of spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2021-10-14}\\
-\href{https://github.com/jianhuupenn/SpaGCN/tree/master/SpaGCN_package}{SpaGCN} & Python & \href{https://doi.org/10.1038/s41592-021-01255-8}{SpaGCN: Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network} & 2021-10-28\\
-\addlinespace
-\href{https://github.com/Shufeyangyi2015310117/SC.MEB}{\cellcolor{gray!6}{SC-MEB}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1093/bib/bbab466}{\cellcolor{gray!6}{SC-MEB: spatial clustering with hidden Markov random field using empirical Bayes}} & \cellcolor{gray!6}{2021-11-25}\\
+\href{https://github.com/kharchenkolab/Baysor}{Baysor} & Julia & \href{https://doi.org/10.1038/s41587-021-01044-w}{Bayesian segmentation of spatially resolved transcriptomics data} & 2021-10-14\\
+\href{https://github.com/jianhuupenn/SpaGCN/tree/master/SpaGCN_package}{\cellcolor{gray!6}{SpaGCN}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41592-021-01255-8}{\cellcolor{gray!6}{SpaGCN: Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network}} & \cellcolor{gray!6}{2021-10-28}\\
+\href{https://github.com/Shufeyangyi2015310117/SC.MEB}{SC-MEB} & R; C++ & \href{https://doi.org/10.1093/bib/bbab466}{SC-MEB: spatial clustering with hidden Markov random field using empirical Bayes} & 2021-11-25\\
 \bottomrule
 \end{longtable}
 
@@ -576,12 +574,12 @@ Name & Language & Title & Date published\\
 \midrule
 \href{https://github.com/damienArnol/svca}{\cellcolor{gray!6}{SVCA}} & \cellcolor{gray!6}{R; Python; C; C++; Fortran} & \href{https://doi.org/10.1016/j.celrep.2019.08.077}{\cellcolor{gray!6}{Modeling Cell-Cell Interactions from Spatial Molecular Data with Spatial Variance Component Analysis}} & \cellcolor{gray!6}{2019-10-01}\\
 \href{https://github.com/zcang/SpaOTsc}{SpaOTsc} & Python & \href{https://doi.org/10.1038/s41467-020-15968-5}{Inferring spatial and signaling relationships between cells from single cell transcriptomic data} & 2020-04-29\\
-\href{https://github.com/saezlab/misty/}{\cellcolor{gray!6}{MISTy}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2020.05.08.084145}{\cellcolor{gray!6}{Explainable multi-view framework for dissecting inter-cellular signaling from highly multiplexed spatial data}} & \cellcolor{gray!6}{2020-05-10}\\
-\href{NA}{stLearn} & Python & \href{https://doi.org/10.1101/2020.05.31.125658}{stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues} & 2020-05-31\\
-\href{https://github.com/livnatje/DIALOGUE}{\cellcolor{gray!6}{DIALOGUE}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2020.08.11.245472}{\cellcolor{gray!6}{Mapping multicellular programs from single-cell profiles}} & \cellcolor{gray!6}{2020-08-11}\\
-\addlinespace
+\href{NA}{\cellcolor{gray!6}{stLearn}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.05.31.125658}{\cellcolor{gray!6}{stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues}} & \cellcolor{gray!6}{2020-05-31}\\
 \href{https://github.com/xiaoyeye/GCNG}{GCNG} & Python & \href{https://doi.org/10.1186/s13059-020-02214-w}{GCNG: Graph convolutional networks for inferring cell-cell interactions} & 2020-12-10\\
 \href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
+\addlinespace
+\href{https://github.com/saezlab/misty/}{MISTy} & R & \href{https://doi.org/10.1186/s13059-022-02663-5}{Explainable multiview framework for dissecting spatial relationships from highly multiplexed data} & 2022-04-14\\
+\href{https://github.com/livnatje/DIALOGUE}{\cellcolor{gray!6}{DIALOGUE}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41587-022-01288-0}{\cellcolor{gray!6}{DIALOGUE maps multicellular programs in tissue from single-cell or spatial transcriptomics data}} & \cellcolor{gray!6}{2022-05-05}\\
 \bottomrule
 \end{longtable}
 
@@ -612,10 +610,10 @@ Like SVCA, Multiview Intercellular SpaTial modeling framework (MISTy) [@Tanevski
 Name & Language & Title & Date published\\
 \midrule
 \href{https://github.com/zcang/SpaOTsc}{\cellcolor{gray!6}{SpaOTsc}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41467-020-15968-5}{\cellcolor{gray!6}{Inferring spatial and signaling relationships between cells from single cell transcriptomic data}} & \cellcolor{gray!6}{2020-04-29}\\
-\href{https://github.com/saezlab/misty/}{MISTy} & R & \href{https://doi.org/10.1101/2020.05.08.084145}{Explainable multi-view framework for dissecting inter-cellular signaling from highly multiplexed spatial data} & 2020-05-10\\
-\href{https://bioconductor.org/packages/release/bioc/html/scHOT.html}{\cellcolor{gray!6}{scHOT}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41592-020-0885-x}{\cellcolor{gray!6}{Investigating higher-order interactions in single-cell data with scHOT}} & \cellcolor{gray!6}{2020-07-13}\\
-\href{https://github.com/doraadong/MESSI}{MESSI} & Python & \href{https://doi.org/10.1093/bioinformatics/btaa769}{Identifying signaling genes in spatial single cell expression data} & 2020-09-04\\
-\href{https://github.com/xiaoyeye/GCNG}{\cellcolor{gray!6}{GCNG}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1186/s13059-020-02214-w}{\cellcolor{gray!6}{GCNG: Graph convolutional networks for inferring cell-cell interactions}} & \cellcolor{gray!6}{2020-12-10}\\
+\href{https://bioconductor.org/packages/release/bioc/html/scHOT.html}{scHOT} & R & \href{https://doi.org/10.1038/s41592-020-0885-x}{Investigating higher-order interactions in single-cell data with scHOT} & 2020-07-13\\
+\href{https://github.com/doraadong/MESSI}{\cellcolor{gray!6}{MESSI}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/bioinformatics/btaa769}{\cellcolor{gray!6}{Identifying signaling genes in spatial single cell expression data}} & \cellcolor{gray!6}{2020-09-04}\\
+\href{https://github.com/xiaoyeye/GCNG}{GCNG} & Python & \href{https://doi.org/10.1186/s13059-020-02214-w}{GCNG: Graph convolutional networks for inferring cell-cell interactions} & 2020-12-10\\
+\href{https://github.com/saezlab/misty/}{\cellcolor{gray!6}{MISTy}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-022-02663-5}{\cellcolor{gray!6}{Explainable multiview framework for dissecting spatial relationships from highly multiplexed data}} & \cellcolor{gray!6}{2022-04-14}\\
 \bottomrule
 \end{longtable}
 
