@@ -478,8 +478,13 @@ smfish_methods_cnt <- smfish_methods %>%
   count(method)
 ```
 
+```{r}
+smfish_methods_cnt <- smfish_methods_cnt %>% 
+  mutate(y_use = factor(n, levels = as.character(rev(seq_len(max(n))))))
+```
+
 ```{r smfish-n-insts, fig.width=6, fig.height=3, fig.cap="Number of techniques that have been used by each number of institutions; most techniques have only been used by 1 institution, i.e. the institution of origin."}
-ggplot(smfish_methods_cnt, aes(factor(n, levels = as.character(7:1)))) +
+ggplot(smfish_methods_cnt, aes(y_use)) +
    geom_bar() +
    scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
    labs(title = "Number of institutions using a technique", y = "Number of techniques",
