@@ -330,12 +330,14 @@ While a few techniques other than LCM have become popular, such as ISS (2013), T
 
 ```{r n-insts, fig.width=6, fig.height=3, fig.cap="Techniques used by at least 3 institutions and the number of institutions that have used them."}
 methods_current %>% 
-  select(short_name, method) %>% 
+  select(short_name, method, sheet) %>% 
   distinct() %>% 
   mutate(method = fct_lump_min(method, 3)) %>% 
   filter(!method %in% c("LCM", "Other")) %>% 
-  pubs_per_cat(method) +
-  labs(y = "Number of institutions using the method")
+  pubs_per_cat(method, fill_by = sheet) +
+  scale_fill_manual(values = setNames(scales::brewer_pal(palette = "Set2")(6)[2:5], c("ROI selection", "NGS barcoding", "smFISH", "ISS"))) +
+  labs(y = "Number of institutions using the method", 
+       fill = "Category")
 ```
 
 ```{r}
