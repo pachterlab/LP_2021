@@ -183,7 +183,9 @@ Select-seq & 2022-05-09 & ROI selection & Tx wide & NA\\
 \cellcolor{gray!6}{HybRISS} & \cellcolor{gray!6}{2022-05-13} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{50} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
 punch2 & 2022-06-17 & ROI selection & Tx wide & NA\\
-\cellcolor{gray!6}{STcEM} & \cellcolor{gray!6}{2022-06-27} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{287} & \cellcolor{gray!6}{single cell}\\*
+\cellcolor{gray!6}{STcEM} & \cellcolor{gray!6}{2022-06-27} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{287} & \cellcolor{gray!6}{single cell}\\
+SmT & 2022-07-18 & NGS barcoding & Tx wide & 55\\
+\cellcolor{gray!6}{SHM-seq} & \cellcolor{gray!6}{2022-07-19} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{100}\\*
 \end{longtable}
 
 
