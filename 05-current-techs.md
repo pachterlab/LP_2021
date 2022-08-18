@@ -419,17 +419,19 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.9009 -1.1861  0.0428  0.6741  4.7062 
+## -3.7989 -1.1239  0.1283  0.6180  4.7330 
 ## 
 ## Coefficients:
-##                 Estimate Std. Error t value Pr(>|t|)
-## (Intercept)    3.511e+00  2.874e+00   1.222    0.224
-## date_published 5.835e-05  1.567e-04   0.372    0.710
+##                  Estimate Std. Error t value Pr(>|t|)  
+## (Intercept)     5.082e+00  2.825e+00   1.799   0.0741 .
+## date_published -3.178e-05  1.537e-04  -0.207   0.8365  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.604 on 139 degrees of freedom
+## Residual standard error: 1.619 on 146 degrees of freedom
 ##   (18 observations deleted due to missingness)
-## Multiple R-squared:  0.000996,	Adjusted R-squared:  -0.006191 
-## F-statistic: 0.1386 on 1 and 139 DF,  p-value: 0.7103
+## Multiple R-squared:  0.0002928,	Adjusted R-squared:  -0.006555 
+## F-statistic: 0.04276 on 1 and 146 DF,  p-value: 0.8365
 ```
 
 How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.
@@ -454,18 +456,18 @@ After log transforming the total number of cells per study (when reported), whos
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -4.1326 -1.4943 -0.2767  1.5612  4.6446 
+## -4.8769 -1.4920 -0.1243  1.8168  4.7339 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)    -2.191e+01  6.549e+00  -3.345   0.0019 ** 
-## date_published  1.742e-03  3.601e-04   4.838 2.32e-05 ***
+## (Intercept)    -1.946e+01  6.779e+00   -2.87 0.006667 ** 
+## date_published  1.600e-03  3.721e-04    4.30 0.000115 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.119 on 37 degrees of freedom
-## Multiple R-squared:  0.3875,	Adjusted R-squared:  0.3709 
-## F-statistic: 23.41 on 1 and 37 DF,  p-value: 2.323e-05
+## Residual standard error: 2.234 on 38 degrees of freedom
+## Multiple R-squared:  0.3273,	Adjusted R-squared:  0.3096 
+## F-statistic: 18.49 on 1 and 38 DF,  p-value: 0.0001148
 ```
 
 MERFISH is the smFISH based technique used in the most institutions (Figure \@ref(fig:n-insts)), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure \@ref(fig:smfish-n-insts)). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table \@ref(tab:table2).
@@ -711,7 +713,7 @@ After its inception, ST has been used in a wide range of clinical pathological t
 
 Although introduced fairly recently, after 10X Genomics acquired ST in December 2018, the 10X Visium has quickly gained popularity and spread to multiple institutions (Figure \@ref(fig:n-insts)), and is used by many studies that utilize an array method in late 2020 and 2021 (Figure \@ref(fig:array-map), Figure \@ref(fig:array-trend)). While usage of ST seems concentrated in Sweden, where ST comes from, usage of Visium is more decentralized (Figure \@ref(fig:array-map)). Visium is similar to ST and shares the advantages of ST, but with higher spatial resolution. The spots are 100 $\mu$m apart center to center, each with a diameter of 55 $\mu$m, arranged in a hexagonal configuration (Figure \@ref(fig:array-dims)). After adjusting for spot area, Visium seems to capture somewhat more transcripts and genes compared to ST [@Liu2020a], but more datasets in the same tissues and accounting for sequencing depths are needed to make a fairer comparison. In addition, Visium's growth in popularity may be due to core facilities at multiple institutions providing Visium services [@illinois; @umich; @ncl]. As a new version of ST, Visium was originally designed for fresh frozen OCT embedded tissue and 3' Illumina sequencing. However, Visium has more recently been adapted to FFPE tissue [@Villacampa2020], as well as to Nanopore long read sequencing to quantify isoforms [@Lebrigand2020; @Joglekar2020], although Visium is still predominantly used on fresh frozen tissues for 3' end sequencing (Add figure about FFPE for all current era methods).
 
-Visium studies in our database are almost exclusively on humans and mice, and mostly on humans (Figure \@ref(fig:species-pie-visium)). In both humans and mice, and both the healthy and pathological cases, the brain is again the most studied organ (Figures \@ref(fig:visium-organs), \@ref(fig:visium-organs-mm)). This is in stark contrast with usage of GeoMX DSP, which was used in several COVID lung studies but not much in brain (Figure \@ref(fig:dsp-organs)).
+Visium studies in our database are almost exclusively on humans and mice, and mostly on humans (Figure \@ref(fig:species-pie-visium)). For a long time, in both humans and mice, and both the healthy and pathological cases, the brain is again the most studied organ (Figures \@ref(fig:visium-organs), \@ref(fig:visium-organs-mm)), but more studies have been performed on other organs in humans more recently. This is in stark contrast with usage of GeoMX DSP, which was used in several COVID lung studies but not much in brain (Figure \@ref(fig:dsp-organs)).
 
 
 

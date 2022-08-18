@@ -3,7 +3,7 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses
   - Lior Pachter
-date: "2022-07-20"
+date: "2022-08-18"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
@@ -16,6 +16,30 @@ github-repo: "pachterlab/LP_2021"
 # Preface {-}
 
 This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nature.com/articles/s41592-022-01409-2) and the associated [database of spatial transcriptomics literature](https://docs.google.com/spreadsheets/d/1sJDb9B7AtYmfKv4-m8XR7uc3XXw_k4kGSout8cqZ8bY/edit?usp=sharing) is inspired by museum catalogs that provide insight and detail to further understanding of the exhibits. The results presented are based on code that can be run interactively on [RStudio Cloud](https://rstudio.cloud/project/2492054). We present key analyses of metadata curated for the database, and provide further analyses and results beyond what could be included here in the `more_analyses` directory of this repository. The markdown that generates this text is on GitHub, and is version controlled so that its development can be tracked now and in the future. Please notify us of errors, omissions, or other suggestions via submission of issues on GitHub: https://github.com/pachterlab/LP_2021 To submit new entries to the database, please fill out this [Google Form](https://forms.gle/HjQD9x6AMjR7C62SA). If the text in some figures are too small to read, then right click on the figure to open in a new tab to zoom in.
+
+## Quick stats
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+As of 2022-08-18, this database contains:
+
+* 825 current era publications, 514 of which are for data collection and 311 are for data analysis (see Chapter 1 for definition of prequel and current eras)
+* 267 prequel era publications
+* Current era publications from 328 institutions[^1] in 199 cities in 30 countries
+* 304 current era data analysis software packages whose source code is available online
+
+## Running the code
 
 This document is built with the `bookdown` package from a collection of R Markdown files. How some of figures look depends on parameters that can be changed, such as size of bins when binning number of publications in time to show a trend. The source code is on [RStudio Cloud](https://rstudio.cloud/project/2492054). The dependencies are pre-installed in the RStudio Cloud project. By default, when the database is queried by code, the most up to date version is used, which can be newer than the rendered static version on github.io. To build the document in RStudio Cloud, run this in the R console:
 
@@ -44,3 +68,5 @@ remotes::install_github("pachterlab/museumst", ref = "v0.0.0.9016")
 ```
 
 where `ref` refers to a release. Release history of `museumst` can be seen [here](https://github.com/pachterlab/museumst/releases). Documentation of `museumst` can be seen [here](https://pachterlab.github.io/museumst/).
+
+[^1]: Caveat: definition of "institution" is more complicated. While it usually means a university or company, whether named institutions, schools, and hospitals affiliated with a university count as institutions distinct from that university is somewhat inconsistent within this database. Usually those are considered separate institutions if they reside in a different city from the rest of the university or are sometimes listed independently from the university. However, what counts as a city is also somewhat complicated as different countries have different administrative structures.

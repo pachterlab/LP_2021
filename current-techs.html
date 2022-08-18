@@ -8,7 +8,7 @@
 <meta name="author" content="Lambda Moses">
 <meta name="author" content="Lior Pachter">
 <meta name="description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
-<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Current era technologies | Museum of Spatial Transcriptomics">
 <meta property="og:type" content="book">
 <meta property="og:description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
@@ -380,17 +380,19 @@ Figure 5.23: Number of genes per datasets in each study, over time. Gray ribbon 
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.9009 -1.1861  0.0428  0.6741  4.7062 
+## -3.7989 -1.1239  0.1283  0.6180  4.7330 
 ## 
 ## Coefficients:
-##                 Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    3.511e+00  2.874e+00   1.222    0.224
-## date_published 5.835e-05  1.567e-04   0.372    0.710
+##                  Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)     5.082e+00  2.825e+00   1.799   0.0741 .
+## date_published -3.178e-05  1.537e-04  -0.207   0.8365  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.604 on 139 degrees of freedom
+## Residual standard error: 1.619 on 146 degrees of freedom
 ##   (18 observations deleted due to missingness)
-## Multiple R-squared:  0.000996,   Adjusted R-squared:  -0.006191 
-## F-statistic: 0.1386 on 1 and 139 DF,  p-value: 0.7103</code></pre>
+## Multiple R-squared:  0.0002928,  Adjusted R-squared:  -0.006555 
+## F-statistic: 0.04276 on 1 and 146 DF,  p-value: 0.8365</code></pre>
 <p>How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:smfish-lm-cell"></span>
@@ -405,18 +407,18 @@ Figure 5.24: Total number of cells per study profiled by smFISH based techniques
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -4.1326 -1.4943 -0.2767  1.5612  4.6446 
+## -4.8769 -1.4920 -0.1243  1.8168  4.7339 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)    -2.191e+01  6.549e+00  -3.345   0.0019 ** 
-## date_published  1.742e-03  3.601e-04   4.838 2.32e-05 ***
+## (Intercept)    -1.946e+01  6.779e+00   -2.87 0.006667 ** 
+## date_published  1.600e-03  3.721e-04    4.30 0.000115 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.119 on 37 degrees of freedom
-## Multiple R-squared:  0.3875, Adjusted R-squared:  0.3709 
-## F-statistic: 23.41 on 1 and 37 DF,  p-value: 2.323e-05</code></pre>
+## Residual standard error: 2.234 on 38 degrees of freedom
+## Multiple R-squared:  0.3273, Adjusted R-squared:  0.3096 
+## F-statistic: 18.49 on 1 and 38 DF,  p-value: 0.0001148</code></pre>
 <p>MERFISH is the smFISH based technique used in the most institutions (Figure <a href="current.html#fig:n-insts">4.7</a>), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure <a href="current-techs.html#fig:smfish-n-insts">5.26</a>). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table <a href="current-techs.html#tab:table2">5.1</a>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:smfish-trend"></span>
@@ -662,7 +664,7 @@ Figure 5.38: Number of publications over time, broken down by technique. The fac
 </p>
 </div>
 <p>Although introduced fairly recently, after 10X Genomics acquired ST in December 2018, the 10X Visium has quickly gained popularity and spread to multiple institutions (Figure <a href="current.html#fig:n-insts">4.7</a>), and is used by many studies that utilize an array method in late 2020 and 2021 (Figure <a href="current-techs.html#fig:array-map">5.33</a>, Figure <a href="current-techs.html#fig:array-trend">5.38</a>). While usage of ST seems concentrated in Sweden, where ST comes from, usage of Visium is more decentralized (Figure <a href="current-techs.html#fig:array-map">5.33</a>). Visium is similar to ST and shares the advantages of ST, but with higher spatial resolution. The spots are 100 <span class="math inline">\(\mu\)</span>m apart center to center, each with a diameter of 55 <span class="math inline">\(\mu\)</span>m, arranged in a hexagonal configuration (Figure <a href="current-techs.html#fig:array-dims">5.36</a>). After adjusting for spot area, Visium seems to capture somewhat more transcripts and genes compared to ST <span class="citation">(Y. Liu, Yang, et al. <a href="references.html#ref-Liu2020a" role="doc-biblioref">2020</a>)</span>, but more datasets in the same tissues and accounting for sequencing depths are needed to make a fairer comparison. In addition, Visium’s growth in popularity may be due to core facilities at multiple institutions providing Visium services <span class="citation">(“10X VISIUM SPATIAL TRANSCRIPTOMICS” <a href="references.html#ref-illinois" role="doc-biblioref">n.d.</a>; “ADVANCED GENOMICS CORE PRICING” <a href="references.html#ref-umich" role="doc-biblioref">n.d.</a>; “SpaRTAN” <a href="references.html#ref-ncl" role="doc-biblioref">n.d.</a>)</span>. As a new version of ST, Visium was originally designed for fresh frozen OCT embedded tissue and 3’ Illumina sequencing. However, Visium has more recently been adapted to FFPE tissue <span class="citation">(Villacampa et al. <a href="references.html#ref-Villacampa2020" role="doc-biblioref">2020</a>)</span>, as well as to Nanopore long read sequencing to quantify isoforms <span class="citation">(Lebrigand et al. <a href="references.html#ref-Lebrigand2020" role="doc-biblioref">2020</a>; Joglekar et al. <a href="references.html#ref-Joglekar2020" role="doc-biblioref">2020</a>)</span>, although Visium is still predominantly used on fresh frozen tissues for 3’ end sequencing (Add figure about FFPE for all current era methods).</p>
-<p>Visium studies in our database are almost exclusively on humans and mice, and mostly on humans (Figure <a href="current-techs.html#fig:species-pie-visium">5.39</a>). In both humans and mice, and both the healthy and pathological cases, the brain is again the most studied organ (Figures <a href="current-techs.html#fig:visium-organs">5.40</a>, <a href="current-techs.html#fig:visium-organs-mm">5.41</a>). This is in stark contrast with usage of GeoMX DSP, which was used in several COVID lung studies but not much in brain (Figure <a href="current-techs.html#fig:dsp-organs">5.9</a>).</p>
+<p>Visium studies in our database are almost exclusively on humans and mice, and mostly on humans (Figure <a href="current-techs.html#fig:species-pie-visium">5.39</a>). For a long time, in both humans and mice, and both the healthy and pathological cases, the brain is again the most studied organ (Figures <a href="current-techs.html#fig:visium-organs">5.40</a>, <a href="current-techs.html#fig:visium-organs-mm">5.41</a>), but more studies have been performed on other organs in humans more recently. This is in stark contrast with usage of GeoMX DSP, which was used in several COVID lung studies but not much in brain (Figure <a href="current-techs.html#fig:dsp-organs">5.9</a>).</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:species-pie-visium"></span>
 <img src="05-current-techs_files/figure-html/species-pie-visium-1.png" alt="Number of publication per species." width="480"><p class="caption">
@@ -921,7 +923,7 @@ Figure 5.42: Record spot diameter of array based methods over time.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2022-07-20.</p>
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2022-08-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -934,7 +936,7 @@ Figure 5.42: Record spot diameter of array based methods over time.
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

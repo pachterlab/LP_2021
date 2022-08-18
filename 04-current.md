@@ -154,38 +154,42 @@ EASI-FISH & 2021-12-06 & smFISH & 26 & single cell\\
 \addlinespace
 \cellcolor{gray!6}{Halo-seq} & \cellcolor{gray!6}{2021-12-07} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
 OpTAG-seq & 2021-12-30 & ROI selection & Tx wide & NA\\
-\cellcolor{gray!6}{SMI} & \cellcolor{gray!6}{2022-01-02} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{960} & \cellcolor{gray!6}{single cell}\\
-SiT & 2022-01-05 & NGS barcoding & Tx wide & 55\\
-\cellcolor{gray!6}{MOSAICA} & \cellcolor{gray!6}{2022-01-10} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{single cell}\\
+\cellcolor{gray!6}{SiT} & \cellcolor{gray!6}{2022-01-05} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
+MOSAICA & 2022-01-10 & smFISH & 10 & single cell\\
+\cellcolor{gray!6}{EEL FISH} & \cellcolor{gray!6}{2022-01-13} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{445} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
-EEL FISH & 2022-01-13 & smFISH & 445 & single cell\\
-\cellcolor{gray!6}{STARmap PLUS} & \cellcolor{gray!6}{2022-01-16} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{2766} & \cellcolor{gray!6}{single cell}\\
-LoRNA & 2022-01-25 & De novo & NA & NA\\
-\cellcolor{gray!6}{manual dissection with velocimetry and cell tracking} & \cellcolor{gray!6}{2022-01-31} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-SM-Omics & 2022-02-10 & NGS barcoding & Tx wide & 100\\
+STARmap PLUS & 2022-01-16 & ISS & 2766 & single cell\\
+\cellcolor{gray!6}{LoRNA} & \cellcolor{gray!6}{2022-01-25} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+manual dissection with velocimetry and cell tracking & 2022-01-31 & ROI selection & Tx wide & NA\\
+\cellcolor{gray!6}{SM-Omics} & \cellcolor{gray!6}{2022-02-10} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{100}\\
+FUNseq & 2022-02-22 & ROI selection & Tx wide & NA\\
 \addlinespace
-\cellcolor{gray!6}{FUNseq} & \cellcolor{gray!6}{2022-02-22} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-centrifugation on 384 well plate & 2022-02-23 & ROI selection & Tx wide & NA\\
-\cellcolor{gray!6}{Space-TREX} & \cellcolor{gray!6}{2022-02-24} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
-MERR APEX-seq & 2022-03-03 & De novo & NA & NA\\
-\cellcolor{gray!6}{vCatFISH} & \cellcolor{gray!6}{2022-03-16} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{21} & \cellcolor{gray!6}{single cell}\\
+\cellcolor{gray!6}{centrifugation on 384 well plate} & \cellcolor{gray!6}{2022-02-23} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+Space-TREX & 2022-02-24 & NGS barcoding & Tx wide & 55\\
+\cellcolor{gray!6}{MERR APEX-seq} & \cellcolor{gray!6}{2022-03-03} & \cellcolor{gray!6}{De novo} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{NA}\\
+vCatFISH & 2022-03-16 & smFISH & 21 & single cell\\
+\cellcolor{gray!6}{clampFISH 2.0} & \cellcolor{gray!6}{2022-03-17} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{10} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
-clampFISH 2.0 & 2022-03-17 & smFISH & 10 & single cell\\
-\cellcolor{gray!6}{SPOTS} & \cellcolor{gray!6}{2022-03-18} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
-TATTOO-seq & 2022-03-20 & ROI selection & Tx wide & NA\\
-\cellcolor{gray!6}{SPARC-seq} & \cellcolor{gray!6}{2022-03-23} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{50}\\
-Spatial-CITE-seq & 2022-04-02 & NGS barcoding & Tx wide & 25\\
+SPOTS & 2022-03-18 & NGS barcoding & Tx wide & 55\\
+\cellcolor{gray!6}{TATTOO-seq} & \cellcolor{gray!6}{2022-03-20} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+SPARC-seq & 2022-03-23 & NGS barcoding & Tx wide & 50\\
+\cellcolor{gray!6}{Spatial-CITE-seq} & \cellcolor{gray!6}{2022-04-02} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{25}\\
+GPS-seq & 2022-04-05 & NGS barcoding & Tx wide & NA\\
 \addlinespace
-\cellcolor{gray!6}{GPS-seq} & \cellcolor{gray!6}{2022-04-05} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
-STRS & 2022-04-21 & NGS barcoding & Tx wide & 55\\
-\cellcolor{gray!6}{scStereo-seq} & \cellcolor{gray!6}{2022-05-04} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{0.22}\\
-Select-seq & 2022-05-09 & ROI selection & Tx wide & NA\\
-\cellcolor{gray!6}{HybRISS} & \cellcolor{gray!6}{2022-05-13} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{50} & \cellcolor{gray!6}{single cell}\\
+\cellcolor{gray!6}{STRS} & \cellcolor{gray!6}{2022-04-21} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
+scStereo-seq & 2022-05-04 & NGS barcoding & Tx wide & 0.22\\
+\cellcolor{gray!6}{Select-seq} & \cellcolor{gray!6}{2022-05-09} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
+HybRISS & 2022-05-13 & smFISH & 50 & single cell\\
+\cellcolor{gray!6}{punch2} & \cellcolor{gray!6}{2022-06-17} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 \addlinespace
-punch2 & 2022-06-17 & ROI selection & Tx wide & NA\\
-\cellcolor{gray!6}{STcEM} & \cellcolor{gray!6}{2022-06-27} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{287} & \cellcolor{gray!6}{single cell}\\
-SmT & 2022-07-18 & NGS barcoding & Tx wide & 55\\
-\cellcolor{gray!6}{SHM-seq} & \cellcolor{gray!6}{2022-07-19} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{100}\\*
+STcEM & 2022-06-27 & smFISH & 287 & single cell\\
+\cellcolor{gray!6}{SmT} & \cellcolor{gray!6}{2022-07-18} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
+SHM-seq & 2022-07-19 & NGS barcoding & Tx wide & 100\\
+\cellcolor{gray!6}{SMI} & \cellcolor{gray!6}{2022-07-19} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{960} & \cellcolor{gray!6}{single cell}\\
+scNaST & 2022-07-22 & NGS barcoding & Tx wide & NA\\
+\addlinespace
+\cellcolor{gray!6}{PHYTOMap} & \cellcolor{gray!6}{2022-07-30} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{28} & \cellcolor{gray!6}{single cell}\\
+Matrix-seq & 2022-08-05 & NGS barcoding & Tx wide & 50\\*
 \end{longtable}
 
 
