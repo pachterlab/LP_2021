@@ -49,7 +49,7 @@ dittoseq_colors <-
 ggplot(all_methods2, aes(date_published, fill = method2)) +
   geom_histogram(binwidth = 180) +
   #geom_area(stat = "bin", binwidth = 180) +
-  scale_fill_manual(values = c("gray70", rev(dittoseq_colors[1:10])),
+  scale_fill_manual(values = c("gray70", rev(dittoseq_colors[1:11])),
                     name = "Method") +
   scale_y_continuous(expand = expansion(c(0, 0.05))) +
   labs(x = "Date published", y = "Number of publications")
@@ -58,7 +58,7 @@ ggplot(all_methods2, aes(date_published, fill = method2)) +
 ```{r all-methods-prop, fig.width=7, fig.height=4, fig.cap="Proportion of publications per bin using each of the top 10 techniques for data collection."}
 ggplot(all_methods2, aes(date_published, fill = method2)) +
   geom_histogram(binwidth = 180, position = "fill") +
-  scale_fill_manual(values = c("gray70", rev(dittoseq_colors[1:10])),
+  scale_fill_manual(values = c("gray70", rev(dittoseq_colors[1:11])),
                     name = "Method") +
   scale_y_continuous(expand = expansion(0)) +
   scale_x_date(expand = expansion(0)) +

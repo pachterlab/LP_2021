@@ -129,7 +129,7 @@ ms_pubs %>%
   geom_bar(orientation = "y") +
   scale_x_continuous(expand = expansion(c(0, 0.05))) +
   scale_fill_viridis_d(begin = 0.15, end = 0.85, direction = -1,
-                       name = "Type") +
+                       name = "Type", na.value = "gray50") +
   labs(x = "Number of studies", y = "Method")
 ```
 
@@ -689,7 +689,7 @@ pubs_per_year(array_methods, facet_by = "method", n_top = 2, sort_by = "count",
 
 Although introduced fairly recently, after 10X Genomics acquired ST in December 2018, the 10X Visium has quickly gained popularity and spread to multiple institutions (Figure \@ref(fig:n-insts)), and is used by many studies that utilize an array method in late 2020 and 2021 (Figure \@ref(fig:array-map), Figure \@ref(fig:array-trend)). While usage of ST seems concentrated in Sweden, where ST comes from, usage of Visium is more decentralized (Figure \@ref(fig:array-map)). Visium is similar to ST and shares the advantages of ST, but with higher spatial resolution. The spots are 100 $\mu$m apart center to center, each with a diameter of 55 $\mu$m, arranged in a hexagonal configuration (Figure \@ref(fig:array-dims)). After adjusting for spot area, Visium seems to capture somewhat more transcripts and genes compared to ST [@Liu2020a], but more datasets in the same tissues and accounting for sequencing depths are needed to make a fairer comparison. In addition, Visium's growth in popularity may be due to core facilities at multiple institutions providing Visium services [@illinois; @umich; @ncl]. As a new version of ST, Visium was originally designed for fresh frozen OCT embedded tissue and 3' Illumina sequencing. However, Visium has more recently been adapted to FFPE tissue [@Villacampa2020], as well as to Nanopore long read sequencing to quantify isoforms [@Lebrigand2020; @Joglekar2020], although Visium is still predominantly used on fresh frozen tissues for 3' end sequencing (Add figure about FFPE for all current era methods).
 
-Visium studies in our database are almost exclusively on humans and mice, and mostly on humans (Figure \@ref(fig:species-pie-visium)). In both humans and mice, and both the healthy and pathological cases, the brain is again the most studied organ (Figures \@ref(fig:visium-organs), \@ref(fig:visium-organs-mm)). This is in stark contrast with usage of GeoMX DSP, which was used in several COVID lung studies but not much in brain (Figure \@ref(fig:dsp-organs)).
+Visium studies in our database are almost exclusively on humans and mice, and mostly on humans (Figure \@ref(fig:species-pie-visium)). For a long time, in both humans and mice, and both the healthy and pathological cases, the brain is again the most studied organ (Figures \@ref(fig:visium-organs), \@ref(fig:visium-organs-mm)), but more studies have been performed on other organs in humans more recently. This is in stark contrast with usage of GeoMX DSP, which was used in several COVID lung studies but not much in brain (Figure \@ref(fig:dsp-organs)).
 
 ```{r}
 data("species_cols")
@@ -790,7 +790,8 @@ mm_p <- organs_mm_f %>%
   coord_equal() +
   theme_void() +
   scale_fill_distiller(palette = "Reds", direction = 1, 
-                       name = "# publications\n(pathological)")
+                       name = "# publications\n(pathological)",
+                       breaks = scales::breaks_extended(Q = c(1,2,4,5)))
 ```
 
 ```{r visium-organs-mm, fig.width=8, fig.height=6, out.width="100%", fig.cap="Number of Visium studies for healthy (A) and pathological (B) mouse organs. Female is shown here as there is a uterus study while there is no study on male specific organs in our database."}
