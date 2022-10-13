@@ -3,7 +3,7 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses
   - Lior Pachter
-date: "2022-08-18"
+date: "2022-10-13"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
@@ -13,7 +13,7 @@ description: "Museum of Spatial Transcriptomics"
 github-repo: "pachterlab/LP_2021"
 ---
 
-# Preface {-}
+# Preface {-} 
 
 This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nature.com/articles/s41592-022-01409-2) and the associated [database of spatial transcriptomics literature](https://docs.google.com/spreadsheets/d/1sJDb9B7AtYmfKv4-m8XR7uc3XXw_k4kGSout8cqZ8bY/edit?usp=sharing) is inspired by museum catalogs that provide insight and detail to further understanding of the exhibits. The results presented are based on code that can be run interactively on [RStudio Cloud](https://rstudio.cloud/project/2492054). We present key analyses of metadata curated for the database, and provide further analyses and results beyond what could be included here in the `more_analyses` directory of this repository. The markdown that generates this text is on GitHub, and is version controlled so that its development can be tracked now and in the future. Please notify us of errors, omissions, or other suggestions via submission of issues on GitHub: https://github.com/pachterlab/LP_2021 To submit new entries to the database, please fill out this [Google Form](https://forms.gle/HjQD9x6AMjR7C62SA). If the text in some figures are too small to read, then right click on the figure to open in a new tab to zoom in.
 
@@ -32,12 +32,12 @@ This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nat
 
 
 
-As of 2022-08-18, this database contains:
+As of 2022-10-13, this database contains:
 
-* 825 current era publications, 514 of which are for data collection and 311 are for data analysis (see Chapter 1 for definition of prequel and current eras)
+* 928 current era publications, 588 of which are for data collection and 340 are for data analysis (see Chapter 1 for definition of prequel and current eras)
 * 267 prequel era publications
-* Current era publications from 328 institutions[^1] in 199 cities in 30 countries
-* 304 current era data analysis software packages whose source code is available online
+* Current era publications from 363 institutions[^1] in 218 cities in 32 countries
+* 334 current era data analysis software packages whose source code is available online
 
 ## Running the code
 
