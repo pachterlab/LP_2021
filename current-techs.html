@@ -8,7 +8,7 @@
 <meta name="author" content="Lambda Moses">
 <meta name="author" content="Lior Pachter">
 <meta name="description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
-<meta name="generator" content="bookdown 0.29 with bs4_book()">
+<meta name="generator" content="bookdown 0.30 with bs4_book()">
 <meta property="og:title" content="Chapter 5 Current era technologies | Museum of Spatial Transcriptomics">
 <meta property="og:type" content="book">
 <meta property="og:description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.1/transition.js"></script><script src="libs/bs3compat-0.4.1/tabs.js"></script><script src="libs/bs3compat-0.4.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -380,17 +380,19 @@ Figure 5.23: Number of genes per datasets in each study, over time. Gray ribbon 
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -3.8374 -1.1637  0.0715  0.7578  4.7340 
+## -3.8457 -1.1721  0.1009  1.0072  4.7293 
 ## 
 ## Coefficients:
-##                 Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    4.2427912  2.6053865   1.628    0.105
-## date_published 0.0000155  0.0001409   0.110    0.913
+##                 Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)    4.171e+00  2.490e+00   1.675   0.0957 .
+## date_published 1.985e-05  1.341e-04   0.148   0.8825  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.581 on 164 degrees of freedom
+## Residual standard error: 1.571 on 182 degrees of freedom
 ##   (20 observations deleted due to missingness)
-## Multiple R-squared:  7.38e-05,   Adjusted R-squared:  -0.006023 
-## F-statistic: 0.0121 on 1 and 164 DF,  p-value: 0.9125</code></pre>
+## Multiple R-squared:  0.0001203,  Adjusted R-squared:  -0.005374 
+## F-statistic: 0.0219 on 1 and 182 DF,  p-value: 0.8825</code></pre>
 <p>How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:smfish-lm-cell"></span>
@@ -405,18 +407,18 @@ Figure 5.24: Total number of cells per study profiled by smFISH based techniques
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -4.9532 -1.4043  0.0306  1.7509  4.7208 
+## -4.9354 -1.3881  0.0484  1.7685  4.7368 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)    -2.027e+01  6.270e+00  -3.233  0.00242 ** 
-## date_published  1.647e-03  3.426e-04   4.806 2.09e-05 ***
+## (Intercept)    -2.027e+01  6.179e+00  -3.280  0.00212 ** 
+## date_published  1.645e-03  3.375e-04   4.875 1.68e-05 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.166 on 41 degrees of freedom
-## Multiple R-squared:  0.3604, Adjusted R-squared:  0.3448 
-## F-statistic:  23.1 on 1 and 41 DF,  p-value: 2.087e-05</code></pre>
+## Residual standard error: 2.146 on 41 degrees of freedom
+## Multiple R-squared:  0.3669, Adjusted R-squared:  0.3515 
+## F-statistic: 23.77 on 1 and 41 DF,  p-value: 1.676e-05</code></pre>
 <p>MERFISH is the smFISH based technique used in the most institutions (Figure <a href="current.html#fig:n-insts">4.7</a>), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure <a href="current-techs.html#fig:smfish-n-insts">5.26</a>). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table <a href="current-techs.html#tab:table2">5.1</a>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:smfish-trend"></span>
@@ -921,7 +923,7 @@ Figure 5.42: Record spot diameter of array based methods over time.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2022-10-13.</p>
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2022-11-16.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
