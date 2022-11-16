@@ -442,6 +442,7 @@ Name & Language & Title & Date published\\
 \href{https://pypi.org/project/somde/}{SOMDE} & Python & \href{https://doi.org/10.1093/bioinformatics/btab471}{SOMDE: A scalable method for identifying spatially variable genes with self-organizing map} & 2021-06-24\\
 \href{https://github.com/ManchesterBioinference/GPcounts}{\cellcolor{gray!6}{GPcounts}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/bioinformatics/btab486}{\cellcolor{gray!6}{Non-parametric modelling of temporal and spatial counts data from RNA-seq experiments}} & \cellcolor{gray!6}{2021-07-02}\\
 \href{https://github.com/WangPeng-Lab/scGCO}{scGCO} & Python & \href{https://doi.org/10.1038/s41467-022-33182-3}{Identification of spatially variable genes with graph cuts} & 2022-09-19\\
+\href{https://github.com/alexisvdb/singleCellHaystack}{\cellcolor{gray!6}{singleCellHaystack}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2022.11.13.516355}{\cellcolor{gray!6}{A universal differential expression prediction tool for single-cell and spatial genomics data}} & \cellcolor{gray!6}{2022-11-15}\\
 \bottomrule
 \end{longtable}
 

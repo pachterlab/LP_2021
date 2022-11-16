@@ -34,10 +34,10 @@ This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nat
 
 As of 2022-11-16, this database contains:
 
-* 1002 current era publications, 636 of which are for data collection and 366 are for data analysis (see Chapter 1 for definition of prequel and current eras)
+* 1003 current era publications, 636 of which are for data collection and 410 are for data analysis (see Chapter 1 for definition of prequel and current eras)
 * 267 prequel era publications
 * Current era publications from 385 institutions[^1] in 227 cities in 32 countries
-* 353 current era data analysis software packages whose source code is available online
+* 325 current era data analysis software packages whose source code is available online
 
 ## Running the code
 
