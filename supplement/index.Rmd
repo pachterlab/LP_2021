@@ -34,7 +34,7 @@ data_sheets <- read_metadata(nms, update = TRUE)
 ```{r}
 n_pubs <- length(unique(data_sheets$title))
 n_data <- length(unique(data_sheets$title[data_sheets$sheet != "Analysis"]))
-n_analysis <- n_pubs - n_data
+n_analysis <- length(unique(data_sheets$title[data_sheets$sheet == "Analysis"]))
 ```
 
 ```{r}
@@ -51,8 +51,7 @@ n_current_countries <- length(unique(data_sheets$country))
 
 ```{r}
 analysis <- read_metadata(sheet_use = "Analysis", update = TRUE)
-analysis <- analysis[!is.na(analysis$repo),]
-n_packages <- length(unique(analysis$repo))
+n_packages <- sum(complete.cases(analysis[,c("repo", "documented", "packaged", "CRAN/Bioc/pip/conda")]))
 ```
 
 As of `r Sys.Date()`, this database contains:
