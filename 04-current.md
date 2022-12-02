@@ -180,7 +180,7 @@ HybRISS & 2022-05-13 & smFISH & 175 & single cell\\
 STcEM & 2022-06-27 & smFISH & 287 & single cell\\
 \cellcolor{gray!6}{PIXEL-seq} & \cellcolor{gray!6}{2022-07-04} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{1.22}\\
 SmT & 2022-07-18 & NGS barcoding & Tx wide & 55\\
-\cellcolor{gray!6}{CosMX} & \cellcolor{gray!6}{2022-07-19} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{960} & \cellcolor{gray!6}{single cell}\\
+\cellcolor{gray!6}{CosMX} & \cellcolor{gray!6}{2022-07-19} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{1020} & \cellcolor{gray!6}{single cell}\\
 \addlinespace
 SHM-seq & 2022-07-19 & NGS barcoding & Tx wide & 100\\
 \cellcolor{gray!6}{scNaST} & \cellcolor{gray!6}{2022-07-22} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
@@ -203,7 +203,12 @@ clampFISH 2.0 & 2022-10-24 & smFISH & 10 & single cell\\
 \cellcolor{gray!6}{Spatial-seq} & \cellcolor{gray!6}{2022-10-30} & \cellcolor{gray!6}{ROI selection} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{NA}\\
 sphere-seq & 2022-11-01 & De novo & NA & NA\\
 \cellcolor{gray!6}{STRS} & \cellcolor{gray!6}{2022-11-03} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{55}\\
-Xenium & 2022-11-03 & smFISH & 313 & single cell\\*
+Xenium & 2022-11-03 & smFISH & 313 & single cell\\
+\cellcolor{gray!6}{SPRINTseq} & \cellcolor{gray!6}{2022-11-17} & \cellcolor{gray!6}{ISS} & \cellcolor{gray!6}{108} & \cellcolor{gray!6}{single cell}\\
+\addlinespace
+LR-Spatial VDJ & 2022-11-24 & NGS barcoding & Tx wide & 55\\
+\cellcolor{gray!6}{mFISH3D} & \cellcolor{gray!6}{2022-11-24} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{single cell}\\
+SR-Spatial VDJ & 2022-11-24 & NGS barcoding & Tx wide & 55\\*
 \end{longtable}
 
 
