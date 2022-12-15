@@ -208,7 +208,9 @@ Xenium & 2022-11-03 & smFISH & 313 & single cell\\
 \addlinespace
 LR-Spatial VDJ & 2022-11-24 & NGS barcoding & Tx wide & 55\\
 \cellcolor{gray!6}{mFISH3D} & \cellcolor{gray!6}{2022-11-24} & \cellcolor{gray!6}{smFISH} & \cellcolor{gray!6}{6} & \cellcolor{gray!6}{single cell}\\
-SR-Spatial VDJ & 2022-11-24 & NGS barcoding & Tx wide & 55\\*
+SR-Spatial VDJ & 2022-11-24 & NGS barcoding & Tx wide & 55\\
+\cellcolor{gray!6}{STOmics-GenX} & \cellcolor{gray!6}{2022-12-08} & \cellcolor{gray!6}{NGS barcoding} & \cellcolor{gray!6}{Tx wide} & \cellcolor{gray!6}{0.22}\\
+Spectrum-FISH & 2022-12-13 & smFISH & 33 & single cell\\*
 \end{longtable}
 
 
