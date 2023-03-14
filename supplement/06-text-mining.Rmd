@@ -26,6 +26,7 @@ library(grid)
 library(gridExtra)
 library(ggrepel)
 library(rnaturalearth)
+library(broom)
 theme_set(theme_bw())
 ```
 
