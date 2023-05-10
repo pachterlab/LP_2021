@@ -85,7 +85,7 @@ sheet_fill2 <- sheet_fill[nms]
 
 ```{r, fig.width=6, fig.height=8}
 (fig4 <- p4a / p4b +
-  plot_annotation(tag_levels = "A"))
+  plot_annotation(tag_levels = "a"))
 ```
 
 ```{r}

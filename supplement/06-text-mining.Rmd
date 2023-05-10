@@ -43,7 +43,7 @@ data("lcm_dfm2")
 pubs_per_year(lcm_abstracts, binwidth = 365)
 ```
 
-LCM transcriptomics is also more geographically diffuse and spread out into many less well-known institutions and some developing countries, though some elite institutions are among the top contributors, such as Harvard Medical School and Massachusetts General Hospital (Boston), Columbia University, NYU, Rockefeller, and Sloan-Kettering (New York), NIH (Bethesda), and Cambridge University (Cambridge, UK) (Figure 8B). 
+LCM transcriptomics is also more geographically diffuse and spread out into many less well-known institutions and some developing countries, though some elite institutions are among the top contributors, such as Harvard Medical School and Massachusetts General Hospital (Boston), Columbia University, NYU, Rockefeller, and Sloan-Kettering (New York), NIH (Bethesda), and Cambridge University (Cambridge, UK) (Figure \@ref(fig:lcm-map)). 
 
 ```{r lcm-map, fig.width=10, fig.height=6, fig.cap="Geographic distribution of LCM transcriptomics research, with top 10 cities labeled. Number of publications is binned over longitude and latitude.", out.width="100%"}
 pubs_on_map(lcm_abstracts, lcm_city_gc, plot = "hexbin", label_cities = TRUE) +

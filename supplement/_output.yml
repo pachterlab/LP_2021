@@ -7,6 +7,6 @@ bookdown::bs4_book:
     subdir: supplement
 bookdown::pdf_book:
   latex_engine: xelatex
-  keep_tex: no
+  keep_tex: yes
   includes:
     in_header: preamble.tex

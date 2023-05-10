@@ -215,7 +215,7 @@ langs <- unnest_cat(data_sheets, language)
 ```
 
 ```{r}
-(p3j <- pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 20) +
+(p3j <- pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 50) +
   labs(title = "Users (downstream analysis)"))
 ```
 ```{r}
@@ -235,7 +235,7 @@ max_x <- max(lang_counts$n)
 ```
 
 ```{r}
-(p3k <- pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE, img_unit = 20) +
+(p3k <- pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE, img_unit = 50) +
   scale_y_continuous(limits = c(0, max_x), 
                      breaks = breaks_width(50),
                      expand = expansion(mult = c(0, 0.05))) +
@@ -251,7 +251,7 @@ fig3_bottom <- p3c + p3d +
   plot_layout(ncol = 2)
 (fig3 <- fig3_top / fig3_bottom +
     plot_layout(heights = c(1.3, 1)) +
-    plot_annotation(tag_levels = "A"))
+    plot_annotation(tag_levels = "a"))
 ```
 
 ```{r}
