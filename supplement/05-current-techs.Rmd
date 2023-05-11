@@ -143,10 +143,10 @@ ffpe <- read_metadata(nms, update = TRUE) %>%
   filter(!is.na(tissue), !is.na(method)) %>% 
   mutate(is_ffpe = str_detect(tissue, "FFPE"))
 ffpe2 <- ffpe %>% 
-  mutate(method = fct_lump_min(method, 5) %>% fct_infreq() %>% fct_rev())
+  mutate(method = fct_lump_min(method, 10) %>% fct_infreq() %>% fct_rev())
 ```
 
-```{r ffpe, fig.width = 6, fig.height=4, fig.cap="Number of FFPE and frozen section datasets from each current era technique; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6."}
+```{r ffpe, fig.width = 6, fig.height=4, fig.cap="Number of FFPE and frozen section datasets from each current era technique; techniques used in fewer than 10 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6."}
 ggplot(ffpe2, aes(y = method, fill = is_ffpe)) +
   geom_bar() +
   scale_x_continuous(expand = expansion(c(0,0.05))) +
@@ -158,10 +158,10 @@ ggplot(ffpe2, aes(y = method, fill = is_ffpe)) +
 ffpe_pathological <- ffpe %>% 
   filter(species %in% c("Homo sapiens", "Mus musculus"),
          !is.na(pathological)) %>% 
-  mutate(method = fct_lump_min(method, 5) %>% fct_infreq() %>% fct_rev())
+  mutate(method = fct_lump_min(method, 10) %>% fct_infreq() %>% fct_rev())
 ```
 
-```{r ffpe-hgmm, fig.width=7, fig.height=6, fig.cap="Number of FFPE and frozen section datasets from each current era technique in humans and mice healthy and pathological tissues; techniques used in fewer than 5 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6."}
+```{r ffpe-hgmm, fig.width=7, fig.height=6, fig.cap="Number of FFPE and frozen section datasets from each current era technique in humans and mice healthy and pathological tissues; techniques used in fewer than 10 datasets are lumped into Other. LCM is only for curated LCM literature and does not include all search results in Chapter 6."}
 ffpe_pathological <- ffpe_pathological %>% 
   mutate(pathological_label = case_when(
     pathological ~ "Pathological",
