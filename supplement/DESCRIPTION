@@ -57,6 +57,5 @@ Remotes:
     github::pachterlab/museumst,
     github::jespermaag/gganatogram,
     github::clauswilke/ggtextures,
-    github::UrbanInstitute/urbnmapr,
-    bioc::release/bluster
+    github::UrbanInstitute/urbnmapr
     
