@@ -32,7 +32,6 @@ Imports:
     kableExtra,
     lubridate,
     magick,
-    Matrix.utils,
     museumst,
     patchwork,
     quanteda,
