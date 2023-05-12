@@ -1,8 +1,6 @@
 # Data analysis in the current era {#current-analysis}
 
-\BeginKnitrBlock{rmdtip}
-Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math heavy.
-\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math heavy.</div>\EndKnitrBlock{rmdtip}
 
 
 
@@ -22,146 +20,94 @@ So far we have reviewed numerous techniques to collect spatial transcriptomics d
 
 
 
-\begin{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-fp-1.png" alt="Number of publications over time for current era and prequel data analysis. Bin width is 120 days. Preprints are included for this figure. The x-shaped points show the number of publications from the last bin, which is not yet full." width="672" />
+<p class="caption">(\#fig:analysis-fp)Number of publications over time for current era and prequel data analysis. Bin width is 120 days. Preprints are included for this figure. The x-shaped points show the number of publications from the last bin, which is not yet full.</p>
+</div>
 
-{\centering \includegraphics{07-current_analysis_files/figure-latex/analysis-fp-1} 
+Since 2019, there has been a sharp increase in interest in current era data analysis (Figure \@ref(fig:analysis-current)). If our collection of prequel data analysis literature is somewhat representative and complete, then interest in current era data analysis dwarfs the golden age of prequel data analysis from 2008 to 2014 (Figure \@ref(fig:analysis-fp)). As already shown, interests in current era data collection increased sharply since 2018 (Figure \@ref(fig:current-vs-prequel), Figure \@ref(fig:analysis-current)), although not as sharply as in data collection (Figure \@ref(fig:analysis-current)).
 
-}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-current-1.png" alt="Number of publication over time for current era data collection and data analysis. Bin width is 120 days. The x-shaped points show the number of publications from the last bin, which is not yet full." width="672" />
+<p class="caption">(\#fig:analysis-current)Number of publication over time for current era data collection and data analysis. Bin width is 120 days. The x-shaped points show the number of publications from the last bin, which is not yet full.</p>
+</div>
 
-\caption{Number of publications over time for current era and prequel data analysis. Bin width is 120 days. Preprints are included for this figure. The x-shaped points show the number of publications from the last bin, which is not yet full.}(\#fig:analysis-fp)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-prequel-1.png" alt="Number of publications over time for prequel data collection and data analysis. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full." width="672" />
+<p class="caption">(\#fig:analysis-prequel)Number of publications over time for prequel data collection and data analysis. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full.</p>
+</div>
 
-Since 2019, there has been a sharp increase in interest in current era data analysis (Figure \@ref(fig:analysis-current)). If our collection of prequel data analysis literature is somewhat representative and complete, then interest in current era data analysis dwarfs the golden age of prequel data analysis from 2008 to 2014 (Figure \@ref(fig:analysis-fp)). As already shown, interests in current era data collection increased sharply since 2018 (Figure \@ref(fig:current-vs-prequel), Figure \@ref(fig:analysis-current)); interest in data analysis lagged behind interest in data collection, until around 2020 (Figure \@ref(fig:analysis-current)).
-
-\begin{figure}
-
-{\centering \includegraphics{07-current_analysis_files/figure-latex/analysis-current-1} 
-
-}
-
-\caption{Number of publication over time for current era data collection and data analysis. Bin width is 120 days. The x-shaped points show the number of publications from the last bin, which is not yet full.}(\#fig:analysis-current)
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics{07-current_analysis_files/figure-latex/analysis-prequel-1} 
-
-}
-
-\caption{Number of publications over time for prequel data collection and data analysis. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full.}(\#fig:analysis-prequel)
-\end{figure}
-
-In contrast, in the prequel era, interest in data analysis peaked after the peak for data collection, and eventually interest both eventually diminished but continues (Figure \@ref(fig:analysis-prequel)). There are many different types of data analysis, the ones with the most interest are mapping dissociated cells in scRNA-seq to location in a spatial reference (cells to locations) and imputing expression of genes not profiled in the spatial reference according to transcriptome wide scRNA-seq data (gene expression imputation at locations) (Figure \@ref(fig:analysis-cats)).
+In contrast, in the prequel era, interest in data analysis peaked after the peak for data collection, and eventually interest both eventually diminished but continues (Figure \@ref(fig:analysis-prequel)). There are many different types of data analysis, the ones with the most interest are finding spatial regions, preprocessing (including image processing and quality control), cell type inference (especially cell type deconvolution of Visium spots), and cell-cell interaction (Figure \@ref(fig:analysis-cats)). While mapping dissociated cells to spatial locations on a spatial reference used to be at the top, there has been more interest in the other topics mentioned just now.
 
 
 
 
 
-\begin{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-cats-1.png" alt="Number of publications for each category of data analysis; note that the same publication can fall into multiple categories." width="576" />
+<p class="caption">(\#fig:analysis-cats)Number of publications for each category of data analysis; note that the same publication can fall into multiple categories.</p>
+</div>
 
-{\centering \includegraphics{07-current_analysis_files/figure-latex/analysis-cats-1} 
+Several methods for cell type deconvolution in array based techniques that don't have single cell resolution were developed (cell type inference), but the drastic growth in data analysis seems to be driven by multiple categories of analyses (Figure \@ref(fig:analysis-cat-hist)). Top contributors to data analysis methods in the current and prequel eras are different as well. In the current era, while many less well-known institutions have contributed to data analysis, the top contributors are an elite club. Among the top contributors in the prequel era are less famous institutions such as Arizona State University (ASU), Old Dominion University (ODU), and Lawrence Berkeley National Laboratory (LBL), which developed the BDTNP and the Fly Enhancer atlases (Figure \@ref(fig:analysis-map)).
 
-}
-
-\caption{Number of publications for each category of data analysis; note that the same publication can fall into multiple categories.}(\#fig:analysis-cats)
-\end{figure}
-
-Several methods for cell type deconvolution in array based techniques that don't have single cell resolution were developed (cell type inference), but the drastic growth in data analysis seems to be driven by multiple categories of analyses (Figure \@ref(fig:analysis-cat-hist)). Top contributors to data analysis methods in the current and prequel eras are different as well. Again, the current era seems to be more of an elite club than the prequel era although some less well-known institutions have joined more recently; among the top contributors in the prequel era are less famous institutions such as Arizona State University (ASU), Old Dominion University (ODU), and Lawrence Berkeley National Laboratory (LBL), which developed the BDTNP and the Fly Enhancer atlases (Figure \@ref(fig:analysis-map)).
-
-\begin{figure}
-
-{\centering \includegraphics{07-current_analysis_files/figure-latex/analysis-cat-hist-1} 
-
-}
-
-\caption{Number of publications over time broken down by type of data analysis. The 3 categories most popular in the past year are shown, and the others are lumped into 'Other'. Bin width is 365 days.}(\#fig:analysis-cat-hist)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-cat-hist-1.png" alt="Number of publications over time broken down by type of data analysis. The 3 categories most popular in the past year are shown, and the others are lumped into 'Other'. Bin width is 90 days." width="576" />
+<p class="caption">(\#fig:analysis-cat-hist)Number of publications over time broken down by type of data analysis. The 3 categories most popular in the past year are shown, and the others are lumped into 'Other'. Bin width is 90 days.</p>
+</div>
 
 
 
-\begin{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-map-1.png" alt="Map of where first authors of current era and prequel data analysis papers were located as of publication. Each point is a city and point size is number of publications from all institutions in the city. Top 10 institutions in each era are labeled." width="100%" />
+<p class="caption">(\#fig:analysis-map)Map of where first authors of current era and prequel data analysis papers were located as of publication. Each point is a city and point size is number of publications from all institutions in the city. Top 10 institutions in each era are labeled.</p>
+</div>
 
-{\centering \includegraphics[width=1\linewidth]{07-current_analysis_files/figure-latex/analysis-map-1} 
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-usa-1.png" alt="Map of where first authors of current era and prequel data analysis papers were located as of publication around continental US. Top 5 institutions in each era are labeled." width="576" />
+<p class="caption">(\#fig:analysis-usa)Map of where first authors of current era and prequel data analysis papers were located as of publication around continental US. Top 5 institutions in each era are labeled.</p>
+</div>
 
-}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-europe-1.png" alt="Map of where first authors of current era and prequel data analysis papers were located as of publication in western Europe. Top 5 institutions in each era are labeled." width="576" />
+<p class="caption">(\#fig:analysis-europe)Map of where first authors of current era and prequel data analysis papers were located as of publication in western Europe. Top 5 institutions in each era are labeled.</p>
+</div>
 
-\caption{Map of where first authors of current era and prequel data analysis papers were located as of publication. Each point is a city and point size is number of publications from all institutions in the city. Top 5 institutions in each era are labeled.}(\#fig:analysis-map)
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics{07-current_analysis_files/figure-latex/analysis-usa-1} 
-
-}
-
-\caption{Map of where first authors of current era and prequel data analysis papers were located as of publication around continental US. Top 5 institutions in each era are labeled.}(\#fig:analysis-usa)
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics{07-current_analysis_files/figure-latex/analysis-europe-1} 
-
-}
-
-\caption{Map of where first authors of current era and prequel data analysis papers were located as of publication in western Europe. Top 5 institutions in each era are labeled.}(\#fig:analysis-europe)
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics{07-current_analysis_files/figure-latex/analysis-asia-1} 
-
-}
-
-\caption{Map of where first authors of current era and prequel data analysis papers were located as of publication in northeastern Asia. Top 5 institutions in each era are labeled.}(\#fig:analysis-asia)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/analysis-asia-1.png" alt="Map of where first authors of current era and prequel data analysis papers were located as of publication in northeastern Asia. Top 10 institutions in each era are labeled." width="576" />
+<p class="caption">(\#fig:analysis-asia)Map of where first authors of current era and prequel data analysis papers were located as of publication in northeastern Asia. Top 10 institutions in each era are labeled.</p>
+</div>
 
 In our database, we have recorded programming languages used in data analysis or package development. All programming languages that played a major role in the project were recorded. For downstream analysis, this includes languages of the user interface of existing packages used and languages of new functions written for the project. For package development, this includes any language used to write the package essential to the functioning of the package. In publications that focus on data collection, R is by far the most popular programming language used in downstream data analysis (Figure \@ref(fig:user-langs)). The second most popular is Python, and then MATLAB, which is more common in smFISH (Figure \@ref(fig:smfish-langs)) and ISS for its image processing functionality. Python is used for both image processing and other types of analyses. C and C++ are not as common in downstream analysis.
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{07-current_analysis_files/figure-latex/user-langs-1} 
-
-}
-
-\caption{Number of publications for data collection using each of the 5 most popular programming languages for downstream data analysis.}(\#fig:user-langs)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/user-langs-1.png" alt="Number of publications for data collection using each of the 5 most popular programming languages for downstream data analysis." width="576" />
+<p class="caption">(\#fig:user-langs)Number of publications for data collection using each of the 5 most popular programming languages for downstream data analysis.</p>
+</div>
 
 
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{07-current_analysis_files/figure-latex/dev-langs-1} 
-
-}
-
-\caption{Number of publication for data analysis using each of the 5 most popular programming languages for package development. In this and the previous figure, each icon stands for 50 publications, and the x axes of both figures are aligned. Note that multiple programming languages can be used in one publication.}(\#fig:dev-langs)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/dev-langs-1.png" alt="Number of publication for data analysis using each of the 5 most popular programming languages for package development. In this and the previous figure, each icon stands for 50 publications, and the x axes of both figures are aligned. Note that multiple programming languages can be used in one publication." width="576" />
+<p class="caption">(\#fig:dev-langs)Number of publication for data analysis using each of the 5 most popular programming languages for package development. In this and the previous figure, each icon stands for 50 publications, and the x axes of both figures are aligned. Note that multiple programming languages can be used in one publication.</p>
+</div>
 
 The same top 5 programming languages are the most common for developing data analysis packages (Figure \@ref(fig:dev-langs)). Python is the most popular, especially for packages involving deep learning, image processing, using Torch for optimization, or are command line tools. R follows, and is more popular for exploratory data analysis (EDA) and data visualization, but sometimes both R and Python are used in the same package. Other languages aren't nearly as commonly used for packages reported on in our database. The above observations about usage of R and Python seem to reflect the broader cultural differences between the R and Python communities; the former caters more to the users and statisticians who do not specialize in computer science, while the latter caters more to developers and computer science specialists. MATLAB is not as commonly used for package development. While popularity of Python and R have grown (and some others such as Julia), the popularity of MATLAB seems more level (Figure \@ref(fig:documented)). C and C++ are more common in package development than in downstream analysis, but are often used in conjunction with either R or Python or both as C and C++ are used for performance while R and Python are for user interface. With packages such as [`reticulate`](https://rstudio.github.io/reticulate/), [`rpy2`](https://rpy2.github.io/doc/latest/html/introduction.html), [`basilisk`](https://bioconductor.org/packages/release/bioc/html/basilisk.html), [`Rcpp`](http://rcpp.org), and [`Cython`](https://cython.org), the most popular open source languages can be made interoperable to each other to some extent, making use of the best resources from each language.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{07-current_analysis_files/figure-latex/documented-1} 
-
-}
-
-\caption{Among data analysis publications, the number of packages that are or are not well documented over time.}(\#fig:documented)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/documented-1.png" alt="Among data analysis publications, the number of packages that are or are not well documented over time." width="100%" />
+<p class="caption">(\#fig:documented)Among data analysis publications, the number of packages that are or are not well documented over time.</p>
+</div>
 
 We have also recorded whether the package is well documented and whether it's hosted on a public repository as a loose proxy of user friendliness and quality. Here "well documented" means at least all arguments of all functions exposed to the user are documented, though we consider it better when examples are included. Public repositories can to some extent indicate user friendliness and quality because the packages need to pass some sort of checking in order to be hosted on the repositories, though some repositories, such as Bioconductor, have stricter standards than others. Moreover, installation of the package is easier when the package is on a public repository. A majority of Python packages and the vast majority of R and C++ packages are well documented, while many older MATLAB packages are not though more recent MATLAB packages are also mostly documented (Figure \@ref(fig:documented)). Most packages are not on a public repository such as CRAN, Bioconductor, pip, and conda (Figure \@ref(fig:repo)). For CRAN and especially Bioconductor, this might be due to the work required to meet standards of these repositories such as to pass automated checks, write documentation, examples, unit tests (Bioconductor), and vignettes (Bioconductor).
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{07-current_analysis_files/figure-latex/repo-1} 
-
-}
-
-\caption{The number of packages that are or are not on a public repository such as CRAN, Bioconductor, pip, or conda over time. In both C and D, the bin width is 365 days. NA means the source code repository is not available.}(\#fig:repo)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="07-current_analysis_files/figure-html/repo-1.png" alt="The number of packages that are or are not on a public repository such as CRAN, Bioconductor, pip, or conda over time. In both C and D, the bin width is 365 days. NA means the source code repository is not available." width="100%" />
+<p class="caption">(\#fig:repo)The number of packages that are or are not on a public repository such as CRAN, Bioconductor, pip, or conda over time. In both C and D, the bin width is 365 days. NA means the source code repository is not available.</p>
+</div>
 
 Some of the most popular categories of analyses (Figure \@ref(fig:analysis-cats)) are reviewed in the rest of this section, arranged roughly in the order each task is performed in a data analysis workflow, from converting raw data to something more amenable to biological interpretations to forming biological hypotheses. The former is specific to certain types of techniques, and includes image processing (smFISH and ISS), spatial reconstruction (scRNA-seq and smFISH and ISS data that are not transcriptome wide), and cell type deconvolution (NGS barcoding data that are not single cell resolution). The latter can largely be applied across types of techniques if given a gene by cell or spot matrix and cell or spot locations. Exceptions to the "largely" include analyses of subcellular transcript location which can only be applied to single molecule resolution data and spatial point process based methods which are more appropriate to model the cell or transcript locations rather than the fixed Visium spot locations. Each category will first be defined, and the common core principles will be summarized. 
 
@@ -177,38 +123,140 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
 
 
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:seg-packages)Packages mentioned for smFISH and ISS image processing}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://github.com/singlecelllab/correlationFISH}{\cellcolor{gray!6}{corrFISH}} & \cellcolor{gray!6}{MATLAB} & \href{https://doi.org/10.1038/nmeth.3895}{\cellcolor{gray!6}{Dense transcript profiling in single cells by image correlation decoding}} & \cellcolor{gray!6}{2016-06-06}\\
-\href{https://github.com/wahlby-lab/graph-iss}{graph-ISS} & Python & \href{https://doi.org/10.1101/765842}{Identification of spatial compartments in tissue from in situ sequencing data} & 2019-09-18\\
-\href{https://github.com/kdharris101/iss}{\cellcolor{gray!6}{pciSeq}} & \cellcolor{gray!6}{MATLAB} & \href{https://doi.org/10.1038/s41592-019-0631-4}{\cellcolor{gray!6}{Probabilistic cell typing enables fine mapping of closely related cell types in situ}} & \cellcolor{gray!6}{2019-11-18}\\
-\href{https://github.com/shenlab-ucsf/SMART-Q}{SMART-Q} & Python & \href{https://doi.org/10.1371/journal.pone.0228760}{SMART-Q: An Integrative Pipeline Quantifying Cell Type-Specific RNA Transcription} & 2020-04-29\\
-\href{https://github.com/wahlby-lab/spage2vec}{\cellcolor{gray!6}{spage2vec}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1111/febs.15572}{\cellcolor{gray!6}{Spage2vec: Unsupervised detection of spatial gene expression constellations}} & \cellcolor{gray!6}{2020-09-25}\\
-\addlinespace
-\href{https://github.com/BBQuercus/deepBlink}{deepBlink} & Python & \href{https://doi.org/10.1101/2020.12.14.422631}{deepBlink: Threshold-independent detection and localization of diffraction-limited spots} & 2020-12-15\\
-\href{https://github.com/axanderssonuu/istdeco}{\cellcolor{gray!6}{ISTDECO}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2021.03.01.433040}{\cellcolor{gray!6}{ISTDECO: In Situ Transcriptomics Decoding by Deconvolution}} & \cellcolor{gray!6}{2021-03-02}\\
-\href{https://github.com/jacksonloper/bardensr}{BarDensr} & Python & \href{https://doi.org/10.1371/journal.pcbi.1008256}{BARcode DEmixing through Non-negative Spatial Regression (BarDensr)} & 2021-03-08\\
-\href{https://github.com/wollmanlab/JSTA}{\cellcolor{gray!6}{JSTA}} & \cellcolor{gray!6}{Python; C} & \href{https://doi.org/10.15252/msb.202010108}{\cellcolor{gray!6}{Joint cell segmentation and cell type annotation for spatial transcriptomics}} & \cellcolor{gray!6}{2021-05-31}\\
-\href{https://github.com/eilslabs/ssam}{SSAM} & Python; C++ & \href{https://doi.org/10.1038/s41467-021-23807-4}{Cell segmentation-free inference of cell types from in situ transcriptomics data} & 2021-06-10\\
-\addlinespace
-\href{https://github.com/kharchenkolab/Baysor}{\cellcolor{gray!6}{Baysor}} & \cellcolor{gray!6}{Julia} & \href{https://doi.org/10.1038/s41587-021-01044-w}{\cellcolor{gray!6}{Bayesian segmentation of spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2021-10-14}\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:seg-packages)Packages mentioned for smFISH and ISS image processing</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/singlecelllab/correlationFISH"> corrFISH </a>
+</td>
+   <td style="text-align:left;width: 5em; "> MATLAB </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/nmeth.3895"> Dense transcript profiling in single cells by image correlation decoding </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2016-06-06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/wahlby-lab/graph-iss"> graph-ISS </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/765842"> Identification of spatial compartments in tissue from in situ sequencing data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-09-18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/kdharris101/iss"> pciSeq </a>
+</td>
+   <td style="text-align:left;width: 5em; "> MATLAB </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41592-019-0631-4"> Probabilistic cell typing enables fine mapping of closely related cell types in situ </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-11-18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/shenlab-ucsf/SMART-Q"> SMART-Q </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1371/journal.pone.0228760"> SMART-Q: An Integrative Pipeline Quantifying Cell Type-Specific RNA Transcription </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/wahlby-lab/spage2vec"> spage2vec </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1111/febs.15572"> Spage2vec: Unsupervised detection of spatial gene expression constellations </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-09-25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/BBQuercus/deepBlink"> deepBlink </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.12.14.422631"> deepBlink: Threshold-independent detection and localization of diffraction-limited spots </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-12-15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/axanderssonuu/istdeco"> ISTDECO </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2021.03.01.433040"> ISTDECO: In Situ Transcriptomics Decoding by Deconvolution </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-03-02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/jacksonloper/bardensr"> BarDensr </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1371/journal.pcbi.1008256"> BARcode DEmixing through Non-negative Spatial Regression (BarDensr) </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/wollmanlab/JSTA"> JSTA </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python; C </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.15252/msb.202010108"> Joint cell segmentation and cell type annotation for spatial transcriptomics </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-05-31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/eilslabs/ssam"> SSAM </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-021-23807-4"> Cell segmentation-free inference of cell types from in situ transcriptomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-06-10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/kharchenkolab/Baysor"> Baysor </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Julia </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41587-021-01044-w"> Bayesian segmentation of spatially resolved transcriptomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-10-14 </td>
+  </tr>
+</tbody>
+</table>
 
 ### Image registration {#registration}
 
-First, images of each FOV from different rounds of hybridization must be aligned; this is image registration. The images can be aligned to a reference of fiducial beads or DAPI staining, which is especially useful when "no fluorescence" is part of the barcode [@Chen2015; @Eng2019a]. If "no fluorescence" is not involved, then the reference can be a particular round of hybridization [@Shah2016; @Wang2018]. Image registration is usually affine, i.e. images are translated, scaled, or rotated to match the reference, and often only translation is used. However, non-linear registration has been used in case the sample does not lie flat and chromatic aberration shifts spots in different channels [@Qian2020].
+First, images of each FOV from different rounds of hybridization must be aligned; this is image registration. The images can be aligned to a reference of fiducial beads or DAPI staining, which is especially useful when "no fluorescence" is part of the barcode [@Chen2015; @Eng2019a]. If "no fluorescence" is not involved, then the reference can be a particular round of hybridization [@Shah2016; @Wang2018b]. Image registration is usually affine, i.e. images are translated, scaled, or rotated to match the reference, and often only translation is used. However, non-linear registration has been used in case the sample does not lie flat and chromatic aberration shifts spots in different channels [@Qian2020].
 
 ### Spot and barcode calling {#calling}
 
-Then the spots representing individual transcripts are identified (spot calling). The background of autofluorescence and non-specific hybridization is often removed by thresholding or top hat filtering, only preserving brighter pixels. Spots can be identified with [multi-Gaussian fitting](http://www.inf.ed.ac.uk/teaching/courses/inf2b/learnSlides/inf2b12-learnlec09.pdf) with fixed width, which can distinguish between partially overlapping spots [@Chen2015], or tightened by [Lucy-Richardson deconvolution](https://en.wikipedia.org/wiki/Richardson–Lucy_deconvolution) [@Moffitt2018], or by identifying local maxima in intensity after identifying potential spots with [Laplacian of Gaussian](http://fourier.eng.hmc.edu/e161/lectures/gradient/node8.html) [@Shah2016; @Wang2018]. 
+Then the spots representing individual transcripts are identified (spot calling). The background of autofluorescence and non-specific hybridization is often removed by thresholding or top hat filtering, only preserving brighter pixels. Spots can be identified with [multi-Gaussian fitting](http://www.inf.ed.ac.uk/teaching/courses/inf2b/learnSlides/inf2b12-learnlec09.pdf) with fixed width, which can distinguish between partially overlapping spots [@Chen2015], or tightened by [Lucy-Richardson deconvolution](https://en.wikipedia.org/wiki/Richardson–Lucy_deconvolution) [@Moffitt2018], or by identifying local maxima in intensity after identifying potential spots with [Laplacian of Gaussian](http://fourier.eng.hmc.edu/e161/lectures/gradient/node8.html) [@Shah2016; @Wang2018b]. 
 The spots can also be identified with deep learning. In Python package graph-ISS [@Partel2019], a [convolutional neural network (CNN)](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53) is pretrained on manually annotated candidate signal spots from another dataset, and probability that a new candidate obtained after [top hat filtering](https://micro.magnet.fsu.edu/primer/java/digitalimaging/russ/tophatfilter/index.html) and [h-maxima transform](https://en.wikipedia.org/wiki/H-maxima_transform) is a signal is returned by the last softmax layer of the CNN. Another CNN based spot calling tool is deepBlink [@Eichenberger2020], which builds on the popular U-net architecture.
 
-Once spots are called in each round of hybridization, spots that most likely to correspond to the same transcript are read as barcode and decoded to identify the gene encoded by the barcode (barcode calling). As image registration is imperfect, the spot coming from the same transcript may still be slightly shifted between rounds of hybridization. To identify the barcode from the rounds of hybridization, the spot in one round of hybridization is typically identified with a spot in another round if the spatial distance between the two is sufficiently small, such as less than between 1 and 3 pixels, or smaller than the distance to a barcode that contains error [@Shah2016; @Wang2018; @Moffitt2016a; @Eng2019a].
+Once spots are called in each round of hybridization, spots that most likely to correspond to the same transcript are read as barcode and decoded to identify the gene encoded by the barcode (barcode calling). As image registration is imperfect, the spot coming from the same transcript may still be slightly shifted between rounds of hybridization. To identify the barcode from the rounds of hybridization, the spot in one round of hybridization is typically identified with a spot in another round if the spatial distance between the two is sufficiently small, such as less than between 1 and 3 pixels, or smaller than the distance to a barcode that contains error [@Shah2016; @Wang2018b; @Moffitt2016a; @Eng2019a].
 
 In graph-ISS [@Partel2019], spots identified from CNN from different rounds of hybridization are connected in a graph, with each spot in each round of hybridization a node and the edge weight decreases with increasing distance between spots across rounds up to a maximum distance. Edges connecting spots not from consecutive rounds are removed. The barcode is called by maximum flow of minimum costs between the sink and the source of the graph. Then a quality score is calculated for the barcode according to the CNN probability of spots and distance between spots from different rounds. Although graph-ISS was originally designed for ISS data, it might be adapted to seqFISH, HybISS, STARmap, and SCRINSHOT as well. However, for MERFISH and seqFISH+, in which a transcript may not have signal in some rounds of hybridization, graph-ISS would need to be altered. Alteration would also be required to decode STARmap's 2 base encoding.
 
@@ -218,9 +266,9 @@ Computational methods to overcome optical crowding and to deconvolute spots were
 
 ### Cell segmentation {#segmentation}
 
-To assign transcript spots to cells, the cells need to be segmented and spots within the segmented boundary of a cell must be assigned to that cell. For neurons, Nissl staining, which stains the cell body and dendrites but not axons, has been used for cell segmentation [@Shah2016; @Wang2018]. Without Nissl staining, total poly-A staining can be used instead, and segmented with watershed transform, although poly-a staining concentrates in the cell body and misses cellular processes such as dendrites [@Moffitt2018]. This misses some interesting biological information; dendrites can have different transcriptomes from the cell body of the same neuron, both in vitro and in vivo [@Middleton2019; @CiolliMattioli2019; @Farris2019]. Cell segmentation can be done manually as automated methods may not be sufficiently reliable and would still require manual inspection and correction, or automated with machine learning models trained by manual segmentation of smaller number of cells such as the random forest model in Ilastik [@Wang2018; @Lohoff2020] and CNN models such as DeepCell [@VanValen2016] and U-net [@Ronneberger2015]. [Watershed segmentation](https://www.mathworks.com/company/newsletters/articles/the-watershed-transform-strategies-for-image-segmentation.html) is more commonly used.
+To assign transcript spots to cells, the cells need to be segmented and spots within the segmented boundary of a cell must be assigned to that cell. For neurons, Nissl staining, which stains the cell body and dendrites but not axons, has been used for cell segmentation [@Shah2016; @Wang2018b]. Without Nissl staining, total poly-A staining can be used instead, and segmented with watershed transform, although poly-a staining concentrates in the cell body and misses cellular processes such as dendrites [@Moffitt2018]. This misses some interesting biological information; dendrites can have different transcriptomes from the cell body of the same neuron, both in vitro and in vivo [@Middleton2019; @CiolliMattioli2019; @Farris2019]. Cell segmentation can be done manually as automated methods may not be sufficiently reliable and would still require manual inspection and correction, or automated with machine learning models trained by manual segmentation of smaller number of cells such as the random forest model in Ilastik [@Wang2018b; @Lohoff2021] and CNN models such as DeepCell [@VanValen2016] and CellPose [@Stringer2020]. [Watershed segmentation](https://www.mathworks.com/company/newsletters/articles/the-watershed-transform-strategies-for-image-segmentation.html) is more commonly used.
 
-Without seeing the actual extent of the cell, the quality of manual segmentation is questionable, especially in regions with high cell density, thus limiting the performance of machine learning models. Sometimes problematic methods were used to segment cells, such as 3D [Voroni tessellation](https://en.wikipedia.org/wiki/Voronoi_diagram) [@Shah2016] and [convex hull](https://en.wikipedia.org/wiki/Convex_hull) of Nissl staining based segmentation [@Wang2018]; these are problematic because cells need not to take a convex shape so such segmentation may mis-assign transcripts from other cells, or to be conservative about mis-assigning transcripts from other cells, miss transcripts that in fact belong to the cell of interest. However, one study did specifically stain for membrane bound proteins for the actual extent of the plasma membrane and accurate cell segmentation [@Lohoff2020].
+Without seeing the actual extent of the cell, the quality of manual segmentation is questionable, especially in regions with high cell density, thus limiting the performance of machine learning models. Sometimes problematic methods were used to segment cells, such as 3D [Voroni tessellation](https://en.wikipedia.org/wiki/Voronoi_diagram) [@Shah2016] and [convex hull](https://en.wikipedia.org/wiki/Convex_hull) of Nissl staining based segmentation [@Wang2018b]; these are problematic because cells need not to take a convex shape so such segmentation may mis-assign transcripts from other cells, or to be conservative about mis-assigning transcripts from other cells, miss transcripts that in fact belong to the cell of interest. However, one study did specifically stain for membrane bound proteins for the actual extent of the plasma membrane and accurate cell segmentation [@Lohoff2021].
 
 To address the challenges of cell segmentation, segmentation methods utilizing scRNA-seq data with annotated cell types have been developed recently. One such method is Python package JSTA [@Littman2020], in which a deep neural network (DNN) learns a segmentation and cell type annotation using the information from a scRNA-seq reference with cell type annotations. First, watershed is used for an initial cell segmentation, both MERFISH and scRNA-seq data are scaled and centered. Then a DNN is trained on the scRNA-seq data to predict cell type from gene expression. Then a separate DNN is trained to refine the cell boundaries iteratively with [expectation maximization (EM)](http://ai.stanford.edu/~chuongdo/papers/em_tutorial.pdf): The cell type classifier is applied on the watershed segmented MERFISH data to classify putative cells (E). Then a random subset of the pixels are used to train the pixel classifier, maximizing a loss function comparing the new pixel cell type probabilities to the initial/previous assignment (M). The new cell type probabilities are then scaled per pixel according to distance to nuclei. Only probabilities of cell types of neighboring cells are kept and the other cell types are assigned probability 0. The new cell type probabilities of each pixel is then used as event probabilities of a multinomial distribution and randomly assign a new cell type label to the pixel. Then the new cell type assignment to pixels is used to train the pixel classifier again, until the cell type assignments converge. This may refine boundaries between neighboring cells of different types, and the initial watershed boundaries are kept for neighboring cells of the same type. A problem with this package is that inhomogeneous transcript localization is not taken into account.
 
@@ -236,29 +284,105 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
 
 ## Exploratory data analysis {#eda}
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:eda-packages)Packages mentioned for EDA}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://github.com/RachelQueen1/Spaniel}{\cellcolor{gray!6}{Spaniel}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/619197}{\cellcolor{gray!6}{Spaniel: analysis and interactive sharing of Spatial Transcriptomics data}} & \cellcolor{gray!6}{2019-05-05}\\
-\href{https://github.com/satijalab/seurat}{Seurat3} & R & \href{https://doi.org/10.1016/j.cell.2019.05.031}{Comprehensive Integration of Single-Cell Data} & 2019-06-13\\
-\href{https://github.com/jbergenstrahle/SpatialCPie}{\cellcolor{gray!6}{SpatialCPie}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s12859-020-3489-7}{\cellcolor{gray!6}{SpatialCPie: an R/Bioconductor package for spatial transcriptomics cluster evaluation}} & \cellcolor{gray!6}{2020-04-29}\\
-\href{https://github.com/jbergenstrahle/STUtility}{STUtility} & R & \href{https://doi.org/10.1186/s12864-020-06832-3}{Seamless integration of image and molecular analysis for spatial transcriptomics workflows} & 2020-07-16\\
-\href{https://github.com/theMILOlab/SPATA}{\cellcolor{gray!6}{SPATA}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2020.10.20.346544}{\cellcolor{gray!6}{Inferring spatially transient gene expression pattern from spatial transcriptomic studies}} & \cellcolor{gray!6}{2020-10-21}\\
-\addlinespace
-\href{https://github.com/RubD/Giotto}{Giotto} & R & \href{https://doi.org/10.1186/s13059-021-02286-2}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data} & 2021-03-08\\
-\href{https://github.com/theislab/squidpy}{\cellcolor{gray!6}{Squidpy}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41592-021-01358-2}{\cellcolor{gray!6}{Squidpy: a scalable framework for spatial single cell analysis}} & \cellcolor{gray!6}{2022-01-31}\\
-\href{https://bioconductor.org/packages/SpatialExperiment}{SpatialExperiment} & R & \href{https://doi.org/10.1093/bioinformatics/btac299}{SpatialExperiment: infrastructure for spatially resolved transcriptomics data in R using Bioconductor} & 2022-04-28\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:eda-packages)Packages mentioned for EDA</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/RachelQueen1/Spaniel"> Spaniel </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/619197"> Spaniel: analysis and interactive sharing of Spatial Transcriptomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-05-05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/satijalab/seurat"> Seurat3 </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1016/j.cell.2019.05.031"> Comprehensive Integration of Single-Cell Data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/jbergenstrahle/SpatialCPie"> SpatialCPie </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s12859-020-3489-7"> SpatialCPie: an R/Bioconductor package for spatial transcriptomics cluster evaluation </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/jbergenstrahle/STUtility"> STUtility </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s12864-020-06832-3"> Seamless integration of image and molecular analysis for spatial transcriptomics workflows </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-07-16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/theMILOlab/SPATA"> SPATA </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.10.20.346544"> Inferring spatially transient gene expression pattern from spatial transcriptomic studies </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-10-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/RubD/Giotto"> Giotto </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s13059-021-02286-2"> Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/theislab/squidpy"> Squidpy </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41592-021-01358-2"> Squidpy: a scalable framework for spatial single cell analysis </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-01-31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://bioconductor.org/packages/SpatialExperiment"> SpatialExperiment </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/bioinformatics/btac299"> SpatialExperiment: infrastructure for spatially resolved transcriptomics data in R using Bioconductor </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-04-28 </td>
+  </tr>
+</tbody>
+</table>
 
 After data preprocessing, as described above, for array or microdissection based data, we get a gene count matrix with locations of voxels, and for smFISH and ISS based data, we get locations of transcripts, and if cell segmentation is performed, a gene count matrix and cell boundaries as well. For scRNA-seq, Seurat [@Stuart2019a], scanpy, and packages surrounding SingleCellExperiment on Bioconductor such as scran and scater implement further preprocessing of the gene count matrix, such as data normalization and scaling, as well as basic EDA methods to inspect and create an overview of the data, such as quality control (QC), data visualization, finding highly variable genes, dimension reduction, and clustering, and have user friendly tutorials, consistent user interface, and decent documentation. Such integrative EDA packages, as well as more specialized data visualization packages, have emerged for spatial transcriptomics as well, and are reviewed in this section.
 
-In practice, spatial transcriptomics data is often analyzed with standard scRNA-seq analysis at the EDA stage, with one or more of PCA, [tSNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding), UMAP, clustering cells or spots, and finding marker genes for clusters, and differential expression (DE) between case and control [@Shah2016; @Moffitt2018; @Zhang2020; @Moncada2020; @Berglund2018]. For ST and Visium, the data is also often normalized like in scRNA-seq with [CPM](https://reneshbedre.github.io/blog/expression_units.html) or classical Seurat [log normalization](https://rdrr.io/cran/Seurat/man/NormalizeData.html) and [scaling](https://rdrr.io/cran/Seurat/man/ScaleData.html) [@Moncada2020; @Ji2020; @Berglund2018]. Seurat also implements data integration, which has been used to transfer cell type labels from scRNA-seq to Visium for cell type deconvolution [@Mantri2020], and can potentially be used to impute gene expression in non-transcriptome wide spatial data from scRNA-seq (discussed in Section \@ref(reconstruction)). Then the clusters, marker genes, and genes of interest from scRNA-seq are often visualized within spatial context, and some studies proceed to other analyses that utilize the spatial information. Due to the relevance of scRNA-seq data normalization, EDA, and data integration to spatial data, the existing scRNA-seq ecosystems of Seurat, scanpy (spatial part in Squidpy [@Palla2021]), and SingleCellExperiment (spatial part in SpatialExperiment [@Righelli2021]) are adapting to the rise of spatial transcriptomics, with new data structures, visualization of gene expression and cell metadata (e.g. total UMI counts, cluster, and cell type) on the spatial coordinantes, with H&E as background for ST and Visium, and perhaps other spatial functionalities such as spatial neighborhood graphs and spatially variable genes.
+In practice, spatial transcriptomics data is often analyzed with standard scRNA-seq analysis at the EDA stage, with one or more of PCA, [tSNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding), UMAP, clustering cells or spots, and finding marker genes for clusters, and differential expression (DE) between case and control [@Shah2016; @Moffitt2018; @Zhang2020; @Moncada2020; @Berglund2018]. For ST and Visium, the data is also often normalized like in scRNA-seq with [CPM](https://reneshbedre.github.io/blog/expression_units.html) or classical Seurat [log normalization](https://rdrr.io/cran/Seurat/man/NormalizeData.html) and [scaling](https://rdrr.io/cran/Seurat/man/ScaleData.html) [@Moncada2020; @Ji2020; @Berglund2018]. Seurat also implements data integration, which has been used to transfer cell type labels from scRNA-seq to Visium for cell type deconvolution [@Mantri2020], and can potentially be used to impute gene expression in non-transcriptome wide spatial data from scRNA-seq (discussed in Section \@ref(reconstruction)). Then the clusters, marker genes, and genes of interest from scRNA-seq are often visualized within spatial context, and some studies proceed to other analyses that utilize the spatial information. Due to the relevance of scRNA-seq data normalization, EDA, and data integration to spatial data, the existing scRNA-seq ecosystems of Seurat, scanpy (spatial part in Squidpy [@Palla2022]), and SingleCellExperiment (spatial part in SpatialExperiment [@Righelli2022]) are adapting to the rise of spatial transcriptomics, with new data structures, visualization of gene expression and cell metadata (e.g. total UMI counts, cluster, and cell type) on the spatial coordinates, with H&E as background for ST and Visium, and perhaps other spatial functionalities such as spatial neighborhood graphs and spatially variable genes.
 
-There are other EDA packages not originating from an existing scRNA-seq EDA ecosystem as well. R packages Giotto [@Dries2019], STUtility [@Bergenstrahle2020], and SPATA [@Kueckelhaus2020] not only support basic QC and EDA functionalities like those in Seurat, but also spatial analyses not supported by Seurat. These packages are well documented, but are not (yet?) on CRAN or Bioconductor.
+There are other EDA packages not originating from an existing scRNA-seq EDA ecosystem as well. R packages Giotto [@Dries2021], STUtility [@Bergenstrahle2020], and SPATA [@Kueckelhaus2020] not only support basic QC and EDA functionalities like those in Seurat, but also spatial analyses not supported by Seurat. These packages are well documented, but are not (yet?) on CRAN or Bioconductor.
 
 Giotto has two main parts: Giotto Analyzer and Giotto Viewer. Besides basic Seurat functionalities and spatial data visualization, Giotto Analyzer implements several types of spatial analyses to be reviewed in more detail in the rest of this section: cell type enrichment in spatial data without single cell resolution, identifying spatially variable genes, gene co-expression patterns, cellular neighborhoods, interactions between cell types and ligand-receptor pairs in such interactions, and genes whose expression is associated with cell type interactions. However, the methods implemented in Giotto tend to have simpler principles than those of more specialized packages for each of the above tasks, such as hypergeometric test for cell type enrichment and spatially coherent genes, though Giotto wraps specialized packages such as SpatialDE [@Svensson2018], trendsceek [@Edsgard2018] for spatially variable genes, and smfishhmrf [@Zhu2018] to identify spatial cellular neighborhoods. Giotto Viewer provides interactive visualization of the data. As Giotto uses its own object class to store data, interoperability with other single cell and spatial software becomes more challenging given the popularity of Seurat and SingleCellExperiment.
 
@@ -274,33 +398,179 @@ It may be fair to say that the holy grail of spatial transcriptomics is to profi
 
 Attempts at spatial reconstruction of single cell data date back to 2014, when growth in the popularity of scRNA-seq started to pick up pace [@Svensson2020]. Early (2014-2017) methods tend to fall in three categories: direct dimension reduction with PCA, ad hoc scoring, and pseudotime projected into space. The first two have been by and large abandoned due to their limitations, and the third isn't commonly used. Another category is generative modeling, which we consider intermediate due to its early origin and lasting legacy as some later methods involve more sophisticated generative modeling. Later (2018-present) methods commonly involve a lower dimensional latent space shared by the scRNA-seq and the spatial data, and many different approaches have been tried to obtain the shared latent space and project it back into the higher dimensional space of gene expression. However, other principles were used as well, such as optimal transport, nonlinear direct dimension reduction, black box machine learning, mixture of experts model, and etc.
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:reconst-pkgs)Packages mentioned for spatial reconstruction of scRNA-seq data}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://github.com/satijalab/seurat/tree/37b8f45db23a6564c6dfcde238ef41177c8230e8}{\cellcolor{gray!6}{Seurat1}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/nbt.3192}{\cellcolor{gray!6}{Spatial reconstruction of single-cell gene expression data}} & \cellcolor{gray!6}{2015-04-13}\\
-\href{https://github.com/rajewsky-lab/distmap}{DistMap} & R & \href{https://doi.org/10.1126/science.aan3235}{The Drosophila embryo at single-cell transcriptome resolution} & 2017-10-13\\
-\href{https://github.com/YosefLab/scVI}{\cellcolor{gray!6}{gimVI}} & \cellcolor{gray!6}{Python} & \href{https://arxiv.org/abs/1905.02269}{\cellcolor{gray!6}{A joint model of unpaired data from scRNA-seq and spatial transcriptomics for imputing missing gene expression measurements}} & \cellcolor{gray!6}{2019-05-06}\\
-\href{https://github.com/satijalab/seurat}{Seurat3} & R & \href{https://doi.org/10.1016/j.cell.2019.05.031}{Comprehensive Integration of Single-Cell Data} & 2019-06-13\\
-\href{https://github.com/MacoskoLab/liger}{\cellcolor{gray!6}{LIGER}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1016/j.cell.2019.05.006}{\cellcolor{gray!6}{Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity}} & \cellcolor{gray!6}{2019-06-13}\\
-\addlinespace
-\href{https://github.com/tmorikuicr/spresso}{SPRESSO} & R; Python & \href{https://doi.org/10.1038/s41598-019-49031-1}{Novel computational model of gastrula morphogenesis to identify spatial discriminator genes by self-organizing map (SOM) clustering} & 2019-08-29\\
-\href{https://github.com/immunogenomics/harmony}{\cellcolor{gray!6}{Harmony}} & \cellcolor{gray!6}{R; C; C++} & \href{https://doi.org/10.1038/s41592-019-0619-0}{\cellcolor{gray!6}{Fast, sensitive and accurate integration of single-cell data with Harmony}} & \cellcolor{gray!6}{2019-11-18}\\
-\href{https://github.com/rajewsky-lab/novosparc}{novoSpaRc} & Python & \href{https://doi.org/10.1038/s41586-019-1773-3}{Gene expression cartography} & 2019-11-20\\
-\href{https://github.com/architverma1/sc-manifold-alignment}{\cellcolor{gray!6}{sstGPLVM}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.01.14.906313}{\cellcolor{gray!6}{A Bayesian nonparametric semi-supervised model for integration of multiple single-cell experiments}} & \cellcolor{gray!6}{2020-01-21}\\
-\href{https://github.com/zcang/SpaOTsc}{SpaOTsc} & Python & \href{https://doi.org/10.1038/s41467-020-15968-5}{Inferring spatial and signaling relationships between cells from single cell transcriptomic data} & 2020-04-29\\
-\addlinespace
-\href{https://github.com/jfnavarro/st_analysis}{\cellcolor{gray!6}{st\_analysis}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1126/sciadv.abb3446}{\cellcolor{gray!6}{Molecular atlas of the adult mouse brain}} & \cellcolor{gray!6}{2020-06-26}\\
-\href{NA}{GLISS} & NA & \href{https://doi.org/10.1101/2020.08.12.248971}{Integrative Spatial Single-cell Analysis with Graph-based Feature Learning} & 2020-08-13\\
-\href{https://github.com/tabdelaal/SpaGE}{\cellcolor{gray!6}{SpaGE}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/nar/gkaa740}{\cellcolor{gray!6}{SpaGE: Spatial Gene Enhancement using scRNA-seq}} & \cellcolor{gray!6}{2020-09-21}\\
-\href{https://github.com/kuanglab/FIST}{FIST} & MATLAB & \href{https://doi.org/10.1371/journal.pcbi.1008218}{Imputation of Spatially-resolved Transcriptomes by Graph-regularized Tensor Completion} & 2021-04-07\\
-\href{https://github.com/welch-lab/liger}{\cellcolor{gray!6}{LIGER}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1038/s41587-021-00867-x}{\cellcolor{gray!6}{Iterative single-cell multi-omic integration using online learning}} & \cellcolor{gray!6}{2021-04-19}\\
-\addlinespace
-\href{https://github.com/broadinstitute/Tangram}{Tangram} & Python & \href{https://doi.org/10.1038/s41592-021-01264-7}{Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram} & 2021-10-28\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:reconst-pkgs)Packages mentioned for spatial reconstruction of scRNA-seq data</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/satijalab/seurat/tree/37b8f45db23a6564c6dfcde238ef41177c8230e8"> Seurat1 </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/nbt.3192"> Spatial reconstruction of single-cell gene expression data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2015-04-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/rajewsky-lab/distmap"> DistMap </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1126/science.aan3235"> The Drosophila embryo at single-cell transcriptome resolution </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2017-10-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/YosefLab/scVI"> gimVI </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://arxiv.org/abs/1905.02269"> A joint model of unpaired data from scRNA-seq and spatial transcriptomics for imputing missing gene expression measurements </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-05-06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/satijalab/seurat"> Seurat3 </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1016/j.cell.2019.05.031"> Comprehensive Integration of Single-Cell Data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/MacoskoLab/liger"> LIGER </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1016/j.cell.2019.05.006"> Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/tmorikuicr/spresso"> SPRESSO </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41598-019-49031-1"> Novel computational model of gastrula morphogenesis to identify spatial discriminator genes by self-organizing map (SOM) clustering </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-08-29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/immunogenomics/harmony"> Harmony </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41592-019-0619-0"> Fast, sensitive and accurate integration of single-cell data with Harmony </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-11-18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/rajewsky-lab/novosparc"> novoSpaRc </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41586-019-1773-3"> Gene expression cartography </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-11-20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/architverma1/sc-manifold-alignment"> sstGPLVM </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.01.14.906313"> A Bayesian nonparametric semi-supervised model for integration of multiple single-cell experiments </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-01-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/zcang/SpaOTsc"> SpaOTsc </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-020-15968-5"> Inferring spatial and signaling relationships between cells from single cell transcriptomic data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/jfnavarro/st_analysis"> st_analysis </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1126/sciadv.abb3446"> Molecular atlas of the adult mouse brain </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-06-26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="NA"> GLISS </a>
+</td>
+   <td style="text-align:left;width: 5em; "> NA </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.08.12.248971"> Integrative Spatial Single-cell Analysis with Graph-based Feature Learning </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-08-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/tabdelaal/SpaGE"> SpaGE </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/nar/gkaa740"> SpaGE: Spatial Gene Enhancement using scRNA-seq </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-09-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/kuanglab/FIST"> FIST </a>
+</td>
+   <td style="text-align:left;width: 5em; "> MATLAB </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1371/journal.pcbi.1008218"> Imputation of Spatially-resolved Transcriptomes by Graph-regularized Tensor Completion </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-04-07 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/welch-lab/liger"> LIGER </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41587-021-00867-x"> Iterative single-cell multi-omic integration using online learning </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-04-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/broadinstitute/Tangram"> Tangram </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41592-021-01264-7"> Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-10-28 </td>
+  </tr>
+</tbody>
+</table>
 
 ### Direct dimension reduction {#direct-dr}
 
@@ -360,29 +630,149 @@ Spatial autocorrelation can also be utilized without optimal transport, but with
 
 There is another aspect to how spatial and scRNA-seq data complement each other. In array based techniques that do not have single cell resolution, the cell type composition of each spot can be estimated with scRNA-seq data. Perhaps because of the increasing popularity of ST and Visium, several cell type deconvolution methods have been developed in the past year, falling into four categories: negative binomial models, packages built upon linear models but without negative binomial, topic modeling, and packages not explicitly using statistical modeling. While any tool designed for cell type deconvolution of bulk RNA-seq data can be used, this section specifically focuses on cell type deconvolution tools designed with spatial data in mind.
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:deconv-pkgs)Packages mentioned for cell type deconvolution}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{NA}{\cellcolor{gray!6}{NMFreg}} & \cellcolor{gray!6}{Python; MATLAB} & \href{https://doi.org/10.1126/science.aaw1219}{\cellcolor{gray!6}{Slide-seq: A scalable technology for measuring genome-wide expression at high spatial resolution}} & \cellcolor{gray!6}{2019-03-29}\\
-\href{https://github.com/satijalab/seurat}{Seurat3} & R & \href{https://doi.org/10.1016/j.cell.2019.05.031}{Comprehensive Integration of Single-Cell Data} & 2019-06-13\\
-\href{https://github.com/almaan/stereoscope}{\cellcolor{gray!6}{stereoscope}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s42003-020-01247-y}{\cellcolor{gray!6}{Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography}} & \cellcolor{gray!6}{2020-10-09}\\
-\href{NA}{DSTG} & Python & \href{https://doi.org/10.1093/bib/bbaa414}{DSTG: Deconvoluting Spatial Transcriptomics Data through Graph-based Artificial Intelligence} & 2021-01-22\\
-\href{https://github.com/MarcElosua/SPOTlight}{\cellcolor{gray!6}{SPOTlight}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1093/nar/gkab043}{\cellcolor{gray!6}{SPOTlight:Seeded NMF regression to Deconvolute Spatial Transcriptomics Spots with Single-Cell Transcriptomes}} & \cellcolor{gray!6}{2021-02-05}\\
-\addlinespace
-\href{https://github.com/dmcable/RCTD}{RCTD} & R & \href{https://doi.org/10.1038/s41587-021-00830-w}{Robust decomposition of cell type mixtures in spatial transcriptomics} & 2021-02-18\\
-\href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
-\href{https://github.com/TaoYang-dev/AdRoit}{AdRoit} & R & \href{https://doi.org/10.1038/s42003-021-02739-1}{AdRoit is an accurate and robust method to infer complex transcriptome composition} & 2021-10-22\\
-\href{https://github.com/broadinstitute/Tangram}{\cellcolor{gray!6}{Tangram}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41592-021-01264-7}{\cellcolor{gray!6}{Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram}} & \cellcolor{gray!6}{2021-10-28}\\
-\href{https://github.com/Nanostring-Biostats/SpatialDecon/}{SpatialDecon} & R & \href{https://doi.org/10.1038/s41467-022-28020-5}{Advances in mixed cell deconvolution enable quantification of cell types in spatially-resolved gene expression data} & 2022-01-19\\
-\addlinespace
-\href{https://github.com/DongqingSun96/STRIDE}{\cellcolor{gray!6}{STRIDE}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/nar/gkac150}{\cellcolor{gray!6}{STRIDE: accurately decomposing and integrating spatial transcriptomics using single-cell RNA sequencing}} & \cellcolor{gray!6}{2022-03-07}\\
-\href{https://github.com/YosefLab/scvi-tools}{DestVI} & Python & \href{https://doi.org/10.1101/2021.05.10.443517}{DestVI identifies continuums of cell types in spatial transcriptomics data} & 2022-04-21\\
-\href{https://github.com/JEFworks-Lab/STdeconvolve}{\cellcolor{gray!6}{STdeconvolve}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41467-022-30033-z}{\cellcolor{gray!6}{Reference-free cell-type deconvolution of pixel-resolution spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2022-04-29}\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:deconv-pkgs)Packages mentioned for cell type deconvolution</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="NA"> NMFreg </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python; MATLAB </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1126/science.aaw1219"> Slide-seq: A scalable technology for measuring genome-wide expression at high spatial resolution </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-03-29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/satijalab/seurat"> Seurat3 </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1016/j.cell.2019.05.031"> Comprehensive Integration of Single-Cell Data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/almaan/stereoscope"> stereoscope </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s42003-020-01247-y"> Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-10-09 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="NA"> DSTG </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/bib/bbaa414"> DSTG: Deconvoluting Spatial Transcriptomics Data through Graph-based Artificial Intelligence </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-01-22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/MarcElosua/SPOTlight"> SPOTlight </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/nar/gkab043"> SPOTlight:Seeded NMF regression to Deconvolute Spatial Transcriptomics Spots with Single-Cell Transcriptomes </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-02-05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/dmcable/RCTD"> RCTD </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41587-021-00830-w"> Robust decomposition of cell type mixtures in spatial transcriptomics </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-02-18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/RubD/Giotto"> Giotto </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s13059-021-02286-2"> Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/TaoYang-dev/AdRoit"> AdRoit </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s42003-021-02739-1"> AdRoit is an accurate and robust method to infer complex transcriptome composition </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-10-22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/broadinstitute/Tangram"> Tangram </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41592-021-01264-7"> Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-10-28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/Nanostring-Biostats/SpatialDecon/"> SpatialDecon </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-022-28020-5"> Advances in mixed cell deconvolution enable quantification of cell types in spatially-resolved gene expression data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-01-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/DongqingSun96/STRIDE"> STRIDE </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/nar/gkac150"> STRIDE: accurately decomposing and integrating spatial transcriptomics using single-cell RNA sequencing </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-03-07 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/YosefLab/scvi-tools"> DestVI </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2021.05.10.443517"> DestVI identifies continuums of cell types in spatial transcriptomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-04-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/JEFworks-Lab/STdeconvolve"> STdeconvolve </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-022-30033-z"> Reference-free cell-type deconvolution of pixel-resolution spatially resolved transcriptomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-04-29 </td>
+  </tr>
+</tbody>
+</table>
 
 ### Negative binomial
 Cell type deconvolution can be performed by explicitly modeling spot level gene expression in terms of individual cell types, usually the scRNA-seq cell clusters. As gene expression is over-dispersed compared to Poisson and is often well modeled with negative binomial, the negative binomial distribution is often used to model gene expression in cell type deconvolution. In stereoscope [@Andersson2020], a negative binomial distribution is fit to the expression of each gene in each cell type in scRNA-seq data. Then at each spot, gene expression is modeled as a weighted sum of the negative binomial distributions from each cell type, and the weights are estimated by [maximum likelihood estimation (MLE)](https://brilliant.org/wiki/maximum-likelihood-estimation-mle/). 
@@ -420,31 +810,169 @@ As already mentioned in Section \@ref(reconstruction), some methods exploit spat
 
 Some genes, such as house keeping genes, are ubiquitously expressed. Such genes, while highly variable at the single cell level, may be interspersed in space so they may not show a spatial trend. Expression of some genes depends on spatial location, which can be due to cell type localization or variation within or independent from cell types. One of the goals of early prequel studies was to identify spatially variable genes, which was done manually, which can be inconsistent and labor intensive. With more quantitative data and data analysis methods, the current era brought identification of spatially variable genes to the next level. Simple methods to identify such genes include dividing the extent of the tissue into a grid and use Fisher's exact test to test for non-random distribution of transcript counts in the grid, or to run DE between one region --- be it a grid cell or a manually annotated histological region --- and another region. Some more sophisticated methods have been developed that avoid the potential arbitrariness of grids and manual annotation, taking advantages of increased resolution of spatial transcriptomics. This section reviews these computational methods that identifies genes with expression that depends on spatial locations. Two principles are the most common. One is [Gaussian process regression](https://bookdown.org/rbg/surrogates/chap5.html) and generalization to discrete distributions with the log mean parameter modeled as Gaussian process. Another centers on Laplacian scores of graphs. There are also some additional methods using other principles.
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:variable-pkgs)Packages mentioned for spatially variable genes}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://github.com/edsgard/trendsceek}{\cellcolor{gray!6}{trendsceek}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/nmeth.4634}{\cellcolor{gray!6}{Identification of spatial expression trends in single-cell gene expression data}} & \cellcolor{gray!6}{2018-03-19}\\
-\href{https://github.com/Teichlab/SpatialDE}{SpatialDE} & Python & \href{https://doi.org/10.1038/nmeth.4636}{SpatialDE: identification of spatially variable genes} & 2018-03-19\\
-\href{https://github.com/satijalab/seurat}{\cellcolor{gray!6}{Seurat3}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1016/j.cell.2019.05.031}{\cellcolor{gray!6}{Comprehensive Integration of Single-Cell Data}} & \cellcolor{gray!6}{2019-06-13}\\
-\href{https://github.com/CamaraLab/RayleighSelection}{RayleighSelection} & R; C++ & \href{https://doi.org/10.1371/journal.pcbi.1007509}{Clustering-independent analysis of genomic data using spectral simplicial theory} & 2019-11-22\\
-\href{https://github.com/xzhoulab/SPARK}{\cellcolor{gray!6}{SPARK}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1038/s41592-019-0701-7}{\cellcolor{gray!6}{Statistical analysis of spatial expression patterns for spatially resolved transcriptomic studies}} & \cellcolor{gray!6}{2020-01-27}\\
-\addlinespace
-\href{NA}{GLISS} & NA & \href{https://doi.org/10.1101/2020.08.12.248971}{Integrative Spatial Single-cell Analysis with Graph-based Feature Learning} & 2020-08-13\\
-\href{https://github.com/alexisvdb/singleCellHaystack}{\cellcolor{gray!6}{singleCellHaystack}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41467-020-17900-3}{\cellcolor{gray!6}{A clustering-independent method for finding differentially expressed genes in single-cell transcriptome data}} & \cellcolor{gray!6}{2020-08-28}\\
-\href{https://github.com/theMILOlab/SPATA}{SPATA} & R & \href{https://doi.org/10.1101/2020.10.20.346544}{Inferring spatially transient gene expression pattern from spatial transcriptomic studies} & 2020-10-21\\
-\href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
-\href{https://github.com/JEFworks-Lab/MERINGUE}{MERINGUE} & R; C++ & \href{https://doi.org/10.1101/gr.271288.120}{Characterizing spatial gene expression heterogeneity in spatially resolved single-cell transcriptomics data with nonuniform cellular densities} & 2021-05-13\\
-\addlinespace
-\href{https://github.com/Minzhe/BOOST-GP}{\cellcolor{gray!6}{BOOST-GP}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1093/bioinformatics/btab455}{\cellcolor{gray!6}{Bayesian Modeling of Spatial Molecular Profiling Data via Gaussian Process}} & \cellcolor{gray!6}{2021-06-19}\\
-\href{https://pypi.org/project/somde/}{SOMDE} & Python & \href{https://doi.org/10.1093/bioinformatics/btab471}{SOMDE: A scalable method for identifying spatially variable genes with self-organizing map} & 2021-06-24\\
-\href{https://github.com/ManchesterBioinference/GPcounts}{\cellcolor{gray!6}{GPcounts}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/bioinformatics/btab486}{\cellcolor{gray!6}{Non-parametric modelling of temporal and spatial counts data from RNA-seq experiments}} & \cellcolor{gray!6}{2021-07-02}\\
-\href{https://github.com/WangPeng-Lab/scGCO}{scGCO} & Python & \href{https://doi.org/10.1038/s41467-022-33182-3}{Identification of spatially variable genes with graph cuts} & 2022-09-19\\
-\href{https://github.com/alexisvdb/singleCellHaystack}{\cellcolor{gray!6}{singleCellHaystack}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1101/2022.11.13.516355}{\cellcolor{gray!6}{A universal differential expression prediction tool for single-cell and spatial genomics data}} & \cellcolor{gray!6}{2022-11-15}\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:variable-pkgs)Packages mentioned for spatially variable genes</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/edsgard/trendsceek"> trendsceek </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/nmeth.4634"> Identification of spatial expression trends in single-cell gene expression data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2018-03-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/Teichlab/SpatialDE"> SpatialDE </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/nmeth.4636"> SpatialDE: identification of spatially variable genes </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2018-03-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/satijalab/seurat"> Seurat3 </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1016/j.cell.2019.05.031"> Comprehensive Integration of Single-Cell Data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/CamaraLab/RayleighSelection"> RayleighSelection </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1371/journal.pcbi.1007509"> Clustering-independent analysis of genomic data using spectral simplicial theory </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-11-22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/xzhoulab/SPARK"> SPARK </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41592-019-0701-7"> Statistical analysis of spatial expression patterns for spatially resolved transcriptomic studies </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-01-27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="NA"> GLISS </a>
+</td>
+   <td style="text-align:left;width: 5em; "> NA </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.08.12.248971"> Integrative Spatial Single-cell Analysis with Graph-based Feature Learning </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-08-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/alexisvdb/singleCellHaystack"> singleCellHaystack </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-020-17900-3"> A clustering-independent method for finding differentially expressed genes in single-cell transcriptome data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-08-28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/theMILOlab/SPATA"> SPATA </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.10.20.346544"> Inferring spatially transient gene expression pattern from spatial transcriptomic studies </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-10-21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/RubD/Giotto"> Giotto </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s13059-021-02286-2"> Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/JEFworks-Lab/MERINGUE"> MERINGUE </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/gr.271288.120"> Characterizing spatial gene expression heterogeneity in spatially resolved single-cell transcriptomics data with nonuniform cellular densities </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-05-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/Minzhe/BOOST-GP"> BOOST-GP </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/bioinformatics/btab455"> Bayesian Modeling of Spatial Molecular Profiling Data via Gaussian Process </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-06-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://pypi.org/project/somde/"> SOMDE </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/bioinformatics/btab471"> SOMDE: A scalable method for identifying spatially variable genes with self-organizing map </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-06-24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/ManchesterBioinference/GPcounts"> GPcounts </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/bioinformatics/btab486"> Non-parametric modelling of temporal and spatial counts data from RNA-seq experiments </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-07-02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/WangPeng-Lab/scGCO"> scGCO </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-022-33182-3"> Identification of spatially variable genes with graph cuts </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-09-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/alexisvdb/singleCellHaystack"> singleCellHaystack </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2022.11.13.516355"> A universal differential expression prediction tool for single-cell and spatial genomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-11-15 </td>
+  </tr>
+</tbody>
+</table>
 
 ### Gaussian process regression {#gpr}
 
@@ -468,9 +996,9 @@ The [simplical complex](https://www2.cs.duke.edu/courses/fall06/cps296.1/Lecture
 
 A spatial point pattern is the observed spatial locations of things or events, and a point process is a stochastic mechanism that generated the point pattern. As already mentioned, in pciSeq, transcript spot locations are modeled by a Poisson point process whose intensity itself is modeled with a Gamma distribution. Cell locations can also be modeled as a point process, which is done in trendsceek [@Edsgard2018]. Each point in a spatial point process can have additional properties other than location, such as gene expression and cell type, which are called marks. If the marks are completely randomly distributed in space, then points with one mark would not be more or less likely to be near points with the same (for categorical marks) or similar (quantitative marks) marks than to points with dissimilar marks. To identify spatial distribution of gene expression that deviates from complete randomness, trendsceek uses 4 mark-segregation summary statistics, which are functions of distance between two points, taking the expected value of a summary statistics on the marks of every pair of points sepearated by the given distance: Stoyan's mark-correlation function (squared geometric mean of marks of two points normalize by squared mean of marks), mean-mark function (average of marks in two points), variance-mark function (variance of the marks given distance between points), and [mark-variogram](https://rdrr.io/cran/spatstat/man/markvario.html) (squared difference of marks of two points). Permutation testing is used to calculate p-values. Regions of interest in the tissue are the regions with $p < 0.05$ from the permutation testing. Perhaps due to the permutation, trendsceek seems to be less scalable and less sensitive than SpatialDE and SPARK [@Sun2020; @Zhang2018].
 
-Seurat's spatial functionalities include finding spatially variable genes, which currently provides two methods, one of this is mark-variogram, inspired by trendsceek. The other is [Moran's I](https://pro.arcgis.com/en/pro-app/tool-reference/spatial-statistics/h-how-spatial-autocorrelation-moran-s-i-spatial-st.htm), which is a common summary statistics of spatial autocorrelation, as spatially patterned genes also exhibit autocorrelation. MERINGUE uses a local version of Moran's I for spatially variable genes [@Miller2021]. As dependence of gene expression of spatial location means spatial autocorrelation, which both Gaussian process models and Laplacian score of spatial neighborhood graphs aim to identify, Moran's I can be a simpler and hence more computationally way to identify spatially variable genes. Moran's I is sometimes used to evaluate performance of more sophisticated SVG methods, with higher values being better (e.g. [@Li2021a; @Hu2020a]); this raises the question of whether Moran's I itself is that much worse than the more sophisticated methods in detecting SVG. SPARK is claimed to have higher power than Moran's I test (`spdep::moran.test()` in R) due to the latter's use of asymptotic normality in computing the p-values [@Sun2020], but this may or may not hold for SVG methods based on other principles.
+Seurat's spatial functionalities include finding spatially variable genes, which currently provides two methods, one of this is mark-variogram, inspired by trendsceek. The other is [Moran's I](https://pro.arcgis.com/en/pro-app/tool-reference/spatial-statistics/h-how-spatial-autocorrelation-moran-s-i-spatial-st.htm), which is a common summary statistics of spatial autocorrelation, as spatially patterned genes also exhibit autocorrelation. MERINGUE uses a local version of Moran's I for spatially variable genes [@Miller2021]. As dependence of gene expression of spatial location means spatial autocorrelation, which both Gaussian process models and Laplacian score of spatial neighborhood graphs aim to identify, Moran's I can be a simpler and hence more computationally efficient way to identify spatially variable genes. Moran's I is sometimes used to evaluate performance of more sophisticated SVG methods, with higher values being better (e.g. [@Li2021a; @Hu2020a]); this raises the question of whether Moran's I itself is that much worse than the more sophisticated methods in detecting SVG. SPARK is claimed to have higher power than Moran's I test (`spdep::moran.test()` in R) due to the latter's use of asymptotic normality in computing the p-values [@Sun2020], but this may or may not hold for SVG methods based on other principles.
 
-Giotto [@Dries2019] implements 3 simple and fast methods to find spatially variable genes in addition to wrapping SpatialDE and trendsceek. First, a spatial neighborhood graph is constructed, which can be mutual $k$ nearest neighbors graph, a graph placing an edge when two cells are within a certain distance, or Delaunay triangulation. Then the gene expression is binarized. The first method uses the [silhouette score](https://en.wikipedia.org/wiki/Silhouette_%28clustering%29). In clustering, a measure of whether each point should be assigned to its current cluster or it should better be assigned to a neighboring cluster. The mean silhouette score indicates how tight and segregated the cluster are. Here the clusters are cells expressing the gene of interest and those not expressing. Then a high silhouette score means that cells expressing the gene and those not expressing are well-segregated in space, which means the gene is spatially variable. The second and third method only differ in the way gene expression is binarized. The second uses k-means with $k=2$, and the third uses a threshold. Then a contingency table $M$ is constructed from neighboring cells in the graph expressing or not expressing the gene; each row is whether a cell expresses the gene, and each column is whether its neighbor also expresses it, so $M_{1,1}$ is the number of distinct pairs of cells both expressing the gene, $M_{1,2}$ is the number of pairs of cells in which source cell is expressing the gene and target cell is not, and so on. [Fisher's exact test](https://mathworld.wolfram.com/FishersExactTest.html) is used to test for dependency in gene expression on whether cells are neighbors.
+Giotto [@Dries2021] implements 3 simple and fast methods to find spatially variable genes in addition to wrapping SpatialDE and trendsceek. First, a spatial neighborhood graph is constructed, which can be mutual $k$ nearest neighbors graph, a graph placing an edge when two cells are within a certain distance, or Delaunay triangulation. Then the gene expression is binarized. The first method uses the [silhouette score](https://en.wikipedia.org/wiki/Silhouette_%28clustering%29). In clustering, a measure of whether each point should be assigned to its current cluster or it should better be assigned to a neighboring cluster. The mean silhouette score indicates how tight and segregated the cluster are. Here the clusters are cells expressing the gene of interest and those not expressing. Then a high silhouette score means that cells expressing the gene and those not expressing are well-segregated in space, which means the gene is spatially variable. The second and third method only differ in the way gene expression is binarized. The second uses k-means with $k=2$, and the third uses a threshold. Then a contingency table $M$ is constructed from neighboring cells in the graph expressing or not expressing the gene; each row is whether a cell expresses the gene, and each column is whether its neighbor also expresses it, so $M_{1,1}$ is the number of distinct pairs of cells both expressing the gene, $M_{1,2}$ is the number of pairs of cells in which source cell is expressing the gene and target cell is not, and so on. [Fisher's exact test](https://mathworld.wolfram.com/FishersExactTest.html) is used to test for dependency in gene expression on whether cells are neighbors.
 
 The KL divergence is a measure of difference between two probability distributions. In singleCellHaystack [@Vandenbon2020], the cell density in the tissue (or a PCA, tSNE, or UMAP space) is estimated at grid points with Gaussian kernel density, and normalized to form a probability distribution of locations of cells. Then the probability distribution of whether a gene of interest is expressed at each grid point is compared to the cell density distribution with KL divergence. P-values are computed by permuting gene expression among cells. Again, this is a cluster-free DE method, not designed specifically for spatial data but can be applied to spatial data.
 
@@ -480,25 +1008,75 @@ So far the methods identifying spatially variable genes based on Gaussian proces
 
 ## Gene patterns {#pattern}
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:pattern-pkgs)Packages mentioned for gene patterns}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://github.com/Teichlab/SpatialDE}{\cellcolor{gray!6}{SpatialDE}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/nmeth.4636}{\cellcolor{gray!6}{SpatialDE: identification of spatially variable genes}} & \cellcolor{gray!6}{2018-03-19}\\
-\href{https://github.com/SpatialTranscriptomicsResearch/std-nb}{std-nb} & C++ & \href{https://doi.org/10.1101/362624}{Charting Tissue Expression Anatomy by Spatial Transcriptome Decomposition} & 2018-12-28\\
-\href{NA}{\cellcolor{gray!6}{stLearn}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.05.31.125658}{\cellcolor{gray!6}{stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues}} & \cellcolor{gray!6}{2020-05-31}\\
-\href{NA}{GLISS} & NA & \href{https://doi.org/10.1101/2020.08.12.248971}{Integrative Spatial Single-cell Analysis with Graph-based Feature Learning} & 2020-08-13\\
-\href{https://github.com/JEFworks-Lab/MERINGUE}{\cellcolor{gray!6}{MERINGUE}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1101/gr.271288.120}{\cellcolor{gray!6}{Characterizing spatial gene expression heterogeneity in spatially resolved single-cell transcriptomics data with nonuniform cellular densities}} & \cellcolor{gray!6}{2021-05-13}\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:pattern-pkgs)Packages mentioned for gene patterns</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/Teichlab/SpatialDE"> SpatialDE </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/nmeth.4636"> SpatialDE: identification of spatially variable genes </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2018-03-19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/SpatialTranscriptomicsResearch/std-nb"> std-nb </a>
+</td>
+   <td style="text-align:left;width: 5em; "> C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/362624"> Charting Tissue Expression Anatomy by Spatial Transcriptome Decomposition </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2018-12-28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="NA"> stLearn </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.05.31.125658"> stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-05-31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="NA"> GLISS </a>
+</td>
+   <td style="text-align:left;width: 5em; "> NA </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.08.12.248971"> Integrative Spatial Single-cell Analysis with Graph-based Feature Learning </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-08-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/JEFworks-Lab/MERINGUE"> MERINGUE </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/gr.271288.120"> Characterizing spatial gene expression heterogeneity in spatially resolved single-cell transcriptomics data with nonuniform cellular densities </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-05-13 </td>
+  </tr>
+</tbody>
+</table>
 
 When spatially variable genes are identified, a question naturally arises: Are there archetypal patterns among these spatially variable genes? As already reviewed in Section \@ref(prequel-analysis), comparing and classifying gene expression patterns was a major topic in the prequel era. Such interest persists in the current era, although we find no evidence that current era gene pattern analysis is significantly influenced by the prequel antecedents, although factor analysis and NMF have been used in both eras.
 
 The most straightforward way to identify archetypal gene patterns is to cluster the gene expression patterns and obtain the cluster centers to represent the cluster. This has been used to analyze mouse brain voxelation data in 2009 [@An2009]. [Wavelet transform](https://en.wikipedia.org/wiki/Wavelet_transform) was applied to the data and the Euclidean distance between the wavelet feature vectors was used to measure gene similarity. Gene similarity between pre-defined "typical" genes and other genes was one way to find groups of similar genes and k-means clustering is another. 
 
-Some package already reviewed also have functionality to identify archetypal gene patterns. In DistMap and SPARK [@Karaiskos2017; @Sun2020], the gene patterns are clustered with [hierarchical clustering](https://towardsdatascience.com/understanding-the-concept-of-hierarchical-clustering-technique-c6e8243758ec), and the individual clusters are obtained by tree cut. In MERINGUE [@Miller2021], spatial cross-correlation is computed for each pair of SVG. The spatial cross-correlation here is similar to Moran's I, and relates to Moran's I in a way similar to how covariance relates to variance. Then the spatial cross-correlation matrix is clustered with hierarchical clustering. In Giotto [@Dries2019], a gene-gene correlation matrix (by default Pearson) is computed, which is then hierarchically clustered. Then the mean or centroid of each cluster is taken to represent that cluster. SpatialDE [@Svensson2018] also clusters gene expression patterns, in automatic expression histology (AEH), which implements a Gaussian process generalization of [Gaussian mixture model clustering](https://towardsdatascience.com/gaussian-mixture-models-d13a5e915c8e). The number of components is set by the user, and the model is fitted to infer the mean pattern of each component. In GLISS [@Zhu2020], the archetypal patterns are identified in the reconstructed latent space as gene expression in the latent space is [spline smoothed](https://en.wikipedia.org/wiki/Smoothing_spline), and the spline coefficients are clustered.
+Some package already reviewed also have functionality to identify archetypal gene patterns. In DistMap and SPARK [@Karaiskos2017; @Sun2020], the gene patterns are clustered with [hierarchical clustering](https://towardsdatascience.com/understanding-the-concept-of-hierarchical-clustering-technique-c6e8243758ec), and the individual clusters are obtained by tree cut. In MERINGUE [@Miller2021], spatial cross-correlation is computed for each pair of SVG. The spatial cross-correlation here is similar to Moran's I, and relates to Moran's I in a way similar to how covariance relates to variance. Then the spatial cross-correlation matrix is clustered with hierarchical clustering. In Giotto [@Dries2021], a gene-gene correlation matrix (by default Pearson) is computed, which is then hierarchically clustered. Then the mean or centroid of each cluster is taken to represent that cluster. SpatialDE [@Svensson2018] also clusters gene expression patterns, in automatic expression histology (AEH), which implements a Gaussian process generalization of [Gaussian mixture model clustering](https://towardsdatascience.com/gaussian-mixture-models-d13a5e915c8e). The number of components is set by the user, and the model is fitted to infer the mean pattern of each component. In GLISS [@Zhu2020], the archetypal patterns are identified in the reconstructed latent space as gene expression in the latent space is [spline smoothed](https://en.wikipedia.org/wiki/Smoothing_spline), and the spline coefficients are clustered.
 
 Beyond clustering, a common way to identify archetypal gene patterns is [factor analysis](https://en.wikipedia.org/wiki/Factor_analysis). This has already been done in the prequel era [@Pruteanu-Malinici2011], but is further developed in the current era. Factor analysis tries to model higher dimensional data as a linear combination of a smaller number of variables called "factors", and PCA is a type of factor analysis. A prostate cancer ST dataset has been modeled with Poisson factor analysis [@Berglund2018]. The observed UMI counts at each spot is modeled as a sum of factors, each of which is Poisson distributed, with its own rate parameter, which in turn depends on Gamma distributed factor, gene, and spot level parameters that may account for overdispersion though this model does not entirely capture the mean-variance relationship of NB. The parameters are estimated from [MCMC](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) sampling of the posterior of this model. Once the parameters are estimated, the individual factors can be calculated from the parameters based on the model. The factors seem to indicate regions in the tumor, such as cancer, stroma, and regions with immune cell infiltration. As NB may describe gene expression better than the Poisson distribution, a NB adaptation of the above Poisson factor analysis model has been developed [@Maaskola2018]. The observed UMI count at each spot is modeled as a sum of NB factors, whose rate parameter can incorporate gene, spot, and experiment level covariates. The package stLearn [@Pham2020a], which also implements methods to identify cell-cell interactions and spatial regions, uses PCA, [ICA](http://wwwf.imperial.ac.uk/~nsjones/TalkSlides/HyvarinenSlides.pdf), and factor analysis to detect microenvironments in the tissue as again, the factors can correspond to specific regions in the tissue.
 
@@ -506,25 +1084,119 @@ Beyond clustering, a common way to identify archetypal gene patterns is [factor 
 
 As already mentioned in trendsceek and scGCO, the problem of identifying spatially variable genes is closely related to identifying regions in tissue defined by gene expression. When archetypal gene patterns are identified, a related question arises: Do the patterns define novel anatomical regions in the tissue? As seen in the previous section, archetypal gene patterns, such as in factors, can reflect tissue regions. There are also methods that identify such regions without first identifying spatially variable genes and/or archetypal gene patterns. In the prequel era (Chapter \@ref(prequel-analysis)), some studies clustered the voxels based on gene expression to identify spatial regions in the tissue, with either k-means clustering or co-clustering [@Zhang2013; @Bohland2010a; @Ko2013], or with Potts model [@Pettit2014]. More sophisticated clustering methods have been developed in the current era tot identify spatial regions. However, as different cell types can reside in the same spatial neighborhood, and conversely, cells from one cell type can reside in different regions of the tissue, MRF has been used to find spatially coherent regions that can contain multiple cell types.
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:region-pkgs)Packages mentioned for spatial regions}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://bitbucket.org/qzhudfci/smfishhmrf-py/src/default/}{\cellcolor{gray!6}{smfishHmrf}} & \cellcolor{gray!6}{R; Python; C} & \href{https://doi.org/10.1038/nbt.4260}{\cellcolor{gray!6}{Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data}} & \cellcolor{gray!6}{2018-10-29}\\
-\href{NA}{stLearn} & Python & \href{https://doi.org/10.1101/2020.05.31.125658}{stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues} & 2020-05-31\\
-\href{https://github.com/SysFate/MULTILAYER}{\cellcolor{gray!6}{MULTILAYER}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1016/j.cels.2021.04.008}{\cellcolor{gray!6}{Inferring biologically relevant molecular tissue substructures by agglomerative clustering of digitized spatial transcriptomes with multilayer}} & \cellcolor{gray!6}{2021-05-07}\\
-\href{https://github.com/edward130603/BayesSpace}{BayesSpace} & R; C++ & \href{https://doi.org/10.1038/s41587-021-00935-2}{Spatial transcriptomics at subspot resolution with BayesSpace} & 2021-06-03\\
-\href{https://github.com/eilslabs/ssam}{\cellcolor{gray!6}{SSAM}} & \cellcolor{gray!6}{Python; C++} & \href{https://doi.org/10.1038/s41467-021-23807-4}{\cellcolor{gray!6}{Cell segmentation-free inference of cell types from in situ transcriptomics data}} & \cellcolor{gray!6}{2021-06-10}\\
-\addlinespace
-\href{https://github.com/ellispatrick/lisaClust}{lisaClust} & R & \href{https://doi.org/10.1101/2021.08.16.456469}{Spatial analysis for highly multiplexed imaging data to identify tissue microenvironments} & 2021-08-17\\
-\href{https://github.com/kharchenkolab/Baysor}{\cellcolor{gray!6}{Baysor}} & \cellcolor{gray!6}{Julia} & \href{https://doi.org/10.1038/s41587-021-01044-w}{\cellcolor{gray!6}{Bayesian segmentation of spatially resolved transcriptomics data}} & \cellcolor{gray!6}{2021-10-14}\\
-\href{https://github.com/jianhuupenn/SpaGCN/tree/master/SpaGCN_package}{SpaGCN} & Python & \href{https://doi.org/10.1038/s41592-021-01255-8}{SpaGCN: Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network} & 2021-10-28\\
-\href{https://github.com/Shufeyangyi2015310117/SC.MEB}{\cellcolor{gray!6}{SC-MEB}} & \cellcolor{gray!6}{R; C++} & \href{https://doi.org/10.1093/bib/bbab466}{\cellcolor{gray!6}{SC-MEB: spatial clustering with hidden Markov random field using empirical Bayes}} & \cellcolor{gray!6}{2021-11-25}\\
-\href{https://github.com/OSU-BMBL/RESEPT}{RESEPT} & Python & \href{https://doi.org/10.1016/j.csbj.2022.08.029}{Define and visualize pathological architectures of human tissues from spatially resolved transcriptomics using deep learning} & 2022-08-24\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:region-pkgs)Packages mentioned for spatial regions</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://bitbucket.org/qzhudfci/smfishhmrf-py/src/default/"> smfishHmrf </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; Python; C </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/nbt.4260"> Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2018-10-29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="NA"> stLearn </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.05.31.125658"> stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-05-31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/SysFate/MULTILAYER"> MULTILAYER </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1016/j.cels.2021.04.008"> Inferring biologically relevant molecular tissue substructures by agglomerative clustering of digitized spatial transcriptomes with multilayer </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-05-07 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/edward130603/BayesSpace"> BayesSpace </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41587-021-00935-2"> Spatial transcriptomics at subspot resolution with BayesSpace </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-06-03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/eilslabs/ssam"> SSAM </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-021-23807-4"> Cell segmentation-free inference of cell types from in situ transcriptomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-06-10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/ellispatrick/lisaClust"> lisaClust </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2021.08.16.456469"> Spatial analysis for highly multiplexed imaging data to identify tissue microenvironments </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-08-17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/kharchenkolab/Baysor"> Baysor </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Julia </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41587-021-01044-w"> Bayesian segmentation of spatially resolved transcriptomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-10-14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/jianhuupenn/SpaGCN/tree/master/SpaGCN_package"> SpaGCN </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41592-021-01255-8"> SpaGCN: Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-10-28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/Shufeyangyi2015310117/SC.MEB"> SC-MEB </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; C++ </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/bib/bbab466"> SC-MEB: spatial clustering with hidden Markov random field using empirical Bayes </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-11-25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/OSU-BMBL/RESEPT"> RESEPT </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1016/j.csbj.2022.08.029"> Define and visualize pathological architectures of human tissues from spatially resolved transcriptomics using deep learning </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-08-24 </td>
+  </tr>
+</tbody>
+</table>
 
 ### Clustering
 SSAM [@Park2019], already reviewed in Section \@ref(preprocessing), also uses clustering to identify tissue domains in smFISH or ISS data but without cell segmentation. StLearn [@Pham2020a] develops further on top of clustering. First, a pretrained CNN is used to extract a 2048 dimensional feature vector from the H&E image behind each ST or Visium spot. The cosine similarity between the feature vectors from neighboring spots is then calculated. To normalize data, the gene expression data is smoothed in space, and the smoothing is weighted by the cosine similarity of feature vectors between spots. Then the spots are clustered with [Louvain](https://en.wikipedia.org/wiki/Louvain_method) or k-means. A spatial $k$ nearest neighbor graph is constructed, and used to refine the clustering. If a gene expression based cluster is broken into multiple pieces in space, then those pieces would become subclusters. Singleton spots are merged with a nearby cluster if the singletons have enough spatial neighbors in that cluster.
@@ -535,7 +1207,7 @@ In MULTILAYER, an agglomerative strategy is first used to find binarized regions
 
 Technically, this still is a form of clustering, but the MRF is used to favor the same cluster assignment of neighboring cells or spots.
 
-BayesSpace [@Zhao2020] incorporates both Gaussian mixture model clustering and MRF. The ST or Visium data is first projected to a low dimensional space, such as by PCA. Then for each spot, the low dimensional projection of that spot is modeled with a Gaussian mixture model, with a pre-defined number of components or clusters. The spatial neighborhood graph is simply the square grid of spots for ST and the hexagonal grid for Visium. The model has a MRF prior to encourage neighboring spots to be assigned to the same cluster. The cluster assignment is initiated with non-spatial clustering, and the parameters of the model are estimated by MCMC. In addition, BayesSpace can increase the resolution of ST and Visium. Each spot is subdivided and initiated with the dimension reduction values at the spot, and an additional parameter is added to the model that nudges the dimension reduction values at each sub-spot while preserving the sum at the spot level. The nudging parameters are estimated by MCMC along with with other parameters.
+BayesSpace [@Zhao2021] incorporates both Gaussian mixture model clustering and MRF. The ST or Visium data is first projected to a low dimensional space, such as by PCA. Then for each spot, the low dimensional projection of that spot is modeled with a Gaussian mixture model, with a pre-defined number of components or clusters. The spatial neighborhood graph is simply the square grid of spots for ST and the hexagonal grid for Visium. The model has a MRF prior to encourage neighboring spots to be assigned to the same cluster. The cluster assignment is initiated with non-spatial clustering, and the parameters of the model are estimated by MCMC. In addition, BayesSpace can increase the resolution of ST and Visium. Each spot is subdivided and initiated with the dimension reduction values at the spot, and an additional parameter is added to the model that nudges the dimension reduction values at each sub-spot while preserving the sum at the spot level. The nudging parameters are estimated by MCMC along with with other parameters.
 
 As already reviewed in Section \@ref(preprocessing), Baysor [@Petukhov2020] uses MRF to delineate cell type regions in the tissue without cell segmentation. MRF is used to identify spatial regions for cell or spot level data as well. Like in the 2014 *Platynereis dumereilii* atlas [@Pettit2014], smfishHmrf [@Zhu2018] also uses Potts model for dependence of label on neighborhood. As seqFISH data is quantitative, gene expression of each cell is modeled with a Gaussian mixture model, with as many components as there are there are region labels. The data needs to be normalized, although data normalization methods don't typically turn the distribution of gene expression Gaussian. Again, the parameters, i.e. the label assignment, and mean and covariance matrices for each Gaussian component, are estimated by EM, initiated with k-means clustering of the cells.
 
@@ -563,30 +1235,97 @@ Delineating spatial regions from data is not a new problem in spatial statistics
 
 ## Cell-cell interaction {#cell-interaction}
 
-Related to spatial regions is cell-cell interaction: Suppose a distinct neighborhood of the tissue has been identified with one of the methods in the previous section, and the neighborhood contains different cell types. Then it's natural to ask whether these cell types interact by their spatial proximity. Such information is lost in scRNA-seq. The composition of tissue neighborhoods can be characterized with existing tools. For instance, in smFISH or ISS data, we can count the number of cell types within a certain distance from each cell, as was done in the hypothalamus and the motor cortex MERFISH studies [@Moffitt2018; @Zhang2020]. We can model the data as a marked spatial point process, in which each point is a cell, with cell type annotations as marks, and use cross-type [K or L function](https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Kest) to find cell types that colocalize; the [cross-type L function](https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Lcross) has been used in spicyR [@Canete2021] for this purpose. In MERINGUE [@Miller2021], spatial cross-correlation is computed for two different cell types, one with expression of a ligand, and the other with expression of a receptor, and permutation testing is used to find p-values of the ligand-receptor interactions of the cell types.
+Related to spatial regions is cell-cell interaction: Suppose a distinct neighborhood of the tissue has been identified with one of the methods in the previous section, and the neighborhood contains different cell types. Then it's natural to ask whether these cell types interact by their spatial proximity. Such information is lost in scRNA-seq. The composition of tissue neighborhoods can be characterized with existing tools. For instance, in smFISH or ISS data, we can count the number of cell types within a certain distance from each cell, as was done in the hypothalamus and the motor cortex MERFISH studies [@Moffitt2018; @Zhang2020]. We can model the data as a marked spatial point process, in which each point is a cell, with cell type annotations as marks, and use cross-type [K or L function](https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Kest) to find cell types that colocalize; the [cross-type L function](https://www.rdocumentation.org/packages/spatstat/versions/1.64-1/topics/Lcross) has been used in spicyR [@Canete2022] for this purpose. In MERINGUE [@Miller2021], spatial cross-correlation is computed for two different cell types, one with expression of a ligand, and the other with expression of a receptor, and permutation testing is used to find p-values of the ligand-receptor interactions of the cell types.
 
 For ST and Visium, we can use one of the cell type deconvolution methods to find the number and proportion of cell types per unit area in each tissue region and cell type colocalization. When two cell types colocalize, they might interact with secreted ligands or ligands and receptors bound to the membrane. Expression of ligand-receptor (L-R) pairs in neighboring cells is often used to identify cell-cell interaction in spatial data, and the CellPhoneDB [@Efremova2020] database of ligands, receptors, and their interactions is often used to identify such L-R pairs. Another type of analysis going beyond colocalization tests for effects of cell-cell interaction or cell type colocalization on gene expression.
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:interact-pkgs)Packages mentioned for cell-cell interactions}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://github.com/damienArnol/svca}{\cellcolor{gray!6}{SVCA}} & \cellcolor{gray!6}{R; Python; C; C++; Fortran} & \href{https://doi.org/10.1016/j.celrep.2019.08.077}{\cellcolor{gray!6}{Modeling Cell-Cell Interactions from Spatial Molecular Data with Spatial Variance Component Analysis}} & \cellcolor{gray!6}{2019-10-01}\\
-\href{https://github.com/zcang/SpaOTsc}{SpaOTsc} & Python & \href{https://doi.org/10.1038/s41467-020-15968-5}{Inferring spatial and signaling relationships between cells from single cell transcriptomic data} & 2020-04-29\\
-\href{NA}{\cellcolor{gray!6}{stLearn}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1101/2020.05.31.125658}{\cellcolor{gray!6}{stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues}} & \cellcolor{gray!6}{2020-05-31}\\
-\href{https://github.com/xiaoyeye/GCNG}{GCNG} & Python & \href{https://doi.org/10.1186/s13059-020-02214-w}{GCNG: Graph convolutional networks for inferring cell-cell interactions} & 2020-12-10\\
-\href{https://github.com/RubD/Giotto}{\cellcolor{gray!6}{Giotto}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-021-02286-2}{\cellcolor{gray!6}{Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data}} & \cellcolor{gray!6}{2021-03-08}\\
-\addlinespace
-\href{https://github.com/saezlab/misty/}{MISTy} & R & \href{https://doi.org/10.1186/s13059-022-02663-5}{Explainable multiview framework for dissecting spatial relationships from highly multiplexed data} & 2022-04-14\\
-\href{https://github.com/livnatje/DIALOGUE}{\cellcolor{gray!6}{DIALOGUE}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1038/s41587-022-01288-0}{\cellcolor{gray!6}{DIALOGUE maps multicellular programs in tissue from single-cell or spatial transcriptomics data}} & \cellcolor{gray!6}{2022-05-05}\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:interact-pkgs)Packages mentioned for cell-cell interactions</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/damienArnol/svca"> SVCA </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; Python; C; C++; Fortran </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1016/j.celrep.2019.08.077"> Modeling Cell-Cell Interactions from Spatial Molecular Data with Spatial Variance Component Analysis </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2019-10-01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/zcang/SpaOTsc"> SpaOTsc </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-020-15968-5"> Inferring spatial and signaling relationships between cells from single cell transcriptomic data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="NA"> stLearn </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2020.05.31.125658"> stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-05-31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/xiaoyeye/GCNG"> GCNG </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s13059-020-02214-w"> GCNG: Graph convolutional networks for inferring cell-cell interactions </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-12-10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/RubD/Giotto"> Giotto </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s13059-021-02286-2"> Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/saezlab/misty/"> MISTy </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s13059-022-02663-5"> Explainable multiview framework for dissecting spatial relationships from highly multiplexed data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-04-14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/livnatje/DIALOGUE"> DIALOGUE </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41587-022-01288-0"> DIALOGUE maps multicellular programs in tissue from single-cell or spatial transcriptomics data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-05-05 </td>
+  </tr>
+</tbody>
+</table>
 
 ### Ligand-receptor pairs {#l-r}
 
-In stLearn [@Pham2020a], CellPhoneDB is used to identify L-R coexpression in neighboring spots, and the p-value of the coexpression is computed by permutation testing. Then regions with diverse cell types (from Seurat label transfering or cell type deconvolution) and L-R coexpression in neighboring spots are identified as regions where cells are likely to be signaling to each other. A similar strategy is used in Giotto. Giotto identifies cell type colocalization by labeling edges of the spatial neighborhood graph as homo- or heterotypic and permutes cell type labels to find whether the cell types are more or less likely to colocalize than expected from completely random cell type localization. L-R coexpression in neighboring cells on the spatial neighborhood graph from two cell types is identified and the p-values of the coexpression scores are computed by permutation testing, permuting locations of cells within each cell type.
+In stLearn [@Pham2020a], CellPhoneDB is used to identify L-R coexpression in neighboring spots, and the p-value of the coexpression is computed by permutation testing. Then regions with diverse cell types (from Seurat label transferring or cell type deconvolution) and L-R coexpression in neighboring spots are identified as regions where cells are likely to be signaling to each other. A similar strategy is used in Giotto. Giotto identifies cell type colocalization by labeling edges of the spatial neighborhood graph as homo- or heterotypic and permutes cell type labels to find whether the cell types are more or less likely to colocalize than expected from completely random cell type localization. L-R coexpression in neighboring cells on the spatial neighborhood graph from two cell types is identified and the p-values of the coexpression scores are computed by permutation testing, permuting locations of cells within each cell type.
 
 While MRF, stLearn, and Giotto only use the immediate neighbors on the spatial neighborhood graph, there is a method that can capture higher order structures of the graph. In GCNG [@Yuan2019], the spatial neighborhood graph is constructed as an edge connects a cell to its 3 nearest neighbors. Then both the gene count matrix and the normalized Laplacian of the neighborhood graph are fed into a graph convolutional neural network (GCN), which is trained on known L-R pairs. The GCN can then predict novel pairs of genes involved in signaling, and if trained on the direction of interaction in the L-R pairs, it can also predict the direction of causality in the novel pairs.
 
@@ -604,33 +1343,97 @@ Like SVCA, Multiview Intercellular SpaTial modeling framework (MISTy) [@Tanevski
 
 ## Gene-gene interaction {#gene-interaction}
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:gene-int-pkgs)Packages mentioned for gene-gene interactions}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://github.com/zcang/SpaOTsc}{\cellcolor{gray!6}{SpaOTsc}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41467-020-15968-5}{\cellcolor{gray!6}{Inferring spatial and signaling relationships between cells from single cell transcriptomic data}} & \cellcolor{gray!6}{2020-04-29}\\
-\href{https://bioconductor.org/packages/release/bioc/html/scHOT.html}{scHOT} & R & \href{https://doi.org/10.1038/s41592-020-0885-x}{Investigating higher-order interactions in single-cell data with scHOT} & 2020-07-13\\
-\href{https://github.com/doraadong/MESSI}{\cellcolor{gray!6}{MESSI}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1093/bioinformatics/btaa769}{\cellcolor{gray!6}{Identifying signaling genes in spatial single cell expression data}} & \cellcolor{gray!6}{2020-09-04}\\
-\href{https://github.com/xiaoyeye/GCNG}{GCNG} & Python & \href{https://doi.org/10.1186/s13059-020-02214-w}{GCNG: Graph convolutional networks for inferring cell-cell interactions} & 2020-12-10\\
-\href{https://github.com/saezlab/misty/}{\cellcolor{gray!6}{MISTy}} & \cellcolor{gray!6}{R} & \href{https://doi.org/10.1186/s13059-022-02663-5}{\cellcolor{gray!6}{Explainable multiview framework for dissecting spatial relationships from highly multiplexed data}} & \cellcolor{gray!6}{2022-04-14}\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:gene-int-pkgs)Packages mentioned for gene-gene interactions</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/zcang/SpaOTsc"> SpaOTsc </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-020-15968-5"> Inferring spatial and signaling relationships between cells from single cell transcriptomic data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://bioconductor.org/packages/release/bioc/html/scHOT.html"> scHOT </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41592-020-0885-x"> Investigating higher-order interactions in single-cell data with scHOT </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-07-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/doraadong/MESSI"> MESSI </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1093/bioinformatics/btaa769"> Identifying signaling genes in spatial single cell expression data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-09-04 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/xiaoyeye/GCNG"> GCNG </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s13059-020-02214-w"> GCNG: Graph convolutional networks for inferring cell-cell interactions </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-12-10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/saezlab/misty/"> MISTy </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1186/s13059-022-02663-5"> Explainable multiview framework for dissecting spatial relationships from highly multiplexed data </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2022-04-14 </td>
+  </tr>
+</tbody>
+</table>
 
 Some of the packages already reviewed can also infer interactions between genes, such as GCNG, SpaOTsc, and MISTy. GCNG and SpaOTsc predict potential L-R pairs, and MISTy identify genes whose expression at a given spatial scale is associated with another gene of interest. The package scHOT [@Ghazanfar2020] tests for association of correlation between genes with pseudotime or spatial locations by permutation testing, permuting locations of cells along pseudotime or in space. The package Mixture of Experts for Spatial Signaling genes Identification (MESSI) [@Li2020] uses a mixture of experts model to predict expression of response genes with a set of features. A spatial neighborhood graph of the cells is constructed with Delaunay triangulation The features include all genes quantified in the dataset that are also found in a L-R database, expression of genes in the L-R database in neighboring cells, cell type of neighboring cells, and etc. The response genes are all genes quantified other than the L-R genes used as features. Each cell is assigned to exactly one "expert", i.e. subtype. For each expert, expression of response genes in each cell is modeled with linear regression with the features as covariates. The parameters of the linear models and assignment of cells to experts are estimated with MLE, where the log likelihood is maximized with EM. This model can be trained in a control sample and used to predict gene expression in experimental samples. If expression of a gene is as well predicted as in the control, then signaling may not have changed in the experimental condition. If prediction becomes worse, then there may be a change in signaling involving this gene, and the experts whose coefficients significantly differ between the control and experimental models suggest cell populations involved in the signaling change.
 
 ## Subcellular transcript localization {#subcellular}
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:subcellular-pkgs)Packages mentioned for subcellular transcript localization}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://bitbucket.org/muellerflorian/fish_quant/src/master/}{\cellcolor{gray!6}{FISH\_quant}} & \cellcolor{gray!6}{MATLAB} & \href{https://doi.org/10.1038/s41467-018-06868-w}{\cellcolor{gray!6}{A computational framework to study sub-cellular RNA localization}} & \cellcolor{gray!6}{2018-11-02}\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:subcellular-pkgs)Packages mentioned for subcellular transcript localization</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://bitbucket.org/muellerflorian/fish_quant/src/master/"> FISH_quant </a>
+</td>
+   <td style="text-align:left;width: 5em; "> MATLAB </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-018-06868-w"> A computational framework to study sub-cellular RNA localization </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2018-11-02 </td>
+  </tr>
+</tbody>
+</table>
 
 So far, except for segmentation free data analysis methods of smFISH and ISS images, all analysis methods are at the cellular or spot level. However, transcripts do show inhomogeneous subcellular localization that can be biologically relevant, such as whether the transcripts are translated in the endoplasmic reticulum (ER) or the cytoplasm. Thirty four lncRNAs have been manually classified into 5 types of subcellular patterns: one or two large foci in nucleus, large foci and dispersed single molecules in nucleus, no foci in nucleus, nucleus and cytoplasm, and cytoplasmic [@Cabili2015]. The bDNA-smFISH study in 2013 that profiled 928 genes in cultured cells, though each gene was profiled in different cells, generated features that characterize subcellular transcript localization (mRNAs of protein coding genes) which were used to cluster cells [@Battich2013]. These features include closest distance of a transcript spot to cell outline, distance to cell centroid, distance to nuclear centroid, radius to include 5%, 10%, 15%, 25%, 50%, and 75% of all spots in the cell, mean distance of a spot to other spots (related to Ripley's K or L function), and variance of distance to other spots. The package FISHquant [@Samacoits2018a] uses additional features derived from Ripley's L function of subcellular transcript localization. Then it uses these features to simulate smFISH data, cluster cells, and classify transcript localization patterns.
 
@@ -640,17 +1443,49 @@ These studies analyzing subcellular transcript localization were all performed o
 
 ## Gene expression imputation from H&E {#HnE}
 
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{5em}}
-\caption{(\#tab:hne-pkgs)Packages mentioned for gene expression imputation from H\&E}\\
-\toprule
-Name & Language & Title & Date published\\
-\midrule
-\href{https://github.com/bryanhe/ST-Net}{\cellcolor{gray!6}{ST-Net}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41551-020-0578-x}{\cellcolor{gray!6}{Integrating Spatial Gene Expression and Breast Tumour Morphology via Deep Learning}} & \cellcolor{gray!6}{2020-06-22}\\
-\href{https://github.com/alonalj/PathoMCH}{PathoMCH} & Python & \href{https://doi.org/10.1038/s41598-020-75708-z}{Spatial transcriptomics inferred from pathology whole-slide images links tumor heterogeneity to survival in breast and lung cancer} & 2020-11-02\\
-\href{https://github.com/ludvb/xfuse}{\cellcolor{gray!6}{Xfuse}} & \cellcolor{gray!6}{Python} & \href{https://doi.org/10.1038/s41587-021-01075-3}{\cellcolor{gray!6}{Super-resolved spatial transcriptomics by deep data fusion}} & \cellcolor{gray!6}{2021-11-29}\\
-\bottomrule
-\end{longtable}
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:hne-pkgs)Packages mentioned for gene expression imputation from H&amp;E</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Name </th>
+   <th style="text-align:left;"> Language </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Date published </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/bryanhe/ST-Net"> ST-Net </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41551-020-0578-x"> Integrating Spatial Gene Expression and Breast Tumour Morphology via Deep Learning </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-06-22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/alonalj/PathoMCH"> PathoMCH </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41598-020-75708-z"> Spatial transcriptomics inferred from pathology whole-slide images links tumor heterogeneity to survival in breast and lung cancer </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2020-11-02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/ludvb/xfuse"> Xfuse </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41587-021-01075-3"> Super-resolved spatial transcriptomics by deep data fusion </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2021-11-29 </td>
+  </tr>
+</tbody>
+</table>
 
 Although ST and Visium do not have single cell resolution, the tissue sections can be H&E stained prior to library preparation, thus the transcriptomes of the spots can be mapped to H&E tissue morphology. H&E is also commonly used in clinical pathology, while ST and Visium are not used for diagnostic purposes. The package ST-Net was developed to use a pretrained CNN to extract features from H&E images behind the ST spots, and a dense neural net is trained on the extracted features and ST data to predict gene expression based on H&E images from held out patients as log normalized UMI counts [@He2020]. Another method to predict gene expression from H&E is PathoMCH [@Levy-Jurgenson2020]. TGCA transcriptomics data is normalized and the corresponding H&E slides are labeled with the percentile of expression of each gene of interest. Then the whole slide images are broken into small tiles, all of which take the percentile label of the slide. Then the Inception v3 classification neural network is trained with the tiles and labels with very high or very low expression, and when predicting on held out images, it gives a score of gene expression from low to high in each tile. Such gene expression prediction methods can give pathologists a more nuanced view of the tissue beyond morphology.
 
@@ -660,7 +1495,7 @@ While cell segmentation is difficult in H&E images, H&E images do have enough re
 
 With so many existing methods, and so many being developed, a user wishing to analyze spatial transcriptomics data would naturally ask, "Which method shall I use?" We suggest considering the following factors:
 
-First, as current era spatial transcriptomics is relatively new and the explosive growth really only started around 2018, there hasn't been sufficient comprehensive and systematic 3rd party benchmarks of the data analysis methods specific to spatial transcriptomics. While there are some of such benchmarks for scRNA-seq, such as [@Saelens2019] for trajectory inference and [@Luecken2020] for data integration, and scRNA-seq methods can be applied to spatial transcriptomics as some spatial data is single cell resolution and Visium spots can be treated as "cells" in some analyses, there has not been a comprehensive 3rd party benchmark of almost all types of analyses reviewed in this chapter that use the spatial information. There is one benchmark [@Li2021b] about using SVGs for clustering, but that only covers a small portion of all analyses that can be performed on spatial transcriptomics data. So at present, the "best" method for most of the tasks is unknown, and other factors should be considered. Furthermore, for any analysis task, there is no method that performs the best across all tasks on all kinds of data.
+First, benchmarks have been performed for types of data analysis that garnered more attention (Figure \@ref(fig:analysis-cats)). The benchmarking methodologies should be read carefully, as multiple benchmarks of the same type of methods can give different results. For cell type deconvolution, there seems to be a consensus among different benchmarks that cell2location, RCTD, spatialDWLS, and Tangram are top performing methods [@Li2023; @Yan2023; @Li2022a; @Chen2022a]. Cell-cell interaction methods have been benchmarked here [@Liu2022]. Data integration methods have been benchmarked here [@Li2022]. There are also tools to make simulated data for benchmarking, some simulating spatial distributions in addition to gene expression values [@Zhu2023]. However, benchmarks of spatially variable gene methods show that the different methods give disparate results, so it's not straightforward to say which method is the best [@Chen2022; @Charitakis2022].
 
 Second, suppose that the implementation is available (which is usually, but not always, the case), then is the implementation of the method usable? Sometimes the authors only post some scripts on GitHub that are not bundled into a package that can be easily installed. In this case, the scripts would need to be copied to the working directory of the analyses and into any future package using them. If the authors decide to update the scripts, it would be more difficult for the users to update as well or even to know about the update. In the Analysis sheet of our [database](https://docs.google.com/spreadsheets/d/1sJDb9B7AtYmfKv4-m8XR7uc3XXw_k4kGSout8cqZ8bY/edit#gid=1424019374), there is a metadata column "packaged", which indicates whether the scripts are bundled into a package.
 

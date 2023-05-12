@@ -1,8 +1,6 @@
 # Data analysis in the prequel era {#prequel-analysis}
 
-\BeginKnitrBlock{rmdtip}
-Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math heavy.
-\EndKnitrBlock{rmdtip}
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Many machine learning and statistics methods are mentioned in this chapter. The names of these methods are linked to articles explaining them for those who are unfamiliar. Some of them are math heavy.</div>\EndKnitrBlock{rmdtip}
 
 
 
@@ -10,14 +8,10 @@ From the earliest days of enhancer and gene traps to the (WM)ISH atlases, identi
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{03-prequel_analysis_files/figure-latex/prequel-poly-1} 
-
-}
-
-\caption{Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full.}(\#fig:prequel-poly)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/prequel-poly-1.png" alt="Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full." width="672" />
+<p class="caption">(\#fig:prequel-poly)Comparing trends in data collection and data analysis in the prequel era. Bin width is 365 days. The x-shaped points show the number of publications from the last bin, which is not yet full.</p>
+</div>
 
 Except for one study on *Platynereis dumereilii* in 2014 [@Pettit2014], on *Xenopus tropicalis* in 2018 [@Patrushev2018], one on post mortem human brain in 2021 [@Abed-Esfahani2021], all data analysis methods in our collection were designed for either *Drosophila melanogaster* or *Mus musculus* (Figure \@ref(fig:pa-species)). There seem to have been two waves; the first for *Drosophila*, peaking in the late 2000s, mostly concerning the BDGP in situ atlas, and the second for mice, peaking in early 2010s, mostly concerning ABA (Figure \@ref(fig:pa-species)). The apparent rise since 2019 is in part driven by deep learning methods to annotate gene expression patterns or infer gene interactions. Given the small number of publications in this category and potential incompleteness of the curation, the trends should be taken with a grain of salt.
 
@@ -25,28 +19,20 @@ Except for one study on *Platynereis dumereilii* in 2014 [@Pettit2014], on *Xeno
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{03-prequel_analysis_files/figure-latex/pa-species-1} 
-
-}
-
-\caption{Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets.}(\#fig:pa-species)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-species-1.png" alt="Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets." width="576" />
+<p class="caption">(\#fig:pa-species)Gray histogram in the background is overall histogram of prequel data analysis literature. Number of publications in each time bin for each species is highlighted in the facets.</p>
+</div>
 
 ## Gene patterns {#prequel-gene-patterns}
 The most common goal of these data analysis methods was to annotate and compare gene expression patterns, especially to automate annotation of the BDGP atlas (Figure \@ref(fig:pa-category)). It seems reasonable to focus on 4 phases in this category: first, in early to mid 2000s, after image registration, the images were binarized into "expressed" and "not expressed" regions, and the shapes of the expressed regions were summarized and compared. Metrics to summarize the shapes included [moment invariant](https://towardsdatascience.com/introduction-to-the-invariant-moment-and-its-application-to-the-feature-extraction-ee991f39ec) [@Jayaraman2001; @Gurunathan2004], Hamming distance [@Kumar2002], and a weighted score involving [L1 distance](https://iq.opengenus.org/manhattan-distance/) between column or row histograms of two images [@Liu2007]. These unsupervised methods enabled clustering of patterns and querying genes with similar patterns to a given gene.
 
 
 
-\begin{figure}
-
-{\centering \includegraphics{03-prequel_analysis_files/figure-latex/pa-category-1} 
-
-}
-
-\caption{Number of publications in each time bin for each category of data analysis is highlighted in the facets.}(\#fig:pa-category)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-category-1.png" alt="Number of publications in each time bin for each category of data analysis is highlighted in the facets." width="576" />
+<p class="caption">(\#fig:pa-category)Number of publications in each time bin for each category of data analysis is highlighted in the facets.</p>
+</div>
 
 Second, from the mid 2000s to mid 2010s, many supervised and unsupervised methods for gene expression pattern annotation or comparison were developed. In supervised methods, extensive feature engineering more sophisticated than binarization was performed on registered images for image annotation with machine learning classification. These methods were trained with existing BDGP annotations and developed to automatically annotate the BDGP expression patterns with controlled vocabulary (CV) of anatomical regions where genes were expressed. In BDGP, a gene gets annotated with a CV if the gene was deemed expressed in the anatomical region and developmental stage denoted by the CV, so the annotation typically contained a list of CVs.
 
@@ -81,31 +67,19 @@ There are additional possible reasons why these methods were not used: First, it
 
 If our collection is representative, then contribution to prequel data analysis concentrates in a few institutions (Figure \@ref(fig:pa-map)), not all of which are elite.
 
-\begin{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-map-1.png" alt="Number of publications per city for prequel data analysis." width="100%" />
+<p class="caption">(\#fig:pa-map)Number of publications per city for prequel data analysis.</p>
+</div>
 
-{\centering \includegraphics[width=1\linewidth]{03-prequel_analysis_files/figure-latex/pa-map-1} 
-
-}
-
-\caption{Number of publications per city for prequel data analysis.}(\#fig:pa-map)
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{03-prequel_analysis_files/figure-latex/pa-map-us-1} 
-
-}
-
-\caption{Number of publications per city for prequel data analysis in the US.}(\#fig:pa-map-us)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-map-us-1.png" alt="Number of publications per city for prequel data analysis in the US." width="100%" />
+<p class="caption">(\#fig:pa-map-us)Number of publications per city for prequel data analysis in the US.</p>
+</div>
 
 When broken down by species, it seems that distinct institutions contributed to data analysis of *Drosophila* and mouse data. UC Berkeley and Lawrence Berkeley National Laboratory (LBL) are responsible for BDGP, and Allen is responsible for ABA. However, among the top contributors are other institutions such as Arizona State University (ASU) and Old Dominion University (ODU) (Figure \@ref(fig:pa-species2)).
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{03-prequel_analysis_files/figure-latex/pa-species2-1} 
-
-}
-
-\caption{Number of publications per city for prequel data analysis broken down by species of interest.}(\#fig:pa-species2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="03-prequel_analysis_files/figure-html/pa-species2-1.png" alt="Number of publications per city for prequel data analysis broken down by species of interest." width="100%" />
+<p class="caption">(\#fig:pa-species2)Number of publications per city for prequel data analysis broken down by species of interest.</p>
+</div>

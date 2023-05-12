@@ -8,7 +8,7 @@
 <meta name="author" content="Lambda Moses">
 <meta name="author" content="Lior Pachter">
 <meta name="description" content="Preface | Museum of Spatial Transcriptomics">
-<meta name="generator" content="bookdown 0.33 with bs4_book()">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="Preface | Museum of Spatial Transcriptomics">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Preface | Museum of Spatial Transcriptomics">
@@ -18,10 +18,32 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
@@ -68,19 +90,19 @@
 <h1>Preface<a class="anchor" aria-label="anchor" href="#preface"><i class="fas fa-link"></i></a>
 </h1>
 <p>This supplement to <a href="https://www.nature.com/articles/s41592-022-01409-2">the paper Museum of Spatial Transcriptomics</a> and the associated <a href="https://docs.google.com/spreadsheets/d/1sJDb9B7AtYmfKv4-m8XR7uc3XXw_k4kGSout8cqZ8bY/edit?usp=sharing">database of spatial transcriptomics literature</a> is inspired by museum catalogs that provide insight and detail to further understanding of the exhibits. The results presented are based on code that can be run interactively on <a href="https://rstudio.cloud/project/2492054">RStudio Cloud</a>. We present key analyses of metadata curated for the database, and provide further analyses and results beyond what could be included here in the <code>more_analyses</code> directory of this repository. The markdown that generates this text is on GitHub, and is version controlled so that its development can be tracked now and in the future. Please notify us of errors, omissions, or other suggestions via submission of issues on GitHub: <a href="https://github.com/pachterlab/LP_2021" class="uri">https://github.com/pachterlab/LP_2021</a> To submit new entries to the database, please fill out this <a href="https://forms.gle/HjQD9x6AMjR7C62SA">Google Form</a>. If the text in some figures are too small to read, then right click on the figure to open in a new tab to zoom in.</p>
-<div id="quick-stats" class="section level2">
+<div id="quick-stats" class="section level2" number="0.1">
 <h2>
 <span class="header-section-number">0.1</span> Quick stats<a class="anchor" aria-label="anchor" href="#quick-stats"><i class="fas fa-link"></i></a>
 </h2>
-<p>As of 2023-03-15, this database contains:</p>
+<p>As of 2023-05-12, this database contains:</p>
 <ul>
-<li>1229 current era publications, 780 of which are for data collection and 501 are for data analysis (see Chapter 1 for definition of prequel and current eras)</li>
-<li>270 prequel era publications</li>
-<li>Current era publications from 441 institutions<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Caveat: definition of “institution” is more complicated. While it usually means a university or company, whether named institutions, schools, and hospitals affiliated with a university count as institutions distinct from that university is somewhat inconsistent within this database. Usually those are considered separate institutions if they reside in a different city from the rest of the university or are sometimes listed independently from the university. However, what counts as a city is also somewhat complicated as different countries have different administrative structures.&lt;/p&gt;"><sup>1</sup></a> in 255 cities in 35 countries</li>
-<li>399 current era data analysis software packages whose source code is available online</li>
+<li>1276 current era publications, 808 of which are for data collection and 520 are for data analysis (see Chapter 1 for definition of prequel and current eras)</li>
+<li>271 prequel era publications</li>
+<li>Current era publications from 452 institutions<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Caveat: definition of “institution” is more complicated. While it usually means a university or company, whether named institutions, schools, and hospitals affiliated with a university count as institutions distinct from that university is somewhat inconsistent within this database. Usually those are considered separate institutions if they reside in a different city from the rest of the university or are sometimes listed independently from the university. However, what counts as a city is also somewhat complicated as different countries have different administrative structures.&lt;/p&gt;"><sup>1</sup></a> in 258 cities in 35 countries</li>
+<li>413 current era data analysis software packages whose source code is available online</li>
 </ul>
 </div>
-<div id="running-the-code" class="section level2">
+<div id="running-the-code" class="section level2" number="0.2">
 <h2>
 <span class="header-section-number">0.2</span> Running the code<a class="anchor" aria-label="anchor" href="#running-the-code"><i class="fas fa-link"></i></a>
 </h2>
@@ -91,11 +113,11 @@
 <p>First install <code>remotes</code> with <code>install.packages("remotes")</code>. Then use <code>remotes:install_deps(dependencies = TRUE)</code> to install all required packages from CRAN, Bioconductor, and GitHub. So in short,</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_deps.html">install_deps</a></span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_deps</span><span class="op">(</span>dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p>Because many packages are installed, the installation can be sped up with the argument <code>Ncpus</code> in <code>install_deps()</code> to specify the number of CPU cores to use to install packages in parallel, such as <code>Ncpus = 2L</code> for 2 cores. The free plan of RStudio Cloud only has 1 core, but this argument can be used when multiple cores are available.</p>
 <p>By default, the most up to date version of the database is downloaded for analyses in this book. However, as the <code>museumst</code> R package written for these analyses contains a cached version of the database, historical versions of the database can be viewed by installing older versions of <code>museumst</code> and setting <code>update = FALSE</code> when calling <code><a href="https://rdrr.io/pkg/museumst/man/read_metadata.html">museumst::read_metadata()</a></code> when running code from this book on RStudio Cloud or your computer. Older versions of <code>museumst</code> can be installed with</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"pachterlab/museumst"</span>, ref <span class="op">=</span> <span class="st">"v0.0.0.9016"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"pachterlab/museumst"</span>, ref <span class="op">=</span> <span class="st">"v0.0.0.9016"</span><span class="op">)</span></span></code></pre></div>
 <p>where <code>ref</code> refers to a release. Release history of <code>museumst</code> can be seen <a href="https://github.com/pachterlab/museumst/releases">here</a>. Documentation of <code>museumst</code> can be seen <a href="https://pachterlab.github.io/museumst/">here</a>.</p>
 
 </div>
@@ -127,7 +149,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2023-03-15.</p>
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2023-05-12.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
