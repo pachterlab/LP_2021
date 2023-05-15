@@ -3,7 +3,7 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses
   - Lior Pachter
-date: "2023-05-12"
+date: "2023-05-15"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
@@ -32,7 +32,7 @@ This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nat
 
 
 
-As of 2023-05-12, this database contains:
+As of 2023-05-15, this database contains:
 
 * 1276 current era publications, 808 of which are for data collection and 520 are for data analysis (see Chapter 1 for definition of prequel and current eras)
 * 271 prequel era publications
