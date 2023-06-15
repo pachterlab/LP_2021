@@ -17,7 +17,7 @@
 <meta name="twitter:description" content="5.1 ROI selection A simple way to preserve spatial information is to isolate the samples from known locations in the tissue, and the act of selection and isolation is the only means to preserve...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -401,18 +401,18 @@ Figure 5.23: Number of genes per datasets in each study, over time. Gray ribbon 
 ## lm(formula = log(n_genes) ~ date_published, data = smfish)
 ## 
 ## Residuals:
-##    Min     1Q Median     3Q    Max 
-## -3.868 -1.196  0.033  1.042  4.735 
+##     Min      1Q  Median      3Q     Max 
+## -3.8935 -1.2217  0.0421  1.1347  4.7365 
 ## 
 ## Coefficients:
 ##                 Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)    3.566e+00  2.338e+00   1.525    0.129
-## date_published 5.364e-05  1.249e-04   0.429    0.668
+## (Intercept)    2.994e+00  2.320e+00   1.291    0.198
+## date_published 8.581e-05  1.238e-04   0.693    0.489
 ## 
-## Residual standard error: 1.583 on 222 degrees of freedom
+## Residual standard error: 1.588 on 229 degrees of freedom
 ##   (20 observations deleted due to missingness)
-## Multiple R-squared:  0.0008302,  Adjusted R-squared:  -0.003671 
-## F-statistic: 0.1845 on 1 and 222 DF,  p-value: 0.668</code></pre>
+## Multiple R-squared:  0.002094,   Adjusted R-squared:  -0.002264 
+## F-statistic: 0.4804 on 1 and 229 DF,  p-value: 0.4889</code></pre>
 <p>How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:smfish-lm-cell"></span>
@@ -427,18 +427,18 @@ Figure 5.24: Total number of cells per study profiled by smFISH based techniques
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -4.8383 -1.6338  0.0016  1.8604  4.7738 
+## -4.9286 -1.6564 -0.0226  1.8666  4.7551 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)    -1.951e+01  6.067e+00  -3.216  0.00233 ** 
-## date_published  1.601e-03  3.286e-04   4.872 1.24e-05 ***
+## (Intercept)    -20.434622   6.024855  -3.392  0.00138 ** 
+## date_published   0.001654   0.000326   5.073 6.01e-06 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.273 on 48 degrees of freedom
-## Multiple R-squared:  0.3309, Adjusted R-squared:  0.317 
-## F-statistic: 23.74 on 1 and 48 DF,  p-value: 1.244e-05</code></pre>
+## Residual standard error: 2.278 on 49 degrees of freedom
+## Multiple R-squared:  0.3444, Adjusted R-squared:  0.331 
+## F-statistic: 25.74 on 1 and 49 DF,  p-value: 6.015e-06</code></pre>
 <p>MERFISH is the smFISH based technique used in the most institutions (Figure <a href="current.html#fig:n-insts">4.7</a>), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure <a href="current-techs.html#fig:smfish-n-insts">5.26</a>). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table <a href="current-techs.html#tab:table2">5.1</a>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:smfish-trend"></span>
@@ -951,7 +951,7 @@ Figure 5.43: Cities and institutions using the two most popular tehcnologies in 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2023-05-15.</p>
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2023-06-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

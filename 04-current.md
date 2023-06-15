@@ -768,7 +768,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> TEMPOmap </td>
    <td style="text-align:left;width: 6em; "> 2022-09-27 </td>
    <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 991 </td>
+   <td style="text-align:left;width: 6em; "> 998 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -973,6 +973,20 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Slide-tags </td>
+   <td style="text-align:left;width: 6em; "> 2023-04-03 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Slide-tags multiome </td>
+   <td style="text-align:left;width: 6em; "> 2023-04-03 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
 </tbody>
 </table>
