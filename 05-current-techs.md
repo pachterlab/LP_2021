@@ -318,7 +318,8 @@ An earlier version of the plot of number of genes over time plotted the mean num
 <p class="caption">(\#fig:smfish-lm-gene)(ref:smfish-lm-cap)</p>
 </div>
 
-The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. The slope (with all data, outliers and all) is not significantly different from 0 (t-test), after log transforming the number of genes per dataset. 
+The trend line looks pretty flat. Although studies quantifying a very large number of genes tend to be recent, many other studies profiling fewer genes pulled the line down. As of August 2023, the slope has finally become significantly different from 0, showing a very slow trend of increasing number of genes per dataset but most datasets profile a few hundred genes. For a long time, the slope (with all data, outliers and all) had not been significantly different from 0 (t-test), after log transforming the number of genes per dataset. 
+
 
 ```
 ## 

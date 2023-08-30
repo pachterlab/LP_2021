@@ -94,7 +94,6 @@ fig:city-pe
 fig:pca-elbow
 fig:pc12
 fig:pc34
-fig:umap
 fig:analysis-fp
 fig:analysis-current
 fig:analysis-prequel

@@ -1059,13 +1059,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> Slide-seq2 </td>
-   <td style="text-align:left;width: 6em; "> 2023-07-02 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> STcEM </td>
    <td style="text-align:left;width: 6em; "> 2023-07-11 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
