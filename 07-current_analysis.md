@@ -967,9 +967,9 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
 </td>
    <td style="text-align:left;width: 5em; "> R </td>
    <td style="text-align:left;width: 15em; ">
-<a href="https://doi.org/10.1101/2022.11.13.516355"> A universal differential expression prediction tool for single-cell and spatial genomics data </a>
+<a href="https://doi.org/10.1038/s41598-023-38965-2"> A universal differential expression prediction tool for single-cell and spatial genomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-11-15 </td>
+   <td style="text-align:left;width: 5em; "> 2023-07-22 </td>
   </tr>
 </tbody>
 </table>
@@ -1147,16 +1147,6 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
-<a href="https://github.com/ellispatrick/lisaClust"> lisaClust </a>
-</td>
-   <td style="text-align:left;width: 5em; "> R </td>
-   <td style="text-align:left;width: 15em; ">
-<a href="https://doi.org/10.1101/2021.08.16.456469"> Spatial analysis for highly multiplexed imaging data to identify tissue microenvironments </a>
-</td>
-   <td style="text-align:left;width: 5em; "> 2021-08-17 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 8em; ">
 <a href="https://github.com/kharchenkolab/Baysor"> Baysor </a>
 </td>
    <td style="text-align:left;width: 5em; "> Julia </td>
@@ -1194,6 +1184,16 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
 <a href="https://doi.org/10.1016/j.csbj.2022.08.029"> Define and visualize pathological architectures of human tissues from spatially resolved transcriptomics using deep learning </a>
 </td>
    <td style="text-align:left;width: 5em; "> 2022-08-24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/ellispatrick/lisaClust"> lisaClust </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1002/cyto.a.24729"> Spatial analysis for highly multiplexed imaging data to identify tissue microenvironments </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2023-03-06 </td>
   </tr>
 </tbody>
 </table>
