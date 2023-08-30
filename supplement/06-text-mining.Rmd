@@ -709,7 +709,7 @@ ggplot(pca_plt, aes(PC1, PC2, color = cluster)) +
   scale_shape_manual(values = shapes, name = "Cluster")
 ```
 
-Words more positive in PC1 are often gene names, parts of gene names, or acronyms, and names of specific biological entities or processes. In contrast, words more negative in PC1 tend to be more general and more widely used. PC2 separates the technical (clusters 2 and 7, top) from the biological (clusters 1, 4 to 6) (Figure \@ref(fig:pc12)). As expected, "cancer", "tumor", and "disease" are not far from each other (bottom left), and "malignant" and "invasive" are close (bottom center). PC1 explains more variance than all other PCs; though it's only 5.5%, it picked up a very important dimension in word meanings in this corpus. PCs are arranged in decreasing order of variance explained.
+Words more positive in PC1 are often gene names, parts of gene names, or acronyms, and names of specific biological entities or processes. In contrast, words more negative in PC1 tend to be more general and more widely used. PC2 separates the technical from the biological (Figure \@ref(fig:pc12)). As expected, "cancer", "tumor", and "disease" are not far from each other (bottom left), and "malignant" and "invasive" are close (bottom center). PC1 explains more variance than all other PCs; though it's only 5.5%, it picked up a very important dimension in word meanings in this corpus. PCs are arranged in decreasing order of variance explained.
 
 ```{block2, note-text3, type='rmdnote', include=TRUE, echo = TRUE}
 Note that when the PCA plot is made on different computers, the signs of PCs might flip, because the sign does not affect the magnitude of the eigenvalue (i.e. variance explained). PCs are eigenvectors of the covariance matrix of the GloVe dimensions; an eigenvector multiplied by a scalar is still an eigenvector with the same eigenvalue. 
@@ -734,29 +734,5 @@ ggplot(pca_plt, aes(PC3, PC4, color = cluster)) +
   scale_shape_manual(values = shapes, name = "Cluster")
 ```
 
-PC3 separates processes and interactions (cluster 6, left) from entities of samples, tissues, organs, and diseases (clusters 3, 4, 7, right). PC4 separates the molecular and cellular (bottom left) and the quantitative (clusters 1 and 3, bottom right) from the qualitative (top). Some of the qualitative terms are used to discuss implications of results of the papers (clusters 2 and 6, top left) (Figure \@ref(fig:pc34)).
+PC3 separates processes and interactions from entities of samples, tissues, organs, and diseases. PC4 separates the molecular and cellular and the quantitative from the qualitative. Some of the qualitative terms are used to discuss implications of results of the papers (Figure \@ref(fig:pc34)).
 
-Now we have seen some important axes of meanings and types of words, which are not surprising given familiarity with the general structure of abstracts and applications of LCM. There must be more axes of meaning, as the first 4 PCs only explain about 12% of the total variance of word embeddings (Figure \@ref(fig:pca-elbow)). The clusters of words can be better visualized with UMAP, which is a non-linear dimension reduction method that tries to preserve distances between points but is most commonly used to project into 2 dimensions.
-```{r}
-set.seed(2021)
-ac_umap <- as.data.frame(umap(ac_vectors_select))
-ac_umap$label <- rownames(ac_vectors_select)
-ac_umap$cluster <- pca_df$cluster
-```
-
-```{r umap, fig.width=13, fig.height=13, fig.cap="UMAP projection of word embeddings. Zoom in if reading the PDF version of this book.", out.width="100%"}
-ggplot(ac_umap, aes(V1, V2, color = cluster)) +
-  geom_point(aes(shape = cluster)) +
-  geom_text_repel(aes(label = label), segment.alpha = 0.3, max.overlaps = 13,
-                  show.legend = FALSE) +
-  scale_color_discrete(name = "Cluster") +
-  scale_shape_manual(values = shapes, name = "Cluster") +
-  labs(x = "UMAP1", y = "UMAP2") +
-  theme(panel.grid = element_blank(), legend.position = "top", 
-        panel.border = element_blank(),
-        axis.text = element_blank(), axis.ticks = element_blank(),
-        legend.box.background = element_rect(color = "gray", size = 0.5)) +
-  guides(color = guide_legend(byrow = TRUE, nrow = 1))
-```
-
-The clusters of words are easier to discern with Uniform Manifold Approximation and Projection (UMAP) (Figure \@ref(fig:umap)). Cluster 1 is words used to describe results of studies, with many quantitative words; "p", "0.05", and "0.01" are found in this cluster rather than cluster 3 because p-values are results of data analyses and 0.05 and 0.01 are common thresholds of significance. Cluster 2 has many words discussing results, about data analysis and implications of results, with many clinical terms. Cluster 1 seems to be molecular and cellular processes and entities. Cluster 3 has many numbers, units, and some biological words. Cluster 4 has many words specifically about cancer. Cluster 5 is words in experimental techniques. Cluster 5 is biological terms. Cluster 6 is also biological, but with more emphasis on processes and interactions. Cluster 7 is technical. These clusters of words give some idea about topics of the studies, but unlike `stm`, these clusters also give a glimpse into different parts of the abstract, such as summary of the results and implications of the results.

@@ -146,7 +146,7 @@ langs <- unnest_cat(data_sheets, language)
 ```
 
 ```{r user-langs, fig.width=6, fig.height=4, fig.cap="Number of publications for data collection using each of the 5 most popular programming languages for downstream data analysis."}
-pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 50) +
+pubs_per_cat(langs, language, n_top = 5, isotype = TRUE, img_unit = 100) +
   labs(title = "Users (downstream analysis)") +
   scale_y_continuous(expand = expansion(c(0,0.05)),
                      breaks = breaks_width(100))
@@ -164,9 +164,9 @@ xlim <- langs %>%
   pull(n)
 ```
 
-```{r dev-langs, fig.width=6, fig.height=4, fig.cap="Number of publication for data analysis using each of the 5 most popular programming languages for package development. In this and the previous figure, each icon stands for 50 publications, and the x axes of both figures are aligned. Note that multiple programming languages can be used in one publication."}
+```{r dev-langs, fig.width=6, fig.height=4, fig.cap="Number of publication for data analysis using each of the 5 most popular programming languages for package development. In this and the previous figure, each icon stands for 100 publications, and the x axes of both figures are aligned. Note that multiple programming languages can be used in one publication."}
 pubs_per_cat(analysis_langs, language, n_top = 5, isotype = TRUE,
-             img_unit = 50) +
+             img_unit = 100) +
     scale_y_continuous(limits = c(0, xlim), 
                        breaks = breaks_width(100),
                        expand = expansion(mult = c(0,0.05))) +
