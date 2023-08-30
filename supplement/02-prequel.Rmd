@@ -187,63 +187,6 @@ organs_ngenes <- mm_ish_tissues %>%
                         name = "# genes\n(log scale)")
 ```
 
-```{r}
-data("species_cols")
-```
-
-```{r}
-species_pie <- prequel %>% 
-  mutate(species = fct_lump_min(species, 5)) %>% 
-  count(species) %>% 
-  mutate(species = fct_reorder(species, n, .desc = TRUE) %>% 
-           fct_relevel("Other", after = Inf)) %>% 
-  arrange(desc(species)) %>% 
-  mutate(label = paste("italic('", species, "')", "~(", n, ")"))
-```
-
-```{r}
-library(ggrepel)
-```
-
-```{r}
-species_cols
-```
-
-```{r}
-scales::show_col(species_cols)
-```
-
-```{r}
-library(Voyager)
-```
-
-```{r}
-data("ditto_colors")
-```
-
-```{r}
-n_species <- sum(species_pie$species != "Other")
-```
-
-```{r}
-pal_use <- c(setNames(ditto_colors[seq_len(n_species)],
-                      species_pie$species[species_pie$species != "Other"]),
-             Other = "gray50")
-```
-
-```{r species-pie, fig.width=5, fig.height=4, fig.cap="Number of publication per species."}
-ggplot(species_pie, aes(x = "", y = n, fill = species)) +
-   geom_col(position = "stack", color = "gray50", linewidth = 0.3, show.legend = FALSE,
-            width = 1) +
-   geom_text_repel(aes(x = 1.5, label = label), parse = TRUE, segment.size = 0,
-                   position = position_stack(vjust = 0.5)) +
-   coord_polar(theta = "y") +
-   scale_fill_manual(values = pal_use) +
-   #scale_y_continuous(breaks = species_pie$n, labels = species_pie$label) +
-   scale_x_discrete(expand = expansion(0.1)) +
-   theme_void()
-```
-
 ```{r anat1, fig.width=6, fig.height=4, fig.cap="A) Number of mouse publications per organ for (WM)ISH atlases (including FISH). B) Maximum number of genes in atlases for each organ, as of publication of the paper about the atlases. The color is in log scale to improve dynamic range."}
 organs_npubs + organs_ngenes +
     plot_layout(nrow = 1) +
