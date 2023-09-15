@@ -103,7 +103,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> ISS </td>
    <td style="text-align:left;width: 6em; "> 2013-07-14 </td>
    <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 222 </td>
+   <td style="text-align:left;width: 6em; "> 256 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -740,7 +740,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> EEL FISH </td>
    <td style="text-align:left;width: 6em; "> 2022-09-22 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 445 </td>
+   <td style="text-align:left;width: 6em; "> 888 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -877,13 +877,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> SMA </td>
-   <td style="text-align:left;width: 6em; "> 2023-01-27 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> RRST </td>
    <td style="text-align:left;width: 6em; "> 2023-01-31 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
@@ -903,13 +896,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 25 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> BMKMANU S1000 </td>
-   <td style="text-align:left;width: 6em; "> 2023-02-26 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> Spatial ATAC–RNA-seq </td>
@@ -938,13 +924,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 55 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Curio Seeker </td>
-   <td style="text-align:left;width: 6em; "> 2023-03-24 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> Slide-tags </td>
@@ -1085,6 +1064,27 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> smFISH </td>
    <td style="text-align:left;width: 6em; "> 300 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Curio Seeker </td>
+   <td style="text-align:left;width: 6em; "> 2023-08-22 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> SMA </td>
+   <td style="text-align:left;width: 6em; "> 2023-09-04 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> BMKMANU S1000 </td>
+   <td style="text-align:left;width: 6em; "> 2023-09-13 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
 </tbody>
 </table>
