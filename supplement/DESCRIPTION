@@ -37,7 +37,6 @@ Imports:
     quanteda,
     quanteda.textstats,
     reshape2,
-    rgeos,
     rnaturalearthdata,
     rnaturalearth,
     scales,
