@@ -243,7 +243,7 @@ Again, with the `estimateEffects` function, we identify cities associated with c
 
 
 <div class="figure" style="text-align: center">
-<img src="06-text-mining_files/figure-html/topic-loc-1.png" alt="Cities associated with topics (p < 0.005) shown on a map." width="100%" />
+<img src="06-text-mining_files/figure-html/topic-loc-1.png" alt="Cities associated with topics (p &lt; 0.005) shown on a map." width="100%" />
 <p class="caption">(\#fig:topic-loc)Cities associated with topics (p < 0.005) shown on a map.</p>
 </div>
 
