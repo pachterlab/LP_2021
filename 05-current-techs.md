@@ -328,19 +328,19 @@ The trend line looks pretty flat. Although studies quantifying a very large numb
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -4.0935 -0.8178  0.0697  0.9393  4.7843 
+## -4.1010 -0.7207  0.0477  0.9281  4.7996 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)    -2.3184340  2.0180052  -1.149 0.251474    
-## date_published  0.0003829  0.0001063   3.601 0.000368 ***
+## (Intercept)    -2.8193492  1.9825174  -1.422 0.155955    
+## date_published  0.0004103  0.0001043   3.933 0.000103 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.549 on 317 degrees of freedom
+## Residual standard error: 1.542 on 325 degrees of freedom
 ##   (21 observations deleted due to missingness)
-## Multiple R-squared:  0.0393,	Adjusted R-squared:  0.03627 
-## F-statistic: 12.97 on 1 and 317 DF,  p-value: 0.0003677
+## Multiple R-squared:  0.04542,	Adjusted R-squared:  0.04249 
+## F-statistic: 15.47 on 1 and 325 DF,  p-value: 0.0001028
 ```
 
 How total number of cells profiled in each study that reported the number of cells in the main text is shown here. The total number across datasets is used because sometimes number of cells per dataset is not reported.
@@ -361,18 +361,18 @@ After log transforming the total number of cells per study (when reported), whos
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -5.3941 -1.5231 -0.1264  1.7454  4.6803 
+## -5.2441 -1.4822 -0.0506  1.6333  4.7226 
 ## 
 ## Coefficients:
 ##                  Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)    -2.550e+01  5.208e+00  -4.895 6.50e-06 ***
-## date_published  1.942e-03  2.774e-04   6.999 1.52e-09 ***
+## (Intercept)    -2.412e+01  4.929e+00  -4.894 5.72e-06 ***
+## date_published  1.862e-03  2.614e-04   7.125 6.09e-10 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.251 on 67 degrees of freedom
-## Multiple R-squared:  0.4224,	Adjusted R-squared:  0.4137 
-## F-statistic: 48.99 on 1 and 67 DF,  p-value: 1.52e-09
+## Residual standard error: 2.21 on 73 degrees of freedom
+## Multiple R-squared:  0.4102,	Adjusted R-squared:  0.4021 
+## F-statistic: 50.77 on 1 and 73 DF,  p-value: 6.094e-10
 ```
 
 MERFISH is the smFISH based technique used in the most institutions (Figure \@ref(fig:n-insts)), although most of the smFISH based techniques barely spread beyond their institutions of origin, if at all (Figure \@ref(fig:smfish-n-insts)). The following advantages and disadvantages of smFISH based techniques may explain these trends in usage. Advantages and disadvantages of individual smFISH based techniques reviewed so far are summarized in Table \@ref(tab:table2).

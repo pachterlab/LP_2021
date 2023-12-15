@@ -786,20 +786,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 1.22 </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> LR-Spatial VDJ </td>
-   <td style="text-align:left;width: 6em; "> 2022-11-24 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 55 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> SR-Spatial VDJ </td>
-   <td style="text-align:left;width: 6em; "> 2022-11-24 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 55 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> mFISH3D </td>
    <td style="text-align:left;width: 6em; "> 2022-11-24 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
@@ -903,20 +889,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 55 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Slide-tags </td>
-   <td style="text-align:left;width: 6em; "> 2023-04-03 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Slide-tags multiome </td>
-   <td style="text-align:left;width: 6em; "> 2023-04-03 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> FISHnCHIPs </td>
@@ -1120,6 +1092,41 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> scTECH-seq </td>
+   <td style="text-align:left;width: 6em; "> 2023-11-21 </td>
+   <td style="text-align:left;width: 6em; "> De novo </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> LR-Spatial VDJ </td>
+   <td style="text-align:left;width: 6em; "> 2023-12-08 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> SR-Spatial VDJ </td>
+   <td style="text-align:left;width: 6em; "> 2023-12-08 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Slide-tags </td>
+   <td style="text-align:left;width: 6em; "> 2023-12-13 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Slide-tags multiome </td>
+   <td style="text-align:left;width: 6em; "> 2023-12-13 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
 </tbody>
 </table>
