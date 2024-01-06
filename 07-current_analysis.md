@@ -375,6 +375,16 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
 </td>
    <td style="text-align:left;width: 5em; "> 2022-04-28 </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/drieslab/Giotto/tree/suite"> Giotto </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2023-11-27 </td>
+  </tr>
 </tbody>
 </table>
 
@@ -771,6 +781,16 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
 </td>
    <td style="text-align:left;width: 5em; "> 2022-04-29 </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/drieslab/Giotto/tree/suite"> Giotto </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2023-11-27 </td>
+  </tr>
 </tbody>
 </table>
 
@@ -971,6 +991,16 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
 </td>
    <td style="text-align:left;width: 5em; "> 2023-07-22 </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/drieslab/Giotto/tree/suite"> Giotto </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2023-11-27 </td>
+  </tr>
 </tbody>
 </table>
 
@@ -1041,16 +1071,6 @@ So far the methods identifying spatially variable genes based on Gaussian proces
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
-<a href="NA"> stLearn </a>
-</td>
-   <td style="text-align:left;width: 5em; "> Python </td>
-   <td style="text-align:left;width: 15em; ">
-<a href="https://doi.org/10.1101/2020.05.31.125658"> stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues </a>
-</td>
-   <td style="text-align:left;width: 5em; "> 2020-05-31 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 8em; ">
 <a href="NA"> GLISS </a>
 </td>
    <td style="text-align:left;width: 5em; "> NA </td>
@@ -1068,6 +1088,16 @@ So far the methods identifying spatially variable genes based on Gaussian proces
 <a href="https://doi.org/10.1101/gr.271288.120"> Characterizing spatial gene expression heterogeneity in spatially resolved single-cell transcriptomics data with nonuniform cellular densities </a>
 </td>
    <td style="text-align:left;width: 5em; "> 2021-05-13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/BiomedicalMachineLearning/stLearn"> stLearn </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-023-43120-6"> Robust mapping of spatiotemporal trajectories and cell–cell interactions in healthy and diseased tissues </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2023-11-25 </td>
   </tr>
 </tbody>
 </table>
@@ -1104,16 +1134,6 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
 <a href="https://doi.org/10.1038/nbt.4260"> Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data </a>
 </td>
    <td style="text-align:left;width: 5em; "> 2018-10-29 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 8em; ">
-<a href="NA"> stLearn </a>
-</td>
-   <td style="text-align:left;width: 5em; "> Python </td>
-   <td style="text-align:left;width: 15em; ">
-<a href="https://doi.org/10.1101/2020.05.31.125658"> stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues </a>
-</td>
-   <td style="text-align:left;width: 5em; "> 2020-05-31 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1195,6 +1215,16 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
 </td>
    <td style="text-align:left;width: 5em; "> 2023-03-06 </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/BiomedicalMachineLearning/stLearn"> stLearn </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-023-43120-6"> Robust mapping of spatiotemporal trajectories and cell–cell interactions in healthy and diseased tissues </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2023-11-25 </td>
+  </tr>
 </tbody>
 </table>
 
@@ -1272,16 +1302,6 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
-<a href="NA"> stLearn </a>
-</td>
-   <td style="text-align:left;width: 5em; "> Python </td>
-   <td style="text-align:left;width: 15em; ">
-<a href="https://doi.org/10.1101/2020.05.31.125658"> stLearn: integrating spatial location, tissue morphology and gene expression to find cell types, cell-cell interactions and spatial trajectories within undissociated tissues </a>
-</td>
-   <td style="text-align:left;width: 5em; "> 2020-05-31 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 8em; ">
 <a href="https://github.com/xiaoyeye/GCNG"> GCNG </a>
 </td>
    <td style="text-align:left;width: 5em; "> Python </td>
@@ -1319,6 +1339,26 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
 <a href="https://doi.org/10.1038/s41587-022-01288-0"> DIALOGUE maps multicellular programs in tissue from single-cell or spatial transcriptomics data </a>
 </td>
    <td style="text-align:left;width: 5em; "> 2022-05-05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/BiomedicalMachineLearning/stLearn"> stLearn </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1038/s41467-023-43120-6"> Robust mapping of spatiotemporal trajectories and cell–cell interactions in healthy and diseased tissues </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2023-11-25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/drieslab/Giotto/tree/suite"> Giotto </a>
+</td>
+   <td style="text-align:left;width: 5em; "> R; Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2023-11-27 </td>
   </tr>
 </tbody>
 </table>
