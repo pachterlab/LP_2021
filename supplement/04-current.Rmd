@@ -415,7 +415,7 @@ ngs2 <- ngs2 %>%
 
 ```{r fastq-published, fig.width=6, fig.height=4, fig.cap="Whether fastq files from published NGS based papers (no preprints) are available on a public data repository such as GEO over time. Bin width is 180 days."}
 ngs2 %>% 
-  filter(!journal %in% c("bioRxiv", "arXiv")) %>% 
+  filter(!journal %in% c("bioRxiv", "arXiv", "medRxiv", "Research Square")) %>% 
   hist_bool(has_accession, binwidth = 180) +
   labs(title = "Whether fastq files from published papers are available")
 ```
@@ -424,7 +424,7 @@ While in prequel (WM)ISH atlases, the images are themselves _the_ data, current 
 
 ```{r fastq-preprint, fig.width=6, fig.height=4, fig.cap="Whether fastq files from published NGS based preprints are available on a public data repository such as GEO over time. Bin width is 90 days."}
 ngs2 %>% 
-  filter(journal %in% c("bioRxiv", "arXiv")) %>% 
+  filter(journal %in% c("bioRxiv", "arXiv", "medRxiv", "Research Square")) %>% 
   hist_bool(has_accession, binwidth = 90) +
   labs(title = "Whether fastq files from preprints are available")
 ```
