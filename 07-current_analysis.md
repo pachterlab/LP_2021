@@ -142,7 +142,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/nmeth.3895"> Dense transcript profiling in single cells by image correlation decoding </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2016-06-06 </td>
+   <td style="text-align:left;width: 5em; "> 2016-06-05 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -152,7 +152,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/765842"> Identification of spatial compartments in tissue from in situ sequencing data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-09-18 </td>
+   <td style="text-align:left;width: 5em; "> 2019-09-17 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -162,7 +162,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41592-019-0631-4"> Probabilistic cell typing enables fine mapping of closely related cell types in situ </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-11-18 </td>
+   <td style="text-align:left;width: 5em; "> 2019-11-17 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -172,7 +172,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1371/journal.pone.0228760"> SMART-Q: An Integrative Pipeline Quantifying Cell Type-Specific RNA Transcription </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+   <td style="text-align:left;width: 5em; "> 2020-04-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -182,7 +182,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1111/febs.15572"> Spage2vec: Unsupervised detection of spatial gene expression constellations </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-09-25 </td>
+   <td style="text-align:left;width: 5em; "> 2020-09-24 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -192,7 +192,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2020.12.14.422631"> deepBlink: Threshold-independent detection and localization of diffraction-limited spots </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-12-15 </td>
+   <td style="text-align:left;width: 5em; "> 2020-12-14 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -202,7 +202,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2021.03.01.433040"> ISTDECO: In Situ Transcriptomics Decoding by Deconvolution </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-03-02 </td>
+   <td style="text-align:left;width: 5em; "> 2021-03-01 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -212,7 +212,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1371/journal.pcbi.1008256"> BARcode DEmixing through Non-negative Spatial Regression (BarDensr) </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+   <td style="text-align:left;width: 5em; "> 2021-03-07 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -222,7 +222,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.15252/msb.202010108"> Joint cell segmentation and cell type annotation for spatial transcriptomics </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-05-31 </td>
+   <td style="text-align:left;width: 5em; "> 2021-05-30 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -232,7 +232,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-021-23807-4"> Cell segmentation-free inference of cell types from in situ transcriptomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-06-10 </td>
+   <td style="text-align:left;width: 5em; "> 2021-06-09 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -242,7 +242,7 @@ The packages mentioned in this section are summarized in the Table \@ref(tab:seg
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41587-021-01044-w"> Bayesian segmentation of spatially resolved transcriptomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-10-14 </td>
+   <td style="text-align:left;width: 5em; "> 2021-10-13 </td>
   </tr>
 </tbody>
 </table>
@@ -303,7 +303,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/619197"> Spaniel: analysis and interactive sharing of Spatial Transcriptomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-05-05 </td>
+   <td style="text-align:left;width: 5em; "> 2019-05-04 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -313,7 +313,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1016/j.cell.2019.05.031"> Comprehensive Integration of Single-Cell Data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+   <td style="text-align:left;width: 5em; "> 2019-06-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -323,7 +323,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s12859-020-3489-7"> SpatialCPie: an R/Bioconductor package for spatial transcriptomics cluster evaluation </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+   <td style="text-align:left;width: 5em; "> 2020-04-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -333,7 +333,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s12864-020-06832-3"> Seamless integration of image and molecular analysis for spatial transcriptomics workflows </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-07-16 </td>
+   <td style="text-align:left;width: 5em; "> 2020-07-15 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -343,7 +343,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2020.10.20.346544"> Inferring spatially transient gene expression pattern from spatial transcriptomic studies </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-10-21 </td>
+   <td style="text-align:left;width: 5em; "> 2020-10-20 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -353,7 +353,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s13059-021-02286-2"> Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+   <td style="text-align:left;width: 5em; "> 2021-03-07 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -363,7 +363,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41592-021-01358-2"> Squidpy: a scalable framework for spatial single cell analysis </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-01-31 </td>
+   <td style="text-align:left;width: 5em; "> 2022-01-30 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -373,7 +373,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/bioinformatics/btac299"> SpatialExperiment: infrastructure for spatially resolved transcriptomics data in R using Bioconductor </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-04-28 </td>
+   <td style="text-align:left;width: 5em; "> 2022-04-27 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -383,7 +383,7 @@ In the Python package spage2vec [@Partel2020], graphs are constructed by connect
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-11-27 </td>
+   <td style="text-align:left;width: 5em; "> 2023-11-26 </td>
   </tr>
 </tbody>
 </table>
@@ -427,7 +427,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/nbt.3192"> Spatial reconstruction of single-cell gene expression data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2015-04-13 </td>
+   <td style="text-align:left;width: 5em; "> 2015-04-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -437,7 +437,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1126/science.aan3235"> The Drosophila embryo at single-cell transcriptome resolution </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2017-10-13 </td>
+   <td style="text-align:left;width: 5em; "> 2017-10-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -447,7 +447,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://arxiv.org/abs/1905.02269"> A joint model of unpaired data from scRNA-seq and spatial transcriptomics for imputing missing gene expression measurements </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-05-06 </td>
+   <td style="text-align:left;width: 5em; "> 2019-05-05 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -457,7 +457,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1016/j.cell.2019.05.031"> Comprehensive Integration of Single-Cell Data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+   <td style="text-align:left;width: 5em; "> 2019-06-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -467,7 +467,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1016/j.cell.2019.05.006"> Single-Cell Multi-omic Integration Compares and Contrasts Features of Brain Cell Identity </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+   <td style="text-align:left;width: 5em; "> 2019-06-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -477,7 +477,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41598-019-49031-1"> Novel computational model of gastrula morphogenesis to identify spatial discriminator genes by self-organizing map (SOM) clustering </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-08-29 </td>
+   <td style="text-align:left;width: 5em; "> 2019-08-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -487,7 +487,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41592-019-0619-0"> Fast, sensitive and accurate integration of single-cell data with Harmony </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-11-18 </td>
+   <td style="text-align:left;width: 5em; "> 2019-11-17 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -497,7 +497,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41586-019-1773-3"> Gene expression cartography </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-11-20 </td>
+   <td style="text-align:left;width: 5em; "> 2019-11-19 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -507,7 +507,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2020.01.14.906313"> A Bayesian nonparametric semi-supervised model for integration of multiple single-cell experiments </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-01-21 </td>
+   <td style="text-align:left;width: 5em; "> 2020-01-20 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -517,7 +517,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-020-15968-5"> Inferring spatial and signaling relationships between cells from single cell transcriptomic data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+   <td style="text-align:left;width: 5em; "> 2020-04-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -527,7 +527,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1126/sciadv.abb3446"> Molecular atlas of the adult mouse brain </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-06-26 </td>
+   <td style="text-align:left;width: 5em; "> 2020-06-25 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -537,7 +537,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2020.08.12.248971"> Integrative Spatial Single-cell Analysis with Graph-based Feature Learning </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-08-13 </td>
+   <td style="text-align:left;width: 5em; "> 2020-08-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -547,7 +547,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/nar/gkaa740"> SpaGE: Spatial Gene Enhancement using scRNA-seq </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-09-21 </td>
+   <td style="text-align:left;width: 5em; "> 2020-09-20 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -557,7 +557,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1371/journal.pcbi.1008218"> Imputation of Spatially-resolved Transcriptomes by Graph-regularized Tensor Completion </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-04-07 </td>
+   <td style="text-align:left;width: 5em; "> 2021-04-06 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -567,7 +567,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41587-021-00867-x"> Iterative single-cell multi-omic integration using online learning </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-04-19 </td>
+   <td style="text-align:left;width: 5em; "> 2021-04-18 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -577,7 +577,7 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41592-021-01264-7"> Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-10-28 </td>
+   <td style="text-align:left;width: 5em; "> 2021-10-27 </td>
   </tr>
 </tbody>
 </table>
@@ -659,7 +659,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1126/science.aaw1219"> Slide-seq: A scalable technology for measuring genome-wide expression at high spatial resolution </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-03-29 </td>
+   <td style="text-align:left;width: 5em; "> 2019-03-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -669,7 +669,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1016/j.cell.2019.05.031"> Comprehensive Integration of Single-Cell Data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+   <td style="text-align:left;width: 5em; "> 2019-06-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -679,7 +679,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s42003-020-01247-y"> Single-cell and spatial transcriptomics enables probabilistic inference of cell type topography </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-10-09 </td>
+   <td style="text-align:left;width: 5em; "> 2020-10-08 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -689,7 +689,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/bib/bbaa414"> DSTG: Deconvoluting Spatial Transcriptomics Data through Graph-based Artificial Intelligence </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-01-22 </td>
+   <td style="text-align:left;width: 5em; "> 2021-01-21 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -699,7 +699,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/nar/gkab043"> SPOTlight:Seeded NMF regression to Deconvolute Spatial Transcriptomics Spots with Single-Cell Transcriptomes </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-02-05 </td>
+   <td style="text-align:left;width: 5em; "> 2021-02-04 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -709,7 +709,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41587-021-00830-w"> Robust decomposition of cell type mixtures in spatial transcriptomics </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-02-18 </td>
+   <td style="text-align:left;width: 5em; "> 2021-02-17 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -719,7 +719,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s13059-021-02286-2"> Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+   <td style="text-align:left;width: 5em; "> 2021-03-07 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -729,7 +729,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s42003-021-02739-1"> AdRoit is an accurate and robust method to infer complex transcriptome composition </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-10-22 </td>
+   <td style="text-align:left;width: 5em; "> 2021-10-21 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -739,7 +739,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41592-021-01264-7"> Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-10-28 </td>
+   <td style="text-align:left;width: 5em; "> 2021-10-27 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -749,7 +749,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-022-28020-5"> Advances in mixed cell deconvolution enable quantification of cell types in spatially-resolved gene expression data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-01-19 </td>
+   <td style="text-align:left;width: 5em; "> 2022-01-18 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -759,7 +759,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/nar/gkac150"> STRIDE: accurately decomposing and integrating spatial transcriptomics using single-cell RNA sequencing </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-03-07 </td>
+   <td style="text-align:left;width: 5em; "> 2022-03-06 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -769,7 +769,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2021.05.10.443517"> DestVI identifies continuums of cell types in spatial transcriptomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-04-21 </td>
+   <td style="text-align:left;width: 5em; "> 2022-04-20 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -779,7 +779,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-022-30033-z"> Reference-free cell-type deconvolution of pixel-resolution spatially resolved transcriptomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-04-29 </td>
+   <td style="text-align:left;width: 5em; "> 2022-04-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -789,7 +789,7 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-11-27 </td>
+   <td style="text-align:left;width: 5em; "> 2023-11-26 </td>
   </tr>
 </tbody>
 </table>
@@ -849,7 +849,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/nmeth.4634"> Identification of spatial expression trends in single-cell gene expression data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2018-03-19 </td>
+   <td style="text-align:left;width: 5em; "> 2018-03-18 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -859,7 +859,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/nmeth.4636"> SpatialDE: identification of spatially variable genes </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2018-03-19 </td>
+   <td style="text-align:left;width: 5em; "> 2018-03-18 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -869,7 +869,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1016/j.cell.2019.05.031"> Comprehensive Integration of Single-Cell Data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-06-13 </td>
+   <td style="text-align:left;width: 5em; "> 2019-06-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -879,7 +879,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1371/journal.pcbi.1007509"> Clustering-independent analysis of genomic data using spectral simplicial theory </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-11-22 </td>
+   <td style="text-align:left;width: 5em; "> 2019-11-21 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -889,7 +889,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41592-019-0701-7"> Statistical analysis of spatial expression patterns for spatially resolved transcriptomic studies </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-01-27 </td>
+   <td style="text-align:left;width: 5em; "> 2020-01-26 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -899,7 +899,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2020.08.12.248971"> Integrative Spatial Single-cell Analysis with Graph-based Feature Learning </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-08-13 </td>
+   <td style="text-align:left;width: 5em; "> 2020-08-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -909,7 +909,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-020-17900-3"> A clustering-independent method for finding differentially expressed genes in single-cell transcriptome data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-08-28 </td>
+   <td style="text-align:left;width: 5em; "> 2020-08-27 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -919,7 +919,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2020.10.20.346544"> Inferring spatially transient gene expression pattern from spatial transcriptomic studies </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-10-21 </td>
+   <td style="text-align:left;width: 5em; "> 2020-10-20 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -929,7 +929,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s13059-021-02286-2"> Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+   <td style="text-align:left;width: 5em; "> 2021-03-07 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -939,7 +939,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/gr.271288.120"> Characterizing spatial gene expression heterogeneity in spatially resolved single-cell transcriptomics data with nonuniform cellular densities </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-05-13 </td>
+   <td style="text-align:left;width: 5em; "> 2021-05-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -949,7 +949,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/bioinformatics/btab455"> Bayesian Modeling of Spatial Molecular Profiling Data via Gaussian Process </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-06-19 </td>
+   <td style="text-align:left;width: 5em; "> 2021-06-18 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -959,7 +959,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/bioinformatics/btab471"> SOMDE: A scalable method for identifying spatially variable genes with self-organizing map </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-06-24 </td>
+   <td style="text-align:left;width: 5em; "> 2021-06-23 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -969,7 +969,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/bioinformatics/btab486"> Non-parametric modelling of temporal and spatial counts data from RNA-seq experiments </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-07-02 </td>
+   <td style="text-align:left;width: 5em; "> 2021-07-01 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -979,7 +979,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-022-33182-3"> Identification of spatially variable genes with graph cuts </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-09-19 </td>
+   <td style="text-align:left;width: 5em; "> 2022-09-18 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -989,7 +989,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41598-023-38965-2"> A universal differential expression prediction tool for single-cell and spatial genomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-07-22 </td>
+   <td style="text-align:left;width: 5em; "> 2023-07-21 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -999,7 +999,7 @@ Some genes, such as house keeping genes, are ubiquitously expressed. Such genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-11-27 </td>
+   <td style="text-align:left;width: 5em; "> 2023-11-26 </td>
   </tr>
 </tbody>
 </table>
@@ -1057,7 +1057,7 @@ So far the methods identifying spatially variable genes based on Gaussian proces
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/nmeth.4636"> SpatialDE: identification of spatially variable genes </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2018-03-19 </td>
+   <td style="text-align:left;width: 5em; "> 2018-03-18 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1067,7 +1067,7 @@ So far the methods identifying spatially variable genes based on Gaussian proces
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/362624"> Charting Tissue Expression Anatomy by Spatial Transcriptome Decomposition </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2018-12-28 </td>
+   <td style="text-align:left;width: 5em; "> 2018-12-27 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1077,7 +1077,7 @@ So far the methods identifying spatially variable genes based on Gaussian proces
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2020.08.12.248971"> Integrative Spatial Single-cell Analysis with Graph-based Feature Learning </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-08-13 </td>
+   <td style="text-align:left;width: 5em; "> 2020-08-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1087,7 +1087,7 @@ So far the methods identifying spatially variable genes based on Gaussian proces
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/gr.271288.120"> Characterizing spatial gene expression heterogeneity in spatially resolved single-cell transcriptomics data with nonuniform cellular densities </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-05-13 </td>
+   <td style="text-align:left;width: 5em; "> 2021-05-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1097,7 +1097,7 @@ So far the methods identifying spatially variable genes based on Gaussian proces
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-023-43120-6"> Robust mapping of spatiotemporal trajectories and cell–cell interactions in healthy and diseased tissues </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-11-25 </td>
+   <td style="text-align:left;width: 5em; "> 2023-11-24 </td>
   </tr>
 </tbody>
 </table>
@@ -1133,7 +1133,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/nbt.4260"> Identification of spatially associated subpopulations by combining scRNAseq and sequential fluorescence in situ hybridization data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2018-10-29 </td>
+   <td style="text-align:left;width: 5em; "> 2018-10-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1143,7 +1143,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1016/j.cels.2021.04.008"> Inferring biologically relevant molecular tissue substructures by agglomerative clustering of digitized spatial transcriptomes with multilayer </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-05-07 </td>
+   <td style="text-align:left;width: 5em; "> 2021-05-06 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1153,7 +1153,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41587-021-00935-2"> Spatial transcriptomics at subspot resolution with BayesSpace </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-06-03 </td>
+   <td style="text-align:left;width: 5em; "> 2021-06-02 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1163,7 +1163,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-021-23807-4"> Cell segmentation-free inference of cell types from in situ transcriptomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-06-10 </td>
+   <td style="text-align:left;width: 5em; "> 2021-06-09 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1173,7 +1173,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41587-021-01044-w"> Bayesian segmentation of spatially resolved transcriptomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-10-14 </td>
+   <td style="text-align:left;width: 5em; "> 2021-10-13 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1183,7 +1183,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41592-021-01255-8"> SpaGCN: Integrating gene expression, spatial location and histology to identify spatial domains and spatially variable genes by graph convolutional network </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-10-28 </td>
+   <td style="text-align:left;width: 5em; "> 2021-10-27 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1193,7 +1193,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/bib/bbab466"> SC-MEB: spatial clustering with hidden Markov random field using empirical Bayes </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-11-25 </td>
+   <td style="text-align:left;width: 5em; "> 2021-11-24 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1203,7 +1203,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1016/j.csbj.2022.08.029"> Define and visualize pathological architectures of human tissues from spatially resolved transcriptomics using deep learning </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-08-24 </td>
+   <td style="text-align:left;width: 5em; "> 2022-08-23 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1213,7 +1213,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1002/cyto.a.24729"> Spatial analysis for highly multiplexed imaging data to identify tissue microenvironments </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-03-06 </td>
+   <td style="text-align:left;width: 5em; "> 2023-03-05 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1223,7 +1223,7 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-023-43120-6"> Robust mapping of spatiotemporal trajectories and cell–cell interactions in healthy and diseased tissues </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-11-25 </td>
+   <td style="text-align:left;width: 5em; "> 2023-11-24 </td>
   </tr>
 </tbody>
 </table>
@@ -1288,7 +1288,7 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1016/j.celrep.2019.08.077"> Modeling Cell-Cell Interactions from Spatial Molecular Data with Spatial Variance Component Analysis </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2019-10-01 </td>
+   <td style="text-align:left;width: 5em; "> 2019-09-30 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1298,7 +1298,7 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-020-15968-5"> Inferring spatial and signaling relationships between cells from single cell transcriptomic data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+   <td style="text-align:left;width: 5em; "> 2020-04-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1308,7 +1308,7 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s13059-020-02214-w"> GCNG: Graph convolutional networks for inferring cell-cell interactions </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-12-10 </td>
+   <td style="text-align:left;width: 5em; "> 2020-12-09 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1318,7 +1318,7 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s13059-021-02286-2"> Giotto, a pipeline for integrative analysis and visualization of single-cell spatial transcriptomic data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-03-08 </td>
+   <td style="text-align:left;width: 5em; "> 2021-03-07 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1328,7 +1328,7 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s13059-022-02663-5"> Explainable multiview framework for dissecting spatial relationships from highly multiplexed data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-04-14 </td>
+   <td style="text-align:left;width: 5em; "> 2022-04-13 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1338,7 +1338,7 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41587-022-01288-0"> DIALOGUE maps multicellular programs in tissue from single-cell or spatial transcriptomics data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-05-05 </td>
+   <td style="text-align:left;width: 5em; "> 2022-05-04 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1348,7 +1348,7 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-023-43120-6"> Robust mapping of spatiotemporal trajectories and cell–cell interactions in healthy and diseased tissues </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-11-25 </td>
+   <td style="text-align:left;width: 5em; "> 2023-11-24 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1358,7 +1358,7 @@ For ST and Visium, we can use one of the cell type deconvolution methods to find
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2023-11-27 </td>
+   <td style="text-align:left;width: 5em; "> 2023-11-26 </td>
   </tr>
 </tbody>
 </table>
@@ -1402,7 +1402,7 @@ Like SVCA, Multiview Intercellular SpaTial modeling framework (MISTy) [@Tanevski
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-020-15968-5"> Inferring spatial and signaling relationships between cells from single cell transcriptomic data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-04-29 </td>
+   <td style="text-align:left;width: 5em; "> 2020-04-28 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1412,7 +1412,7 @@ Like SVCA, Multiview Intercellular SpaTial modeling framework (MISTy) [@Tanevski
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41592-020-0885-x"> Investigating higher-order interactions in single-cell data with scHOT </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-07-13 </td>
+   <td style="text-align:left;width: 5em; "> 2020-07-12 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1422,7 +1422,7 @@ Like SVCA, Multiview Intercellular SpaTial modeling framework (MISTy) [@Tanevski
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1093/bioinformatics/btaa769"> Identifying signaling genes in spatial single cell expression data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-09-04 </td>
+   <td style="text-align:left;width: 5em; "> 2020-09-03 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1432,7 +1432,7 @@ Like SVCA, Multiview Intercellular SpaTial modeling framework (MISTy) [@Tanevski
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s13059-020-02214-w"> GCNG: Graph convolutional networks for inferring cell-cell interactions </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-12-10 </td>
+   <td style="text-align:left;width: 5em; "> 2020-12-09 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1442,7 +1442,7 @@ Like SVCA, Multiview Intercellular SpaTial modeling framework (MISTy) [@Tanevski
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1186/s13059-022-02663-5"> Explainable multiview framework for dissecting spatial relationships from highly multiplexed data </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2022-04-14 </td>
+   <td style="text-align:left;width: 5em; "> 2022-04-13 </td>
   </tr>
 </tbody>
 </table>
@@ -1470,7 +1470,7 @@ Some of the packages already reviewed can also infer interactions between genes,
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41467-018-06868-w"> A computational framework to study sub-cellular RNA localization </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2018-11-02 </td>
+   <td style="text-align:left;width: 5em; "> 2018-11-01 </td>
   </tr>
 </tbody>
 </table>
@@ -1502,7 +1502,7 @@ These studies analyzing subcellular transcript localization were all performed o
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41551-020-0578-x"> Integrating Spatial Gene Expression and Breast Tumour Morphology via Deep Learning </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-06-22 </td>
+   <td style="text-align:left;width: 5em; "> 2020-06-21 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1512,7 +1512,7 @@ These studies analyzing subcellular transcript localization were all performed o
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41598-020-75708-z"> Spatial transcriptomics inferred from pathology whole-slide images links tumor heterogeneity to survival in breast and lung cancer </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2020-11-02 </td>
+   <td style="text-align:left;width: 5em; "> 2020-11-01 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 8em; ">
@@ -1522,7 +1522,7 @@ These studies analyzing subcellular transcript localization were all performed o
    <td style="text-align:left;width: 15em; ">
 <a href="https://doi.org/10.1038/s41587-021-01075-3"> Super-resolved spatial transcriptomics by deep data fusion </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2021-11-29 </td>
+   <td style="text-align:left;width: 5em; "> 2021-11-28 </td>
   </tr>
 </tbody>
 </table>
