@@ -416,6 +416,7 @@ ggplot(smfish, aes(date_published, n_genes)) +
        y = NULL) +
   theme(legend.position = "none") +
   scale_y_log10() +
+  scale_x_date(date_breaks = "2 years") +
   annotation_logticks(sides = "l")
 ```
 
@@ -441,6 +442,7 @@ ggplot(sum_cells, aes(date_published, n_cells)) +
   labs(x = "Date published", title = "Total number of cells per study", y = NULL) +
   theme(legend.position = "none") +
   scale_y_log10() +
+  scale_x_date(date_breaks = "2 years") +
   annotation_logticks()
 ```
 
