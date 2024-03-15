@@ -408,13 +408,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> Seq-Scope </td>
-   <td style="text-align:left;width: 6em; "> 2021-01-26 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 0.5 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> ExSeq </td>
    <td style="text-align:left;width: 6em; "> 2021-01-29 </td>
    <td style="text-align:left;width: 6em; "> ISS </td>
@@ -476,6 +469,13 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> De novo </td>
    <td style="text-align:left;width: 6em; "> NA </td>
    <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Seq-Scope </td>
+   <td style="text-align:left;width: 6em; "> 2021-06-24 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 0.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> sci-Space </td>
@@ -1204,6 +1204,13 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> 0.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> C3PO </td>
+   <td style="text-align:left;width: 6em; "> 2024-03-12 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
 </tbody>
 </table>
