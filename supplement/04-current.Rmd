@@ -436,13 +436,13 @@ city_gc <- geocode_inst_city(publications, cache_location = here())
 pubs_on_map2 <- partial(pubs_on_map, city_gc = city_gc)
 ```
 
-```{r current-world, fig.width=7, fig.height=7, fig.cap="World map of institutions. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.", out.width="100%"}
+```{r current-world, fig.width=10, fig.height=10, fig.cap="World map of institutions. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.", out.width="100%"}
 pubs_on_map2(data_sheets, zoom = "world", 
              facet_by = "era", ncol = 1, label_insts = TRUE,
              label_cities = FALSE)
 ```
 
-```{r current-us, fig.width=6, fig.height=7, fig.cap="Map of institutions around continental US. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled."}
+```{r current-us, fig.width=7, fig.height=8, fig.cap="Map of institutions around continental US. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled."}
 pubs_on_map2(data_sheets, zoom = "usa", 
              facet_by = "era", ncol = 1, label_insts = TRUE,
              label_cities = FALSE)

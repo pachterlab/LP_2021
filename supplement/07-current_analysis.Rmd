@@ -124,7 +124,7 @@ city_gc <- geocode_inst_city(analysis_sheets)
 pubs_on_map(analysis_sheets, city_gc, facet_by = "era", ncol = 1, n_label = 10)
 ```
 
-```{r analysis-usa, fig.width=6, fig.height=8, fig.cap="Map of where first authors of current era and prequel data analysis papers were located as of publication around continental US. Top 5 institutions in each era are labeled."}
+```{r analysis-usa, fig.width=7, fig.height=8, fig.cap="Map of where first authors of current era and prequel data analysis papers were located as of publication around continental US. Top 5 institutions in each era are labeled."}
 pubs_on_map(analysis_sheets, city_gc, facet_by = "era", zoom = "usa",
             ncol = 1, n_label = 10)
 ```
