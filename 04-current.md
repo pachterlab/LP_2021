@@ -264,7 +264,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> GeoMX DSP </td>
    <td style="text-align:left;width: 6em; "> 2019-06-20 </td>
    <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> 1 </td>
+   <td style="text-align:left;width: 6em; "> 1812 </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
@@ -404,7 +404,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> GeoMX WTA </td>
    <td style="text-align:left;width: 6em; "> 2021-01-24 </td>
    <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> 1 </td>
+   <td style="text-align:left;width: 6em; "> 48 </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
@@ -964,7 +964,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> Xenium </td>
    <td style="text-align:left;width: 6em; "> 2023-06-29 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 377 </td>
+   <td style="text-align:left;width: 6em; "> 494 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -1199,18 +1199,32 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> Nova-ST </td>
-   <td style="text-align:left;width: 6em; "> 2024-02-24 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 0.3 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> C3PO </td>
    <td style="text-align:left;width: 6em; "> 2024-03-12 </td>
    <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> ROInet-seq </td>
+   <td style="text-align:left;width: 6em; "> 2024-04-05 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> 2P-NucTag </td>
+   <td style="text-align:left;width: 6em; "> 2024-04-08 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Nova-ST </td>
+   <td style="text-align:left;width: 6em; "> 2024-04-10 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 0.3 </td>
   </tr>
 </tbody>
 </table>
@@ -1341,7 +1355,7 @@ Especially in the US, research in the current era tends to be more concentrated 
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="04-current_files/figure-html/current-us-1.png" alt="Map of institutions around continental US. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled." width="576" />
+<img src="04-current_files/figure-html/current-us-1.png" alt="Map of institutions around continental US. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled." width="672" />
 <p class="caption">(\#fig:current-us)Map of institutions around continental US. Area of the point is proportional to the number of publications from that city. Gray points are sum of both prequel and current eras for each city. Top 10 institutions in each era are labeled.</p>
 </div>
 

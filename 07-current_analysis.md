@@ -63,7 +63,7 @@ Several methods for cell type deconvolution in array based techniques that don't
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="07-current_analysis_files/figure-html/analysis-usa-1.png" alt="Map of where first authors of current era and prequel data analysis papers were located as of publication around continental US. Top 5 institutions in each era are labeled." width="576" />
+<img src="07-current_analysis_files/figure-html/analysis-usa-1.png" alt="Map of where first authors of current era and prequel data analysis papers were located as of publication around continental US. Top 5 institutions in each era are labeled." width="672" />
 <p class="caption">(\#fig:analysis-usa)Map of where first authors of current era and prequel data analysis papers were located as of publication around continental US. Top 5 institutions in each era are labeled.</p>
 </div>
 
