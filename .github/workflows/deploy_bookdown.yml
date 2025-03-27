@@ -22,7 +22,7 @@ jobs:
           working-directory: supplement
       - name: Render Book
         run: Rscript -e 'xfun::in_dir("supplement", bookdown::render_book("index.Rmd", output_format = "bookdown::bs4_book"))'
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: _book
           path: supplement/_book/
