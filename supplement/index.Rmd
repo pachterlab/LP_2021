@@ -28,7 +28,7 @@ library(museumst)
 
 ```{r}
 nms <- c("ROI selection", "smFISH", "NGS barcoding", "ISS", "De novo", "Analysis")
-data_sheets <- read_metadata(nms, update = TRUE)
+data_sheets <- read_metadata(nms, update = TRUE, cache = FALSE)
 ```
 
 ```{r}
