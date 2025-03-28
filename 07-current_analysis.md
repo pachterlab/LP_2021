@@ -579,6 +579,16 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
 </td>
    <td style="text-align:left;width: 5em; "> 2021-10-27 </td>
   </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/daisybio/Tangram_Refinement_Strategies"> Tangram </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2025.01.27.634996"> Refinement Strategies for Tangram for Reliable Single-Cell to Spatial Mapping </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2025-01-28 </td>
+  </tr>
 </tbody>
 </table>
 
@@ -790,6 +800,16 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
 <a href="https://doi.org/10.1101/2023.11.26.568752"> Giotto Suite: a multi-scale and technology-agnostic spatial multi-omics analysis ecosystem </a>
 </td>
    <td style="text-align:left;width: 5em; "> 2023-11-26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/daisybio/Tangram_Refinement_Strategies"> Tangram </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2025.01.27.634996"> Refinement Strategies for Tangram for Reliable Single-Cell to Spatial Mapping </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2025-01-28 </td>
   </tr>
 </tbody>
 </table>
@@ -1224,6 +1244,16 @@ As already mentioned in trendsceek and scGCO, the problem of identifying spatial
 <a href="https://doi.org/10.1038/s41467-023-43120-6"> Robust mapping of spatiotemporal trajectories and cell–cell interactions in healthy and diseased tissues </a>
 </td>
    <td style="text-align:left;width: 5em; "> 2023-11-24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 8em; ">
+<a href="https://github.com/SysFate/MULTILAYER"> MULTILAYER </a>
+</td>
+   <td style="text-align:left;width: 5em; "> Python </td>
+   <td style="text-align:left;width: 15em; ">
+<a href="https://doi.org/10.1101/2025.01.25.634874"> Enhancing spatial omics resolution by pseudo-interstitial pixels inference </a>
+</td>
+   <td style="text-align:left;width: 5em; "> 2025-01-27 </td>
   </tr>
 </tbody>
 </table>

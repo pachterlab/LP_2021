@@ -3,7 +3,7 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses
   - Lior Pachter
-date: "2024-04-16"
+date: "2025-03-28"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
@@ -32,19 +32,19 @@ This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nat
 
 
 
-As of 2024-04-16, this database contains:
+As of 2025-03-28, this database contains:
 
-* 2249 current era publications, 1457 of which are for data collection and 863 are for data analysis (see Chapter 1 for definition of prequel and current eras)
-* 280 prequel era publications
-* Current era publications from 666 institutions[^1] in 367 cities in 42 countries
-* 697 current era data analysis software packages whose source code is available online
+* 3027 current era publications, 1923 of which are for data collection and 1185 are for data analysis (see Chapter 1 for definition of prequel and current eras)
+* 281 prequel era publications
+* Current era publications from 799 institutions[^1] in 429 cities in 46 countries
+* 942 current era data analysis software packages whose source code is available online
 
 ## Running the code
 
 This document is built with the `bookdown` package from a collection of R Markdown files. How some of figures look depends on parameters that can be changed, such as size of bins when binning number of publications in time to show a trend. The source code is on [RStudio Cloud](https://rstudio.cloud/project/2492054). The dependencies are pre-installed in the RStudio Cloud project. By default, when the database is queried by code, the most up to date version is used, which can be newer than the rendered static version on github.io. To build the document in RStudio Cloud, run this in the R console:
 
 
-```r
+``` r
 bookdown::render_book("index.Rmd", output_format = "bookdown::bs4_book")
 ```
 
@@ -53,7 +53,7 @@ If you are cloning this repo into a fresh RStudio Cloud project or a fresh machi
 First install `remotes` with `install.packages("remotes")`. Then use `remotes:install_deps(dependencies = TRUE)` to install all required packages from CRAN, Bioconductor, and GitHub. So in short,
 
 
-```r
+``` r
 install.packages("remotes")
 remotes::install_deps(dependencies = TRUE)
 ```
@@ -63,7 +63,7 @@ Because many packages are installed, the installation can be sped up with the ar
 By default, the most up to date version of the database is downloaded for analyses in this book. However, as the `museumst` R package written for these analyses contains a cached version of the database, historical versions of the database can be viewed by installing older versions of `museumst` and setting `update = FALSE` when calling `museumst::read_metadata()` when running code from this book on RStudio Cloud or your computer. Older versions of `museumst` can be installed with
 
 
-```r
+``` r
 remotes::install_github("pachterlab/museumst", ref = "v0.0.0.9016")
 ```
 
