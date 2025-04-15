@@ -1458,13 +1458,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> ST-FFPE-mIF </td>
-   <td style="text-align:left;width: 6em; "> 2025-01-25 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> SeekSpace </td>
    <td style="text-align:left;width: 6em; "> 2025-01-26 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
@@ -1479,11 +1472,39 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 0.2 </td>
   </tr>
   <tr>
+   <td style="text-align:left;width: 6em; "> GenePS </td>
+   <td style="text-align:left;width: 6em; "> 2025-02-14 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 216 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> CITEgeist </td>
+   <td style="text-align:left;width: 6em; "> 2025-02-17 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
    <td style="text-align:left;width: 6em; "> RCA-MERFISH </td>
    <td style="text-align:left;width: 6em; "> 2025-02-17 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
    <td style="text-align:left;width: 6em; "> 209 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> spRandom-seq </td>
+   <td style="text-align:left;width: 6em; "> 2025-02-23 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> ST-FFPE-mIF </td>
+   <td style="text-align:left;width: 6em; "> 2025-04-10 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
 </tbody>
 </table>
