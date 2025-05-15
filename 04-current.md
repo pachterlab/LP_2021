@@ -1199,13 +1199,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 0.3 </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> MEA-seqX </td>
-   <td style="text-align:left;width: 6em; "> 2024-05-15 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 55 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> BALI </td>
    <td style="text-align:left;width: 6em; "> 2024-05-22 </td>
    <td style="text-align:left;width: 6em; "> ROI selection </td>
@@ -1353,13 +1346,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 15 </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> PHOTON </td>
-   <td style="text-align:left;width: 6em; "> 2024-09-14 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> spatial-Mux-seq </td>
    <td style="text-align:left;width: 6em; "> 2024-09-19 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
@@ -1500,9 +1486,30 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 55 </td>
   </tr>
   <tr>
+   <td style="text-align:left;width: 6em; "> microdissection </td>
+   <td style="text-align:left;width: 6em; "> 2025-02-24 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
    <td style="text-align:left;width: 6em; "> ST-FFPE-mIF </td>
    <td style="text-align:left;width: 6em; "> 2025-04-10 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> MEA-seqX </td>
+   <td style="text-align:left;width: 6em; "> 2025-04-30 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> PHOTON </td>
+   <td style="text-align:left;width: 6em; "> 2025-05-14 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
