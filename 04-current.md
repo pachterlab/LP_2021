@@ -502,7 +502,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> par-seqFISH </td>
    <td style="text-align:left;width: 6em; "> 2021-08-12 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 105 </td>
+   <td style="text-align:left;width: 6em; "> 150 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -1374,13 +1374,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> hamFISH </td>
-   <td style="text-align:left;width: 6em; "> 2024-11-23 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 32 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> Perturb-DBiT </td>
    <td style="text-align:left;width: 6em; "> 2024-11-28 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
@@ -1535,11 +1528,39 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 55 </td>
   </tr>
   <tr>
+   <td style="text-align:left;width: 6em; "> Cartana </td>
+   <td style="text-align:left;width: 6em; "> 2025-05-01 </td>
+   <td style="text-align:left;width: 6em; "> ISS </td>
+   <td style="text-align:left;width: 6em; "> 159 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Nanotweezers </td>
+   <td style="text-align:left;width: 6em; "> 2025-05-06 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> BCR-MERFISH </td>
+   <td style="text-align:left;width: 6em; "> 2025-05-14 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 589 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
    <td style="text-align:left;width: 6em; "> PHOTON </td>
    <td style="text-align:left;width: 6em; "> 2025-05-14 </td>
    <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> hamFISH </td>
+   <td style="text-align:left;width: 6em; "> 2025-07-29 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 32 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
 </tbody>
 </table>

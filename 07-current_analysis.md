@@ -585,9 +585,9 @@ Attempts at spatial reconstruction of single cell data date back to 2014, when g
 </td>
    <td style="text-align:left;width: 5em; "> Python </td>
    <td style="text-align:left;width: 15em; ">
-<a href="https://doi.org/10.1101/2025.01.27.634996"> Refinement Strategies for Tangram for Reliable Single-Cell to Spatial Mapping </a>
+<a href="https://doi.org/10.1093/bioinformatics/btaf194"> Refinement strategies for Tangram for reliable single-cell to spatial mapping </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2025-01-28 </td>
+   <td style="text-align:left;width: 5em; "> 2025-07-15 </td>
   </tr>
 </tbody>
 </table>
@@ -807,9 +807,9 @@ There is another aspect to how spatial and scRNA-seq data complement each other.
 </td>
    <td style="text-align:left;width: 5em; "> Python </td>
    <td style="text-align:left;width: 15em; ">
-<a href="https://doi.org/10.1101/2025.01.27.634996"> Refinement Strategies for Tangram for Reliable Single-Cell to Spatial Mapping </a>
+<a href="https://doi.org/10.1093/bioinformatics/btaf194"> Refinement strategies for Tangram for reliable single-cell to spatial mapping </a>
 </td>
-   <td style="text-align:left;width: 5em; "> 2025-01-28 </td>
+   <td style="text-align:left;width: 5em; "> 2025-07-15 </td>
   </tr>
 </tbody>
 </table>

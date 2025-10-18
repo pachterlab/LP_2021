@@ -3,7 +3,7 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses
   - Lior Pachter
-date: "2025-06-15"
+date: "2025-10-18"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
@@ -15,7 +15,9 @@ github-repo: "pachterlab/LP_2021"
 
 # Preface {-} 
 
-This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nature.com/articles/s41592-022-01409-2) and the associated [database of spatial transcriptomics literature](https://docs.google.com/spreadsheets/d/1sJDb9B7AtYmfKv4-m8XR7uc3XXw_k4kGSout8cqZ8bY/edit?usp=sharing) is inspired by museum catalogs that provide insight and detail to further understanding of the exhibits. The results presented are based on code that can be run interactively on [RStudio Cloud](https://rstudio.cloud/project/2492054). We present key analyses of metadata curated for the database, and provide further analyses and results beyond what could be included here in the `more_analyses` directory of this repository. The markdown that generates this text is on GitHub, and is version controlled so that its development can be tracked now and in the future. Please notify us of errors, omissions, or other suggestions via submission of issues on GitHub: https://github.com/pachterlab/LP_2021 To submit new entries to the database, please fill out this [Google Form](https://forms.gle/HjQD9x6AMjR7C62SA). If the text in some figures are too small to read, then right click on the figure to open in a new tab to zoom in.
+This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nature.com/articles/s41592-022-01409-2) and the associated [database of spatial transcriptomics literature](https://docs.google.com/spreadsheets/d/1sJDb9B7AtYmfKv4-m8XR7uc3XXw_k4kGSout8cqZ8bY/edit?usp=sharing) is inspired by museum catalogs that provide insight and detail to further understanding of the exhibits. The results presented are based on code that can be run interactively on [RStudio Cloud](https://rstudio.cloud/project/2492054). We present key analyses of metadata curated for the database, and provide further analyses and results beyond what could be included here in the `more_analyses` directory of this repository. The markdown that generates this text is on GitHub, and is version controlled so that its development can be tracked now and in the future. Please notify us of errors, omissions, or other suggestions via submission of issues on GitHub: https://github.com/pachterlab/LP_2021 To submit new entries to the database, please fill out this [Google Form](https://forms.gle/HjQD9x6AMjR7C62SA). If the text in some figures are too small to read, then right click on the figure to open in a new tab to zoom in. 
+
+While the figures are automatically updated, the text is often outdated. I would like to write a second edition with updated texts and analyses.
 
 ## Quick stats
 
@@ -32,12 +34,12 @@ This supplement to [the paper Museum of Spatial Transcriptomics](https://www.nat
 
 
 
-As of 2025-06-15, this database contains:
+As of 2025-10-18, this database contains:
 
-* 3274 current era publications, 2087 of which are for data collection and 1274 are for data analysis (see Chapter 1 for definition of prequel and current eras)
-* 283 prequel era publications
-* Current era publications from 842 institutions[^1] in 443 cities in 48 countries
-* 1007 current era data analysis software packages whose source code is available online
+* 3472 current era publications, 2216 of which are for data collection and 1346 are for data analysis (see Chapter 1 for definition of prequel and current eras)
+* 286 prequel era publications
+* Current era publications from 871 institutions[^1] in 458 cities in 47 countries
+* 1060 current era data analysis software packages whose source code is available online
 
 ## Running the code
 
