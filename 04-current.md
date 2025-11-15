@@ -1234,13 +1234,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> Visium HD </td>
-   <td style="text-align:left;width: 6em; "> 2024-06-05 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 2 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> BirthSeq </td>
    <td style="text-align:left;width: 6em; "> 2024-06-10 </td>
    <td style="text-align:left;width: 6em; "> ISS </td>
@@ -1379,6 +1372,13 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Visium HD </td>
+   <td style="text-align:left;width: 6em; "> 2024-11-29 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> RAM-FISH </td>
@@ -1553,6 +1553,13 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 2025-05-14 </td>
    <td style="text-align:left;width: 6em; "> ROI selection </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> CAP-seq </td>
+   <td style="text-align:left;width: 6em; "> 2025-06-10 </td>
+   <td style="text-align:left;width: 6em; "> De novo </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
