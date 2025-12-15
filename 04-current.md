@@ -1290,13 +1290,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> Deep-STARmap </td>
-   <td style="text-align:left;width: 6em; "> 2024-08-07 </td>
-   <td style="text-align:left;width: 6em; "> ISS </td>
-   <td style="text-align:left;width: 6em; "> 1017 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> IRISeq </td>
    <td style="text-align:left;width: 6em; "> 2024-08-08 </td>
    <td style="text-align:left;width: 6em; "> De novo </td>
@@ -1465,13 +1458,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> RCA-MERFISH </td>
-   <td style="text-align:left;width: 6em; "> 2025-02-17 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 209 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> spRandom-seq </td>
    <td style="text-align:left;width: 6em; "> 2025-02-23 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
@@ -1563,10 +1549,45 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
+   <td style="text-align:left;width: 6em; "> RCA-MERFISH </td>
+   <td style="text-align:left;width: 6em; "> 2025-06-13 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 209 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> STAMP-C </td>
+   <td style="text-align:left;width: 6em; "> 2025-06-18 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 6000 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> STAMP-M </td>
+   <td style="text-align:left;width: 6em; "> 2025-06-18 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 500 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> STAMP-X </td>
+   <td style="text-align:left;width: 6em; "> 2025-06-18 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 5000 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
    <td style="text-align:left;width: 6em; "> hamFISH </td>
    <td style="text-align:left;width: 6em; "> 2025-07-29 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
    <td style="text-align:left;width: 6em; "> 32 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Deep-STARmap </td>
+   <td style="text-align:left;width: 6em; "> 2025-11-25 </td>
+   <td style="text-align:left;width: 6em; "> ISS </td>
+   <td style="text-align:left;width: 6em; "> 1017 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
 </tbody>
