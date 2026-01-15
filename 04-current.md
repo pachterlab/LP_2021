@@ -712,14 +712,14 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> CosMX </td>
    <td style="text-align:left;width: 6em; "> 2022-10-06 </td>
    <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> 6199 </td>
+   <td style="text-align:left;width: 6em; "> 18878 </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> CosMX </td>
    <td style="text-align:left;width: 6em; "> 2022-10-06 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 6199 </td>
+   <td style="text-align:left;width: 6em; "> 18878 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -1575,6 +1575,13 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> smFISH </td>
    <td style="text-align:left;width: 6em; "> 5000 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Spatial-DMT </td>
+   <td style="text-align:left;width: 6em; "> 2025-07-04 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> hamFISH </td>
