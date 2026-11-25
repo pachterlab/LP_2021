@@ -136,12 +136,14 @@ ms_pubs %>%
 After LCM, GeoMX DSP/WTA is the most popular targeted ROI based technique, and as already mentioned, GeoMX DSP has been used in several COVID autopsy studies. GeoMX DSP is often used to profile proteins, which is beyond the scope of this book; our database only contains metadata for GeoMX DSP transcriptomic datasets. As of writing, all GeoMX DSP datasets in our database are from human, and are from predominantly pathological FFPE tissues (Figures \@ref(fig:ffpe), \@ref(fig:ffpe-hgmm)). Because of COVID, GeoMX DSP is more used on the lungs for transcriptomics than other tissues (Figure \@ref(fig:dsp-organs)).
 
 ```{r}
-nms <- c("ROI selection", "smFISH", "NGS barcoding", "ISS", "De novo")
+nms <- c("ROI selection", "smFISH", "NGS barcoding", "ISS")
 ffpe <- read_metadata(nms, update = TRUE) %>% 
-  select(title, method, species, tissue, pathological) %>% 
+  select(title, method, species, tissue, pathological, FFPE) %>% 
   distinct() %>% 
   filter(!is.na(tissue), !is.na(method)) %>% 
-  mutate(is_ffpe = str_detect(tissue, "FFPE"))
+    mutate(FFPE = case_when(is.na(FFPE) ~ FALSE,
+                            TRUE ~ FFPE),
+           is_ffpe = str_detect(tissue, "FFPE") | FFPE)
 ffpe2 <- ffpe %>% 
   mutate(method = fct_lump_min(method, 10) %>% fct_infreq() %>% fct_rev())
 ```
@@ -492,7 +494,7 @@ ggplot(smfish_methods_cnt, aes(y_use)) +
    scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
    labs(title = "Number of institutions using a technique", y = "Number of techniques",
         x = NULL) +
-   scale_x_discrete(drop = FALSE) +
+   scale_x_discrete(drop = TRUE) +
    coord_flip()
 ```
 
@@ -530,7 +532,7 @@ languages <- unnest_cat(smfish, language)
 
 ```{r smfish-langs, fig.width=6, fig.height=4, fig.cap="Number of publications using smFISH based techniques that used each of the 5 most common programming languages. Each icon stands for 10 publications."}
 pubs_per_cat(languages, category = language, isotype = TRUE, n_top = 5, 
-             img_unit = 10) +
+             img_unit = 50) +
    labs(x = NULL, title = "Programming language")
 ```
 

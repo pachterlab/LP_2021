@@ -333,7 +333,7 @@ While a few techniques other than LCM have become popular, such as ISS (2013), T
 methods_current %>% 
   select(short_name, method, sheet) %>% 
   distinct() %>% 
-  mutate(method = fct_lump_min(method, 3)) %>% 
+  mutate(method = fct_lump_min(method, 20)) %>% 
   filter(!method %in% c("LCM", "Other")) %>% 
   pubs_per_cat(method, fill_by = sheet) +
   scale_fill_manual(values = setNames(scales::brewer_pal(palette = "Set2")(6)[2:5], c("ROI selection", "NGS barcoding", "smFISH", "ISS"))) +

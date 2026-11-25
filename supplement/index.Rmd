@@ -24,6 +24,12 @@ While the figures are automatically updated, the text is often outdated. I would
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```
 
+```{r, echo=FALSE}
+library(googlesheets4)
+#gs4_auth(path = "../intense-howl-420722-fe582ccaf1cf.json")
+gs4_auth(path = Sys.getenv("CURATOR_TOKEN"))
+```
+
 ```{r}
 library(museumst)
 ```

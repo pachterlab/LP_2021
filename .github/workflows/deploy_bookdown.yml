@@ -11,6 +11,8 @@ jobs:
   bookdown:
     name: Render-Book
     runs-on: ubuntu-latest
+    env:
+      CURATOR_TOKEN: ${{ secrets.CURATOR_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: r-lib/actions/setup-r@v2
