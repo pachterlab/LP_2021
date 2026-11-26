@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics</title>
 <meta name="author" content="Lambda Moses">
 <meta name="author" content="Lior Pachter">
-<meta name="description" content='To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term "((laser capture microdissection) OR (laser microdissection)) AND...'>
-<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta name="description" content="To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term &quot;((laser capture microdissection) OR (laser microdissection)) AND...">
+<meta name="generator" content="bookdown 0.48 with bs4_book()">
 <meta property="og:title" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics">
 <meta property="og:type" content="book">
-<meta property="og:description" content='To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term "((laser capture microdissection) OR (laser microdissection)) AND...'>
+<meta property="og:description" content="To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term &quot;((laser capture microdissection) OR (laser microdissection)) AND...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 6 Text mining LCM transcriptomics abstracts | Museum of Spatial Transcriptomics">
-<meta name="twitter:description" content='To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term "((laser capture microdissection) OR (laser microdissection)) AND...'>
+<meta name="twitter:description" content="To analyze trends in LCM followed by microarray or RNA-seq, abstracts were downloaded from the PubMed API, with search term &quot;((laser capture microdissection) OR (laser microdissection)) AND...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.12.0/transition.js"></script><script src="libs/bs3compat-0.12.0/tabs.js"></script><script src="libs/bs3compat-0.12.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -28,7 +27,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -105,7 +103,7 @@ Figure 6.1: Number of publications in LCM transcriptomics PubMed search results 
 Figure 6.2: Geographic distribution of LCM transcriptomics research, with top 10 cities labeled. Number of publications is binned over longitude and latitude.
 </p>
 </div>
-<p>After identifying common and relevant phrases in the abstracts, the abstracts were tokenized into unigrams. We used the <code>stm</code> R package <span class="citation">(<a href="references.html#ref-Roberts2019">M. E. Roberts, Stewart, and Tingley 2019</a>)</span> to identify topics. The cities in which the research was conducted, date published or posted on bioRxiv (linear, not transformed), and journal (including bioRxiv) were used as covariates for topic prevalence, because labs and journals may have preferred topics and city is a proxy to institution, and it’s reasonable to assume that prevalence of at least some topic changes through time, such as due to evolution of technology. Cities and journals with fewer than 5 papers were lumped into “Other”. From a trade off between held out likelihood and residual, and between topic exclusivity and semantic coherence, we chose 50 topics. Code used to find this can be found <a href="https://github.com/pachterlab/museumst/blob/master/data-raw/lcm_text_mining.Rmd">here</a>.</p>
+<p>After identifying common and relevant phrases in the abstracts, the abstracts were tokenized into unigrams. We used the <code>stm</code> R package <span class="citation">(<a href="references.html#ref-Roberts2019">Roberts et al. 2019</a>)</span> to identify topics. The cities in which the research was conducted, date published or posted on bioRxiv (linear, not transformed), and journal (including bioRxiv) were used as covariates for topic prevalence, because labs and journals may have preferred topics and city is a proxy to institution, and it’s reasonable to assume that prevalence of at least some topic changes through time, such as due to evolution of technology. Cities and journals with fewer than 5 papers were lumped into “Other”. From a trade off between held out likelihood and residual, and between topic exclusivity and semantic coherence, we chose 50 topics. Code used to find this can be found <a href="https://github.com/pachterlab/museumst/blob/master/data-raw/lcm_text_mining.Rmd">here</a>.</p>
 <p>Here <code>stm</code> stands for structural text mining. A generative model of word counts is fitted with the word counts in each abstract as well as abstract level covariates, here date, city, and journal. Among parameters of the model estimated are the proportion of each topic in each abstract after accounting for covariates (<span class="math inline">\(\theta\)</span>), topic proportions in the corpus (<span class="math inline">\(\gamma\)</span>), and probability of getting each word from each topic (<span class="math inline">\(\beta\)</span>). See the <a href="https://cran.r-project.org/web/packages/stm/vignettes/stmVignette.pdf"><code>stm</code> vignette</a> for more details. <code>stm</code> can not only detect topics without having a human read all the abstracts, but also find how covariates relate to topic prevalence.</p>
 <div id="topic-model" class="section level2" number="6.1">
 <h2>
@@ -179,7 +177,7 @@ Figure 6.4: Probability of top 10 words in each topic. Open image in new tab to 
 <li>Intrahepatic cholangiocarcinoma (ICC)</li>
 </ol>
 <p>Some of them might not really be related to LCM (e.g. GWAS), and some seem to be a mixture of different topics recognized by humans but seemingly united by something else in common. There are very likely more than 50 topics present, depending on how a topic is defined. The topics can be broadly categorized into Botany, Cancer, Development, Immunology, Neuroscience, Technical, and Other, though these categories can overlap. Some of the “Other” topics seem like mixtures of multiple topics, such as topic 29, while some are very specific and relevant, such as topic 30 (pancreas and diabetes). The broad categories will be used in further analyses.</p>
-<p>Clusters of related topics can be seen in the topic correlation plot. See <a href="https://rdrr.io/cran/stm/man/topicCorr.html">documentation of <code>topicCorr</code> in the <code>stm</code> package</a> for more details. Here we use a high-dimensional undirected graphical (HUGE) model <span class="citation">(<a href="references.html#ref-Zhao2012">T. Zhao et al. 2012</a>)</span> to estimate the topic correlation graph. The topic proportions (<span class="math inline">\(\theta\)</span>) are assumed to be multivariate Gaussian, and HUGE tries to identify edges connecting topics that are not independent from each other conditioned on everything else, while trying to keep the graph sparse (few edges). While <span class="math inline">\(\theta\)</span> is not Gaussian, the results from HUGE aren’t unreasonable.</p>
+<p>Clusters of related topics can be seen in the topic correlation plot. See <a href="https://rdrr.io/cran/stm/man/topicCorr.html">documentation of <code>topicCorr</code> in the <code>stm</code> package</a> for more details. Here we use a high-dimensional undirected graphical (HUGE) model <span class="citation">(<a href="references.html#ref-Zhao2012">Zhao et al. 2012</a>)</span> to estimate the topic correlation graph. The topic proportions (<span class="math inline">\(\theta\)</span>) are assumed to be multivariate Gaussian, and HUGE tries to identify edges connecting topics that are not independent from each other conditioned on everything else, while trying to keep the graph sparse (few edges). While <span class="math inline">\(\theta\)</span> is not Gaussian, the results from HUGE aren’t unreasonable.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:topic-corr"></span>
 <img src="06-text-mining_files/figure-html/topic-corr-1.png" alt="Correlation between topics." width="100%"><p class="caption">
@@ -266,7 +264,7 @@ Figure 6.12: Proportion of topic 45 in each city. Error bars are 95% CI of the p
 <h2>
 <span class="header-section-number">6.5</span> GloVe word embedding<a class="anchor" aria-label="anchor" href="#glove"><i class="fas fa-link"></i></a>
 </h2>
-<p>We used global vector (GloVe) embedding to identify linear substructures in the word vector space of the LCM transcriptomics abstract corpus and to identify contexts <span class="citation">(<a href="references.html#ref-Pennington">Pennington, Socher, and Manning, n.d.</a>)</span>. In GloVe embedding, words are represented by vectors. Words with similar meanings tend to be closer together in this vector space, and differences between word vectors can encode meaning as well. The “meanings” come from the context, or word co-occurrence. GloVe was devised to find a word embedding with properties like “king” - “man” + “woman” = “queen” or “ice” - “solid” + “gas” = “steam”, and related words like “cancer” and “tumor” are close together but both are far from unrelated words like “flower”.</p>
+<p>We used global vector (GloVe) embedding to identify linear substructures in the word vector space of the LCM transcriptomics abstract corpus and to identify contexts <span class="citation">(<a href="references.html#ref-Pennington">Pennington et al., n.d.</a>)</span>. In GloVe embedding, words are represented by vectors. Words with similar meanings tend to be closer together in this vector space, and differences between word vectors can encode meaning as well. The “meanings” come from the context, or word co-occurrence. GloVe was devised to find a word embedding with properties like “king” - “man” + “woman” = “queen” or “ice” - “solid” + “gas” = “steam”, and related words like “cancer” and “tumor” are close together but both are far from unrelated words like “flower”.</p>
 <p>This corpus was used to train a 125 dimensional embedding, and the embeddings of words occurring more than 30 times in the corpus were projected to lower dimensions with principal component analysis (PCA) to find axes explaining the most variance in the embedding, hopefully identifying dominant axes of meaning within this corpus. The words are also Louvain clustered in the embedding space to find clusters of words related in meaning.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:pca-elbow"></span>
@@ -325,7 +323,7 @@ Figure 6.15: Projection of word embeddings into the 3rd and 4th PCs.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2026-01-15.</p>
+    <p>"<strong>Museum of Spatial Transcriptomics</strong>" was written by Lambda Moses, Lior Pachter. It was last built on 2026-11-26.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

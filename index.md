@@ -3,7 +3,7 @@ title: "Museum of Spatial Transcriptomics"
 author: 
   - Lambda Moses
   - Lior Pachter
-date: "2026-01-15"
+date: "2026-11-26"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "museumst.bib"
@@ -34,12 +34,14 @@ While the figures are automatically updated, the text is often outdated. I would
 
 
 
-As of 2026-01-15, this database contains:
 
-* 3627 current era publications, 2326 of which are for data collection and 1396 are for data analysis (see Chapter 1 for definition of prequel and current eras)
+
+As of 2026-11-26, this database contains:
+
+* 4142 current era publications, 2661 of which are for data collection and 1582 are for data analysis (see Chapter 1 for definition of prequel and current eras)
 * 286 prequel era publications
-* Current era publications from 890 institutions[^1] in 470 cities in 49 countries
-* 1098 current era data analysis software packages whose source code is available online
+* Current era publications from 969 institutions[^1] in 512 cities in 50 countries
+* 1233 current era data analysis software packages whose source code is available online
 
 ## Running the code
 

@@ -711,15 +711,8 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
   <tr>
    <td style="text-align:left;width: 6em; "> CosMX </td>
    <td style="text-align:left;width: 6em; "> 2022-10-06 </td>
-   <td style="text-align:left;width: 6em; "> ROI selection </td>
-   <td style="text-align:left;width: 6em; "> 18878 </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> CosMX </td>
-   <td style="text-align:left;width: 6em; "> 2022-10-06 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 18878 </td>
+   <td style="text-align:left;width: 6em; "> 18935 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -775,7 +768,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> mFISH3D </td>
    <td style="text-align:left;width: 6em; "> 2022-11-23 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 6 </td>
+   <td style="text-align:left;width: 6em; "> 10 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -999,7 +992,7 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> DART-FISH </td>
    <td style="text-align:left;width: 6em; "> 2023-08-17 </td>
    <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 300 </td>
+   <td style="text-align:left;width: 6em; "> 484 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
@@ -1119,13 +1112,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 2023-12-12 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Slide-tags </td>
-   <td style="text-align:left;width: 6em; "> 2023-12-12 </td>
-   <td style="text-align:left;width: 6em; "> De novo </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
    <td style="text-align:left;width: 6em; "> 10 </td>
   </tr>
   <tr>
@@ -1276,6 +1262,13 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
+   <td style="text-align:left;width: 6em; "> Visium HD </td>
+   <td style="text-align:left;width: 6em; "> 2024-07-05 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 2 </td>
+  </tr>
+  <tr>
    <td style="text-align:left;width: 6em; "> DBiT ARP-seq </td>
    <td style="text-align:left;width: 6em; "> 2024-07-28 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
@@ -1287,13 +1280,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 2024-07-28 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> IRISeq </td>
-   <td style="text-align:left;width: 6em; "> 2024-08-08 </td>
-   <td style="text-align:left;width: 6em; "> De novo </td>
-   <td style="text-align:left;width: 6em; "> NA </td>
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
@@ -1353,25 +1339,11 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> 2 </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> ATLAS </td>
-   <td style="text-align:left;width: 6em; "> 2024-10-09 </td>
-   <td style="text-align:left;width: 6em; "> smFISH </td>
-   <td style="text-align:left;width: 6em; "> 6654 </td>
-   <td style="text-align:left;width: 6em; "> single cell </td>
-  </tr>
-  <tr>
    <td style="text-align:left;width: 6em; "> Perturb-DBiT </td>
    <td style="text-align:left;width: 6em; "> 2024-11-28 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Visium HD </td>
-   <td style="text-align:left;width: 6em; "> 2024-11-29 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 2 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> RAM-FISH </td>
@@ -1388,8 +1360,8 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NA </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> DBiTplus </td>
-   <td style="text-align:left;width: 6em; "> 2024-12-23 </td>
+   <td style="text-align:left;width: 6em; "> BMKMANU S3000 </td>
+   <td style="text-align:left;width: 6em; "> 2025-01-01 </td>
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
@@ -1435,13 +1407,6 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> NGS barcoding </td>
    <td style="text-align:left;width: 6em; "> Tx wide </td>
    <td style="text-align:left;width: 6em; "> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 6em; "> Seq-Scope-X </td>
-   <td style="text-align:left;width: 6em; "> 2025-02-08 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
-   <td style="text-align:left;width: 6em; "> 0.2 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> GenePS </td>
@@ -1577,11 +1542,11 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
-   <td style="text-align:left;width: 6em; "> Spatial-DMT </td>
-   <td style="text-align:left;width: 6em; "> 2025-07-04 </td>
-   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
-   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> MALDI-ISH </td>
+   <td style="text-align:left;width: 6em; "> 2025-07-11 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
    <td style="text-align:left;width: 6em; "> NA </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 6em; "> hamFISH </td>
@@ -1591,10 +1556,136 @@ The current era started with LCM followed by microarray in 1999 [@Luo1999]. Due 
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
   <tr>
+   <td style="text-align:left;width: 6em; "> PCL-seq </td>
+   <td style="text-align:left;width: 6em; "> 2025-08-05 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> IRISeq </td>
+   <td style="text-align:left;width: 6em; "> 2025-08-20 </td>
+   <td style="text-align:left;width: 6em; "> De novo </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Stereo-cell </td>
+   <td style="text-align:left;width: 6em; "> 2025-08-21 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> OpenFISH </td>
+   <td style="text-align:left;width: 6em; "> 2025-08-22 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 110 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> RT&amp;T-AMP-MERFISH </td>
+   <td style="text-align:left;width: 6em; "> 2025-08-30 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 33000 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Spatial-DMT </td>
+   <td style="text-align:left;width: 6em; "> 2025-09-03 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> BarSI </td>
+   <td style="text-align:left;width: 6em; "> 2025-09-10 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> CosMx </td>
+   <td style="text-align:left;width: 6em; "> 2025-09-10 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 1010 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Decoder-FFPE-seq </td>
+   <td style="text-align:left;width: 6em; "> 2025-09-16 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 8 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> SPACE </td>
+   <td style="text-align:left;width: 6em; "> 2025-09-17 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 18000 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> GeoMx DSP </td>
+   <td style="text-align:left;width: 6em; "> 2025-09-19 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> DIRSE </td>
+   <td style="text-align:left;width: 6em; "> 2025-09-23 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 24 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
    <td style="text-align:left;width: 6em; "> Deep-STARmap </td>
    <td style="text-align:left;width: 6em; "> 2025-11-25 </td>
    <td style="text-align:left;width: 6em; "> ISS </td>
    <td style="text-align:left;width: 6em; "> 1017 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> split-roll FISH </td>
+   <td style="text-align:left;width: 6em; "> 2025-12-02 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 82 </td>
+   <td style="text-align:left;width: 6em; "> single cell </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> DBiTplus </td>
+   <td style="text-align:left;width: 6em; "> 2026-01-15 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> Seq-Scope-X </td>
+   <td style="text-align:left;width: 6em; "> 2026-02-10 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> 0.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> circVDJ-seq </td>
+   <td style="text-align:left;width: 6em; "> 2026-06-10 </td>
+   <td style="text-align:left;width: 6em; "> NGS barcoding </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> CellShape-seq </td>
+   <td style="text-align:left;width: 6em; "> 2026-09-24 </td>
+   <td style="text-align:left;width: 6em; "> ROI selection </td>
+   <td style="text-align:left;width: 6em; "> Tx wide </td>
+   <td style="text-align:left;width: 6em; "> NA </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 6em; "> ATLAS </td>
+   <td style="text-align:left;width: 6em; "> 2026-10-30 </td>
+   <td style="text-align:left;width: 6em; "> smFISH </td>
+   <td style="text-align:left;width: 6em; "> 6654 </td>
    <td style="text-align:left;width: 6em; "> single cell </td>
   </tr>
 </tbody>
